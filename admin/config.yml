@@ -21,20 +21,10 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Cover_wide", name: "cover_wide", widget: "image", optional: true}
       - {label: "Cover_square", name: "cover_square", widget: "image", optional: true}
-      - {label: "Featured", name: "featured", widget: "boolean", default: false}
       - {label: "Ingress", name: "ingress", widget: "text", optional: true}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
-  - name: "settings"
-    label: "Settings"
-    files:
-      - name: "general"
-        label: "General settings"
-        file: "_settings/general.json"
-        fields:
-          - {label: "Main site title", name: "site_title", widget: "string"}
-          - {label: "Number of frontpage posts", name: "post_count", widget: "number"}
-          - {label: "Site cover image", name: "cover", widget: "image"}
+
   - name: "pages"
     label: "Pages"
     folder: "content"

@@ -1,0 +1,24 @@
+@import '../../styles/global';
+
+.newspage {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 50px;
+}
+
+.newsarticle {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 70%;
+    img {
+        width: 100%;
+    }
+}
+
+.rightpane {
+    width: 20%;
+    min-width: 200px;
+    margin-top: 20px;
+    border: 1px solid;
+}

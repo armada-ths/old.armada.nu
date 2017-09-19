@@ -1,0 +1,10 @@
+@mixin circle($size){
+  width: $size;
+  height: $size;
+  border-radius: $size/2;
+}
+
+@mixin verticle-line($height, $thickness, $color){
+    height: $height;
+    border-right: $thickness solid $color;
+}

@@ -1,0 +1,56 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+#footer {
+  background-color: $licorice;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-size: cover;
+  transition: background-color $transition-duration linear;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    @include circle(48px);
+    margin: 10px;
+  }
+
+  & img{
+    width: 100%;
+  }
+
+  .apps-container {
+    width: 72px;
+    margin: 10px;
+  }
+
+  .divider{
+    @include verticle-line(25px, 2px, $background-color);
+    margin: 10px;
+  }
+}
+
+// Mobile
+@media screen and (max-width: $breakpoint-mobile) {
+  #footer {
+    .logo {
+      @include circle(32px);
+      margin: 5px;
+    }
+
+    .divider {
+      margin: 5px;
+    }
+
+    .apps-container {
+      width: 64px;
+      margin: 5px;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import "../../styles/_variables";
+@import "../../styles/global";
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+}
+
+.contact {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  > p {
+    margin: 0;
+  }
+}
+
+
+.content-wrapper {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  align-items: center;
+  -webkit-align-items: center;
+  padding-top: 10px;
+}
+
+
+.sub-heading {
+  padding-top: 5px;
+}
+
+
+.contact-body p {
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.contact-info {
+  margin: 15px auto;
+  text-align: center;
+  width: 330px;
+}
+
+
+@media screen and (max-width: $breakpoint-mobile) {
+
+  .contact-info {
+    margin-top: 10px;
+  }
+
+}

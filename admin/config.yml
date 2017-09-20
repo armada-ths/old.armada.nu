@@ -21,6 +21,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Cover_wide", name: "cover_wide", widget: "image", required: false}
       - {label: "Cover_square", name: "cover_square", widget: "image", required: false}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false}
       - {label: "Ingress", name: "ingress", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}

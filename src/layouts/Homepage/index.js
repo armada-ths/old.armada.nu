@@ -14,7 +14,7 @@ const Homepage = (props) => {
 
   return (
     <Page { ...props }>
-      <Jumbotron video={vid} image={props.head.header} />
+      <Jumbotron video={vid} image={props.head.header} header_class="header-home"/>
       <div className="body">
           <Newsfeed />
       </div>

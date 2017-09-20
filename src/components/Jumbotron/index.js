@@ -2,8 +2,7 @@ import React, {PropTypes} from 'react';
 import "./jumbotron.scss";
 
 const Jumbotron =  (props) => {
-    let image = props.image ? (<div className="header-image">
-                <img alt="" src={props.image}/> </div>) : null;
+    let image = props.image ? ( <img alt="" src={props.image}/> ) : null;
     let video = props.video ? (<video autoPlay="true" loop muted>
             <source src={props.video} type="video/mp4"/> </video>) : null;
 
@@ -15,7 +14,9 @@ const Jumbotron =  (props) => {
                     <img src={require('../../../content/assets/images/header-images/logo.png')} />
                     <p className="logo-date"> 21-22 NOV</p>
             </div>
-            {video_or_image ? video_or_image : <div className="header-image"></div>}
+            <div className={props.header_class ? props.header_class : "header-image"}>
+                {video_or_image}
+            </div>
             
         </div>
     );
@@ -24,6 +25,7 @@ const Jumbotron =  (props) => {
 Jumbotron.propTypes = {
     image: PropTypes.string,
     video: PropTypes.string,
+    header_class: PropTypes.string,
 };
 
 export default Jumbotron;

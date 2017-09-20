@@ -30,6 +30,10 @@ ul.newsfeed {
 .newsitem.regular {
     display: flex;
     flex-direction: row;
+    img {
+        width: 225px;
+        height: 135px;
+    }
 }
 
 .newsitem.featured {

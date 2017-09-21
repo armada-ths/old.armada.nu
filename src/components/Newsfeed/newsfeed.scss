@@ -1,3 +1,8 @@
+@import '../../styles/_variables';
+
+.newsfeed {
+    margin: 2em 0em;
+}
 
 ul.newsfeed {
     list-style-type: none;
@@ -30,22 +35,8 @@ ul.newsfeed {
 .newsitem.regular {
     display: flex;
     flex-direction: row;
-    img {
-        width: 225px;
-        height: 135px;
-    }
 }
 
-.newsitem.featured {
-    border-bottom: 1px solid;
-    img {
-        width: 100%;
-    }
-}
-
-.newsitem {
-    padding-bottom: 5px;
-}
 
 
 @media all and (max-width: 410px) {
@@ -59,10 +50,18 @@ ul.newsfeed {
         }
     }
 
+    .newstitle {
+        margin: $mobile-edge;
+    }
+
     .newsitem.regular {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .armada-news {
+        text-align: center;
     }
 }
     

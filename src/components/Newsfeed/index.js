@@ -28,6 +28,9 @@ const Newsfeed = (props, { collection }) => {
     const posts = latestPosts.length > 0 ? <PagesList pages={latestPosts} /> : null;
 
     let feed =( <div className="newsfeed">
+        <div className="armada-news">
+          <h1 id="newstitle">Armada News</h1>
+        </div>
         { featuredPost } 
         {posts}
       </div>);

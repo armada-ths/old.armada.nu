@@ -17,15 +17,14 @@ class PagePreview extends React.Component {
   render = () => {
       const pageDate = this.props.date ? new Date(this.props.date) : null
 
-      const ingressSection = this.props.featured ? (<p className="ingress"> {this.props.ingress} </p>) : null;
+      const ingressSection = this.props.featured ? (<p className="ingress"> {this.props.ingress} </p>) : <p> {this.props.description} </p>;
 
 
       return (
         <Link to={this.props.__url} className={"newsitem " +  (this.props.featured ? "featured" : "regular")}>
           <img src={this.props.cover_wide ? this.props.cover_wide : this.props.cover_square} />
-         <div >
+         <div className="preview-content">
             <h2>{ this.props.title }</h2>
-          {ingressSection}
           {
             pageDate &&
             <small>
@@ -35,6 +34,8 @@ class PagePreview extends React.Component {
               </time>
             </small>
           }
+
+          {ingressSection}
           </div>
         </Link>
       )

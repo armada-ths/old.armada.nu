@@ -21,6 +21,7 @@
 
 }
 
+
 body{
   margin:0;
   color: $licorice;
@@ -31,7 +32,6 @@ body{
     padding-bottom: 50px;
     padding-left: 100px;
     padding-right: 100px;
-    padding-top: 30px;
     max-width: 850px;
     margin: auto;
 
@@ -74,8 +74,8 @@ a {
 
 a:hover {
   cursor: pointer;
-  text-decoration: underline;
 }
+
 
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,6 +83,25 @@ h1, h2, h3, h4, h5, h6 {
         font-family: $font-title;
         color: $melon;
         letter-spacing: 1.1px;
+}
+
+time {
+  line-height: 1.25em;
+  margin: 0.25em 0em;
+}
+h1 {
+  font-size: 3em;
+  line-height: 1.25em;
+}
+
+h2 {
+  font-size: 2.25em;
+  line-height: 1.25em;  
+}
+
+h3 {
+  font-size: 1.75em;
+  line-height: 1.25em;
 }
 
 .card {
@@ -152,9 +171,11 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: $breakpoint-mobile) {
   .body {
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 0px;
+      padding-right: 0px;
   }
+
+
 
   .card {
     .card-content {
@@ -164,4 +185,8 @@ h1, h2, h3, h4, h5, h6 {
       padding: 20px;
     }
   }
+}
+
+img {
+  border: none;
 }

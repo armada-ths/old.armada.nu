@@ -1,8 +1,10 @@
 @import '../../styles/global';
 
 .newspage {
-    display: flex;
-    flex-direction: row;
+    padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 850px;
     margin: auto;
     padding: 50px;
 }
@@ -10,7 +12,6 @@
 .newsarticle {
     padding-left: 20px;
     padding-right: 20px;
-    width: 70%;
     img {
         width: 100%;
     }

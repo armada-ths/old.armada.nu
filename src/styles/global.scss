@@ -26,6 +26,7 @@ body{
   margin:0;
   color: $licorice;
   font-family: $font-regular;
+  font-size: $body-font-size;
 }
 
 .body{
@@ -87,8 +88,9 @@ h1, h2, h3, h4, h5, h6 {
 
 time {
   line-height: 1.25em;
-  margin: 0.25em 0em;
+  margin: 5em 0em;
 }
+
 h1 {
   font-size: 3em;
   line-height: 1.25em;
@@ -173,9 +175,12 @@ h3 {
   .body {
       padding-left: 0px;
       padding-right: 0px;
+      font-size: 16pt;
   }
 
-
+  p {
+    font-size: 16pt;
+  }
 
   .card {
     .card-content {

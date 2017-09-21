@@ -13,27 +13,25 @@ const News = (props) => {
   return (
     <div className="content">
       <Jumbotron />
-   <div className="newspage">
-       <div className ="newsarticle">
+      <div className="newspage">
+        <div className ="newsarticle">
           <img src={props.head.cover_wide} />
-        <Page
-          { ...props }
-          header={
-            <header>
-              {
-              pageDate &&
-              <time key={ pageDate.toISOString() }>
-                { pageDate.toDateString() }
-              </time>
+            <Page
+              { ...props }
+              header={
+                <header>
+                  {
+                  pageDate &&
+                  <time key={ pageDate.toISOString() }>
+                    { pageDate.toDateString() }
+                  </time>
+                  }
+                </header>
               }
-            </header>
-          }
-        >
-        </Page>
-      </div>
-        <div className="rightpane">
-            <Newsfeed {...props} />
+            >
+            </Page>
         </div>
+      <Newsfeed {...props}/>
       </div>
   </div>
   )

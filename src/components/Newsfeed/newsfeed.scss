@@ -1,7 +1,7 @@
 @import '../../styles/_variables';
 
 .newsfeed {
-    margin: 2em 0em;
+    margin: 4em 0em;
 }
 
 ul.newsfeed {
@@ -27,17 +27,15 @@ ul.newsfeed {
     }
 }
 
-.ingress {
-    margin: 0;
-    font-weight: bold;
-}
-
 .newsitem.regular {
     display: flex;
     flex-direction: row;
 }
 
-
+.armada-news {
+    text-align: center;
+    border-bottom: 1px solid $melon;
+}
 
 @media all and (max-width: 410px) {
     ul.newsfeed {
@@ -60,8 +58,5 @@ ul.newsfeed {
         align-items: center;
     }
 
-    .armada-news {
-        text-align: center;
-    }
 }
     

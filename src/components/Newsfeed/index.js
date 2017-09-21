@@ -20,7 +20,7 @@ const Newsfeed = (props, { collection }) => {
   const featuredPostIndex = latestPosts.findIndex( (element) =>{
       return element.featured;
     });
-    const featuredPost = featuredPostIndex >=0 ?  <PagePreview {...latestPosts[featuredPostIndex]} /> : null;
+    const featuredPost = featuredPostIndex >=0 ? <PagePreview {...latestPosts[featuredPostIndex]} /> : null;
     if (featuredPostIndex >= 0) {
         latestPosts.splice(featuredPostIndex, 1);
     }
@@ -31,9 +31,7 @@ const Newsfeed = (props, { collection }) => {
         <div className="armada-news">
           <h1 id="newstitle">Armada News</h1>
         </div>
-        <div className="cellitem">
         { featuredPost } 
-        </div>
         {posts}
       </div>);
 

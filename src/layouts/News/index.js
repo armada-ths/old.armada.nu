@@ -13,8 +13,8 @@ const News = (props) => {
   return (
     <div className="content">
       <Jumbotron />
-   <div className="body">
-           <div className ="newsarticle">
+   <div className="newspage">
+       <div className ="newsarticle">
           <img src={props.head.cover_wide} />
         <Page
           { ...props }
@@ -31,7 +31,9 @@ const News = (props) => {
         >
         </Page>
       </div>
-        <Newsfeed {...props} />
+        <div className="rightpane">
+            <Newsfeed {...props} />
+        </div>
       </div>
   </div>
   )

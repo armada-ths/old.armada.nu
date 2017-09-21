@@ -13,7 +13,7 @@ const PagesList = ({ pages }) => {
         <ul className={ styles.list }>
           {
           pages.map((page) => (
-            <li className="cellitem" key={ page.title }><PagePreview { ...page } /></li>
+            <li key={ page.title }><PagePreview { ...page } /></li>
           ))
         }
         </ul>

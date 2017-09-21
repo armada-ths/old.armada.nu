@@ -8,14 +8,18 @@ a ~ h1:hover,h2:hover {
   text-decoration: none;
 }
 
-.newsitem {
-	margin: 1em 0em; 
-    padding-bottom: 5px;
+
+.cellitem{
+    box-sizing: border-box;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.12);
+    background-color: white;
+    border-radius: 5pt;
+    margin: 1em 0em;
 }
 
 .newsitem.regular {	
+    padding: 1em 1em;
     img {
-		margin: 0em 1em 0em 0em;
         width: 225px;
         max-height: 135px;
     }
@@ -30,7 +34,9 @@ a ~ h1:hover,h2:hover {
     }
 }
 
-
+.preview-content {
+		margin: 0em $mobile-edge;
+	}
 
 @media screen and (max-width: $breakpoint-mobile) {
 	.preview-content {

@@ -4,6 +4,16 @@
     margin: 4em 0em;
 }
 
+.post{
+  box-sizing: border-box;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.12);
+  background-color: white;
+  border-radius: 2pt;
+  margin: 1em 0em;
+  padding: 1em;
+
+}
+
 ul.newsfeed {
     list-style-type: none;
     padding-left: 0;

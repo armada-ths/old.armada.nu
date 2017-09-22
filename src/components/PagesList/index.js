@@ -13,7 +13,7 @@ const PagesList = ({ pages }) => {
         <ul className={ styles.list }>
           {
           pages.map((page) => (
-            <li key={ page.title }><PagePreview { ...page } /></li>
+            <div className="post"> <li key={ page.title }><PagePreview { ...page } /></li></div>
           ))
         }
         </ul>

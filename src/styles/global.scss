@@ -108,42 +108,6 @@ h3 {
   line-height: 1.25em;
 }
 
-.card {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2em;
-  position: relative;
-  top: -30px;
-  overflow: auto;
-  min-width: 150px;
-  max-width: 900px;
-  box-sizing: border-box;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.12);
-  background-color: white;
-  border-radius: 2pt;
-
-  .card-image {
-    width: 100%;
-    height: auto;
-    background-size: contain;
-  }
-
-  .card-content {
-    padding: 3em 4em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: start;
-
-    .secondary {
-      max-height: 100%;
-    }
-  }
-
-  .card-content-the-fair{
-    padding: 50px 100px;
-  }
-}
-
 
 .justified {
   text-align: center;
@@ -163,14 +127,7 @@ h3 {
 
 
 @media screen and (max-width: $breakpoint-pad) {
-  .card {
-    .card-content {
-      padding: 30px;
-    }
-    .card-content-the-fair{
-      padding: 30px;
-    }
-  }
+  
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
@@ -183,17 +140,12 @@ h3 {
   }
 
   p {
-    font-size: 16pt;
+    font-size: 14pt;
   }
-
-  .card {
-    .card-content {
-      padding: 20px;
-    }
-    .card-content-the-fair{
-      padding: 20px;
-    }
+  h2{
+    font-size: 1.8em;
   }
+ 
 }
 
 img {

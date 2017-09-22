@@ -31,7 +31,7 @@ const News = (props) => {
             >
             </Page>
         </div>
-      <Newsfeed {...props}/>
+      <Newsfeed  displayed_article={props.head.title}/>
       </div>
   </div>
   )

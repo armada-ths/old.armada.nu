@@ -16,6 +16,8 @@ const News = (props) => {
       <div className="newspage">
         <div className ="newsarticle">
           <img src={props.head.cover_wide} />
+          <h1> {props.head.title} </h1>
+          <p className="ingress"> {props.head.ingress} </p>
             <Page
               { ...props }
               footer={

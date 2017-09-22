@@ -13,8 +13,15 @@
 .newsarticle {
     padding-left: 20px;
     padding-right: 20px;
+    text-align: justify;
     img {
         width: 100%;
+    }
+    .ingress {
+        font-size: 0.8em;
+        padding: 20px;
+        text-align: justify;
+        font-style: italic;
     }
 }
 
@@ -31,3 +38,5 @@
     border-top: 1px solid $melon;
     color: $melon;
 }
+
+

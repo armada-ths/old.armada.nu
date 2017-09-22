@@ -37,8 +37,10 @@
         width: 100vw;
         img{
             filter: blur(2px) brightness(0.9);
-            min-height:100%;
-            width: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            max-height: 100%;
+            width: 100vw;
             object-fit: cover;
             z-index: 1;
         }

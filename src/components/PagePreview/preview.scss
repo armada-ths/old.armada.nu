@@ -50,7 +50,7 @@
 
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $breakpoint-pad) {
 
     .newsitem{
         text-align: center;

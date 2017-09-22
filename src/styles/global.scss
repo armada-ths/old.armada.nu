@@ -35,6 +35,8 @@ body{
     padding-right: 100px;
     max-width: 850px;
     margin: auto;
+    margin-top: 50px;
+    
 
     p {
         text-align: justify;
@@ -173,8 +175,10 @@ h3 {
 
 @media screen and (max-width: $breakpoint-mobile) {
   .body {
-      padding-left: 0px;
-      padding-right: 0px;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-left: 0;
+      padding-right: 0;
       font-size: 16pt;
   }
 

@@ -13,12 +13,14 @@ const Homepage = (props) => {
 
 
   return (
+    <div>
+    <Jumbotron video={vid} image={props.head.header} header_class="header-home"/>
     <Page { ...props }>
-      <Jumbotron video={vid} image={props.head.header} header_class="header-home"/>
       <div className="body">
           <Newsfeed />
       </div>
     </Page>
+      </div>
   )
 }
 

@@ -37,7 +37,7 @@ ul.newsfeed {
     border-bottom: 1px solid $melon;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: $breakpoint-pad) {
     ul.newsfeed {
         li.regular {
             img {

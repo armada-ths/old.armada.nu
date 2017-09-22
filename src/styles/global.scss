@@ -127,7 +127,18 @@ h3 {
 
 
 @media screen and (max-width: $breakpoint-pad) {
-  
+  h2{
+    font-size: 1.4em;
+  }
+  h1{
+    font-size: 2.1em;
+  }
+  .armada-news{
+      h1{
+        font-size: 3.0em;
+      }
+  }
+
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
@@ -145,8 +156,36 @@ h3 {
   h2{
     font-size: 1.8em;
   }
+  h1{
+    font-size: 2.0em;
+  }
+  .armada-news{
+      h1{
+        font-size: 3.0em;
+      }
+  }
  
 }
+
+@media screen and (max-width: 350px) {
+
+  p {
+    font-size: 12pt;
+  }
+  h2{
+    font-size: 1.4em;
+  }
+  h1{
+    font-size: 1.8em;
+  }
+  .armada-news{
+      h1{
+        font-size: 2.0em;
+      }
+  }
+ 
+}
+
 
 img {
   border: none;

@@ -17,7 +17,7 @@ class PagePreview extends React.Component {
   render = () => {
       const pageDate = this.props.date ? new Date(this.props.date) : null
 
-      const ingressSection = this.props.featured ? (<p className="ingress"> {this.props.ingress} </p>) : null;
+      const ingressSection = this.props.featured ? (<p className="ingress"> {this.props.ingress} </p>) : <p className="description"> {this.props.description.substring(0,40) + "..."} </p>;
 
 
       return (

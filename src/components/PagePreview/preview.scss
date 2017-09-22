@@ -20,6 +20,10 @@
 
 .newsitem.regular {	
 	margin: 2em 0em;
+    p {
+            margin: 0;
+            font-size: 0.8em;
+    }
     img {
 		margin: 0em 1em 0em 0em;
         width: 300px;
@@ -48,9 +52,19 @@
 
 @media screen and (max-width: 800px) {
 
+    .newsitem{
+        text-align: center;
+        img{
+            border-radius: 100%;
+        }
+    }
+
 	.newsitem.regular {
         text-align: center;
 		margin: 1em 0em;  
+        p{
+            text-align: center;
+        }
 		img {
 			margin: 0em;
 			height: auto;

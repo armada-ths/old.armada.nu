@@ -56,7 +56,11 @@ ul.newsfeed {
         display: flex;
         flex-direction: column;
         align-items: center;
+        img {
+            margin-bottom: 1em;
+        }
     }
 
 }
-    
+
+

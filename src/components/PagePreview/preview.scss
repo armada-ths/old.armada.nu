@@ -1,7 +1,9 @@
 @import '../../styles/_variables';
 
-a ~ h1:hover,h2:hover {
-  text-decoration: underline;
+.preview-content{
+    a ~ h1:hover,h2:hover {
+      text-decoration: underline;
+    }
 }
 
 .ingress {

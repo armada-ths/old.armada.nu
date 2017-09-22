@@ -1,4 +1,5 @@
 @import '../../styles/global';
+@import '../../styles/_variables';
 
 .newspage {
     padding-bottom: 50px;
@@ -22,4 +23,11 @@
     min-width: 200px;
     margin-top: 20px;
     border: 1px solid;
+}
+
+.signature {
+    display: inline-block;
+    padding-top: 2px;
+    border-top: 1px solid $melon;
+    color: $melon;
 }

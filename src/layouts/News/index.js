@@ -18,15 +18,18 @@ const News = (props) => {
           <img src={props.head.cover_wide} />
             <Page
               { ...props }
-              header={
-                <header>
+              footer={
+                <div className="signature">
+                  THS ARMADA <br/>
                   {
                   pageDate &&
+                  <small>
                   <time key={ pageDate.toISOString() }>
                     { pageDate.toDateString() }
                   </time>
+                  </small>
                   }
-                </header>
+                </div>
               }
             >
             </Page>

@@ -151,8 +151,8 @@ h3 {
 
 @media screen and (max-width: $breakpoint-mobile) {
   .body {
-      margin-left: 20px;
-      margin-right: 20px;
+      margin-left: 30px;
+      margin-right: 30px;
       padding-left: 0;
       padding-right: 0;
       font-size: 16pt;
@@ -175,8 +175,15 @@ h3 {
  
 }
 
-@media screen and (max-width: 350px) {
 
+@media screen and (max-width: 350px) {
+  .body {
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-left: 0;
+      padding-right: 0;
+      font-size: 16pt;
+  }
   p {
     font-size: 12pt;
   }

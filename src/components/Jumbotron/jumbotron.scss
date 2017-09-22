@@ -11,13 +11,14 @@
 
 #header {
     position: relative;
-    min-height: $header-height;
+    min-height: $header-min-height;
     background-color: $licorice;
 
     .header-image{
         background-color: $licorice;
         height: $header-height;
         z-index: -2;
+        overflow: hidden;
         img{
             filter: blur(2px) brightness(0.9);
             min-width: 100%;
@@ -38,6 +39,8 @@
         max-height: 90%;
         height: 90vh;
         width: 100vw;
+        overflow:hidden;
+        width: 100%;
         img{
             filter: blur(2px) brightness(0.9);
             min-width: 100%;

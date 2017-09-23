@@ -9,7 +9,6 @@ class PagePreview extends React.Component {
       super(props);
       this.state = {
         open:false,
-        mobile: false
       };
   }
 
@@ -17,10 +16,9 @@ class PagePreview extends React.Component {
       this.setState({open: !this.state.open});
   }
 
+
   render = () => {
-      if(window.innerWidth < 470) {
-        this.state.mobile = true;
-      } 
+
       const pageDate = this.props.date ? new Date(this.props.date) : null
 
       const ingressSection = this.props.featured ? (<p className="ingress"> {this.props.ingress} </p>) : <p className="description"> {this.props.description.substring(0,40) + "..."} </p>;
@@ -36,13 +34,13 @@ class PagePreview extends React.Component {
 
       return (
         <div className={"newsitem " +  (this.props.featured ? "featured" : "regular")}>
-          <Link to={this.props.__url} className={!this.state.mobile ? "regular-news-link" : null}>
+          <Link to={this.props.__url} className={!( window.innerWidth < 470 ) ? "regular-news-link" : null}>
             <img src={this.props.cover_wide ? this.props.cover_wide : this.props.cover_square} />
             <div className="preview-content">
             <h2>{ this.props.title }</h2>
-            {this.state.mobile && !this.props.featured ? (<br />) : null}
+            {( window.innerWidth < 470 ) && !this.props.featured ? (<br />) : null}
             {dateSection}
-            {!this.state.mobile || this.props.featured ? ingressSection : null} 
+            {!( window.innerWidth < 470 ) || this.props.featured ? ingressSection : null} 
             </div>
           </Link>
         </div>

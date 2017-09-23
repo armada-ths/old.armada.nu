@@ -1,8 +1,8 @@
 ---
 layout: News
 title: Test news all day
-cover_wide: /assets/DSC_0025-1.JPG
-cover_square: /assets/square_coffee.jpg
+cover_wide: /assets/53image.JPG
+cover_square: /assets/values.png
 featured: false
 ingress: ' non aliqua consequat labore cillum veniam consequat do mollit enim consequat laborum nulla velit minim velit consequat non veniam labore aliquip.'
 date: 2017-09-18T18:14:49.807Z
@@ -18,3 +18,4 @@ Excepteur mollit fugiat ut
 Laboris in exercitation dolor amet ut elit duis aliqua id dolor excepteur exercitation aute quis exercitation non do deserunt quis excepteur sint eiusmod tempor consectetur velit irure cupidatat aliqua nisi.
 
 Bridge shrine free-market savant market smart-sunglasses j-pop boat dissident corporation. Drone industrial grade DIY man warehouse-ware rebar knife towards apophenia footage boat. Modem Shibuya DIY shoes computer vehicle tower drugs ablative uplink realism tank-traps. Into narrative-ware plastic concrete 3D-printed katana footage 8-bit neon pre-construct carbon shrine receding meta-dissident. Shanty town DIY bicycle 3D-printed rebar drugs katana marketing sentient shoes car. 
+

@@ -18,11 +18,12 @@ class PagePreview extends React.Component {
 
   isMobile() {
       if (global.window!=undefined) {
-        return (window.innerWidth < 470) ? true : false
+        return window.innerWidth < 470 ? true : false
       } else {
         return false
       }
   }
+
   render = () => {
 
       const pageDate = this.props.date ? new Date(this.props.date) : null
@@ -40,13 +41,13 @@ class PagePreview extends React.Component {
 
       return (
         <div className={"newsitem " +  (this.props.featured ? "featured" : "regular")}>
-          <Link to={this.props.__url} className={!this.isMobile ? "regular-news-link" : null}>
+          <Link to={this.props.__url} className={!this.isMobile() ? "regular-news-link" : null}>
             <img src={this.props.cover_wide ? this.props.cover_wide : this.props.cover_square} />
             <div className="preview-content">
             <h2>{ this.props.title }</h2>
-            {this.isMobile && !this.props.featured ? (<br />) : null}
+            {this.isMobile() && !this.props.featured ? (<br />) : null}
             {dateSection}
-            {!this.isMobile || this.props.featured ? ingressSection : null} 
+            {!this.isMobile() || this.props.featured ? ingressSection : null} 
             </div>
           </Link>
         </div>

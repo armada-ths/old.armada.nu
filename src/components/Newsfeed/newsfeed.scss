@@ -1,16 +1,7 @@
 @import '../../styles/_variables';
 
 .newsfeed {
-}
-
-.post{
-  box-sizing: border-box;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.12);
-  background-color: white;
-  border-radius: 2pt;
-  margin: 1em 0em;
-  padding: 1em;
-
+    margin: 2em 0em;
 }
 
 ul.newsfeed {
@@ -44,8 +35,9 @@ ul.newsfeed {
 .armada-news {
     text-align: center;
     border-bottom: 1px solid $melon;
+    margin: 2em 0em 5em 0em;
 }
-
+/*
 @media all and (max-width: $breakpoint-pad) {
     ul.newsfeed {
         li.regular {
@@ -65,11 +57,8 @@ ul.newsfeed {
         display: flex;
         flex-direction: column;
         align-items: center;
-        img {
-            margin-bottom: 1em;
-        }
     }
 
 }
-
+*/
 

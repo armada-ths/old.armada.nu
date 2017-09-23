@@ -2,10 +2,18 @@
 @import "fonts";
 
 html{
-    margin:0;
+    position: relative;
     width:100%;
-    height:100%;
-    padding:0;
+    padding:0px;
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+li {
+  margin: 0px;
+  padding: 0px;
 }
 
 .dark-theme{
@@ -28,31 +36,29 @@ html{
 
 }
 
-
-body{
-  margin:0;
+body {
+  position: relative;
   color: $licorice;
   font-family: $font-regular;
   font-size: $body-font-size;
+  overflow-x: hidden;
+  margin: 0px;
+  position: relative;
+  min-height: 100%;
+  height: auto;
 }
 
-.body{
-    padding-bottom: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
-    max-width: 850px;
-    margin: auto;
-    margin-top: 30px;
-    
-
-    p {
-        text-align: justify;
-    }
+.body {
+  max-width: 850px;
+  margin: auto;
 }
 
-.content{
-    min-height:90vh;
-    width: 100%;
+.content {
+    overflow-x: hidden;
+    margin: 0px;
+    position: relative;
+    min-height: 100%;
+    height: auto;
 }
 
 .title {
@@ -72,9 +78,9 @@ body{
 p {
   color: $licorice;
   font-family: $body-font-family;
-  font-size: $body-font-size;
   line-height: $body-font-line-multiplier;
   font-weight: 300;
+  text-align: justify;
 }
 
 a {
@@ -133,6 +139,12 @@ h3 {
 }
 
 
+/*
+
+  TODO: Some margins for text should be fixed in the ipad device size 
+  but removing at the moment before implementing a more general solution.
+
+  We need to test this on a real device.  
 
 @media screen and (max-width: $breakpoint-pad) {
   h2{
@@ -148,18 +160,12 @@ h3 {
   }
 
 }
+*/
 
 @media screen and (max-width: $breakpoint-mobile) {
-  .body {
-      margin-left: 30px;
-      margin-right: 30px;
-      padding-left: 0;
-      padding-right: 0;
-      font-size: 16pt;
-  }
-
-  p {
-    font-size: 14pt;
+  //  SET BODY FOINT-SIZE
+  body {
+    font-size: 16pt;
   }
   h2{
     font-size: 1.8em;
@@ -177,16 +183,8 @@ h3 {
 
 
 @media screen and (max-width: 350px) {
-  .body {
-      margin-left: 20px;
-      margin-right: 20px;
-      padding-left: 0;
-      padding-right: 0;
-      font-size: 16pt;
-  }
-  p {
-    font-size: 12pt;
-  }
+  // SET BODY FONT-SEIZE
+
   h2{
     font-size: 1.4em;
   }

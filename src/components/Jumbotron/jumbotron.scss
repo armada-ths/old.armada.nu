@@ -66,23 +66,24 @@
 }
 
 .logo-container {
-        @include centerer;
-        z-index: 2;
-        text-align: center;
-        height: 65%;
+    @include centerer;
+    z-index: 2;
+    text-align: center;
+    height: 65%;
 
-    >img {
+    img {
         max-height:90%;
         max-width: 100%;
     }
 
-    >p{
+    p{
       font-family: "Bebas Neue", "Helvetica", "Arial";
       font-weight: 300;
       font-size: 4vh;
       margin-top: 16px;
       margin-bottom: 16px;
       color: $text-color-light;
+      text-align: center;
     }
   }
 

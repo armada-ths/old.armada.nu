@@ -16,25 +16,27 @@ const News = (props) => {
       <div className="body">
         <div className ="newsarticle">
           <img src={props.head.cover_wide} />
-          <h1> {props.head.title} </h1>
-          <p className="ingress"> {props.head.ingress} </p>
-            <Page
-              { ...props }
-              footer={
-                <div className="signature">
-                  THS ARMADA <br/>
-                  {
-                  pageDate &&
-                  <small>
-                  <time key={ pageDate.toISOString() }>
-                    { pageDate.toDateString() }
-                  </time>
-                  </small>
-                  }
-                </div>
-              }
-            >
+          <div className="article-text">
+            <h1> {props.head.title} </h1>
+            <p className="ingress"> {props.head.ingress} </p>
+              <Page
+                { ...props }
+                footer={
+                  <div className="signature">
+                    THS ARMADA <br/>
+                    {
+                    pageDate &&
+                    <small>
+                    <time key={ pageDate.toISOString() }>
+                      { pageDate.toDateString() }
+                    </time>
+                    </small>
+                    }
+                  </div>
+                }
+              >
             </Page>
+            </div>
         </div>
       <Newsfeed  displayed_article={props.head.title}/>
       </div>

@@ -6,10 +6,18 @@
       height: $height;
 }
 
+img { 
+        max-width: 100%;
+        height: auto;
+}
+
 .preview-content{
     a ~ h1:hover,h2:hover {
       text-decoration: underline;
     }
+    margin: 0px;
+    padding: 0px;
+
 }
 
 .ingress {
@@ -24,23 +32,27 @@
     padding-bottom: 5px;
 }
 
-.newsitem.regular {	
-    p {
-            margin: 0;
-            font-size: 0.8em;
-    }
+.newsitem.regular {
+    margin: 2em 0em;	
     img {
 		margin: 0em 1em 0em 0em;
-        width: 300px;
-        max-height: 180px;
+        width: auto;
+        height: auto;
+        max-height: 281px;
+    }
+
+    .regular-news-link {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
     }
 }
 
 
 .newsitem.featured {
-
+    margin: 3em 0em;
 	.preview-content {
-		margin-bottom: 3em;
+		margin: 0em 0em 3em 0em;
 	}
 
     img {
@@ -52,40 +64,58 @@
 
 
 
-
+/*
 @media screen and (max-width: $breakpoint-pad) {
 
-    .newsitem{
-        text-align: center;
+    .newsitem {
         img{
-            width: 675px;
-            height: 405px;
-            max-width: 100%;
-            border-radius: 100%;
-            margin: auto;
+            height: 12em;
+            width: 100%;
         }
     }
 
 	.newsitem.regular {
-        text-align: center;
-		margin: 1em 0em;  
-        p{
-            text-align: center;
-        }
 		img {
 			margin: 0em;
 		}
 	}
 }
-
-@media screen and (max-width: 450px) {
-    .newsitem{
-        text-align: center;
-        img{
-            width: 495px;
-            height: 297px;
-            margin: auto;
-        }
+*/
+@media screen and (max-width: $breakpoint-mobile) {
+    .post {
+        margin: 2em 0em;
+        height: 200px;
+    }
+    .preview-content {
+        margin: 1em $mobile-edge;
     }
 
+    .newsitem.featured {
+        .preview-content {
+            margin: 1em 5vw 3em 5vw;
+        }
+        img {
+            margin: 2em 0em 0em 0em;
+            width:100%;
+            height: auto;
+       }
+    }
+
+    .newsitem.regular {
+        .preview-content {
+            margin: -200px 0px 0px 0px;
+            h2 {
+                display: inline;
+                background-color: #fff;
+                padding: 0.2em 0.25em 0em 0.25em;
+            }
+            time {
+                display: inline;
+                width: auto;
+                margin: 0px;
+                background-color: #fff;
+                padding: 0em 0em 0em 0.5em;
+            }
+        }
+    }
 }

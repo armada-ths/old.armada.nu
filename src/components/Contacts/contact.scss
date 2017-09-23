@@ -26,7 +26,7 @@
   -webkit-justify-content: space-between;
   align-items: center;
   -webkit-align-items: center;
-  padding-top: 10px;
+  padding-top: 15vh;
 }
 
 
@@ -34,10 +34,13 @@
   padding-top: 5px;
 }
 
+.contact-body {
+  min-height: 70vh;
+}
 
 .contact-body p {
   max-width: 100%;
-  margin: 0;
+  margin: 0px;
   text-align: center;
 }
 

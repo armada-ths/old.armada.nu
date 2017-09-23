@@ -7,7 +7,10 @@ class PagePreview extends React.Component {
 
   constructor(props){
       super(props);
-      this.state = {open:false};
+      this.state = {
+        open:false,
+        mobile: false
+      };
   }
 
   toggle_open(){
@@ -15,29 +18,34 @@ class PagePreview extends React.Component {
   }
 
   render = () => {
+      if(window.innerWidth < 470) {
+        this.state.mobile = true;
+      } 
       const pageDate = this.props.date ? new Date(this.props.date) : null
 
       const ingressSection = this.props.featured ? (<p className="ingress"> {this.props.ingress} </p>) : <p className="description"> {this.props.description.substring(0,40) + "..."} </p>;
 
-
-      return (
-        <Link to={this.props.__url} className={"newsitem " +  (this.props.featured ? "featured" : "regular")}>
-          <img src={this.props.cover_wide ? this.props.cover_wide : this.props.cover_square} />
-         <div className="preview-content">
-            <h2>{ this.props.title }</h2>
-          {
-            pageDate &&
+      const dateSection = (pageDate &&
             <small>
               { " " }
               <time key={ pageDate.toISOString() }>
                 { pageDate.toDateString() }
               </time>
             </small>
-          }
+          )
 
-          {ingressSection}
-          </div>
-        </Link>
+      return (
+        <div className={"newsitem " +  (this.props.featured ? "featured" : "regular")}>
+          <Link to={this.props.__url} className={!this.state.mobile ? "regular-news-link" : null}>
+            <img src={this.props.cover_wide ? this.props.cover_wide : this.props.cover_square} />
+            <div className="preview-content">
+            <h2>{ this.props.title }</h2>
+            {this.state.mobile && !this.props.featured ? (<br />) : null}
+            {dateSection}
+            {!this.state.mobile || this.props.featured ? ingressSection : null} 
+            </div>
+          </Link>
+        </div>
       )
     }
 }

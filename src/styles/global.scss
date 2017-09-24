@@ -49,6 +49,7 @@ body {
 }
 
 .body {
+  // TODO: this class needs to be renamed
   max-width: 850px;
   margin: auto;
 }
@@ -165,7 +166,7 @@ h3 {
 @media screen and (max-width: $breakpoint-mobile) {
   //  SET BODY FOINT-SIZE
   body {
-    font-size: 16pt;
+    font-size: 14pt;
   }
   h2{
     font-size: 1.8em;

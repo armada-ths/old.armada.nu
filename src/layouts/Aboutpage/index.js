@@ -4,12 +4,13 @@ import Page from "../Page"
 import Jumbotron from "../../components/Jumbotron"
 import Partners from "../../components/Partners"
 
+import "./index.scss"
 
 const Aboutpage = (props) => {
   return (
       <div className="content">
         <Jumbotron image={props.head.header} />  
-        <div className="body">
+        <div className="aboutpage-container">
           <Page { ...props } >
           </Page>
         <Partners/>

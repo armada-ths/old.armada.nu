@@ -92,16 +92,17 @@ img {
 
     .newsitem.featured {
         .preview-content {
-            margin: 1em 5vw 3em 5vw;
+            margin: 1em 5vw 0em 5vw;
         }
         img {
-            margin: 2em 0em 0em 0em;
+            margin: 0em 0em 0em 0em;
             width:100%;
             height: auto;
        }
     }
 
     .newsitem.regular {
+        margin: 0em 0em;
         .preview-content {
             margin: -200px 0px 0px 0px;
             h2 {

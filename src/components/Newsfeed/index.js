@@ -18,14 +18,19 @@ const Newsfeed = (props, { collection }) => {
   })
   .slice(0, props.numberOfPosts || defaultNumberOfPosts)
 
-  latestPosts.splice(latestPosts.findIndex( (element) => {
+  let displayedArticleIndex = latestPosts.findIndex( (element) => {
       return element.title === props.displayed_article;
-      }),1);
+      });
+
+  if (displayedArticleIndex >=0){
+      latestPosts.splice(displayedArticleIndex,1);
+  }
 
 
   const featuredPostIndex = latestPosts.findIndex( (element) =>{
       return element.featured;
     });
+
     const featuredPost = featuredPostIndex >=0 ? <PagePreview {...latestPosts[featuredPostIndex]} /> : null;
     if (featuredPostIndex >= 0) {
         latestPosts.splice(featuredPostIndex, 1);

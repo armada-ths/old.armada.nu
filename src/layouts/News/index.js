@@ -2,7 +2,6 @@ import React, { PropTypes } from "react"
 
 import Page from "../Page"
 import Jumbotron from "../../components/Jumbotron"
-import Newsfeed from "../../components/Newsfeed"
 
 import './news.scss'
 
@@ -38,7 +37,6 @@ const News = (props) => {
             </Page>
             </div>
         </div>
-      <Newsfeed  displayed_article={props.head.title}/>
       </div>
   </div>
   )

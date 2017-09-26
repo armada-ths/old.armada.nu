@@ -11,10 +11,11 @@ const Navbar = () => (
                         <Link to='/#newstitle'>NEWS</Link>
                         <Link to='/about'>ABOUT</Link>
                         <Link to='/contact'>CONTACT</Link>
+                        <Link to='/events'>EVENTS</Link>
                     </div>
                 </nav>
             </div>
-      
+
       </header>
 )
 

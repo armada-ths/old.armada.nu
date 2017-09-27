@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: armada-ths/armada.nu
-  branch: master
+  branch: webtest
 
 public_folder: "/assets"
 media_folder: "content/assets"

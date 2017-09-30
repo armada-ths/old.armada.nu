@@ -4,6 +4,8 @@ import PageSections from "../../components/PageSections"
 import Jumbotron from "../../components/Jumbotron"
 import Page from "../Page"
 
+import "./pagesections.scss"
+
 const PageSectionsLayout = (props) => {
 
   var vid = null;
@@ -16,7 +18,7 @@ const PageSectionsLayout = (props) => {
     <div>
     <Jumbotron video={vid} image={props.head.header} header_class="header-home"/>
     <Page { ...props }>
-      <div className="body">
+      <div className="body pagesectionsbody">
           <PageSections />
       </div>
     </Page>

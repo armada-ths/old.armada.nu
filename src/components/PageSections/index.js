@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import enhanceCollection from "phenomic/lib/enhance-collection"
 
-import PageSection from "../../components/PagePreview"
+import PageSection from "../../components/PageSection"
 
 import "./pagesections.scss"
 

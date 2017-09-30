@@ -1,5 +1,4 @@
 import React, { PropTypes } from "react"
-import {Link} from 'react-router'
 import axios from "axios"
 
 import './pagesection.scss';
@@ -30,19 +29,11 @@ class PageSection extends React.Component {
   }
 
   render = () => {
-
-      const dateSection = (pageDate &&
-            <small>
-              { " " }
-              <time key={ pageDate.toISOString() }>
-                { pageDate.toDateString() }
-              </time>
-            </small>
-          )
-
-      return (
+     return (
         <div className={"pagesection " +  (this.props.right ? "right" : "left")}>
-            <img src={this.props.header} />
+            <div className="image">
+                <img src={this.props.header} />
+            </div>
             <div className="pagesection-body">
                 <h2>{ this.props.title }</h2>
                 <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
@@ -58,6 +49,7 @@ PageSection.propTypes = {
   __filename: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   header: PropTypes.string,
+  right: PropTypes.boolean,
 }
 
 export default PageSection

@@ -38,7 +38,7 @@ collections:
       - {label: "Header", name: "header", widget: "image", optional: true}
       - {label: "Body", name: "body", widget: "markdown"}
 
- - name: "fair-info"
+  - name: "fair-info"
     label: "Fair Info"
     folder: "content/fair-info"
     create: true

@@ -11,4 +11,13 @@ Armada Run is a 5 km race close to KTH and really opens the opportunity to chall
 
 The first 100 to sign up for the event will receive a very special goodie bag. [Register here](https://ais.armada.nu/fairs/2017/events/20/signup) no later than 10th of October 23:59.
 
-All profits are donated to Childhood Cancer Foundation.
+All profits are donated to Childhood Cancer Foundation. 
+
+If you have any questions, please contact us at armadarun@armada.nu
+
+![]()
+
+![nocco](http://ais.armada.nu/static/images/nocco_small.png) ![]() ![Essity](http://ais.armada.nu/static/images/essity_small.png) ![]() ![Barebells](http://ais.armada.nu/static/images/barebells_small.png) ![]() ![njie](http://ais.armada.nu/static/images/njie_small.png) ![]() ![runofhope](http://ais.armada.nu/static/images/runofhope_small.png)
+
+
+

@@ -1,6 +1,16 @@
 @import "../../styles/_variables";
 @import "../../styles/_fonts";
 
+.hamburger{
+    font-size: 1.5em;
+}
+
+.cross{
+    margin-top:-5px;
+    font-size: 4em;
+    margin-bottom: -0.5em;
+}
+
 #navbar{
   position: absolute;
   width: 100%;
@@ -9,7 +19,11 @@
   font-family: $font-title;
   font-size: 110%;
   letter-spacing: 1.4px;
-  
+
+
+  >.hidden{
+      display: none;
+  }
 
   .menu-wrapper {
     background-color: $licorice;
@@ -19,6 +33,10 @@
   
     display: inline-block;
     padding: 15px 10px 10px 10px;
+
+    .menu-hamburger{
+        display:none;
+    }
 
     .menu{
       a {
@@ -38,4 +56,54 @@
   }
 }
 
+@media screen and (max-width: $breakpoint-mobile) {
+    #navbar{
+        top: 1em;
+        
+        .menu-wrapper {
+            width: 80%;
+            padding: 15px 0px 10px 10px;
 
+            .menu-hamburger{
+                padding-right:10px;
+                text-align: right;
+                display: block;
+                color: white;
+
+            }
+
+            .menu{
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                line-height: 1.8;
+                font-size: 1.5em;
+                a {
+                    border-right: none;
+                    border-bottom: 1px solid;
+                    &:hover{
+                      border-right: none !important;
+                      border-bottom: 1px solid $text-color-light;
+                    }
+                }
+                a:last-child{border-bottom: 0 !important;}
+            }
+
+            .hidden {
+                display: none;
+            }
+
+        }
+
+        .menu-wrapper.hidden {
+            background-color: transparent;
+            text-align: right;
+            display: inline-block;
+        }
+
+        .menu-wrapper.visible{
+            background-color: $licorice;
+        }
+    }
+
+}

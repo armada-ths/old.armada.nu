@@ -14,16 +14,22 @@
     }
 }
 
-.pagesection-body{
+.pagesection.right{
+    flex-direction: row-reverse;
+}
+
+.pagesection-body-container{
     width: 50%;
-    padding: 1em;
+    .pagesection-body{
+        padding: 1em;
 
-    h1 {
-      font-size: 34px;
-    }
+        h1 {
+          font-size: 34px;
+        }
 
-    
-    .title{
-      color : red;
+        
+        .title{
+          color : red;
+        }
     }
 }

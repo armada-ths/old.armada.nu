@@ -34,9 +34,11 @@ class PageSection extends React.Component {
             <div className="image">
                 <img src={this.props.header} />
             </div>
-            <div className="pagesection-body">
-                <h1 className="title">{ this.props.title }</h1>
-                <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
+            <div className="pagesection-body-container">
+                <div className="pagesection-body">
+                    <h1 className="title">{ this.props.title }</h1>
+                    <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
+                </div>
             </div>
         </div>
       )

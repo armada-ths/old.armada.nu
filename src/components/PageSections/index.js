@@ -14,7 +14,7 @@ const PageSections = (props, { collection }) => {
   });
     
 
-  sections = sections.map( (section) => (<PageSection {...section}/>) );
+  sections = sections.map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
 
     return (
         <div>

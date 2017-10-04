@@ -14,5 +14,3 @@ The first 100 to sign up for the event will receive a very special goodie bag. [
 All profits are donated to Childhood Cancer Foundation. 
 
 If you have any questions, please contact us at armadarun@armada.nu
-
-![Essity](http://ais.armada.nu/static/images/essity_small.png)![Barebells](http://ais.armada.nu/static/images/barebells_small.png)![njie](http://ais.armada.nu/static/images/njie_small.png)![runofhope](http://ais.armada.nu/static/images/runofhope_small.png)![nocco](http://ais.armada.nu/static/images/nocco_small.png)

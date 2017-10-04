@@ -13,6 +13,15 @@ import News from "./layouts/News"
 import Events from "./layouts/Events"
 import PageSectionsLayout from "./layouts/PageSectionsLayout"
 
+
+const ReactGA = require('react-ga');
+ReactGA.initialize('UA-107526633-1');
+
+const _route_change_handler = (location) => {
+  ReactGA.set({page: location.pathname});
+  ReactGA.pageview(location.pathname);
+};
+
 const PageContainer = (props) => (
   <PhenomicPageContainer
     { ...props }
@@ -31,7 +40,16 @@ const PageContainer = (props) => (
 );
 
 export default (
-  <Route component={ AppContainer }>
+  <Route component={ AppContainer }
+    onChange={(prevState, nextState) => {
+      _route_change_handler(nextState.location);
+      return true;
+    }}
+    onEnter={(nextState) => {
+      _route_change_handler(nextState.location);
+      return true;
+    }}
+    >
     <Route path="*" component={ PageContainer } />
   </Route>
 )

@@ -24,7 +24,7 @@ export default class GoogleAnalyticsTracker extends Component {
         ga("create", pkg.googleAnalytics, "auto");
       }
       else {
-        console.info("ga.create", pkg.googleAnalytics);
+        //console.info("ga.create", pkg.googleAnalytics);
       }
       this.logPageview();
     }
@@ -43,7 +43,7 @@ export default class GoogleAnalyticsTracker extends Component {
         ga("send", "pageview");
       }
       else {
-        console.info("New pageview", window.location.href);
+        //console.info("New pageview", window.location.href);
       }
     }
   }

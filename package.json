@@ -4,6 +4,7 @@
   "homepage": "http://mdwp-phenomic.netlify.com",
   "twitter": "mdwp",
   "repository": "https://github.com/capriosa/mdwp-phenomic",
+  "googleAnalytics": "UA-107526633-1",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "stylelint \"src/**/*.css\"",
@@ -134,6 +135,6 @@
   "dependencies": {
     "axios": "^0.16.2",
     "prop-types": "^15.5.10",
-    "react-ga": "^2.3.5"
+    "react-google-analytics": "^0.2.0"
   }
 }

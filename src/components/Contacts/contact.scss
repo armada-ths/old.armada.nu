@@ -34,8 +34,13 @@
   padding-top: 5px;
 }
 
+.light{
+    color: $text-color-light;
+}
+
 .contact-body {
   min-height: 70vh;
+  background-color: $licorice;
 }
 
 .contact-body p {

@@ -12,6 +12,7 @@ import Contactpage from "./layouts/Contactpage"
 import News from "./layouts/News"
 import Events from "./layouts/Events"
 import PageSectionsLayout from "./layouts/PageSectionsLayout"
+import ExhibitorInfo from "./layouts/ExhibitorInfo"
 
 
 const ReactGA = require('react-ga');
@@ -35,6 +36,7 @@ const PageContainer = (props) => (
       News,
       Events,
       PageSectionsLayout,
+      ExhibitorInfo,
     }}
   />
 );

@@ -28,7 +28,6 @@ class Navbar extends React.Component {
                         <div className={"menu " + (this.state.expanded ? "visible" :"hidden")} >
                             <Link to='/#newstitle'>NEWS</Link>
                             <Link onClick={toggleExpand} to='/about'>ABOUT</Link>
-                            <Link onClick={toggleExpand} to='/contact'>CONTACT</Link>
                             <Link onClick={toggleExpand} to='/events'>EVENTS</Link>
                             <Link onClick={toggleExpand} to='/fair_info'>EXHIBITOR INFO</Link>
                         </div>

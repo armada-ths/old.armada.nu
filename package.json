@@ -133,7 +133,6 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "prop-types": "^15.5.10",
-    "react-ga": "^2.3.5"
+    "prop-types": "^15.5.10"
   }
 }

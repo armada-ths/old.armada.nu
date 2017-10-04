@@ -1,11 +1,9 @@
 ---
-title: Webtest123
+title: General info
 layout: Fair_info
 priority: '1'
 header: /assets/53comp.png
 ---
-
-## General information
 
 The Armada fair is the biggest student career fair in the Nordic countries. This year we gather 171 companies during the two career days, who will meet and connect with more than 12,000 of sweden's top engineering and architectural students from KTH, The Royal Institute of Technology. 
 
@@ -29,4 +27,5 @@ This years Armada fair is fully booked, if you represent a company that are inte
 * Email address: 
 
 * Telephone number: 
+
 

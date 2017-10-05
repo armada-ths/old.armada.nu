@@ -19,3 +19,22 @@
     padding: 1em;
 }
 
+@media screen and (max-width: $breakpoint-mobile) {
+    .pagesection {
+
+        flex-direction: column;
+
+        .image {
+            width: 100%;
+
+        }
+
+        .pagesection-body {
+            width: auto;
+            padding: 1.5em;
+        }
+    }
+}
+
+
+

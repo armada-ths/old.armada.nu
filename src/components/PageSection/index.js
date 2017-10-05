@@ -36,6 +36,7 @@ class PageSection extends React.Component {
             </div>
             <div className="pagesection-body">
                 <h2>{ this.props.title }</h2>
+            <br/>
                 <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
             </div>
         </div>

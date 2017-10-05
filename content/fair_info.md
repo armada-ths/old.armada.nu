@@ -1,6 +1,6 @@
 ---
 title: THS Armada
-layout: PageSectionsLayout
+layout: ExhibitorInfo
 header: /assets/TheFair.png
 ---
  

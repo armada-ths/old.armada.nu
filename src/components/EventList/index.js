@@ -25,13 +25,31 @@ class EventList extends React.Component {
 
 
     render() {
+      let today = new Date();
+      // console.error(today)
+      // {today.toString()}
+      // {this.state.events.map(event => (<li>{event.event_start} {event.name} </li>))}
+
+      let comingEvents = this.state.events.filter(event => event.event_start*1000 > today)
+      let pastEvents = this.state.events.filter(event => event.event_start*1000 < today)
+
         return (
             <div className="events">
-            <h2> Events </h2>
-            <div className="events-table">
-            {/*below :map = for-loop   translation: for every even*/}
-            {this.state.events.map (event => {
-                let date = new Date (event.event_start * 1000); //from seconds to milliseconds
+
+                <h1> Events </h1>
+
+                <div className="events-table">
+
+{/*                        <h2> Upcoming Events </h2>
+
+                        {comingEvents.map(event => (
+                        <li>{new Date(event.event_start*1000).toISOString()} {event.event_start} {event.name} </li>))}
+
+                        <h2> Past Events </h2>
+                        {pastEvents.map(event => (<li>{new Date(event.event_start*1000).toISOString()} {event.name} </li>))}*/}
+
+                        {this.state.events.map (event => {
+                        let date = new Date (event.event_start * 1000); //from seconds to milliseconds
 
                 return (
                 <div className = "event-item">
@@ -57,8 +75,9 @@ class EventList extends React.Component {
 
           )}
 
+
+                </div>
         </div>
-            </div>
         );
     }
 

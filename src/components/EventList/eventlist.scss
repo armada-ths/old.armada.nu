@@ -1,25 +1,38 @@
 @import '../../styles/_variables';
 
+.events-table {
+
+
+
+  flex-direction: column;
+}
+
 .event-item {
 
 
-
-
+flex-direction: row;
 
 
 }
 
 .date-section{
 
+  width: 20%;
+  height: 100%;
+
 
 }
 
 .image-section{
 
+  width: 40%;
+  height: 100%;
 
 }
 
 .details-section{
 
+  width: 40%;
+  height: 100%;
 
 }

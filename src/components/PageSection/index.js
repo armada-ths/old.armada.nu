@@ -48,11 +48,23 @@ class PageSection extends React.Component {
           </div>
 
             <div className="pagesection-body-container">
+            <Sticky>
+              {
+                ({style}) => {
+                  return (
+                    <div style={style}>
                 <div className="pagesection-body">
                     <h1 className="pagesection-title">{ this.props.title }</h1>
                     <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
                 </div>
             </div>
+          )
+
+        }
+      }
+      </Sticky>
+            </div>
+
         </StickyContainer>
       )
     }

@@ -15,5 +15,6 @@ All profits are donated to Childhood Cancer Foundation.
 
 If you have any questions, please contact us at armadarun@armada.nu
 
-![Our sponsors](http://ais.armada.nu/static/images/spons.png)
+![null](/assets/spons.png)
+
 

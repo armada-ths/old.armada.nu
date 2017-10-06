@@ -24,7 +24,7 @@ header: /assets/mattor.JPG
 
   Jenny Fält, logistics@armada.nu, \+4670-867 78 44.
 
- All  information and terms for Armada Transport can be found on this [link](https://docs.google.com/document/d/1fSgp3hjEYBodaZjw1nUgAv2QlQm9vBYOuM1Yhqi7g_g/edit)
+  All  information and terms for Armada Transport can be found on this [link](https://docs.google.com/document/d/1fSgp3hjEYBodaZjw1nUgAv2QlQm9vBYOuM1Yhqi7g_g/edit)
 
 ## Transport from the fair
 
@@ -38,7 +38,8 @@ header: /assets/mattor.JPG
 
 * If you have chosen our Armada Transport service, you can leave your goods at your stand. Please pack “transport friendly”. It’s your responsibility to make sure that the goods for Armada Transport are packaged and ready to go. The goods will be sent to your chosen address during the following days. Your host has collected information about your deliveries and address if you are using our service.
 
-* It’s possible to store special goods at KTH for one night after the fair. The stored goods are picked up 23rd of November. If you wish to store goods overnight after the closing of the fair, please contact our Transport Coordinator Jenny Fält.
+* It’s possible to store special goods at KTH for one night after the fair. The stored goods are picked up 23rd of November. If you wish to store goods overnight after the closing of the fair, please contact our Transport Coordinator Jenny Fält.
 
-* All goods that  will be sent with Armada Transport or prearranged to be stored overnight, needs to be packed as instructed above and clearly marked with the company name. If Sture or other third party, that are used to build booth and transport material, make sure to follow their instructions on how to pack.
+* All goods that  will be sent with Armada Transport or prearranged to be stored overnight, needs to be packed as instructed above and clearly marked with the company name. If Sture or other third party, that are used to build booth and transport material, make sure to follow their instructions on how to pack.
+
 

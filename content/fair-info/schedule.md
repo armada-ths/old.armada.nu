@@ -1,19 +1,29 @@
 ---
-title: Schedule
+title: General informtion
 layout: Fair_info
 priority: '1'
-header: /assets/Screen Shot 2017-09-01 at 06.10.18.png
+header: /assets/library.JPG
 ---
-# This is some test header
+# The fair
 
-And some test text with it.
+THS Armada arranges Scandinavia’s largest career fair at KTH Royal Institute of Technology. Every year, more than 12,000 of Sweden’s top engineering and architectural students flock to visit the fair the meet their future employers. This year, we have gathered 171 companies to meet every student’s area of interest. 
 
-Breakfast: 08:00
+**Dates:** 21st - 22nd of November
 
-Lunch: 13:00
+**Opening hours: **
 
-After the first day it's time for a banquet party!
+21st of November: 10:00 - 16:00
 
-Dinner: 19:00
+22nd of November: 10:00 - 15:00
 
-Nightclub: 23:00 - 02:00
+**Interest of being an exhibitor**
+
+This year’s career fair is fully booked. If you want to participate as an exhibitor at next year’s career fair, please submit the following information:
+
+*Company *
+
+*Name*
+
+*Email adress*
+
+*Telephone number*

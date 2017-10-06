@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-
-//import "./partners.scss";
+import "./eventlist.scss";
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ];
@@ -40,7 +39,7 @@ class EventList extends React.Component {
 
                 <div className="events-table">
 
-{/*                        <h2> Upcoming Events </h2>
+{/*                      <h2> Upcoming Events </h2>
 
                         {comingEvents.map(event => (
                         <li>{new Date(event.event_start*1000).toISOString()} {event.event_start} {event.name} </li>))}
@@ -51,27 +50,27 @@ class EventList extends React.Component {
                         {this.state.events.map (event => {
                         let date = new Date (event.event_start * 1000); //from seconds to milliseconds
 
-                return (
-                <div className = "event-item">
-                    <div className = "date-section">
-                        <h2>{date.getDate() }</h2>
-                        <h2>{monthNames[date.getMonth()]}</h2>
-                    </div>
-                    <div className = "image-section">
-                        <img src = { event.image_url }/>
+                            return (
+                            <div className = "event-item">
+                                <div className = "date-section">
+                                    <h2>{date.getDate() }</h2>
+                                    <h2>{monthNames[date.getMonth()]}</h2>
+                                </div>
+                                <div className = "image-section">
+                                    <img src = { event.image_url }/>
 
-                    </div>
-                    <div className = "details-section">
-                        <h3>{event.name} </h3>
-                        <h4>{event.location}</h4>
-                        <h4>{date.toTimeString()}</h4>
-                        <h5>{event.descripion_short}</h5>
-                    </div>
+                                </div>
+                                <div className = "details-section">
+                                    <h3>{event.name} </h3>
+                                    <h4>{event.location}</h4>
+                                    <h4>{date.toTimeString()}</h4>
+                                    <h5>{event.descripion_short}</h5>
+                                </div>
 
 
 
-                </div>
-            )}
+                            </div>
+                                )}
 
           )}
 

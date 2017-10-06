@@ -7,6 +7,7 @@ const Jumbotron =  (props) => {
             <source src={props.video} type="video/mp4"/> </video>) : null;
 
     let video_or_image = video ? video : image;
+    let header_class = video ? "header-home" : "header-image";
 
     return (
         <div id={"header"}>
@@ -14,7 +15,7 @@ const Jumbotron =  (props) => {
                     <img src={require('../../../content/assets/images/header-images/logo.png')} />
                     <p className="logo-date"> 21-22 NOV</p>
             </div>
-            <div className={props.header_class ? props.header_class : "header-image"}>
+            <div className={header_class}>
                 {video_or_image}
             </div>
             

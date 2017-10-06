@@ -1,5 +1,6 @@
 import React, { PropTypes } from "react"
 import axios from "axios"
+import { StickyContainer, Sticky } from 'react-sticky';
 
 import './pagesection.scss';
 
@@ -30,19 +31,43 @@ class PageSection extends React.Component {
 
   render = () => {
      return (
-        <div className={"pagesection " +  (this.props.right ? "right" : "left")}>
-            <div className="image">
-                <img src={this.props.header} />
+
+       <StickyContainer className={"pagesection " +  (this.props.right ? "right" : "left")}>
+        <div className="image">
+        <Sticky>
+          {
+            ({style}) => {
+              return (
+                <div style={style}>
+                  <img src={this.props.header}/>
+                </div>
+              )
+
+            }
+          }
+          </Sticky>
+          </div>
+
+            <div className="pagesection-body-container">
+            <Sticky>
+              {
+                ({style}) => {
+                  return (
+                    <div style={style}>
+                <div className="pagesection-body">
+                    <h1 className="pagesection-title">{ this.props.title }</h1>
+                    <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
+                </div>
+            </div>
+          )
+
+        }
+      }
+      </Sticky>
             </div>
 
-                <div className="pagesection-body-container">
-                    <div className="pagesection-body">
-                        <h1 className="title">{ this.props.title }</h1>
-                            <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
-                            </div>
+        </StickyContainer>
 
-                </div>
-        </div>
       )
     }
 }

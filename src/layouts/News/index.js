@@ -1,7 +1,6 @@
 import React, { PropTypes } from "react"
 
 import Page from "../Page"
-import Jumbotron from "../../components/Jumbotron"
 import Newsfeed from "../../components/Newsfeed"
 
 import './news.scss'
@@ -12,7 +11,6 @@ const News = (props) => {
 
   return (
     <div className="content">
-      <Jumbotron />
       <div className="body">
         <div className ="newsarticle">
           <img src={props.head.cover_wide} />

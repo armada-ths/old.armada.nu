@@ -1,4 +1,18 @@
 @import '../../styles/_variables';
+@import '../../styles/_fonts';
+
+$title-font-size: 3em;
+$title-big-font-size: 80px;
+$title-font-family: $font-title;
+$title-font-weight: 300;
+$subheading-font-size: 18px;
+$subheading-font-weight: 300;
+$subheading-font-family: $font-regular;
+$body-font-size: 16pt;
+$body-font-family: $font-regular;
+$body-font-line-multiplier: 1.5;
+$card-title-size: 24px;
+$text-standard: 1em;
 
     .pagesection {
       display: flex;
@@ -24,8 +38,15 @@
         padding: 1em;
 
         h1 {
-          font-size: 34px;
+          font-size: 1.75em;
+          line-height: 1.25em;
         }
+
+        h2 {
+          font-size: 1.25em;
+          line-height: 1.25em;
+        }
+
 
         .title {
           color: red;
@@ -35,19 +56,30 @@
 
 
 @media screen and (max-width: $breakpoint-mobile) {
-        .pagesection {
 
-        flex-direction: column;
+  .image {
 
-        .image {
-            width: 100%;
+    width: 100%;
+    display: flex;
+  }
 
-        }
+  .pagesection {
 
-        .pagesection-body {
-            width: auto;
-            padding: 1.5em;
-        }
-    }
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pagesection-body-container {
+    width: 100%;
+
+  }
+
+  .pagesection.right {
+
+    display: none;
+  }
+
+
+
 }
 

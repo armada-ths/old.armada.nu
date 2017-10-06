@@ -1,60 +1,45 @@
 ---
-title: Exhibitor information
+title: 'Transportation of exhibition material '
 layout: Fair_info
-priority: '500'
-header: /assets/53image.JPG
+priority: '6'
+header: /assets/mattor.JPG
 ---
-## An exhibitor guide to THS Armada 2017!
+# Transport to the fair 
 
-In order to make your participation into a great experience, we have gathered some facts good to know beforehand. Please read this guide to get answers on questions that might come up. As always, you are very welcome to contact us in person if you find yourself with further questions!
+**Using external delivery firm:**
 
-### Dates
+- All exhibition material that is delivered by an external transport firm, should be transported 13th of November - 14th of November to our partner Förlända Armens warehouse at:
 
-21:st and 22:nd of November
+ *Passadvägen 10, 177 70 Järfälla* 
 
-## Fair opening hours:
+ This transport should be delivered no later than 15th of November.
 
-Tuesday 21nd: 10:00-16:00
+- The goods will be sent in a common transport to KTH to reduce the number of trucks driving on campus at the same time. It’s of highest importance that the reference THS Armada is added on your orders to minimize the risk of goods getting lost on the way.
 
-Wednesday 22rd: 10:00-15:00
+- If you have large items that requires special transport, please contact Niclas Bassili as soon as possible and no later than 27th of October.
 
-## Arriving at the fair
+**Using Armada Transport**
 
-When arriving at the fair, you should check-in your organization at the exhibitor information desk in your specific exhibition hall, together with your host. If you have pre-ordered tickets for lunch, you will receive them when checking in. See schedule below for check-in and fair opening hours:
+- This year, you can finally add Armada Transport *to* the fair and it’s still possible to register for this. Armada Transport *from* the fair is included in the base package. With a cost of 720 SEK, your goods in Stockholm and areas nearby, gets picked up by our transport partner Förlängda Armen. Your goods will then be waiting for you at the fair. If you wish to use THS Armada’s service instead of arranging your own transportation of goods, please contact our Transport Coordinator as soon as possible.
 
-Check-in Monday November 21st: 08:00-20:00 Tuesday November 22nd: 08:00-10:00
+ Jenny Fält, logistics@armada.nu, \+4670-867 78 44.
 
-## Making your way to the fair
+ All  information and terms for Armada Transport can be found on this [link](https://docs.google.com/document/d/1fSgp3hjEYBodaZjw1nUgAv2QlQm9vBYOuM1Yhqi7g_g/edit)
 
-Public Transportation The nearest stations with access to public transportation are “Tekniska högskolan” if you prefer the metro, or “Östra Station” if you prefer the bus or tram.
+# Transport from the fair
 
-The number of parking slots is limited at KTH Campus. Therefore, we encourage you to use public transportation.
+**Dates and addresses for pick up:**
 
-## Give-away policies
+22nd of November - pick up of goods will be in the same building as your exhibition area. Nymble, KTH Library or KTH Entrance. 
 
-The give-away policies at the fair are very strict, please note what’s allowed for each building of the fair:
+ 23rd of November - pick up of stored special goods will be in Nymble. Other places for pick up has to be approved by Jenny Fält or Niclas Bassili before the fair. 
 
-* KTHB: Wrapped candy and sealed water bottles. Nothing else eatable/drinkable.
-* KTH Entré: No restrictions.
-* Nymble: Give-aways that require a refrigerator or any other type of machine are not allowed.
+- 22nd of November, last day of the fair, you will start to dismantle your stand after the fair has closed at 15:00 and your goods can be collected as soon as they are packed.
 
-## General rules
+- If you have chosen our Armada Transport service, you can leave your goods at your stand. Please pack “transport friendly”. It’s your responsibility to make sure that the goods for Armada Transport are packaged and ready to go. The goods will be sent to your chosen address during the following days. Your host has collected information about your deliveries and address if you are using our service.
 
-* minimize the amount of give aways
-* due to the environmental impact we want you to ba aware and minimize the volume of disposables at the fair this includes cups and give-away
-* try to find other alternatives than hard copy to share you information about summer internship etc
-* Refrigerators are not allowed in any building of the fair.
+- It’s possible to store special goods at KTH for one night after the fair. The stored goods are picked up 23rd of November. If you wish to store goods overnight after the closing of the fair, please contact our Transport Coordinator Jenny Fält.
 
-## Printing
+- All goods that  will be sent with Armada Transport or prearranged to be stored overnight, needs to be packed as instructed above and clearly marked with the company name. If Sture or other third party, that are used to build booth and transport material, make sure to follow their instructions on how to pack. 
 
-Please note that exhibitor material won’t be possible to print out at the fair due to a lack of printers. We at THS Armada encourage you to find other alternatives then printed exhibitor material in order to share you information due to our approach towards becoming more environmentally sustainable
-
-## Tips & tricks for luring students to your stand
-
-Be happy! Make the students so interested in their futures that they forget that they just skipped class to stay and chat with you at the fair! Show off cool things at your stand area (but don’t forget the give-away policies or size of your stand area)! Arrange a treasure hunt! Instead of referring to the website of your organization, try to give the visitors direct answers or contacts (which feels more personal and inviting)! Strive for an including atmosphere!
-
-There are many tricks to get the students to come and visit you at the fair. Try to plan some as a backup plan in case you at some point during the day feel that there isn't a good flow of visitors at your stand!
-
-## Last note
-
-Remember that the Career Fair Host is your contact to THS Armada. It is through this person you will extract information in the most efficient way.
+ 

@@ -2,7 +2,7 @@
 title: Service information
 layout: Fair_info
 priority: '3'
-header: /assets/DSC_6217.jpg
+header: /assets/lounge2.JPG
 ---
 **Exhibitor lounges:**
 
@@ -25,3 +25,4 @@ Kröken (Nymble) and Salongen (library, KTHB)
 Lunch is served 10:30 - 14:00 in restaurant Syster & Bror.
 
 Lunch tickets will be handed out in the service desk when checking in before the fair and each lunch ticket has a specific time slot to attend.
+

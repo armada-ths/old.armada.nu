@@ -8,13 +8,13 @@ header: /assets/lounge2.JPG
 
 Kröken (Nymble) and Salongen (library, KTHB)
 
-\*Opening hours: \*
+**Opening hours: **
 
 21st of November: 09:00 - 16:00
 
 22nd of November: 10:00 - 15:00
 
-\*\*Service- and information desks: \*\*
+**Service- and information desks: **
 
 21st of November: 08:00 - 16:00
 

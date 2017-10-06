@@ -12,12 +12,13 @@ header: /assets/giveaway.png
 
 * Refrigerators are not allowed in any building of the fair
 
-The give-away policies are very strict at the fair. Please note what is not allowed for each building.
-
 **Give-away policies**
+
+The give-away policies are very strict at the fair. Please note what is not allowed for each building.
 
 * Nymble: Give-aways that requires any type of machine, included refrigerators, are not allowed.
 
 * KTHB: Wrapped candy and sealed water bottles. Nothing else eatable/drinkable is allowed.
 
 * KTH Entré: No restrictions.
+

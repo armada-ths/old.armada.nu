@@ -1,31 +1,24 @@
 ---
-title: General info
+title: General rules & give-away policy
 layout: Fair_info
-priority: '1'
-header: /assets/53comp.png
+priority: '4'
+header: /assets/giveaway.png
 ---
+**General rules**
 
-The Armada fair is the biggest student career fair in the Nordic countries. This year we gather 171 companies during the two career days, who will meet and connect with more than 12,000 of sweden's top engineering and architectural students from KTH, The Royal Institute of Technology. 
+* Due to the environmental impact, we want you to minimize the volume of disposables at the fair. This includes cups and give-aways.
 
+* Try to find alternative ways to share information regarding internships, jobs etc than printed material.
 
-**Dates:** 21-22:st of November 2017
+* Refrigerators are not allowed in any building of the fair
 
-**Opening hours: **
+**Give-away policies**
 
-November 21:st 10:00 - 16:00
+The give-away policies are very strict at the fair. Please note what is not allowed for each building.
 
-November 22:nd 10:00 - 15:00 
+* Nymble: Give-aways that requires any type of machine, included refrigerators, are not allowed.
 
-## Expression of Interest
+* KTHB: Wrapped candy and sealed water bottles. Nothing else eatable/drinkable is allowed.
 
-This years Armada fair is fully booked, if you represent a company that are interested in participation during next year's fair please submit the following information:
-
-* Company: 
-
-* Name: 
-
-* Email address: 
-
-* Telephone number: 
-
+* KTH Entré: No restrictions.
 

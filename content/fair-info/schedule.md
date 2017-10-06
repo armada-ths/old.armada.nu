@@ -1,19 +1,17 @@
 ---
-title: Schedule
+title: Exhibitor guide to THS Armada 2017
 layout: Fair_info
 priority: '1'
-header: /assets/Screen Shot 2017-09-01 at 06.10.18.png
+header: /assets/library.JPG
 ---
-# This is some test header
+**Welcome to the career fair of 2017.** We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
 
-And some test text with it.
+**Dates:**
 
-Breakfast: 08:00
+21st of November - 22nd of November 
 
-Lunch: 13:00
+**Opening hours: **
 
-After the first day it's time for a banquet party!
+21st of November: 10:00 - 16:00
 
-Dinner: 19:00
-
-Nightclub: 23:00 - 02:00
+22nd of November: 10:00 - 15:00

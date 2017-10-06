@@ -1,6 +1,6 @@
 ---
 title: The Fair
-layout: Page
+layout: Aboutpage
 header: /assets/library.JPG
 ---
 Armada blablabla

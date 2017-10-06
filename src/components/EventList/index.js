@@ -24,13 +24,13 @@ class EventList extends React.Component {
 
 
     render() {
-      let today = new Date();
+      // let today = new Date();
       // console.error(today)
       // {today.toString()}
       // {this.state.events.map(event => (<li>{event.event_start} {event.name} </li>))}
 
-      let comingEvents = this.state.events.filter(event => event.event_start*1000 > today)
-      let pastEvents = this.state.events.filter(event => event.event_start*1000 < today)
+      // let comingEvents = this.state.events.filter(event => event.event_start*1000 > today)
+      // let pastEvents = this.state.events.filter(event => event.event_start*1000 < today)
 
         return (
             <div className="events">

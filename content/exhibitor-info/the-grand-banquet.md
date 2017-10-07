@@ -1,7 +1,7 @@
 ---
 dark: false
 title: The Grand Banquet
-layout: Fair_info
+layout: Exhibitor_info
 priority: '8'
 header: /assets/24315577336_8fd160cc7e_o.jpg
 ---

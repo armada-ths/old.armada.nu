@@ -1,7 +1,7 @@
 ---
 dark: true
 title: 'Marketing information '
-layout: Fair_info
+layout: Exhibitor_info
 priority: '5'
 header: /assets/Marketing.png
 ---

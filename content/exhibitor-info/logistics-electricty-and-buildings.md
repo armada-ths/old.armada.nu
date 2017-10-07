@@ -1,7 +1,7 @@
 ---
 dark: true
 title: 'Logistics: electricty & buildings'
-layout: Fair_info
+layout: Exhibitor_info
 priority: '7'
 header: /assets/lightbuild.png
 ---

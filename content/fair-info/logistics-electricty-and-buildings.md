@@ -2,6 +2,7 @@
 title: 'Logistics: electricty & buildings'
 layout: Fair_info
 priority: '7'
+dark: true
 header: /assets/lightbuild.png
 ---
 **Electricity:**

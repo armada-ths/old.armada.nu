@@ -2,6 +2,7 @@
 title: The grand Banquet
 layout: Fair_info
 priority: '8'
+dark: false
 header: /assets/24315577336_8fd160cc7e_o.jpg
 ---
 **Date:** 21st of November

@@ -2,6 +2,7 @@
 title: General rules & give-away policy
 layout: Fair_info
 priority: '4'
+dark: true
 header: /assets/giveaway.png
 ---
 **General rules**

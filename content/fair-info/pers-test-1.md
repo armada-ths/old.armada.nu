@@ -2,6 +2,7 @@
 title: 'Marketing information '
 layout: Fair_info
 priority: '5'
+dark: true
 header: /assets/Marketing.png
 ---
 **Armada Talks**

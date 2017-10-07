@@ -49,5 +49,6 @@ collections:
       - {label: "Layout", name: "layout", widget: "string", default: "Fair_info"}
       - {label: "Priority", name: "priority", widget: "number"}
       - {label: "Header", name: "header", widget: "image", optional: true}
+      - {label: "Dark Background", name: "dark", widget: "boolean", default: false}
       - {label: "Body", name: "body", widget: "markdown"}
 

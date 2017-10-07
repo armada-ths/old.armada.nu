@@ -2,6 +2,7 @@
 title: Service information
 layout: Fair_info
 priority: '3'
+dark: false
 header: /assets/lounge2.JPG
 ---
 **Exhibitor lounges:**

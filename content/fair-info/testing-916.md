@@ -2,6 +2,7 @@
 title: Check-in & travel
 layout: Fair_info
 priority: '2'
+dark: true
 header: /assets/travel.png
 ---
 **Arriving at the fair **

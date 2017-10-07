@@ -36,7 +36,7 @@ class PageSection extends React.Component {
             return (
 
                 <StickyContainer className={"pagesection " + (this.props.right ? "right" : "left")}>
-                    <div className="image">
+                    <div className={"image "+ (this.props.dark ? "dark" : "light")}>
                         <Sticky>
                             {
                                 ({style}) => {
@@ -106,6 +106,7 @@ PageSection.propTypes = {
   title: PropTypes.string.isRequired,
   header: PropTypes.string,
   right: PropTypes.boolean,
+  dark: PropTypes.boolean,
 }
 
 export default PageSection

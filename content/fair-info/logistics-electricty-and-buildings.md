@@ -15,14 +15,15 @@ If you are unfamiliar with the location of the three different buildings of the 
 
 Delivery address for prearranged special transports and contact person for each building:
 
-*Nymble:* Drottning Kristinas väg 15-19 114 28 Stockholm. Contact Niclas Bassili
+*Nymble:* Drottning Kristinas väg 15-19 114 28 Stockholm. Contact Niclas Bassili at niclas.basilli@armada.nu
 
-*KTH Library:* Osquars backe 31 100 44 Stockholm. Contact Lucas Molin
+*KTH Library:* Osquars backe 31 100 44 Stockholm. Contact Lucas Molin at lucas.molin@armada.nu
 
-*KTH Entrance:* Drottning Kristinas väg 4 114 28 Stockholm. Contact Stefan Liss
+*KTH Entrance:* Drottning Kristinas väg 4 114 28 Stockholm. Contact Stefan Liss at stefan.liss@armada.nu
 
 **Elevators:**
 
 *Nymble:* maximum 500kg. 1.08 x 1.53 x 2 meters.
 
 *KTH Library:* maximum 630kg. 0.8 x 1.41 x 2 meters.
+

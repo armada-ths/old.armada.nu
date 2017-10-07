@@ -13,7 +13,6 @@
     position: relative;
     min-height: $header-min-height;
     background-color: $licorice;
-
     .header-image{
         background-color: $licorice;
         height: $header-height;
@@ -62,7 +61,6 @@
           object-fit: fill;
         }
     }
-
 }
 
 .logo-container {
@@ -70,6 +68,7 @@
     z-index: 2;
     text-align: center;
     height: 65%;
+    margin-top: 5px;
 
     img {
         max-height:90%;
@@ -86,4 +85,3 @@
       text-align: center;
     }
   }
-

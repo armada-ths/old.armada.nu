@@ -10,6 +10,9 @@ import Post from "./layouts/Post"
 import Aboutpage from "./layouts/Aboutpage"
 import Contactpage from "./layouts/Contactpage"
 import News from "./layouts/News"
+import Events from "./layouts/Events"
+import PageSectionsLayout from "./layouts/PageSectionsLayout"
+import ExhibitorInfo from "./layouts/ExhibitorInfo"
 
 const PageContainer = (props) => (
   <PhenomicPageContainer
@@ -22,9 +25,12 @@ const PageContainer = (props) => (
       Aboutpage,
       Contactpage,
       News,
+      Events,
+      PageSectionsLayout,
+      ExhibitorInfo,
     }}
   />
-)
+);
 
 export default (
   <Route component={ AppContainer }>

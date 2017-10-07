@@ -1,21 +1,21 @@
 ---
+dark: false
 title: Service information
 layout: Fair_info
 priority: '3'
-dark: false
 header: /assets/lounge2.JPG
 ---
 **Exhibitor lounges:**
 
 Kröken (Nymble) and Salongen (library, KTHB)
 
-**Opening hours: **
+\*\*Opening hours: \*\*
 
-21st of November: 09:00 - 16:00
+21st of November: 08:30 - 16:00 (08:30 - 10:00 breakfast)
 
-22nd of November: 10:00 - 15:00
+22nd of November: 08:30 - 14:30 (08:30 - 10:00 breakfast)
 
-**Service- and information desks: **
+\*\*Service- and information desks: \*\*
 
 21st of November: 08:00 - 16:00
 

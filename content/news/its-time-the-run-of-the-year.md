@@ -2,7 +2,6 @@
 layout: News
 title: 'It’s time - the run of the year '
 cover_wide: /assets/armadarun_cover.png
-cover_square: null
 featured: true
 ingress: 5 km race. 400 students and companies. Are you ready? We are.
 date: 2017-09-25T15:36:44.096Z
@@ -17,6 +16,6 @@ If you have any questions, please contact us at armadarun@armada.nu
 
 Sponsors for Armada Run 2017:
 
-![null](/assets/ey.png)
+![EY](https://armada.nu/assets/ey.png)
 
-![null](/assets/spons.png)
+![Sponsors](https://armada.nu/assets/spons.png)

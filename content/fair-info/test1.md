@@ -2,8 +2,8 @@
 title: 'Transportation of exhibition material '
 layout: Fair_info
 priority: '6'
-dark: false
 header: /assets/mattor.JPG
+dark: false
 ---
 ## Transport to the fair
 
@@ -13,7 +13,7 @@ header: /assets/mattor.JPG
 
  *Passadvägen 10, 177 70 Järfälla*
 
- This transport should be delivered no later than 15th of November.
+  This transport should be delivered no later than 15th of November.
 
 * The goods will be sent in a common transport to KTH to reduce the number of trucks driving on campus at the same time. It’s of highest importance that the reference THS Armada is added on your orders to minimize the risk of goods getting lost on the way.
 

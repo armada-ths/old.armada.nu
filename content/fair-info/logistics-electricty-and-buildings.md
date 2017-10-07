@@ -7,7 +7,7 @@ header: /assets/lightbuild.png
 ---
 **Electricity:**
 
-You have requested an amount of electrical outlets and power consumption to match the needs of your organization at the fair. Please respect your fellow exhibitors and do not use any outlets except those specifically marked with your company's name. The power distribution is planned according to your specified power consumption. If you know that you need more/less power than requested or wish to change the number of requested outlets, please contact Niclas Bassili. Changing something during the fair will automatically be harder for us to solve. Ask your host if you experience trouble with within this area and the host will contact the task force.
+You have requested an amount of electrical outlets and power consumption to match the needs of your organization at the fair. Please respect your fellow exhibitors and do not use any outlets except those specifically marked with your company's name. The power distribution is planned according to your specified power consumption. If you know that you need more/less power than requested or wish to change the number of requested outlets, please contact Niclas Bassili. Changing something during the fair will automatically be harder for us to solve. If you experience technical problems, ask your host in first hand. If it’s necessary, the host will contact the task force. 
 
 **Buildings:**
 

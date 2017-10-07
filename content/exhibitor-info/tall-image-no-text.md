@@ -1,9 +1,9 @@
 ---
-dark: false
 title: Service information
 layout: Exhibitor_info
 priority: '3'
 header: /assets/lounge2.JPG
+dark: false
 ---
 **Exhibitor lounges:**
 
@@ -27,5 +27,5 @@ Lunch is served 10:30 - 14:00 in restaurant Syster & Bror.
 
 Lunch tickets will be handed out in the service desk when checking in before the fair and each lunch ticket has a specific time slot to attend.
 
-If you have questions regarding the service or lounges, please contact Maria Signell at maria.signell@armada.nu
+If you have questions regarding the service or lounges, please contact Head of Service and Sponsorship, Maria Signell at maria.signell@armada.nu
 

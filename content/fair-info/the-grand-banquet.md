@@ -1,6 +1,6 @@
 ---
 dark: false
-title: The grand Banquet
+title: The Grand Banquet
 layout: Fair_info
 priority: '8'
 header: /assets/24315577336_8fd160cc7e_o.jpg
@@ -23,4 +23,5 @@ header: /assets/24315577336_8fd160cc7e_o.jpg
 
 **02:00** Armada After Hours will be closing.
 
-If you have any questions regarding the banquet, please contact Sofia Tollander
+If you have any questions regarding the banquet, please contact Sofia Tollander at sofia.tollander@armada.nu
+

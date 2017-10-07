@@ -1,9 +1,9 @@
 ---
-dark: true
 title: 'Logistics: electricty & buildings'
 layout: PageSection
 priority: '7'
 header: /assets/lightbuild.png
+dark: true
 ---
 **Electricity:**
 
@@ -15,11 +15,11 @@ If you are unfamiliar with the location of the three different buildings of the 
 
 Delivery address for prearranged special transports and contact person for each building:
 
-*Nymble:* Drottning Kristinas väg 15-19 114 28 Stockholm. Contact Niclas Bassili at niclas.basilli@armada.nu
+*Nymble:* Drottning Kristinas väg 15-19 114 28 Stockholm. Contact Head of Logistics, Niclas Bassili at niclas.basilli@armada.nu
 
-*KTH Library:* Osquars backe 31 100 44 Stockholm. Contact Lucas Molin at lucas.molin@armada.nu
+*KTH Library:* Osquars backe 31 100 44 Stockholm. Contact Head of Career Fair, Lucas Molin at lucas.molin@armada.nu
 
-*KTH Entrance:* Drottning Kristinas väg 4 114 28 Stockholm. Contact Stefan Liss at stefan.liss@armada.nu
+*KTH Entrance:* Drottning Kristinas väg 4 114 28 Stockholm. Contact  Head of Logistics and Career Fair, Stefan Liss at stefan.liss@armada.nu
 
 **Elevators:**
 

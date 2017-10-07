@@ -1,9 +1,9 @@
 ---
-dark: false
 title: The Grand Banquet
 layout: PageSection
 priority: '8'
 header: /assets/24315577336_8fd160cc7e_o.jpg
+dark: false
 ---
 **Date:** 21st of November
 
@@ -23,5 +23,5 @@ header: /assets/24315577336_8fd160cc7e_o.jpg
 
 **02:00** Armada After Hours will be closing.
 
-If you have any questions regarding the banquet, please contact Sofia Tollander at sofia.tollander@armada.nu
+If you have any questions regarding the banquet, please contact Head of Banquet, Sofia Tollander at sofia.tollander@armada.nu
 

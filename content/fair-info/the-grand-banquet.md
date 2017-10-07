@@ -2,8 +2,8 @@
 title: The grand Banquet
 layout: Fair_info
 priority: '8'
-dark: false
 header: /assets/24315577336_8fd160cc7e_o.jpg
+dark: false
 ---
 **Date:** 21st of November
 
@@ -11,7 +11,7 @@ header: /assets/24315577336_8fd160cc7e_o.jpg
 
 **Location:** Annexet, Ericsson Globe Arenas
 
-##Schedule:
+## Schedule:
 
 **10:00 - 12:00** All guests will be asked to confirm their attendance to the banquet by their respective Career Fair Hosts. If there has been any changes, please notify your Career Fair Host.
 

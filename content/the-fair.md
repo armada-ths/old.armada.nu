@@ -1,6 +1,6 @@
 ---
 title: The Fair
-layout: Aboutpage
+layout: Plainpage
 header: /assets/library.JPG
 ---
 # General information

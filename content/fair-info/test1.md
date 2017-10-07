@@ -31,8 +31,6 @@ header: /assets/mattor.JPG
 
 22nd of November, last day of the fair, you will start to dismantle your stand after the fair has closed at 15:00. 
 
-* Your goods can be collected as soon as they are packed.
-
 * If you have chosen our Armada Transport service, you can leave your goods at your stand. Please pack “transport friendly”. It’s your responsibility to make sure that the goods for Armada Transport are packaged and ready to go. The goods will be sent to your chosen address during the following days. Your host has collected information about your deliveries and address if you are using our service. All information and terms for Armada Transport can be found on this [link](https://docs.google.com/document/d/1fSgp3hjEYBodaZjw1nUgAv2QlQm9vBYOuM1Yhqi7g_g/edit)
 
 * It’s possible to store special goods at KTH for one night after the fair. The stored goods are to be picked up 23rd of November. If you wish to store goods overnight after the closing of the fair, please contact Jenny Fält.
@@ -52,5 +50,6 @@ header: /assets/mattor.JPG
 If you have questions regarding logistics, contact Niclas Bassili at niclas.bassili@armada.nu
 
 If you have questions regarding Armada Transport, contact Jenny Fält at logistics@armada.nu or \+4670-867 78 44.
+
 
 

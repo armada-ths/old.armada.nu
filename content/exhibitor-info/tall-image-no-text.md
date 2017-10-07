@@ -1,7 +1,7 @@
 ---
 dark: false
 title: Service information
-layout: Exhibitor_info
+layout: Exhibitorinfo
 priority: '3'
 header: /assets/lounge2.JPG
 ---

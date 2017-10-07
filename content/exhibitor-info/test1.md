@@ -1,7 +1,7 @@
 ---
 dark: false
 title: 'Transportation of exhibition material '
-layout: Exhibitor_info
+layout: Exhibitorinfo
 priority: '6'
 header: /assets/mattor.JPG
 ---

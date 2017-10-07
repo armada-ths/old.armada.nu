@@ -9,7 +9,7 @@ import "./pagesections.scss"
 const PageSections = (props, { collection }) => {
 
   let sections = enhanceCollection(collection, {
-    filter: { layout: "Exhibitorinfo" },
+    filter: { layout: "PageSection" },
     sort: "priority",
   });
     

@@ -1,6 +1,6 @@
 ---
 title: General rules & give-away policy
-layout: Exhibitorinfo
+layout: PageSection
 priority: '4'
 dark: true
 header: /assets/giveaway.png

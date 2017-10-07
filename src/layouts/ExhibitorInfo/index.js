@@ -4,21 +4,21 @@ import PageSectionsLayout from "../PageSectionsLayout"
 import Contacts from "../../components/Contacts"
 
 
-const Exhibitorinfo = (props) => {
+const ExhibitorInfo = (props) => {
 
   return (
     
     <div>
-    <PageSectionsLayout {...props}/>
+    <PageSectionsLayout {...props} pagetype="Exhibitorinfo"/>
     
     <Contacts />
      </div>
   )
 }
 
-Exhibitorinfo.propTypes = {
+ExhibitorInfo.propTypes = {
     head: PropTypes.object.isRequired,
 }
 
-export default Exhibitorinfo
+export default ExhibitorInfo
 

@@ -1,6 +1,6 @@
 ---
 title: Check-in & travel
-layout: Exhibitorinfo
+layout: PageSection
 priority: '2'
 dark: true
 header: /assets/travel.png

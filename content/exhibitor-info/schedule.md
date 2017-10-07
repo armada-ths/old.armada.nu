@@ -1,6 +1,6 @@
 ---
 title: Exhibitor guide to THS Armada 2017
-layout: Exhibitor_info
+layout: PageSection
 priority: '1'
 dark: false
 header: /assets/library.JPG

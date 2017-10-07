@@ -14,6 +14,11 @@ import News from "./layouts/News"
 import Events from "./layouts/Events"
 import PageSectionsLayout from "./layouts/PageSectionsLayout"
 import ExhibitorInfo from "./layouts/ExhibitorInfo"
+import PageSection from "./components/PageSection"
+//PageSection is added as layout to avoid warnings from phenomic for having the
+//PageSections compoment that is used in ExhibitorInfo layout.
+//Phenomic complains about not finding PageSection otherwise as it 
+//checks all documents in content if it has a corresponding layout
 
 const PageContainer = (props) => (
   <PhenomicPageContainer
@@ -30,6 +35,7 @@ const PageContainer = (props) => (
       PageSectionsLayout,
       ExhibitorInfo,
       Plainpage,
+      PageSection,
     }}
   />
 );

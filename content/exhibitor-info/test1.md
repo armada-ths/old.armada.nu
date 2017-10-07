@@ -1,9 +1,9 @@
 ---
-dark: false
 title: 'Transportation of exhibition material '
-layout: Exhibitor_info
+layout: PageSection
 priority: '6'
 header: /assets/mattor.JPG
+dark: false
 ---
 ## Transport to the fair
 
@@ -47,9 +47,9 @@ header: /assets/mattor.JPG
 
 * 23rd of November - pick up will be in Nymble, unless otherwise is agreed with Jenny Fält or Niclas Bassili.
 
-If you have questions regarding logistics, contact Niclas Bassili at niclas.bassili@armada.nu
+If you have questions regarding logistics, contact Head of Logistics, Niclas Bassili at niclas.bassili@armada.nu
 
-If you have questions regarding Armada Transport, contact Jenny Fält at logistics@armada.nu or \+4670-867 78 44.
+If you have questions regarding Armada Transport, contact Transport Coordinator, Jenny Fält at logistics@armada.nu or \+4670-867 78 44.
 
 
 

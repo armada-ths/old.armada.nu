@@ -46,7 +46,7 @@ collections:
     card: {type: "alltype", text: "title"}
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Layout", name: "layout", widget: "string", default: "Exhibitor_info"}
+      - {label: "Layout", name: "layout", widget: "string", default: "PageSection"}
       - {label: "Priority", name: "priority", widget: "number"}
       - {label: "Header", name: "header", widget: "image", optional: true}
       - {label: "Dark Background", name: "dark", widget: "boolean", default: false}

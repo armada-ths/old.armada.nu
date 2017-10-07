@@ -9,7 +9,7 @@ const ExhibitorInfo = (props) => {
   return (
     
     <div>
-    <PageSectionsLayout {...props}/>
+    <PageSectionsLayout {...props} pagetype="Exhibitorinfo"/>
     
     <Contacts />
      </div>

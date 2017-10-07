@@ -46,6 +46,13 @@ const Contacts =  () => {
                           <p><a href="mailto:sofia.tollander@armada.nu" target="_top">sofia.tollander@armada.nu</a></p>
                           <p><a href="tel:+46702726234">+4670-272 62 34</a></p>
                         </div>
+                        <div className="contact-info">
+                          <h1 className="sub-heading name">LUCAS MOLIN</h1>
+                          <h2 className="sub-heading light">HEAD OF CAREER FAIR</h2>
+                          <p><a href="mailto:lucas.molin@armada.nu" target="_top">lucas.molin@armada.nu</a></p>
+                          <p><a href="tel:+46768778760">+4676-877 87 60</a></p>
+                        </div>
+
                       </div>
                     </section>
                 </div>

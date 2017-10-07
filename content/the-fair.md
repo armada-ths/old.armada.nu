@@ -17,4 +17,4 @@ THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of 
 
 **Exhibitor interest for the career fair of 2018:**
 
-This year's career fair is fully booked. If you are interested to participate in the career fair of 2018, please submit information [here](www.mailchimp.com)
+This year's career fair is fully booked. If you are interested to participate in the career fair of 2018, please submit information [here](http://eepurl.com/cqs0of)

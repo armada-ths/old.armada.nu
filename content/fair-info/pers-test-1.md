@@ -1,8 +1,8 @@
 ---
+dark: true
 title: 'Marketing information '
 layout: Fair_info
 priority: '5'
-dark: true
 header: /assets/Marketing.png
 ---
 **Armada Talks**
@@ -15,5 +15,6 @@ Livestream broadcasting is an area with much potential. We have created our own 
 
 **Printing**
 
-Exhibitor material won’t be possible to print at the fair due to a lack of printers. THS Armada encourage you to find alternative ways to share information about your company/organization and in this way contribute to one of our core values, environmentally sustainability. 
+Exhibitor material won't be possible to print at the fair. Find alternative ways to share information about your company/organization and in this way contribute to one of THS Armada's core values, environmentally sustainability. 
+
 

@@ -11,7 +11,7 @@ dark: false
 
 All exhibition material that is transported using an external  firm, should be delivered to our transport partner's warehouse.
 
-  Delivery address: *Passadvägen 10, 177 70 Järfälla*
+  Delivery address: *Förlängda Armen,Passadvägen 10, 177 70 Järfälla*. Reference: *THS Armada*
 
   The warehouse would like to receive everything on 13th and 14th of november.  Goods that have not reached the warehouse before afternoon on the 15th of November might not make it to the fair in time.
 

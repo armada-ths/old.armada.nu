@@ -115,4 +115,13 @@
       color: $text-color-light;
       text-align: center;
     }
-  }
+}
+
+@media screen and (min-height: 1000px) {
+    .logo-container{
+        p{
+            font-size: 2em;
+        }
+    }
+}
+ 

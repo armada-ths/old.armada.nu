@@ -2,8 +2,8 @@
 title: General rules & give-away policy
 layout: PageSection
 priority: '4'
+header: /assets/giveaway2.png
 dark: true
-header: /assets/giveaway.png
 ---
 **General rules**
 

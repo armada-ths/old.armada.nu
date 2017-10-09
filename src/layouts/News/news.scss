@@ -7,17 +7,15 @@
 }
 
 .newsarticle {
-    padding: 1em;  //new
     margin-top: 3em;
     img {
         width: 100%;
         margin: 1em 0em;
     }
-    //.article-text{
-      //h1, h2{
-      //  text-align: left;
-      //}
-    //}
+
+    .article-text{
+      padding: 0em 1em
+    }
 
     .ingress {
         font-size: 1.2em;
@@ -25,7 +23,6 @@
         font-style: italic;
     }
 }
-
 
 .signature {
     display: inline-block;
@@ -37,11 +34,7 @@
 @media screen and (max-width: $breakpoint-mobile) {
 
     .newsarticle {
-        padding: 0em;   // new
-        max-width: 90vw;
-        margin: 3em 0px 3em 5vw;
         img {
-            margin-left: -5vw;
             width: 100vw;
             max-width: 500px;
             height: auto;

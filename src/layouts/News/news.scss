@@ -34,8 +34,9 @@
 @media screen and (max-width: $breakpoint-mobile) {
 
     .newsarticle {
+        width: 100vw;
         img {
-            width: 100vw;
+            width: 100%;
             max-width: 500px;
             height: auto;
         }

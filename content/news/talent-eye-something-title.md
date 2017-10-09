@@ -12,3 +12,5 @@ _Karolina Lind, Charlotte Hedlund and Tobias Porserud_
 Tobias Porserud is CEO and founder of Talent Eye, a recruitment company with focus on building bridges between students and companies through customized internships. 
 
 > \- We focus on the students on an individual level and really get to know them and what they value. It's proven through research that if an individual's personal value correlate with the organization's values - there will be full engagement from both parts and that is what Talent Eye strives for.
+>
+>

@@ -13,7 +13,7 @@ dark: false
 
 ## Schedule:
 
-**10:00 - 12:00** All guests will be asked to confirm their attendance to the banquet by their respective Career Fair Hosts. If there has been any changes, please notify your Career Fair Host.
+**Before 12:00** All guests will be asked to confirm their attendance to the banquet by their respective Career Fair Hosts. If there has been any changes, please notify your Career Fair Host.
 
 **15:00** All guests will receive an email regarding their placement at the dinner, including the names of the people at their table.
 
@@ -24,4 +24,3 @@ dark: false
 **02:00** Armada After Hours will be closing.
 
 If you have any questions regarding the banquet, please contact Head of Banquet, Sofia Tollander at sofia.tollander@armada.nu
-

@@ -29,7 +29,7 @@ class Navbar extends React.Component {
                             <Link onClick={toggleExpand} to='/'>HOME</Link>
                             <Link onClick={toggleExpand} to='/the-fair'>THE FAIR</Link>
                             <Link onClick={toggleExpand} to='/about'>ABOUT</Link>
-                            <Link onClick={toggleExpand} to='/contact'>CONTACT</Link>
+                            <Link onClick={toggleExpand} to='/exhibitor_info'>EXHIBITOR INFO</Link>
                         </div>
                     </nav>
                 </div>

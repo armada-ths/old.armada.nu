@@ -1,16 +1,26 @@
 ---
 layout: News
-title: Talent Eye something title
-cover_wide: /assets/03102017-DSC_0016-1.JPG
+title: How we increased our social sustainability through Talent Eye
+cover_wide: /assets/03102017-DSC_0009.JPG
 featured: false
 date: 2017-10-08T17:00:59.950Z
 ---
 _Karolina Lind, Charlotte Hedlund and Tobias Porserud_
 
-2011 was the first year that the project members in THS Armada got education in recruitment and interview methods. As the largest student driven organization in Scandinavia with over 260 engage students, we spend a lot of time and focus on finding the right candidates. Talent Eye has given us the right tools and is one of the reasons that we have developed into a professional organization. 
+**THS Armada do more than 500 interviews each year to find the right candidates for the right positions. Result from teamwork, thoughts about organizational values and how your dream team looks like, is just a few things that shows up on our interviews. We have talked to the company behind our methods and knowledge in interview technique. **
 
-Tobias Porserud is CEO and founder of Talent Eye, a recruitment company with focus on building bridges between students and companies through customized internships. 
+2011 was the first year that the team members in THS Armada got education in recruitment and interview methods. As the largest student driven organization in Scandinavia with over 260 engage students, we spend a lot of time and focus on finding the right candidates. Talent Eye have given us the tools we need to each year improve the organization. 
 
-> \- We focus on the students on an individual level and really get to know them and what they value. It's proven through research that if an individual's personal value correlate with the organization's values - there will be full engagement from both parts and that is what Talent Eye strives for.
+Tobias Porserud graduated from KTH 2011 and felt that there was a gap between students and the industry, and decided to change that. Tobias is Co-founder and CEO at Talent Eye, a recruitment company with focus on building bridges between students and companies through customized internships. 
+
+> \- It's important that an interview is adjustable and based on situations the candidate have experienced. To sit in a room with the feeling of a cross-examination lamp pointed at you just makes the interview uncomfortable and you will probably not perform the best version of yourself. Have an interview as you have a conversation - is the situation feels comfortable, the candidate will more likely perform on top. 
 >
+> \- All candidates that have applied for THS Armada gets offered an interview, so we do not do a pre-selection for the interview part. Once all the interviews are done, we have selection meetings with all the teams within the organization were we go through all the candidates that have applied. We base our decision in their personal traits and engagement rather than previous experience, and also how the candidates share our organizational values, says Charlotte Hedlund, Head of Human Resources at THS Armada. 
+
+**Talent Eye put a lot of focus on personal values and finding student's sweet spots - were they enjoy being and at the same time perform their best. Everything to make the perfect match between the student and the employee. Tobias means that this is what distinguish Talent Eye from other recruitment companies. **
+
+> \- We focus on the students on an individual level and really get to know them and what they value. Through research it is proven that is an individual's personal values correlates with the organization's values - there will be fully engagement from both parts and that is what Talent Eye strives for. 
 >
+> \- Two years ago, there was a lot of focus on your personal characteristics in generalized examples. This year, it was more focus on how one work in team and situation based questions. It was also clear in the interview that THS Armada is driven by their organizational values, I got questions like "this is our core values, how can Armada work further with them?". More time to discuss and talk about values, says Karolina Lind, Lounge Host for this year's career fair and earlier Lounge Host, 2016 and Event Host, 2015. 
+
+Talent Eye have been a major key in THS Armada's development towards a more professional organization. Sharing their knowledge and practical tools through workshops and support has not only created larger engagement within the project, but also contributed to our social sustainability were each team member has the same tools, methods and information.

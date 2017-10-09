@@ -7,10 +7,10 @@ import Contacts from "../../components/Contacts"
 const ExhibitorInfo = (props) => {
 
   return (
-    
+
     <div>
     <PageSectionsLayout {...props} pagetype="Exhibitorinfo"/>
-    
+
     <Contacts />
      </div>
   )
@@ -21,4 +21,3 @@ ExhibitorInfo.propTypes = {
 }
 
 export default ExhibitorInfo
-

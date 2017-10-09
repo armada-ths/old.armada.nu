@@ -7,11 +7,18 @@
 }
 
 .newsarticle {
+    padding: 1em;  //new
     margin-top: 3em;
     img {
         width: 100%;
         margin: 1em 0em;
     }
+    //.article-text{
+      //h1, h2{
+      //  text-align: left;
+      //}
+    //}
+
     .ingress {
         font-size: 1.2em;
         text-align: justify;
@@ -30,6 +37,7 @@
 @media screen and (max-width: $breakpoint-mobile) {
 
     .newsarticle {
+        padding: 0em;   // new
         max-width: 90vw;
         margin: 3em 0px 3em 5vw;
         img {
@@ -41,4 +49,3 @@
     }
 
 }
-

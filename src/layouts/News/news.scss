@@ -12,13 +12,17 @@
         width: 100%;
         margin: 1em 0em;
     }
+
+    .article-text{
+      padding: 0em 1em
+    }
+
     .ingress {
         font-size: 1.2em;
         text-align: justify;
         font-style: italic;
     }
 }
-
 
 .signature {
     display: inline-block;
@@ -30,15 +34,12 @@
 @media screen and (max-width: $breakpoint-mobile) {
 
     .newsarticle {
-        max-width: 90vw;
-        margin: 3em 0px 3em 5vw;
+        width: 100vw;
         img {
-            margin-left: -5vw;
-            width: 100vw;
+            width: 100%;
             max-width: 500px;
             height: auto;
         }
     }
 
 }
-

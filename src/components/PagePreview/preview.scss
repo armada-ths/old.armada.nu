@@ -6,17 +6,21 @@
       height: $height;
 }
 
-img { 
+img {
         max-width: 100%;
         height: auto;
 }
 
 .preview-content{
     a ~ h1:hover,h2:hover {
+      text-align: left; // new
       text-decoration: underline;
     }
+    h1,h2 {   // new
+      text-align: left;
+    }
     margin: 0px;
-    padding: 0px;
+    padding: 0em 1em;
 
 }
 
@@ -33,7 +37,7 @@ img {
 }
 
 .newsitem.regular {
-    margin: 2em 0em;	
+    margin: 2em 0em;
     img {
 		margin: 0em 1em 0em 0em;
         width: auto;

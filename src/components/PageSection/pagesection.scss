@@ -1,19 +1,6 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
-$title-font-size: 3em;
-$title-big-font-size: 80px;
-$title-font-family: $font-title;
-$title-font-weight: 300;
-$subheading-font-size: 18px;
-$subheading-font-weight: 300;
-$subheading-font-family: $font-regular;
-$body-font-size: 16pt;
-$body-font-family: $font-regular;
-$body-font-line-multiplier: 1.5;
-$card-title-size: 24px;
-$text-standard: 1em;
-
     .pagesection {
       display: flex;
       flex-direction: row;
@@ -38,6 +25,8 @@ $text-standard: 1em;
       width: 50%;
       .pagesection-body {
         padding: 1em;
+        max-width: 35em;
+        margin: auto;
 
         h1 {
           font-size: 1.75em;
@@ -51,7 +40,7 @@ $text-standard: 1em;
 
 
         .title {
-          color: red;
+          color: blue;
         }
       }
     }
@@ -89,4 +78,3 @@ $text-standard: 1em;
 
 
 }
-

@@ -24,56 +24,63 @@ class EventList extends React.Component {
 
 
     render() {
-       let today = new Date();
-      // console.error(today)
-      // {today.toString()}
-      // {this.state.events.map(event => (<li>{event.event_start} {event.name} </li>))}
+        let today = new Date();
+        // console.error(today)
+        // {today.toString()}
+        // {this.state.events.map(event => (<li>{event.event_start} {event.name} </li>))}
 
-      let comingEvents = this.state.events.filter(event => event.event_start*1000 > today)
-        let pastEvents = this.state.events.filter(event => event.event_start*1000 < today)
+        let comingEvents = this.state.events.filter(event => event.event_start * 1000 > today);
+        let pastEvents = this.state.events.filter(event => event.event_start * 1000 < today);
+
+
+
+
+
 
         return (
             <div className="events">
 
-                <h2> </h2>
+
 
                 <div className="events-table">
+                    {
+                    comingEvents.length > 0 ? (
 
-{/*
+                            <h2> Upcoming Events </h2>
+                    )
+                    :null }
 
-                        {comingEvents.map(event => (
-                        <li>{new Date(event.event_start*1000).toISOString()} {event.event_start} {event.name} </li>))}
 
-                        <h2> Past Events </h2>
-                        {pastEvents.map(event => (<li>{new Date(event.event_start*1000).toISOString()} {event.name} </li>))}*/}
 
-                    { comingEvents.map (event => {
-                        let date = new Date (event.event_start * 1000); //from seconds to milliseconds
+                    {comingEvents.map(event => {
+                            let date = new Date(event.event_start * 1000); //from seconds to milliseconds
 
                             return (
 
-                            <div className = "event-item">
+                                <div className="event-item">
 
-                                <h2> Upcoming Events </h2>
 
-                                <div className = "date-section">
-                                    <h2>{date.getDate() }</h2>
-                                    <h2>{monthNames[date.getMonth()]}</h2>
-                                </div>
-                                <div className = "image-section">
-                                    <img src = { event.image_url }/>
+                                    <div className="date-section">
+                                        <h2>{date.getDate()}</h2>
+                                        <h2>{monthNames[date.getMonth()]}</h2>
+                                    </div>
+                                    <div className="image-section">
+                                        <img src={event.image_url}/>
 
+                                    </div>
+                                    <div className="details-section">
+                                        <h3>{event.name} </h3>
+                                        <h4>{event.location}</h4>
+                                        <h4>{date.toTimeString()}</h4>
+                                        <h5>{event.description_short}</h5>
+                                    </div>
                                 </div>
-                                <div className = "details-section">
-                                    <h3>{event.name} </h3>
-                                    <h4>{event.location}</h4>
-                                    <h4>{date.toTimeString()}</h4>
-                                    <h5>{event.descripion_short}</h5>
-                                </div>
-                            </div>
-                                )
-                    }
+                            )
+                        }
                     )}
+
+
+
                     { pastEvents.map (event => {
                             let date = new Date (event.event_start * 1000); //from seconds to milliseconds
 

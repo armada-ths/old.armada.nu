@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar"
 import Jumbotron from "./components/Jumbotron"
 import Content from "./components/Content"
 import Footer from "./components/Footer"
+import GoogleAnalyticsTracker from "./components/GoogleAnalyticsTracker" 
 
 
 const AppContainer = (props) => {
@@ -21,6 +22,7 @@ const AppContainer = (props) => {
     }
     vid = pathname === "/" ? vid : null;
     return (
+  <GoogleAnalyticsTracker params={props.params}> 
   <Container>
     <DefaultHeadMeta />
     <Navbar />
@@ -30,11 +32,13 @@ const AppContainer = (props) => {
     </Content>
     <Footer />
   </Container>
+ </GoogleAnalyticsTracker>
 )
 }
 
 AppContainer.propTypes = {
   children: PropTypes.node,
+  params: PropTypes.object,
   location: PropTypes.object,
 }
 

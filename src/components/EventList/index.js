@@ -25,15 +25,8 @@ class EventList extends React.Component {
 
     render() {
         let today = new Date();
-        // console.error(today)
-        // {today.toString()}
-        // {this.state.events.map(event => (<li>{event.event_start} {event.name} </li>))}
-
         let comingEvents = this.state.events.filter(event => event.event_start * 1000 > today);
         let pastEvents = this.state.events.filter(event => event.event_start * 1000 < today);
-
-
-
 
 
 
@@ -46,7 +39,7 @@ class EventList extends React.Component {
                     {
                     comingEvents.length > 0 ? (
 
-                            <h2> Upcoming Events </h2>
+                            <h2> Upcoming 12345 Events </h2>
                     )
                     :null }
 

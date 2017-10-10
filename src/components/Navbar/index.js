@@ -13,7 +13,6 @@ class Navbar extends React.Component {
 
 
 
-
       render(){
         let toggleExpand = () => {
             this.setState({"expanded": !this.state.expanded});

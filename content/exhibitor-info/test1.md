@@ -2,7 +2,7 @@
 title: 'Transportation of exhibition material '
 layout: PageSection
 priority: '6'
-header: /assets/mattor.JPG
+header: /assets/MATTOR.jpg
 dark: false
 ---
 ## Transport to the fair

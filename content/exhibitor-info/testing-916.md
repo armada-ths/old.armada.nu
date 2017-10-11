@@ -2,8 +2,8 @@
 title: Check-in & travel
 layout: PageSection
 priority: '2'
+header: /assets/train2.png
 dark: true
-header: /assets/travel.png
 ---
 **Arriving at the fair **
 

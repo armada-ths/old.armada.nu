@@ -2,10 +2,10 @@
 layout: News
 title: How we increased our social sustainability
 cover_wide: /assets/03102017-DSC_0009.JPG
-featured: true
+featured: false
 date: '10/11/2017 11:18 AM'
 ---
-_Karolina Lind, Charlotte Hedlund and Tobias Porserud_
+_Karolina Lind, Charlotte Hedlund, Tobias Porserud _
 
 **THS Armada do more than 500 interviews each year to find the right candidates for the right positions. Result from teamwork, thoughts about organizational values and how your dream team looks like, is just a few things that shows up on our interviews. We have talked to Talent Eye, the company behind our methods and knowledge in interview technique. **
 

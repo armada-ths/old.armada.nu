@@ -39,7 +39,7 @@ class EventList extends React.Component {
                     {
                     comingEvents.length > 0 ? (
 
-                            <h2> Upcoming 12345 Events </h2>
+                            <h2> Upcoming Events </h2>
                     )
                     :null }
 
@@ -64,9 +64,11 @@ class EventList extends React.Component {
                                     <div className="details-section">
                                         <h3>{event.name} </h3>
                                         <h4>{event.location}</h4>
-                                        <h4>{date.toTimeString()}</h4>
-                                        <h5>{event.description_short}</h5>
+                                        <h4>moment.locale()</h4>
+                                        <h4>{date.toISOString()}</h4>
+                                        <h4>{event.description_short}</h4>
                                     </div>
+                                    <hr> </hr>
                                 </div>
                             )
                         }
@@ -77,11 +79,19 @@ class EventList extends React.Component {
                     { pastEvents.map (event => {
                             let date = new Date (event.event_start * 1000); //from seconds to milliseconds
 
+                        //date.moment().format('LT');
+
                             return (
+
+                                <div className = "secondary-title">
+
+                                <h2> Past Events </h2>
+
+
 
                                 <div className = "event-item">
 
-                                    <h2> Past Events </h2>
+
 
                                     <div className = "date-section">
                                         <h2>{date.getDate() }</h2>
@@ -95,8 +105,10 @@ class EventList extends React.Component {
                                         <h3>{event.name} </h3>
                                         <h4>{event.location}</h4>
                                         <h4>{date.toTimeString()}</h4>
+                                        <h4>{event.moment().format()}</h4>
                                         <h5>{event.descripion_short}</h5>
                                     </div>
+                                </div>
                                 </div>
                             )
                         }

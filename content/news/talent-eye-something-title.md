@@ -2,8 +2,8 @@
 layout: News
 title: How we increased our social sustainability
 cover_wide: /assets/03102017-DSC_0009.JPG
-featured: false
-date: 10/11/2017 11:18 AM
+featured: true
+date: '10/11/2017 11:18 AM'
 ---
 _Karolina Lind, Charlotte Hedlund and Tobias Porserud_
 

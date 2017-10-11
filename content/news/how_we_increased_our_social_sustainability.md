@@ -2,7 +2,7 @@
 layout: News
 title: How we increased our social sustainability
 cover_wide: /assets/03102017-DSC_0009.JPG
-featured: false
+featured: true
 ingress: '   '
 date: 2017-10-11T11:18:00.096Z
 ---

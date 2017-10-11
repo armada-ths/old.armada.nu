@@ -2,7 +2,7 @@
 title: The Grand Banquet
 layout: PageSection
 priority: '8'
-header: /assets/24315577336_8fd160cc7e_o.jpg
+header: /assets/24315577336_8fd160cc7e_o.png
 dark: false
 ---
 **Date:** 21st of November

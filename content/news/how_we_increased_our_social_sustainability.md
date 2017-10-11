@@ -11,7 +11,7 @@ _Karolina Lind, Charlotte Hedlund, Tobias Porserud _
 
 2011 marked the first year that the project team of THS Armada received a comprehensive education in recruitment and interviewing methods. As the largest student driven organization in Scandinavia, with over 260 engaged students, we spend a significant amount of time on finding the right candidates. Talent Eye has provided us with the tools we need to improve the organization each year.
 
-The same year, Tobias Porserud graduated from KTH and felt that there was a disconnect between students and the industry. He decided to change that. Tobias is a co-founder and the CEO of Talent Eye, a recruitment company focussed on building connections between gifted students and companies. This is accomplished through customized internships and trainee programs.
+The same year, Tobias Porserud graduated from KTH and felt that there was a disconnect between students and the industry. He decided to change that. Tobias is a co-founder and the CEO of Talent Eye, a recruitment company focused on building connections between gifted students and companies. This is accomplished through customized internships and trainee programs.
 
 > \- An interview is a chance for honest dialogue - not interrogation, says Tobias. To sit in a room feeling that you are being cross-examined, makes the interview uncomfortable and it is unlikely that you will present the best version of yourself. As a recruiter, you should view an interview as a conversation. Nevertheless, it's essential to have a thoughtful structure to the interview and to base the questions on specific goals of your organization.
 >
@@ -19,8 +19,8 @@ The same year, Tobias Porserud graduated from KTH and felt that there was a disc
 
 **Talent Eye focuses heavily on personal values and finding the student's sweet spots - what environment they prefer and consequently perform their very best. Everything to ensure the perfect match between the student and the employee.**
 
-> \- We concentrate on the students at an individual level and try to get to know them and their values. Research has proven, that if an individual's values corresponds to that of the organization - one can expect better performance and engagement. That is what we strive for, says Tobias 
+> \- We concentrate on the students at an individual level and try to get to know them and their values. Research has proven, that if an individual's values corresponds to that of the organization - one can expect better performance and engagement. That is what we strive for, says Tobias. 
 >
 > \- In the interview it became apparent that THS Armada is committed to their organizational values. I  was asked questions such as "these are our core values, how do you think Armada can further improve them?". In comparison to last year, the interview was more of a discussion regarding values, says Karolina Lind, Lounge Host for this year's career fair and earlier Lounge Host, 2016 and Event Host, 2015.
 
-Talent Eye is an essential part of THS Armada's development towards a more inclusive, energized and professional organization. Sharing their knowledge and practical tools through workshops has not only enhanced engagement within the project, but more importantly contributed to our social sustainability. In November, more than 170 companies and 12,000 students will experience the results of our efforts.
+Talent Eye is an essential part of THS Armada's development towards a more inclusive, energized and professional organization. Sharing their knowledge and practical tools through workshops has not only enhanced engagement within the project, but more importantly contributed to our social sustainability. In November, more than 170 companies and 12,000 students will experience the result of our efforts.

@@ -1,9 +1,9 @@
 ---
-dark: false
 title: Service information
 layout: PageSection
 priority: '3'
-header: /assets/lounge2.JPG
+header: /assets/lounge2.png
+dark: false
 ---
 **Exhibitor lounges:**
 

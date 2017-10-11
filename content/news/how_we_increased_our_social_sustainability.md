@@ -21,6 +21,6 @@ Tobias Porserud graduated from KTH 2011 and felt that there was a gap between st
 
 > \- We focus on the students on an individual level and try to get to know them and what they value. Through research it is proven that is an individual's personal values correlates with the organization's values - the results improved engagement and higher performance - and that is what we strives for. 
 >
-> \- It was clear in the interview that THS Armada is driven by their organizational values, I got questions like "this is our core values, how can Armada work further with them?". Compsred to last year, it was more time to discuss and talk about values, says Karolina Lind, Lounge Host for this year's career fair and earlier Lounge Host, 2016 and Event Host, 2015. 
+> \- It was clear in the interview that THS Armada is driven by their organizational values, I got questions like "this is our core values, how can Armada work further with them?". Compared to last year, it was more time to discuss and talk about values, says Karolina Lind, Lounge Host for this year's career fair and earlier Lounge Host, 2016 and Event Host, 2015. 
 
 Talent Eye is a key in THS Armada's development towards a more inclusive, energized and professional organization. Sharing their knowledge and practical tools through workshops and support has not only created larger engagement within the project, but also contributed to our social sustainability were each team member has the same tools, methods and information. In November, over 170 companies and 12,000 students will experience the results,

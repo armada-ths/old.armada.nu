@@ -1,9 +1,9 @@
 ---
-dark: true
 title: 'Marketing information '
-layout: PageSection 
+layout: PageSection
 priority: '5'
-header: /assets/Marketing.png
+header: /assets/market2.png
+dark: true
 ---
 **Armada Talks**
 

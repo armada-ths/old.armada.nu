@@ -7,9 +7,9 @@ date: 2017-10-11T11:18:00.096Z
 ---
 _Karolina Lind, Charlotte Hedlund, Tobias Porserud _
 
-**THS Armada interviews more than 500 candidates each year to find the right candidates for each position.** **Questions regarding teamwork, our organizational values and how you dream team looks like, are just a few examples of things that you can expect at an interview. We have talked to Talent Eye, the company behind our methods and knowledge in interview technique. **
+**THS Armada interviews more than 500 candidates each year to find the right candidates for each position.** **Questions regarding teamwork, our organizational values and how your dream team looks like, are just a few examples of things that you can expect at an interview. We have talked to Talent Eye, the company behind our methods and knowledge in interview technique. **
 
-2011 marked the first year that the project team of THS Armada received a comprehensive education in recruitment and interviewing methods. As the largest student driver organization in Scandinavia, with over 260 engaged student, we spend a significant amount of time on finding the right candidates. Talent Eye has provided us with the tools we need to improve the organization each year.
+2011 marked the first year that the project team of THS Armada received a comprehensive education in recruitment and interviewing methods. As the largest student driven organization in Scandinavia, with over 260 engaged students, we spend a significant amount of time on finding the right candidates. Talent Eye has provided us with the tools we need to improve the organization each year.
 
 The same year, Tobias Porserud graduated from KTH and felt that there was a disconnect between students and the industry. He decided to change that. Tobias is a co-founder and the CEO of Talent Eye, a recruitment company focussed on building connections between gifted students and companies. This is accomplished through customized internships and trainee programs.
 

@@ -68,7 +68,6 @@ class EventList extends React.Component {
                                         <h4>{date.toISOString()}</h4>
                                         <h4>{event.description_short}</h4>
                                     </div>
-                                    <hr> </hr>
                                 </div>
                             )
                         }
@@ -79,7 +78,7 @@ class EventList extends React.Component {
                     { pastEvents.map (event => {
                             let date = new Date (event.event_start * 1000); //from seconds to milliseconds
 
-                        //date.moment().format('LT');
+
 
                             return (
 
@@ -105,7 +104,6 @@ class EventList extends React.Component {
                                         <h3>{event.name} </h3>
                                         <h4>{event.location}</h4>
                                         <h4>{date.toTimeString()}</h4>
-                                        <h4>{event.moment().format()}</h4>
                                         <h5>{event.descripion_short}</h5>
                                     </div>
                                 </div>

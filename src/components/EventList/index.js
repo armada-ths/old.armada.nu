@@ -62,7 +62,9 @@ class EventList extends React.Component {
 
                                     </div>
                                     <div className="details-section">
-                                        <h3>{event.name} </h3>
+                                        <div className="button">
+                                          <h3 >{event.name} </h3>
+                                        </div>
                                         <h4>{event.location}</h4>
                                         <h4>{date.toTimeString()}</h4>
                                         <h5>{event.description_short}</h5>
@@ -109,4 +111,3 @@ class EventList extends React.Component {
 }
 
 export default EventList;
-

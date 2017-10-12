@@ -2,8 +2,7 @@
 
 .event {
 
-  padding: 1.5em;
-  margin: 5%;
+
 
 }
 
@@ -13,6 +12,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 2em;
+
+}
+.secondary-title {
+
+
+
 
 }
 
@@ -36,16 +42,17 @@ flex-direction: row;
 
 .image-section{
 
-  width: 40%;
+  width: 30%;
   height: 100%;
 
 }
 
 .details-section{
 
-  width: 40%;
+  width: 30%;
   height: 100%;
 
+<<<<<<< HEAD
 }
 
 
@@ -54,3 +61,16 @@ flex-direction: row;
     text-decoration: underline;
     }
 }
+=======
+
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+>>>>>>> efdbc837ef694d18d5b258e0c065714a12b39e59

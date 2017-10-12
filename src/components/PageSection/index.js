@@ -77,7 +77,7 @@ class PageSection extends React.Component {
             return (
 
                 <div className={"pagesection " + (this.props.right ? "right" : "left")}>
-                    <div className="image">
+                    <div className={"image "+ (this.props.dark ? "dark" : "light")}>
                         <img src={this.props.header}/>
                     </div>
 

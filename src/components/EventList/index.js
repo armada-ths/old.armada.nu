@@ -15,7 +15,7 @@ class EventList extends React.Component {
     }
 
     componentDidMount() {  // only called when eventpage is created or updated.
-        axios.get('https://ais.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
+        axios.get('https://ais2.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data
@@ -35,7 +35,7 @@ class EventList extends React.Component {
 
 
 
-                <div className="events-table">
+                <div className="events-feed">
                     {
                     comingEvents.length > 0 ? (
 
@@ -47,8 +47,13 @@ class EventList extends React.Component {
 
                     {comingEvents.map(event => {
                             let date = new Date(event.event_start * 1000); //from seconds to milliseconds
+                            let hours = date.getHours();
+                            let minutes = "0" + date.getMinutes();
+
 
                             return (
+
+                                <div className="line-spacing"> <hr/>
 
                                 <div className="event-item">
 
@@ -61,22 +66,29 @@ class EventList extends React.Component {
                                         <img src={event.image_url}/>
 
                                     </div>
-                                    <div className="details-section">
-                                        <h3>{event.name} </h3>
-                                        <h4>{event.location}</h4>
-                                        <h4>moment.locale()</h4>
-                                        <h4>{date.toISOString()}</h4>
-                                        <h4>{event.description_short}</h4>
+                                    <div className = "details-section">
+                                        <h3 className ="name" >{event.name} </h3>
+                                        <br/>
+                                        <h4 className ="location" >Location: {event.location}</h4>
+                                        <br/>
+                                        <h4 className ="time" >Time: {hours + ':' + minutes.substr(-2)}</h4>
+                                        <br/>
+                                        <h6 className ="description" >{event.description_short}</h6>
                                     </div>
+
                                 </div>
+
+                                </div>
+
                             )
+
                         }
                     )}
 
-
-
                     { pastEvents.map (event => {
                             let date = new Date (event.event_start * 1000); //from seconds to milliseconds
+                            let minutes = "0" + date.getMinutes();
+                            let hours = date.getHours();
 
 
 
@@ -85,7 +97,8 @@ class EventList extends React.Component {
                                 <div className = "secondary-title">
 
                                 <h2> Past Events </h2>
-
+                                 <br/>
+                                    <hr/>
 
 
                                 <div className = "event-item">
@@ -101,17 +114,23 @@ class EventList extends React.Component {
 
                                     </div>
                                     <div className = "details-section">
-                                        <h3>{event.name} </h3>
-                                        <h4>{event.location}</h4>
-                                        <h4>{date.toTimeString()}</h4>
-                                        <h5>{event.descripion_short}</h5>
+                                        <h3 className ="name" >{event.name} </h3>
+                                        <br/>
+                                        <h4 className ="location" >Location: {event.location}</h4>
+                                        <br/>
+                                        <h4 className ="time" >Time: {hours + ':' + minutes.substr(-2)}</h4>
+                                        <br/>
+                                        <h6 className ="description" >{event.description_short}</h6>
                                     </div>
                                 </div>
+                                    <hr/>
                                 </div>
                             )
                         }
                     )}
+
                 </div>
+
         </div>
         )
     }

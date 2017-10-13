@@ -1,21 +1,34 @@
 @import '../../styles/_variables';
 
-.event {
+.events {
 
-
+  width: 100%;
+  height:100%;
+  margin: auto;
 
 }
 
-.events-table {
+.events-feed {
 
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 2em;
 
+
+
 }
 .secondary-title {
+
+  text-align: left;
+
+
+
+
+}
+
+.line-spacing{
 
 
 
@@ -27,6 +40,9 @@
 
 display: flex;
 flex-direction: row;
+  padding: 2em;
+
+
 
 
 
@@ -34,7 +50,7 @@ flex-direction: row;
 
 .date-section{
 
-  width: 20%;
+  width: 10%;
   height: 100%;
 
 
@@ -49,17 +65,92 @@ flex-direction: row;
 
 .details-section{
 
-  width: 30%;
+  width: 40%;
   height: 100%;
+
+  h3{
+
+  }
+
+  h4{
+
+
+  }
+
+  h6{
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
 
 
 }
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+@media screen and (max-width: $breakpoint-mobile) {
+
+
+  .events-feed {
+
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+
+
+  }
+  .secondary-title {
+
+    text-align: left;
+
+
+  }
+
+  .line-spacing{
+
+
+  }
+
+  .event-item {
+
+
+    display: flex;
+    flex-direction: row;
+    padding: 0%;
+
+
+
+  }
+
+  .date-section{
+
+display: none;
+
+
+  }
+
+  .image-section{
+
+    width: 40%;
+    max-heightheight: 100%;
+
+    img{
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+  .details-section{
+
+    width: 40%;
+    height: 100%;
+
+    .description {
+        display: none;
+    }
+
+
+  }
 }

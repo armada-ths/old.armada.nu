@@ -19,14 +19,7 @@
 
 
 }
-.secondary-title {
 
-  text-align: left;
-
-
-
-
-}
 
 .line-spacing{
 
@@ -36,54 +29,56 @@
 }
 
 .event-item {
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
 
 
+    .image-section{
 
-display: flex;
-flex-direction: row;
-  padding: 2em;
+      width: 40%;
+    }
 
+    .details-section{
+       width: 60%;
 
-
-
-
-}
-
-.date-section{
-
-  width: 10%;
-  height: 100%;
+      .name{
+          text-align: left;
+      }
 
 
-}
+      padding-left: 1em;
 
-.image-section{
+      .event-property{
+          display: flex;
+          flex-direction: row;
 
-  width: 30%;
-  height: 100%;
+          .icon{
+              width: 25px;
+              height: 25px;
+          }
+          p{
+              margin: 0 0 0 5px;
+          }
+      }
 
-}
+      h3{
 
-.details-section{
+      }
 
-  width: 40%;
-  height: 100%;
-
-  h3{
-
-  }
-
-  h4{
+      h4{
 
 
-  }
+      }
 
-  h6{
+      h6{
 
-    overflow: hidden;
+        overflow: hidden;
 
-    text-overflow: ellipsis;
-  }
+        text-overflow: ellipsis;
+      }
+
+    }
 
 }
 

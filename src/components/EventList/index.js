@@ -13,6 +13,7 @@ const urlPropsQueryConfig = {
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ];
 
+
 const Modal = ({onClose, ...rest}) => (
       <div>
         <div className="shade" />
@@ -103,11 +104,6 @@ class EventList extends React.Component {
             <div>
                 <div className = "event-item" onClick={()=>this.showModal(event.id)}>
 
-                    <div className = "date-section">
-                        <h2>{date.getDate() }</h2>
-                        <h2>{monthNames[date.getMonth()]}</h2>
-                    </div>
-
                     <div className = "image-section">
                         <img src = { event.image_url }/>
 
@@ -116,12 +112,19 @@ class EventList extends React.Component {
                     <div className = "details-section">
 
                         <h3 className ="name" >{event.name} </h3>
-                        <br/>
-                        <h4 className ="location" >Location: {event.location}</h4>
-                        <br/>
-                        <h4 className ="time" >Time: {hours + ':' + minutes.substr(-2)}</h4>
-                        <br/>
-                        <h6 className ="description" >{event.description_short}</h6>
+                        <div className='event-property'>
+                            <img className='icon' src='/assets/calendar-round.svg'/>
+                            <p> {date.getDate()} {monthNames[date.getMonth()]} </p>
+                        </div>
+                        <div className='event-property'>
+                            <img className='icon' src='/assets/place.svg'/>
+                            <p> {event.location}</p>
+                        </div>
+                        <div className='event-property'>
+                            <img className='icon' src='/assets/clock.svg'/>
+                            <p className ="time" > {hours + ':' + minutes.substr(-2)}</p>
+                        </div>
+                        <p className ="description" >{event.description_short}</p>
                     </div>
                 </div>
 
@@ -159,7 +162,7 @@ class EventList extends React.Component {
                     {
                     comingEvents.length > 0 ? (
 
-                            <h2> Upcoming Events </h2>
+                            <h2> Past Events </h2>
                     )
                     :null }
                     {pastEvents.map(this.getEventItem)}

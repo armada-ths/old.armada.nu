@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 
 import "./eventlist.scss";
+import queryString from "query-string";
 
 import {ReactPageClick} from 'react-page-click';
 
@@ -29,7 +30,8 @@ class EventList extends React.Component {
 
         this.state = {
             events: [],  // json object
-            showModal: false
+            showModal: false,
+            eventId: undefined
         };
     }
 
@@ -39,6 +41,10 @@ class EventList extends React.Component {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data
           });
+
+        // Get from url path the GET params ?id=number, to know what event to display
+        let parsed = queryString.parse(location.search);
+        this.setState({eventId: parsed.id});
     }
 
       hideModal = () => {
@@ -56,7 +62,8 @@ class EventList extends React.Component {
         let pastEvents = this.state.events.filter(event => event.event_start * 1000 < today);
         const {showModal} = this.state;
 
-
+        // get the event to display. Don't know behaviour when this.state.eventId = undefined
+        //let eventToDisplay = this.state.events.filter(event => event.id == this.state.eventId);
 
         return (
 

@@ -1,10 +1,16 @@
 import React from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 import "./eventlist.scss";
-import queryString from "query-string";
+import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
 
 import {ReactPageClick} from 'react-page-click';
+
+
+const urlPropsQueryConfig = {
+  eventId: { type: UrlQueryParamTypes.number, queryParam: 'eventId' },
+};
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ];
@@ -41,21 +47,20 @@ class EventList extends React.Component {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
-            let parsed = queryString.parse(location.search);
-            if (parsed.id !== undefined ){
-              this.setState({eventId: parsed.id, showModal:true, events});
+            if (this.props.eventId !== undefined ){
+              this.setState({eventId: this.props.eventId, showModal:true, events});
           }
           });
-
-
     }
 
       hideModal = () => {
         this.setState({showModal: false, eventId: undefined});
+        this.props.onChangeEventId(null);
       };
 
       showModal = (eventId) => {
         this.setState({showModal: true, eventId});
+        this.props.onChangeEventId(eventId);
 
       };
 
@@ -84,7 +89,7 @@ class EventList extends React.Component {
               </Modal>
               ) : null}
 
-                <div className="events-table">
+                <div className="events-feed">
                     {
                     comingEvents.length > 0 ? (
 
@@ -96,8 +101,13 @@ class EventList extends React.Component {
 
                     {comingEvents.map(event => {
                             let date = new Date(event.event_start * 1000); //from seconds to milliseconds
+                            let hours = date.getHours();
+                            let minutes = "0" + date.getMinutes();
+
 
                             return (
+
+                                <div className="line-spacing"> <hr/>
 
                                 <div className="event-item">
 
@@ -110,23 +120,32 @@ class EventList extends React.Component {
                                         <img src={event.image_url}/>
 
                                     </div>
-                                    <div className="details-section">
-                                        <div className="button">
-                                          <h3 >{event.name} </h3>
-                                        </div>
-                                        <h4>{event.location}</h4>
-                                        <h4>moment.locale()</h4>
-                                        <h4>{date.toISOString()}</h4>
-                                        <h4>{event.description_short}</h4>
+
+                                    <div className = "details-section">
+                                        <h3 className ="name" >{event.name} </h3>
+                                        <br/>
+                                        <h4 className ="location" >Location: {event.location}</h4>
+                                        <br/>
+                                        <h4 className ="time" >Time: {hours + ':' + minutes.substr(-2)}</h4>
+                                        <br/>
+                                        <h6 className ="description" >{event.description_short}</h6>
+
                                     </div>
+
                                 </div>
+
+                                </div>
+
                             )
+
                         }
                     )}
 
 
                     { pastEvents.map (event => {
                             let date = new Date (event.event_start * 1000); //from seconds to milliseconds
+                            let minutes = "0" + date.getMinutes();
+                            let hours = date.getHours();
 
                             return (
 
@@ -134,8 +153,13 @@ class EventList extends React.Component {
 
                                 <h2> Past Events </h2>
 
+                                 <br/>
+                                    <hr/>
+
+
                                 <div className = "event-item" onClick={()=>this.showModal(event.id)}>
                                   <a href={"/events/?id="+event.id}> READ MORE</a>
+
 
 
 
@@ -149,15 +173,19 @@ class EventList extends React.Component {
                                     </div>
                                     <div className = "details-section">
 
-                                        <h2>{event.name} </h2>
-
-                                        <h4>{event.location}</h4>
-                                        <h4>{date.toTimeString()}</h4>
-                                        <h5>{event.descripion_short}</h5>
+                                        <h3 className ="name" >{event.name} </h3>
+                                        <br/>
+                                        <h4 className ="location" >Location: {event.location}</h4>
+                                        <br/>
+                                        <h4 className ="time" >Time: {hours + ':' + minutes.substr(-2)}</h4>
+                                        <br/>
+                                        <h6 className ="description" >{event.description_short}</h6>
 
                                     </div>
 
                                 </div>
+
+                                    <hr/>
 
                                 </div>
                             )
@@ -165,9 +193,15 @@ class EventList extends React.Component {
                     )}
 
                 </div>
+
         </div>
         )
     }
 }
 
-export default EventList;
+EventList.propTypes = {
+    eventId: PropTypes.number,
+    onChangeEventId: PropTypes.func,
+}
+
+export default addUrlProps({ urlPropsQueryConfig })(EventList)

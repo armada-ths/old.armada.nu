@@ -36,23 +36,27 @@ class EventList extends React.Component {
     }
 
     componentDidMount() {  // only called when eventpage is created or updated.
-        axios.get('https://ais.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
+        axios.get('https://ais2.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data
+            // Get from url path the GET params ?id=number, to know what event to display
+            let parsed = queryString.parse(location.search);
+            if (parsed.id !== undefined ){
+              this.setState({eventId: parsed.id, showModal:true, events});
+          }
           });
 
-        // Get from url path the GET params ?id=number, to know what event to display
-        let parsed = queryString.parse(location.search);
-        this.setState({eventId: parsed.id});
+
     }
 
       hideModal = () => {
-        this.setState({showModal: false});
+        this.setState({showModal: false, eventId: undefined});
       };
 
-      showModal = () => {
-        this.setState({showModal: true});
+      showModal = (eventId) => {
+        this.setState({showModal: true, eventId});
+
       };
 
 
@@ -60,17 +64,21 @@ class EventList extends React.Component {
         let today = new Date();
         let comingEvents = this.state.events.filter(event => event.event_start * 1000 > today);
         let pastEvents = this.state.events.filter(event => event.event_start * 1000 < today);
-        const {showModal} = this.state;
 
         // get the event to display. Don't know behaviour when this.state.eventId = undefined
-        //let eventToDisplay = this.state.events.filter(event => event.id == this.state.eventId);
-
+        let eventToDisplay = this.state.events.filter(event => event.id == this.state.eventId)[0];
         return (
 
 
             <div className="events">
 
-
+            {this.state.showModal ? (
+              <Modal onClose={this.hideModal}>
+                <h3>{eventToDisplay.name} </h3>
+                <h4>{eventToDisplay.location}</h4>
+                <h5>{eventToDisplay.descripion_short}</h5>
+              </Modal>
+              ) : null}
 
                 <div className="events-table">
                     {
@@ -122,16 +130,8 @@ class EventList extends React.Component {
 
                                 <h2> Past Events </h2>
 
-                                {showModal ? (
-                                  <Modal onClose={this.hideModal}>
-                                    <h3>{event.name} </h3>
-                                    <h4>{event.location}</h4>
-                                    <h4>{date.toTimeString()}</h4>
-                                    <h5>{event.descripion_short}</h5>
-                                  </Modal>
-                                  ) : null}
-
-                                <div className = "event-item" onClick={this.showModal}>
+                                <div className = "event-item" onClick={()=>this.showModal(event.id)}>
+                                  <a href={"/events/?id="+event.id}> READ MORE</a>
 
 
 
@@ -152,7 +152,9 @@ class EventList extends React.Component {
                                         <h5>{event.descripion_short}</h5>
 
                                     </div>
+
                                 </div>
+
                                 </div>
                             )
                         }

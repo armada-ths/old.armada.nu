@@ -61,7 +61,6 @@ class EventList extends React.Component {
       showModal = (eventId) => {
         this.setState({showModal: true, eventId});
         this.props.onChangeEventId(eventId);
-
       };
 
 

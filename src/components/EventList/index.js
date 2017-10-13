@@ -40,7 +40,7 @@ class EventList extends React.Component {
     }
 
     componentDidMount() {  // only called when eventpage is created or updated.
-        axios.get('https://ais.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
+        axios.get('https://ais2.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data
@@ -59,8 +59,44 @@ class EventList extends React.Component {
       showModal = (eventId) => {
         this.setState({showModal: true, eventId});
         this.props.onChangeEventId(eventId);
-
       };
+
+    getEventItem = (event) => {
+        let date = new Date (event.event_start * 1000); //from seconds to milliseconds
+        let minutes = "0" + date.getMinutes();
+        let hours = date.getHours();
+
+
+        return (
+            <div className = "secondary-title">
+                <div className = "event-item" onClick={()=>this.showModal(event.id)}>
+
+                    <div className = "date-section">
+                        <h2>{date.getDate() }</h2>
+                        <h2>{monthNames[date.getMonth()]}</h2>
+                    </div>
+
+                    <div className = "image-section">
+                        <img src = { event.image_url }/>
+
+                    </div>
+
+                    <div className = "details-section">
+
+                        <h3 className ="name" >{event.name} </h3>
+                        <br/>
+                        <h4 className ="location" >Location: {event.location}</h4>
+                        <br/>
+                        <h4 className ="time" >Time: {hours + ':' + minutes.substr(-2)}</h4>
+                        <br/>
+                        <h6 className ="description" >{event.description_short}</h6>
+                    </div>
+                </div>
+
+                <hr/>
+            </div>
+        );
+    }
 
 
     render() {
@@ -96,101 +132,17 @@ class EventList extends React.Component {
                             <h2> Upcoming Events </h2>
                     )
                     :null }
+                    {comingEvents.map(this.getEventItem)} 
 
 
 
-                    {comingEvents.map(event => {
-                            let date = new Date(event.event_start * 1000); //from seconds to milliseconds
-                            let hours = date.getHours();
-                            let minutes = "0" + date.getMinutes();
+                    {
+                    comingEvents.length > 0 ? (
 
-
-                            return (
-
-                                <div className="line-spacing"> <hr/>
-
-                                <div className="event-item">
-
-
-                                    <div className="date-section">
-                                        <h2>{date.getDate()}</h2>
-                                        <h2>{monthNames[date.getMonth()]}</h2>
-                                    </div>
-                                    <div className="image-section">
-                                        <img src={event.image_url}/>
-
-                                    </div>
-
-                                    <div className = "details-section">
-                                        <h3 className ="name" >{event.name} </h3>
-                                        <br/>
-                                        <h4 className ="location" >Location: {event.location}</h4>
-                                        <br/>
-                                        <h4 className ="time" >Time: {hours + ':' + minutes.substr(-2)}</h4>
-                                        <br/>
-                                        <h6 className ="description" >{event.description_short}</h6>
-
-                                    </div>
-
-                                </div>
-
-                                </div>
-
-                            )
-
-                        }
-                    )}
-
-
-                    { pastEvents.map (event => {
-                            let date = new Date (event.event_start * 1000); //from seconds to milliseconds
-                            let minutes = "0" + date.getMinutes();
-                            let hours = date.getHours();
-
-                            return (
-
-                                <div className = "secondary-title">
-
-                                <h2> Past Events </h2>
-
-                                 <br/>
-                                    <hr/>
-
-
-                                <div className = "event-item" onClick={()=>this.showModal(event.id)}>
-                                  <a href={"/events/?id="+event.id}> READ MORE</a>
-
-
-
-
-                                    <div className = "date-section">
-                                        <h2>{date.getDate() }</h2>
-                                        <h2>{monthNames[date.getMonth()]}</h2>
-                                    </div>
-                                    <div className = "image-section">
-                                        <img src = { event.image_url }/>
-
-                                    </div>
-                                    <div className = "details-section">
-
-                                        <h3 className ="name" >{event.name} </h3>
-                                        <br/>
-                                        <h4 className ="location" >Location: {event.location}</h4>
-                                        <br/>
-                                        <h4 className ="time" >Time: {hours + ':' + minutes.substr(-2)}</h4>
-                                        <br/>
-                                        <h6 className ="description" >{event.description_short}</h6>
-
-                                    </div>
-
-                                </div>
-
-                                    <hr/>
-
-                                </div>
-                            )
-                        }
-                    )}
+                            <h2> Upcoming Events </h2>
+                    )
+                    :null }
+                    {pastEvents.map(this.getEventItem)} 
 
                 </div>
 

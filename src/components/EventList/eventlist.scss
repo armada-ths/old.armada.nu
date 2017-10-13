@@ -88,20 +88,15 @@ flex-direction: row;
 }
 
 .popup {
-  //position: fixed;
-  position: absolute;
+  position: fixed;
   z-index: 400;
-  top: 10%;
+  top: 9%;
   left: 50%;
-  transform:translate(-50%,-50%);
-  margin-top: 20%;
-  //margin-left: -20%;
-  width: 50%;
-  height: 50%;
+  transform:translate(-50%);
+  width: 45%;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
-  text-align: center;
-  font-size: 30px;
+  overflow: auto;
 }
 
 .shade {
@@ -119,9 +114,23 @@ flex-direction: row;
 
   .modalimage {
     img{
-      width: 50%;
+      width: 100%;
       }
+  }
+  .signature {
+      //display: inline-block;
+      padding-top: 2px;
+      border-top: 1px solid $melon;
+      color: $melon;
+      text-align: left;
+  }
 
+  .modalinfo{
+    padding: 1em 1em;
+  }
+
+  .modalbutton{
+    text-align: center;
   }
 }
 

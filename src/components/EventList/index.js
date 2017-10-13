@@ -61,6 +61,38 @@ class EventList extends React.Component {
         this.props.onChangeEventId(eventId);
       };
 
+    displayEvent = (event) => {
+      let eventdate = new Date (event.event_start * 1000);
+      let registration_end = new Date (event.registration_end * 1000);
+
+      return (
+        <Modal onClose={this.hideModal}>
+        <div>
+          <div className="modalimage">
+            <img src={event.image_url}/>
+            </div>
+            <div className="modalinfo">
+              <h3>{event.name} {event.descripion_short}</h3>
+              <h4>{event.location}</h4>
+              {eventdate.getDate()} {monthNames[eventdate.getMonth()]}
+              <br/>
+              {event.description}
+              <br/>
+
+              <div className="modalbutton">
+              <a href={event.signup_link}>
+              <button>
+              RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}
+              </button>
+              </a>
+              </div>
+              </div>
+            </div>
+
+      </Modal>
+    );
+  }
+
     getEventItem = (event) => {
         let date = new Date (event.event_start * 1000); //from seconds to milliseconds
         let minutes = "0" + date.getMinutes();
@@ -68,7 +100,7 @@ class EventList extends React.Component {
 
 
         return (
-            <div className = "secondary-title">
+            <div>
                 <div className = "event-item" onClick={()=>this.showModal(event.id)}>
 
                     <div className = "date-section">
@@ -103,27 +135,15 @@ class EventList extends React.Component {
         let today = new Date();
         let comingEvents = this.state.events.filter(event => event.event_start * 1000 > today);
         let pastEvents = this.state.events.filter(event => event.event_start * 1000 < today);
-
         // get the event to display. Don't know behaviour when this.state.eventId = undefined
         let eventToDisplay = this.state.events.filter(event => event.id == this.state.eventId)[0];
+
         return (
 
 
             <div className="events">
 
-            {this.state.showModal ? (
-              <Modal onClose={this.hideModal}>
-                <h3>{eventToDisplay.name} {eventToDisplay.descripion_short}</h3>
-                <h4>{eventToDisplay.location}</h4>
-                <div className="modalimage">
-                  <img src={eventToDisplay.image_url}/>
-                </div>
-                <div>
-                  {eventToDisplay.description}
-                </div>
-
-              </Modal>
-              ) : null}
+            {this.state.showModal ? (this.displayEvent(eventToDisplay) ) : null}
 
                 <div className="events-feed">
                     {
@@ -132,7 +152,7 @@ class EventList extends React.Component {
                             <h2> Upcoming Events </h2>
                     )
                     :null }
-                    {comingEvents.map(this.getEventItem)} 
+                    {comingEvents.map(this.getEventItem)}
 
 
 
@@ -142,7 +162,7 @@ class EventList extends React.Component {
                             <h2> Upcoming Events </h2>
                     )
                     :null }
-                    {pastEvents.map(this.getEventItem)} 
+                    {pastEvents.map(this.getEventItem)}
 
                 </div>
 

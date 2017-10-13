@@ -11,7 +11,7 @@ const Events= (props) => {
         <div className="Events-container">
           <Page { ...props } >
           </Page>
-        <EventList/>
+        <EventList {...props}/>
         </div>
       </div>
   )

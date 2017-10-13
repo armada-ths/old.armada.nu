@@ -1,10 +1,16 @@
 import React from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 import "./eventlist.scss";
-import queryString from "query-string";
+import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
 
 import {ReactPageClick} from 'react-page-click';
+
+
+const urlPropsQueryConfig = {
+  eventId: { type: UrlQueryParamTypes.number, queryParam: 'eventId' },
+};
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ];
@@ -41,21 +47,20 @@ class EventList extends React.Component {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
-            let parsed = queryString.parse(location.search);
-            if (parsed.id !== undefined ){
-              this.setState({eventId: parsed.id, showModal:true, events});
+            if (this.props.eventId !== undefined ){
+              this.setState({eventId: this.props.eventId, showModal:true, events});
           }
           });
-
-
     }
 
       hideModal = () => {
         this.setState({showModal: false, eventId: undefined});
+        this.props.onChangeEventId(null);
       };
 
       showModal = (eventId) => {
         this.setState({showModal: true, eventId});
+        this.props.onChangeEventId(eventId);
 
       };
 
@@ -190,4 +195,9 @@ class EventList extends React.Component {
     }
 }
 
-export default EventList;
+EventList.propTypes = {
+    eventId: PropTypes.number,
+    onChangeEventId: PropTypes.func,
+}
+
+export default addUrlProps({ urlPropsQueryConfig })(EventList)

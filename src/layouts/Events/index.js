@@ -3,7 +3,7 @@ import React, { PropTypes } from "react"
 import Page from "../Page"
 import EventList from "../../components/EventList"
 
-// import "./index.scss"
+import "./index.scss"
 
 const Events= (props) => {
   return (

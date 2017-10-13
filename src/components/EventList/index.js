@@ -1,10 +1,8 @@
 import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-
 import "./eventlist.scss";
 import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
-
 import {ReactPageClick} from 'react-page-click';
 
 
@@ -84,7 +82,9 @@ class EventList extends React.Component {
                 <div className="modalimage">
                   <img src={eventToDisplay.image_url}/>
                 </div>
-                <p>{eventToDisplay.description}</p>
+                <div>
+                  {eventToDisplay.description}
+                </div>
 
               </Modal>
               ) : null}

@@ -25,6 +25,7 @@
 .event-item {
 
 
+
 display: flex;
 flex-direction: row;
 
@@ -87,8 +88,14 @@ hr {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.content {
-  padding: 50px;
+
+
+.modalcontent {
+
+  .modalimage {
+      width: 100%;
+      height: 10px;
+  }
 }
 
 .signature {

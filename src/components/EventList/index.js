@@ -14,7 +14,7 @@ const Modal = ({onClose, ...rest}) => (
         <div className="shade" />
         <ReactPageClick notify={onClose}>
           <div className="popup">
-            <div className="content" {...rest} />
+            <div className="modalcontent" {...rest} />
           </div>
         </ReactPageClick>
       </div>
@@ -36,7 +36,7 @@ class EventList extends React.Component {
     }
 
     componentDidMount() {  // only called when eventpage is created or updated.
-        axios.get('https://ais2.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
+        axios.get('https://ais.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data
@@ -74,9 +74,13 @@ class EventList extends React.Component {
 
             {this.state.showModal ? (
               <Modal onClose={this.hideModal}>
-                <h3>{eventToDisplay.name} </h3>
+                <h3>{eventToDisplay.name} {eventToDisplay.descripion_short}</h3>
                 <h4>{eventToDisplay.location}</h4>
-                <h5>{eventToDisplay.descripion_short}</h5>
+                <div className="modalimage">
+                  <img src={eventToDisplay.image_url}/>
+                </div>
+                <p>{eventToDisplay.description}</p>
+
               </Modal>
               ) : null}
 

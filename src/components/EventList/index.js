@@ -2,15 +2,33 @@ import React from "react";
 import axios from "axios";
 import "./eventlist.scss";
 
+import {ReactPageClick} from 'react-page-click';
+
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ];
+
+const Modal = ({onClose, ...rest}) => (
+      <div>
+        <div className="shade" />
+        <ReactPageClick notify={onClose}>
+          <div className="popup">
+            <div className="content" {...rest} />
+          </div>
+        </ReactPageClick>
+      </div>
+    );
+
+Modal.propTypes = {
+      onClose: undefined
+    };
 
 class EventList extends React.Component {
     constructor(props) {
         super(props); // adopts parent qualities
 
         this.state = {
-            events: []  // json object
+            events: [],  // json object
+            showModal: false
         };
     }
 
@@ -22,15 +40,26 @@ class EventList extends React.Component {
           });
     }
 
+      hideModal = () => {
+        this.setState({showModal: false});
+      };
+
+      showModal = () => {
+        this.setState({showModal: true});
+      };
+
 
     render() {
         let today = new Date();
         let comingEvents = this.state.events.filter(event => event.event_start * 1000 > today);
         let pastEvents = this.state.events.filter(event => event.event_start * 1000 < today);
+        const {showModal} = this.state;
 
 
 
         return (
+
+
             <div className="events">
 
 
@@ -76,11 +105,8 @@ class EventList extends React.Component {
                     )}
 
 
-
                     { pastEvents.map (event => {
                             let date = new Date (event.event_start * 1000); //from seconds to milliseconds
-
-
 
                             return (
 
@@ -88,9 +114,16 @@ class EventList extends React.Component {
 
                                 <h2> Past Events </h2>
 
+                                {showModal ? (
+                                  <Modal onClose={this.hideModal}>
+                                    <h3>{event.name} </h3>
+                                    <h4>{event.location}</h4>
+                                    <h4>{date.toTimeString()}</h4>
+                                    <h5>{event.descripion_short}</h5>
+                                  </Modal>
+                                  ) : null}
 
-
-                                <div className = "event-item">
+                                <div className = "event-item" onClick={this.showModal}>
 
 
 
@@ -103,21 +136,24 @@ class EventList extends React.Component {
 
                                     </div>
                                     <div className = "details-section">
-                                        <h3>{event.name} </h3>
+
+                                        <h2>{event.name} </h2>
+
                                         <h4>{event.location}</h4>
                                         <h4>{date.toTimeString()}</h4>
                                         <h5>{event.descripion_short}</h5>
+
                                     </div>
                                 </div>
                                 </div>
                             )
                         }
                     )}
+
                 </div>
         </div>
         )
     }
-
 }
 
 export default EventList;

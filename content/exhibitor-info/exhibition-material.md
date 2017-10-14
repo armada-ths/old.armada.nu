@@ -1,7 +1,7 @@
 ---
 title: Exhibition material
 layout: PageSection
-priority: '9'
+priority: '6'
 header: /assets/sture.jpg
 dark: false
 ---

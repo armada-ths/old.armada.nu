@@ -13,8 +13,12 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ];
 
 const Modal = ({onClose, ...rest}) => (
-      <div>
-        <div className="shade" />
+      <div className='popupcontainer'>
+        <div className="shade" >
+        <div className='close'>
+        <p className='cross'>˟</p>
+        </div>
+        </div>
         <ReactPageClick notify={onClose}>
           <div className="popup">
             <div className="modalcontent" {...rest} />
@@ -67,6 +71,10 @@ class EventList extends React.Component {
       let hours = eventdate.getHours();
       let today = new Date();
 
+      let eventdate_end = new Date (event.event_end * 1000);
+      let endminutes = "0" + eventdate_end.getMinutes();
+      let endhours = eventdate_end.getHours();
+
       return (
         <Modal onClose={this.hideModal}>
         <div>
@@ -76,27 +84,29 @@ class EventList extends React.Component {
             </div>
             <div className="modalinfo">
               <h3>{event.name}</h3>
-                <div className='modal-event-property'>
-                    <img className='icon' src='/assets/calendar-round.svg'/>
-                    <img className='icon' src='/assets/place.svg'/>
-                    <img className='icon' src='/assets/clock.svg'/>
-                </div>
-                <div className='modal-event-property'>
-                    <p> {eventdate.getDate()} {monthNames[eventdate.getMonth()]} </p>
-                    <p> {event.location}</p>
-                    <p className ="time" > {hours + ':' + minutes.substr(-2)}</p>
-                </div>
-                <div>
-                <br/>
-                  {event.description_short}
-                  <br/>
-                   <br/>
-                  {event.description}
-                </div>
-              <div className="modalbutton">
               <br/>
+                <div className='modal-event-property'>
+                  <div className='icon_group'>
+                    <img className='icon' src='/assets/calendar-round.svg'/>
+                    {eventdate.getDate() != eventdate_end.getDate() ? (
+                    <p> {eventdate.getDate() + '-' + eventdate_end.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>
+                    ):( <p> {eventdate.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>)}
+                  </div>
+                  <div className='icon_group'>
+                    <img className='icon' src='/assets/clock.svg'/>
+                    <p className ="time" > {hours + ':' + minutes.substr(-2) + '-' + endhours + ':' + endminutes.substr(-2) }</p>
+                  </div>
+                  <div className='icon_group'>
+                    <img className='icon' src='/assets/place.svg'/>
+                    <p> {event.location}</p>
+                  </div>
+                </div>
+                <br/>
+              {event.description}
+              </div>
+              <div className="modalbutton">
 
-              { eventdate > today ? (
+              {eventdate > today ? (
                 <a href={event.signup_link}>
                 <button className="rsvpbutton">
                 RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}
@@ -105,12 +115,8 @@ class EventList extends React.Component {
                 <button className="rsvpclosed">
                 RSVP CLOSED
                 </button>)}
-
-
               </div>
               </div>
-            </div>
-
       </Modal>
     );
   }
@@ -120,18 +126,14 @@ class EventList extends React.Component {
         let minutes = "0" + date.getMinutes();
         let hours = date.getHours();
 
-
         return (
             <div>
                 <div className = "event-item" onClick={()=>this.showModal(event.id)}>
-
                     <div className = "image-section">
                         <img src = { event.image_url }/>
-
                     </div>
 
                     <div className = "details-section">
-
                         <h3 className ="name" >{event.name} </h3>
                         <div className='event-property'>
                             <img className='icon' src='/assets/calendar-round.svg'/>
@@ -166,8 +168,8 @@ class EventList extends React.Component {
 
 
             <div className="events">
-
             {this.state.showModal ? (this.displayEvent(eventToDisplay) ) : null}
+
                 <div className="events-feed">
                     {comingEvents.length > 0 ? (<h2> Upcoming Events </h2>)
                     :null }

@@ -1,4 +1,12 @@
 .Events-container {
-    max-width: 850px;
-    margin: auto;
+  position: static;
+  z-index: 150;
+  max-width: 850px;
+  margin: auto;
+  padding: 1em 0em;
+}
+
+.content{
+  //position: relative;
+
 }

@@ -196,5 +196,10 @@ EventList.propTypes = {
     eventId: PropTypes.number,
     onChangeEventId: PropTypes.func,
 }
-
+let toExport;
+if(global.window!=undefined){
+  toExport = addUrlProps({urlPropsQueryConfig})(EventList);
+}else{
+  toExport=EventList;
+}
 export default toExport;

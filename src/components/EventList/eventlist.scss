@@ -47,8 +47,21 @@
         }
     }
 }
-.event-item:hover .name{
+
+.comingEvents:hover .name{
   text-decoration: underline;
+}
+
+.pastEvents{
+  padding-top: 3em;
+  h2{
+    color: #f4511e;
+  }
+  .pastEvent{
+    //z-index: 10;
+    //opacity: .5;
+    //filter: alpha(opacity=50);
+  }
 }
 
 .popupcontainer{

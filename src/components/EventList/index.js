@@ -171,19 +171,19 @@ class EventList extends React.Component {
             {this.state.showModal ? (this.displayEvent(eventToDisplay) ) : null}
 
                 <div className="events-feed">
+                  <div className='comingEvents'>
                     {comingEvents.length > 0 ? (<h2> Upcoming Events </h2>)
                     :null }
                     {comingEvents.map(this.getEventItem)}
+                  </div>
 
-
-
-                    {
-                    comingEvents.length > 0 ? (
-
-                            <h2> Past Events </h2>
-                    )
-                    :null }
-                    {pastEvents.map(this.getEventItem)}
+                    <div className='pastEvents'>
+                      {pastEvents.length > 0 ? (<h2> Past Events </h2>)
+                      :null }
+                      <div className="pastEvent">
+                        {pastEvents.map(this.getEventItem)}
+                      </div>
+                    </div>
 
                 </div>
 

@@ -48,8 +48,10 @@
     }
 }
 
-.comingEvents:hover .name{
-  text-decoration: underline;
+.comingEvents{
+  .event-item:hover .name{
+    text-decoration: underline;
+    }
 }
 
 .pastEvents{

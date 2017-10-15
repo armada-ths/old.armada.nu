@@ -20,32 +20,37 @@
     display: flex;
     flex-direction: row;
     padding: 2em;
+
     .image-section{
       width: 40%;
     }
     .details-section{
        width: 60%;
-      .name{
+       padding-left: 1em;
+
+        .name{
+            text-align: left;
+        }
+        .description {
           text-align: left;
-      }
-      .description {
-        text-align: left;
-        //display: none;
-      }
-      padding-left: 1em;
-      .event-property{
-          display: flex;
-          flex-direction: row;
-          .icon{
-              width: 25px;
-              height: 25px;
-          }
-          p{
-              margin: 0 0 0 5px;
-              text-align: left;
-          }
-      }
+          //display: none;
+        }
+        .event-property{
+            display: flex;
+            flex-direction: row;
+            .icon{
+                width: 25px;
+                height: 25px;
+            }
+            p{
+                margin: 0 0 0 5px;
+                text-align: left;
+            }
+        }
     }
+}
+.event-item:hover .name{
+  text-decoration: underline;
 }
 
 .popupcontainer{

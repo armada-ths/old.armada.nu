@@ -197,4 +197,4 @@ EventList.propTypes = {
     onChangeEventId: PropTypes.func,
 }
 
-export default addUrlProps({ urlPropsQueryConfig })(EventList)
+export default toExport;

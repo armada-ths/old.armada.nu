@@ -209,4 +209,14 @@
         }
       }
     }
+    .shade {
+      .shadecontent{
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        .cross{
+          color: $text-color-light;
+        }
+      }
+    }
 }

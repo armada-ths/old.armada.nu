@@ -5,14 +5,12 @@ import "./eventlist.scss";
 import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
 import {ReactPageClick} from 'react-page-click';
 
-
 const urlPropsQueryConfig = {
   eventId: { type: UrlQueryParamTypes.number, queryParam: 'eventId' },
 };
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ];
-
 
 const Modal = ({onClose, ...rest}) => (
       <div>
@@ -41,7 +39,7 @@ class EventList extends React.Component {
     }
 
     componentDidMount() {  // only called when eventpage is created or updated.
-        axios.get('https://ais.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
+        axios.get('https://ais2.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data
@@ -52,40 +50,63 @@ class EventList extends React.Component {
           });
     }
 
-      hideModal = () => {
-        this.setState({showModal: false, eventId: undefined});
-        this.props.onChangeEventId(null);
-      };
+    hideModal = () => {
+      this.setState({showModal: false, eventId: undefined});
+      this.props.onChangeEventId(null);
+    };
 
-      showModal = (eventId) => {
-        this.setState({showModal: true, eventId});
-        this.props.onChangeEventId(eventId);
-      };
+    showModal = (eventId) => {
+      this.setState({showModal: true, eventId});
+      this.props.onChangeEventId(eventId);
+    };
 
     displayEvent = (event) => {
       let eventdate = new Date (event.event_start * 1000);
       let registration_end = new Date (event.registration_end * 1000);
+      let minutes = "0" + eventdate.getMinutes();
+      let hours = eventdate.getHours();
+      let today = new Date();
 
       return (
         <Modal onClose={this.hideModal}>
         <div>
+
           <div className="modalimage">
             <img src={event.image_url}/>
             </div>
             <div className="modalinfo">
-              <h3>{event.name} {event.descripion_short}</h3>
-              <h4>{event.location}</h4>
-              {eventdate.getDate()} {monthNames[eventdate.getMonth()]}
-              <br/>
-              {event.description}
+              <h3>{event.name}</h3>
+                <div className='modal-event-property'>
+                    <img className='icon' src='/assets/calendar-round.svg'/>
+                    <img className='icon' src='/assets/place.svg'/>
+                    <img className='icon' src='/assets/clock.svg'/>
+                </div>
+                <div className='modal-event-property'>
+                    <p> {eventdate.getDate()} {monthNames[eventdate.getMonth()]} </p>
+                    <p> {event.location}</p>
+                    <p className ="time" > {hours + ':' + minutes.substr(-2)}</p>
+                </div>
+                <div>
+                <br/>
+                  {event.description_short}
+                  <br/>
+                   <br/>
+                  {event.description}
+                </div>
+              <div className="modalbutton">
               <br/>
 
-              <div className="modalbutton">
-              <a href={event.signup_link}>
-              <button>
-              RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}
-              </button>
-              </a>
+              { eventdate > today ? (
+                <a href={event.signup_link}>
+                <button className="rsvpbutton">
+                RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}
+                </button>
+              </a>):(
+                <button className="rsvpclosed">
+                RSVP CLOSED
+                </button>)}
+
+
               </div>
               </div>
             </div>
@@ -147,13 +168,8 @@ class EventList extends React.Component {
             <div className="events">
 
             {this.state.showModal ? (this.displayEvent(eventToDisplay) ) : null}
-
                 <div className="events-feed">
-                    {
-                    comingEvents.length > 0 ? (
-
-                            <h2> Upcoming Events </h2>
-                    )
+                    {comingEvents.length > 0 ? (<h2> Upcoming Events </h2>)
                     :null }
                     {comingEvents.map(this.getEventItem)}
 
@@ -179,12 +195,4 @@ EventList.propTypes = {
     onChangeEventId: PropTypes.func,
 }
 
-
-let toExport;
-if(global.window!=undefined){
-    toExport = addUrlProps({ urlPropsQueryConfig })(EventList);
-} else {
-    toExport = EventList;
-}
-
-export default toExport;
+export default addUrlProps({ urlPropsQueryConfig })(EventList)

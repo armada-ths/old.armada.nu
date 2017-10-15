@@ -4,8 +4,6 @@
   width: 100%;
   height:100%;
   margin: auto;
-  //overflow: scroll;
-
 }
 
 .events-feed {
@@ -55,7 +53,7 @@
 
 .popupcontainer{
   position: fixed;
-  top: 3em;
+  top: 0em;
   right: 0;
   bottom: 0;
   left: 0;
@@ -72,6 +70,7 @@
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
   margin-bottom: 3em;
+  margin-top: 3em;
   padding-bottom: 1em;
 }
 

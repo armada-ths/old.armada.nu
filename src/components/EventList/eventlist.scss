@@ -95,23 +95,14 @@
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.8);
-  .close{
+  .shadecontent{
     position: absolute;
     top: 1em;
     right: 2em;
     .cross{
       color: $text-color-light;
     }
-
   }
-
-}
-.shadecontent{
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: left;
 }
 
 .modalcontent {
@@ -124,6 +115,8 @@
       }
   }
   .modal-event-property{
+      padding-top: 1em;
+      padding-bottom: 1em;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -137,7 +130,6 @@
         display: flex;
         flex-direction: column;
       }
-
       p{
           margin: 0 0 0 5px;
       }
@@ -159,7 +151,6 @@
         font-size: 16px;
         padding: 20px;
         transition: all 0.5s;
-        cursor: pointer;
         margin: 5px;
       }
       .rsvpbutton:hover{
@@ -175,17 +166,10 @@
           font-size: 16px;
           padding: 20px;
           transition: all 0.5s;
-          cursor: pointer;
           margin: 5px;
         }
-        .rsvpbutton:hover{
-          text-decoration: underline;
-      }
-
     }
 }
-
-
 
 @media screen and (max-width: $breakpoint-mobile) {
 
@@ -216,15 +200,11 @@
   }
 
   .modalcontent {
-
-
     .modal-event-property{
         flex-direction: column;
         .icon_group{
           flex-direction: row;
         }
       }
-
     }
-
 }

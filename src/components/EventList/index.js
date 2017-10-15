@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-import "./eventlist.scss";
-import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
+import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {ReactPageClick} from 'react-page-click';
+import "./eventlist.scss";
 
 const urlPropsQueryConfig = {
   eventId: { type: UrlQueryParamTypes.number, queryParam: 'eventId' },
@@ -15,9 +15,9 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 const Modal = ({onClose, ...rest}) => (
       <div className='popupcontainer'>
         <div className="shade" >
-        <div className='close'>
-        <p className='cross'>˟</p>
-        </div>
+          <div className='shadecontent'>
+            <p className='cross'>˟</p>
+          </div>
         </div>
         <ReactPageClick notify={onClose}>
           <div className="popup">
@@ -34,7 +34,6 @@ Modal.propTypes = {
 class EventList extends React.Component {
     constructor(props) {
         super(props); // adopts parent qualities
-
         this.state = {
             events: [],  // json object
             showModal: false,
@@ -65,12 +64,11 @@ class EventList extends React.Component {
     };
 
     displayEvent = (event) => {
+      let today = new Date();
       let eventdate = new Date (event.event_start * 1000);
       let registration_end = new Date (event.registration_end * 1000);
       let minutes = "0" + eventdate.getMinutes();
       let hours = eventdate.getHours();
-      let today = new Date();
-
       let eventdate_end = new Date (event.event_end * 1000);
       let endminutes = "0" + eventdate_end.getMinutes();
       let endhours = eventdate_end.getHours();
@@ -78,13 +76,11 @@ class EventList extends React.Component {
       return (
         <Modal onClose={this.hideModal}>
         <div>
-
           <div className="modalimage">
             <img src={event.image_url}/>
             </div>
             <div className="modalinfo">
               <h3>{event.name}</h3>
-              <br/>
                 <div className='modal-event-property'>
                   <div className='icon_group'>
                     <img className='icon' src='/assets/calendar-round.svg'/>
@@ -101,20 +97,18 @@ class EventList extends React.Component {
                     <p> {event.location}</p>
                   </div>
                 </div>
-                <br/>
-              {event.description}
+                {event.description}
               </div>
               <div className="modalbutton">
-
-              {eventdate > today ? (
-                <a href={event.signup_link}>
-                <button className="rsvpbutton">
-                RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}
-                </button>
-              </a>):(
-                <button className="rsvpclosed">
-                RSVP CLOSED
-                </button>)}
+                {eventdate > today ? (
+                  <a href={event.signup_link}>
+                  <button className="rsvpbutton">
+                    RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}
+                  </button>
+                </a>):(
+                  <button className="rsvpclosed">
+                    RSVP CLOSED
+                  </button>)}
               </div>
               </div>
       </Modal>

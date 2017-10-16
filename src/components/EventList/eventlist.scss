@@ -142,9 +142,6 @@
   .modalinfo{
     padding: 1em 1em;
   }
-  .description{
-    font-size: 16px;
-  }
   .modalbutton{
     text-align: center;
     .rsvpbutton{
@@ -204,6 +201,9 @@
     width: 75%;
   }
   .modalcontent {
+    .description{
+      font-size: 16px;
+    }
     .modal-event-property{
         flex-direction: column;
         .icon_group{

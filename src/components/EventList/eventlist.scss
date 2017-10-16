@@ -142,10 +142,11 @@
   .modalinfo{
     padding: 1em 1em;
   }
-
+  .description{
+    font-size: 16px;
+  }
   .modalbutton{
     text-align: center;
-
     .rsvpbutton{
       display: inline-block;
         border-radius: 4px;
@@ -220,7 +221,6 @@
         .cross{
           z-index: 500px;
           text-align: center;
-
         }
         .cross:before {
           font-size: 16px;

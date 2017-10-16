@@ -95,7 +95,9 @@ class EventList extends React.Component {
                     <p> {event.location}</p>
                   </div>
                 </div>
-                {event.description}
+                <div className="description">
+                  {event.description}
+                </div>
               </div>
               <div className="modalbutton">
                 {eventdate > today ? (

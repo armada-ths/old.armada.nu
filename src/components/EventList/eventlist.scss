@@ -78,9 +78,8 @@
 .popup {
   position: relative;
   z-index: 400;
+  margin: auto;
   top: 0;
-  left: 50%;
-  transform:translate(-50%);
   width: 50%;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
@@ -92,9 +91,9 @@
 .shade {
   position: fixed;
   z-index: 350;
+  width: 100vw;
+  height: 100vh;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.8);
   .shadecontent{

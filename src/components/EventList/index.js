@@ -19,7 +19,7 @@ const Modal = ({onClose, ...rest}) => (
             <p className='cross'>˟</p>
           </div>
         </div>
-        <ReactPageClick >
+        <ReactPageClick notify={()=> {return}}>
           <div className="popup">
             <div className="modalcontent" {...rest} />
           </div>
@@ -28,7 +28,7 @@ const Modal = ({onClose, ...rest}) => (
     );
 
 Modal.propTypes = {
-      onClose: undefined
+      onClose: () => {} //function doing nothing
     };
 
 class EventList extends React.Component {

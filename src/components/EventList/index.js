@@ -138,7 +138,6 @@ class EventList extends React.Component {
                             <img className='icon' src='/assets/clock.svg'/>
                             <p className ="time" > {hours + ':' + minutes.substr(-2)}</p>
                         </div>
-                        <p className ="description" >{event.description_short}</p>
                     </div>
                 </div>
 

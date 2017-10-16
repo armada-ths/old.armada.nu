@@ -178,13 +178,11 @@
   .events-feed {
     padding: 0%;
   }
-
   .event-item {
     display: flex;
     flex-direction: row;
     padding: 1em;
   }
-
   .image-section{
     width: auto;
     max-height: 100%;
@@ -196,11 +194,9 @@
   .name {
     font-size: large;
   }
-
   .popup {
     width: 80%;
   }
-
   .modalcontent {
     .modal-event-property{
         flex-direction: column;
@@ -220,3 +216,15 @@
       }
     }
 }
+
+// flipped phone
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+  .modalcontent {
+    .modal-event-property{
+        flex-direction: column;
+        .icon_group{
+          flex-direction: row;
+        }
+      }
+    }
+  }

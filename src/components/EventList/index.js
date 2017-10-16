@@ -12,11 +12,14 @@ const urlPropsQueryConfig = {
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ];
 
+
+//{ @media == true (<p className='cross'>Swipe down to close</p>) : (<p className='cross'>˟</p>)}
+
 const Modal = ({onClose, ...rest}) => (
       <div className='popupcontainer'>
         <div className="shade" >
           <div className='shadecontent'>
-            <p className='cross'>˟</p>
+            <p className='cross'></p>
           </div>
         </div>
         <ReactPageClick notify={onClose}>

@@ -72,6 +72,7 @@
   right: 0;
   bottom: 0;
   left: 0;
+  overflow-y: scroll;
 }
 
 .popup {
@@ -102,6 +103,9 @@
     right: 2em;
     .cross{
       color: $text-color-light;
+    }
+    .cross:before{
+      content: "˟";
     }
   }
 }
@@ -208,11 +212,19 @@
     }
     .shade {
       .shadecontent{
+        top: -30px;
         position: absolute;
-        top: 0px;
-        right: 5px;
+        left: 50%;
+        transform:translate(-50%);
+        width: 200px;
         .cross{
-          color: $text-color-light;
+          z-index: 500px;
+          text-align: center;
+
+        }
+        .cross:before {
+          font-size: 16px;
+          content: "Swipe down to close";
         }
       }
     }

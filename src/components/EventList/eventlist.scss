@@ -1,135 +1,182 @@
 @import '../../styles/_variables';
 
 .events {
-
   width: 100%;
   height:100%;
   margin: auto;
-
 }
 
 .events-feed {
-
   max-width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 2em;
-
-
-
 }
-
 
 .event-item {
     display: flex;
     flex-direction: row;
     padding: 2em;
 
-
     .image-section{
-
       width: 40%;
     }
-
     .details-section{
        width: 60%;
+       padding-left: 1em;
 
-      .name{
+        .name{
+            text-align: left;
+        }
+        .description {
           text-align: left;
-      }
-      .description {
-        display: none;
-      }
-
-
-      padding-left: 1em;
-
-      .event-property{
-          display: flex;
-          flex-direction: row;
-
-          .icon{
-              width: 25px;
-              height: 25px;
-          }
-          p{
-              margin: 0 0 0 5px;
-          }
-      }
-
-
+          //display: none;
+        }
+        .event-property{
+            display: flex;
+            flex-direction: row;
+            .icon{
+                width: 25px;
+                height: 25px;
+            }
+            p{
+                margin: 0 0 0 5px;
+                text-align: left;
+            }
+        }
     }
+}
 
+.comingEvents{
+  .event-item:hover .name{
+    text-decoration: underline;
+    }
+}
+
+.pastEvents{
+  padding-top: 3em;
+  h2{
+    color: #f4511e;
+  }
+  .pastEvent{
+    //z-index: 10;
+    //opacity: .5;
+    //filter: alpha(opacity=50);
+  }
+}
+
+.popupcontainer{
+  position: fixed;
+  top: 0em;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
 }
 
 .popup {
-  position: fixed;
+  position: relative;
   z-index: 400;
-  top: 9%;
+  top: 0;
   left: 50%;
   transform:translate(-50%);
-  width: 45%;
+  width: 50%;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
-  overflow: auto;
+  margin-bottom: 3em;
+  margin-top: 3em;
+  padding-bottom: 1em;
 }
 
 .shade {
   position: fixed;
+  z-index: 350;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8);
+  .shadecontent{
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    .cross{
+      color: $text-color-light;
+    }
+  }
 }
 
-
-
 .modalcontent {
+  overflow-wrap: break-word;
+  text-align: justify;
 
   .modalimage {
     img{
       width: 100%;
       }
   }
-  .signature {
-      //display: inline-block;
-      padding-top: 2px;
-      border-top: 1px solid $melon;
-      color: $melon;
-      text-align: left;
+  .modal-event-property{
+      padding-top: 1em;
+      padding-bottom: 1em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .icon{
+          width: 25px;
+          height: 25px;
+      }
+      .icon_group{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+      p{
+          margin: 0 0 0 5px;
+      }
   }
-
   .modalinfo{
     padding: 1em 1em;
   }
 
   .modalbutton{
     text-align: center;
-  }
+
+    .rsvpbutton{
+      display: inline-block;
+        border-radius: 4px;
+        background-color: $melon;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 16px;
+        padding: 20px;
+        transition: all 0.5s;
+        margin: 5px;
+      }
+      .rsvpbutton:hover{
+        text-decoration: underline;
+      }
+      .rsvpclosed{
+        display: inline-block;
+          border-radius: 4px;
+          background-color: #f4511e;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 16px;
+          padding: 20px;
+          transition: all 0.5s;
+          margin: 5px;
+        }
+    }
 }
-
-.signature {
-  display: inline-block;
-  padding-top: 2px;
-  border-top: 1px solid $melon;
-  color: $melon;
-}
-
-
-
-
-
 
 @media screen and (max-width: $breakpoint-mobile) {
 
   .events-feed {
-
     padding: 0%;
-
-
-
   }
 
   .event-item {
@@ -139,22 +186,37 @@
   }
 
   .image-section{
-
     width: auto;
     max-height: 100%;
-
     img{
       width: 100%;
       height: 100%;
     }
   }
-.name {
+  .name {
+    font-size: large;
+  }
 
-  font-size: large;
+  .popup {
+    width: 80%;
+  }
+
+  .modalcontent {
+    .modal-event-property{
+        flex-direction: column;
+        .icon_group{
+          flex-direction: row;
+        }
+      }
+    }
+    .shade {
+      .shadecontent{
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        .cross{
+          color: $text-color-light;
+        }
+      }
+    }
 }
-
-}
-
-
-
-

@@ -52,7 +52,7 @@ class Footer extends React.Component {
                     name: "appstore",
                     link: "https://itunes.apple.com/se/app/armada/id470187481?mt=8",
                     src: app_store
-                }
+                },
             ]
         };
     }
@@ -79,6 +79,8 @@ class Footer extends React.Component {
                 <div className="apps-container">
                     {this.createTemplate(this.state.apps, "app")}
                 </div>
+                <div className="divider"></div>
+                <a href="/exhibitor_info">Contact us / Exhibitor Info </a>
             </div>
         );
     }

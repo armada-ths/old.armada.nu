@@ -53,13 +53,8 @@ class EventList extends React.Component {
           });
     }
 
-    hideModal = () => {
-      this.setState({showModal: false, eventId: undefined});
-      this.props.onChangeEventId(null);
-    };
-
     showModal = (eventId) => {
-      this.setState({showModal: true, eventId});
+      this.setState({showModal: !this.state.showModal, eventId});
       this.props.onChangeEventId(eventId);
     };
 
@@ -74,7 +69,7 @@ class EventList extends React.Component {
       let endhours = eventdate_end.getHours();
 
       return (
-        <Modal onClose={this.hideModal}>
+        <Modal onClose={() => this.showModal(event.id)}>
         <div>
           <div className="modalimage">
             <img src={event.image_url}/>

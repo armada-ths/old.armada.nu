@@ -14,12 +14,12 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 
 const Modal = ({onClose, ...rest}) => (
       <div className='popupcontainer'>
-        <div className="shade" >
+        <div className="shade" onClick={onClose} >
           <div className='shadecontent'>
             <p className='cross'>˟</p>
           </div>
         </div>
-        <ReactPageClick notify={onClose}>
+        <ReactPageClick >
           <div className="popup">
             <div className="modalcontent" {...rest} />
           </div>

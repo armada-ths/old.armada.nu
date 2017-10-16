@@ -72,6 +72,7 @@ class Footer extends React.Component {
     render() {
         return (
             <div id="footer">
+            <div className="logosection">
                 {this.createTemplate(this.state.thsOrgs, "logo")}
                 <div className="divider"></div>
                 {this.createTemplate(this.state.social, "logo")}
@@ -79,8 +80,10 @@ class Footer extends React.Component {
                 <div className="apps-container">
                     {this.createTemplate(this.state.apps, "app")}
                 </div>
-                <div className="divider"></div>
-                <a href="/exhibitor_info">Contact us / Exhibitor Info </a>
+                </div>
+                <div >
+                  <a href="/exhibitor_info" >Contact us / Exhibitor Info </a>
+                </div>
             </div>
         );
     }

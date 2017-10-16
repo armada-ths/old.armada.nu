@@ -9,10 +9,18 @@
   text-align: center;
   background-size: cover;
   transition: background-color $transition-duration linear;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+
+
+  .logosection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  a {
+    font-size: 16px;
+  }
 
   .logo {
     @include circle(48px);

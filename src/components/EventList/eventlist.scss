@@ -187,15 +187,17 @@
     width: auto;
     max-height: 100%;
     img{
+      left: 50%;
+      top: 50%;
       width: 100%;
-      height: 100%;
+      //height: 100%;
     }
   }
   .name {
     font-size: large;
   }
   .popup {
-    width: 80%;
+    width: 75%;
   }
   .modalcontent {
     .modal-event-property{

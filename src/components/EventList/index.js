@@ -42,7 +42,7 @@ class EventList extends React.Component {
     }
 
     componentDidMount() {  // only called when eventpage is created or updated.
-        axios.get('https://ais2.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
+        axios.get('https://ais.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data

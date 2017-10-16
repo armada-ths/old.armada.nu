@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-import "./eventlist.scss";
-import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
+import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {ReactPageClick} from 'react-page-click';
+import "./eventlist.scss";
 
 const urlPropsQueryConfig = {
   eventId: { type: UrlQueryParamTypes.number, queryParam: 'eventId' },
@@ -15,9 +15,9 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 const Modal = ({onClose, ...rest}) => (
       <div className='popupcontainer'>
         <div className="shade" >
-        <div className='close'>
-        <p className='cross'>˟</p>
-        </div>
+          <div className='shadecontent'>
+            <p className='cross'>˟</p>
+          </div>
         </div>
         <ReactPageClick notify={onClose}>
           <div className="popup">
@@ -34,7 +34,6 @@ Modal.propTypes = {
 class EventList extends React.Component {
     constructor(props) {
         super(props); // adopts parent qualities
-
         this.state = {
             events: [],  // json object
             showModal: false,
@@ -54,37 +53,29 @@ class EventList extends React.Component {
           });
     }
 
-    hideModal = () => {
-      this.setState({showModal: false, eventId: undefined});
-      this.props.onChangeEventId(null);
-    };
-
     showModal = (eventId) => {
-      this.setState({showModal: true, eventId});
+      this.setState({showModal: !this.state.showModal, eventId});
       this.props.onChangeEventId(eventId);
     };
 
     displayEvent = (event) => {
+      let today = new Date();
       let eventdate = new Date (event.event_start * 1000);
       let registration_end = new Date (event.registration_end * 1000);
       let minutes = "0" + eventdate.getMinutes();
       let hours = eventdate.getHours();
-      let today = new Date();
-
       let eventdate_end = new Date (event.event_end * 1000);
       let endminutes = "0" + eventdate_end.getMinutes();
       let endhours = eventdate_end.getHours();
 
       return (
-        <Modal onClose={this.hideModal}>
+        <Modal onClose={() => this.showModal(event.id)}>
         <div>
-
           <div className="modalimage">
             <img src={event.image_url}/>
             </div>
             <div className="modalinfo">
               <h3>{event.name}</h3>
-              <br/>
                 <div className='modal-event-property'>
                   <div className='icon_group'>
                     <img className='icon' src='/assets/calendar-round.svg'/>
@@ -101,20 +92,18 @@ class EventList extends React.Component {
                     <p> {event.location}</p>
                   </div>
                 </div>
-                <br/>
-              {event.description}
+                {event.description}
               </div>
               <div className="modalbutton">
-
-              {eventdate > today ? (
-                <a href={event.signup_link}>
-                <button className="rsvpbutton">
-                RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}
-                </button>
-              </a>):(
-                <button className="rsvpclosed">
-                RSVP CLOSED
-                </button>)}
+                {eventdate > today ? (
+                  <a href={event.signup_link}>
+                  <button className="rsvpbutton">
+                    RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}
+                  </button>
+                </a>):(
+                  <button className="rsvpclosed">
+                    RSVP CLOSED
+                  </button>)}
               </div>
               </div>
       </Modal>
@@ -171,19 +160,19 @@ class EventList extends React.Component {
             {this.state.showModal ? (this.displayEvent(eventToDisplay) ) : null}
 
                 <div className="events-feed">
+                  <div className='comingEvents'>
                     {comingEvents.length > 0 ? (<h2> Upcoming Events </h2>)
                     :null }
                     {comingEvents.map(this.getEventItem)}
+                  </div>
 
-
-
-                    {
-                    comingEvents.length > 0 ? (
-
-                            <h2> Past Events </h2>
-                    )
-                    :null }
-                    {pastEvents.map(this.getEventItem)}
+                    <div className='pastEvents'>
+                      {pastEvents.length > 0 ? (<h2> Past Events </h2>)
+                      :null }
+                      <div className="pastEvent">
+                        {pastEvents.map(this.getEventItem)}
+                      </div>
+                    </div>
 
                 </div>
 

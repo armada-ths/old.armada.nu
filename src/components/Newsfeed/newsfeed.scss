@@ -1,7 +1,8 @@
 @import '../../styles/_variables';
 
 .newsfeed {
-    margin: 3em 1em 6em 1em;  // nytt
+    margin: 3em 0em 6em 0em; 
+
     min-height: 100%;
     ul {
         li {
@@ -24,7 +25,7 @@ blockquote {
 .armada-news {
     text-align: center;
     border-bottom: 1px solid $melon;
-    margin: 2em 1em 5em 1em;
+    margin: 2em 1em 3em 1em;
 }
 
 .post {

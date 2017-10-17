@@ -42,8 +42,7 @@ const Newsfeed = (props, { collection }) => {
         <div className="armada-news">
           <h1 id="newstitle">Armada News</h1>
         </div>
-        { featuredPost } 
-        <br />
+        { featuredPost }
         {posts}
       </div>);
 

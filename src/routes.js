@@ -1,6 +1,7 @@
 import React from "react"
-import { Route } from "react-router"
+import { Route, browserHistory } from "react-router"
 import { PageContainer as PhenomicPageContainer } from "phenomic"
+import { configureUrlQuery } from 'react-url-query';
 
 import AppContainer from "./AppContainer"
 import Page from "./layouts/Page"
@@ -39,6 +40,8 @@ const PageContainer = (props) => (
     }}
   />
 );
+
+configureUrlQuery({ history: browserHistory });
 
 export default (
   <Route component={ AppContainer }>

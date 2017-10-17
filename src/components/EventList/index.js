@@ -162,9 +162,9 @@ class EventList extends React.Component {
 
                 <div className="events-feed">
                   <div className='comingEvents'>
-                    {comingEvents.length > 0 ? (<h2> Upcoming Events </h2>)
-                    :null }
-                    {comingEvents.map(this.getEventItem)}
+                  <h2> Upcoming Events </h2>
+                    {comingEvents.length > 0 ? (comingEvents.map(this.getEventItem))
+                    : <p>Stay tuned...</p>}
                   </div>
 
                     <div className='pastEvents'>

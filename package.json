@@ -134,8 +134,11 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "moment": "^2.19.1",
     "prop-types": "^15.6.0",
     "react-google-analytics": "^0.2.0",
-    "react-sticky": "^6.0.1"
+    "react-page-click": "^4.0.2",
+    "react-sticky": "^6.0.1",
+    "react-url-query": "^1.2.0"
   }
 }

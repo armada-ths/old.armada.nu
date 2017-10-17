@@ -14,12 +14,12 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 
 const Modal = ({onClose, ...rest}) => (
       <div className='popupcontainer'>
-        <div className="shade" >
+        <div className="shade" onClick={onClose} >
           <div className='shadecontent'>
             <p className='cross'>˟</p>
           </div>
         </div>
-        <ReactPageClick notify={onClose}>
+        <ReactPageClick notify={()=> {return}}>
           <div className="popup">
             <div className="modalcontent" {...rest} />
           </div>
@@ -28,7 +28,7 @@ const Modal = ({onClose, ...rest}) => (
     );
 
 Modal.propTypes = {
-      onClose: undefined
+      onClose: () => {} //function doing nothing
     };
 
 class EventList extends React.Component {
@@ -42,7 +42,7 @@ class EventList extends React.Component {
     }
 
     componentDidMount() {  // only called when eventpage is created or updated.
-        axios.get('https://ais2.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
+        axios.get('https://ais.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data
@@ -92,7 +92,9 @@ class EventList extends React.Component {
                     <p> {event.location}</p>
                   </div>
                 </div>
-                {event.description}
+                <div className="description">
+                  {event.description}
+                </div>
               </div>
               <div className="modalbutton">
                 {eventdate > today ? (
@@ -136,7 +138,6 @@ class EventList extends React.Component {
                             <img className='icon' src='/assets/clock.svg'/>
                             <p className ="time" > {hours + ':' + minutes.substr(-2)}</p>
                         </div>
-                        <p className ="description" >{event.description_short}</p>
                     </div>
                 </div>
 
@@ -161,9 +162,9 @@ class EventList extends React.Component {
 
                 <div className="events-feed">
                   <div className='comingEvents'>
-                    {comingEvents.length > 0 ? (<h2> Upcoming Events </h2>)
-                    :null }
-                    {comingEvents.map(this.getEventItem)}
+                  <h2> Upcoming Events </h2>
+                    {comingEvents.length > 0 ? (comingEvents.map(this.getEventItem))
+                    : <p>Stay tuned...</p>}
                   </div>
 
                     <div className='pastEvents'>

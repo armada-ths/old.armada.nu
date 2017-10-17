@@ -52,12 +52,15 @@
   .event-item:hover .name{
     text-decoration: underline;
     }
+    p{
+      text-align: center;
+    }
 }
 
 .pastEvents{
   padding-top: 3em;
   h2{
-    color: #f4511e;
+    color: $grape;
   }
   .pastEvent{
     //z-index: 10;
@@ -72,15 +75,14 @@
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .popup {
   position: relative;
   z-index: 400;
+  margin: auto;
   top: 0;
-  left: 50%;
-  transform:translate(-50%);
   width: 50%;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
@@ -92,9 +94,9 @@
 .shade {
   position: fixed;
   z-index: 350;
+  width: 100vw;
+  height: 100vh;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.8);
   .shadecontent{
@@ -139,10 +141,8 @@
   .modalinfo{
     padding: 1em 1em;
   }
-
   .modalbutton{
     text-align: center;
-
     .rsvpbutton{
       display: inline-block;
         border-radius: 4px;
@@ -200,6 +200,9 @@
     width: 75%;
   }
   .modalcontent {
+    .description{
+      font-size: 16px;
+    }
     .modal-event-property{
         flex-direction: column;
         .icon_group{

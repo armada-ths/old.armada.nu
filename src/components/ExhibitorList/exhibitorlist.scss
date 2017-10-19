@@ -1,34 +1,12 @@
 @import '../../styles/_variables';
 
-
-
-.modalimage {
-  img{
-    width: 100%;
-  }
-}
-
-.modalinfo{
-  padding: 1em 1em;
-}
-
-.event-item {
-  display: flex;
-  flex-direction: row;
-  padding: 2em;
-}
-
-  .image-section{
-    width: 40%;
-  }
-
 .exhibitors {
   width: 100%;
   height:100%;
   margin: auto;
 }
 
-.events-feed {
+.exhibitor-feed {
   max-width: 100%;
   height: 100%;
   display: flex;
@@ -36,6 +14,85 @@
   padding: 2em;
 }
 
+.exhibitor-item {
+  display: flex;
+  flex-direction: row;
+  padding: 2em;
+
+  .image-section{
+    width: 40%;
+  }
+  .details-section{
+    width: 60%;
+    padding-left: 1em;
+
+    .name{
+      text-align: left;
+    }
+    .description {
+      text-align: left;
+      //display: none;
+    }
+    .event-property{
+      display: flex;
+      flex-direction: row;
+      .icon{
+        width: 25px;
+        height: 25px;
+      }
+      p{
+        margin: 0 0 0 5px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+
+//.comingExhibitors{
+//  .event-item:hover .name{
+//    text-decoration: underline;
+//  }
+//  p{
+//    text-align: center;
+//  }
+//}
+
+
+
+.modalimage {
+
+  max-width: 100%;
+
+  img{
+    margin-left: 29%;
+    width: auto;
+  }
+}
+
+.modal-event-property{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .icon{
+    width: 25px;
+    height: 25px;
+  }
+  .icon_group{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  p{
+    margin: 0 0 0 5px;
+  }
+}
+.modalinfo{
+  padding: 1em 1em;
+}
 
 
 @media screen and (max-width: $breakpoint-mobile) {

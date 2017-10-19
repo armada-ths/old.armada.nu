@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b086bb81-08fa-43ac-bbc8-aeb4b0a2ef74" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Modal/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Modal/modal.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/EventList/eventlist.scss" afterPath="$PROJECT_DIR$/src/components/EventList/eventlist.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/EventList/index.js" afterPath="$PROJECT_DIR$/src/components/EventList/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ExhibitorList/exhibitorlist.scss" afterPath="$PROJECT_DIR$/src/components/ExhibitorList/exhibitorlist.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ExhibitorList/index.js" afterPath="$PROJECT_DIR$/src/components/ExhibitorList/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/layouts/Exhibitors/index.js" afterPath="$PROJECT_DIR$/src/layouts/Exhibitors/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ExhibitorList/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="94" column="33" lean-forward="false" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+            <state relative-caret-position="419">
+              <caret line="71" column="26" lean-forward="true" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -35,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exhibitorlist.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="exhibitorlist.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/ExhibitorList/exhibitorlist.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+            <state relative-caret-position="245">
+              <caret line="67" column="19" lean-forward="false" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -74,11 +70,11 @@
         <option value="$PROJECT_DIR$/src/components/Model/index.js" />
         <option value="$PROJECT_DIR$/src/components/EventList/index.js" />
         <option value="$PROJECT_DIR$/src/components/Modal/index.js" />
-        <option value="$PROJECT_DIR$/src/components/EventList/eventlist.scss" />
         <option value="$PROJECT_DIR$/src/components/Modal/modal.scss" />
         <option value="$PROJECT_DIR$/src/layouts/Exhibitors/index.js" />
-        <option value="$PROJECT_DIR$/src/components/ExhibitorList/exhibitorlist.scss" />
+        <option value="$PROJECT_DIR$/src/components/EventList/eventlist.scss" />
         <option value="$PROJECT_DIR$/src/components/ExhibitorList/index.js" />
+        <option value="$PROJECT_DIR$/src/components/ExhibitorList/exhibitorlist.scss" />
       </list>
     </option>
   </component>
@@ -150,6 +146,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="ExhibitorList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="armada.nu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="armada.nu" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Modal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="armada.nu" type="b2602c69:ProjectViewProjectNode" />
@@ -251,12 +254,12 @@
       <workItem from="1508252558039" duration="475000" />
       <workItem from="1508253150079" duration="517000" />
       <workItem from="1508259420534" duration="9849000" />
-      <workItem from="1508434307467" duration="6419000" />
+      <workItem from="1508434307467" duration="9883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87767000" />
+    <option name="totallyTimeSpent" value="91231000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -320,6 +323,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#26#0" expanded="true" />
             <marker date="1508436546000" expanded="true" signature="6411:6435" ph="&lt;div/&gt;" />
           </folding>
         </state>
@@ -593,14 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Modal/modal.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="66" column="35" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Modal/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -611,22 +607,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/EventList/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2087">
-          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <marker date="1508436546000" expanded="true" signature="6411:6435" ph="&lt;div/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/layouts/Exhibitors/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -663,31 +649,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Modal/modal.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="66" column="35" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/EventList/eventlist.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="133" selection-end-column="3" />
+        <state relative-caret-position="1785">
+          <caret line="119" column="3" lean-forward="true" selection-start-line="119" selection-start-column="3" selection-end-line="119" selection-end-column="3" />
           <folding>
-            <marker date="1508439341000" expanded="true" signature="846:913" ph="{...}" />
+            <marker date="1508445280000" expanded="true" signature="846:913" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EventList/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1508436546000" expanded="true" signature="6411:6435" ph="&lt;div/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ExhibitorList/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="71" column="26" lean-forward="true" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ExhibitorList/exhibitorlist.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="245">
+          <caret line="67" column="19" lean-forward="false" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ExhibitorList/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="94" column="33" lean-forward="false" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

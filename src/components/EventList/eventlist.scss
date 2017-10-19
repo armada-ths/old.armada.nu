@@ -94,8 +94,63 @@
     margin: 0 0 0 5px;
   }
 }
+.modalimage {
+  img{
+    width: 100%;
+  }
+}
+.modal-event-property{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .icon{
+    width: 25px;
+    height: 25px;
+  }
+  .icon_group{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  p{
+    margin: 0 0 0 5px;
+  }
+}
 .modalinfo{
   padding: 1em 1em;
+}
+.modalbutton{
+  text-align: center;
+  .rsvpbutton{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: $melon;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    transition: all 0.5s;
+    margin: 5px;
+  }
+  .rsvpbutton:hover{
+    text-decoration: underline;
+  }
+  .rsvpclosed{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    transition: all 0.5s;
+    margin: 5px;
+  }
 }
 
 

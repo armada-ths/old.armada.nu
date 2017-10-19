@@ -50,14 +50,28 @@ class ExhibitorList extends React.Component {
 
       return (
         <Modal onClose={() => this.showModal(exhibitor.company)}>
-        <div>
-          <div className="modalimage">
-            <img src={exhibitor.logo_url}/>
-          </div>
-            <div className="modalinfo">
-              <h3>{exhibitor.company}</h3>
-            </div>
-          </div>
+            <div>
+                <div className="modalimage">
+                    <img src={exhibitor.logo_url}/>
+                </div>
+                <div className="modalinfo">
+                    <h3>{exhibitor.company}</h3>
+
+                    <div className='modal-event-property'>
+                        <div className='icon_group'>
+                            <img className='icon' src='/assets/place.svg'/>
+                            <p> {exhibitor.exhibitor_location}</p>
+                        </div>
+                    </div>
+                </div>
+                    <div className="description">
+                      <p>{exhibitor.about} </p>
+
+                      {/*<p>  {exhibitor.facts} </p>*/}
+
+                    </div>
+                </div>
+
       </Modal>
     );
   }

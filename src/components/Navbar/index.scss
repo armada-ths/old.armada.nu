@@ -56,7 +56,7 @@
   }
 }
 
-@media screen and (max-width: $breakpoint-mobile) {
+@media screen and (max-width: $breakpoint-mobile-flipped) {
     #navbar{
         top: 1em;
         

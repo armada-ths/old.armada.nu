@@ -82,7 +82,7 @@ class Footer extends React.Component {
                 </div>
                 </div>
                 <div >
-                  <a href="/exhibitor_info" >Contact us / Exhibitor Info </a>
+                  <a href="/contact" >Contact us </a>
                 </div>
             </div>
         );

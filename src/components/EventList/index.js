@@ -2,8 +2,9 @@ import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
-import {ReactPageClick} from 'react-page-click';
 import "./eventlist.scss";
+
+import Modal from "../Modal";
 
 const urlPropsQueryConfig = {
   eventId: { type: UrlQueryParamTypes.number, queryParam: 'eventId' },
@@ -12,24 +13,7 @@ const urlPropsQueryConfig = {
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ];
 
-const Modal = ({onClose, ...rest}) => (
-      <div className='popupcontainer'>
-        <div className="shade" onClick={onClose} >
-          <div className='shadecontent'>
-            <p className='cross'>˟</p>
-          </div>
-        </div>
-        <ReactPageClick notify={()=> {return}}>
-          <div className="popup">
-            <div className="modalcontent" {...rest} />
-          </div>
-        </ReactPageClick>
-      </div>
-    );
 
-Modal.propTypes = {
-      onClose: () => {} //function doing nothing
-    };
 
 class EventList extends React.Component {
     constructor(props) {

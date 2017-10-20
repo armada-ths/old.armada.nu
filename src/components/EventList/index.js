@@ -2,8 +2,9 @@ import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
-import {ReactPageClick} from 'react-page-click';
 import "./eventlist.scss";
+
+import Modal from "../Modal";
 
 const urlPropsQueryConfig = {
   eventId: { type: UrlQueryParamTypes.number, queryParam: 'eventId' },
@@ -12,24 +13,7 @@ const urlPropsQueryConfig = {
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ];
 
-const Modal = ({onClose, ...rest}) => (
-      <div className='popupcontainer'>
-        <div className="shade" onClick={onClose} >
-          <div className='shadecontent'>
-            <p className='cross'>˟</p>
-          </div>
-        </div>
-        <ReactPageClick notify={()=> {return}}>
-          <div className="popup">
-            <div className="modalcontent" {...rest} />
-          </div>
-        </ReactPageClick>
-      </div>
-    );
 
-Modal.propTypes = {
-      onClose: () => {} //function doing nothing
-    };
 
 class EventList extends React.Component {
     constructor(props) {
@@ -119,12 +103,14 @@ class EventList extends React.Component {
 
         return (
             <div>
+
                 <div className = "event-item" onClick={()=>this.showModal(event.id)}>
                     <div className = "image-section">
                         <img src = { event.image_url }/>
                     </div>
 
                     <div className = "details-section">
+
                         <h3 className ="name" >{event.name} </h3>
                         <div className='event-property'>
                             <img className='icon' src='/assets/calendar-round.svg'/>
@@ -140,6 +126,7 @@ class EventList extends React.Component {
                         </div>
                     </div>
                 </div>
+                <hr/>
             </div>
         );
     }
@@ -151,7 +138,6 @@ class EventList extends React.Component {
         let pastEvents = this.state.events.filter(event => event.event_start * 1000 < today);
         // get the event to display. Don't know behaviour when this.state.eventId = undefined
         let eventToDisplay = this.state.events.filter(event => event.id == this.state.eventId)[0];
-        var index = 0;
 
         return (
 
@@ -161,21 +147,16 @@ class EventList extends React.Component {
                 <div className="events-feed">
                   <div className='comingEvents'>
                     <h2> Upcoming Events </h2>
-                    if (comingEvents.length > 0) {
-                      {comingEvents.map(this.getEventItem
-                      index = index+1
-                      {index + 1 === comingEvents.length ? (<p><hr/></p>) : (<hr/>)}
-                      )}
-                    } else {<p>Stay tuned...</p>}
+                    {comingEvents.length > 0 ? (comingEvents.map(this.getEventItem)) : (<p>Stay tuned...</p>)}
                   </div>
-
-                    <div className='pastEvents'>
-                      <h2> Past Events </h2>
-                      <div className="pastEvent">
-                        {pastEvents.length > 0 ? (pastEvents.map(this.getEventItem)) : null }
-                        <hr/>
-                      </div>
+                  <div className="thickline"><hr/></div>
+                  <div className='pastEvents'>
+                    <h2> Past Events </h2>
+                    <div className="pastEvent">
+                      {pastEvents.length > 0 ? (pastEvents.map(this.getEventItem)) : null }
                     </div>
+                  </div>
+                  <div className="thickline"><hr/></div>
 
                 </div>
 

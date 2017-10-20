@@ -2,8 +2,11 @@ import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
-import {ReactPageClick} from 'react-page-click';
 import "./exhibitorlist.scss";
+
+import Modal from "../Modal";
+
+
 
 const urlPropsQueryConfig = {
   exhibitorName: { type: UrlQueryParamTypes.string, queryParam: 'exhibitorName' },
@@ -11,24 +14,7 @@ const urlPropsQueryConfig = {
 
 
 
-const Modal = ({onClose, ...rest}) => (
-      <div className='popupcontainer'>
-        <div className="shade" onClick={onClose} >
-          <div className='shadecontent'>
-            <p className='cross'>˟</p>
-          </div>
-        </div>
-        <ReactPageClick notify={()=> {return}}>
-          <div className="popup">
-            <div className="modalcontent" {...rest} />
-          </div>
-        </ReactPageClick>
-      </div>
-    );
 
-Modal.propTypes = {
-      onClose: () => {} //function doing nothing
-    };
 
 class ExhibitorList extends React.Component {
     constructor(props) {
@@ -64,14 +50,28 @@ class ExhibitorList extends React.Component {
 
       return (
         <Modal onClose={() => this.showModal(exhibitor.company)}>
-        <div>
-          <div className="modalimage">
-            <img src={exhibitor.logo_url}/>
-          </div>
-            <div className="modalinfo">
-              <h3>{exhibitor.company}</h3>
-            </div>
-          </div>
+            <div>
+                <div className="modalimage">
+                    <img src={exhibitor.logo_url}/>
+                </div>
+                <div className="modalinfo">
+                    <h3>{exhibitor.company}</h3>
+
+                    <div className='modal-event-property'>
+                        <div className='icon_group'>
+                            <img className='icon' src='/assets/place.svg'/>
+                            <p> {exhibitor.exhibitor_location}</p>
+                        </div>
+                    </div>
+                </div>
+                    <div className="description">
+                      <p>{exhibitor.about} </p>
+
+                      {/*<p>  {exhibitor.facts} </p>*/}
+
+                    </div>
+                </div>
+
       </Modal>
     );
   }
@@ -81,7 +81,7 @@ class ExhibitorList extends React.Component {
 
         return (
             <div>
-                <div className = "event-item" onClick={()=>this.showModal(exhibitor.company)}>
+                <div className = "exhibitor-item" onClick={()=>this.showModal(exhibitor.company)}>
                     <div className = "image-section">
                         <img src = { exhibitor.logo_url }/>
                     </div>
@@ -101,19 +101,16 @@ class ExhibitorList extends React.Component {
         return (
 
 
-            <div className="events">
+            <div className="exhibitors">
             {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
 
-                <div className="events-feed">
-                  <div className='comingEvents'>
-                  <h2> Upcoming Events </h2>
+                <div className="exhibitor-feed">
+
+                  <h2> Exhibitors </h2>
                       { this.state.exhibitors.map(this.getExhibitorItem)}
 
                   </div>
 
-
-
-                </div>
 
         </div>
         )

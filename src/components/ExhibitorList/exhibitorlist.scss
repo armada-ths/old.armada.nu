@@ -1,12 +1,12 @@
 @import '../../styles/_variables';
 
-.events {
+.exhibitors {
   width: 100%;
   height:100%;
   margin: auto;
 }
 
-.events-feed {
+.exhibitor-feed {
   max-width: 100%;
   height: 100%;
   display: flex;
@@ -14,171 +14,101 @@
   padding: 2em;
 }
 
-.event-item {
-    display: flex;
-    flex-direction: row;
-    padding: 2em;
+.exhibitor-item {
+  display: flex;
+  flex-direction: row;
+  padding: 2em;
 
-    .image-section{
-      width: 40%;
-    }
-    .details-section{
-       width: 60%;
-       padding-left: 1em;
-
-        .name{
-            text-align: left;
-        }
-        .description {
-          text-align: left;
-          //display: none;
-        }
-        .event-property{
-            display: flex;
-            flex-direction: row;
-            .icon{
-                width: 25px;
-                height: 25px;
-            }
-            p{
-                margin: 0 0 0 5px;
-                text-align: left;
-            }
-        }
-    }
-}
-
-.comingEvents{
-  .event-item:hover .name{
-    text-decoration: underline;
-    }
-    p{
-      text-align: center;
-    }
-}
-
-.pastEvents{
-  padding-top: 3em;
-  h2{
-    color: $grape;
+  .image-section{
+    width: 40%;
   }
-  .pastEvent{
-    //z-index: 10;
-    //opacity: .5;
-    //filter: alpha(opacity=50);
-  }
-}
+  .details-section{
+    width: 60%;
+    padding-left: 1em;
 
-.popupcontainer{
-  position: fixed;
-  top: 0em;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow-y: scroll;
-}
-
-.popup {
-  position: relative;
-  z-index: 400;
-  margin: auto;
-  top: 0;
-  width: 50%;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.9);
-  margin-bottom: 3em;
-  margin-top: 3em;
-  padding-bottom: 1em;
-}
-
-.shade {
-  position: fixed;
-  z-index: 350;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  .shadecontent{
-    position: absolute;
-    top: 1em;
-    right: 2em;
-    .cross{
-      color: $text-color-light;
+    .name{
+      text-align: left;
     }
-  }
-}
-
-.modalcontent {
-  overflow-wrap: break-word;
-  text-align: justify;
-
-  .modalimage {
-    img{
-      width: 100%;
-      }
-  }
-  .modal-event-property{
-      padding-top: 1em;
-      padding-bottom: 1em;
+    .description {
+      text-align: left;
+      //display: none;
+    }
+    .event-property{
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
       .icon{
-          width: 25px;
-          height: 25px;
-      }
-      .icon_group{
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
+        width: 25px;
+        height: 25px;
       }
       p{
-          margin: 0 0 0 5px;
+        margin: 0 0 0 5px;
+        text-align: left;
       }
-  }
-  .modalinfo{
-    padding: 1em 1em;
-  }
-  .modalbutton{
-    text-align: center;
-    .rsvpbutton{
-      display: inline-block;
-        border-radius: 4px;
-        background-color: $melon;
-        border: none;
-        color: #FFFFFF;
-        text-align: center;
-        font-size: 16px;
-        padding: 20px;
-        transition: all 0.5s;
-        margin: 5px;
-      }
-      .rsvpbutton:hover{
-        text-decoration: underline;
-      }
-      .rsvpclosed{
-        display: inline-block;
-          border-radius: 4px;
-          background-color: #f4511e;
-          border: none;
-          color: #FFFFFF;
-          text-align: center;
-          font-size: 16px;
-          padding: 20px;
-          transition: all 0.5s;
-          margin: 5px;
-        }
     }
+  }
 }
+
+
+//.comingExhibitors{
+//  .event-item:hover .name{
+//    text-decoration: underline;
+//  }
+//  p{
+//    text-align: center;
+//  }
+//}
+
+
+
+.modalimage {
+
+  margin-right: 20%;
+  margin-left:  20%;
+
+  img{
+    width: 100%;
+  }
+}
+
+.modal-event-property{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .icon{
+    width: 25px;
+    height: 25px;
+  }
+  .icon_group{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  p{
+    margin: 0 0 0 5px;
+  }
+}
+.modalinfo{
+  padding: 1em 1em;
+}
+
 
 @media screen and (max-width: $breakpoint-mobile) {
 
-  .events-feed {
+
+  .modal-event-property{
+    flex-direction: column;
+    .icon_group{
+      flex-direction: row;
+    }
+  }
+
+  .exhibitor-feed {
     padding: 0%;
   }
-  .event-item {
+  .exhibitor-item {
     display: flex;
     flex-direction: row;
     padding: 1em;
@@ -194,43 +124,19 @@
       //height: 100%;
     }
   }
-  .name {
-    font-size: large;
-  }
-  .popup {
-    width: 75%;
-  }
-  .modalcontent {
-    .description{
-      font-size: 16px;
-    }
-    .modal-event-property{
-        flex-direction: column;
-        .icon_group{
-          flex-direction: row;
-        }
-      }
-    }
-    .shade {
-      .shadecontent{
-        position: absolute;
-        top: 0px;
-        right: 5px;
-        .cross{
-          color: $text-color-light;
-        }
-      }
-    }
+
+
 }
 
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-  .modalcontent {
-    .modal-event-property{
-        flex-direction: column;
-        .icon_group{
-          flex-direction: row;
-        }
-      }
+  .modal-event-property{
+    flex-direction: column;
+    .icon_group{
+      flex-direction: row;
     }
   }
+}
+
+
+

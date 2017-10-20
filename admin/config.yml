@@ -24,7 +24,7 @@ collections:
       - {label: "Featured", name: "featured", widget: "boolean", default: false}
       - {label: "Ingress", name: "ingress", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
 
   - name: "pages"
     label: "Pages"

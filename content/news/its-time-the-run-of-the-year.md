@@ -1,7 +1,7 @@
 ---
 layout: News
 title: 'It’s time - the run of the year '
-date: 2017-10-19T00:00:00+02:00
+date: 2017-10-02T23:00:00+02:00
 cover_wide: /assets/armadarun_cover.png
 featured: false
 ingress: 5 km race. 400 students and companies. Are you ready? We are.

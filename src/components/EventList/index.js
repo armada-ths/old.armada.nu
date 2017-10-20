@@ -42,7 +42,7 @@ class EventList extends React.Component {
     }
 
     componentDidMount() {  // only called when eventpage is created or updated.
-        axios.get('https://ais.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
+        axios.get('https://ais2.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             const events = res.data;  // create variable and store result within parameter data
             this.setState({ events });  // component saves its own data
@@ -140,8 +140,6 @@ class EventList extends React.Component {
                         </div>
                     </div>
                 </div>
-
-                <hr/>
             </div>
         );
     }
@@ -153,25 +151,29 @@ class EventList extends React.Component {
         let pastEvents = this.state.events.filter(event => event.event_start * 1000 < today);
         // get the event to display. Don't know behaviour when this.state.eventId = undefined
         let eventToDisplay = this.state.events.filter(event => event.id == this.state.eventId)[0];
+        var index = 0;
 
         return (
-
 
             <div className="events">
             {this.state.showModal ? (this.displayEvent(eventToDisplay) ) : null}
 
                 <div className="events-feed">
                   <div className='comingEvents'>
-                  <h2> Upcoming Events </h2>
-                    {comingEvents.length > 0 ? (comingEvents.map(this.getEventItem))
-                    : <p>Stay tuned...</p>}
+                    <h2> Upcoming Events </h2>
+                    if (comingEvents.length > 0) {
+                      {comingEvents.map(this.getEventItem
+                      index = index+1
+                      {index + 1 === comingEvents.length ? (<p><hr/></p>) : (<hr/>)}
+                      )}
+                    } else {<p>Stay tuned...</p>}
                   </div>
 
                     <div className='pastEvents'>
-                      {pastEvents.length > 0 ? (<h2> Past Events </h2>)
-                      :null }
+                      <h2> Past Events </h2>
                       <div className="pastEvent">
-                        {pastEvents.map(this.getEventItem)}
+                        {pastEvents.length > 0 ? (pastEvents.map(this.getEventItem)) : null }
+                        <hr/>
                       </div>
                     </div>
 

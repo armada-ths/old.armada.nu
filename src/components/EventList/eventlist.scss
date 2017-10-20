@@ -25,7 +25,6 @@
     .details-section{
        width: 60%;
        padding-left: 1em;
-
         .name{
             text-align: left;
         }
@@ -49,18 +48,23 @@
 }
 
 .comingEvents{
+  cursor: pointer;
+  h2{
+    color: $licorice;
+  }
   .event-item:hover .name{
     text-decoration: underline;
     }
     p{
       text-align: center;
+      border-width: 2px;
     }
 }
 
 .pastEvents{
   padding-top: 3em;
   h2{
-    color: $grape;
+    color: $licorice !important;
   }
   .pastEvent{
     //z-index: 10;
@@ -154,6 +158,7 @@
         padding: 20px;
         transition: all 0.5s;
         margin: 5px;
+        cursor: pointer;
       }
       .rsvpbutton:hover{
         text-decoration: underline;

@@ -64,6 +64,7 @@
 
   margin-right: 20%;
   margin-left:  20%;
+ padding-top: 5%;
 
   img{
     width: 100%;
@@ -94,6 +95,12 @@
   padding: 1em 1em;
 }
 
+.description2{
+  margin-right: 5%;
+  margin-left: 5%;
+
+}
+
 
 @media screen and (max-width: $breakpoint-mobile) {
 
@@ -116,6 +123,7 @@
   .image-section{
     width: auto;
     max-height: 100%;
+
     img{
       left: 50%;
       top: 50%;

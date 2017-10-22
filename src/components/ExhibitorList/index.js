@@ -64,7 +64,7 @@ class ExhibitorList extends React.Component {
                         </div>
                     </div>
                 </div>
-                    <div className="description">
+                    <div className="description2">
                       <p>{exhibitor.about} </p>
 
                       {/*<p>  {exhibitor.facts} </p>*/}

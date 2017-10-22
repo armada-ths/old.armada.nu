@@ -1,6 +1,8 @@
 ---
 title: About
 layout: Aboutpage
+menuPage: true
+priority: 5
 header: /assets/images/header-images/About.jpg
 ---
 # WHAT IS ARMADA?

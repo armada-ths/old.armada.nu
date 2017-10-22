@@ -8,8 +8,17 @@ class Navbar extends React.Component {
     constructor(props){
         super(props)
 
-        this.state = {"expanded": false};
+        let pages = [];
+        if (global.window!=undefined){
+            pages = global.window.__COLLECTION__.filter( (page) => page.menuPage);
+            pages.sort( (a,b) => {
+                return a.priority - b.priority;
+            });
+        }
+        this.state = {"expanded": false,
+                    pages};
     }
+
 
 
      toggleExpand = () => {
@@ -26,10 +35,7 @@ class Navbar extends React.Component {
                         </div>
                         <div className={"menu " + (this.state.expanded ? "visible" :"hidden")} >
                             <Link onClick={this.toggleExpand} to='/'>HOME</Link>
-                            <Link onClick={this.toggleExpand} to='/the-fair'>THE FAIR</Link>
-                            <Link onClick={this.toggleExpand} to='/events'>EVENTS</Link>
-                            <Link onClick={this.toggleExpand} to='/about'>ABOUT</Link>
-                            <Link onClick={this.toggleExpand} to='/exhibitor_info'>EXHIBITOR INFO</Link>
+                            {this.state.pages.map( (page) => <Link onClick={this.toggleExpand} to={page.__url}>{page.title}</Link>)}
                         </div>
                     </nav>
                 </div>

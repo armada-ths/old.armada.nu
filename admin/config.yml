@@ -35,6 +35,8 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Layout", name: "layout", widget: "string", default: "Page"}
+      - {label: "In menu", name: "menuPage", widget: "boolean", default: false}
+      - {label: "Priority", name: "priority", widget: "number"}
       - {label: "Header", name: "header", widget: "image", optional: true}
       - {label: "Body", name: "body", widget: "markdown"}
 

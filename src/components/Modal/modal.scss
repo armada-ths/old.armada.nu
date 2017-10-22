@@ -1,0 +1,73 @@
+@import '../../styles/_variables';
+
+
+
+.popupcontainer{ //
+  position: fixed;
+  top: 0em;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+}
+
+.popup { //
+  position: relative;
+  z-index: 400;
+  margin: auto;
+  top: 0;
+  width: 50%;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3em;
+  margin-top: 3em;
+  padding-bottom: 1em;
+}
+
+.shade { //
+  position: fixed;
+  z-index: 350;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  .shadecontent{ //
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    .cross{ //
+      color: $text-color-light;
+    }
+  }
+}
+
+.modalcontent { //
+  overflow-wrap: break-word;
+  text-align: justify;
+
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+
+
+  .popup { //
+    width: 75%;
+  }
+  .modalcontent { //
+
+  }
+
+    .shade { //
+      .shadecontent{ //
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        .cross{ //
+          color: $text-color-light;
+        }
+      }
+    }
+}
+
+

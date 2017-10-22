@@ -1,6 +1,8 @@
 ---
 title: Events
 layout: Events
+menuPage: true
+priority: 3
 header: /assets/images/header-images/About.jpg
 ---
 # Events

@@ -12,10 +12,6 @@ const urlPropsQueryConfig = {
   exhibitorName: { type: UrlQueryParamTypes.string, queryParam: 'exhibitorName' },
 };
 
-
-
-
-
 class ExhibitorList extends React.Component {
     constructor(props) {
         super(props); // adopts parent qualities
@@ -46,8 +42,6 @@ class ExhibitorList extends React.Component {
     };
 
     displayExhibitor = (exhibitor) => {
-
-
       return (
         <Modal onClose={() => this.showModal(exhibitor.company)}>
             <div>
@@ -78,12 +72,14 @@ class ExhibitorList extends React.Component {
 
     getExhibitorItem = (exhibitor) => {
 
-
         return (
             <div>
                 <div className = "exhibitor-item" onClick={()=>this.showModal(exhibitor.company)}>
                     <div className = "image-section">
                         <img src = { exhibitor.logo_url }/>
+                    </div>
+                    <div className = "">
+                        {exhibitor.company}
                     </div>
 
                 </div>

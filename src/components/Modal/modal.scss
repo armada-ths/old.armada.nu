@@ -2,7 +2,7 @@
 
 
 
-.popupcontainer{ //
+.popupcontainer{
   position: fixed;
   top: 0em;
   right: 0;
@@ -11,20 +11,20 @@
   overflow-y: scroll;
 }
 
-.popup { //
+.popup {
   position: relative;
   z-index: 400;
   margin: auto;
   top: 0;
   width: 50%;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.9);
+  background: white; //rgba(255, 255, 255, 0.9);
   margin-bottom: 3em;
   margin-top: 3em;
   padding-bottom: 1em;
 }
 
-.shade { //
+.shade {
   position: fixed;
   z-index: 350;
   width: 100vw;
@@ -32,17 +32,23 @@
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.8);
-  .shadecontent{ //
+
+  .shadecontent{
     position: absolute;
     top: 1em;
     right: 2em;
-    .cross{ //
+
+    .cross{
       color: $text-color-light;
+    }
+    .cross:hover {
+      cursor: pointer;
+      cursor: hand;
     }
   }
 }
 
-.modalcontent { //
+.modalcontent {
   overflow-wrap: break-word;
   text-align: justify;
 
@@ -51,21 +57,22 @@
 @media screen and (max-width: $breakpoint-mobile) {
 
 
-  .popup { //
+  .popup {
     width: 75%;
   }
-  .modalcontent { //
+  .modalcontent {
 
   }
 
-    .shade { //
-      .shadecontent{ //
+    .shade {
+      .shadecontent{
         position: absolute;
         top: 0px;
         right: 5px;
-        .cross{ //
+        .cross{
           color: $text-color-light;
         }
+
       }
     }
 }

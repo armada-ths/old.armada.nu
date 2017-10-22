@@ -1,7 +1,7 @@
 ---
 title: The Fair
 layout: Plainpage
-menuPage: false
+menuPage: true
 priority: 2
 header: /assets/library.png
 ---

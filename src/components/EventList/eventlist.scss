@@ -47,18 +47,25 @@
     }
 }
 
+.event-item:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
 .comingEvents{
   cursor: pointer;
   h2{
     color: $licorice;
   }
-  .event-item:hover .name{
+
+  .name{
     text-decoration: underline;
     }
     p{
       text-align: center;
     }
 }
+
 .thickline{
   hr{
     border: none;
@@ -140,7 +147,6 @@
     background-color: $melon;
     border: none;
     color: #FFFFFF;
-    text-align: center;
     text-align: center;
     font-size: 16px;
     padding: 20px;

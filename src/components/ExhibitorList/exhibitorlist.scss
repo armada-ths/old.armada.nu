@@ -48,17 +48,14 @@
   }
 }
 
+.exhibitor-item:hover{
+  cursor: pointer;
+  cursor: hand;
+}
 
-//.comingExhibitors{
-//  .event-item:hover .name{
-//    text-decoration: underline;
-//  }
-//  p{
-//    text-align: center;
-//  }
-//}
-
-
+.comingEvents{
+  cursor: default;
+}
 
 .modalimage2 {
 
@@ -120,6 +117,7 @@
     flex-direction: row;
     padding: 1em;
   }
+
   .image-section{
     width: auto;
     max-height: 100%;

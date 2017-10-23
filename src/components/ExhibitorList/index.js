@@ -73,18 +73,11 @@ class ExhibitorList extends React.Component {
     getExhibitorItem = (exhibitor) => {
 
         return (
-            <div>
-                <div className = "exhibitor-item" onClick={()=>this.showModal(exhibitor.company)}>
-                    <div className = "image-section">
-                        <img src = { exhibitor.logo_url }/>
-                    </div>
-                    <div className = "">
-                        {exhibitor.company}
-                    </div>
-
+            <div className = "exhibitor-box" onClick={()=>this.showModal(exhibitor.company)}>
+                <div className = "image-section">
+                  <img src = { exhibitor.logo_url }/>
                 </div>
-
-                <hr/>
+                <p>  {exhibitor.company} </p>
             </div>
         );
     }
@@ -95,20 +88,14 @@ class ExhibitorList extends React.Component {
         let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
 
         return (
-
-
-            <div className="exhibitors">
+          <div className="exhibitors">
             {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
 
-                <div className="exhibitor-feed">
-
-                  <h2> Exhibitors </h2>
-                      { this.state.exhibitors.map(this.getExhibitorItem)}
-
-                  </div>
-
-
-        </div>
+            <h2> Exhibitors </h2>
+            <div className="exhibitor-feed">
+              {this.state.exhibitors.map(this.getExhibitorItem)}
+            </div>
+          </div>
         )
     }
 }

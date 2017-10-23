@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .Exhibitors-container {
   position: static;
   z-index: 150;
@@ -10,3 +12,35 @@
   position: relative;
   overflow: hidden;
 }
+.exhibitor-feed{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  vertical-align: bottom;
+
+  .exhibitor-box{
+    display: inline-block;
+    align-self: baseline;
+    width: 20vw;
+    padding: 1em 0em;
+    cursor: pointer;
+      .image-section{
+        img{
+          display: block;
+          margin: auto;
+          max-height: 15vh;
+        }
+      }
+      p{
+        position: relative;
+        color: $licorice;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    .exhibitor-box:hover p{
+      text-decoration: underline;
+
+    }
+  }

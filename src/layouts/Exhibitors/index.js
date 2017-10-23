@@ -10,7 +10,6 @@ const Exhibitors = (props) => {
 
    <div className="content">
     <div className= "Exhibitors-container">
-
     <ExhibitorList {...props}/>
 
      </div>

@@ -12,6 +12,36 @@
   display: flex;
   flex-direction: column;
   padding: 2em;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  vertical-align: bottom;
+
+  .exhibitor-box{
+    display: inline-block;
+    align-self: baseline;
+    width: 20vw;
+    padding: 1em 0em;
+    cursor: pointer;
+      .image-section{
+        img{
+          display: block;
+          margin: auto;
+          max-height: 15vh;
+        }
+      }
+      p{
+        position: relative;
+        color: $licorice;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    .exhibitor-box:hover p{
+      text-decoration: underline;
+
+    }
 }
 
 .exhibitor-item {
@@ -48,22 +78,20 @@
   }
 }
 
+.exhibitor-item:hover{
+  cursor: pointer;
+  cursor: hand;
+}
 
-//.comingExhibitors{
-//  .event-item:hover .name{
-//    text-decoration: underline;
-//  }
-//  p{
-//    text-align: center;
-//  }
-//}
-
-
+.comingEvents{
+  cursor: default;
+}
 
 .modalimage2 {
 
   margin-right: 20%;
   margin-left:  20%;
+ padding-top: 5%;
 
   img{
     width: 100%;
@@ -94,6 +122,12 @@
   padding: 1em 1em;
 }
 
+.description2{
+  margin-right: 5%;
+  margin-left: 5%;
+
+}
+
 
 @media screen and (max-width: $breakpoint-mobile) {
 
@@ -113,9 +147,11 @@
     flex-direction: row;
     padding: 1em;
   }
+
   .image-section{
     width: auto;
     max-height: 100%;
+
     img{
       left: 50%;
       top: 50%;
@@ -137,6 +173,3 @@
     }
   }
 }
-
-
-

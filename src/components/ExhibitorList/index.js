@@ -5,7 +5,7 @@ import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./exhibitorlist.scss";
 
 import Modal from "../Modal";
-
+import Loading from "../Loading"
 
 
 const urlPropsQueryConfig = {
@@ -18,7 +18,8 @@ class ExhibitorList extends React.Component {
         this.state = {
             exhibitors: [],  // json object
             showModal: false,
-            exhibitorName: undefined
+            exhibitorName: undefined,
+            isLoading: true
         };
     }
 
@@ -28,10 +29,10 @@ class ExhibitorList extends React.Component {
             let exhibitors = res.data;  // create variable and store result within parameter data
 
 
-            this.setState({ exhibitors });  // component saves its own data
+            this.setState({ exhibitors,  isLoading:false, });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
             if (this.props.exhibitorName !== undefined ){
-              this.setState({exhibitorName: this.props.exhibitorName, showModal:true, exhibitors});
+              this.setState({exhibitorName: this.props.exhibitorName, showModal:true});
           }
           });
     }
@@ -58,7 +59,7 @@ class ExhibitorList extends React.Component {
                         </div>
                     </div>
                 </div>
-                    <div className="description">
+                    <div className="description2">
                       <p>{exhibitor.about} </p>
 
                       {/*<p>  {exhibitor.facts} </p>*/}
@@ -87,16 +88,17 @@ class ExhibitorList extends React.Component {
 
         let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
 
-        return (
-          <div className="exhibitors">
-            {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
+            return (
+            <div className="exhibitors">
+                {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
+                <h2> Exhibitors </h2>
 
-            <h2> Exhibitors </h2>
-            <div className="exhibitor-feed">
-              {this.state.exhibitors.map(this.getExhibitorItem)}
+                <div className="exhibitor-feed">
+                    {this.state.isLoading ? <Loading/> :null}
+                    {this.state.exhibitors.map(this.getExhibitorItem)}
+                </div>
             </div>
-          </div>
-        )
+            )
     }
 }
 

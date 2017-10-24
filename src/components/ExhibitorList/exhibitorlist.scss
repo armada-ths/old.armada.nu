@@ -7,11 +7,37 @@
 }
 
 .exhibitor-feed {
-  max-width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
-  padding: 2em;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  vertical-align: bottom;
+
+  .exhibitor-box{
+    display: inline-block;
+    align-self: baseline;
+    width: 200px;
+    padding: 2em 1em;
+    cursor: pointer;
+      .image-section{
+        img{
+          display: block;
+          margin: auto;
+          max-height: 15vh;
+        }
+      }
+      p{
+        position: relative;
+        color: $licorice;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    .exhibitor-box:hover p{
+      text-decoration: underline;
+
+    }
 }
 
 .exhibitor-item {
@@ -48,17 +74,14 @@
   }
 }
 
+.exhibitor-item:hover{
+  cursor: pointer;
+  cursor: hand;
+}
 
-//.comingExhibitors{
-//  .event-item:hover .name{
-//    text-decoration: underline;
-//  }
-//  p{
-//    text-align: center;
-//  }
-//}
-
-
+.comingEvents{
+  cursor: default;
+}
 
 .modalimage2 {
 
@@ -104,7 +127,6 @@
 
 @media screen and (max-width: $breakpoint-mobile) {
 
-
   .modal-event-property{
     flex-direction: column;
     .icon_group{
@@ -113,27 +135,24 @@
   }
 
   .exhibitor-feed {
-    padding: 0%;
+    padding: 0em 10px;
+    .exhibitor-box {
+      width: 100px;
+      padding: 1em 1em;
+      .image-section{
+        width: 30vw;
+        max-height: 100%;
+        img{
+          display: block;
+          margin: auto;
+          max-height: 15vh;
+        }
+      }
+      p{
+        font-size: 11px;
+      }
   }
-  .exhibitor-item {
-    display: flex;
-    flex-direction: row;
-    padding: 1em;
   }
-  .image-section{
-    width: auto;
-    max-height: 100%;
-
-    img{
-      left: 50%;
-      top: 50%;
-      width: 100%;
-      height: auto;
-      //height: 100%;
-    }
-  }
-
-
 }
 
 // flipped phone
@@ -145,6 +164,3 @@
     }
   }
 }
-
-
-

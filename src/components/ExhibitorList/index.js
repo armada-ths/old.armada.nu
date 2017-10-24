@@ -5,16 +5,12 @@ import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./exhibitorlist.scss";
 
 import Modal from "../Modal";
-
+import Loading from "../Loading"
 
 
 const urlPropsQueryConfig = {
   exhibitorName: { type: UrlQueryParamTypes.string, queryParam: 'exhibitorName' },
 };
-
-
-
-
 
 class ExhibitorList extends React.Component {
     constructor(props) {
@@ -22,7 +18,8 @@ class ExhibitorList extends React.Component {
         this.state = {
             exhibitors: [],  // json object
             showModal: false,
-            exhibitorName: undefined
+            exhibitorName: undefined,
+            isLoading: true
         };
     }
 
@@ -32,10 +29,10 @@ class ExhibitorList extends React.Component {
             let exhibitors = res.data;  // create variable and store result within parameter data
 
 
-            this.setState({ exhibitors });  // component saves its own data
+            this.setState({ exhibitors,  isLoading:false, });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
             if (this.props.exhibitorName !== undefined ){
-              this.setState({exhibitorName: this.props.exhibitorName, showModal:true, exhibitors});
+              this.setState({exhibitorName: this.props.exhibitorName, showModal:true});
           }
           });
     }
@@ -46,8 +43,6 @@ class ExhibitorList extends React.Component {
     };
 
     displayExhibitor = (exhibitor) => {
-
-
       return (
         <Modal onClose={() => this.showModal(exhibitor.company)}>
             <div>
@@ -60,7 +55,12 @@ class ExhibitorList extends React.Component {
                     <div className='modal-event-property'>
                         <div className='icon_group'>
                             <img className='icon' src='/assets/place.svg'/>
-                            <p> {exhibitor.exhibitor_location}</p>
+                            <p>
+                                {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen" ? <img className='icon' src='/assets/diversity.png'/> : null }
+                                {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen" ? <img className='icon' src='/assets/sustainability.png'/> : null }
+                                {exhibitor.exhibitor_location}
+                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -78,17 +78,12 @@ class ExhibitorList extends React.Component {
 
     getExhibitorItem = (exhibitor) => {
 
-
         return (
-            <div>
-                <div className = "exhibitor-item" onClick={()=>this.showModal(exhibitor.company)}>
-                    <div className = "image-section">
-                        <img src = { exhibitor.logo_url }/>
-                    </div>
-
+            <div className = "exhibitor-box" onClick={()=>this.showModal(exhibitor.company)}>
+                <div className = "image-section">
+                  <img src = { exhibitor.logo_url }/>
                 </div>
-
-                <hr/>
+                <p>  {exhibitor.company} </p>
             </div>
         );
     }
@@ -98,22 +93,17 @@ class ExhibitorList extends React.Component {
 
         let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
 
-        return (
-
-
+            return (
             <div className="exhibitors">
-            {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
+                {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
+                <h2> Exhibitors </h2>
 
                 <div className="exhibitor-feed">
-
-                  <h2> Exhibitors </h2>
-                      { this.state.exhibitors.map(this.getExhibitorItem)}
-
-                  </div>
-
-
-        </div>
-        )
+                    {this.state.isLoading ? <Loading/> :null}
+                    {this.state.exhibitors.map(this.getExhibitorItem)}
+                </div>
+            </div>
+            )
     }
 }
 

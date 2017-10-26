@@ -76,8 +76,7 @@ class EventList extends React.Component {
                     <p> {event.location}</p>
                   </div>
                 </div>
-                <div className="description">
-                  {event.description}
+                <div className="description" dangerouslySetInnerHTML={{__html: event.description}}>
                 </div>
               </div>
               <div className="modalbutton">

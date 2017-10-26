@@ -88,13 +88,14 @@ class ExhibitorList extends React.Component {
         );
     }
 
-
     render() {
 
-        let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
+      let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
+      {this.state.exhibitors.sort((a, b) => a.company.localeCompare(b.company))}
 
             return (
             <div className="exhibitors">
+
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
 

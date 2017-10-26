@@ -140,12 +140,11 @@
       width: 100px;
       padding: 1em 1em;
       .image-section{
-        width: 30vw;
-        max-height: 100%;
+        width: 100px;
         img{
           display: block;
           margin: auto;
-          max-height: 15vh;
+          max-height: 100px;
         }
       }
       p{

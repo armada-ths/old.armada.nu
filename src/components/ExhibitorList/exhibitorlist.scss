@@ -19,8 +19,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     .exhibitor-box{
-      width: 200px;
-      padding: 1em 1em;
+      width: 130px;
+      padding: 15px 10px 10px 10px;
       align-self: baseline;
       cursor: pointer;
         .image-container{
@@ -33,7 +33,7 @@
         p{
           color: $licorice;
           text-align: center;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: bold;
         }
       }

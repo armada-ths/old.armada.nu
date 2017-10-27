@@ -9,4 +9,4 @@ Are you missing something in your exhibition material or booth?
 
 Our partner Sture provides everything from chairs and tables to complete booth solutions.  
 
-Contact Sture Exhibitions & Events AB at gitte.friberg@sture.se
+Contact Sture Exhibitions & Events AB at andreas.tenggren@sture.se

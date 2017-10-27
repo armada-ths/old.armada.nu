@@ -1,7 +1,7 @@
 ---
 title: The Grand Banquet
 layout: PageSection
-priority: '10'
+priority: '22'
 header: /assets/Bankett.jpg
 dark: false
 ---

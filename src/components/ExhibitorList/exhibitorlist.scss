@@ -11,8 +11,26 @@
 .description2{
   margin-right: 5%;
   margin-left: 5%;
+  font-size: 16px;
 }
 .exhibitors {
+  .search-containter{
+    position: relative;
+    margin: auto;
+    width: 50%;
+    transform: translate(23%, 0%);
+    input{
+      height: 15px;
+      border: 1px solid $melon;
+      border-radius: 4px;
+      padding: 5px;
+      margin: auto;
+      width: 50%;
+    }
+    input:focus {
+    border: 2px solid $melon;
+    }
+  }
   .exhibitor-feed {
     display: flex;
     flex-direction: row;

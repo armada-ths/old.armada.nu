@@ -19,7 +19,8 @@ class ExhibitorList extends React.Component {
             exhibitors: [],  // json object
             showModal: false,
             exhibitorName: undefined,
-            isLoading: true
+            isLoading: true,
+            search: ''
         };
     }
 
@@ -35,6 +36,9 @@ class ExhibitorList extends React.Component {
               this.setState({exhibitorName: this.props.exhibitorName, showModal:true});
           }
           });
+    }
+    updateSearch(event){
+      this.setState({search: event.target.value.substr(0,100)});
     }
 
     showModal = (exhibitorName) => {
@@ -93,13 +97,25 @@ class ExhibitorList extends React.Component {
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
       {this.state.exhibitors.sort((a, b) => a.company.localeCompare(b.company))}
 
+      let filteredCompanies = this.state.exhibitors.filter(
+        (exhibitor) => {
+          return exhibitor.company.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+        }
+      );
+
             return (
-            <div className="exhibitors">
+            <div className = "exhibitors">
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
+                  <div className = "search-containter">
+                    <input type = "text" placeholder="Search Company"
+                      value={this.state.search}
+                      onChange ={this.updateSearch.bind(this)}
+                      />
+                  </div>
                 <div className="exhibitor-feed">
                     {this.state.isLoading ? <Loading/> :null}
-                    {this.state.exhibitors.map(this.getExhibitorItem)}
+                    {filteredCompanies.map(this.getExhibitorItem)}
                 </div>
             </div>
             )

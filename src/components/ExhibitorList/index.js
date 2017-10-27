@@ -80,7 +80,7 @@ class ExhibitorList extends React.Component {
 
         return (
             <div className = "exhibitor-box" onClick={()=>this.showModal(exhibitor.company)}>
-                <div className = "image-section">
+                <div className = "image-container">
                   <img src = { exhibitor.logo_url }/>
                 </div>
                 <p>  {exhibitor.company} </p>
@@ -95,10 +95,8 @@ class ExhibitorList extends React.Component {
 
             return (
             <div className="exhibitors">
-
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
-
                 <div className="exhibitor-feed">
                     {this.state.isLoading ? <Loading/> :null}
                     {this.state.exhibitors.map(this.getExhibitorItem)}

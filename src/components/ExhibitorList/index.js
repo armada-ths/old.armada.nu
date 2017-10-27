@@ -48,16 +48,18 @@ class ExhibitorList extends React.Component {
             <div>
                 <div className="modalimage2">
                     <img src={exhibitor.logo_url}/>
+                    {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen" ? <img className='special' src='/assets/diversity.png'/> : null }
+                    {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen" ? <img className='special' src='/assets/sustainability.png'/> : null }
                 </div>
                 <div className="modalinfo">
+
                     <h3>{exhibitor.company}</h3>
 
                     <div className='modal-event-property'>
                         <div className='icon_group'>
-                            <img className='icon' src='/assets/place.svg'/>
+
                             <p>
-                                {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen" ? <img className='icon' src='/assets/diversity.png'/> : null }
-                                {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen" ? <img className='icon' src='/assets/sustainability.png'/> : null }
+                                <img className='icon' src='/assets/place.svg'/>
                                 {exhibitor.exhibitor_location}
                             </p>
 

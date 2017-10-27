@@ -87,11 +87,20 @@
 
   margin-right: 20%;
   margin-left:  20%;
- padding-top: 5%;
+  padding-top: 5%;
 
   img{
     width: 100%;
   }
+  .special{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
 }
 
 .modal-event-property{
@@ -104,16 +113,20 @@
     width: 25px;
     height: 25px;
   }
+
   .icon_group{
     text-align: center;
     align-items: center;
     display: flex;
     flex-direction: column;
   }
+
   p{
     margin: 0 0 0 5px;
+
   }
 }
+
 .modalinfo{
   padding: 1em 1em;
 }

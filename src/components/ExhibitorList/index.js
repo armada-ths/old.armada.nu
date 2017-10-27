@@ -65,7 +65,7 @@ class ExhibitorList extends React.Component {
                     </div>
                 </div>
                     <div className="description2">
-                      <p>{exhibitor.about} </p>
+                      {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
 
                       {/*<p>  {exhibitor.facts} </p>*/}
 

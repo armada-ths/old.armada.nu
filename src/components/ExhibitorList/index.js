@@ -82,18 +82,6 @@ class ExhibitorList extends React.Component {
     );
   }
 
-    getExhibitorItem = (exhibitor) => {
-
-        return (
-            <div className = "exhibitor-box" onClick={()=>this.showModal(exhibitor.company)}>
-                <div className = "image-container">
-                  <img src = { exhibitor.logo_url }/>
-                </div>
-                <p>  {exhibitor.company} </p>
-            </div>
-        );
-    }
-
     render() {
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
 

@@ -28,8 +28,7 @@ class ExhibitorList extends React.Component {
         axios.get('https://ais.armada.nu/api/exhibitors')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             let exhibitors = res.data;  // create variable and store result within parameter data
-
-
+            {this.state.exhibitors.sort((a, b) => a.company.localeCompare(b.company))}
             this.setState({ exhibitors,  isLoading:false, });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
             if (this.props.exhibitorName !== undefined ){
@@ -95,8 +94,6 @@ class ExhibitorList extends React.Component {
     render() {
 
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
-      {this.state.exhibitors.sort((a, b) => a.company.localeCompare(b.company))}
-
       let filteredCompanies = this.state.exhibitors.filter(
         (exhibitor) => {
           return exhibitor.company.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;

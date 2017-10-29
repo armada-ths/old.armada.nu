@@ -19,7 +19,8 @@ class ExhibitorList extends React.Component {
             exhibitors: [],  // json object
             showModal: false,
             exhibitorName: undefined,
-            isLoading: true
+            isLoading: true,
+            search: ''
         };
     }
 
@@ -36,6 +37,9 @@ class ExhibitorList extends React.Component {
           }
           });
     }
+    updateSearch(event){
+      this.setState({search: event.target.value.substr(0,100)});
+    }
 
     showModal = (exhibitorName) => {
       this.setState({showModal: !this.state.showModal, exhibitorName});
@@ -48,26 +52,31 @@ class ExhibitorList extends React.Component {
             <div>
                 <div className="modalimage2">
                     <img src={exhibitor.logo_url}/>
-                    {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen" ? <img className='special' src='/assets/diversity.png'/> : null }
-                    {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen" ? <img className='special' src='/assets/sustainability.png'/> : null }
+
                 </div>
                 <div className="modalinfo">
 
                     <h3>{exhibitor.company}</h3>
 
                     <div className='modal-event-property'>
+                        {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen"
+                            ? <img className='special' src='/assets/diversity.png'/> : null }
+                        {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen"
+                            ? <img className='special' src='/assets/sustainability.png'/> : null }
                         <div className='icon_group'>
 
-                            <p>
                                 <img className='icon' src='/assets/place.svg'/>
                                 {exhibitor.exhibitor_location}
-                            </p>
+                                <div className="location">
+                                    <img src={exhibitor.map_location_url}/>
+                                </div>
+
 
                         </div>
                     </div>
                 </div>
                     <div className="description2">
-                      <p>{exhibitor.about} </p>
+                      {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
 
                       {/*<p>  {exhibitor.facts} </p>*/}
 
@@ -82,7 +91,7 @@ class ExhibitorList extends React.Component {
 
         return (
             <div className = "exhibitor-box" onClick={()=>this.showModal(exhibitor.company)}>
-                <div className = "image-section">
+                <div className = "image-container">
                   <img src = { exhibitor.logo_url }/>
                 </div>
                 <p>  {exhibitor.company} </p>
@@ -90,19 +99,30 @@ class ExhibitorList extends React.Component {
         );
     }
 
-
     render() {
 
-        let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
+      let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
+      {this.state.exhibitors.sort((a, b) => a.company.localeCompare(b.company))}
+
+      let filteredCompanies = this.state.exhibitors.filter(
+        (exhibitor) => {
+          return exhibitor.company.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+        }
+      );
 
             return (
-            <div className="exhibitors">
+            <div className = "exhibitors">
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
-
+                  <div className = "search-containter">
+                    <input type = "text" placeholder="Search Company"
+                      value={this.state.search}
+                      onChange ={this.updateSearch.bind(this)}
+                      />
+                  </div>
                 <div className="exhibitor-feed">
                     {this.state.isLoading ? <Loading/> :null}
-                    {this.state.exhibitors.map(this.getExhibitorItem)}
+                    {filteredCompanies.map(this.getExhibitorItem)}
                 </div>
             </div>
             )

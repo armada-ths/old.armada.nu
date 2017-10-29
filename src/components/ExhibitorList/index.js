@@ -17,6 +17,7 @@ class ExhibitorList extends React.Component {
         super(props); // adopts parent qualities
         this.state = {
             exhibitors: [],  // json object
+            exhibitorList: [],
             showModal: false,
             exhibitorName: undefined,
             isLoading: true,
@@ -28,9 +29,10 @@ class ExhibitorList extends React.Component {
         axios.get('https://ais.armada.nu/api/exhibitors')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             let exhibitors = res.data;  // create variable and store result within parameter data
+            exhibitors.sort((a, b) => a.company.localeCompare(b.company));
+            let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem name={exhibitor.company} exhibitor={exhibitor} showModal={this.showModal}/>);
 
-
-            this.setState({ exhibitors,  isLoading:false, });  // component saves its own data
+            this.setState({ exhibitors, exhibitorList, isLoading:false, });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
             if (this.props.exhibitorName !== undefined ){
               this.setState({exhibitorName: this.props.exhibitorName, showModal:true});
@@ -87,26 +89,12 @@ class ExhibitorList extends React.Component {
     );
   }
 
-    getExhibitorItem = (exhibitor) => {
-
-        return (
-            <div className = "exhibitor-box" onClick={()=>this.showModal(exhibitor.company)}>
-                <div className = "image-container">
-                  <img src = { exhibitor.logo_url }/>
-                </div>
-                <p>  {exhibitor.company} </p>
-            </div>
-        );
-    }
-
     render() {
-
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
-      {this.state.exhibitors.sort((a, b) => a.company.localeCompare(b.company))}
 
-      let filteredCompanies = this.state.exhibitors.filter(
-        (exhibitor) => {
-          return exhibitor.company.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+      let filteredCompanies = this.state.exhibitorList.filter(
+        (exhibitorItem) => {
+          return exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase());
         }
       );
 
@@ -122,12 +110,16 @@ class ExhibitorList extends React.Component {
                   </div>
                 <div className="exhibitor-feed">
                     {this.state.isLoading ? <Loading/> :null}
-                    {filteredCompanies.map(this.getExhibitorItem)}
+                    {filteredCompanies}
                 </div>
             </div>
             )
     }
 }
+
+
+
+
 
 ExhibitorList.propTypes = {
     exhibitorName: PropTypes.string,
@@ -141,3 +133,18 @@ if(global.window!=undefined){
   toExport=ExhibitorList;
 }
 export default toExport;
+
+const ExhibitorItem = (props) => {
+  return (<div id={props.name} className = "exhibitor-box" onClick={()=> props.showModal(props.exhibitor.company)}>
+              <div className = "image-container">
+                <img src = {props.exhibitor.logo_url}/>
+              </div>
+              <p> {props.exhibitor.company} </p>
+              </div>)
+}
+
+ExhibitorItem.propTypes = {
+    name: PropTypes.string,
+    exhibitor: PropTypes.object,
+    showModal: PropTypes.func,
+}

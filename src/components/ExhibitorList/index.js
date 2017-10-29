@@ -99,6 +99,7 @@ class ExhibitorList extends React.Component {
       );
 
             return (
+
             <div className = "exhibitors">
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
@@ -107,7 +108,29 @@ class ExhibitorList extends React.Component {
                       value={this.state.search}
                       onChange ={this.updateSearch.bind(this)}
                       />
+
                   </div>
+                      <div className = "checkbox-filtering">
+                          <label>
+                              <input type="checkbox" name="meat" rel="bacon" id="bacon" /> Trainee
+                          </label>
+                          <label>
+                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Msc Thesis
+                          </label>
+                          <label>
+                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Internship
+                          </label>
+                          <label>
+                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Summer Job
+                          </label>
+                          <label>
+                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Part-time job
+                          </label>
+                          <label>
+                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Full-time job
+                          </label>
+                      </div>
+
                 <div className="exhibitor-feed">
                     {this.state.isLoading ? <Loading/> :null}
                     {filteredCompanies}

@@ -1,7 +1,7 @@
 ---
 title: THS Armada
 layout: Homepage
-header: /assets/TheFair.png
+header: /assets/TheFair_small.jpg
 ---
  
 

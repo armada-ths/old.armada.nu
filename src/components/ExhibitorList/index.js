@@ -54,18 +54,25 @@ class ExhibitorList extends React.Component {
             <div>
                 <div className="modalimage2">
                     <img src={exhibitor.logo_url}/>
+
                 </div>
                 <div className="modalinfo">
+
                     <h3>{exhibitor.company}</h3>
 
                     <div className='modal-event-property'>
+                        {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen"
+                            ? <img className='special' src='/assets/diversity.png'/> : null }
+                        {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen"
+                            ? <img className='special' src='/assets/sustainability.png'/> : null }
                         <div className='icon_group'>
-                            <img className='icon' src='/assets/place.svg'/>
-                            <p>
-                                {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen" ? <img className='icon' src='/assets/diversity.png'/> : null }
-                                {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen" ? <img className='icon' src='/assets/sustainability.png'/> : null }
+
+                                <img className='icon' src='/assets/place.svg'/>
                                 {exhibitor.exhibitor_location}
-                            </p>
+                                <div className="location">
+                                    <img src={exhibitor.map_location_url}/>
+                                </div>
+
 
                         </div>
                     </div>
@@ -92,6 +99,7 @@ class ExhibitorList extends React.Component {
       );
 
             return (
+
             <div className = "exhibitors">
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
@@ -100,7 +108,29 @@ class ExhibitorList extends React.Component {
                       value={this.state.search}
                       onChange ={this.updateSearch.bind(this)}
                       />
+
                   </div>
+                      <div className = "checkbox-filtering">
+                          <label>
+                              <input type="checkbox" name="meat" rel="bacon" id="bacon" /> Trainee
+                          </label>
+                          <label>
+                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Msc Thesis
+                          </label>
+                          <label>
+                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Internship
+                          </label>
+                          <label>
+                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Summer Job
+                          </label>
+                          <label>
+                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Part-time job
+                          </label>
+                          <label>
+                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Full-time job
+                          </label>
+                      </div>
+
                 <div className="exhibitor-feed">
                   <div className = "loading">
                     {this.state.isLoading ? <Loading/> :null}

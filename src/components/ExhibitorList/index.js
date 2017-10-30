@@ -66,15 +66,13 @@ class ExhibitorList extends React.Component {
                             <div className='location'>
                                 {exhibitor.exhibitor_location}
                             </div>
-                            <div className='special'>
                               {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen"
-                                  ? <img src='/assets/diversity.png'/> : null }
+                                  ? <img className='special' src='/assets/diversity.png'/> : null }
                               {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen"
-                                  ? <img src='/assets/sustainability.png'/> : null }
+                                  ? <img className='special' src='/assets/sustainability.png'/> : null }
                               {/*<div className="map">*/}
                                   {/*<img src={exhibitor.map_location_url}/>*/}
                               {/*</div>*/}
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -137,7 +137,7 @@
   }
 }
 .modalinfo{
-  padding: 1em 1em;
+  padding: 10px 10px;
 }
 .modalbutton{
   text-align: center;
@@ -183,6 +183,9 @@
     flex-direction: column;
     .icon_group{
       flex-direction: row;
+      p{
+        font-size: 14px;
+      }
     }
   }
 

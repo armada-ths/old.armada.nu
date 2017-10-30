@@ -132,11 +132,10 @@ class ExhibitorList extends React.Component {
                               {/*<input type="checkbox" r/> Full-time job*/}
                           {/*</label>*/}
                       {/*</div>*/}
-
+                <div className = "loading">
+                  {this.state.isLoading ? <Loading/> :null}
+                </div>
                 <div className="exhibitor-feed">
-                  <div className = "loading">
-                    {this.state.isLoading ? <Loading/> :null}
-                  </div>
                     {filteredCompanies}
                 </div>
             </div>

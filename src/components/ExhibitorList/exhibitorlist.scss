@@ -3,13 +3,14 @@
 .modalimage2 {
   margin-right: 20%;
   margin-left:  20%;
-  padding-top: 5%;
+  padding-top: 3%;
   img{
     width: 100%;
   }
 }
-
-
+.modalinfo-exhib{
+  padding: 20px 10px 0px 10px;
+}
 .modal-event-property{
   padding-top: 1em;
   padding-bottom: 1em;
@@ -32,14 +33,15 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    img{
+      //padding: 10px 0px;
+    }
     .location{
       padding: 10px 0px;
     }
   }
 }
-.modalinfo{
-  //padding: 1em 1em;
-}
+
 
 .description2{
   margin-right: 5%;

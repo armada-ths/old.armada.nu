@@ -56,10 +56,8 @@ class ExhibitorList extends React.Component {
                     <img src={exhibitor.logo_url}/>
 
                 </div>
-                <div className="modalinfo">
-
+                <div className="modalinfo-exhib">
                     <h3>{exhibitor.company}</h3>
-
                     <div className='modal-event-property'>
                         <div className='icon_group'>
                             <div className='icon'>

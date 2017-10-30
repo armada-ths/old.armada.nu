@@ -105,7 +105,17 @@
   }
 }
 
+
+
+
+
 @media screen and (max-width: $breakpoint-mobile) {
+  .modal-event-property{
+    .icon_group{
+      flex-direction: column;
+    }
+  }
+
   .exhibitors {
     .exhibitor-feed {
       margin-top: 1em;

@@ -110,8 +110,17 @@ class ExhibitorList extends React.Component {
                       value={this.state.search}
                       onChange ={this.updateSearch.bind(this)}
                       />
-
                   </div>
+                {/*<span className="input input--makiko">*/}
+					{/*<input className="input__field input__field--makiko" type="text" id="input-16"*/}
+                           {/*value={this.state.search}*/}
+                           {/*onChange ={this.updateSearch.bind(this)}*/}
+                    {/*/>*/}
+					{/*<label className="input__label input__label--makiko">*/}
+						{/*<span className="input__label-content input__label-content--makiko">Search</span>*/}
+					{/*</label>*/}
+				{/*</span>*/}
+
                       {/*<div className = "checkbox-filtering">*/}
                           {/*<label>*/}
                               {/*<input type="checkbox"   /> Trainee*/}

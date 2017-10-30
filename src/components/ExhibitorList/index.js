@@ -102,7 +102,9 @@ class ExhibitorList extends React.Component {
                       />
                   </div>
                 <div className="exhibitor-feed">
+                  <div className = "loading">
                     {this.state.isLoading ? <Loading/> :null}
+                  </div>
                     {filteredCompanies}
                 </div>
             </div>

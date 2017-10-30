@@ -16,16 +16,16 @@
 .exhibitors {
   .search-containter{
     position: relative;
-    margin: auto;
-    width: 50%;
-    transform: translate(23%, 0%);
+    //margin: auto;
+    //width: 50%;
+    //transform: translate(23%, 0%);
     input{
       height: 15px;
       border: 1px solid $melon;
       border-radius: 4px;
       padding: 5px;
-      margin: auto;
-      width: 50%;
+      //margin: auto;
+      width: 100%;
     }
     input:focus {
     border: 2px solid $melon;
@@ -53,6 +53,9 @@
           text-align: center;
           font-size: 13px;
           font-weight: bold;
+        }
+        .loading{
+
         }
       }
       .exhibitor-box:hover p{

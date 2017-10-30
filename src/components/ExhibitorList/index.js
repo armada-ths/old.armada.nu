@@ -56,26 +56,26 @@ class ExhibitorList extends React.Component {
                     <img src={exhibitor.logo_url}/>
 
                 </div>
-                <div className="modalinfo">
-
+                <div className="modalinfo-exhib">
                     <h3>{exhibitor.company}</h3>
-
                     <div className='modal-event-property'>
-
                         <div className='icon_group'>
-
-
-                                <img className='icon' src='/assets/place.svg'/>
+                            <div className='icon'>
+                                <img src='/assets/place.svg'/>
+                            </div>
+                            <div className='location'>
                                 {exhibitor.exhibitor_location}
 
-                            {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen"
-                                ? <img className='special' src='/assets/diversity.png'/> : null }
-                            {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen"
-                                ? <img className='special' src='/assets/sustainability.png'/> : null }
-                                {/*<div className="location">*/}
-                                    {/*<img src={exhibitor.map_location_url}/>*/}
-                                {/*</div>*/}
 
+
+                            </div>
+                              {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen"
+                                  ? <img className='special' src='/assets/diversity.png'/> : null }
+                              {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen"
+                                  ? <img className='special' src='/assets/sustainability.png'/> : null }
+                              {/*<div className="map">*/}
+                                  {/*<img src={exhibitor.map_location_url}/>*/}
+                              {/*</div>*/}
 
                         </div>
                     </div>
@@ -94,7 +94,6 @@ class ExhibitorList extends React.Component {
 
     render() {
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
-
       let filteredCompanies = this.state.exhibitorList.filter(
         (exhibitorItem) => {
           return exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase());

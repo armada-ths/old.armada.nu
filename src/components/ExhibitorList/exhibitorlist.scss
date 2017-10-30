@@ -3,54 +3,48 @@
 .modalimage2 {
   margin-right: 20%;
   margin-left:  20%;
-  padding-top: 5%;
-
+  padding-top: 3%;
   img{
     width: 100%;
   }
 }
-
-
+.modalinfo-exhib{
+  padding: 20px 10px 0px 10px;
+}
 .modal-event-property{
   padding-top: 1em;
   padding-bottom: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
   .icon{
     width: 25px;
     height: 25px;
   }
-
   .special{
     width: 125px;
     height: 125px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-
+    padding: 0px 30px 0px 30px;
   }
-
   .icon_group{
     text-align: center;
     align-items: center;
     display: flex;
-    flex-direction: column;
-
-    .location{
-
-      padding-left: 20%;
+    flex-direction: row;
+    img{
+      padding-right: 10px;
     }
-
+    .location{
+      //padding: 10px 0px;
+    }
   }
-
-
 }
 
 //.modalinfo{
 //  padding: 1em 1em;
 //}
+
 
 
 .description2{

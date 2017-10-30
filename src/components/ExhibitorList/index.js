@@ -61,17 +61,19 @@ class ExhibitorList extends React.Component {
                     <h3>{exhibitor.company}</h3>
 
                     <div className='modal-event-property'>
-                        {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen"
-                            ? <img className='special' src='/assets/diversity.png'/> : null }
-                        {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen"
-                            ? <img className='special' src='/assets/sustainability.png'/> : null }
+
                         <div className='icon_group'>
+
 
                                 <img className='icon' src='/assets/place.svg'/>
                                 {exhibitor.exhibitor_location}
-                                <div className="location">
-                                    <img src={exhibitor.map_location_url}/>
-                                </div>
+                            {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen"
+                                ? <img className='special' src='/assets/diversity.png'/> : null }
+                            {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen"
+                                ? <img className='special' src='/assets/sustainability.png'/> : null }
+                                {/*<div className="location">*/}
+                                    {/*<img src={exhibitor.map_location_url}/>*/}
+                                {/*</div>*/}
 
 
                         </div>
@@ -110,26 +112,26 @@ class ExhibitorList extends React.Component {
                       />
 
                   </div>
-                      <div className = "checkbox-filtering">
-                          <label>
-                              <input type="checkbox" name="meat" rel="bacon" id="bacon" /> Trainee
-                          </label>
-                          <label>
-                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Msc Thesis
-                          </label>
-                          <label>
-                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Internship
-                          </label>
-                          <label>
-                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Summer Job
-                          </label>
-                          <label>
-                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Part-time job
-                          </label>
-                          <label>
-                              <input type="checkbox" name="meat" rel="beef" id="beef" /> Full-time job
-                          </label>
-                      </div>
+                      {/*<div className = "checkbox-filtering">*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Trainee*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"  /> Msc Thesis*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Internship*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Summer Job*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Part-time job*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox" r/> Full-time job*/}
+                          {/*</label>*/}
+                      {/*</div>*/}
 
                 <div className="exhibitor-feed">
                   <div className = "loading">

@@ -4,7 +4,6 @@
   margin-right: 20%;
   margin-left:  20%;
   padding-top: 5%;
-
   img{
     width: 100%;
   }
@@ -17,41 +16,30 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
   .icon{
     width: 25px;
     height: 25px;
   }
-
   .special{
     width: 125px;
     height: 125px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-
   }
-
   .icon_group{
     text-align: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-
     .location{
-
-      padding-left: 20%;
+      padding: 10px 0px;
     }
-
   }
-
-
 }
-
 .modalinfo{
-  padding: 1em 1em;
+  //padding: 1em 1em;
 }
-
 
 .description2{
   margin-right: 5%;

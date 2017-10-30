@@ -67,6 +67,7 @@ class ExhibitorList extends React.Component {
 
                                 <img className='icon' src='/assets/place.svg'/>
                                 {exhibitor.exhibitor_location}
+
                             {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen"
                                 ? <img className='special' src='/assets/diversity.png'/> : null }
                             {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen"

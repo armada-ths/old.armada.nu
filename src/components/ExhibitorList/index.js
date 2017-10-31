@@ -68,7 +68,7 @@ class ExhibitorList extends React.Component {
                             </div>*/}
                               {exhibitor.diversity == true
                                   ? <img className='special' src='/assets/diversity.png'/> : null }
-                              {exhibitor.suistainability == true
+                              {exhibitor.sustainability == true
                                   ? <img className='special' src='/assets/sustainability.png'/> : null }
                               {/*<div className="map">*/}
                                   {/*<img src={exhibitor.map_location_url}/>*/}

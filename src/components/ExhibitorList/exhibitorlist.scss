@@ -1,4 +1,5 @@
 @import '../../styles/_variables';
+@import '../../styles/_fonts';
 
 .modalimage2 {
   margin-right: 20%;
@@ -11,7 +12,7 @@
 .modalinfo-exhib{
   padding: 20px 10px 0px 10px;
 }
-.modal-event-property{
+.modal-exhib-property{
   padding-top: 1em;
   padding-bottom: 1em;
   display: flex;
@@ -33,7 +34,7 @@
     display: flex;
     flex-direction: row;
     img{
-      padding-right: 10px;
+      padding-right: 5px;
     }
     .location{
       //padding: 10px 0px;
@@ -44,8 +45,6 @@
 //.modalinfo{
 //  padding: 1em 1em;
 //}
-
-
 
 .description2{
   margin-right: 5%;
@@ -110,7 +109,7 @@
 
 
 @media screen and (max-width: $breakpoint-mobile) {
-  .modal-event-property{
+  .modal-exhib-property{
     .icon_group{
       flex-direction: column;
     }
@@ -130,7 +129,8 @@
           }
         }
         p{
-          font-size: 10px;
+          font-size: $text-standard-mobile;
+          line-height: $line-height-mobile;
         }
       }
     }

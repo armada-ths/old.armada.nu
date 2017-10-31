@@ -61,17 +61,17 @@ class EventList extends React.Component {
             <div className="modalinfo">
               <h3>{event.name}</h3>
                 <div className='modal-event-property'>
-                  <div className='icon_group'>
+                  <div className='icon_group_event'>
                     <img className='icon' src='/assets/calendar-round.svg'/>
                     {eventdate.getDate() != eventdate_end.getDate() ? (
                     <p> {eventdate.getDate() + '-' + eventdate_end.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>
                     ):( <p> {eventdate.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>)}
                   </div>
-                  <div className='icon_group'>
+                  <div className='icon_group_event'>
                     <img className='icon' src='/assets/clock.svg'/>
                     <p className ="time" > {hours + ':' + minutes.substr(-2) + '-' + endhours + ':' + endminutes.substr(-2) }</p>
                   </div>
-                  <div className='icon_group'>
+                  <div className='icon_group_event'>
                     <img className='icon' src='/assets/place.svg'/>
                     <p> {event.location}</p>
                   </div>

@@ -1,4 +1,5 @@
 @import '../../styles/_variables';
+@import '../../styles/_fonts';
 
 .events {
   width: 100%;
@@ -18,7 +19,6 @@
     display: flex;
     flex-direction: row;
     padding: 2em;
-
     .image-section{
       width: 40%;
     }
@@ -51,13 +51,11 @@
   cursor: pointer;
   cursor: hand;
 }
-
 .comingEvents{
   cursor: pointer;
   h2{
     color: $licorice;
   }
-
   .name{
     text-decoration: underline;
     }
@@ -65,7 +63,6 @@
       text-align: center;
     }
 }
-
 .thickline{
   hr{
     border: none;
@@ -73,7 +70,6 @@
       background-color: #333; /* Modern Browsers */
   }
 }
-
 .pastEvents{
   padding-top: 3em;
   h2{
@@ -101,7 +97,7 @@
     width: 25px;
     height: 25px;
   }
-  .icon_group{
+  .icon_group_event{
     text-align: center;
     align-items: center;
     display: flex;
@@ -111,31 +107,7 @@
     margin: 0 0 0 5px;
   }
 }
-.modalimage {
-  img{
-    width: 100%;
-  }
-}
-.modal-event-property{
-  padding-top: 1em;
-  padding-bottom: 1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  .icon{
-    width: 25px;
-    height: 25px;
-  }
-  .icon_group{
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-  p{
-    margin: 0 0 0 5px;
-  }
-}
+
 .modalinfo{
   padding: 10px 10px;
 }
@@ -169,26 +141,24 @@
         transition: all 0.5s;
         margin: 5px;
     }
-
 }
 
 
 @media screen and (max-width: $breakpoint-mobile) {
 
   .description{
-    font-size: 16px;
+    font-size: $text-standard-mobile;
+    line-height: $line-height-mobile;
   }
-
   .modal-event-property{
     flex-direction: column;
-    .icon_group{
+    .icon_group_event{
       flex-direction: row;
       p{
         font-size: 14px;
       }
     }
   }
-
   .events-feed {
     padding: 0%;
   }

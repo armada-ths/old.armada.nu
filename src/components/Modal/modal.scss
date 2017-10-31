@@ -1,5 +1,5 @@
 @import '../../styles/_variables';
-
+@import '../../styles/_fonts';
 
 
 .popupcontainer{
@@ -11,7 +11,6 @@
   left: 0;
   overflow-y: scroll;
 }
-
 .popup {
   position: relative;
   z-index: 400;
@@ -24,7 +23,6 @@
   margin-top: 3em;
   padding-bottom: 1em;
 }
-
 .shade {
   position: fixed;
   z-index: 350;
@@ -33,12 +31,10 @@
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.8);
-
   .shadecontent{
     position: absolute;
     top: 1em;
     right: 2em;
-
     .cross{
       color: $text-color-light;
     }
@@ -48,22 +44,24 @@
     }
   }
 }
-
 .modalcontent {
   overflow-wrap: break-word;
   text-align: justify;
-
 }
 
-@media screen and (max-width: $breakpoint-mobile) {
 
+
+@media screen and (max-width: $breakpoint-mobile) {
 
   .popup {
     width: 75%;
   }
   .modalcontent {
+    p{
+      font-size: $text-standard-mobile;
+      line-height: $line-height-mobile;
+    }
   }
-
     .shade {
       .shadecontent{
         position: absolute;
@@ -72,7 +70,6 @@
         .cross{
           color: $text-color-light;
         }
-
       }
     }
 }

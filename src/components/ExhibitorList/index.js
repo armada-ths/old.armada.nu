@@ -2,41 +2,26 @@ import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
-import {ReactPageClick} from 'react-page-click';
 import "./exhibitorlist.scss";
+
+import Modal from "../Modal";
+import Loading from "../Loading"
+
 
 const urlPropsQueryConfig = {
   exhibitorName: { type: UrlQueryParamTypes.string, queryParam: 'exhibitorName' },
 };
-
-
-
-const Modal = ({onClose, ...rest}) => (
-      <div className='popupcontainer'>
-        <div className="shade" onClick={onClose} >
-          <div className='shadecontent'>
-            <p className='cross'>˟</p>
-          </div>
-        </div>
-        <ReactPageClick notify={()=> {return}}>
-          <div className="popup">
-            <div className="modalcontent" {...rest} />
-          </div>
-        </ReactPageClick>
-      </div>
-    );
-
-Modal.propTypes = {
-      onClose: () => {} //function doing nothing
-    };
 
 class ExhibitorList extends React.Component {
     constructor(props) {
         super(props); // adopts parent qualities
         this.state = {
             exhibitors: [],  // json object
+            exhibitorList: [],
             showModal: false,
-            exhibitorName: undefined
+            exhibitorName: undefined,
+            isLoading: true,
+            search: ''
         };
     }
 
@@ -44,14 +29,18 @@ class ExhibitorList extends React.Component {
         axios.get('https://ais.armada.nu/api/exhibitors')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
             let exhibitors = res.data;  // create variable and store result within parameter data
+            exhibitors.sort((a, b) => a.company.localeCompare(b.company));
+            let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem name={exhibitor.company} exhibitor={exhibitor} showModal={this.showModal}/>);
 
-
-            this.setState({ exhibitors });  // component saves its own data
+            this.setState({ exhibitors, exhibitorList, isLoading:false, });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
             if (this.props.exhibitorName !== undefined ){
-              this.setState({exhibitorName: this.props.exhibitorName, showModal:true, exhibitors});
+              this.setState({exhibitorName: this.props.exhibitorName, showModal:true});
           }
           });
+    }
+    updateSearch(event){
+      this.setState({search: event.target.value.substr(0,100)});
     }
 
     showModal = (exhibitorName) => {
@@ -60,65 +49,106 @@ class ExhibitorList extends React.Component {
     };
 
     displayExhibitor = (exhibitor) => {
-
-
       return (
         <Modal onClose={() => this.showModal(exhibitor.company)}>
-        <div>
-          <div className="modalimage">
-            <img src={exhibitor.logo_url}/>
-          </div>
-            <div className="modalinfo">
-              <h3>{exhibitor.company}</h3>
-            </div>
-          </div>
+            <div>
+                <div className="modalimage2">
+                    <img src={exhibitor.logo_url}/>
+
+                </div>
+                <div className="modalinfo-exhib">
+                    <h3>{exhibitor.company}</h3>
+                    <div className='modal-exhib-property'>
+                        <div className='icon_group'>
+                            {/*<div className='icon'>
+                                <img src='/assets/place.svg'/>
+                            </div>
+                            <div className='location'>
+                                //{exhibitor.exhibitor_location}
+                            </div>*/}
+                              {exhibitor.diversity == true
+                                  ? <img className='special' src='/assets/diversity.png'/> : null }
+                              {exhibitor.sustainability == true
+                                  ? <img className='special' src='/assets/sustainability.png'/> : null }
+                              {/*<div className="map">*/}
+                                  {/*<img src={exhibitor.map_location_url}/>*/}
+                              {/*</div>*/}
+
+                        </div>
+                    </div>
+                </div>
+                    <div className="description2">
+                      {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
+
+                      {/*<p>  {exhibitor.facts} </p>*/}
+
+                    </div>
+                </div>
+
       </Modal>
     );
   }
 
-    getExhibitorItem = (exhibitor) => {
-
-
-        return (
-            <div>
-                <div className = "event-item" onClick={()=>this.showModal(exhibitor.company)}>
-                    <div className = "image-section">
-                        <img src = { exhibitor.logo_url }/>
-                    </div>
-
-                </div>
-
-                <hr/>
-            </div>
-        );
-    }
-
-
     render() {
+      let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
+      let filteredCompanies = this.state.exhibitorList.filter(
+        (exhibitorItem) => {
+          return exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase());
+        }
+      );
 
-        let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
+            return (
 
-        return (
-
-
-            <div className="events">
-            {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
-
-                <div className="events-feed">
-                  <div className='comingEvents'>
-                  <h2> Upcoming Events </h2>
-                      { this.state.exhibitors.map(this.getExhibitorItem)}
-
+            <div className = "exhibitors">
+                {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
+                <h2> Exhibitors </h2>
+                  <div className = "search-containter">
+                    <input type = "text" placeholder="Search Exhibitor"
+                      value={this.state.search}
+                      onChange ={this.updateSearch.bind(this)}
+                      />
                   </div>
+                {/*<span className="input input--makiko">*/}
+					{/*<input className="input__field input__field--makiko" type="text" id="input-16"*/}
+                           {/*value={this.state.search}*/}
+                           {/*onChange ={this.updateSearch.bind(this)}*/}
+                    {/*/>*/}
+					{/*<label className="input__label input__label--makiko">*/}
+						{/*<span className="input__label-content input__label-content--makiko">Search</span>*/}
+					{/*</label>*/}
+				{/*</span>*/}
 
-
-
+                      {/*<div className = "checkbox-filtering">*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Trainee*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"  /> Msc Thesis*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Internship*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Summer Job*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Part-time job*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox" r/> Full-time job*/}
+                          {/*</label>*/}
+                      {/*</div>*/}
+                <div className = "loading">
+                  {this.state.isLoading ? <Loading/> :null}
                 </div>
-
-        </div>
-        )
+                <div className="exhibitor-feed">
+                    {filteredCompanies}
+                </div>
+            </div>
+            )
     }
 }
+
 
 ExhibitorList.propTypes = {
     exhibitorName: PropTypes.string,
@@ -132,3 +162,18 @@ if(global.window!=undefined){
   toExport=ExhibitorList;
 }
 export default toExport;
+
+const ExhibitorItem = (props) => {
+  return (<div id={props.name} className = "exhibitor-box" onClick={()=> props.showModal(props.exhibitor.company)}>
+              <div className = "image-container">
+                <img src = {props.exhibitor.logo_url}/>
+              </div>
+              <p> {props.exhibitor.company} </p>
+              </div>)
+}
+
+ExhibitorItem.propTypes = {
+    name: PropTypes.string,
+    exhibitor: PropTypes.object,
+    showModal: PropTypes.func,
+}

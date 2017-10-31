@@ -1,4 +1,5 @@
-import React, { PropTypes } from "react"
+import React from "react"
+import PropTypes from "prop-types"
 import axios from "axios"
 import { StickyContainer, Sticky } from 'react-sticky';
 
@@ -52,21 +53,10 @@ class PageSection extends React.Component {
                     </div>
 
                     <div className="pagesection-body-container">
-                        <Sticky>
-                            {
-                                ({style}) => {
-                                    return (
-                                        <div style={style}>
-                                            <div className="pagesection-body">
-                                                <h1 className="pagesection-title">{this.props.title}</h1>
-                                                <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
-                                            </div>
-                                        </div>
-                                    )
-
-                                }
-                            }
-                        </Sticky>
+                            <div className="pagesection-body">
+                                <h1 className="pagesection-title">{this.props.title}</h1>
+                                <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
+                            </div>
                     </div>
 
                 </StickyContainer>

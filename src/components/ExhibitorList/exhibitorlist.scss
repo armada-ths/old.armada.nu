@@ -1,236 +1,153 @@
 @import '../../styles/_variables';
+@import '../../styles/_fonts';
 
-.events {
-  width: 100%;
-  height:100%;
-  margin: auto;
+.modalimage2 {
+  margin-right: 20%;
+  margin-left:  20%;
+  padding-top: 3%;
+  img{
+    width: 100%;
+  }
 }
-
-.events-feed {
-  max-width: 100%;
-  height: 100%;
+.modalinfo-exhib{
+  padding: 20px 10px 0px 10px;
+}
+.modal-exhib-property{
+  padding-top: 1em;
+  padding-bottom: 1em;
   display: flex;
-  flex-direction: column;
-  padding: 2em;
-}
-
-.event-item {
+  flex-direction: row;
+  justify-content: space-around;
+  .icon{
+    width: 25px;
+    height: 25px;
+  }
+  .special{
+    width: 125px;
+    height: 125px;
+    display: block;
+    //padding: 0px 30px 0px 30px;
+  }
+  .icon_group{
+    text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
-    padding: 2em;
-
-    .image-section{
-      width: 40%;
+    //img{
+      //padding-right: 5px;
+    //}
+    .location{
+      //padding: 10px 0px;
     }
-    .details-section{
-       width: 60%;
-       padding-left: 1em;
+  }
+}
 
-        .name{
-            text-align: left;
+//.modalinfo{
+//  padding: 1em 1em;
+//}
+
+.description2{
+  margin-right: 5%;
+  margin-left: 5%;
+  font-size: 16px;
+}
+.exhibitors {
+  .search-containter{
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+    input{
+      height: 15px;
+      border: 1px solid $melon;
+      border-radius: 4px;
+      padding: 5px;
+      margin: auto;
+      width: 93%;
+    }
+    input:focus {
+    border: 2px solid $melon;
+    }
+  }
+  .checkbox-filtering{
+    margin-left: 10%;
+    margin-right: auto;
+  }
+  .exhibitor-feed {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .exhibitor-box{
+      width: 130px;
+      padding: 15px 10px 10px 10px;
+      align-self: baseline;
+      cursor: pointer;
+        .image-container{
+          img{
+            display: block;
+            margin: auto;
+            max-height: 75px;
+          }
         }
-        .description {
-          text-align: left;
-          //display: none;
+        p{
+          color: $licorice;
+          text-align: center;
+          font-size: 13px;
+          font-weight: bold;
         }
-        .event-property{
-            display: flex;
-            flex-direction: row;
-            .icon{
-                width: 25px;
-                height: 25px;
-            }
-            p{
-                margin: 0 0 0 5px;
-                text-align: left;
-            }
-        }
-    }
-}
-
-.comingEvents{
-  .event-item:hover .name{
-    text-decoration: underline;
-    }
-    p{
-      text-align: center;
-    }
-}
-
-.pastEvents{
-  padding-top: 3em;
-  h2{
-    color: $grape;
-  }
-  .pastEvent{
-    //z-index: 10;
-    //opacity: .5;
-    //filter: alpha(opacity=50);
-  }
-}
-
-.popupcontainer{
-  position: fixed;
-  top: 0em;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow-y: scroll;
-}
-
-.popup {
-  position: relative;
-  z-index: 400;
-  margin: auto;
-  top: 0;
-  width: 50%;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.9);
-  margin-bottom: 3em;
-  margin-top: 3em;
-  padding-bottom: 1em;
-}
-
-.shade {
-  position: fixed;
-  z-index: 350;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  .shadecontent{
-    position: absolute;
-    top: 1em;
-    right: 2em;
-    .cross{
-      color: $text-color-light;
-    }
-  }
-}
-
-.modalcontent {
-  overflow-wrap: break-word;
-  text-align: justify;
-
-  .modalimage {
-    img{
-      width: 100%;
       }
-  }
-  .modal-event-property{
-      padding-top: 1em;
-      padding-bottom: 1em;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      .icon{
-          width: 25px;
-          height: 25px;
-      }
-      .icon_group{
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-      }
-      p{
-          margin: 0 0 0 5px;
-      }
-  }
-  .modalinfo{
-    padding: 1em 1em;
-  }
-  .modalbutton{
-    text-align: center;
-    .rsvpbutton{
-      display: inline-block;
-        border-radius: 4px;
-        background-color: $melon;
-        border: none;
-        color: #FFFFFF;
-        text-align: center;
-        font-size: 16px;
-        padding: 20px;
-        transition: all 0.5s;
-        margin: 5px;
-      }
-      .rsvpbutton:hover{
+      .exhibitor-box:hover p{
         text-decoration: underline;
       }
-      .rsvpclosed{
-        display: inline-block;
-          border-radius: 4px;
-          background-color: #f4511e;
-          border: none;
-          color: #FFFFFF;
-          text-align: center;
-          font-size: 16px;
-          padding: 20px;
-          transition: all 0.5s;
-          margin: 5px;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
+  .modal-exhib-property{
+    .icon_group{
+      flex-direction: column;
+    }
+  }
 
-  .events-feed {
-    padding: 0%;
-  }
-  .event-item {
-    display: flex;
-    flex-direction: row;
-    padding: 1em;
-  }
-  .image-section{
-    width: auto;
-    max-height: 100%;
-    img{
-      left: 50%;
-      top: 50%;
-      width: 100%;
-      height: auto;
-      //height: 100%;
-    }
-  }
-  .name {
-    font-size: large;
-  }
-  .popup {
-    width: 75%;
-  }
-  .modalcontent {
-    .description{
-      font-size: 16px;
-    }
-    .modal-event-property{
-        flex-direction: column;
-        .icon_group{
-          flex-direction: row;
+  .exhibitors {
+    .exhibitor-feed {
+      margin-top: 1em;
+      justify-content: space-around;
+      padding: 0em 1em;
+      .exhibitor-box {
+        width: 95px;
+        padding: 10px 5px 0px 5px;
+        .image-container{
+          img{
+            max-height: 40px;
+          }
+        }
+        p{
+          font-size: $text-standard-mobile;
+          line-height: $line-height-mobile;
         }
       }
     }
-    .shade {
-      .shadecontent{
-        position: absolute;
-        top: 0px;
-        right: 5px;
-        .cross{
-          color: $text-color-light;
-        }
-      }
-    }
+  }
 }
-
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-  .modalcontent {
-    .modal-event-property{
-        flex-direction: column;
-        .icon_group{
-          flex-direction: row;
+  .exhibitors {
+    .exhibitor-feed {
+      padding: 1em 1em;
+      .exhibitor-box {
+        width: 100px;
+        padding: 5px 15px 5px 15px;
+        .image-container{
+          img{
+            max-height: 60px;
+          }
+        }
+        p{
         }
       }
     }
   }
+}

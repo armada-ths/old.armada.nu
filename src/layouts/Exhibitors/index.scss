@@ -1,9 +1,10 @@
+@import "../../styles/variables";
+
 .Exhibitors-container {
   position: static;
-  z-index: 150;
   max-width: 850px;
   margin: auto;
-  padding: 1em 0em;
+  padding-top: 1em;
 }
 
 .content{

@@ -17,8 +17,9 @@
   z-index: 100;
   text-align: center;
   font-family: $font-title;
-  font-size: 110%;
+  font-size: 100%;
   letter-spacing: 1.4px;
+  text-transform: uppercase;
 
 
   >.hidden{
@@ -30,7 +31,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     opacity: 0.9;
-  
+
     display: inline-block;
     padding: 15px 10px 10px 10px;
 
@@ -56,13 +57,21 @@
   }
 }
 
+
+@media screen and (max-width: 1200px) {
+
+#navbar{
+    font-size: 0.7em;
+}
+} 
+
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     #navbar{
         top: 1em;
-        
+
         .menu-wrapper {
             width: 80%;
-            padding: 15px 0px 10px 10px;
+            padding: 15px 10px 10px 10px;
 
             .menu-hamburger{
                 padding-right:10px;

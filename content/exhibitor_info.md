@@ -1,6 +1,9 @@
 ---
-title: THS Armada
+title: Exhibitor Info
 layout: ExhibitorInfo
+menuPage: true
+priority: 6
 header: /assets/TheFair_small.jpg
 ---
+
  

@@ -60,12 +60,12 @@ class ExhibitorList extends React.Component {
                     <h3>{exhibitor.company}</h3>
                     <div className='modal-exhib-property'>
                         <div className='icon_group'>
-                            <div className='icon'>
+                            {/*<div className='icon'>
                                 <img src='/assets/place.svg'/>
                             </div>
                             <div className='location'>
-                                {exhibitor.exhibitor_location}
-                            </div>
+                                //{exhibitor.exhibitor_location}
+                            </div>*/}
                               {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen"
                                   ? <img className='special' src='/assets/diversity.png'/> : null }
                               {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen"

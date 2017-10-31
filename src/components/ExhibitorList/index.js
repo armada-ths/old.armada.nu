@@ -66,9 +66,9 @@ class ExhibitorList extends React.Component {
                             <div className='location'>
                                 //{exhibitor.exhibitor_location}
                             </div>*/}
-                              {exhibitor.exhibitor_location == "Nymble > Plan 2 > Gamla matsalen"
+                              {exhibitor.diversity == true
                                   ? <img className='special' src='/assets/diversity.png'/> : null }
-                              {exhibitor.exhibitor_location == "Nymble > Plan 2 > Nya matsalen"
+                              {exhibitor.suistainability == true
                                   ? <img className='special' src='/assets/sustainability.png'/> : null }
                               {/*<div className="map">*/}
                                   {/*<img src={exhibitor.map_location_url}/>*/}
@@ -103,7 +103,7 @@ class ExhibitorList extends React.Component {
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
                   <div className = "search-containter">
-                    <input type = "text" placeholder="Search Company"
+                    <input type = "text" placeholder="Search Exhibitor"
                       value={this.state.search}
                       onChange ={this.updateSearch.bind(this)}
                       />

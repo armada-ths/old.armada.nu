@@ -1,5 +1,15 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
 
 
 .modalimage-exhib {
@@ -112,15 +122,51 @@
       border: 1px solid $grape;
     }
     .exhibitor-box.green{
+      position: relative;
       border: 1px solid $melon;
     }
       .exhibitor-box:hover{
         -webkit-transform: scale(1.1);
  	      transform: scale(1.07);
       }
-  }
+      .exhibitor-box.green::before{
+        position: absolute;
+      	top: 0;
+      	left: -5%;
+      	z-index: 2;
+      	display: block;
+      	content: '';
+      	width: 30%;
+      	height: 100%;
+      	background: -webkit-linear-gradient(left, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+      	background: linear-gradient(to right, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+      	-webkit-transform: skewX(-25deg);
+      	transform: skewX(-25deg);
+      }
+      .exhibitor-box.green:hover::before{
+        -webkit-animation: shine .8s;
+      	animation: shine .8s
+      }
+      .exhibitor-box.red::before{
+        position: absolute;
+      	top: 0;
+      	left: -5%;
+      	z-index: 2;
+      	display: block;
+      	content: '';
+      	width: 30%;
+      	height: 100%;
+      	background: -webkit-linear-gradient(left, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+      	background: linear-gradient(to right, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+      	-webkit-transform: skewX(-25deg);
+      	transform: skewX(-25deg);
+      }
+      .exhibitor-box.red:hover::before{
+        -webkit-animation: shine .8s;
+      	animation: shine .8s
+      }
+    }
 }
-
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
 .exhibitors {

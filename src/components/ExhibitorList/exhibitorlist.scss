@@ -111,7 +111,10 @@
       width: 130px;
       height: 140px;
       padding: 5px 10px 5px 10px;
-      //align-self: baseline;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
       cursor: pointer;
         .image-container{
           width: 90%;
@@ -149,8 +152,9 @@
       border: 1px solid $melon;
     }
 
-      .exhibitor-box:hover p{
-        text-decoration: underline;
+      .exhibitor-box:hover{
+        -webkit-transform: scale(1.1);
+ 	      transform: scale(1.07);
       }
   }
 }

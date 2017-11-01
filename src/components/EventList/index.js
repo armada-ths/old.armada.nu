@@ -53,7 +53,7 @@ class EventList extends React.Component {
       let endhours = eventdate_end.getHours();
 
       return (
-        <Modal onClose={() => this.showModal(event.id)}>
+        <Modal onClose={() => this.showModal(null)}>
         <div>
           <div className="modalimage">
             <img src={event.image_url}/>

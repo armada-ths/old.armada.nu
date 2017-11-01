@@ -1,6 +1,7 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
+
 .modalimage2 {
   margin-right: 20%;
   margin-left:  20%;
@@ -52,6 +53,7 @@
   font-size: 16px;
 }
 .exhibitors {
+   background-color: $text-color-light;
   .search-containter{
     margin: auto;
     margin-top: 1%;
@@ -80,6 +82,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     .exhibitor-box{
+      margin-bottom: 5px;
+      background-color:white;
       width: 130px;
       height: 130px;
       padding: 15px 10px 10px 10px;
@@ -114,6 +118,13 @@
 
         }
       }
+    .exhibitor-box.red{
+        background-color: $grape;
+    }
+    .exhibitor-box.green{
+        background-color: $melon;
+    }
+
       .exhibitor-box:hover p{
         text-decoration: underline;
       }

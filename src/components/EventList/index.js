@@ -55,23 +55,23 @@ class EventList extends React.Component {
       return (
         <Modal onClose={() => this.showModal(null)}>
         <div>
-          <div className="modalimage">
+          <div className="modalimage-event">
             <img src={event.image_url}/>
             </div>
             <div className="modalinfo">
               <h3>{event.name}</h3>
-                <div className='modal-event-property'>
-                  <div className='icon_group_event'>
+                <div className='modal-property'>
+                  <div className='icon_group'>
                     <img className='icon' src='/assets/calendar-round.svg'/>
                     {eventdate.getDate() != eventdate_end.getDate() ? (
                     <p> {eventdate.getDate() + '-' + eventdate_end.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>
                     ):( <p> {eventdate.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>)}
                   </div>
-                  <div className='icon_group_event'>
+                  <div className='icon_group'>
                     <img className='icon' src='/assets/clock.svg'/>
                     <p className ="time" > {hours + ':' + minutes.substr(-2) + '-' + endhours + ':' + endminutes.substr(-2) }</p>
                   </div>
-                  <div className='icon_group_event'>
+                  <div className='icon_group'>
                     <img className='icon' src='/assets/place.svg'/>
                     <p> {event.location}</p>
                   </div>
@@ -107,10 +107,9 @@ class EventList extends React.Component {
                     <div className = "image-section">
                         <img src = { event.image_url }/>
                     </div>
-
                     <div className = "details-section">
-
-                        <h3 className ="name" >{event.name} </h3>
+                        <h4 className ="name" >{event.name} </h4>
+                        <br/>
                         <div className='event-property'>
                             <img className='icon' src='/assets/calendar-round.svg'/>
                             <p> {date.getDate()} {monthNames[date.getMonth()]} </p>

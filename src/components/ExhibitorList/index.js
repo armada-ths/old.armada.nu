@@ -52,13 +52,13 @@ class ExhibitorList extends React.Component {
       return (
         <Modal onClose={() => this.showModal(null)}>
             <div>
-                <div className="modalimage2">
+                <div className="modalimage-exhib">
                     <img src={exhibitor.logo_url}/>
 
                 </div>
-                <div className="modalinfo-exhib">
+                <div className="modalinfo">
                     <h3>{exhibitor.company}</h3>
-                    <div className='modal-exhib-property'>
+                    <div className='modal-property'>
                         <div className='icon_group'>
                             {/*<div className='icon'>
                                 <img src='/assets/place.svg'/>
@@ -76,13 +76,12 @@ class ExhibitorList extends React.Component {
 
                         </div>
                     </div>
-                </div>
-                    <div className="description2">
+                    <div className="description">
                       {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
-
                       {/*<p>  {exhibitor.facts} </p>*/}
-
                     </div>
+                </div>
+
                 </div>
 
       </Modal>

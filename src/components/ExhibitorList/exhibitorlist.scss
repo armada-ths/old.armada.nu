@@ -2,7 +2,7 @@
 @import '../../styles/_fonts';
 
 
-.modalimage2 {
+.modalimage-exhib {
   margin-right: 20%;
   margin-left:  20%;
   padding-top: 3%;
@@ -10,50 +10,16 @@
     width: 100%;
   }
 }
-.modalinfo-exhib{
-  padding: 20px 10px 0px 10px;
-}
-.modal-exhib-property{
-  padding-top: 1em;
-  padding-bottom: 1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  .icon{
-    width: 25px;
-    height: 25px;
-  }
   .special{
     width: 125px;
     height: 125px;
     display: block;
-    //padding: 0px 30px 0px 30px;
+    margin: auto;
   }
-  .icon_group{
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    //img{
-      //padding-right: 5px;
-    //}
     .location{
-      //padding: 10px 0px;
     }
-  }
-}
 
-//.modalinfo{
-//  padding: 1em 1em;
-//}
-
-.description2{
-  margin-right: 5%;
-  margin-left: 5%;
-  font-size: 16px;
-}
 .exhibitors {
-   //background-color: $text-color-light;
    padding-top: 1em;
    .filter-special{
      display: flex;
@@ -105,7 +71,6 @@
     .exhibitor-box{
       border-radius: 2px;
       margin-bottom: 10px;
-      //background-color:white;
       border: solid $light-grey;
       border-width: thin;
       width: 130px;
@@ -128,7 +93,6 @@
             margin-top: 40px;
             transform: translate(0%, -50%);
             max-height: 75px;
-            //margin: auto;
           }
         }
         p{
@@ -142,7 +106,6 @@
           line-height: 110%;
           font-size: 13px;
           font-weight: bold;
-
         }
       }
     .exhibitor-box.red{
@@ -151,7 +114,6 @@
     .exhibitor-box.green{
       border: 1px solid $melon;
     }
-
       .exhibitor-box:hover{
         -webkit-transform: scale(1.1);
  	      transform: scale(1.07);
@@ -159,17 +121,9 @@
   }
 }
 
-@media screen and (max-width: $breakpoint-mobile) {
-  .modal-exhib-property{
-    .icon_group{
-      flex-direction: column;
-    }
-  }
-}
-
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-  .exhibitors {
+.exhibitors {
     .exhibitor-feed {
       padding: 1em 10px;
       .exhibitor-box {

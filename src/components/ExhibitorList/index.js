@@ -92,16 +92,27 @@ class ExhibitorList extends React.Component {
     render() {
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
       let filteredCompanies = this.state.exhibitorList.filter(
+        (exhibitorItem) => {return (exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase()) );}
+        );
+
+      if (filteredCompanies.length < 1 ) {
+        filteredCompanies = this.state.exhibitorList.filter(
         (exhibitorItem) => {
-          return exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase());
+          return (exhibitorItem.props.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1);
+          })
         }
-      );
 
             return (
 
             <div className = "exhibitors">
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
+                {/*<span class="input input--makiko">
+        					<input class="input__field input__field--makiko" id="input-16" type="text"/>
+        					<label class="input__label input__label--makiko" for="input-16">
+        						<span class="input__label-content input__label-content--makiko">Search</span>
+        					</label>
+        				</span>*/}
                   <div className = "search-containter">
                     <input type = "text" placeholder="Search Exhibitor"
                       value={this.state.search}

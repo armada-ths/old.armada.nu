@@ -50,7 +50,7 @@ class ExhibitorList extends React.Component {
 
     displayExhibitor = (exhibitor) => {
       return (
-        <Modal onClose={() => this.showModal(exhibitor.company)}>
+        <Modal onClose={() => this.showModal(null)}>
             <div>
                 <div className="modalimage2">
                     <img src={exhibitor.logo_url}/>

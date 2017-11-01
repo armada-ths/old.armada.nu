@@ -107,6 +107,10 @@ class ExhibitorList extends React.Component {
             <div className = "exhibitors">
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
+                <div className = "filter-special">
+                    <img src='/assets/diversity.png'/>
+                    <img src='/assets/sustainability.png'/>
+                </div>
                 {/*<span class="input input--makiko">
         					<input class="input__field input__field--makiko" id="input-16" type="text"/>
         					<label class="input__label input__label--makiko" for="input-16">
@@ -179,7 +183,7 @@ const ExhibitorItem = (props) => {
         classname += props.exhibitor.diversity == true ? " red": "";
 
   return (<div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.company)}>
-            
+
               <div className = "image-container">
                 <img src = {props.exhibitor.logo_url}/>
               </div>

@@ -83,7 +83,7 @@ class EventList extends React.Component {
                 {eventdate > today ? (
                   <a href={event.signup_link}>
                   <button className="rsvpbutton">
-                    RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}
+                    <span>RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}</span>
                   </button>
                 </a>):(
                   <button className="rsvpclosed">

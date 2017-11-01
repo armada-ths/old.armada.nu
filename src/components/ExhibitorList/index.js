@@ -164,7 +164,11 @@ if(global.window!=undefined){
 export default toExport;
 
 const ExhibitorItem = (props) => {
-  return (<div id={props.name} className = "exhibitor-box" onClick={()=> props.showModal(props.exhibitor.company)}>
+    let classname = props.exhibitor.sustainability == true ? " green" : "" ;
+        classname += props.exhibitor.diversity == true ? " red": "";
+
+  return (<div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.company)}>
+            
               <div className = "image-container">
                 <img src = {props.exhibitor.logo_url}/>
               </div>

@@ -35,18 +35,33 @@
     position: absolute;
     top: 1em;
     right: 2em;
-    .cross{
-      color: $text-color-light;
-    }
-    .cross:hover {
-      cursor: pointer;
-      cursor: hand;
-    }
   }
 }
+
+.cross{
+  color: $text-color-light;
+  z-index: 9999;
+  position: fixed;
+  max-height: 50px;
+  top: 0px;
+  right: 3vw;
+  margin-top:-5px;
+  font-size: 4em;
+}
+.cross:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
 .modalcontent {
   overflow-wrap: break-word;
   text-align: justify;
+
+  .description {
+    padding: 0em 4em;
+    margin: 0em auto;
+    max-width: 550px;
+  }
 }
 
 
@@ -54,12 +69,23 @@
 @media screen and (max-width: $breakpoint-mobile) {
 
   .popup {
-    width: 75%;
+    width: 90vw;
+  }
+
+  .cross {
+    position: fixed;
+    background-color: $grape;
+    right: 15px;
+    top: 0px;
   }
   .modalcontent {
-    p{
+    p {
       font-size: $text-standard-mobile;
       line-height: $line-height-mobile;
+    }
+
+    .description {
+      padding: 0em 1em;
     }
   }
     .shade {

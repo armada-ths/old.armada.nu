@@ -31,7 +31,7 @@ class Navbar extends React.Component {
                 <div id="navbar">
                     <nav className={"menu-wrapper " + (this.state.expanded ? "visible" :"hidden")} >
                         <div className="menu-hamburger" onClick={this.toggleExpand}>
-                            { !this.state.expanded ? <div className="hamburger">☰</div>: (<div className="cross">˟</div>) }
+                            { !this.state.expanded ? <div className="hamburger">☰</div>: (<div className="navbar-cross">˟</div>) }
                         </div>
                         <div className={"menu " + (this.state.expanded ? "visible" :"hidden")} >
                             <Link onClick={this.toggleExpand} to='/'>HOME</Link>

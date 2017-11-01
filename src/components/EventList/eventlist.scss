@@ -152,11 +152,18 @@
   }
   .modal-event-property{
     flex-direction: column;
+    margin: 0em 1em;
     .icon_group_event{
       flex-direction: row;
-      p{
+      margin: 0.25em 0em;
+      p {
         font-size: 14px;
       }
+
+      .icon {
+        margin-right: 1em;
+      } 
+
     }
   }
   .events-feed {

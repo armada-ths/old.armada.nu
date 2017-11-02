@@ -3,7 +3,6 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./eventlist.scss";
-
 import Modal from "../Modal";
 
 const urlPropsQueryConfig = {

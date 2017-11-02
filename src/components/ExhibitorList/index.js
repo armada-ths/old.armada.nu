@@ -124,7 +124,7 @@ class ExhibitorList extends React.Component {
           }
         }
 
-          /* SAVVAS SEE YOUR CODE BELOW <3, you can thank me tomorrow :D */
+          /* SAVVAS SEE YOUR CODE BELOW <3, you can thank me tomorrow :D
           for(let filterkey in this.state.filters){
             if (this.state.filters[filterkey] === true){
               filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
@@ -136,7 +136,7 @@ class ExhibitorList extends React.Component {
                 return false;
               });
           }
-        }
+        }*/
 
             return (
 

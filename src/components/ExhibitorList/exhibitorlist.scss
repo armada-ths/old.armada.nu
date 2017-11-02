@@ -118,11 +118,16 @@
           font-size: 13px;
           font-weight: bold;
         }
+				.spec{
+					z-index: 5;
+				}
       }
     .exhibitor-box.red{
+			box-shadow: 1px 1px $light-grey;
       border: 1px solid $grape;
     }
     .exhibitor-box.green{
+			box-shadow: 1px 1px $light-grey;
       position: relative;
       border: 1px solid $melon;
     }

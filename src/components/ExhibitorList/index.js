@@ -21,7 +21,8 @@ class ExhibitorList extends React.Component {
             showModal: false,
             exhibitorName: undefined,
             isLoading: true,
-            search: ''
+            search: '',
+            filters: {},
         };
     }
 
@@ -87,6 +88,14 @@ class ExhibitorList extends React.Component {
       </Modal>
     );
   }
+    specialFilter(value){
+      let filters = this.state.filters;
+      filters['*']
+      filters['.diversity']
+      filters['.sustainability']
+      filters[value]= true
+      setState({filters})
+    }
 
     render() {
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
@@ -101,14 +110,16 @@ class ExhibitorList extends React.Component {
           })
         }
 
+
             return (
 
             <div className = "exhibitors">
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
                 <div className = "filter-special">
-                    <img src='/assets/diversity.png'/>
-                    <img src='/assets/sustainability.png'/>
+                  <div onClick ={this.specialFilter('*')}> <img src='/assets/quality.png'/> </div>
+                  <img src='/assets/diversity.png'/>
+                  <img src='/assets/sustainability.png'/>
                 </div>
                 {/*<span class="input input--makiko">
         					<input class="input__field input__field--makiko" id="input-16" type="text"/>
@@ -181,13 +192,17 @@ const ExhibitorItem = (props) => {
     let classname = props.exhibitor.sustainability == true ? " green" : "" ;
         classname += props.exhibitor.diversity == true ? " red": "";
 
-  return (<div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.company)}>
-
-              <div className = "image-container">
-                <img src = {props.exhibitor.logo_url}/>
-              </div>
-              <p> {props.exhibitor.company} </p>
-              </div>)
+  return (
+    <div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.company)}>
+      <div className = "image-container">
+        <img src = {props.exhibitor.logo_url}/>
+      </div>
+      <p> {props.exhibitor.company} </p>
+      {props.exhibitor.diversity == true
+          ? <img className='spec' src='/assets/diversity.png'/> : null }
+      {props.exhibitor.sustainability == true
+          ? <img className='spec' src='/assets/sustainability.png'/> : null }
+    </div>)
 }
 
 ExhibitorItem.propTypes = {

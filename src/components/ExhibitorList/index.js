@@ -22,7 +22,6 @@ class ExhibitorList extends React.Component {
             exhibitorName: undefined,
             isLoading: true,
             search: '',
-            isChecked: false,
         };
     }
 
@@ -110,6 +109,7 @@ class ExhibitorList extends React.Component {
           return (exhibitorItem.props.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1);
           })
         }
+
 
             return (
 

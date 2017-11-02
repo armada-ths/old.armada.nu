@@ -3,7 +3,7 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./exhibitorlist.scss";
-import Helmet from "react-helmet";
+
 import Modal from "../Modal";
 import Loading from "../Loading"
 
@@ -22,7 +22,6 @@ class ExhibitorList extends React.Component {
             exhibitorName: undefined,
             isLoading: true,
             search: '',
-            isChecked: false,
             filters: {},
         };
     }
@@ -32,8 +31,7 @@ class ExhibitorList extends React.Component {
           .then( (res)  => {
             let exhibitors = res.data;  // create variable and store result within parameter data
             exhibitors.sort((a, b) => a.company.localeCompare(b.company));
-            let exhibitorList = exhibitors.map((exhibitor) =>
-                <ExhibitorItem name={exhibitor.company} exhibitor={exhibitor} showModal={this.showModal}/>);
+            let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem key={exhibitor.id} name={exhibitor.company} exhibitor={exhibitor} showModal={this.showModal}/>);
 
             this.setState({ exhibitors, exhibitorList, isLoading:false, });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
@@ -42,17 +40,9 @@ class ExhibitorList extends React.Component {
           }
           });
     }
-
     updateSearch(event){
       this.setState({search: event.target.value.substr(0,100)});
     }
-
-    toggleChange = () => {
-        this.setState({
-            isChecked: !this.state.isChecked
-        });
-    }
-
 
     showModal = (exhibitorName) => {
       this.setState({showModal: !this.state.showModal, exhibitorName});
@@ -98,13 +88,14 @@ class ExhibitorList extends React.Component {
       </Modal>
     );
   }
+
     specialFilter(value){
       let filters = this.state.filters;
-      filters['*']
-      filters['.diversity']
-      filters['.sustainability']
-      filters[value]= true
-      setState({filters})
+      filters['all']= false;
+      filters['diversity']= false;
+      filters['sustainability']= false;
+      filters[value]= true;
+      this.setState({filters})
     }
 
     render() {
@@ -117,9 +108,23 @@ class ExhibitorList extends React.Component {
         filteredCompanies = this.state.exhibitorList.filter(
         (exhibitorItem) => {
           return (exhibitorItem.props.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1);
-          })
+          });
         }
 
+        if(this.state.filters['all'] === false){
+          for(let filterkey in this.state.filters){
+              if (this.state.filters['diversity'] === true){
+                filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
+                  return (exhibitorItem.props.exhibitor.diversity);
+                });
+              }
+              if (this.state.filters['sustainability'] === true){
+                filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
+                  return (exhibitorItem.props.exhibitor.sustainability);
+                });
+              }
+          }
+        }
 
             return (
 
@@ -127,44 +132,57 @@ class ExhibitorList extends React.Component {
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
                 <div className = "filter-special">
-                  <div onClick ={this.specialFilter('*')}> <img src='/assets/quality.png'/> </div>
-                  <img src='/assets/diversity.png'/>
-                  <img src='/assets/sustainability.png'/>
+                  <div onClick ={()=>this.specialFilter('all')}><img src='/assets/quality.png'/></div>
+                  <div onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity.png'/></div>
+                  <div onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.png'/></div>
                 </div>
-
+                {/*<span class="input input--makiko">
+        					<input class="input__field input__field--makiko" id="input-16" type="text"/>
+        					<label class="input__label input__label--makiko" for="input-16">
+        						<span class="input__label-content input__label-content--makiko">Search</span>
+        					</label>
+        				</span>*/}
                   <div className = "search-containter">
                     <input type = "text" placeholder="Search Exhibitor"
                       value={this.state.search}
                       onChange ={this.updateSearch.bind(this)}
                       />
                   </div>
+                {/*<span className="input input--makiko">*/}
+					{/*<input className="input__field input__field--makiko" type="text" id="input-16"*/}
+                           {/*value={this.state.search}*/}
+                           {/*onChange ={this.updateSearch.bind(this)}*/}
+                    {/*/>*/}
+					{/*<label className="input__label input__label--makiko">*/}
+						{/*<span className="input__label-content input__label-content--makiko">Search</span>*/}
+					{/*</label>*/}
+				{/*</span>*/}
 
-                      <div className = "checkbox-filtering">
-                          <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Trainee
-                          </label>
-                          <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Msc Thesis
-                          </label>
-                          <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Internship
-                          </label>
-                          <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Summer Job
-                          </label>
-                          <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Part-time job
-                          </label>
-                          <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Full-time job
-                          </label>
-                      </div>
+                      {/*<div className = "checkbox-filtering">*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Trainee*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"  /> Msc Thesis*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Internship*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Summer Job*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox"   /> Part-time job*/}
+                          {/*</label>*/}
+                          {/*<label>*/}
+                              {/*<input type="checkbox" r/> Full-time job*/}
+                          {/*</label>*/}
+                      {/*</div>*/}
                 <div className = "loading">
                   {this.state.isLoading ? <Loading/> :null}
                 </div>
                 <div className="exhibitor-feed">
                     {filteredCompanies}
-                    <Helmet title={ "Exhibitors" }/>
                 </div>
             </div>
             )
@@ -196,9 +214,9 @@ const ExhibitorItem = (props) => {
       </div>
       <p> {props.exhibitor.company} </p>
       {props.exhibitor.diversity == true
-          ? <img className='spec' src='/assets/diversity.png'/> : null }
+          ? <div className='corner-special'><img  src='/assets/diversity.png'/></div>: null }
       {props.exhibitor.sustainability == true
-          ? <img className='spec' src='/assets/sustainability.png'/> : null }
+          ? <div className='corner-special'><img src='/assets/sustainability.png'/></div> : null }
     </div>)
 }
 

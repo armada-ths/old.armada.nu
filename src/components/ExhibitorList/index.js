@@ -112,17 +112,29 @@ class ExhibitorList extends React.Component {
         }
 
         if(this.state.filters['all'] === false){
+          if (this.state.filters['diversity'] === true){
+            filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
+              return (exhibitorItem.props.exhibitor.diversity);
+            });
+          }
+          if (this.state.filters['sustainability'] === true){
+            filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
+              return (exhibitorItem.props.exhibitor.sustainability);
+            });
+          }
+        }
+
+          /* SAVVAS SEE YOUR CODE BELOW <3, you can thank me tomorrow :D */
           for(let filterkey in this.state.filters){
-              if (this.state.filters['diversity'] === true){
-                filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
-                  return (exhibitorItem.props.exhibitor.diversity);
-                });
-              }
-              if (this.state.filters['sustainability'] === true){
-                filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
-                  return (exhibitorItem.props.exhibitor.sustainability);
-                });
-              }
+            if (this.state.filters[filterkey] === true){
+              filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
+                for(let jobtype in exhibitorItem.props.exhibitor.job_types){
+                  if (jobtype.name == filterkey) {
+                    return true;
+                  }
+                }
+                return false;
+              });
           }
         }
 

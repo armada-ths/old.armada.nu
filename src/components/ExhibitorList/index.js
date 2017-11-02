@@ -22,7 +22,9 @@ class ExhibitorList extends React.Component {
             exhibitorName: undefined,
             isLoading: true,
             search: '',
+            jobfilters: {},
             filters: {},
+
         };
     }
 
@@ -124,9 +126,9 @@ class ExhibitorList extends React.Component {
           }
         }
 
-          /* SAVVAS SEE YOUR CODE BELOW <3, you can thank me tomorrow :D
+          // SAVVAS SEE YOUR CODE BELOW <3, you can thank me tomorrow :D OBS you use: jobfilters
           for(let filterkey in this.state.filters){
-            if (this.state.filters[filterkey] === true){
+            if (this.state.jobfilters[filterkey] === true){
               filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
                 for(let jobtype in exhibitorItem.props.exhibitor.job_types){
                   if (jobtype.name == filterkey) {
@@ -136,7 +138,7 @@ class ExhibitorList extends React.Component {
                 return false;
               });
           }
-        }*/
+        }
 
             return (
 

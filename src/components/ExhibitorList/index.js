@@ -22,6 +22,9 @@ class ExhibitorList extends React.Component {
             exhibitorName: undefined,
             isLoading: true,
             search: '',
+            isChecked: false,
+            filters: {},
+
         };
     }
 
@@ -49,7 +52,7 @@ class ExhibitorList extends React.Component {
         this.setState({
             isChecked: !this.state.isChecked
         });
-    }
+    };
 
 
     showModal = (exhibitorName) => {
@@ -97,6 +100,8 @@ class ExhibitorList extends React.Component {
     );
   }
 
+
+
     render() {
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
       let filteredCompanies = this.state.exhibitorList.filter(
@@ -117,8 +122,9 @@ class ExhibitorList extends React.Component {
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
                 <div className = "filter-special">
-                    <img src='/assets/diversity.png'/>
-                    <img src='/assets/sustainability.png'/>
+                  <div onClick ={this.specialFilter('*')}> <img src='/assets/quality.png'/> </div>
+                  <img src='/assets/diversity.png'/>
+                  <img src='/assets/sustainability.png'/>
                 </div>
 
                   <div className = "search-containter">
@@ -133,19 +139,19 @@ class ExhibitorList extends React.Component {
                               <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Trainee
                           </label>
                           <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Msc Thesis
+                              <input type="checkbox" /> Msc Thesis
                           </label>
                           <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Internship
+                              <input type="checkbox"  /> Internship
                           </label>
                           <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Summer Job
+                              <input type="checkbox"  /> Summer Job
                           </label>
                           <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Part-time job
+                              <input type="checkbox"  /> Part-time job
                           </label>
                           <label>
-                              <input type="checkbox" checked={this.state.isChecked} onChange={this.toggleChange} /> Full-time job
+                              <input type="checkbox"  /> Full-time job
                           </label>
                       </div>
                 <div className = "loading">
@@ -178,13 +184,17 @@ const ExhibitorItem = (props) => {
     let classname = props.exhibitor.sustainability == true ? " green" : "" ;
         classname += props.exhibitor.diversity == true ? " red": "";
 
-  return (<div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.company)}>
-
-              <div className = "image-container">
-                <img src = {props.exhibitor.logo_url}/>
-              </div>
-              <p> {props.exhibitor.company} </p>
-              </div>)
+  return (
+    <div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.company)}>
+      <div className = "image-container">
+        <img src = {props.exhibitor.logo_url}/>
+      </div>
+      <p> {props.exhibitor.company} </p>
+      {props.exhibitor.diversity == true
+          ? <img className='spec' src='/assets/diversity.png'/> : null }
+      {props.exhibitor.sustainability == true
+          ? <img className='spec' src='/assets/sustainability.png'/> : null }
+    </div>)
 }
 
 ExhibitorItem.propTypes = {

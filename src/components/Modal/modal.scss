@@ -57,7 +57,7 @@
   overflow-wrap: break-word;
   text-align: justify;
   .modalinfo{
-  padding: 1em 10px 1em 10px;
+    padding: 1em 10px;
   }
   .modal-property{
     display: flex;
@@ -84,10 +84,18 @@
       max-width: 550px;
       p{
         line-height: 120%;
-        margin-bottom: 0;
       }
   }
 }
+
+li {
+  font-weight: 300;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+  
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
 

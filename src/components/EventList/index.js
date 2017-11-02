@@ -3,7 +3,6 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./eventlist.scss";
-
 import Modal from "../Modal";
 
 const urlPropsQueryConfig = {
@@ -59,7 +58,7 @@ class EventList extends React.Component {
             <img src={event.image_url}/>
             </div>
             <div className="modalinfo">
-              <h3>{event.name}</h3>
+              <h1>{event.name}</h1>
                 <div className='modal-property'>
                   <div className='icon_group'>
                     <img className='icon' src='/assets/calendar-round.svg'/>
@@ -108,7 +107,7 @@ class EventList extends React.Component {
                         <img src = { event.image_url }/>
                     </div>
                     <div className = "details-section">
-                        <h4 className ="name" >{event.name} </h4>
+                        <h3 className ="name" >{event.name} </h3>
                         <br/>
                         <div className='event-property'>
                             <img className='icon' src='/assets/calendar-round.svg'/>

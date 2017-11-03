@@ -1,30 +1,29 @@
 @import '../../styles/_variables';
+@import '../../styles/_fonts';
 
 
-
-.popupcontainer{ //
+.popupcontainer{
   position: fixed;
+  z-index: 150;
   top: 0em;
   right: 0;
   bottom: 0;
   left: 0;
   overflow-y: scroll;
 }
-
-.popup { //
+.popup {
   position: relative;
   z-index: 400;
   margin: auto;
   top: 0;
   width: 50%;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.9);
+  background: white; //rgba(255, 255, 255, 0.9);
   margin-bottom: 3em;
   margin-top: 3em;
   padding-bottom: 1em;
 }
-
-.shade { //
+.shade {
   position: fixed;
   z-index: 350;
   width: 100vw;
@@ -32,42 +31,111 @@
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.8);
-  .shadecontent{ //
+  .shadecontent{
     position: absolute;
     top: 1em;
     right: 2em;
-    .cross{ //
-      color: $text-color-light;
-    }
   }
 }
 
-.modalcontent { //
+.cross{
+  color: $text-color-light;
+  z-index: 9999;
+  position: fixed;
+  max-height: 50px;
+  top: 0px;
+  right: 3vw;
+  margin-top:-5px;
+  font-size: 4em;
+}
+.cross:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.modalcontent {
   overflow-wrap: break-word;
   text-align: justify;
-
+  .modalinfo{
+    padding: 1em 10px;
+  }
+  .modal-property{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25% 20px 25%;
+    .icon{
+      width: 25px;
+      height: 25px;
+    }
+    .icon_group{
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      margin: 0.15em 0em;
+    }
+    p{
+      margin: 0 0 0 5px;
+    }
+  }
+  .description {
+      padding: 0em 4em;
+      margin: 0em auto;
+      max-width: 550px;
+      p{
+        line-height: 120%;
+      }
+  }
 }
 
-@media screen and (max-width: $breakpoint-mobile) {
+li {
+  font-weight: 300;
+}
 
+a:hover {
+  text-decoration: underline;
+}
+  
 
-  .popup { //
-    width: 75%;
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+
+  .popup {
+    width: 90vw;
   }
-  .modalcontent { //
-
+  .cross {
+    position: fixed;
+    background-color: $grape;
+    right: 15px;
+    top: 0px;
   }
-
-    .shade { //
-      .shadecontent{ //
+  .modalcontent {
+    .modalinfo{
+      h3{
+        font-size: 20px;
+      }
+      .icon{
+        width: 20px;
+        height: 20px;
+      }
+    }
+    p {
+      font-size: $text-standard-mobile;
+      line-height: $line-height-mobile;
+    }
+    .description {
+      padding: 0em 2em;
+      font-size: $text-standard-mobile;
+      line-height: $line-height-mobile;
+    }
+  }
+    .shade {
+      .shadecontent{
         position: absolute;
         top: 0px;
         right: 5px;
-        .cross{ //
+        .cross{
           color: $text-color-light;
         }
       }
     }
 }
-
-

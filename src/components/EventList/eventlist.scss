@@ -1,4 +1,5 @@
 @import '../../styles/_variables';
+@import '../../styles/_fonts';
 
 .events {
   width: 100%;
@@ -18,7 +19,8 @@
     display: flex;
     flex-direction: row;
     padding: 2em;
-
+    cursor: pointer;
+    cursor: hand;
     .image-section{
       width: 40%;
     }
@@ -30,7 +32,6 @@
         }
         .description {
           text-align: left;
-          //display: none;
         }
         .event-property{
             display: flex;
@@ -47,17 +48,18 @@
     }
 }
 
+.event-item:hover {
+  cursor: pointer;
+  cursor: hand;
+  .name{
+    text-decoration: underline;
+  }
+}
 .comingEvents{
   cursor: pointer;
   h2{
     color: $licorice;
   }
-  .event-item:hover .name{
-    text-decoration: underline;
-    }
-    p{
-      text-align: center;
-    }
 }
 .thickline{
   hr{
@@ -66,7 +68,6 @@
       background-color: #333; /* Modern Browsers */
   }
 }
-
 .pastEvents{
   padding-top: 3em;
   h2{
@@ -79,58 +80,10 @@
   }
 }
 
-.modalimage {
+.modalimage-event {
   img{
     width: 100%;
   }
-}
-.modal-event-property{
-  padding-top: 1em;
-  padding-bottom: 1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  .icon{
-    width: 25px;
-    height: 25px;
-  }
-  .icon_group{
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-  p{
-    margin: 0 0 0 5px;
-  }
-}
-.modalimage {
-  img{
-    width: 100%;
-  }
-}
-.modal-event-property{
-  padding-top: 1em;
-  padding-bottom: 1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  .icon{
-    width: 25px;
-    height: 25px;
-  }
-  .icon_group{
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-  p{
-    margin: 0 0 0 5px;
-  }
-}
-.modalinfo{
-  padding: 1em 1em;
 }
 .modalbutton{
   text-align: center;
@@ -141,15 +94,33 @@
     border: none;
     color: #FFFFFF;
     text-align: center;
-    text-align: center;
     font-size: 16px;
     padding: 20px;
+    width: 250px;
     transition: all 0.5s;
     margin: 5px;
     cursor: pointer;
     }
-    .rsvpbutton:hover{
-      text-decoration: underline;
+    .rsvpbutton span{
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    .rsvpbutton span:after{
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    .rsvpbutton:hover span{
+      padding-right: 25px;
+    }
+    .rsvpbutton:hover span:after{
+      opacity: 1;
+      right: 0;
     }
     .rsvpclosed{
       display: inline-block;
@@ -163,22 +134,9 @@
         transition: all 0.5s;
         margin: 5px;
     }
-
 }
 
-
-@media screen and (max-width: $breakpoint-mobile) {
-
-  .description{
-    font-size: 16px;
-  }
-
-  .modal-event-property{
-    flex-direction: column;
-    .icon_group{
-      flex-direction: row;
-    }
-  }
+@media screen and (max-width: $breakpoint-mobile-flipped) {
 
   .events-feed {
     padding: 0%;
@@ -187,6 +145,9 @@
     display: flex;
     flex-direction: row;
     padding: 1em;
+    p {
+      font-size: $text-standard-mobile;
+    }
   }
   .image-section{
     width: auto;
@@ -199,17 +160,5 @@
       //height: 100%;
     }
   }
-  .name {
-    font-size: large;
-  }
-}
 
-// flipped phone
-@media screen and (max-width: $breakpoint-mobile-flipped) {
-    .modal-event-property{
-      flex-direction: column;
-      .icon_group{
-        flex-direction: row;
-      }
-    }
-  }
+}

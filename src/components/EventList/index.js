@@ -3,7 +3,6 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./eventlist.scss";
-
 import Modal from "../Modal";
 
 const urlPropsQueryConfig = {
@@ -53,14 +52,14 @@ class EventList extends React.Component {
       let endhours = eventdate_end.getHours();
 
       return (
-        <Modal onClose={() => this.showModal(event.id)}>
+        <Modal onClose={() => this.showModal(null)}>
         <div>
-          <div className="modalimage">
+          <div className="modalimage-event">
             <img src={event.image_url}/>
             </div>
             <div className="modalinfo">
-              <h3>{event.name}</h3>
-                <div className='modal-event-property'>
+              <h1>{event.name}</h1>
+                <div className='modal-property'>
                   <div className='icon_group'>
                     <img className='icon' src='/assets/calendar-round.svg'/>
                     {eventdate.getDate() != eventdate_end.getDate() ? (
@@ -76,15 +75,14 @@ class EventList extends React.Component {
                     <p> {event.location}</p>
                   </div>
                 </div>
-                <div className="description">
-                  {event.description}
+                <div className="description" dangerouslySetInnerHTML={{__html: event.description}}>
                 </div>
               </div>
               <div className="modalbutton">
                 {eventdate > today ? (
                   <a href={event.signup_link}>
                   <button className="rsvpbutton">
-                    RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}
+                    <span>RSVP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}</span>
                   </button>
                 </a>):(
                   <button className="rsvpclosed">
@@ -108,10 +106,9 @@ class EventList extends React.Component {
                     <div className = "image-section">
                         <img src = { event.image_url }/>
                     </div>
-
                     <div className = "details-section">
-
                         <h3 className ="name" >{event.name} </h3>
+                        <br/>
                         <div className='event-property'>
                             <img className='icon' src='/assets/calendar-round.svg'/>
                             <p> {date.getDate()} {monthNames[date.getMonth()]} </p>

@@ -1,7 +1,7 @@
 ---
 title: 'Logistics: electricty & buildings'
 layout: PageSection
-priority: '7'
+priority: '9'
 header: /assets/electr2.png
 dark: true
 ---

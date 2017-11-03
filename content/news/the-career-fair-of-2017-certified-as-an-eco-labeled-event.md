@@ -20,7 +20,7 @@ As an attendant on THS Armada's events, you can do a lot to contribute to a more
 
 \- Walk, bicycle or chose the bus/metro instead of taking the car.
 
-\- Chose tabwater instead of bottled water. 
+\- Chose tap water instead of bottled water. 
 
 \- Avoid stand-by on your technical devices (phone, computer, tablet..)
 

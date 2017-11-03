@@ -7,9 +7,9 @@ import "./modal.scss";
 
 const Modal = ({onClose, ...rest}) => (
       <div className='popupcontainer'>
-        <div className="shade" onClick={onClose} >
+        <p className='cross' onClick={onClose}>˟</p>
+        <div className="shade" onClick={onClose}>
           <div className='shadecontent'>
-            <p className='cross'>˟</p>
           </div>
         </div>
         <ReactPageClick notify={()=> {return}}>

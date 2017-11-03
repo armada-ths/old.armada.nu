@@ -21,7 +21,10 @@ class ExhibitorList extends React.Component {
             showModal: false,
             exhibitorName: undefined,
             isLoading: true,
-            search: ''
+            search: '',
+            jobfilters: {},
+            filters: {},
+
         };
     }
 
@@ -30,7 +33,7 @@ class ExhibitorList extends React.Component {
           .then( (res)  => {
             let exhibitors = res.data;  // create variable and store result within parameter data
             exhibitors.sort((a, b) => a.company.localeCompare(b.company));
-            let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem name={exhibitor.company} exhibitor={exhibitor} showModal={this.showModal}/>);
+            let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem key={exhibitor.id} name={exhibitor.company} exhibitor={exhibitor} showModal={this.showModal}/>);
 
             this.setState({ exhibitors, exhibitorList, isLoading:false, });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
@@ -50,15 +53,15 @@ class ExhibitorList extends React.Component {
 
     displayExhibitor = (exhibitor) => {
       return (
-        <Modal onClose={() => this.showModal(exhibitor.company)}>
+        <Modal onClose={() => this.showModal(null)}>
             <div>
-                <div className="modalimage2">
+                <div className="modalimage-exhib">
                     <img src={exhibitor.logo_url}/>
 
                 </div>
-                <div className="modalinfo-exhib">
+                <div className="modalinfo">
                     <h3>{exhibitor.company}</h3>
-                    <div className='modal-exhib-property'>
+                    <div className='modal-property'>
                         <div className='icon_group'>
                             {/*<div className='icon'>
                                 <img src='/assets/place.svg'/>
@@ -76,32 +79,83 @@ class ExhibitorList extends React.Component {
 
                         </div>
                     </div>
-                </div>
-                    <div className="description2">
+                    <div className="description">
                       {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
-
                       {/*<p>  {exhibitor.facts} </p>*/}
-
                     </div>
+                </div>
+
                 </div>
 
       </Modal>
     );
   }
 
+    specialFilter(value){
+      let filters = this.state.filters;
+      filters['all']= false;
+      filters['diversity']= false;
+      filters['sustainability']= false;
+      filters[value]= true;
+      this.setState({filters})
+    }
+
     render() {
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
       let filteredCompanies = this.state.exhibitorList.filter(
+        (exhibitorItem) => {return (exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase()) );}
+        );
+
+      if (filteredCompanies.length < 1 ) {
+        filteredCompanies = this.state.exhibitorList.filter(
         (exhibitorItem) => {
-          return exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase());
+          return (exhibitorItem.props.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1);
+          });
         }
-      );
+
+        if(this.state.filters['all'] === false){
+          if (this.state.filters['diversity'] === true){
+            filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
+              return (exhibitorItem.props.exhibitor.diversity);
+            });
+          }
+          if (this.state.filters['sustainability'] === true){
+            filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
+              return (exhibitorItem.props.exhibitor.sustainability);
+            });
+          }
+        }
+
+          // SAVVAS SEE YOUR CODE BELOW <3, you can thank me tomorrow :D OBS you use: jobfilters
+          for(let filterkey in this.state.filters){
+            if (this.state.jobfilters[filterkey] === true){
+              filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
+                for(let jobtype in exhibitorItem.props.exhibitor.job_types){
+                  if (jobtype.name == filterkey) {
+                    return true;
+                  }
+                }
+                return false;
+              });
+          }
+        }
 
             return (
 
             <div className = "exhibitors">
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
+                <div className = "filter-special">
+                  <div onClick ={()=>this.specialFilter('all')}><img src='/assets/quality.png'/></div>
+                  <div onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity.png'/></div>
+                  <div onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.png'/></div>
+                </div>
+                {/*<span class="input input--makiko">
+        					<input class="input__field input__field--makiko" id="input-16" type="text"/>
+        					<label class="input__label input__label--makiko" for="input-16">
+        						<span class="input__label-content input__label-content--makiko">Search</span>
+        					</label>
+        				</span>*/}
                   <div className = "search-containter">
                     <input type = "text" placeholder="Search Exhibitor"
                       value={this.state.search}
@@ -164,12 +218,20 @@ if(global.window!=undefined){
 export default toExport;
 
 const ExhibitorItem = (props) => {
-  return (<div id={props.name} className = "exhibitor-box" onClick={()=> props.showModal(props.exhibitor.company)}>
-              <div className = "image-container">
-                <img src = {props.exhibitor.logo_url}/>
-              </div>
-              <p> {props.exhibitor.company} </p>
-              </div>)
+    let classname = props.exhibitor.sustainability == true ? " green" : "" ;
+        classname += props.exhibitor.diversity == true ? " red": "";
+
+  return (
+    <div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.company)}>
+      <div className = "image-container">
+        <img src = {props.exhibitor.logo_url}/>
+      </div>
+      <p> {props.exhibitor.company} </p>
+      {props.exhibitor.diversity == true
+          ? <div className='corner-special'><img  src='/assets/diversity.png'/></div>: null }
+      {props.exhibitor.sustainability == true
+          ? <div className='corner-special'><img src='/assets/sustainability.png'/></div> : null }
+    </div>)
 }
 
 ExhibitorItem.propTypes = {

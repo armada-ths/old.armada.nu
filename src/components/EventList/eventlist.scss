@@ -19,6 +19,8 @@
     display: flex;
     flex-direction: row;
     padding: 2em;
+    cursor: pointer;
+    cursor: hand;
     .image-section{
       width: 40%;
     }
@@ -30,7 +32,6 @@
         }
         .description {
           text-align: left;
-          //display: none;
         }
         .event-property{
             display: flex;
@@ -50,18 +51,15 @@
 .event-item:hover {
   cursor: pointer;
   cursor: hand;
+  .name{
+    text-decoration: underline;
+  }
 }
 .comingEvents{
   cursor: pointer;
   h2{
     color: $licorice;
   }
-  .name{
-    text-decoration: underline;
-    }
-    p{
-      text-align: center;
-    }
 }
 .thickline{
   hr{
@@ -82,34 +80,10 @@
   }
 }
 
-.modalimage {
+.modalimage-event {
   img{
     width: 100%;
   }
-}
-.modal-event-property{
-  padding-top: 1em;
-  padding-bottom: 1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  .icon{
-    width: 25px;
-    height: 25px;
-  }
-  .icon_group_event{
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-  p{
-    margin: 0 0 0 5px;
-  }
-}
-
-.modalinfo{
-  padding: 10px 10px;
 }
 .modalbutton{
   text-align: center;
@@ -122,12 +96,31 @@
     text-align: center;
     font-size: 16px;
     padding: 20px;
+    width: 250px;
     transition: all 0.5s;
     margin: 5px;
     cursor: pointer;
     }
-    .rsvpbutton:hover{
-      text-decoration: underline;
+    .rsvpbutton span{
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    .rsvpbutton span:after{
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    .rsvpbutton:hover span{
+      padding-right: 25px;
+    }
+    .rsvpbutton:hover span:after{
+      opacity: 1;
+      right: 0;
     }
     .rsvpclosed{
       display: inline-block;
@@ -143,22 +136,8 @@
     }
 }
 
+@media screen and (max-width: $breakpoint-mobile-flipped) {
 
-@media screen and (max-width: $breakpoint-mobile) {
-
-  .description{
-    font-size: $text-standard-mobile;
-    line-height: $line-height-mobile;
-  }
-  .modal-event-property{
-    flex-direction: column;
-    .icon_group_event{
-      flex-direction: row;
-      p{
-        font-size: 14px;
-      }
-    }
-  }
   .events-feed {
     padding: 0%;
   }
@@ -166,6 +145,9 @@
     display: flex;
     flex-direction: row;
     padding: 1em;
+    p {
+      font-size: $text-standard-mobile;
+    }
   }
   .image-section{
     width: auto;
@@ -178,17 +160,5 @@
       //height: 100%;
     }
   }
-  .name {
-    font-size: large;
-  }
-}
 
-// flipped phone
-@media screen and (max-width: $breakpoint-mobile-flipped) {
-    .modal-event-property{
-      flex-direction: column;
-      .icon_group{
-        flex-direction: row;
-      }
-    }
-  }
+}

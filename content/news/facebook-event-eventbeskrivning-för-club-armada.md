@@ -12,7 +12,7 @@ For this night only, one of Stockholms most renwoned venues, Annexet is transfor
 
 The evening will be nothing but grand!
 
-Get your tickets here: <http://club.armada.nu/>
+Get your tickets ASAP: <http://club.armada.nu/>
 
 Remember to bring ID CARD and we only accept cards the bars and entrance, you know CARD IS KING!
 

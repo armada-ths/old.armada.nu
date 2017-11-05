@@ -6,7 +6,7 @@ date: 2017-11-04T16:05:32.221Z
 ---
 **Our perspective on diversity**\
 \
-In a broad sense, diversity describes how characteristics of individuals distinguish them from others. Diversity encompasses ethnicity, gender, age, disabilities, sexual orientation, education and religion. In a diverse work environment it is necessary to respect and appreciate all of these characteristics. We all contribute with diverse perspectives, experience, knowledge and culture. A fundamental precondition for diverse teams to function is that of an inclusive work environment. Inclusion is a state of being valued, respected and supported. It's about focusing on the need of every individual and ensuring that the right conditions are in place for each person to achieve their full potential.
+In a broad sense, diversity describes how characteristics of individuals distinguish them from others. Diversity encompasses ethnicity, gender, age, disabilities, sexual orientation, education and religion. In a diverse work environment it is necessary to respect and appreciate all of these characteristics. We all contribute with diverse perspectives, experience, knowledge and culture. A fundamental precondition for diverse teams to function is that of an inclusive work environment. Inclusion is a state of being valued, respected and supported. It's about focusing on the needs of every individual and ensuring that the right conditions are in place for each person to achieve their full potential.
 
 **Why does THS Armada focus on diversity?**
 

@@ -12,7 +12,7 @@ Companies attending Diversity Room 2017, KTHB
 
 • Accenture • Axfood • LKAB • Cinnober
 
-THS Armada truly believe that the best teams are created where there is a focus on equality and diversity. To THS Armada, equal opportunities and equal values is fundamental. In the past, it was made possible for international students to be a part of the organization. Today, we put extra focus on gender balance within the teams of THS Armada.
+THS Armada truly believe that the best teams are created where there is a focus on equality and diversity. To THS Armada, equal opportunities and equal values is fundamental. In the past, it was made possible for international students to be a part of the organization. Today, we also focus on gender balance within the teams of THS Armada.
 
 ## SUSTAINABILITY
 

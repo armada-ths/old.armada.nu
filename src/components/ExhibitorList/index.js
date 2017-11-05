@@ -45,7 +45,13 @@ class ExhibitorList extends React.Component {
     updateSearch(event){
       this.setState({search: event.target.value.substr(0,100)});
     }
-
+    getJobContainer(exhibitor){
+    return(  <div className = "job-container">
+        <h3>Job Oportunities</h3>
+        {exhibitor.job_types.map((jobtype) => <div className="job-section"><li> {jobtype.name} </li></div>)}
+      </div>
+      )
+    }
 
     showModal = (exhibitorName) => {
       this.setState({showModal: !this.state.showModal, exhibitorName});
@@ -77,8 +83,7 @@ class ExhibitorList extends React.Component {
                         {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
                       </div>
                     </div>
-                      {exhibitor.job_types.length > 0 ? <h3>Job Oportunities</h3> : null}
-                      {exhibitor.job_types.length > 0 ? exhibitor.job_types.map((jobtype) => <div className="job-section"><li> {jobtype.name} </li></div>) : null}
+                      {exhibitor.job_types.length > 0 ?  this.getJobContainer(exhibitor) : null}
                     <div className='location-container'>
                     <h3>Find us at the fair</h3>
                       <div className='location'>
@@ -147,13 +152,9 @@ class ExhibitorList extends React.Component {
 
         //Loop through the properties of filters object:
           for(let filterkey in this.state.jobfilters) {
-            //console.error("filterkey loop", filterkey);
-              //console.error("filterkey value", this.state.jobfilters[filterkey]);
               if (this.state.jobfilters[filterkey] == true) {
-
                   filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
                       for (let jobtypeindex in exhibitorItem.props.exhibitor.job_types) {
-                          //console.error("jobtypeloop value", jobtypeindex);
                           if (exhibitorItem.props.exhibitor.job_types[jobtypeindex].name == filterkey) {
                               return true;
                           }
@@ -198,7 +199,7 @@ class ExhibitorList extends React.Component {
                               <input type="checkbox" onClick ={()=>this.jobFilter("Part-time Jobs")}  /> Part-time job
                            </div>
                       </div>
-                      
+
                 <div className = "loading">
                   {this.state.isLoading ? <Loading/> :null}
                 </div>

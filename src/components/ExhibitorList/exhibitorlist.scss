@@ -207,7 +207,6 @@
 		}
 }
 
-
 .corner-special{
 		position: absolute;
 		z-index: 1;
@@ -244,7 +243,6 @@
           line-height: $line-height-mobile;
         }
 				.corner-special{
-						transform: translate(0%, -190%);
 						img{
 						width: 20px;
 						}

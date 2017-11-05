@@ -16,23 +16,24 @@ We at THS Armada hope that more students see the benefits of working in diverse 
 
 **What is Diversity Room?**
 
-We want to emphasise the importance of diversity, inclusion and equal opportunities in order to influence and change the future work environment and the industry as a whole. 
+We want to emphasise the importance of diversity, inclusion and equal opportunities in order to influence and change the future work environment and the industry as a whole. This is the reason for the Diversity Room initiative, an exhibition area at the fair that focuses on diversity. In connection to Diversity Room, THS Armada arranges a panel discussion, with the intent of highlighting questions regarding diversity and how companies work with it.
 
-Diversity room is a place on the fair where you as students can be inspired by companies that works with Diversity. These companies know that Diversity is a business strategy which increases innovation and knowledge.
+Diversity Room is an area at the fair where you, as students, can find inspiration from companies that work with Diversity. These companies know that Diversity is a business strategy that increases innovation and knowledge.
 
-**What THS Armada does in direction of this core value**
+**What THS Armada does to promote this core value**
 
 Social media and marketing**:**
 
-* Awareness about representation, language, picture choice and graphic design
+* Awareness about representation, enunciation, graphic choice and design
 
 Recruitment:
 
-* Create knowledge about pitfalls, unconscious bias and interview technique
+* Spread knowledge regarding pitfalls, unconscious bias and interview technique
 
 Internal inclusion:
 
-* Internationalisering, include all students in all parts of the organisation
+* Internationalisation of the organisation
+* Inclusion of all students in all parts of the organisation
 * Minimize the gap between different parts of the organisation
 
-English as a first language in all communication
+English as the primary choice in all communication

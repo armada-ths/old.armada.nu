@@ -144,15 +144,6 @@
           font-size: 13px;
           font-weight: bold;
         }
-				.corner-special{
-						z-index: 1;
-						transform: translate(0%, -125%);
-						display: flex;
-						justify-content: flex-end;
-						img{
-						width: 25px;
-						}
-					}
       }
     .exhibitor-box.red{
 			box-shadow: 1px 1px $light-grey;
@@ -215,6 +206,23 @@
       }
 		}
 }
+
+
+.corner-special{
+		position: absolute;
+		z-index: 1;
+		bottom: 0%;
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		img{
+			padding: 0.3em;
+			width: 25px;
+			height: 25px;
+		}
+	}
+
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
 .exhibitors {

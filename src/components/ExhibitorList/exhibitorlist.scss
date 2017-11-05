@@ -78,9 +78,28 @@
     }
   }
   .checkbox-filtering{
-    margin-left: 10%;
-    margin-right: auto;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 18%;
   }
+
+  .checkbox1{
+    margin-right: 2%;
+
+  }
+  .checkbox2{
+    margin-right: 2%;
+  }
+  .checkbox3{
+    margin-right: 2%;
+  }
+  .checkbox4{
+    margin-right: 2%;
+  }
+
+
+
   .exhibitor-feed {
     display: flex;
     flex-direction: row;

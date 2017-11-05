@@ -3,7 +3,7 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./exhibitorlist.scss";
-
+import Helmet from "react-helmet"
 import Modal from "../Modal";
 import Loading from "../Loading"
 
@@ -33,8 +33,8 @@ class ExhibitorList extends React.Component {
           .then( (res)  => {
             let exhibitors = res.data;  // create variable and store result within parameter data
             exhibitors.sort((a, b) => a.company.localeCompare(b.company));
-            let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem key={exhibitor.id} name={exhibitor.company} exhibitor={exhibitor} showModal={this.showModal}/>);
-
+            let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem key={exhibitor.id} name={exhibitor.company}
+                                                                             exhibitor={exhibitor} showModal={this.showModal}/>);
             this.setState({ exhibitors, exhibitorList, isLoading:false, });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
             if (this.props.exhibitorName !== undefined ){
@@ -45,6 +45,7 @@ class ExhibitorList extends React.Component {
     updateSearch(event){
       this.setState({search: event.target.value.substr(0,100)});
     }
+
 
     showModal = (exhibitorName) => {
       this.setState({showModal: !this.state.showModal, exhibitorName});
@@ -101,6 +102,7 @@ class ExhibitorList extends React.Component {
       this.setState({filters})
     }
 
+<<<<<<< HEAD
     cssShine(value){
       if (value == 'quality'){
         //let qualityShine = getElementsByClassName('.exhibitor-box');
@@ -109,7 +111,17 @@ class ExhibitorList extends React.Component {
       this.toggleShine();
     }
 
+=======
+    jobFilter(value){
+        let jobfilters = this.state.jobfilters;
+        jobfilters[value] = !jobfilters[value];
+        this.setState({jobfilters})
+    }
+
+
+>>>>>>> 4c0869c35cf2c4f39d9ef9a80d76d3fc31c37d05
     render() {
+
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
       let filteredCompanies = this.state.exhibitorList.filter(
         (exhibitorItem) => {return (exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase()) );}
@@ -136,23 +148,33 @@ class ExhibitorList extends React.Component {
         }
 
           // SAVVAS SEE YOUR CODE BELOW <3, you can thank me tomorrow :D OBS you use: jobfilters
-          for(let filterkey in this.state.filters){
-            if (this.state.jobfilters[filterkey] === true){
-              filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
-                for(let jobtype in exhibitorItem.props.exhibitor.job_types){
-                  if (jobtype.name == filterkey) {
-                    return true;
-                  }
-                }
-                return false;
-              });
+
+        //Loop through the properties of filters object:
+          for(let filterkey in this.state.jobfilters) {
+            //console.error("filterkey loop", filterkey);
+              //console.error("filterkey value", this.state.jobfilters[filterkey]);
+              if (this.state.jobfilters[filterkey] == true) {
+
+                  filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                      for (let jobtypeindex in exhibitorItem.props.exhibitor.job_types) {
+                          //console.error("jobtypeloop value", jobtypeindex);
+                          if (exhibitorItem.props.exhibitor.job_types[jobtypeindex].name == filterkey) {
+                              return true;
+                          }
+                      }
+                      return false;
+                  });
+              }
           }
-        }
+
 
 
             return (
 
             <div className = "exhibitors">
+                <Helmet
+                    title={ "Exhibitors" }
+                />
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
                 <div className = "filter-special">
@@ -166,6 +188,27 @@ class ExhibitorList extends React.Component {
                       onChange ={this.updateSearch.bind(this)}
                       />
                   </div>
+<<<<<<< HEAD
+=======
+
+                      <div className = "checkbox-filtering">
+                          <div className = "checkbox1">
+                              <input type="checkbox" onClick ={()=>this.jobFilter("Trainee Employment")} /> Internship
+                          </div>
+
+                          <div className = "checkbox2">
+                              <input type="checkbox" onClick ={()=>this.jobFilter("Master's Thesis")}/> Master Thesis
+                          </div>
+
+                          <div className = "checkbox3">
+                              <input type="checkbox" onClick ={()=>this.jobFilter("Summer Jobs")}/> Summer Job
+                          </div>
+
+                           <div className = "checkbox4">
+                              <input type="checkbox" onClick ={()=>this.jobFilter("Part-time Jobs")}  /> Part-time job
+                           </div>
+                      </div>
+>>>>>>> 4c0869c35cf2c4f39d9ef9a80d76d3fc31c37d05
                 <div className = "loading">
                   {this.state.isLoading ? <Loading/> :null}
                 </div>

@@ -6,15 +6,13 @@ date: 2017-11-04T16:24:35.261Z
 ---
 ## DIVERSITY
 
-We want to inspire students and companies to create a more inclusive workplace. Therefore, we have an exclusive area at the fair called Diversity Room located in KTHB. Companies and organizations placed in this area wants to emphasize the importance of inclusion and diversity.
+THS Armada want to inspire students and companies to create a more inclusive workplace. Therefore a special area, called Diversity room, is set up in KTHB during the fair. Companies and organizations located in this area wants to emphasize the importance of inclusion and diversity.
 
 Companies attending Diversity Room 2017, KTHB
 
 • Accenture • Axfood • LKAB • Cinnober
 
-THS Armada truly believes that the best teams are created when there is a clear focus on equality and diversity. We believe in everyone's equal value and the right to equal opportunities. In the past, this has been accomplished through the integration of international students at THS Armada. Furthermore, we place emphasis on gender balance within teams of the organization.
-
-
+THS Armada truly believe that the best teams are created where there is a focus on equality and diversity. To THS Armada, equal opportunities and equal values is fundamental. In the past, it was made possible for international students to be a part of the organization. Today, we also put extra focus on gender balance within the teams of THS Armada.
 
 ## SUSTAINABILITY
 

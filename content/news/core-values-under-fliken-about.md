@@ -22,4 +22,4 @@ Companies participating in Green Room 2017, Nymble
 
 • Lantmännen • Sweco • NCC • ABB • Alfa Laval • Akzo Nobel • BillerudKorsnäs • Implenia • H&M • Preem • Siemens • Pöyry • Stora Enso • Xylem
 
-THS Armada has been climate neutral since 2015 and our belief in a green future motivates us to continuously make improvements towards a more sustainable fair. This year we are proud to announce that THS Armada’s events, career fair and banquette serve exclusively vegetarian food and is also eco events.
+THS Armada has been climate neutral since 2015 and our belief in a green future motivates us to continuously make improvements towards a more sustainable fair. This year we proudly announce that THS Armadas events, fair and banquet exclusively serve vegetarian food and that all events are eco events.

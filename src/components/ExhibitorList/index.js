@@ -102,7 +102,6 @@ class ExhibitorList extends React.Component {
       this.setState({filters})
     }
 
-<<<<<<< HEAD
     cssShine(value){
       if (value == 'quality'){
         //let qualityShine = getElementsByClassName('.exhibitor-box');
@@ -111,15 +110,12 @@ class ExhibitorList extends React.Component {
       this.toggleShine();
     }
 
-=======
     jobFilter(value){
         let jobfilters = this.state.jobfilters;
         jobfilters[value] = !jobfilters[value];
         this.setState({jobfilters})
     }
 
-
->>>>>>> 4c0869c35cf2c4f39d9ef9a80d76d3fc31c37d05
     render() {
 
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
@@ -188,27 +184,21 @@ class ExhibitorList extends React.Component {
                       onChange ={this.updateSearch.bind(this)}
                       />
                   </div>
-<<<<<<< HEAD
-=======
-
                       <div className = "checkbox-filtering">
                           <div className = "checkbox1">
                               <input type="checkbox" onClick ={()=>this.jobFilter("Trainee Employment")} /> Internship
                           </div>
-
                           <div className = "checkbox2">
                               <input type="checkbox" onClick ={()=>this.jobFilter("Master's Thesis")}/> Master Thesis
                           </div>
-
                           <div className = "checkbox3">
                               <input type="checkbox" onClick ={()=>this.jobFilter("Summer Jobs")}/> Summer Job
                           </div>
-
                            <div className = "checkbox4">
                               <input type="checkbox" onClick ={()=>this.jobFilter("Part-time Jobs")}  /> Part-time job
                            </div>
                       </div>
->>>>>>> 4c0869c35cf2c4f39d9ef9a80d76d3fc31c37d05
+                      
                 <div className = "loading">
                   {this.state.isLoading ? <Loading/> :null}
                 </div>

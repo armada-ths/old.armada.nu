@@ -4,15 +4,19 @@ title: 'Article: diversity '
 featured: false
 date: 2017-11-04T16:05:32.221Z
 ---
-In broad terms, the meaning of diversity is how any characteristics differentiates groups and people from one another. It means respect for and appreciation of differences in ethnicity, gender, age, national origin, disability, sexual orientation, education, and religion. We all bring with us diverse perspectives, work experiences, knowledge and cultures. In order for a diverse team to function the working environment has to be inclusive. Inclusion is a state of being valued, respected and supported. It’s about focusing on the needs of every individual and ensuring the right conditions are in place for each person to achieve its full potential.
+**Our perspective on diversity**\
+\
+In a broad sense, diversity describes how characteristics of individuals distinguish them from others. Diversity encompasses ethnicity, gender, age, disabilities, sexual orientation, education and religion. In a diverse work environment it is necessary to respect and appreciate all of these characteristics. We all contribute with diverse perspectives, experience, knowledge and culture. A fundamental precondition for diverse teams to function is that of an inclusive work environment. Inclusion is a state of being valued, respected and supported. It's about focusing on the need of every individual and ensuring that the right conditions are in place for each person to achieve their full potential.
 
-We are an organisation that truly believes that the best teams are created when focusing on equality and diversity. We believe in everyone's equal worth and right to equal opportunities.Working with diversity brings efficient teams that includes members with different mindsets and perspectives. Our different viewpoints is what continuously develops and improves THS Armada as an organisation.
+**Why does THS Armada focus on diversity?**
 
-We at THS Armada hope that more students sees the benefits for working in diverse teams and that students value an inclusive and equal workplace. Armada also wants to make a solid foundation for a long-term work towards a more diverse organisation, where everybody has the same chance regardless of gender, age, sexual orientation, religious beliefs, culture, physical abilities or other individual difference.
+We are an organisation that truly believes that the best teams are created when focusing on equality and diversity. We believe in the equal value of each individual, and their right to equal opportunities. Embracing diversity engenders efficient teams, facilitating the work of people with different mindsets and perspectives. Our belief in regards to our core values, is the very foundation upon which we develop and improve THS Armada as an organisation.
 
-We want to empathise the importance of diversity, inclusion and equal opportunities to affect and change the future work environment/ the industry. This is the reasons that we have created a room on the fair that focuses on Diversity called Diversity Room. THS Armada also arranges a panel discussion on Diversity. This event wants to highlight questions around Diversity and how companies work with it.
+We at THS Armada hope that more students see the benefits of working in diverse teams, and that students come to value an inclusive and equal workplace. Furthermore, Armada strives to establish a solid foundation enabling a long-term endeavour towards a more diverse organisation. An organisation where everybody has the same opportunities, regardless of gender, age, sexual orientation, religious beliefs, culture, physical abilities or other individual differences.
 
 **What is Diversity Room?**
+
+We want to emphasise the importance of diversity, inclusion and equal opportunities in order to influence and change the future work environment and the industry as a whole. 
 
 Diversity room is a place on the fair where you as students can be inspired by companies that works with Diversity. These companies know that Diversity is a business strategy which increases innovation and knowledge.
 

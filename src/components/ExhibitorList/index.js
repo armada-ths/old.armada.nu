@@ -24,7 +24,7 @@ class ExhibitorList extends React.Component {
             search: '',
             jobfilters: {},
             filters: {},
-            shine: false,
+            shine: '',
         };
     }
 
@@ -57,10 +57,6 @@ class ExhibitorList extends React.Component {
       this.setState({showModal: !this.state.showModal, exhibitorName});
       this.props.onChangeExhibitorName(exhibitorName);
     };
-
-    toggleShine() {
-      this.setState({shine: !this.state.shine});
-    }
 
     displayExhibitor = (exhibitor) => {
       return (
@@ -108,11 +104,25 @@ class ExhibitorList extends React.Component {
     }
 
     cssShine(value){
-      if (value == 'quality'){
-        //let qualityShine = getElementsByClassName('.exhibitor-box');
-        //qualityShine.className =
+      if (global.document != undefined){
+
+          let shineItems = global.document.getElementsByClassName(value);
+          for (let i = 0; i < shineItems.length; i++){
+            shineItems[i].className += ' shine-loop';
+          }
+
+      }
+    }
+
+    cssShineOff(){
+      if (global.document != undefined){
+        let shineItems = global.document.getElementsByClassName('shine-loop');
+        while (shineItems.length> 0){
+          let className = shineItems[0].className;
+          shineItems[0].className = className.replace('shine-loop','') ;
+
         }
-      this.toggleShine();
+      }
     }
 
     jobFilter(value){
@@ -148,8 +158,6 @@ class ExhibitorList extends React.Component {
           }
         }
 
-          // SAVVAS SEE YOUR CODE BELOW <3, you can thank me tomorrow :D OBS you use: jobfilters
-
         //Loop through the properties of filters object:
           for(let filterkey in this.state.jobfilters) {
               if (this.state.jobfilters[filterkey] == true) {
@@ -164,8 +172,6 @@ class ExhibitorList extends React.Component {
               }
           }
 
-
-
             return (
 
             <div className = "exhibitors">
@@ -175,9 +181,9 @@ class ExhibitorList extends React.Component {
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
                 <div className = "filter-special">
-                  <div id="quality" onMouseEnter = {() => this.cssShine('quality')} onClick ={()=>this.specialFilter('all')}><img src='/assets/quality.svg'/></div>
-                  <div id="diversity" onMouseEnter = {() => this.cssShine('diversity')} onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity.svg'/></div>
-                  <div id="sustainability" onMouseEnter = {() => this.cssShine('sustainability')} onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
+                  <div id="quality" onMouseEnter = {() => this.cssShine('exhibitor-box')} onMouseLeave = {() => this.cssShineOff()} onClick ={()=>this.specialFilter('all')}><img src='/assets/quality.svg'/></div>
+                  <div id="diversity" onMouseEnter = {() => this.cssShine('red')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity.svg'/></div>
+                  <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
                 </div>
                   <div className = "search-containter">
                     <input type = "text" placeholder="Search Exhibitor"

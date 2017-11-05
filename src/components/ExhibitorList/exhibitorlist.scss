@@ -1,16 +1,17 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
+
 @-webkit-keyframes shine {
-	100% {
-		left: 125%;
-	}
+	0% { left: -50%; }
+  25% { left: 125%; }
+  100% { left: 125%; }
+
 }
 @keyframes shine {
-	100% {
-		left: 125%;
-	}
+	0% { left: -50%; }
+	25% { left: 125%; }
+	100% { left: 125%; }
 }
-
 
 .modalimage-exhib {
   margin-right: 20%;
@@ -172,15 +173,20 @@
       	background: linear-gradient(to right, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
       	-webkit-transform: skewX(-25deg);
       	transform: skewX(-25deg);
+				//-webkit-animation-delay: 3s;
+				//animation-delay: 3s;
       }
       .exhibitor-box.green:hover::before,
 			.exhibitor-box.red:hover::before {
-        -webkit-animation: shine .6s;
-      	animation: shine .6s
+        -webkit-animation: shine 2.5s infinite;
+      	animation: shine 2.5s infinite;
+				//-webkit-animation-delay: 3s;
+				//animation-delay: 3s;
+
       }
 			.shine-loop::before {
-				-webkit-animation: shine .6s infinite;
-      	animation: shine .6s infinite;
+				-webkit-animation: shine 2.5s infinite;
+      	animation: shine 2.5s infinite;
 			}
     }
 

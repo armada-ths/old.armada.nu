@@ -2,7 +2,7 @@
 layout: News
 title: 'Core value: Diversity '
 cover_wide: /assets/div.jpg
-featured: false
+featured: true
 date: 2017-11-06T15:37:01.231Z
 ---
 **Our perspective on diversity**

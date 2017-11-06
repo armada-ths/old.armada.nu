@@ -1,7 +1,7 @@
 ---
 layout: News
 title: 'Core value: Sustainability '
-cover_wide: /assets/sustain.jpg
+cover_wide: /assets/sust.jpg
 featured: true
 date: 2017-11-06T16:05:47.077Z
 ---

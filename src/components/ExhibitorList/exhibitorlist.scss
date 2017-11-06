@@ -12,6 +12,7 @@
 }
 
 
+
 .modalimage-exhib {
   margin-right: 20%;
   margin-left:  20%;
@@ -29,7 +30,7 @@
 .location{
 }
 
-.exhibitors {
+.exhibitors  {
   padding-top: 1em;
   .filter-special{
     display: flex;
@@ -39,14 +40,21 @@
       padding: 10px;
       height: 80px;
       width: 80px;
+      cursor: pointer;
       -webkit-transform: scale(1);
       transform: scale(1);
       -webkit-transition: .3s ease-in-out;
       transition: .3s ease-in-out;
     }
     img:hover{
-      -webkit-transform: scale(1.3);
-      transform: scale(1.3);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+      -webkit-transform: scale(1.25);
+      transform: scale(1.25);
+      .exhibitor-box{
+        -webkit-transform: scale(1.25);
+        transform: scale(1.25);
+      }
     }
   }
   .search-containter{
@@ -74,10 +82,11 @@
     margin-left: 18%;
   }
 
-  .checkbox1{
-    margin-right: 2%;
 
+  .checkbox1 {
+    margin-right: 2%;
   }
+
   .checkbox2{
     margin-right: 2%;
   }
@@ -95,6 +104,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-bottom: 3em;
     .exhibitor-box{
       margin: 0em 5px 0em 5px;
       overflow: hidden;
@@ -136,15 +146,6 @@
         font-size: 13px;
         font-weight: bold;
       }
-      .corner-special{
-        z-index: 1;
-        transform: translate(0%, -125%);
-        display: flex;
-        justify-content: flex-end;
-        img{
-          width: 25px;
-        }
-      }
     }
     .exhibitor-box.red{
       box-shadow: 1px 1px $light-grey;
@@ -152,14 +153,15 @@
     }
     .exhibitor-box.green{
       box-shadow: 1px 1px $light-grey;
-      position: relative;
       border: 1px solid $melon;
     }
     .exhibitor-box:hover{
       -webkit-transform: scale(1.1);
       transform: scale(1.07);
     }
-    .exhibitor-box.green::before{
+    .exhibitor-box.green::before,
+    .exhibitor-box.red::before,
+    .shine-loop::before {
       position: absolute;
       top: 0;
       left: -50%;
@@ -173,11 +175,20 @@
       -webkit-transform: skewX(-25deg);
       transform: skewX(-25deg);
     }
-    .exhibitor-box.green:hover::before{
+    .exhibitor-box.green:hover::before,
+    .exhibitor-box.red:hover::before {
       -webkit-animation: shine .6s;
       animation: shine .6s
     }
-    .exhibitor-box.red::before{
+    .shine-loop::before {
+      -webkit-animation: shine .6s infinite;
+      animation: shine .6s infinite;
+    }
+  }
+
+  .filter-special:hover{
+    overflow: hidden;
+    img::before{
       position: absolute;
       top: 0;
       left: -50%;
@@ -187,22 +198,39 @@
       width: 50%;
       height: 100%;
       background: -webkit-linear-gradient(left, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
-      background: linear-gradient(to right, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(to right, rgba(1,1,1,0.8) 0%, rgba(255,255,255,0) 100%);
       -webkit-transform: skewX(-25deg);
       transform: skewX(-25deg);
     }
-    .exhibitor-box.red:hover::before{
+    img:hover::before{
       -webkit-animation: shine .6s;
       animation: shine .6s
     }
   }
 }
+
+.corner-special{
+  position: absolute;
+  z-index: 1;
+  bottom: 0%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  img{
+    padding: 0.3em;
+    width: 25px;
+    height: 25px;
+  }
+}
+
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
   .exhibitors {
     .exhibitor-feed {
       padding: 1em 10px;
       .exhibitor-box {
+        overflow: hidden;
         width: 120px;
         height: 105px;
         .image-container{
@@ -217,7 +245,6 @@
           line-height: $line-height-mobile;
         }
         .corner-special{
-          transform: translate(0%, -190%);
           img{
             width: 20px;
           }

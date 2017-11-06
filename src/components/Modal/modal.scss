@@ -77,15 +77,44 @@
     p{
       margin: 0 0 0 5px;
     }
+
   }
-  .description {
-      padding: 0em 4em;
-      margin: 0em auto;
-      max-width: 550px;
-      p{
-        line-height: 120%;
-      }
+}
+
+.modalinfo .description-container {
+    padding: 2em 5em 2em 5em;
   }
+
+.modalinfo .description-container .description  p{
+    //line-height: 120%;
+    margin: 0em;
+  }
+
+.modalinfo .location-container {
+    padding: 2em 5em 2em 5em;
+  }
+.modalinfo .location-container .location{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.modalinfo .location-container .location .icon{
+  width: 1.4em;
+  height: 1.4em;
+}
+.modalinfo .location-container .position{
+  padding: 0em 0em 0em 0.5em;
+  align-self: center;
+}
+.modalinfo .location-container .map{
+  padding: 2em 0em 2em 0em;
+}
+.modalinfo .job-section{
+  display: flex;
+  flex-direction: column;
+}
+.modalinfo .job-section li{
+  margin-left: 40%;
 }
 
 li {
@@ -95,7 +124,7 @@ li {
 a:hover {
   text-decoration: underline;
 }
-  
+
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
 

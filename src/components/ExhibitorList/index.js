@@ -24,7 +24,7 @@ class ExhibitorList extends React.Component {
             search: '',
             jobfilters: {},
             filters: {},
-
+            shine: false,
         };
     }
 
@@ -45,47 +45,53 @@ class ExhibitorList extends React.Component {
     updateSearch(event){
       this.setState({search: event.target.value.substr(0,100)});
     }
-
+    getJobContainer(exhibitor){
+    return(  <div className = "job-container">
+        <h3>Job Oportunities</h3>
+        {exhibitor.job_types.map((jobtype) => <div className="job-section"><li> {jobtype.name} </li></div>)}
+      </div>
+      )
+    }
 
     showModal = (exhibitorName) => {
       this.setState({showModal: !this.state.showModal, exhibitorName});
       this.props.onChangeExhibitorName(exhibitorName);
     };
 
+    toggleShine() {
+      this.setState({shine: !this.state.shine});
+    }
+
     displayExhibitor = (exhibitor) => {
       return (
         <Modal onClose={() => this.showModal(null)}>
-            <div>
                 <div className="modalimage-exhib">
                     <img src={exhibitor.logo_url}/>
-
                 </div>
+
                 <div className="modalinfo">
-                    <h3>{exhibitor.company}</h3>
-                    <div className='modal-property'>
-                        <div className='icon_group'>
-                            {/*<div className='icon'>
-                                <img src='/assets/place.svg'/>
-                            </div>
-                            <div className='location'>
-                                //{exhibitor.exhibitor_location}
-                            </div>*/}
-                              {exhibitor.diversity == true
-                                  ? <img className='special' src='/assets/diversity.png'/> : null }
-                              {exhibitor.sustainability == true
-                                  ? <img className='special' src='/assets/sustainability.png'/> : null }
-                              {/*<div className="map">*/}
-                                  {/*<img src={exhibitor.map_location_url}/>*/}
-                              {/*</div>*/}
-
-                        </div>
+                    <div className='icon_group'>
+                          {exhibitor.diversity == true
+                              ? <img className='special' src='/assets/diversity.png'/> : null }
+                          {exhibitor.sustainability == true
+                              ? <img className='special' src='/assets/sustainability.png'/> : null }
                     </div>
-                    <div className="description">
-                      {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
-                      {/*<p>  {exhibitor.facts} </p>*/}
-                    </div>
-                </div>
 
+                    <div className="description-container">
+                      <h3>{exhibitor.company}</h3>
+                      <div className="description">
+                        {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
+                      </div>
+                    </div>
+                      {exhibitor.job_types.length > 0 ?  this.getJobContainer(exhibitor) : null}
+                    <div className='location-container'>
+                    <h3>Find us at the fair</h3>
+                      <div className='location'>
+                        <div className='icon'><img src='/assets/place.svg'/></div>
+                        <div className="position">{exhibitor.exhibitor_location}</div>
+                      </div>
+                      {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url}/></div> : null}
+                    </div>
                 </div>
 
       </Modal>
@@ -101,12 +107,19 @@ class ExhibitorList extends React.Component {
       this.setState({filters})
     }
 
+    cssShine(value){
+      if (value == 'quality'){
+        //let qualityShine = getElementsByClassName('.exhibitor-box');
+        //qualityShine.className =
+        }
+      this.toggleShine();
+    }
+
     jobFilter(value){
         let jobfilters = this.state.jobfilters;
         jobfilters[value] = !jobfilters[value];
         this.setState({jobfilters})
     }
-
 
     render() {
 
@@ -139,13 +152,9 @@ class ExhibitorList extends React.Component {
 
         //Loop through the properties of filters object:
           for(let filterkey in this.state.jobfilters) {
-            //console.error("filterkey loop", filterkey);
-              //console.error("filterkey value", this.state.jobfilters[filterkey]);
               if (this.state.jobfilters[filterkey] == true) {
-
                   filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
                       for (let jobtypeindex in exhibitorItem.props.exhibitor.job_types) {
-                          //console.error("jobtypeloop value", jobtypeindex);
                           if (exhibitorItem.props.exhibitor.job_types[jobtypeindex].name == filterkey) {
                               return true;
                           }
@@ -154,6 +163,7 @@ class ExhibitorList extends React.Component {
                   });
               }
           }
+
 
 
             return (
@@ -165,40 +175,33 @@ class ExhibitorList extends React.Component {
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <h2> Exhibitors </h2>
                 <div className = "filter-special">
-                  <div onClick ={()=>this.specialFilter('all')}><img src='/assets/quality.png'/></div>
-                  <div onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity.png'/></div>
-                  <div onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.png'/></div>
+                  <div id="quality" onMouseEnter = {() => this.cssShine('quality')} onClick ={()=>this.specialFilter('all')}><img src='/assets/quality.svg'/></div>
+                  <div id="diversity" onMouseEnter = {() => this.cssShine('diversity')} onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity.svg'/></div>
+                  <div id="sustainability" onMouseEnter = {() => this.cssShine('sustainability')} onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
                 </div>
-                {/*<span class="input input--makiko">
-        					<input class="input__field input__field--makiko" id="input-16" type="text"/>
-        					<label class="input__label input__label--makiko" for="input-16">
-        						<span class="input__label-content input__label-content--makiko">Search</span>
-        					</label>
-        				</span>*/}
                   <div className = "search-containter">
                     <input type = "text" placeholder="Search Exhibitor"
                       value={this.state.search}
                       onChange ={this.updateSearch.bind(this)}
                       />
                   </div>
-
                       <div className = "checkbox-filtering">
-                          <div className = "checkbox1">
-                              <input type="checkbox" onClick ={()=>this.jobFilter("Trainee Employment")} /> Internship
-                          </div>
 
+
+                          <div className = "checkbox1">
+                              <label htmlFor={"squaredThree"}><input type="checkbox" onClick ={()=>this.jobFilter("Trainee Employment")} id="checkbox1"/> Internship</label>
+                          </div>
                           <div className = "checkbox2">
                               <input type="checkbox" onClick ={()=>this.jobFilter("Master's Thesis")}/> Master Thesis
                           </div>
-
                           <div className = "checkbox3">
                               <input type="checkbox" onClick ={()=>this.jobFilter("Summer Jobs")}/> Summer Job
                           </div>
-
                            <div className = "checkbox4">
-                              <input type="checkbox" onClick ={()=>this.jobFilter("Part-time Jobs")}  /> Part-time job
+                              <input type="checkbox" onClick ={()=>this.jobFilter("Part-time Jobs")} /> Part-time job
                            </div>
                       </div>
+
                 <div className = "loading">
                   {this.state.isLoading ? <Loading/> :null}
                 </div>

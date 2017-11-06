@@ -86,7 +86,6 @@
   }
 
 .modalinfo .description-container .description  p{
-    //line-height: 120%;
     margin: 0em;
   }
 
@@ -137,6 +136,13 @@ a:hover {
     right: 15px;
     top: 0px;
   }
+  .modalinfo .description-container {
+      padding: 0em 2em;
+    }
+    .modalinfo .description-container .description {
+      font-size: $text-standard-mobile;
+      line-height: $line-height-mobile;
+    }
   .modalcontent {
     .modalinfo{
       h3{
@@ -151,11 +157,7 @@ a:hover {
       font-size: $text-standard-mobile;
       line-height: $line-height-mobile;
     }
-    .description {
-      padding: 0em 2em;
-      font-size: $text-standard-mobile;
-      line-height: $line-height-mobile;
-    }
+
   }
     .shade {
       .shadecontent{

@@ -1,7 +1,7 @@
 ---
 layout: News
 title: The career fair of 2017 - certified as an eco-labeled event
-cover_wide: /assets/ECO Event med text.png
+cover_wide: /assets/ecoe.jpg
 featured: false
 ingress: >-
   "Keep Sweden Tidy manages an environmental award: Eco-labeled Event – The

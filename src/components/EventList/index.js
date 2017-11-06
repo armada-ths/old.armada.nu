@@ -66,7 +66,7 @@ class EventList extends React.Component {
                     <p> {eventdate.getDate() + '-' + eventdate_end.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>
                     ):( <p> {eventdate.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>)}
                   </div>
-                  <div className='icon_group'>
+                  <div className='icon-group'>
                     <img className='icon' src='/assets/clock.svg'/>
                     <p className ="time" > {hours + ':' + minutes.substr(-2) + '-' + endhours + ':' + endminutes.substr(-2) }</p>
                   </div>
@@ -101,7 +101,6 @@ class EventList extends React.Component {
 
         return (
             <div>
-
                 <div className = "event-item" onClick={()=>this.showModal(event.id)}>
                     <div className = "image-section">
                         <img src = { event.image_url }/>

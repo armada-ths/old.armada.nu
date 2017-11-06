@@ -23,7 +23,7 @@ Diversity Room is an area at the fair where you, as students, can find inspirati
 
 **What THS Armada does to promote this core value**
 
-Social media and marketing**:**
+Social media and marketing:
 
 * Awareness about representation, enunciation, graphic choice and design
 

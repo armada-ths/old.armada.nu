@@ -6,7 +6,6 @@
   height:100%;
   margin: auto;
 }
-
 .events-feed {
   max-width: 100%;
   height: 100%;
@@ -14,40 +13,40 @@
   flex-direction: column;
   padding: 2em;
 }
-
 .event-item {
     display: flex;
     flex-direction: row;
     padding: 2em;
     cursor: pointer;
     cursor: hand;
-    .image-section{
-      width: 40%;
-    }
-    .details-section{
-       width: 60%;
-       padding-left: 1em;
-        .name{
-            text-align: left;
-        }
-        .description {
-          text-align: left;
-        }
-        .event-property{
-            display: flex;
-            flex-direction: row;
-            .icon{
-                width: 25px;
-                height: 25px;
-            }
-            p{
-                margin: 0 0 0 5px;
-                text-align: left;
-            }
-        }
-    }
-}
-
+  }
+.event-item .image-section{
+  width: 40%;
+  }
+.event-item .details-section{
+   width: 60%;
+   padding-left: 1em;
+  }
+.event-item .details-section .name{
+    text-align: left;
+  }
+.event-item .details-section .description {
+  text-align: left;
+  }
+.event-item .details-section .event-property{
+    display: flex;
+    flex-direction: row;
+    height: 1.5em;
+  }
+.event-item .details-section .event-property .icon{
+    width: 1.5em;
+    padding: 0em 0.5em 0em 0em;
+  }
+.event-item .details-section .event-property p{
+  margin: 0;
+    text-align: left;
+    align-self: center;
+  }
 .event-item:hover {
   cursor: pointer;
   cursor: hand;
@@ -87,6 +86,7 @@
 }
 .modalbutton{
   text-align: center;
+  padding: 1em;
   .rsvpbutton{
     display: inline-block;
     border-radius: 4px;
@@ -149,6 +149,17 @@
       font-size: $text-standard-mobile;
     }
   }
+  .event-item .details-section .name{
+    font-size: 1em;
+  }
+  .event-item .details-section .event-property p{
+      font-size: $text-standard-mobile;
+    }
+  .event-item .details-section .event-property .icon{
+      width: 1.2em;
+      height: 1.2em;
+      padding: 0em 0.2em 0em 0em;
+    }
   .image-section{
     width: auto;
     max-height: 100%;
@@ -157,8 +168,20 @@
       top: 50%;
       width: 100%;
       height: auto;
-      //height: 100%;
     }
   }
-
+  .modalbutton .rsvpbutton{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: $melon;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 1em;
+    width: 15em;
+    transition: all 0.5s;
+    margin: 5px;
+    cursor: pointer;
+    }
 }

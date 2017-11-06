@@ -23,6 +23,7 @@
   width: 7em;
   display: block;
   margin: auto;
+	padding: 0.5em;
 }
 .exhibitors  {
    padding-top: 1em;
@@ -91,11 +92,11 @@
 	margin: 0em 5px 0em 5px;
 	overflow: hidden;
   border-radius: 2px;
-  margin-bottom: 10px;
+  margin-bottom: 0.5em;
   border: solid $light-grey;
   border-width: thin;
-  width: 130px;
-  height: 140px;
+  width: 6.6em;
+  height: 6.7em;
   padding: 5px 5px 5px 5px;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -118,21 +119,17 @@
   }
 }
 .exhibitor-feed .exhibitor-box p{
-  width: 90%;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: -35px;
   color: $licorice;
   text-align: center;
   line-height: 110%;
-  font-size: 13px;
+  font-size: 0.6em;
   font-weight: bold;
 }
 
-    .exhibitor-feed .exhibitor-box.red{
+    .exhibitor-feed .exhibitor-box.purple{
 			box-shadow: 1px 1px $light-grey;
-      border: 1px solid $grape;
+      border: 1px solid $diversity;
     }
     .exhibitor-feed .exhibitor-box.green{
 			box-shadow: 1px 1px $light-grey;
@@ -144,7 +141,7 @@
       }
 
       .exhibitor-feed .exhibitor-box.green::before,
-			.exhibitor-feed .exhibitor-box.red::before,
+			.exhibitor-feed .exhibitor-box.purple::before,
 			.exhibitor-feed .shine-loop::before {
         position: absolute;
       	top: 0;
@@ -160,7 +157,7 @@
       	transform: skewX(-25deg);
       }
       .exhibitor-feed .exhibitor-box.green:hover::before,
-			.exhibitor-feed .exhibitor-box.red:hover::before {
+			.exhibitor-feed .exhibitor-box.purple:hover::before {
         -webkit-animation: shine 2.5s infinite;
       	animation: shine 2.5s infinite;
       }
@@ -202,20 +199,29 @@
 		justify-content: flex-end;
 		img{
 			padding: 0.3em;
-			width: 25px;
-			height: 25px;
+			width: 1em;
+			max-height: 1.1em;
 		}
 	}
+
+.diversity-text {
+  color: $diversity;
+  font-weight: bold;
+}
+
+.green-text {
+  color: $melon;
+  font-weight:bold;
+}
 
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
 .exhibitors {
     .exhibitor-feed {
-      padding: 1em 10px;
+      //padding: 1em 10px;
       .exhibitor-box {
-				overflow: hidden;
-        width: 120px;
-        height: 105px;
+        width: 6em;
+        height: 6.5em;
         .image-container{
           img{
             margin-top: 30px;

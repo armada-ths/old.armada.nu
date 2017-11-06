@@ -10,4 +10,8 @@
 .content{
   position: relative;
   overflow: hidden;
+  margin: auto;
+  p {
+  	max-width: 850px;
+  }
 }

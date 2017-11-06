@@ -66,12 +66,14 @@ class ExhibitorList extends React.Component {
                 </div>
 
                 <div className="modalinfo">
+                  <div className='modal-property'>
                     <div className='icon-group'>
                           {exhibitor.diversity == true
                               ? <img className='special' src='/assets/diversity.svg'/> : null }
                           {exhibitor.sustainability == true
                               ? <img className='special' src='/assets/sustainability.svg'/> : null }
                     </div>
+                  </div>
 
                     <div className="description-container">
                       <h3>{exhibitor.company}</h3>
@@ -178,10 +180,9 @@ class ExhibitorList extends React.Component {
                     title={ "Exhibitors" }
                 />
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
-                <h2> Exhibitors </h2>
                 <div className = "filter-special">
                   <div id="quality" onMouseEnter = {() => this.cssShine('exhibitor-box')} onMouseLeave = {() => this.cssShineOff()} onClick ={()=>this.specialFilter('all')}><img src='/assets/quality.svg'/></div>
-                  <div id="diversity" onMouseEnter = {() => this.cssShine('red')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity.svg'/></div>
+                  <div id="diversity" onMouseEnter = {() => this.cssShine('purple')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity_a.svg'/></div>
                   <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
                 </div>
                   <div className = "search-containter">
@@ -232,7 +233,7 @@ export default toExport;
 
 const ExhibitorItem = (props) => {
     let classname = props.exhibitor.sustainability == true ? " green" : "" ;
-        classname += props.exhibitor.diversity == true ? " red": "";
+        classname += props.exhibitor.diversity == true ? " purple": "";
 
   return (
     <div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.company)}>

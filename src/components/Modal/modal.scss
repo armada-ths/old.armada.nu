@@ -37,9 +37,10 @@
     right: 2em;
   }
 }
-
 .cross{
   color: $text-color-light;
+  padding: 0.05em 0.05em 0.1em 0.05em;
+  border-radius: 0em 0em 0.1em 0.1em;
   z-index: 9999;
   position: fixed;
   max-height: 50px;
@@ -62,35 +63,34 @@
   .modal-property{
     display: flex;
     flex-direction: column;
-    padding: 10px 25% 20px 25%;
-    .icon{
+    padding: 0em 5em 0em 5em;
+  }
+
+    .modal-property .icon{
       width: 25px;
       height: 25px;
     }
-    .icon-group{
+    .modal-property .icon-group{
       text-align: center;
       align-items: center;
       display: flex;
       flex-direction: row;
       margin: 0.15em 0em;
     }
-    p{
+    .modal-property p{
       margin: 0 0 0 5px;
     }
 
-  }
 }
 
 .modalinfo .description-container {
-    padding: 2em 5em 2em 5em;
+    padding: 1em 5em 2em 5em;
   }
-
 .modalinfo .description-container .description  p{
     margin: 0em;
   }
-
 .modalinfo .location-container {
-    padding: 2em 5em 2em 5em;
+    padding: 1em 5em 1em 5em;
   }
 .modalinfo .location-container .location{
   display: flex;
@@ -108,18 +108,19 @@
 .modalinfo .location-container .map{
   padding: 2em 0em 2em 0em;
 }
-.modalinfo .job-section{
+.modalinfo .job-container {
+    padding: 1em 0em 1em 0em;
+  }
+.modalinfo .job-container .job-section{
   display: flex;
   flex-direction: column;
 }
-.modalinfo .job-section li{
+.modalinfo .job-container .job-section li{
   margin-left: 40%;
 }
-
 li {
   font-weight: 300;
 }
-
 a:hover {
   text-decoration: underline;
 }
@@ -136,17 +137,21 @@ a:hover {
     right: 15px;
     top: 0px;
   }
-  .modalinfo .description-container {
-      padding: 0em 2em;
+  .shade {
+    .shadecontent{
+      position: absolute;
+      top: 0px;
+      right: 5px;
+      .cross{
+        color: $text-color-light;
+      }
     }
-    .modalinfo .description-container .description {
-      font-size: $text-standard-mobile;
-      line-height: $line-height-mobile;
-    }
+  }
   .modalcontent {
     .modalinfo{
+      padding: 0;
       h3{
-        font-size: 20px;
+        font-size: 1.1em;
       }
       .icon{
         width: 20px;
@@ -159,14 +164,29 @@ a:hover {
     }
 
   }
-    .shade {
-      .shadecontent{
-        position: absolute;
-        top: 0px;
-        right: 5px;
-        .cross{
-          color: $text-color-light;
-        }
-      }
+  .modalinfo .description-container {
+    padding: 0em 1em 0.5em 1em;
     }
+  .modalinfo .description-container .description {
+    padding: 1em 1em 0.5em 1em;
+    font-size: $text-standard-mobile;
+    line-height: $line-height-mobile;
+  }
+  .modalinfo .job-container {
+      padding: 0.5em 0em 0.5em 0em;
+    }
+  .modalinfo .job-container .job-section li{
+    margin-left: 25%;
+  }
+  .modalinfo .location-container {
+      padding: 0.5em 1em 1em 1em;
+    }
+    .modalinfo .location-container .location{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      font-size: $text-standard-mobile;
+    }
+
+
 }

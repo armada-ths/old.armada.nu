@@ -8,7 +8,7 @@ date: 2017-11-04T16:24:35.261Z
 
 THS Armada wants to inspire students and companies to create a more inclusive workplace. Therefore a special area, called Diversity room, is set up in KTHB during the fair. Companies and organizations located in this area wants to emphasize the importance of inclusion and diversity.
 
-Companies attending Diversity Room 2017, KTHB
+Companies participation in Diversity Room 2017, KTHB
 
 • Accenture • Axfood • LKAB • Cinnober
 
@@ -22,4 +22,4 @@ Companies participating in Green Room 2017, Nymble
 
 • Lantmännen • Sweco • NCC • ABB • Alfa Laval • Akzo Nobel • BillerudKorsnäs • Implenia • H&M • Preem • Siemens • Pöyry • Stora Enso • Xylem
 
-THS Armada has been climate neutral since 2015 and our belief in a green future motivates us to continuously make improvements towards a more sustainable fair. This year we proudly announce that THS Armadas events, fair and banquet exclusively serve vegetarian food and that all events are eco events.
+THS Armada has been climate neutral since 2015 and our belief in a green future motivates us to continuously make improvements towards a more sustainable fair. This year we proudly announce that the events, fair and banquet of THS Armada exclusively serve vegetarian food and that all events are eco events.

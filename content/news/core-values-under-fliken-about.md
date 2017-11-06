@@ -6,7 +6,7 @@ date: 2017-11-04T16:24:35.261Z
 ---
 ## DIVERSITY
 
-THS Armada truly believe that the best teams are created where there is a focus on equality and diversity. Which means that equal opportunities and equal values are fundamental in our work. In the past, it was made possible for international students to be a part of the organization. Today, we also place focus on gender balance within the teams of THS Armada.
+THS Armada truly believe that the best teams are created where there is a focus on equality and diversity. That means, equal opportunities and equal values are fundamental in our work. In the past, it was made possible for international students to be a part of the organization. Today, we also place focus on gender balance within the teams of THS Armada.
 
 THS Armada wants to inspire students and companies on making their workplace inclusive. Therefore a special area, Diversity room, is set up in KTHB during the fair. Companies at Diversity Room place emphasis on inclusion and diversity in the workplace.
 

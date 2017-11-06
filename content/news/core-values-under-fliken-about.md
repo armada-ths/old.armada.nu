@@ -6,7 +6,7 @@ date: 2017-11-04T16:24:35.261Z
 ---
 ## DIVERSITY
 
-THS Armada wants to inspire students and companies to create a more inclusive workplace. Therefore a special area, called Diversity room, is set up in KTHB during the fair. Companies and organizations located in this area wants to emphasize the importance of inclusion and diversity.
+THS Armada wants to inspire students and companies on making their workplace inclusive. Therefore a special area called Diversity room, is set up in KTHB during the fair. Companies and organizations located here wants to emphasize the importance of inclusion and diversity.
 
 Companies participation in Diversity Room 2017, KTHB
 

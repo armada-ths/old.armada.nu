@@ -1,6 +1,9 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
+
+
+
 @-webkit-keyframes shine {
   0% { left: -50%; }
   25% { left: 125%; }
@@ -95,8 +98,6 @@
   .checkbox4{
     margin-right: 2%;
   }
-
-
 
   .exhibitor-feed {
     display: flex;

@@ -1,6 +1,6 @@
 ---
 title: Webtv
-layout: PlainPage
+layout: Plainpage
 menuPage: false
 priority: '5'
 header: /assets/TheFair_small.jpg

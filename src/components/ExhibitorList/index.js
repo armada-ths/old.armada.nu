@@ -66,12 +66,14 @@ class ExhibitorList extends React.Component {
                 </div>
 
                 <div className="modalinfo">
-                    <div className='icon_group'>
+                  <div className='modal-property'>
+                    <div className='icon-group'>
                           {exhibitor.diversity == true
-                              ? <img className='special' src='/assets/diversity.png'/> : null }
+                              ? <img className='special' src='/assets/diversity.svg'/> : null }
                           {exhibitor.sustainability == true
-                              ? <img className='special' src='/assets/sustainability.png'/> : null }
+                              ? <img className='special' src='/assets/sustainability.svg'/> : null }
                     </div>
+                  </div>
 
                     <div className="description-container">
                       <h3>{exhibitor.company}</h3>
@@ -132,7 +134,6 @@ class ExhibitorList extends React.Component {
     }
 
     render() {
-
       let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
       let filteredCompanies = this.state.exhibitorList.filter(
         (exhibitorItem) => {return (exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase()) );}
@@ -206,7 +207,7 @@ class ExhibitorList extends React.Component {
                     </div>
                     <div className = "checkbox4">
                         <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part-time Jobs")} />
-                        <label htmlFor={"check4"}>Part Time job</label>
+                        <label htmlFor={"check4"}>Part Time Job</label>
                     </div>
                 </div>
 

@@ -55,16 +55,18 @@
   margin-bottom: 5%;
   margin-left: 50%;
   transform: translate(-50%, 0%);
+
   input{
     height: 1.3em;
-    border: 0.1em solid #e4e4e4;
+    border: 0.1em solid $melon;
     border-radius: 0.3em;
     padding: 0.5em;
     margin: auto;
     width: 93%;
   }
   input:focus {
-    border: 1.5px solid $licorice;
+    border: 4px solid $melon;
+    outline: none;
   }
 }
 .checkbox-filtering{

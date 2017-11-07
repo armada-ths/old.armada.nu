@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: armada-ths/armada.nu
-  branch: master
+  branch: webtest
 
 public_folder: "/assets"
 media_folder: "content/assets"
@@ -19,12 +19,12 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "News"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover_wide", name: "cover_wide", widget: "image", required: false}
       - {label: "Cover_square", name: "cover_square", widget: "image", required: false}
       - {label: "Featured", name: "featured", widget: "boolean", default: false}
       - {label: "Ingress", name: "ingress", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
 
   - name: "pages"
     label: "Pages"

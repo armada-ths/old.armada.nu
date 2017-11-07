@@ -1,10 +1,10 @@
 ---
 layout: News
 title: 'It’s time - the run of the year '
+date: 2017-10-02T23:00:00+02:00
 cover_wide: /assets/armadarun_cover.png
 featured: false
 ingress: 5 km race. 400 students and companies. Are you ready? We are.
-date: 2017-09-25T15:36:44.096Z
 ---
 Armada Run is a 5 km race close to KTH and really opens the opportunity to challenge the co-workers of your future. The event is arranged together with EY and Run of Hope, a collaboration between Vitamin Well and Childhood Cancer Foundation. After finishing the race, we will stand ready with goodie bags, prizes to the top 3 runners and companies to mingle with. Do you want to run in a team? Perfect! Then register together with friends, chapter or organization.
 

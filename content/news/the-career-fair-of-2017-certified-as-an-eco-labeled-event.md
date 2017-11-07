@@ -1,7 +1,7 @@
 ---
 layout: News
 title: The career fair of 2017 - certified as an eco-labeled event
-cover_wide: /assets/ECO Event med text.png
+cover_wide: /assets/swe_clean.jpg
 featured: false
 ingress: >-
   "Keep Sweden Tidy manages an environmental award: Eco-labeled Event – The
@@ -20,7 +20,7 @@ As an attendant on THS Armada's events, you can do a lot to contribute to a more
 
 \- Walk, bicycle or chose the bus/metro instead of taking the car.
 
-\- Chose tabwater instead of bottled water. 
+\- Chose tap water instead of bottled water. 
 
 \- Avoid stand-by on your technical devices (phone, computer, tablet..)
 

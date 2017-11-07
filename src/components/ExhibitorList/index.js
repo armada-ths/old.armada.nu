@@ -190,21 +190,25 @@ class ExhibitorList extends React.Component {
                       onChange ={this.updateSearch.bind(this)}
                       />
                   </div>
-                      <div className = "checkbox-filtering">
+                <div className = "checkbox-filtering">
 
-                        <div className = "checkbox1">
-                            <input type="checkbox" value="None" id="checkbox1" name="check" onClick ={()=>this.jobFilter("Trainee Employment")}/> <label htmmlFor= {"squaredThree"}> </label> Internship
-                        </div>
-                          <div className = "checkbox2">
-                              <input type="checkbox" onClick ={()=>this.jobFilter("Master's Thesis")}/> Master Thesis
-                          </div>
-                          <div className = "checkbox3">
-                              <input type="checkbox" onClick ={()=>this.jobFilter("Summer Jobs")}/> Summer Job
-                          </div>
-                           <div className = "checkbox4">
-                              <input type="checkbox" onClick ={()=>this.jobFilter("Part-time Jobs")} /> Part-time job
-                           </div>
-                      </div>
+                    <div className = "checkbox1">
+                        <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee Employment")} />
+                        <label htmlFor={"check1"}>Internship</label>
+                    </div>
+                    <div className = "checkbox2">
+                        <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master's Thesis")}/>
+                        <label htmlFor={"check2"}>Master's Thesis</label>
+                    </div>
+                    <div className = "checkbox3">
+                        <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer Jobs")}/>
+                        <label htmlFor={"check3"}>Summer Job</label>
+                    </div>
+                    <div className = "checkbox4">
+                        <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part-time Jobs")} />
+                        <label htmlFor={"check4"}>Part Time job</label>
+                    </div>
+                </div>
 
                 <div className = "loading">
                   {this.state.isLoading ? <Loading/> :null}

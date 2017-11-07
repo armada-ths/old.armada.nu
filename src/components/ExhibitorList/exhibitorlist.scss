@@ -32,6 +32,7 @@
 
 .exhibitors  {
   padding-top: 1em;
+
   .filter-special{
     display: flex;
     flex-direction: row;
@@ -79,29 +80,107 @@
     padding-bottom: 3%;
     display: flex;
     flex-direction: row;
-    margin-left: 18%;
+    flex-wrap: wrap;
+    margin-left: 13%;
+    //margin: auto;
+    //align-content: stretch;
+    //justify-content: center;
   }
 
   .checkbox1{
     margin-right: 2%;
+    margin-bottom: 5%;
   }
   .checkbox2{
     margin-right: 2%;
+    margin-bottom: 5%;
   }
+
   .checkbox3{
     margin-right: 2%;
   }
+
   .checkbox4{
     margin-right: 2%;
   }
-  input[type=checkbox] {
-    transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    padding: 10px;
+
+  /* Base for label styling */
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+  }
+  [type="checkbox"]:not(:checked) + label,
+  [type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 1.95em;
     cursor: pointer;
   }
+
+  /* checkbox aspect */
+  [type="checkbox"]:not(:checked) + label:before,
+  [type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 1.25em; height: 1.25em;
+    border: 2px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+  }
+  /* checked mark aspect */
+  [type="checkbox"]:not(:checked) + label:after,
+  [type="checkbox"]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    top: .1em; left: .3em;
+    font-size: 1.3em;
+    line-height: 0.8;
+    color: $melon;
+    transition: all .2s;
+  }
+  /* checked mark aspect changes */
+  [type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+
+  }
+  [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+  /* disabled checkbox */
+  [type="checkbox"]:disabled:not(:checked) + label:before,
+  [type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+  }
+  [type="checkbox"]:disabled:checked + label:after {
+    color: #999;
+  }
+  [type="checkbox"]:disabled + label {
+    color: #aaa;
+  }
+  /* accessibility */
+  [type="checkbox"]:checked:focus + label:before,
+  [type="checkbox"]:not(:checked):focus + label:before {
+  //  //border: 2px dotted blue;
+  }
+
+  /* hover style just for information */
+  //label:hover:before {
+   // border: 1px solid #aaa!important;
+  //}
 
 
   .exhibitor-feed {
@@ -244,28 +323,59 @@
   font-weight:bold;
 }
 
+
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
   .exhibitors {
+
+    .checkbox-filtering{
+      padding-bottom: 3%;
+      margin-left: 5%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      //margin-left: 18%;
+      //margin: auto;
+      //align-content: stretch;
+      //justify-content: space-around;
+    }
+
+    .checkbox1{
+      margin-right: 9%;
+      margin-bottom: 5%;
+    }
+    .checkbox2{
+      margin-right: 2%;
+      margin-bottom: 5%;
+    }
+
+    .checkbox3{
+      margin-right: 4%;
+    }
+
+    .checkbox4{
+      margin-right: 2%;
+    }
+
     .exhibitor-feed {
       padding: 1em 10px;
       .exhibitor-box {
         overflow: hidden;
         width: 120px;
         height: 105px;
-        .image-container{
-          img{
+        .image-container {
+          img {
             margin-top: 30px;
             max-height: 60px;
           }
         }
-        p{
+        p {
           font-size: 11px;
           margin-top: -45px;
           line-height: $line-height-mobile;
         }
-        .corner-special{
-          img{
+        .corner-special {
+          img {
             width: 20px;
           }
         }

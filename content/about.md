@@ -44,4 +44,6 @@ THS Armada has dedicated an area of the fair to companies that we deem to be the
 <p style="text-align:center;">
 <img src="http://development.armada.nu/assets/quality.svg" height="100em" width="100em"/>
 </p>
-In 2017, we will put great emphasis on \*\*matchmaking the right students with the right companies\*\*. This will be done by including a matchmaking algorithm in our \[Android](https://play.google.com/store/apps/details?id=se.ths.kth.Aramda&hl=en) and \[iOS](https://itunes.apple.com/us/app/armada/id470187481?mt=8) applications and through targeted marketing before and during the fair. Thus, we maximise the value you get from your THS Armada-participation.
+
+
+In 2017, we will put great emphasis on \\*\\*matchmaking the right students with the right companies\\*\\*. This will be done by including a matchmaking algorithm in our \\[Android](https://play.google.com/store/apps/details?id=se.ths.kth.Aramda&hl=en) and \\[iOS](https://itunes.apple.com/us/app/armada/id470187481?mt=8) applications and through targeted marketing before and during the fair. Thus, we maximise the value you get from your THS Armada-participation.

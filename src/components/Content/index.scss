@@ -3,3 +3,17 @@
   align-items: stretch;
   flex-direction: column;
 }
+
+.content{
+  position: relative;
+  overflow: hidden;
+}
+
+.content{
+  position: relative;
+  overflow: hidden;
+  margin: 1em auto;
+  p {
+  	max-width: 850px;
+  }
+}

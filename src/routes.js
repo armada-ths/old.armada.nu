@@ -7,7 +7,6 @@ import AppContainer from "./AppContainer"
 import Page from "./layouts/Page"
 import PageError from "./layouts/PageError"
 import Homepage from "./layouts/Homepage"
-import Post from "./layouts/Post"
 import Aboutpage from "./layouts/Aboutpage"
 import Plainpage from "./layouts/Plainpage"
 import Contactpage from "./layouts/Contactpage"
@@ -19,7 +18,7 @@ import PageSection from "./components/PageSection"
 import Exhibitors from "./layouts/Exhibitors"
 //PageSection is added as layout to avoid warnings from phenomic for having the
 //PageSections compoment that is used in ExhibitorInfo layout.
-//Phenomic complains about not finding PageSection otherwise as it 
+//Phenomic complains about not finding PageSection otherwise as it
 //checks all documents in content if it has a corresponding layout
 
 const PageContainer = (props) => (
@@ -29,7 +28,6 @@ const PageContainer = (props) => (
       Page,
       PageError,
       Homepage,
-      Post,
       Aboutpage,
       Contactpage,
       News,

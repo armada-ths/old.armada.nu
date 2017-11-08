@@ -13,6 +13,8 @@ THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of 
 
 ## Diversity
 
+<img src="http://development.armada.nu/assets/diversity_a.svg" align="middle" height="50em" />
+
 Companies participating in** Diversity Room 2017, KTHB    **
 
 • Accenture • Axfood • LKAB • Cinnober
@@ -21,9 +23,9 @@ THS Armada truly believes that the best teams are created when there is a clear 
 
 By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Therefore, we devote a special part of our fair to promoting diversity, namely **Diversity Room**, located at the entrance of KTHB during the career fair. Companies at Diversity Room are some of the most progressive when it comes to inclusion and diversity in the workplace.
 
-
-
 ## Sustainability
+
+<img src="http://development.armada.nu/assets/sustainability.svg" align="middle" height="50em" />
 
 Companies participating in** Green Room 2017, Nymble**
 
@@ -33,8 +35,8 @@ THS Armada has been climate neutral since 2015 and our belief in a green future 
 
 THS Armada has dedicated an area of the fair to companies that we deem to be the frontrunners in our vision for a sustainable future. This area is located in Nymble and called **Green Room**. The participants of Green Room are eager to share their work in regards to minimising environmental impact.
 
-
-
 ## Quality
+
+<img src="http://development.armada.nu/assets/quality.svg" align="middle" height="50em" />
 
 In 2017, we will put great emphasis on **matchmaking the right students with the right companies**. This will be done by including a matchmaking algorithm in our [Android](https://play.google.com/store/apps/details?id=se.ths.kth.Aramda&hl=en) and [iOS](https://itunes.apple.com/us/app/armada/id470187481?mt=8) applications and through targeted marketing before and during the fair. Thus, we maximise the value you get from your THS Armada-participation.

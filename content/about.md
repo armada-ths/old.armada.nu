@@ -13,7 +13,7 @@ THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of 
 
 ## Diversity
 
-<img src="http://development.armada.nu/assets/diversity_a.svg" height="50em" />
+<img src="http://development.armada.nu/assets/diversity_a.svg" align="middle" height="50em" />
 
 Companies participating in** Diversity Room 2017, KTHB    **
 

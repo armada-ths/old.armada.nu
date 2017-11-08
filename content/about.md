@@ -13,7 +13,7 @@ THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of 
 
 ## Diversity
 
-<img src="http://development.armada.nu/assets/diversity_a.svg" align="middle" height="1em" width="1em"/>
+<img src="http://development.armada.nu/assets/diversity_about.svg" align="middle" height="5em" width="5em"/>
 
 Companies participating in** Diversity Room 2017, KTHB    **
 
@@ -25,7 +25,7 @@ By actively working with this core value, THS Armada aspires to encourage studen
 
 ## Sustainability
 
-<img src="http://development.armada.nu/assets/sustainability.svg" align="middle" height="1em" width="1em"/>
+<img src="http://development.armada.nu/assets/sustainability_about.svg" align="middle" height="5em" width="5em"/>
 
 Companies participating in** Green Room 2017, Nymble**
 
@@ -37,6 +37,6 @@ THS Armada has dedicated an area of the fair to companies that we deem to be the
 
 ## Quality
 
-<img src="http://development.armada.nu/assets/quality.svg" align="middle" height="1em" width="1em"/>
+<img src="http://development.armada.nu/assets/quality_about.svg" align="middle" height="5em" width="5em"/>
 
 In 2017, we will put great emphasis on **matchmaking the right students with the right companies**. This will be done by including a matchmaking algorithm in our [Android](https://play.google.com/store/apps/details?id=se.ths.kth.Aramda&hl=en) and [iOS](https://itunes.apple.com/us/app/armada/id470187481?mt=8) applications and through targeted marketing before and during the fair. Thus, we maximise the value you get from your THS Armada-participation.

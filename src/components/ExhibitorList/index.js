@@ -69,7 +69,7 @@ class ExhibitorList extends React.Component {
                     <div className='modal-property'>
                         <div className='icon-group'>
                             {exhibitor.diversity == true
-                                ? <img className='special' src='/assets/diversity.svg'/> : null }
+                                ? <img className='special' src='/assets/diversity_a.svg'/> : null }
                             {exhibitor.sustainability == true
                                 ? <img className='special' src='/assets/sustainability.svg'/> : null }
                         </div>
@@ -186,26 +186,27 @@ class ExhibitorList extends React.Component {
                     <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
                 </div>
                 <div className = "search-containter">
-                    <input type = "text" placeholder="Search Exhibitor"
+                    <input type = "text"
+                    placeholder= "Search Exhibitor"
                            value={this.state.search}
                            onChange ={this.updateSearch.bind(this)}
                     />
                 </div>
                 <div className = "checkbox-filtering">
 
-                    <div className = "checkbox1">
+                    <div className = "checkbox-container">
                         <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee Employment")} />
                         <label htmlFor={"check1"}>Internship</label>
                     </div>
-                    <div className = "checkbox2">
+                    <div className = "checkbox-container">
                         <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master's Thesis")}/>
-                        <label htmlFor={"check2"}>Master's Thesis</label>
+                        <label htmlFor={"check2"}>Master Thesis</label>
                     </div>
-                    <div className = "checkbox3">
+                    <div className = "checkbox-container">
                         <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer Jobs")}/>
                         <label htmlFor={"check3"}>Summer Job</label>
                     </div>
-                    <div className = "checkbox4">
+                    <div className = "checkbox-container">
                         <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part-time Jobs")} />
                         <label htmlFor={"check4"}>Part Time Job</label>
                     </div>
@@ -247,9 +248,9 @@ const ExhibitorItem = (props) => {
             </div>
             <p> {props.exhibitor.company} </p>
             {props.exhibitor.diversity == true
-                ? <div className='corner-special'><img  src='/assets/diversity.png'/></div>: null }
+                ? <div className='corner-special'><img  src='/assets/diversity_a.svg'/></div>: null }
             {props.exhibitor.sustainability == true
-                ? <div className='corner-special'><img src='/assets/sustainability.png'/></div> : null }
+                ? <div className='corner-special'><img src='/assets/sustainability.svg'/></div> : null }
         </div>)
 }
 

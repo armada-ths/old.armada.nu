@@ -7,12 +7,10 @@ import "./index.scss"
 
 const Plainpage = (props) => {
   return (
-      <div className="content">
         <div className="plainpage-container">
           <Page { ...props } >
           </Page>
         </div>
-      </div>
   )
 }
 

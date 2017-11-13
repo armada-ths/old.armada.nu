@@ -84,10 +84,10 @@
 }
 
 .modalinfo .description-container {
-    padding: 1em 5em 2em 5em;
+    padding: 0.5em 5em 2em 5em;
   }
 .modalinfo .description-container .description  p{
-    margin: 0em;
+    //padding: 0em 0.1em 0em 0em;
   }
 .modalinfo .location-container {
     padding: 1em 5em 1em 5em;
@@ -168,7 +168,7 @@ a:hover {
     padding: 0em 1em 0.5em 1em;
     }
   .modalinfo .description-container .description {
-    padding: 1em 1em 0.5em 1em;
+    padding: 0em 1em 0.5em 1em;
     font-size: $text-standard-mobile;
     line-height: $line-height-mobile;
   }

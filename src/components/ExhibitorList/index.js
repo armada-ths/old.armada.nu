@@ -196,7 +196,7 @@ class ExhibitorList extends React.Component {
 
                     <div className = "checkbox-container">
                         <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee Employment")} />
-                        <label htmlFor={"check1"}>Internship</label>
+                        <label htmlFor={"check1"}>Trainee</label>
                     </div>
                     <div className = "checkbox-container">
                         <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master's Thesis")}/>

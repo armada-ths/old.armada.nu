@@ -84,7 +84,7 @@
 }
 
 .modalinfo .description-container {
-    padding: 0.5em 5em 2em 5em;
+    padding: 0.5em 5em 0.5em 5em;
   }
 .modalinfo .description-container .description  p{
     //padding: 0em 0.1em 0em 0em;
@@ -124,7 +124,12 @@ li {
 a:hover {
   text-decoration: underline;
 }
+@media screen and (max-width:1200px) {
+  .modalinfo .description-container {
+      padding: 0.5em 3em 0.5em 3em;
+    }
 
+}
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
 
@@ -187,6 +192,5 @@ a:hover {
       justify-content: center;
       font-size: $text-standard-mobile;
     }
-
 
 }

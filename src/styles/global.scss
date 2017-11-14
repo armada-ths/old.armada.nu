@@ -54,14 +54,6 @@ body {
   margin: auto;
 }
 
-.content {
-    overflow-x: hidden;
-    margin: 0px;
-    position: relative;
-    min-height: 100%;
-    height: auto;
-}
-
 .title {
     font-size: $title-font-size;
     font-family: $title-font-family;
@@ -116,7 +108,7 @@ h1 {
 
 h2 {
   font-size: 2.0em;
-  line-height: 1.25em;  
+  line-height: 1.25em;
 }
 
 h3 {
@@ -143,10 +135,10 @@ h3 {
 
 /*
 
-  TODO: Some margins for text should be fixed in the ipad device size 
+  TODO: Some margins for text should be fixed in the ipad device size
   but removing at the moment before implementing a more general solution.
 
-  We need to test this on a real device.  
+  We need to test this on a real device.
 
 @media screen and (max-width: $breakpoint-pad) {
   h2{
@@ -180,7 +172,7 @@ h3 {
         font-size: 3.0em;
       }
   }
- 
+
 }
 
 
@@ -198,7 +190,7 @@ h3 {
         font-size: 2.0em;
       }
   }
- 
+
 }
 
 

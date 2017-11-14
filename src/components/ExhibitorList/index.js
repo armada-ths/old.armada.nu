@@ -47,7 +47,7 @@ class ExhibitorList extends React.Component {
     }
     getJobContainer(exhibitor){
         return(  <div className = "job-container">
-                <h3>Job Oportunities</h3>
+                <h3>Job Opportunities</h3>
                 {exhibitor.job_types.map((jobtype) => <div className="job-section"><li> {jobtype.name} </li></div>)}
             </div>
         )
@@ -196,7 +196,7 @@ class ExhibitorList extends React.Component {
 
                     <div className = "checkbox-container">
                         <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee Employment")} />
-                        <label htmlFor={"check1"}>Internship</label>
+                        <label htmlFor={"check1"}>Trainee</label>
                     </div>
                     <div className = "checkbox-container">
                         <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master's Thesis")}/>

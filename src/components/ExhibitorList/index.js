@@ -47,7 +47,7 @@ class ExhibitorList extends React.Component {
     }
     getJobContainer(exhibitor){
         return(  <div className = "job-container">
-                <h3>Job Oportunities</h3>
+                <h3>Job Opportunities</h3>
                 {exhibitor.job_types.map((jobtype) => <div className="job-section"><li> {jobtype.name} </li></div>)}
             </div>
         )

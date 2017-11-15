@@ -6,6 +6,7 @@ backend:
 public_folder: "/assets"
 media_folder: "content/assets"
 publish_mode: editorial_workflow
+delete: true
 
 
 collections:

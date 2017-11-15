@@ -34,6 +34,7 @@ collections:
     folder: "content/news"
     create: true
     delete: true
+    showdelete: true
     sort: "date:desc" # Default is title:asc
     slug: "{{slug}}"
     card: {type: "alltype", text: "title"}

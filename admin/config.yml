@@ -6,14 +6,11 @@ backend:
 public_folder: "/assets"
 media_folder: "content/assets"
 publish_mode: simple
-delete: true
-showdelete: true
 
 
 collections:
   - name: "settings"
     label: "Settings"
-    delete: false # Prevent users from deleting documents in this collection
     editor:
       preview: false
     files:
@@ -35,8 +32,6 @@ collections:
     label: "News"
     folder: "content/news"
     create: true
-    delete: true
-    showdelete: true
     sort: "date:desc" # Default is title:asc
     slug: "{{slug}}"
     card: {type: "alltype", text: "title"}
@@ -54,7 +49,6 @@ collections:
     label: "Pages"
     folder: "content"
     create: true
-    delete: true
     slug: "{{slug}}"
     card: {type: "alltype", text: "title"}
     fields:
@@ -69,7 +63,6 @@ collections:
     label: "Exhibitor Info"
     folder: "content/exhibitor-info"
     create: true
-    delete: true
     slug: "{{slug}}"
     card: {type: "alltype", text: "title"}
     fields:

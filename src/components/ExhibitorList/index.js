@@ -48,7 +48,7 @@ class ExhibitorList extends React.Component {
     getJobContainer(exhibitor){
         return(  <div className = "job-container">
                 <h3>Job Opportunities</h3>
-                {exhibitor.job_types.map((jobtype) => <div className="job-section"><li> {jobtype.name} </li></div>)}
+                {exhibitor.job_types.map((jobtype) => <div className="job-section">{jobtype.name}</div>)}
             </div>
         )
     }
@@ -91,7 +91,6 @@ class ExhibitorList extends React.Component {
                         {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url}/></div> : null}
                     </div>
                 </div>
-
             </Modal>
         );
     }
@@ -104,29 +103,23 @@ class ExhibitorList extends React.Component {
         filters[value]= true;
         this.setState({filters})
     }
-
     cssShine(value){
         if (global.document != undefined){
-
             let shineItems = global.document.getElementsByClassName(value);
             for (let i = 0; i < shineItems.length; i++){
                 shineItems[i].className += ' shine-loop';
             }
-
         }
     }
-
     cssShineOff(){
         if (global.document != undefined){
             let shineItems = global.document.getElementsByClassName('shine-loop');
             while (shineItems.length> 0){
                 let className = shineItems[0].className;
                 shineItems[0].className = className.replace('shine-loop','') ;
-
             }
         }
     }
-
     jobFilter(value){
         let jobfilters = this.state.jobfilters;
         jobfilters[value] = !jobfilters[value];
@@ -158,7 +151,6 @@ class ExhibitorList extends React.Component {
                 });
             }
         }
-
         //Loop through the properties of filters object:
         for(let filterkey in this.state.jobfilters) {
             if (this.state.jobfilters[filterkey] == true) {
@@ -174,7 +166,6 @@ class ExhibitorList extends React.Component {
         }
 
         return (
-
             <div className = "exhibitors">
                 <Helmet
                     title={ "Exhibitors" }
@@ -192,8 +183,11 @@ class ExhibitorList extends React.Component {
                            onChange ={this.updateSearch.bind(this)}
                     />
                 </div>
-                <div className = "checkbox-filtering">
 
+                {/* a point of improvement could be to create a list of available filters in the ais and then map them here.
+                and not hardcode it as it is now. Then the options would change automatically if the jobs offered in the ais change
+                no word for the coder and less risk of displaying the wrong filters */}
+                <div className = "checkbox-filtering">
                     <div className = "checkbox-container">
                         <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee Employment")} />
                         <label htmlFor={"check1"}>Trainee</label>

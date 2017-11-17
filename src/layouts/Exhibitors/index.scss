@@ -1,8 +1,9 @@
 @import "../../styles/variables";
 
+.exhibitor-content{
+  padding: 3em 0em 0em 0em;
+}
 .Exhibitors-container {
-  position: static;
-  max-width: 850px;
-  margin: auto;
-  padding: 0em 1em 0em 1em;
+  //position: static;
+  padding: 0em 1em 3em 1em;
 }

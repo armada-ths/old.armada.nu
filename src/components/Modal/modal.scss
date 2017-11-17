@@ -63,7 +63,8 @@
   .modal-property{
     display: flex;
     flex-direction: column;
-    padding: 0em 5em 0em 5em;
+    padding: 1em 0em 1em 10em;
+    align-self: center;
   }
 
     .modal-property .icon{
@@ -75,7 +76,7 @@
       align-items: center;
       display: flex;
       flex-direction: row;
-      margin: 0.15em 0em;
+      //margin: 0.15em 0em;
     }
     .modal-property p{
       margin: 0 0 0 5px;
@@ -83,10 +84,10 @@
 }
 
 .modalinfo .description-container {
-    padding: 0.5em 5em 0.5em 5em;
+    padding: 0.5em 5em 0em 5em;
   }
 .modalinfo .description-container .description  p{
-    //padding: 0em 0.1em 0em 0em;
+    padding-bottom: 1em;
   }
 .modalinfo .location-container {
     padding: 1em 0em 1em 0em;
@@ -126,9 +127,7 @@ a:hover {
     }
     .modalinfo .location-container .location{
       font-weight: 300;
-
     }
-
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
@@ -152,22 +151,21 @@ a:hover {
       }
     }
   }
-  .modalcontent {
-    .modalinfo{
-      padding: 0;
-      h3{
-        font-size: 1.1em;
-      }
-      .icon{
-        width: 20px;
-        height: 20px;
-      }
+  .modalcontent .modal-property{
+    padding: 1em 0em 1em 2.5em;
+  }
+  .modalcontent p{
+    font-size: $text-standard-mobile;
+    line-height: $line-height-mobile;
+  }
+  .modalcontent .modalinfo{
+    h3, h2{
+      font-size: 1.1em;
     }
-    p {
-      font-size: $text-standard-mobile;
-      line-height: $line-height-mobile;
+    .icon{
+      width: 20px;
+      height: 20px;
     }
-
   }
   .modalinfo .description-container {
     padding: 0em 1em 0.5em 1em;
@@ -192,5 +190,4 @@ a:hover {
       justify-content: center;
       font-size: $text-standard-mobile;
     }
-
 }

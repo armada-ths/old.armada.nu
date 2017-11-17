@@ -11,9 +11,11 @@ const PageSectionsLayout = (props) => {
   return (
     <div>
     <Page { ...props }>
-      <div className="body pagesectionsbody">
+      {//<div className="body pagesectionsbody">
+    }
           <PageSections />
-      </div>
+      {//</div>
+        }
     </Page>
       </div>
   )
@@ -24,4 +26,3 @@ PageSectionsLayout.propTypes = {
 }
 
 export default PageSectionsLayout
-

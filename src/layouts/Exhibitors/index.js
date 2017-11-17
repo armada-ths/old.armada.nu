@@ -10,12 +10,13 @@ const Exhibitors = (props) => {
 
   return (
 
-   <div className="content">
-    <Page { ...props } >
-    </Page>
-    <div className= "Exhibitors-container">
-    <ExhibitorList {...props}/>
-     </div>
+  <div className="content">
+    <div className="exhibitor-content">
+      <Page { ...props } />
+      </div>
+      <div className= "Exhibitors-container">
+        <ExhibitorList {...props}/>
+      </div>
    </div>
   )
 }

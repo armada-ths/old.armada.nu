@@ -11,10 +11,13 @@ const Exhibitors = (props) => {
   return (
 
   <div className="content">
-    <div className="exhibitor-content">
+    <div className= "Exhibitors-container">
+    {//<div className="exhibitor-content">
+    }
       <Page { ...props } />
-      </div>
-      <div className= "Exhibitors-container">
+      {//</div>
+        }
+
         <ExhibitorList {...props}/>
       </div>
    </div>

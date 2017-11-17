@@ -11,6 +11,18 @@ THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of 
 
 **Diversity**, **sustainability**, and **quality** form the core values at the heart of this pursuit.
 
+**Dates: **21st of November - 22nd of November
+
+**Opening hours: **
+
+21st of November: 10:00 - 16:00
+
+22nd of November: 10:00 - 15:00
+
+**Exhibitor interest for the career fair of 2018:**
+
+This year's career fair is fully booked. If you are interested to participate in the career fair of 2018, please submit information [here](http://eepurl.com/cqs0of)
+
 ## Diversity
 
 We are an organisation that truly believes the best teams are created when focusing on equality and diversity. We believe in everyone's equal worth and right to equal opportunities. Over the past years, this has been done through the integration of exchange students and a focus on gender balance within the teams of the organisations. This work has been very successful and has increased the competence within the organisation.

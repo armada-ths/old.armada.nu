@@ -54,7 +54,18 @@
   .pagesection-body-container {
     width: 100%;
   }
+  .pagesection-body-container .pagesection-body{
+    padding: 0em;
+  }
+  .pagesection-body-container .pagesection-body p{
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+  }
   .pagesection.right {
     flex-direction: column;
   }
+  .pagesection-body h1 {
+      padding: 0.5em 0.2em;
+    }
 }

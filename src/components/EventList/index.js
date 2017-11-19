@@ -61,7 +61,7 @@ class EventList extends React.Component {
             </div>
             <div className="modalinfo">
               <h2>{event.name}</h2>
-                <div className='modal-property'>
+                <div className='modal-property-event'>
                   <div className='icon-group'>
                     <img className='icon' src='/assets/calendar-round.svg'/>
                     {eventdate.getDate() != eventdate_end.getDate() ? (

@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import PageSections from "../../components/PageSections"
-import PageSectionsLayout from "../PageSectionsLayout"
 import Contacts from "../../components/Contacts"
 import Page from "../Page"
 

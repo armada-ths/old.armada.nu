@@ -5,9 +5,9 @@ menuPage: false
 priority: '5'
 header: /assets/TheFair_small.jpg
 ---
-## Armada Talks Stream
+## LIVE: watch live streaming of Armada Talks 2017
 
-Armada Talks is an event held during the fair and consists of inspirational talks by successful speakers within various fields. A talk is around 30 minutes long followed by audience questions, and topics include technology, entrepreneurship, innovation and life on space. Armada Talks is held at **Sydöstra Galleriet** **in** **KTH library between 10-16** **both fair days** and everyone is most welcome to experience the talks live! There is about 100 seats available on the spot, but don't worry if you can't be there physically or don't manage to get a seat - all the talks will be live streamed and available on this page. See schedule of the talks below.
+A talk is around 30 minutes long followed by audience questions. Topics include technology, entrepreneurship, innovation and life on space. Armada Talks is held at **Sydöstra Galleriet** **in** **KTH library both fair days** and everyone is most welcome to experience the talks live! If you can't be there physically or don't manage to get a seat - all the talks will be live streamed and available on this page. See schedule of the talks below.
 
 **Tuesday Nov 21**\
 10.15: Rebecka Cedering Ångström\

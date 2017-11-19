@@ -63,24 +63,45 @@
   .modal-property{
     display: flex;
     flex-direction: column;
+    padding: 1em 0em 1em 1em;
+    align-self: center;
+  }
+  .modal-property .icon{
+    width: 25px;
+    height: 25px;
+  }
+  .modal-property .icon-group{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    //margin: 0.15em 0em;
+  }
+  .modal-property p{
+    margin: 0 0 0 5px;
+  }
+
+  .modal-property-event{
+    display: flex;
+    flex-direction: column;
     padding: 1em 0em 1em 10em;
     align-self: center;
   }
+  .modal-property-event .icon{
+    width: 25px;
+    height: 25px;
+  }
+  .modal-property-event .icon-group{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    //margin: 0.15em 0em;
+  }
+  .modal-property-event p{
+    margin: 0 0 0 5px;
+  }
 
-    .modal-property .icon{
-      width: 25px;
-      height: 25px;
-    }
-    .modal-property .icon-group{
-      text-align: center;
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      //margin: 0.15em 0em;
-    }
-    .modal-property p{
-      margin: 0 0 0 5px;
-    }
 }
 
 .modalinfo .description-container {

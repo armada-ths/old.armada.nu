@@ -18,6 +18,9 @@
 .pagesection.right {
   flex-direction: row-reverse;
 }
+.pagesection-body-container .pagesection-body p {
+  padding-bottom: 1em;
+}
 .pagesection-body-container {
   width: 50%;
   .pagesection-body {
@@ -27,14 +30,25 @@
     h1 {
       font-size: 1.75em;
       line-height: 1.25em;
+      padding-bottom: 1em;
     }
     h2 {
       font-size: 1.25em;
       line-height: 1.25em;
+      padding-bottom: 1em;
     }
     .title {
       color: blue;
     }
+  }
+}
+
+@media screen and (max-width: $iphone-SE) {
+  .pagesection-body-container .pagesection-body h1 {
+    font-size: 1.55em;
+  }
+  .pagesection-body-container .pagesection-body h2 {
+    font-size: 1.2em;
   }
 }
 
@@ -50,22 +64,24 @@
   .pagesection {
     display: flex;
     flex-direction: column;
+    width: 100vw;
   }
   .pagesection-body-container {
-    width: 100%;
+    width: auto;
+    padding-left: 1em;
+    padding-right: 1em;
   }
   .pagesection-body-container .pagesection-body{
     padding: 0em;
   }
-  .pagesection-body-container .pagesection-body p{
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
-  }
+
   .pagesection.right {
     flex-direction: column;
   }
-  .pagesection-body h1 {
-      padding: 0.5em 0.2em;
-    }
+  .dark {
+    background-color: white;
+  }
+  .dark img{
+    background-color: $licorice;
+  }
 }

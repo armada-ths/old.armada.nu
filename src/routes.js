@@ -12,7 +12,6 @@ import Plainpage from "./layouts/Plainpage"
 import Contactpage from "./layouts/Contactpage"
 import News from "./layouts/News"
 import Events from "./layouts/Events"
-import PageSectionsLayout from "./layouts/PageSectionsLayout"
 import ExhibitorInfo from "./layouts/ExhibitorInfo"
 import PageSection from "./components/PageSection"
 import Exhibitors from "./layouts/Exhibitors"
@@ -32,7 +31,6 @@ const PageContainer = (props) => (
       Contactpage,
       News,
       Events,
-      PageSectionsLayout,
       ExhibitorInfo,
       Plainpage,
       PageSection,

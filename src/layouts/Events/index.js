@@ -1,20 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
-
 import Page from "../Page"
 import EventList from "../../components/EventList"
-
 import "./index.scss"
 
 const Events= (props) => {
   return (
-      <div className="content">
-        <div className="Events-container">
-          <Page { ...props } >
-          </Page>
-        <EventList {...props}/>
-        </div>
-      </div>
+    <div className="Events-container">
+      <Page { ...props }/>
+      <EventList {...props}/>
+    </div>
   )
 }
 

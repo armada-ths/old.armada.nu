@@ -1,17 +1,14 @@
 @import "../../styles/global";
+@import "../../styles/_variables";
 
 .aboutpage-container {
-	max-width: 850px;
-	margin: auto;
-	margin-top: 3em;
-	margin-bottom: 3em;
-
+	padding-top: 3em;
+  max-width: $page-width;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-
 	.aboutpage-container {
-        margin: 1em 5vw 0em 5vw;
+		padding: 3em 1em 0em 1em;
 	}
 
 }

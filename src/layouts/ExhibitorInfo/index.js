@@ -1,19 +1,18 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-import PageSectionsLayout from "../PageSectionsLayout"
+import PageSections from "../../components/PageSections"
 import Contacts from "../../components/Contacts"
+import Page from "../Page"
 
 
 const ExhibitorInfo = (props) => {
 
   return (
-
     <div>
-    <PageSectionsLayout {...props} pagetype="Exhibitorinfo"/>
-
-    <Contacts />
-     </div>
+      <Page {...props}/>
+      <PageSections/>
+      <Contacts />
+    </div>
   )
 }
 

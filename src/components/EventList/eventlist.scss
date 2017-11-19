@@ -29,6 +29,7 @@
   }
 .event-item .details-section .name{
     text-align: left;
+    padding: 0.1em 0em 0.1em 0em;
   }
 .event-item .details-section .description {
   text-align: left;
@@ -41,6 +42,7 @@
 .event-item .details-section .event-property .icon{
     width: 1.5em;
     padding: 0em 0.5em 0em 0em;
+    align-self: center;
   }
 .event-item .details-section .event-property p{
   margin: 0;
@@ -70,12 +72,12 @@
 .pastEvents{
   padding-top: 3em;
   h2{
-    color: $licorice !important;
+    color: $licorice;
   }
   .pastEvent{
     //z-index: 10;
-    //opacity: .5;
-    //filter: alpha(opacity=50);
+    opacity: .5;
+    filter: alpha(opacity=50);
   }
 }
 
@@ -86,7 +88,7 @@
 }
 .modalbutton{
   text-align: center;
-  padding: 1em;
+  padding-bottom: 1em;
   .rsvpbutton{
     display: inline-block;
     border-radius: 4px;
@@ -141,9 +143,19 @@
   .events-feed {
     padding: 0%;
   }
+  .event-item .details-section .name{
+    text-align: center;
+  }
+  .event-item .details-section{
+    width: 100%;
+    padding-left: 0;
+  }
+  .event-item .details-section .event-property{
+    width: 100%;
+  }
   .event-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 1em;
     p {
       font-size: $text-standard-mobile;
@@ -160,28 +172,12 @@
       height: 1.2em;
       padding: 0em 0.2em 0em 0em;
     }
-  .image-section{
-    width: auto;
-    max-height: 100%;
-    img{
-      left: 50%;
-      top: 50%;
-      width: 100%;
-      height: auto;
-    }
+  .event-item .image-section{
+    width: 100%;
+    margin: auto;
   }
   .modalbutton .rsvpbutton{
-    display: inline-block;
-    border-radius: 4px;
-    background-color: $melon;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 16px;
     padding: 1em;
     width: 15em;
-    transition: all 0.5s;
-    margin: 5px;
-    cursor: pointer;
-    }
+  }
 }

@@ -6,9 +6,7 @@ menuPage: true
 priority: '5'
 header: /assets/TheFair_small.jpg
 ---
-## LIVE: Armada Talks 2017
-
-
+## Armada Talks 2017
 
 ## Schedule 21st of November:
 

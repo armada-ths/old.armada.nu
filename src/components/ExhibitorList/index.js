@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import EasterEgg from "react-easter";
+import Confetti from "react-confetti";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./exhibitorlist.scss";
@@ -11,6 +13,9 @@ import Loading from "../Loading"
 const urlPropsQueryConfig = {
     exhibitorName: { type: UrlQueryParamTypes.string, queryParam: 'exhibitorName' },
 };
+
+const armada2017 = ["a","r","m","a","d","a","2","0","1","7"];
+const banquet = ["b","a","n","q","u","e","t"];
 
 class ExhibitorList extends React.Component {
     constructor(props) {
@@ -167,6 +172,18 @@ class ExhibitorList extends React.Component {
 
         return (
             <div className = "exhibitors">
+
+            <EasterEgg keys={armada2017} timeout={7000}>
+              <div className="armadaRainbow easterEggPosition"/>
+            </EasterEgg>
+
+            <EasterEgg keys={banquet} timeout={10000}>
+              <div className="armadaConfetti easterEggPosition">
+                <Confetti width={2000} height={2000} wind={0.03} numberOfPieces={500} confettiSource={{x: -100, y: 120}} gravity={0.15}/>
+              </div>
+            </EasterEgg>
+
+
                 <Helmet
                     title={ "Exhibitors" }
                 />

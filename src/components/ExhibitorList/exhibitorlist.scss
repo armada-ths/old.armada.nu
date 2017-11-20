@@ -10,6 +10,14 @@
   25% { left: 125%; }
   100% { left: 125%; }
 }
+@-webkit-keyframes rainbow {
+  0% {background-position: left top}
+  100% {background-position: right top}
+}
+@keyframes rainbow {
+    0% {background-position: left top}
+    100% {background-position: right top}
+}
 
 .modalimage-exhib {
   margin-right: 20%;
@@ -307,6 +315,22 @@
 .green-text {
   color: $melon;
   font-weight:bold;
+}
+.easterEggPosition{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.armadaRainbow{
+  animation: rainbow 2s linear infinite;
+  background-image: linear-gradient(to right,$diversity,$grape,$melon,$diversity);
+  background-size: 100000px;
+}
+.armadaConfetti {
+
 }
 
 // flipped phone

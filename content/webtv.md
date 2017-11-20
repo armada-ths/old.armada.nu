@@ -8,6 +8,10 @@ header: /assets/TheFair_small.jpg
 ---
 ## Armada Talks 2017
 
+In order to make your experience even better, we have just the event for you: Armada Talks! We have gathered som true inspirational people that will share their stories about Artificial Intelligence, innovation & digitalization, integration in the modern society, life in space and so much more. All talks will be live streamed below and will be available to watch afterwards. 
+
+Do you want to be inspired by Armada Talks live? Then visit KTHB (KTH Library)!
+
 ## Schedule 21st of November:
 
 **10.00** Rebecka Cedering Ångström\

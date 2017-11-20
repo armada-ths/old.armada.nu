@@ -44,6 +44,8 @@
   }
 }
 
+
+
 // Mobile
 @media screen and (max-width: $breakpoint-mobile) {
   #footer {
@@ -62,3 +64,159 @@
     }
   }
 }
+
+.track {
+      background: #fff;
+      height: 160px;
+      margin: 25px 0;
+      padding: 30px 0 0;
+      position: fixed;
+      bottom: 0px;
+      z-index: 1000;
+      width: 100vw;
+}
+.track:before, .track:after {
+    background: none repeat scroll 0 0 white;
+    content: "";
+    display: block;
+    height: 145px;
+    position: absolute;
+    top: 20px;
+    width: 20px;
+}
+.track:before {left: -10px;}
+.track:after {right: -5px;}
+.lights span {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      border-radius: 100%;
+      background: $melon;
+      box-shadow: 0 0 10px 5px rgba(0,215,144, .8);
+      margin: 45px 4%;
+}
+.packman {
+     animation: eat 10s infinite linear;
+     top: 0;
+     left: 0;
+     position: absolute;
+     height: 100%;
+     width: 100%;
+}
+.eat {
+     position: absolute;
+     top: 30px;
+     left: -60px;
+     width:1px;
+     height:1px;
+     border-right:60px solid transparent;
+     border-top:60px solid yellow;
+     border-left:60px solid yellow;
+     border-bottom:60px solid yellow;
+     border-radius: 60px;
+     z-index: 3;
+
+}
+.eat:after {
+    background: black;
+    border-radius: 50%;
+    content: "";
+    height: 20px;
+    left: -10px;
+    position: absolute;
+    top: -40px;
+    width: 20px;
+    z-index: 5;
+}
+.eat:before {
+    border-color: yellow transparent yellow yellow;
+    border-radius: 60px 60px 60px 60px;
+    border-right: 60px solid transparent;
+    border-style: solid;
+    border-width: 60px;
+    content: "";
+    height: 1px;
+    left: -60px;
+    position: absolute;
+    top: -60px;
+    width: 1px;
+    z-index: -1;
+    animation: mouth .95s infinite linear;
+ }
+
+.eat-trail {
+    background: white;
+    position: absolute;
+    width: 100%;
+    height: 140px;
+    left: 0px;
+    top: 40px;
+    opacity: 1;
+     animation: eat-trail 10s infinite linear;
+     z-index: 2;
+}
+
+.ingos {
+    left: 0;
+    position: absolute;
+    top: -5%;
+    width: 100%;
+    z-index: 1;
+     animation: ingos 10s infinite linear;
+}
+.ingo {
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: 0;
+    width: 170px;
+
+}
+.ingo:before, .ingo:after {
+     content:'';
+     width:1px;
+     height:1px;
+     position: absolute;
+     bottom: 0;
+}
+.ingo:before {left: 5px;}
+.ingo:after {right: 5px;}
+
+.one {left: 200px;}
+.two {left: 320px;}
+.three {left: 80px;}
+
+ /***************keyframes******************/
+@keyframes eat {
+    0% { left: -20%;}
+    50% { left: 50%;}
+    100% { left: 120%;}
+       }
+@keyframes ingos {
+    0% { left: -10%;}
+    50% { left: 50%;}
+    100% { left: 100%;}
+       }
+
+@keyframes eat-trail {
+    0% { left: -20%; width:0%;}
+    50% { left: 0%; width:50%}
+    100% { left: 0%; width:120%}
+       }
+@keyframes mouth {
+    0%  { transform: rotate(0deg); }
+    10% { transform: rotate(-18deg); }
+    20% { transform: rotate(-36deg); }
+    30% { transform: rotate(-54deg); }
+    40% { transform: rotate(-72deg); }
+    50% { transform: rotate(-90deg); }
+    60% { transform: rotate(-72deg); }
+    70% { transform: rotate(-54deg); }
+    80% { transform: rotate(-36deg); }
+    90% { transform: rotate(-18deg); }
+    100% { transform: rotate(0deg); }
+       }
+@keyframes eyes {
+     0% { transform: rotate(0deg); margin-left: -5px;}
+     50% {transform: rotate(180deg); margin-left: 10px;}
+     100% {transform: rotate(0deg); margin-left: -5px;}
+    }

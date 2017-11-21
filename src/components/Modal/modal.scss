@@ -63,7 +63,7 @@
   .modal-property{
     display: flex;
     flex-direction: column;
-    padding: 1em 0em 1em 1em;
+    padding: 1em 0em 1em 0em;
     align-self: center;
   }
   .modal-property .icon{
@@ -173,6 +173,9 @@ a:hover {
     }
   }
   .modalcontent .modal-property{
+    padding: 1em 0em 1em 0em;
+  }
+  .modalcontent .modal-property-event{
     padding: 1em 0em 1em 2.5em;
   }
   .modalcontent p{
@@ -211,4 +214,10 @@ a:hover {
       justify-content: center;
       font-size: $text-standard-mobile;
     }
+}
+
+@media screen and (max-width: $breakpoint-ipad) {
+  .modalcontent .modal-property-event{
+    padding: 1em 0em 1em 2.5em;
+  }
 }

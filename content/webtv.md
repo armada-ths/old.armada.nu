@@ -12,6 +12,8 @@ In order to make your experience even better, we have just the event for you: Ar
 
 Do you want to be inspired by Armada Talks live? Then visit KTHB (KTH Library)!
 
+<iframe width="560" height="315" src="https://youtu.be/toLWgq9V_vk" frameborder="0" allowfullscreen></iframe>
+
 ## Schedule 21st of November:
 
 **10.00** Rebecka Cedering Ångström\

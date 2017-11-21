@@ -4,6 +4,7 @@
 .aboutpage-container {
 	padding-top: 3em;
   max-width: $page-width;
+	margin: auto;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {

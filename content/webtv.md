@@ -10,13 +10,9 @@ header: /assets/TheFair_small.jpg
 
 In order to make your experience even better, we have just the event for you: Armada Talks! We have gathered som true inspirational people that will share their stories about Artificial Intelligence, innovation & digitalization, integration in the modern society, life in space and so much more. All talks will be live streamed through the link below and available to watch afterwards:
 
-
-
 <div class="youtube-movie">
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cmiXciY7anM" frameborder="0" gesture="media" allowfullscreen></iframe></div>
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cmiXciY7anM" frameborder="0" allowfullscreen></iframe></div>
 
 Do you want to be inspired by Armada Talks live? Then visit KTHB (KTH Library)!
 

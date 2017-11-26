@@ -9,6 +9,7 @@ import PageError from "./layouts/PageError"
 import Homepage from "./layouts/Homepage"
 import Aboutpage from "./layouts/Aboutpage"
 import Plainpage from "./layouts/Plainpage"
+import Recruitmentpage from "./layouts/Recruitmentpage"
 import Contactpage from "./layouts/Contactpage"
 import News from "./layouts/News"
 import Events from "./layouts/Events"
@@ -35,6 +36,7 @@ const PageContainer = (props) => (
       Plainpage,
       PageSection,
       Exhibitors,
+      Recruitmentpage,
     }}
   />
 );

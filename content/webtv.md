@@ -8,7 +8,7 @@ header: /assets/TheFair_small.jpg
 ---
 ## Armada Talks 2017
 
-In order to make your experience even better, we have just the event for you: Armada Talks! We have gathered som true inspirational people that will share their stories about Artificial Intelligence, innovation & digitalization, integration in the modern society, life in space and so much more. All talks will be live streamed through the link below and available to watch afterwards:
+In order to make your experience even better, we have just the event for you: Armada Talks! We have gathered som true inspirational people that will share their stories about Artificial Intelligence, innovation & digitalization, integration in the modern society, life in space and so much more. Watch all the talks below. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/toLWgq9V_vk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 

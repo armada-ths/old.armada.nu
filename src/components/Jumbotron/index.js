@@ -89,9 +89,12 @@ class Jumbotron extends React.Component {
     let video_or_image = video ? video : image;
     let header_class = video ? "header-home" : "header-image";
 
+    /*
+     * The date here is hardcoded because there is no api that gives the dates as answer.
+     **/
     return (
         <div id={"header"}>
-            <div className="logo-container">
+            <div className={header_class === "header-home" ? "logo-container fixed" : "logo-container"}>
                     <img src={require('../../../content/assets/images/header-images/logo.png')} />
                     <p className="logo-date"> 21-22 NOV</p>
                     {header_class === "header-home" ? 

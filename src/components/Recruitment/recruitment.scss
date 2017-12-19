@@ -40,4 +40,185 @@ button[disabled] {
   background-color: $grape;
   box-shadow: none;
   cursor: not-allowed;
-}       
+}
+
+.events {
+  width: 100%;
+  height:100%;
+  margin: auto;
+}
+.events-feed {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+.event-item {
+  display: flex;
+  flex-direction: row;
+  padding: 2em;
+  cursor: pointer;
+  cursor: hand;
+}
+.event-item .image-section{
+  width: 40%;
+}
+.event-item .details-section{
+  width: 60%;
+  padding-left: 1em;
+}
+.event-item .details-section .name{
+  text-align: left;
+  padding: 0.1em 0em 0.1em 0em;
+}
+.event-item .details-section .description {
+  text-align: left;
+}
+.event-item .details-section .event-property{
+  display: flex;
+  flex-direction: row;
+  height: 1.5em;
+}
+.event-item .details-section .event-property .icon{
+  width: 1.5em;
+  padding: 0em 0.5em 0em 0em;
+  align-self: center;
+}
+.event-item .details-section .event-property p{
+  margin: 0;
+  text-align: left;
+  align-self: center;
+}
+.event-item:hover {
+  cursor: pointer;
+  cursor: hand;
+  .name{
+    text-decoration: underline;
+  }
+}
+.comingEvents{
+  cursor: pointer;
+  h2{
+    color: $licorice;
+  }
+}
+.thickline{
+  hr{
+    border: none;
+    height: 5px;
+    background-color: #333; /* Modern Browsers */
+  }
+}
+.pastEvents{
+  padding-top: 3em;
+  h2{
+    color: $licorice;
+  }
+  .pastEvent{
+    //z-index: 10;
+    opacity: .5;
+    filter: alpha(opacity=50);
+  }
+}
+
+.modalimage-event {
+  img{
+    width: 100%;
+  }
+}
+.modalbutton{
+  text-align: center;
+  padding-bottom: 1em;
+  .rsvpbutton{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: $melon;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    width: 250px;
+    transition: all 0.5s;
+    margin: 5px;
+    cursor: pointer;
+  }
+  .rsvpbutton span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .rsvpbutton span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .rsvpbutton:hover span{
+    padding-right: 25px;
+  }
+  .rsvpbutton:hover span:after{
+    opacity: 1;
+    right: 0;
+  }
+  .rsvpclosed{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    transition: all 0.5s;
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+
+  .events-feed {
+    padding: 0%;
+  }
+  .event-item .details-section .name{
+    text-align: center;
+  }
+  .event-item .details-section{
+    width: 100%;
+    padding-left: 0;
+  }
+  .event-item .details-section .event-property{
+    width: 100%;
+  }
+  .event-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    p {
+      font-size: $text-standard-mobile;
+    }
+  }
+  .event-item .details-section .name{
+    font-size: 1em;
+  }
+  .event-item .details-section .event-property p{
+    font-size: $text-standard-mobile;
+  }
+  .event-item .details-section .event-property .icon{
+    width: 1.2em;
+    height: 1.2em;
+    padding: 0em 0.2em 0em 0em;
+  }
+  .event-item .image-section{
+    width: 100%;
+    margin: auto;
+  }
+  .modalbutton .rsvpbutton{
+    padding: 1em;
+    width: 15em;
+  }
+}

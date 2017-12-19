@@ -43,8 +43,10 @@
   }
   .rolelist {
 
+
     h1,h2,h3,h4,h5{
     text-align: left;
+    margin-top: 2%;
     }
 
   .applysection{
@@ -56,12 +58,15 @@
     border-width: thin;
   }
 
-  .rolesection{
-    margin-top: 2%;
+
+
+  .role-container{
+
   }
 
-.role-header{
-    cursor: pointer;
-}
+  .role-header{
+      cursor: pointer;
+      margin-top: 2%;
+  }
 
 }

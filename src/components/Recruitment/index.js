@@ -82,10 +82,16 @@ class RoleSection extends React.Component {
     render() {
            return ( <div className='role-container'>
                 <div className='role-header' onClick={() => this.setState({collapsed: !this.state.collapsed})} >
-                    <h4>  {this.props.role.name  }</h4>
-                    <p> {'^'} </p> 
+                    <div className='role-header-left' >
+                        <h4>  {this.props.role.name  }</h4>
+                    </div>
+                    <div className='role-header-right' >
+                        <p className={'arrow-icon' + (this.state.collapsed ? ' collapsed-arrow': ' expanded-arrow')}>  ^ </p>
+                    </div>
                 </div>
+               <div className={'role-description' + (this.state.collapsed ? '': ' expanded')}>
                 {!this.state.collapsed ? <p>  {this.props.role.description  }</p> : null }
+               </div>
             </div>
            );
 

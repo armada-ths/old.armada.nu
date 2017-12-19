@@ -42,11 +42,9 @@
     cursor: not-allowed;
   }
   .rolelist {
-
-
     h1,h2,h3,h4,h5{
     text-align: left;
-    margin-top: 2%;
+    margin-bottom: 2%;
     }
 
   .applysection{
@@ -59,14 +57,46 @@
   }
 
 
-
   .role-container{
 
   }
 
-  .role-header{
-      cursor: pointer;
-      margin-top: 2%;
-  }
+
+.role-header{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.role-header-left{
+    width: 90%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.role-header-right{
+    width: 10%;
+    text-align: right;
+}
+
+.arrow-icon{
+    float: right;
+    transition: transform 0.35s ease-in-out;
+}
+.collapsed-arrow{
+    transform: rotate(180deg);
+}
+.expanded-arrow{
+    transform: rotate(360deg);
+}
+.role-description{
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out;
+    margin-bottom: 2%;
+}
+.expanded {
+    max-height: 500px;
+}
+
 
 }

@@ -1,7 +1,7 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
-.Recruitmentpage-container {
+.Recruitment-container {
   padding: 3em 0em;
   max-width: $page-width;
   //position: static;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped){
-  .Recruitmentpage-container {
+  .Recruitment-container {
     padding: 3em 1em;
     //position: static;
     //max-width: 850px;

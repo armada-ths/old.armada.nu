@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import './recruitment.scss';
+import {StickyContainer, Sticky} from 'react-sticky';
+
 
 
 
@@ -33,12 +35,12 @@ class Recruitment extends React.Component {
             //let eventToDisplay = this.state.events.filter(event => event.id == this.state.eventId)[0];
             const groups = Object.keys(this.state.groups).map((groupkey)=> {
                 return (<div>
-                    <p>{groupkey}</p>
+                    <h3>{groupkey}</h3>
 
                     {this.state.groups[groupkey].map((role) => {
                         return(
                             <div>
-                                <p>  {role.name  }</p>
+                                <h4>  {role.name  }</h4>
                                 <p>  {role.description  }</p>
                             </div>
 
@@ -48,19 +50,31 @@ class Recruitment extends React.Component {
                 </div>)
                 });
         return (
-            <div className="events">
-                {(this.state.recruitmentName)}
-                {(this.state.recruitmentStart)}
-                {(this.state.recruitmentEnd)}
+            <div className="rolelist">
+
+                <StickyContainer>
+                    <Sticky>
+                        {
+                            ({style}) => {
+                                return (
+                                    <div style={style}>
+                                        <div className={"applysection"}>
+                                            <a href="https://ais.armada.nu/fairs/2017/recruitment/">
+                                                <button> APPLY HERE</button>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                )
+                            }
+                        }
+                    </Sticky>
+
                 {groups}
+                </StickyContainer>
+            </div>
 
-
-            {/*<a href="https://ais.armada.nu/fairs/2017/recruitment/"> <button> APPLY HERE*/}
-            {/*</button>*/}
-            {/*</a>*/}
-        </div>
-
-        )}
+            )}
 
 }
 

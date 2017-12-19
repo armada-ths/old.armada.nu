@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import './recruitment.scss';
 import {StickyContainer, Sticky} from 'react-sticky';
+import {PropTypes} from 'prop-types';
 
 
 
@@ -87,6 +88,10 @@ class RoleSection extends React.Component {
 
     }
 
+}
+
+RoleSection.propTypes = {
+    role: PropTypes.object,
 }
 
 

@@ -37,7 +37,9 @@ class Recruitment extends React.Component {
                     <h3>{groupkey}</h3>
 
                     {this.state.groups[groupkey].map((role) => {
+
                         return( <RoleSection role={role} />);
+
                     })}
 
                 </div>)
@@ -63,6 +65,7 @@ class Recruitment extends React.Component {
                     </Sticky>
 
                 {groups}
+
                 </StickyContainer>
             </div>
 

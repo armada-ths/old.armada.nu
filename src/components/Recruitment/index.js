@@ -5,8 +5,6 @@ import {StickyContainer, Sticky} from 'react-sticky';
 
 
 
-
-
 class Recruitment extends React.Component {
     constructor(props) {
         super(props);
@@ -38,13 +36,7 @@ class Recruitment extends React.Component {
                     <h3>{groupkey}</h3>
 
                     {this.state.groups[groupkey].map((role) => {
-                        return(
-                            <div>
-                                <h4>  {role.name  }</h4>
-                                <p>  {role.description  }</p>
-                            </div>
-
-                        );
+                        return( <RoleSection role={role} />);
                     })}
 
                 </div>)
@@ -64,7 +56,6 @@ class Recruitment extends React.Component {
                                             </a>
                                         </div>
                                     </div>
-
                                 )
                             }
                         }
@@ -75,9 +66,28 @@ class Recruitment extends React.Component {
             </div>
 
             )}
-
 }
 
+class RoleSection extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {collapsed: true};
+    }
+
+    render() {
+           return ( <div className='role-container'>
+                <div className='role-header' onClick={() => this.setState({collapsed: !this.state.collapsed})} >
+                    <h4>  {this.props.role.name  }</h4>
+                    <p> {'^'} </p> 
+                </div>
+                {!this.state.collapsed ? <p>  {this.props.role.description  }</p> : null }
+            </div>
+           );
+
+    }
+
+}
 
 
 export default Recruitment;

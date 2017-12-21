@@ -11,11 +11,11 @@ dark: false
 
 **Location:** Annexet, Ericsson Globe Arenas
 
+**Dresscode: **Dark suite
+
 ## Schedule:
 
 **Before 12:00** All guests will be asked to confirm their attendance to the banquet by their respective Career Fair Hosts. If there has been any changes, please notify your Career Fair Host.
-
-**15:00** All guests will receive an email regarding their placement at the dinner, including the names of the people at their table.
 
 **18:00** Doors will open to the banquet
 

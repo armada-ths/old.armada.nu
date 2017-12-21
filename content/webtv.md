@@ -1,31 +1,33 @@
 ---
-title: Webtv
+title: Talks
 layout: Plainpage
-menuPage: false
+description: Armada Talks
+menuPage: true
 priority: '5'
 header: /assets/TheFair_small.jpg
 ---
 
-## LIVE: Armada Talks 2017
+## Armada Talks 2017
 
-A talk is around 30 minutes followed by audience questions. Topics include technology, innovation, entrepreneurship and integration. Armada Talks is held at **Sydöstra Galleriet** **in** **KTH library both fair days** and everyone is most welcome to experience the talks live! If you can't be there physically or don't manage to get a seat - all the talks will be live streamed and available through our web TV on this page. See schedule of the talks below.
+In order to make your experience even better, we have just the event for you: Armada Talks! We have gathered som true inspirational people that will share their stories about Artificial Intelligence, innovation & digitalization, integration in the modern society, life in space and so much more. Watch all the talks below. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/toLWgq9V_vk" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/toLWgq9V_vk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
-**Tuesday Nov 21**\
-10.15: Rebecka Cedering Ångström\
-11.15: Pa Modou Badjie \
-12.15: Iman Aldebe\
-13.15: Tuva Palm\
-14.15: Donnie LC Lygonis\
-15.15: Niklas Ingvar
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cmiXciY7anM" frameborder="0" allowfullscreen></iframe></div>
 
-**Wednesday Nov 22**\
-10.15: Max Ortiz Catalán\
-11.15: Leo Razzak\
-12.15: Johanna Frelin\
-13.15: Christer Fuglesang\
-14.15: Carolin Solskär
+## Armada Talks day 1:
 
-The talks will also be possible to watch after the fair.
+**27:50 - 54:25** Rebecka Cedering Ångström\
+**1:23:35 - 2:02:10** Pa Modou Badjie\
+**2:16:25 - 2:50:30** Iman Aldebe\
+**3:21:30 - 4:02:35** Tuva Palm\
+**4:19:00 - 4:54:15** Donnie Sc Lygonis\
+**5:03:00 - 5:34:35** Niklas Ingvar
 
+## Armada Talks day 2:
+
+**4:50 - 30:50** Max Ortiz Catalán\
+**39:50 - 1:01:25** Leo Razzak\
+**1:45:45 - 2:12:50** Johanna Frelin\
+**2:42:05 - 3:17:20** Christer Fuglesang\
+**3:40:00 - 4:07:30** Carolin Solskär

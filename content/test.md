@@ -1,7 +1,7 @@
 ---
 title: test
 layout: Page
-menuPage: false
+menuPage: true
 priority: '13'
 header: /assets/DSC_1781.jpg
 ---

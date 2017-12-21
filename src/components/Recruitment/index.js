@@ -17,24 +17,23 @@ class Recruitment extends React.Component {
         };
     }
 
-    componentDidMount() {  // only called when eventpage is created or updated.
-        axios.get('https://ais2.armada.nu/api/recruitment')  // fetch data witt promise (then) and res(ult)
+    componentDidMount() {  // only called when page is created or updated.
+        axios.get('https://ais.armada.nu/api/recruitment')  // fetch data witt promise (then) and res(ult)
             .then( (res)  => {
                 let result = res.data;  // create variable and store result within parameter data
-                this.setState({ groups: result[0].groups, recruitmentName: result[0].name, recruitmentStart: result[0].start_date, recruitmentEnd: result[0].end_date });  // component saves its own data
-                // Get from url path the GET params ?id=number, to know what event to display
+                this.setState({ groups: result[0].groups, 
+                                recruitmentName: result[0].name, 
+                                recruitmentStart: result[0].start_date, 
+                                recruitmentEnd: result[0].end_date });  // component saves its own data
             });
     }
 
 
 
     render() {
-            /** OBS, a tag needs to be outside button for the link to work in firefox **/
-                // get the event to display. Don't know behaviour when this.state.eventId = undefined
-            //let eventToDisplay = this.state.events.filter(event => event.id == this.state.eventId)[0];
             const groups = Object.keys(this.state.groups).map((groupkey)=> {
-                return (<div>
-                    <h3>{groupkey}</h3>
+                return (<div className='groups'>
+                    <h3 className='group-header' >{groupkey}</h3>
 
                     {this.state.groups[groupkey].map((role) => {
 
@@ -44,32 +43,37 @@ class Recruitment extends React.Component {
 
                 </div>)
                 });
-        return (
-            <div className="rolelist">
+        if (groups.length > 0) {
+            return (
+                <div className="rolelist">
 
-                <StickyContainer>
-                    <Sticky>
-                        {
-                            ({style}) => {
-                                return (
-                                    <div style={style}>
-                                        <div className={"applysection"}>
-                                            <a href="https://ais.armada.nu/fairs/2017/recruitment/">
-                                                <button> APPLY HERE</button>
-                                            </a>
+                    <StickyContainer>
+                        <Sticky>
+                            {
+                                ({style}) => {
+                                    return (
+                                        <div style={style}>
+                                            <div className={"applysection"}>
+                                                <a href="https://ais.armada.nu/fairs/2017/recruitment/">
+                                                    <button> APPLY HERE</button>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                )
+                                    )
+                                }
                             }
-                        }
-                    </Sticky>
+                        </Sticky>
 
-                {groups}
+                        {groups}
 
-                </StickyContainer>
-            </div>
+                    </StickyContainer>
+                </div>
 
-            )}
+                )
+        } else {
+            return (<h4> Application is closed, stay tuned for new roles </h4>);
+        }
+    }
 }
 
 class RoleSection extends React.Component {
@@ -86,10 +90,10 @@ class RoleSection extends React.Component {
                         <h4>  {this.props.role.name  }</h4>
                     </div>
                     <div className='role-header-right' >
-                        <p className={'arrow-icon' + (this.state.collapsed ? ' collapsed-arrow': ' expanded-arrow')}>  ^ </p>
+                        <p className={'arrow-icon' + (this.state.collapsed ? ' collapsed-arrow': ' expanded-arrow')}> › </p>
                     </div>
                 </div>
-               <div className={'role-description' + (this.state.collapsed ? '': ' expanded')}>
+               <div className={'role-description' + (this.state.collapsed ? ' collapsed': ' expanded')}>
                 {!this.state.collapsed ? <p>  {this.props.role.description  }</p> : null }
                </div>
             </div>

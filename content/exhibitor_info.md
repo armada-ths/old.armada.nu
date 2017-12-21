@@ -1,5 +1,5 @@
 ---
-title: Exhibitor Info
+title: For Exhibitors
 layout: ExhibitorInfo
 menuPage: true
 priority: 6

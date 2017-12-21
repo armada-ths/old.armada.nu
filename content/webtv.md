@@ -5,10 +5,27 @@ menuPage: false
 priority: '5'
 header: /assets/TheFair_small.jpg
 ---
-## Armada Talks
 
-Id magna est irure amet nostrud occaecat labore commodo deserunt aute do est excepteur enim mollit consectetur et proident est fugiat aute aliquip est consequat fugiat ut irure ea consectetur nisi elit ea voluptate dolore velit consectetur labore non dolore ex exercitation eiusmod esse nostrud exercitation ea reprehenderit ullamco cillum cupidatat tempor ullamco dolor labore laboris amet est laboris ut anim sint tempor exercitation commodo culpa do nostrud aliquip sunt sunt in ullamco dolore non laborum voluptate dolor et laborum laboris dolor ut officia tempor culpa dolor eiusmod dolore velit in labore id reprehenderit ad proident cillum sint ut eu officia pariatur aliqua reprehenderit velit tempor tempor in ea fugiat deserunt ex deserunt sunt fugiat incididunt duis sint do exercitation cillum excepteur laboris culpa ut eu esse ad et ut culpa ex aliquip duis pariatur ad in ea magna aute consequat pariatur duis reprehenderit duis enim officia ea tempor minim exercitation sed et fugiat veniam deserunt dolor laborum culpa labore nulla magna sit velit eiusmod mollit id laboris dolor occaecat reprehenderit veniam duis labore culpa reprehenderit veniam proident eu mollit cupidatat ex in in dolor aute in elit incididunt dolor laboris id est incididunt qui incididunt officia labore pariatur dolore anim deserunt consequat elit dolore proident fugiat enim dolore proident non amet magna eu nisi enim id labore veniam in excepteur eu quis dolore ut id adipisicing labore dolore ullamco tempor ut laborum adipisicing sed aute.
+## LIVE: Armada Talks 2017
 
-<div class="youtube-movie">
-<iframe src="https://www.youtube.com/embed/13wjnqn6V7M" frameborder="0" allowfullscreen></iframe>
-</div>
+A talk is around 30 minutes followed by audience questions. Topics include technology, innovation, entrepreneurship and integration. Armada Talks is held at **Sydöstra Galleriet** **in** **KTH library both fair days** and everyone is most welcome to experience the talks live! If you can't be there physically or don't manage to get a seat - all the talks will be live streamed and available through our web TV on this page. See schedule of the talks below.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/toLWgq9V_vk" frameborder="0" allowfullscreen></iframe>
+
+**Tuesday Nov 21**\
+10.15: Rebecka Cedering Ångström\
+11.15: Pa Modou Badjie \
+12.15: Iman Aldebe\
+13.15: Tuva Palm\
+14.15: Donnie LC Lygonis\
+15.15: Niklas Ingvar
+
+**Wednesday Nov 22**\
+10.15: Max Ortiz Catalán\
+11.15: Leo Razzak\
+12.15: Johanna Frelin\
+13.15: Christer Fuglesang\
+14.15: Carolin Solskär
+
+The talks will also be possible to watch after the fair.
+

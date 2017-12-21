@@ -142,6 +142,7 @@
 a:hover {
   text-decoration: underline;
 }
+
 @media screen and (max-width:1200px) {
   .modalinfo .description-container {
       padding: 0.5em 3em 0.5em 3em;
@@ -150,6 +151,7 @@ a:hover {
       font-weight: 300;
     }
 }
+
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
 
@@ -189,8 +191,14 @@ a:hover {
     .icon{
       width: 20px;
       height: 20px;
+
     }
+  .modalinfo .description-container .description {
+    padding: 0em 1em 0.5em 1em;
+    font-size: $text-standard-mobile;
+    line-height: $line-height-mobile;
   }
+
   .modalinfo .description-container {
     padding: 0em 1em 0.5em 1em;
     }
@@ -199,6 +207,7 @@ a:hover {
     font-size: $text-standard-mobile;
     line-height: $line-height-mobile;
   }
+
   .modalinfo .job-container {
       padding: 0.5em 0em 0.5em 0em;
     }
@@ -220,4 +229,5 @@ a:hover {
   .modalcontent .modal-property-event{
     padding: 1em 0em 1em 2.5em;
   }
+
 }

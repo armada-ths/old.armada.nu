@@ -9,6 +9,7 @@
   0% { left: -50%; }
   25% { left: 125%; }
   100% { left: 125%; }
+
 }
 @-webkit-keyframes rainbow {
   0% {background-position: left top}
@@ -17,6 +18,7 @@
 @keyframes rainbow {
     0% {background-position: left top}
     100% {background-position: right top}
+
 }
 
 .modalimage-exhib {
@@ -316,6 +318,7 @@
   color: $melon;
   font-weight:bold;
 }
+
 .easterEggPosition{
   position: fixed;
   height: 100vh;
@@ -332,6 +335,7 @@
 .armadaConfetti {
 
 }
+
 
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {

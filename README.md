@@ -1,6 +1,6 @@
 # Armada.nu
 
-Armdada.nu is built upon [Phenomic](https://github.com/MoOx/phenomic) and 
+Armada.nu is built upon [Phenomic](https://github.com/MoOx/phenomic) and 
 Netlify CMS](https://github.com/netlify/netlify-cms). Netlify CMS is a Content Management System that provides a graphical interface to edit the website. 
 
 Phenomic is a static site generator that creates a website out of what is build using the CMS. 
@@ -27,10 +27,12 @@ npm install
 npm start
 ```
 
-When developing locally you will not have access to the Admin panel. For this reason we have a separate environment to test the CMS in. 
+When developing locally you will not have access to the Admin panel. For this reason we have a separate environment to test the CMS in.
+The branch webtest is meant to be this environment and netlify can deploy that branch to another subdomain.
 
 ## Build for production
 To build for production there is a script available through phonemic. This can be run manually to create a production ready site. 
+If you deploy through netlify, you only need to provide this command once in when creating the netlify site. 
 
 ```sh
 npm run build
@@ -38,7 +40,7 @@ npm run build
 
 ## phenomic-cms
 
-Change the repo name in the config.yml in the admin directory.
+The cms tracks changes on a specific brach. Make sure when you merge branches that master and development branch still have branch master, and that webtest has branch webtest.
 
     backend:  
      name: github  

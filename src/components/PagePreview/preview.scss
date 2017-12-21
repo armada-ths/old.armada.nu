@@ -13,29 +13,24 @@ img {
 
 .preview-content{
     a ~ h1:hover,h2:hover {
-      text-align: left; // new
+      text-align: left;
       text-decoration: underline;
     }
-    h1,h2 {   // new
+    h1,h2 {
       text-align: left;
     }
     margin: 0px;
     padding: 0em 1em;
-
 }
-
 .ingress {
     margin-top: 1em 0em;
 }
-
 .ingress:hover {
   text-decoration: none;
 }
-
 .newsitem {
     padding-bottom: 5px;
 }
-
 .newsitem.regular {
     margin: 2em 0em;
     img {
@@ -44,7 +39,6 @@ img {
         height: auto;
         max-height: 281px;
     }
-
     .regular-news-link {
         width: 100%;
         display: flex;
@@ -59,7 +53,6 @@ img {
 	.preview-content {
 		margin: 0em 0em 3em 0em;
 	}
-
     img {
 		margin-bottom: 1em;
         width: 100%;
@@ -78,7 +71,6 @@ img {
             width: 100%;
         }
     }
-
 	.newsitem.regular {
 		img {
 			margin: 0em;

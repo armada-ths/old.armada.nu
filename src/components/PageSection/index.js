@@ -13,7 +13,6 @@ class PageSection extends React.Component {
             body: "",
         };
     }
-
     componentDidMount() {
         axios.get(this.props.__dataUrl)
             .then((res) => {
@@ -21,7 +20,6 @@ class PageSection extends React.Component {
                 this.setState({body: data.body});
             });
     }
-
     isMobile() {
         if (global.window != undefined) {
             return window.innerWidth < 470 ? true : false
@@ -33,9 +31,7 @@ class PageSection extends React.Component {
     render = () => {
         if (!this.isMobile()) {
 
-
             return (
-
                 <StickyContainer className={"pagesection " + (this.props.right ? "right" : "left")}>
                     <div className={"image "+ (this.props.dark ? "dark" : "light")}>
                         <Sticky>
@@ -46,7 +42,6 @@ class PageSection extends React.Component {
                                             <img src={this.props.header}/>
                                         </div>
                                     )
-
                                 }
                             }
                         </Sticky>
@@ -58,9 +53,7 @@ class PageSection extends React.Component {
                                 <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
                             </div>
                     </div>
-
                 </StickyContainer>
-
             )
         }
         else {
@@ -72,19 +65,13 @@ class PageSection extends React.Component {
                     </div>
 
                     <div className="pagesection-body-container">
-
-
-                                            <div className="pagesection-body">
-                                                <h1 className="pagesection-title">{this.props.title}</h1>
-                                                <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
-                                            </div>
-
+                      <div className="pagesection-body">
+                          <h1 className="pagesection-title">{this.props.title}</h1>
+                          <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
+                      </div>
                     </div>
-
                 </div>
-
             )
-
         }
     }
 }

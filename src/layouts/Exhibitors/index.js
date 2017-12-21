@@ -1,19 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
-
+import Page from "../Page"
 import ExhibitorList from "../../components/ExhibitorList"
 import "./index.scss"
-
 
 const Exhibitors = (props) => {
 
   return (
-
-   <div className="content">
     <div className= "Exhibitors-container">
-    <ExhibitorList {...props}/>
-     </div>
-   </div>
+      <Page { ...props } />
+      <ExhibitorList {...props}/>
+    </div>
   )
 }
 

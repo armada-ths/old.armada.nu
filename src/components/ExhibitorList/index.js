@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import EasterEgg from "react-easter";
+import Confetti from "react-confetti";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./exhibitorlist.scss";
@@ -11,6 +13,9 @@ import Loading from "../Loading"
 const urlPropsQueryConfig = {
     exhibitorName: { type: UrlQueryParamTypes.string, queryParam: 'exhibitorName' },
 };
+
+const armada2017 = ["a","r","m","a","d","a","2","0","1","7"];
+const banquet = ["b","a","n","q","u","e","t"];
 
 class ExhibitorList extends React.Component {
     constructor(props) {
@@ -47,8 +52,10 @@ class ExhibitorList extends React.Component {
     }
     getJobContainer(exhibitor){
         return(  <div className = "job-container">
-                <h3>Job Oportunities</h3>
-                {exhibitor.job_types.map((jobtype) => <div className="job-section"><li> {jobtype.name} </li></div>)}
+
+                <h3>Job Opportunities</h3>
+                {exhibitor.job_types.map((jobtype) => <div className="job-section">{jobtype.name}</div>)}
+
             </div>
         )
     }
@@ -107,12 +114,10 @@ class ExhibitorList extends React.Component {
 
     cssShine(value){
         if (global.document != undefined){
-
             let shineItems = global.document.getElementsByClassName(value);
             for (let i = 0; i < shineItems.length; i++){
                 shineItems[i].className += ' shine-loop';
             }
-
         }
     }
 
@@ -122,7 +127,6 @@ class ExhibitorList extends React.Component {
             while (shineItems.length> 0){
                 let className = shineItems[0].className;
                 shineItems[0].className = className.replace('shine-loop','') ;
-
             }
         }
     }
@@ -174,8 +178,19 @@ class ExhibitorList extends React.Component {
         }
 
         return (
-
             <div className = "exhibitors">
+
+            <EasterEgg keys={armada2017} timeout={7000}>
+              <div className="armadaRainbow easterEggPosition"/>
+            </EasterEgg>
+
+            <EasterEgg keys={banquet} timeout={10000}>
+              <div className="armadaConfetti easterEggPosition">
+                <Confetti width={2000} height={2000} wind={0.03} numberOfPieces={500} confettiSource={{x: -100, y: 120}} gravity={0.15}/>
+              </div>
+            </EasterEgg>
+
+
                 <Helmet
                     title={ "Exhibitors" }
                 />
@@ -184,6 +199,7 @@ class ExhibitorList extends React.Component {
                     <div id="quality" onMouseEnter = {() => this.cssShine('exhibitor-box')} onMouseLeave = {() => this.cssShineOff()} onClick ={()=>this.specialFilter('all')}><img src='/assets/quality.svg'/></div>
                     <div id="diversity" onMouseEnter = {() => this.cssShine('purple')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity_a.svg'/></div>
                     <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
+
                 </div>
                 <div className = "search-containter">
                     <input type = "text"
@@ -192,6 +208,10 @@ class ExhibitorList extends React.Component {
                            onChange ={this.updateSearch.bind(this)}
                     />
                 </div>
+
+                {/* a point of improvement could be to create a list of available filters in the ais and then map them here.
+                and not hardcode it as it is now. Then the options would change automatically if the jobs offered in the ais change
+                no word for the coder and less risk of displaying the wrong filters */}
                 <div className = "checkbox-filtering">
 
                     <div className = "checkbox-container">

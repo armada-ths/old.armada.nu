@@ -1,80 +1,87 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
-    .pagesection {
-      display: flex;
-      flex-direction: row;
+.pagesection {
+  display: flex;
+  flex-direction: row;
+}
+.image {
+  width: 50%;
+  img {
+    width: 100%;
+    max-height: 100%;
+  }
+}
+.dark {
+  background-color: $licorice;
+}
+.pagesection.right {
+  flex-direction: row-reverse;
+}
+.pagesection-body-container .pagesection-body p {
+  padding-bottom: 1em;
+}
+.pagesection-body-container {
+  width: 50%;
+  .pagesection-body {
+    padding: 1em;
+    max-width: 35em;
+    margin: auto;
+    h1 {
+      font-size: 1.75em;
+      line-height: 1.25em;
+      padding-bottom: 1em;
     }
-
-    .image {
-      width: 50%;
-      img {
-        width: 100%;
-        max-height: 100%;
-      }
+    h2 {
+      font-size: 1.25em;
+      line-height: 1.25em;
+      padding-bottom: 1em;
     }
-    .dark {
-      background-color: $licorice;
+    .title {
+      color: blue;
     }
+  }
+}
 
-    .pagesection.right {
-      flex-direction: row-reverse;
-    }
-
-    .pagesection-body-container {
-      width: 50%;
-      .pagesection-body {
-        padding: 1em;
-        max-width: 35em;
-        margin: auto;
-
-        h1 {
-          font-size: 1.75em;
-          line-height: 1.25em;
-        }
-
-        h2 {
-          font-size: 1.25em;
-          line-height: 1.25em;
-        }
-
-
-        .title {
-          color: blue;
-        }
-      }
-    }
-
+@media screen and (max-width: $iphone-SE) {
+  .pagesection-body-container .pagesection-body h1 {
+    font-size: 1.55em;
+  }
+  .pagesection-body-container .pagesection-body h2 {
+    font-size: 1.2em;
+  }
+}
 
 @media screen and (max-width: $breakpoint-mobile) {
 
   .image {
-
     width: 100%;
     display: flex;
     img{
-
-    height: 80%;
-
+      height: 80%;
     }
   }
-
   .pagesection {
-
     display: flex;
     flex-direction: column;
+    width: 100vw;
   }
-
   .pagesection-body-container {
-    width: 100%;
-
+    width: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .pagesection-body-container .pagesection-body{
+    padding: 0em;
   }
 
   .pagesection.right {
-
     flex-direction: column;
   }
-
-
-
+  .dark {
+    background-color: white;
+  }
+  .dark img{
+    background-color: $licorice;
+  }
 }

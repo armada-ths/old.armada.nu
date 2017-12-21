@@ -6,10 +6,12 @@
     display: none;
 }
 
+.phenomic-BodyContainer p{
+        padding-bottom: 1em;
+}
 
-.phenomic-BodyContainer {
-    p{
-        text-align: justify;
-        padding: 0em 1em;
-    }
+@media screen and (max-width: $breakpoint-mobile) {
+	.phenomic-BodyContainer  p{
+		//padding: 0em 2em 0em 2em;
+	}
 }

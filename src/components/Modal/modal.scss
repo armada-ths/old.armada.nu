@@ -63,34 +63,55 @@
   .modal-property{
     display: flex;
     flex-direction: column;
-    padding: 0em 5em 0em 5em;
+    padding: 1em 0em 1em 0em;
+    align-self: center;
+  }
+  .modal-property .icon{
+    width: 25px;
+    height: 25px;
+  }
+  .modal-property .icon-group{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    //margin: 0.15em 0em;
+  }
+  .modal-property p{
+    margin: 0 0 0 5px;
   }
 
-    .modal-property .icon{
-      width: 25px;
-      height: 25px;
-    }
-    .modal-property .icon-group{
-      text-align: center;
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      margin: 0.15em 0em;
-    }
-    .modal-property p{
-      margin: 0 0 0 5px;
-    }
+  .modal-property-event{
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0em 1em 10em;
+    align-self: center;
+  }
+  .modal-property-event .icon{
+    width: 25px;
+    height: 25px;
+  }
+  .modal-property-event .icon-group{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    //margin: 0.15em 0em;
+  }
+  .modal-property-event p{
+    margin: 0 0 0 5px;
+  }
 
 }
 
 .modalinfo .description-container {
-    padding: 0.5em 5em 2em 5em;
+    padding: 0.5em 5em 0em 5em;
   }
 .modalinfo .description-container .description  p{
-    //padding: 0em 0.1em 0em 0em;
+    padding-bottom: 1em;
   }
 .modalinfo .location-container {
-    padding: 1em 5em 1em 5em;
+    padding: 1em 0em 1em 0em;
   }
 .modalinfo .location-container .location{
   display: flex;
@@ -104,6 +125,7 @@
 .modalinfo .location-container .position{
   padding: 0em 0em 0em 0.5em;
   align-self: center;
+  font-weight: 300;
 }
 .modalinfo .location-container .map{
   padding: 2em 0em 2em 0em;
@@ -114,15 +136,20 @@
 .modalinfo .job-container .job-section{
   display: flex;
   flex-direction: column;
-}
-.modalinfo .job-container .job-section li{
-  margin-left: 40%;
-}
-li {
+  text-align: center;
   font-weight: 300;
 }
 a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width:1200px) {
+  .modalinfo .description-container {
+      padding: 0.5em 3em 0.5em 3em;
+    }
+    .modalinfo .location-container .location{
+      font-weight: 300;
+    }
 }
 
 
@@ -147,23 +174,32 @@ a:hover {
       }
     }
   }
-  .modalcontent {
-    .modalinfo{
-      padding: 0;
-      h3{
-        font-size: 1.1em;
-      }
-      .icon{
-        width: 20px;
-        height: 20px;
-      }
-    }
-    p {
-      font-size: $text-standard-mobile;
-      line-height: $line-height-mobile;
-    }
-
+  .modalcontent .modal-property{
+    padding: 1em 0em 1em 0em;
   }
+  .modalcontent .modal-property-event{
+    padding: 1em 0em 1em 2.5em;
+  }
+  .modalcontent p{
+    font-size: $text-standard-mobile;
+    line-height: $line-height-mobile;
+  }
+  .modalcontent .modalinfo{
+    h3, h2{
+      font-size: 1.1em;
+    }
+    .icon{
+      width: 20px;
+      height: 20px;
+
+    }
+  }
+  .modalinfo .description-container .description {
+    padding: 0em 1em 0.5em 1em;
+    font-size: $text-standard-mobile;
+    line-height: $line-height-mobile;
+  }
+
   .modalinfo .description-container {
     padding: 0em 1em 0.5em 1em;
     }
@@ -172,6 +208,7 @@ a:hover {
     font-size: $text-standard-mobile;
     line-height: $line-height-mobile;
   }
+
   .modalinfo .job-container {
       padding: 0.5em 0em 0.5em 0em;
     }
@@ -187,6 +224,11 @@ a:hover {
       justify-content: center;
       font-size: $text-standard-mobile;
     }
+}
 
+@media screen and (max-width: $breakpoint-ipad) {
+  .modalcontent .modal-property-event{
+    padding: 1em 0em 1em 2.5em;
+  }
 
 }

@@ -27,7 +27,9 @@ class EventList extends React.Component {
     componentDidMount() {  // only called when eventpage is created or updated.
         axios.get('https://ais.armada.nu/api/events')  // fetch data witt promise (then) and res(ult)
           .then( (res)  => {
-            const events = res.data;  // create variable and store result within parameter data
+            let events = res.data;  // create variable and store result within parameter data
+            events.sort( (a, b) => a.event_start - b.event_start);
+
             this.setState({ events });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what event to display
             if (this.props.eventId !== undefined ){
@@ -58,26 +60,27 @@ class EventList extends React.Component {
             <img src={event.image_url}/>
             </div>
             <div className="modalinfo">
-              <h1>{event.name}</h1>
-                <div className='modal-property'>
-                  <div className='icon_group'>
+              <h2>{event.name}</h2>
+                <div className='modal-property-event'>
+                  <div className='icon-group'>
                     <img className='icon' src='/assets/calendar-round.svg'/>
                     {eventdate.getDate() != eventdate_end.getDate() ? (
                     <p> {eventdate.getDate() + '-' + eventdate_end.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>
                     ):( <p> {eventdate.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>)}
                   </div>
-                  <div className='icon_group'>
+                  <div className='icon-group'>
                     <img className='icon' src='/assets/clock.svg'/>
                     <p className ="time" > {hours + ':' + minutes.substr(-2) + '-' + endhours + ':' + endminutes.substr(-2) }</p>
                   </div>
-                  <div className='icon_group'>
+                  <div className='icon-group'>
                     <img className='icon' src='/assets/place.svg'/>
                     <p> {event.location}</p>
                   </div>
                 </div>
-                <div className="description" dangerouslySetInnerHTML={{__html: event.description}}>
-                </div>
-              </div>
+                <div className="description-container">
+                  <div className="description" dangerouslySetInnerHTML={{__html: event.description}}></div>
+                  </div>
+                  </div>
               <div className="modalbutton">
                 {eventdate > today ? (
                   <a href={event.signup_link}>
@@ -101,14 +104,12 @@ class EventList extends React.Component {
 
         return (
             <div>
-
                 <div className = "event-item" onClick={()=>this.showModal(event.id)}>
                     <div className = "image-section">
                         <img src = { event.image_url }/>
                     </div>
                     <div className = "details-section">
                         <h3 className ="name" >{event.name} </h3>
-                        <br/>
                         <div className='event-property'>
                             <img className='icon' src='/assets/calendar-round.svg'/>
                             <p> {date.getDate()} {monthNames[date.getMonth()]} </p>
@@ -144,13 +145,13 @@ class EventList extends React.Component {
                 <div className="events-feed">
                   <div className='comingEvents'>
                     <h2> Upcoming Events </h2>
-                    {comingEvents.length > 0 ? (comingEvents.map(this.getEventItem)) : (<p>Stay tuned...</p>)}
+                    {comingEvents.length > 0 ? (comingEvents.map(this.getEventItem)) : (<p>Stay tuned!</p>)}
                   </div>
                   <div className="thickline"><hr/></div>
                   <div className='pastEvents'>
                     <h2> Past Events </h2>
                     <div className="pastEvent">
-                      {pastEvents.length > 0 ? (pastEvents.map(this.getEventItem)) : null }
+                      {pastEvents.length > 0 ? (pastEvents.map(this.getEventItem)) : (<p>No past events</p>) }
                     </div>
                   </div>
                   <div className="thickline"><hr/></div>

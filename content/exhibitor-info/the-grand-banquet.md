@@ -21,7 +21,7 @@ dark: false
 
 **19:00 **Dinner will be served
 
-**22:00** Doors will open to the after party Club Armada. Taxi hosts from Taxi Stockholm will be available outside of the venue from this hour.
+**22:00** Doors will open to the after party Club Armada at Annexet. Taxi hosts from Taxi Stockholm will be available outside of the venue from this hour.
 
 **02:00** Club Armada will be closing.
 

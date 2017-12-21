@@ -1,5 +1,23 @@
 import React from "react"
+import EasterEgg from "react-easter"
 import "./footer.scss";
+
+
+const konamiCode = [
+   'arrowup',
+   'arrowup',
+   'arrowdown',
+   'arrowdown',
+   'arrowleft',
+   'arrowright',
+   'arrowleft',
+   'arrowright',
+   'b',
+   'a',
+   'b',
+   'a'
+ ];
+
 
 class Footer extends React.Component {
     constructor(props) {
@@ -69,9 +87,30 @@ class Footer extends React.Component {
         }));
     }
 
+    ingoStarr(){
+      return(
+
+          <div className="track">
+            <div className="lights"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div className="eat-trail"></div>
+            <div className="packman"><div className="eat"></div></div>
+            <div className="ingos">
+               <div className="ingo three"><img src="/assets/ingoStarr.gif"/></div>
+               <div className="ingo one"><img src="/assets/ingoStarr.gif"/></div>
+               <div className="ingo two"><img src="/assets/ingoStarr.gif"/></div>
+            </div>
+          </div>
+
+      );
+    }
+
     render() {
         return (
             <div id="footer">
+            <EasterEgg  keys={konamiCode} timeout={10000}>
+              {this.ingoStarr()}
+            </EasterEgg>
+
             <div className="logosection">
                 {this.createTemplate(this.state.thsOrgs, "logo")}
                 <div className="divider"></div>

@@ -1,11 +1,20 @@
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
+
 .Events-container {
-  position: static;
-  max-width: 850px;
+  padding: 3em 0em;
+  max-width: $page-width;
+  //position: static;
   margin: auto;
-  padding: 1em 0em;
+  //padding: 1em 0em;
 }
 
-.content{
-  position: relative;
-  overflow: hidden;
+@media screen and (max-width: $breakpoint-mobile-flipped){
+  .Events-container {
+    padding: 3em 1em;
+    //position: static;
+    //max-width: 850px;
+    //margin: auto;
+    //padding: 1em 0em;
+  }
 }

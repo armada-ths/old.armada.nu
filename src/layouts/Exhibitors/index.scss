@@ -1,14 +1,15 @@
 @import "../../styles/variables";
 
+
 .Exhibitors-container {
-  position: static;
-  //min-width: 650px;
-  max-width: 850px;
+  padding: 3em 0em;
+  max-width: $page-width;
   margin: auto;
-  padding: 0em 1em 0em 1em;
 }
 
-.content{
-  position: relative;
-  overflow: hidden;
+
+@media screen and (max-width: $breakpoint-mobile-flipped){
+  .Exhibitors-container {
+    padding: 3em 1em;
+  }
 }

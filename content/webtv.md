@@ -5,6 +5,7 @@ menuPage: false
 priority: '5'
 header: /assets/TheFair_small.jpg
 ---
+
 ## LIVE: Armada Talks 2017
 
 A talk is around 30 minutes followed by audience questions. Topics include technology, innovation, entrepreneurship and integration. Armada Talks is held at **Sydöstra Galleriet** **in** **KTH library both fair days** and everyone is most welcome to experience the talks live! If you can't be there physically or don't manage to get a seat - all the talks will be live streamed and available through our web TV on this page. See schedule of the talks below.
@@ -27,3 +28,4 @@ A talk is around 30 minutes followed by audience questions. Topics include techn
 14.15: Carolin Solskär
 
 The talks will also be possible to watch after the fair.
+

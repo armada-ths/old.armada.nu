@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: armada-ths/armada.nu
-  branch: webtest
+  branch: master
 
 public_folder: "/assets"
 media_folder: "content/assets"
@@ -54,6 +54,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Layout", name: "layout", widget: "string", default: "Page"}
+      - {label: "Description", name: "description", widget: "text", default: "Page"}
       - {label: "In menu", name: "menuPage", widget: "boolean", default: false}
       - {label: "Priority", name: "priority", widget: "number"}
       - {label: "Header", name: "header", widget: "image", optional: true}

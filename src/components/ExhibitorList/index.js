@@ -52,8 +52,10 @@ class ExhibitorList extends React.Component {
     }
     getJobContainer(exhibitor){
         return(  <div className = "job-container">
+
                 <h3>Job Opportunities</h3>
                 {exhibitor.job_types.map((jobtype) => <div className="job-section">{jobtype.name}</div>)}
+
             </div>
         )
     }
@@ -96,6 +98,7 @@ class ExhibitorList extends React.Component {
                         {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url}/></div> : null}
                     </div>
                 </div>
+
             </Modal>
         );
     }
@@ -108,6 +111,7 @@ class ExhibitorList extends React.Component {
         filters[value]= true;
         this.setState({filters})
     }
+
     cssShine(value){
         if (global.document != undefined){
             let shineItems = global.document.getElementsByClassName(value);
@@ -116,6 +120,7 @@ class ExhibitorList extends React.Component {
             }
         }
     }
+
     cssShineOff(){
         if (global.document != undefined){
             let shineItems = global.document.getElementsByClassName('shine-loop');
@@ -125,6 +130,7 @@ class ExhibitorList extends React.Component {
             }
         }
     }
+
     jobFilter(value){
         let jobfilters = this.state.jobfilters;
         jobfilters[value] = !jobfilters[value];
@@ -156,6 +162,7 @@ class ExhibitorList extends React.Component {
                 });
             }
         }
+
         //Loop through the properties of filters object:
         for(let filterkey in this.state.jobfilters) {
             if (this.state.jobfilters[filterkey] == true) {
@@ -192,6 +199,7 @@ class ExhibitorList extends React.Component {
                     <div id="quality" onMouseEnter = {() => this.cssShine('exhibitor-box')} onMouseLeave = {() => this.cssShineOff()} onClick ={()=>this.specialFilter('all')}><img src='/assets/quality.svg'/></div>
                     <div id="diversity" onMouseEnter = {() => this.cssShine('purple')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity_a.svg'/></div>
                     <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
+
                 </div>
                 <div className = "search-containter">
                     <input type = "text"
@@ -205,6 +213,7 @@ class ExhibitorList extends React.Component {
                 and not hardcode it as it is now. Then the options would change automatically if the jobs offered in the ais change
                 no word for the coder and less risk of displaying the wrong filters */}
                 <div className = "checkbox-filtering">
+
                     <div className = "checkbox-container">
                         <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee Employment")} />
                         <label htmlFor={"check1"}>Trainee</label>

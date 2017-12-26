@@ -8,16 +8,9 @@ header: /assets/images/header-images/About.jpg
 ---
 # WHAT IS ARMADA?
 
-THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of Technology. Every year, more than 12,000 of Sweden's top engineering and architectural students flock to visit the fair to meet their future employers. Each year we strive to exceed their expectations and to give both students and employees the best possible chance to interact. This year, we have gathered 171 companies to exceed the student's expectations.
+THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of Technology. Every year, more than 12,000 of Sweden's top engineering and architectural students flock to visit the fair to meet their future employers. Each year we strive to exceed their expectations and to give both students and employees the best possible chance to interact. 
 
 **Diversity**, **sustainability**, and **quality** form the core values at the heart of this pursuit.
-
-**Dates: **21st of November - 22nd of November
-
-**Opening hours: **
-
-21st of November: 10:00 - 16:00 <br/>
-22nd of November: 10:00 - 15:00
 
 **Exhibitor interest for the career fair of 2018:**
 
@@ -29,10 +22,6 @@ This year's career fair is fully booked. If you are interested to participate in
 <img src="http://development.armada.nu/assets/diversity_a.svg" height="100em" width="100em"/>
 </p>
 
-Companies participating in** Diversity Room 2017, KTHB    **
-
-• Accenture • Axfood • LKAB • Cinnober
-
 THS Armada truly believes that the best teams are created when there is a clear focus on equality and diversity. It follows, that equal value and opportunities are fundamental in our work. In the past, it has been made possible for international students to be a part of the organisation. Today, we also focus on gender balance within the teams of THS Armada.
 
 By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Therefore, we devote a special part of our fair to promoting diversity, namely **Diversity Room**, located at the entrance of KTHB during the career fair. Companies at Diversity Room are some of the most progressive when it comes to inclusion and diversity in the workplace.
@@ -42,10 +31,6 @@ By actively working with this core value, THS Armada aspires to encourage studen
 <p style="text-align:center;">
 <img src="http://development.armada.nu/assets/sustainability.svg" height="100em" width="100em"/>
 </p>
-
-Companies participating in** Green Room 2017, Nymble**
-
-• Lantmännen • Sweco • NCC • ABB • Alfa Laval • Akzo Nobel • BillerudKorsnäs • Implenia • H&M • Preem • Siemens • Pöyry • Stora Enso • Xylem
 
 THS Armada has been climate neutral since 2015 and our belief in a green future motivates us to continuously make improvements towards a more sustainable fair. This year, we proudly announce that all events, the grand banquet and even the career fair itself serves solely vegetarian food and that all events are branded eco events.
 

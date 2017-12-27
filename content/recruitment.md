@@ -2,7 +2,7 @@
 title: Recruitment
 layout: Recruitmentpage
 description: Recruitment 2018
-menuPage: false
+menuPage: true
 priority: 3
 header: /assets/TheFair_small.jpg
 ---

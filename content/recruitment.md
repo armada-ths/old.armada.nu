@@ -21,3 +21,7 @@ The Project Team is divided into four subgroups:
 **Marketing and Communication: **Shapes the brand and the face of the whole organisation through great communication, internally and externally. 
 
 **IT: **Turns ideas into reality to enhance the experience of THS Armada in all areas. Digitalisation is one of the core pillars for the organisation.
+
+Do you want to know more about the positions or THS Armada as an organisation? Do not hesitate to contact Lovisa Westerlund at +4670-790 98 44 or a@armada.nu for a fika, coffee is on me! 
+
+**Fulfill your application by sending you CV and cover letter to a@armada.nu**

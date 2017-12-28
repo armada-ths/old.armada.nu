@@ -120,9 +120,6 @@ class Footer extends React.Component {
                     {this.createTemplate(this.state.apps, "app")}
                 </div>
                 </div>
-                <div >
-                  <a href="/contact" >Contact us </a>
-                </div>
             </div>
         );
     }

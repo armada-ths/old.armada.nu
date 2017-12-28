@@ -26,7 +26,6 @@
   -webkit-justify-content: space-between;
   align-items: center;
   -webkit-align-items: center;
-  padding-top: 15vh;
 }
 
 
@@ -40,6 +39,8 @@
 
 .contact-body {
   background-color: $licorice;
+  min-height: 45vh;
+  min-width: 100vw;
 }
 
 .contact-body p {

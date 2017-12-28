@@ -7,9 +7,7 @@ const Contactpage = () => {
     
 
   return (
-    <div className="content dark-theme contact-page">
         <Contacts />
-      </div>
   )
 }
 

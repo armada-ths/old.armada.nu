@@ -1,7 +1,8 @@
 ---
 title: Contact
 layout: Contactpage
-menuPage: false
+menuPage: true
+priority: 7
 header: null
 ---
-..
+  

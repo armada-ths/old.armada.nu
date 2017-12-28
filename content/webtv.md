@@ -2,7 +2,7 @@
 title: Talks
 layout: Plainpage
 description: Armada Talks
-menuPage: true
+menuPage: false
 priority: '5'
 header: /assets/TheFair_small.jpg
 ---

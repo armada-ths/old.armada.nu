@@ -96,7 +96,7 @@ class Jumbotron extends React.Component {
         <div id={"header"}>
             <div className={header_class === "header-home" ? "logo-container fixed" : "logo-container"}>
                     <img src={require('../../../content/assets/images/header-images/logo.png')} />
-                    <p className="logo-date"> 21-22 NOV</p>
+                    <p className="logo-date"> 20-21 NOV</p>
                     {header_class === "header-home" ? 
                         <div id="scrollarrow" className="scroll-arrow" onMouseEnter={this.mouseEnter} >
                             <img src="/assets/pil.png" alt="\/"/>

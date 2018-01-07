@@ -23,6 +23,7 @@ class Recruitment extends React.Component {
                 let result = res.data;  // create variable and store result within parameter data
                 this.setState({ groups: result[0].groups, 
                                 recruitmentName: result[0].name, 
+                                recruitmentLink: result[0].link, 
                                 recruitmentStart: result[0].start_date, 
                                 recruitmentEnd: result[0].end_date });  // component saves its own data
             });
@@ -54,7 +55,7 @@ class Recruitment extends React.Component {
                                     return (
                                         <div style={style}>
                                             <div className={"applysection"}>
-                                                <a href="https://ais.armada.nu/fairs/2017/recruitment/">
+                                                <a href={'https://ais.armada.nu/' + this.state.recruitmentLink}>
                                                     <button> APPLY HERE</button>
                                                 </a>
                                             </div>

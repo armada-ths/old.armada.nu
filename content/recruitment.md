@@ -2,13 +2,13 @@
 title: Recruitment
 layout: Recruitmentpage
 description: Recruitment 2018
-menuPage: false
+menuPage: true
 priority: 3
 header: /assets/TheFair_small.jpg
 ---
 # Recruitment 2018
 
-**Last day to apply: 17th of January 23:59**
+**Next recruitment period opens 9th of april!**
 
 The team of THS Armada creates more than just a career fair - they create platforms where students and companies can shape their future. Together. 
 
@@ -23,7 +23,3 @@ The Project Team is divided into four subgroups:
 **Marketing and Communication: **Shapes the brand and the face of the whole organisation through great communication, internally and externally. 
 
 **IT: **Turns ideas into reality to enhance the experience of THS Armada in all areas. Digitalisation is one of the core pillars for the organisation.
-
-Do you want to know more about the positions or THS Armada as an organisation? Do not hesitate to contact Lovisa Westerlund at +4670-790 98 44 or a@armada.nu for a fika, coffee is on me! 
-
-**Fulfill your application by sending you CV and cover letter to a@armada.nu**

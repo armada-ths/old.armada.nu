@@ -8,7 +8,7 @@ header: /assets/TheFair_small.jpg
 ---
 # Recruitment 2018
 
-**Next recruitment period opens 9th of april!**
+**Apply no later than April 22nd 23:59!**
 
 The team of THS Armada creates more than just a career fair - they create platforms where students and companies can shape their future. Together. 
 

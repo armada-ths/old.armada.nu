@@ -196,7 +196,6 @@ class ExhibitorList extends React.Component {
                 />
                 {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
                 <div className = "filter-special">
-                    <div id="quality" onMouseEnter = {() => this.cssShine('exhibitor-box')} onMouseLeave = {() => this.cssShineOff()} onClick ={()=>this.specialFilter('all')}><img src='/assets/quality.svg'/></div>
                     <div id="diversity" onMouseEnter = {() => this.cssShine('purple')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity_a.svg'/></div>
                     <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
 

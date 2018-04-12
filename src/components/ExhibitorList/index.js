@@ -138,6 +138,8 @@ class ExhibitorList extends React.Component {
     }
 
     render() {
+        // Here you decide if list of exhibitors should be displayed or not
+        let showExhibitors = false;
         let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
         let filteredCompanies = this.state.exhibitorList.filter(
             (exhibitorItem) => {return (exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase()) );}
@@ -177,68 +179,76 @@ class ExhibitorList extends React.Component {
             }
         }
 
-        return (
-            <div className = "exhibitors">
+        if (showExhibitors) {
+            return (
+                <div className = "exhibitors">
 
-            <EasterEgg keys={armada2017} timeout={7000}>
-              <div className="armadaRainbow easterEggPosition"/>
-            </EasterEgg>
+                <EasterEgg keys={armada2017} timeout={7000}>
+                  <div className="armadaRainbow easterEggPosition"/>
+                </EasterEgg>
 
-            <EasterEgg keys={banquet} timeout={10000}>
-              <div className="armadaConfetti easterEggPosition">
-                <Confetti width={2000} height={2000} wind={0.03} numberOfPieces={500} confettiSource={{x: -100, y: 120}} gravity={0.15}/>
-              </div>
-            </EasterEgg>
+                <EasterEgg keys={banquet} timeout={10000}>
+                  <div className="armadaConfetti easterEggPosition">
+                    <Confetti width={2000} height={2000} wind={0.03} numberOfPieces={500} confettiSource={{x: -100, y: 120}} gravity={0.15}/>
+                  </div>
+                </EasterEgg>
 
 
-                <Helmet
-                    title={ "Exhibitors" }
-                />
-                {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
-                <div className = "filter-special">
-                    <div id="diversity" onMouseEnter = {() => this.cssShine('purple')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity_a.svg'/></div>
-                    <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
-
-                </div>
-                <div className = "search-containter">
-                    <input type = "text"
-                    placeholder= "Search Exhibitor"
-                           value={this.state.search}
-                           onChange ={this.updateSearch.bind(this)}
+                    <Helmet
+                        title={ "Exhibitors" }
                     />
-                </div>
+                    {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
+                    <div className = "filter-special">
+                        <div id="diversity" onMouseEnter = {() => this.cssShine('purple')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity_a.svg'/></div>
+                        <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
 
-                {/* a point of improvement could be to create a list of available filters in the ais and then map them here.
-                and not hardcode it as it is now. Then the options would change automatically if the jobs offered in the ais change
-                no word for the coder and less risk of displaying the wrong filters */}
-                <div className = "checkbox-filtering">
+                    </div>
+                    <div className = "search-containter">
+                        <input type = "text"
+                        placeholder= "Search Exhibitor"
+                               value={this.state.search}
+                               onChange ={this.updateSearch.bind(this)}
+                        />
+                    </div>
 
-                    <div className = "checkbox-container">
-                        <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee Employment")} />
-                        <label htmlFor={"check1"}>Trainee</label>
-                    </div>
-                    <div className = "checkbox-container">
-                        <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master's Thesis")}/>
-                        <label htmlFor={"check2"}>Master Thesis</label>
-                    </div>
-                    <div className = "checkbox-container">
-                        <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer Jobs")}/>
-                        <label htmlFor={"check3"}>Summer Job</label>
-                    </div>
-                    <div className = "checkbox-container">
-                        <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part-time Jobs")} />
-                        <label htmlFor={"check4"}>Part Time Job</label>
-                    </div>
-                </div>
+                    {/* a point of improvement could be to create a list of available filters in the ais and then map them here.
+                    and not hardcode it as it is now. Then the options would change automatically if the jobs offered in the ais change
+                    no word for the coder and less risk of displaying the wrong filters */}
+                    <div className = "checkbox-filtering">
 
-                <div className = "loading">
-                    {this.state.isLoading ? <Loading/> :null}
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee Employment")} />
+                            <label htmlFor={"check1"}>Trainee</label>
+                        </div>
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master's Thesis")}/>
+                            <label htmlFor={"check2"}>Master Thesis</label>
+                        </div>
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer Jobs")}/>
+                            <label htmlFor={"check3"}>Summer Job</label>
+                        </div>
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part-time Jobs")} />
+                            <label htmlFor={"check4"}>Part Time Job</label>
+                        </div>
+                    </div>
+
+                    <div className = "loading">
+                        {this.state.isLoading ? <Loading/> :null}
+                    </div>
+                    <div className="exhibitor-feed">
+                        {filteredCompanies}
+                    </div>
                 </div>
-                <div className="exhibitor-feed">
-                    {filteredCompanies}
+            )
+        } else {
+            return (
+                <div>
+                    Exhibitors will be released after summer.
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

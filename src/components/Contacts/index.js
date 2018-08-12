@@ -21,16 +21,6 @@ const Contacts =  () => {
                       <div className="content-wrapper row">
 
                         <div className="contact-info">
-                          <h1 className="sub-heading name">DANIEL GRÖTTHEIM</h1>
-                          <h2 className="sub-heading light">HEAD OF BUSINESS RELATIONS AND EVENTS</h2>
-                          <p><a href="mailto:daniel.grottheim@armada.nu" target="_top">daniel.grottheim@armada.nu</a></p>
-                          <p><a href="tel:+46761355991">+4676-135 59 91</a></p>
-                        </div>
-
-                      </div>
-                      <div className="content-wrapper row">
-
-                        <div className="contact-info">
                           <h1 className="sub-heading name">JACOB JOHNSSON</h1>
                           <h2 className="sub-heading light">HEAD OF SALES</h2>
                           <p><a href="mailto:jacob.johnsson@armada.nu" target="_top">jacob.johnsson@armada.nu</a></p>

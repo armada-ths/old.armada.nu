@@ -25,6 +25,7 @@ const Contacts =  () => {
                           <p><a href="mailto:daniel.grottheim@armada.nu" target="_top">daniel.grottheim@armada.nu</a></p>
                           <p><a href="tel:+46761355991">+4676-135 59 91</a></p>
                         </div>
+                      </div>
                       <div className="content-wrapper row">
 
                         <div className="contact-info">

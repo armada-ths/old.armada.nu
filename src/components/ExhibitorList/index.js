@@ -30,15 +30,18 @@ class ExhibitorList extends React.Component {
             jobfilters: {},
             filters: {},
             shine: '',
+            num: 0,
+            startupfilter: false,
+            sector: "All"
         };
     }
 
     componentDidMount() {  // only called when exhibitor page is created or updated.
-        axios.get('https://ais.armada.nu/api/exhibitors')  // fetch data witt promise (then) and res(ult)
+        axios.get('https://ais.armada.nu/api/exhibitors?img_placeholder=true')  // fetch data witt promise (then) and res(ult)
             .then( (res)  => {
                 let exhibitors = res.data;  // create variable and store result within parameter data
-                exhibitors.sort((a, b) => a.company.localeCompare(b.company));
-                let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem key={exhibitor.id} name={exhibitor.company}
+                exhibitors.sort((a, b) => a.name.localeCompare(b.name));
+                let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem key={exhibitor.id} name={exhibitor.name}
                                                                                  exhibitor={exhibitor} showModal={this.showModal}/>);
                 this.setState({ exhibitors, exhibitorList, isLoading:false, });  // component saves its own data
                 // Get from url path the GET params ?id=number, to know what event to display
@@ -54,7 +57,7 @@ class ExhibitorList extends React.Component {
         return(  <div className = "job-container">
 
                 <h3>Job Opportunities</h3>
-                {exhibitor.job_types.map((jobtype) => <div className="job-section">{jobtype.name}</div>)}
+                {exhibitor.employments.map((jobtype) => <div className="job-section">{jobtype.name}</div>)}
 
             </div>
         )
@@ -69,7 +72,7 @@ class ExhibitorList extends React.Component {
         return (
             <Modal onClose={() => this.showModal(null)}>
                 <div className="modalimage-exhib">
-                    <img src={exhibitor.logo_url}/>
+                    <img src={"https://ais.armada.nu/" + exhibitor.logo_squared} />
                 </div>
 
                 <div className="modalinfo">
@@ -88,14 +91,14 @@ class ExhibitorList extends React.Component {
                             {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
                         </div>
                     </div>
-                    {exhibitor.job_types.length > 0 ?  this.getJobContainer(exhibitor) : null}
+                    {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
                     <div className='location-container'>
                         <h3>Find us at the fair</h3>
                         <div className='location'>
                             <div className='icon'><img src='/assets/place.svg'/></div>
                             <div className="position">{exhibitor.exhibitor_location}</div>
                         </div>
-                        {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url}/></div> : null}
+                        {/* {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null} */}
                     </div>
                 </div>
 
@@ -137,10 +140,34 @@ class ExhibitorList extends React.Component {
         this.setState({jobfilters})
     }
 
+    // Gets value from checkbox regarding startup filtering
+    startupFilter() {
+        let startupfilter = this.state.startupfilter;
+        if (startupfilter === false) { startupfilter = true }
+        else if (startupfilter === true) { startupfilter = false }
+        this.setState({ startupfilter })
+    }
+
+    buildOptions() {
+        var arr1 = ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector','Pedagogy','Web Development','Solid Mechanics','Simulation Technology','Pharmacy','Nuclear Power','Fluid Mechanics','Wood-Processing Industry','Medical Technology','Media Technology','Marine Systems','Manufacturing Industry','Management Consulting','Management','Insurance','Finance & Consultancy','Construction','Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research','Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development','Interaction Design','Industry Design'];
+        var arr2 = []
+
+        for (let i = 0; i < arr1.length; i++) {
+            arr2.push(<option key={arr1[i]} value={arr1[i]}>{arr1[i]}</option>)
+        }
+        return arr2;
+    }
+
+    sectorFilter(e) {
+        let sector = this.state.sector;
+        sector = e.target.value;
+        this.setState({ sector });
+    }
+
     render() {
         // Here you decide if list of exhibitors should be displayed or not
-        let showExhibitors = false;
-        let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
+        let showExhibitors = true;
+        let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.name == this.state.exhibitorName)[0];
         let filteredCompanies = this.state.exhibitorList.filter(
             (exhibitorItem) => {return (exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase()) );}
         );
@@ -169,14 +196,39 @@ class ExhibitorList extends React.Component {
         for(let filterkey in this.state.jobfilters) {
             if (this.state.jobfilters[filterkey] == true) {
                 filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-                    for (let jobtypeindex in exhibitorItem.props.exhibitor.job_types) {
-                        if (exhibitorItem.props.exhibitor.job_types[jobtypeindex].name == filterkey) {
+                    for (let jobtypeindex in exhibitorItem.props.exhibitor.employments) {
+                        if (exhibitorItem.props.exhibitor.employments[jobtypeindex].name == filterkey) {
                             return true;
                         }
                     }
                     return false;
                 });
             }
+        }
+
+
+        // Startup filter
+        if (this.state.startupfilter === true) {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                return exhibitorItem.props.exhibitor.startup === true;
+            });
+        }
+
+        // Sector filter
+        if (this.state.sector === "All") {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                    return exhibitorItem;
+            });
+        }
+        else{
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                for (let sectorindex in exhibitorItem.props.exhibitor.industries) {
+                    if (exhibitorItem.props.exhibitor.industries[sectorindex].name == this.state.sector) {
+                        return true;
+                    }
+                }
+                return false;
+            });
         }
 
         if (showExhibitors) {
@@ -211,26 +263,52 @@ class ExhibitorList extends React.Component {
                         />
                     </div>
 
+                    <div className="sector-container">
+                    <div className="select">
+                        <select onChange={this.sectorFilter.bind(this)}>
+                            <option value="All" selected>All Sectors</option>
+                            {this.buildOptions()}
+                        </select>
+                        <div className="select_arrow"></div>
+                    </div>
+                    </div>
+
                     {/* a point of improvement could be to create a list of available filters in the ais and then map them here.
                     and not hardcode it as it is now. Then the options would change automatically if the jobs offered in the ais change
                     no word for the coder and less risk of displaying the wrong filters */}
                     <div className = "checkbox-filtering">
 
                         <div className = "checkbox-container">
-                            <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee Employment")} />
+                            <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee")} />
                             <label htmlFor={"check1"}>Trainee</label>
                         </div>
                         <div className = "checkbox-container">
-                            <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master's Thesis")}/>
+                            <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master thesis")}/>
                             <label htmlFor={"check2"}>Master Thesis</label>
                         </div>
                         <div className = "checkbox-container">
-                            <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer Jobs")}/>
+                            <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer job")}/>
                             <label htmlFor={"check3"}>Summer Job</label>
                         </div>
                         <div className = "checkbox-container">
-                            <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part-time Jobs")} />
+                            <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part time job")} />
                             <label htmlFor={"check4"}>Part Time Job</label>
+                        </div>
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check5" onClick ={()=>this.jobFilter("Internship")} />
+                            <label htmlFor={"check5"}>Internship</label>
+                        </div>
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check6" onClick ={()=>this.jobFilter("Bachelor thesis")} />
+                            <label htmlFor={"check6"}>Bachelor Thesis</label>
+                    </div>
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check7" onClick ={()=>this.jobFilter("Full time job")} />
+                            <label htmlFor={"check7"}>Full Time Job</label>
+                    </div>
+                        <div className="checkbox-container">
+                            <input type="checkbox" id="check8" onClick={() => this.startupFilter()} />
+                            <label htmlFor={"check8"}>Startup</label>
                         </div>
                     </div>
 
@@ -271,11 +349,11 @@ const ExhibitorItem = (props) => {
     classname += props.exhibitor.diversity == true ? " purple": "";
 
     return (
-        <div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.company)}>
+        <div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.name)}>
             <div className = "image-container">
-                <img src = {props.exhibitor.logo_url}/>
+                <img src = {"https://ais.armada.nu/" + props.exhibitor.logo_squared} />
             </div>
-            <p> {props.exhibitor.company} </p>
+            <p> {props.exhibitor.name} </p>
             {props.exhibitor.diversity == true
                 ? <div className='corner-special'><img  src='/assets/diversity_a.svg'/></div>: null }
             {props.exhibitor.sustainability == true

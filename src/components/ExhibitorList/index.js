@@ -32,7 +32,8 @@ class ExhibitorList extends React.Component {
             shine: '',
             num: 0,
             startupfilter: false,
-            sector: "All"
+            sector: "All",
+            international: true
         };
     }
 
@@ -164,6 +165,13 @@ class ExhibitorList extends React.Component {
         this.setState({ sector });
     }
 
+    internationalFilter() {
+        let internationalfilter = this.state.international;
+        if (internationalfilter == false) { internationalfilter = true }
+        else if (internationalfilter == true) { internationalfilter = false }
+        this.setState({ internationalfilter })
+    }
+
     render() {
         // Here you decide if list of exhibitors should be displayed or not
         let showExhibitors = true;
@@ -171,7 +179,6 @@ class ExhibitorList extends React.Component {
         let filteredCompanies = this.state.exhibitorList.filter(
             (exhibitorItem) => {return (exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase()) );}
         );
-
         if (filteredCompanies.length < 1 ) {
             filteredCompanies = this.state.exhibitorList.filter(
                 (exhibitorItem) => {
@@ -204,6 +211,18 @@ class ExhibitorList extends React.Component {
                     return false;
                 });
             }
+        }
+
+        // International filter
+        if (this.state.international === true) {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                for (let locationindex in exhibitorItem.props.exhibitor.locations) {
+                    if (exhibitorItem.props.exhibitor.locations[locationindex].name[0] == "S") {
+                        return true;
+                    }
+                }
+                return false;
+            });
         }
 
 
@@ -309,6 +328,10 @@ class ExhibitorList extends React.Component {
                         <div className="checkbox-container">
                             <input type="checkbox" id="check8" onClick={() => this.startupFilter()} />
                             <label htmlFor={"check8"}>Startup</label>
+                        </div>
+                        <div className="checkbox-container">
+                            <input type="checkbox" id="check9" onClick={() => this.internationalFilter()}/>
+                            <label htmlFor={"check9"}>International</label>
                         </div>
                     </div>
 

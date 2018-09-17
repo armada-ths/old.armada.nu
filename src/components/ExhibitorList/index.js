@@ -32,7 +32,7 @@ class ExhibitorList extends React.Component {
             shine: '',
             num: 0,
             startupfilter: false,
-            placefilter: "Any",
+            location: "Any",
             sector: "All"
         };
     }
@@ -149,30 +149,21 @@ class ExhibitorList extends React.Component {
         this.setState({ startupfilter })
     }
 
-    placesArray() {
-      var places = ['Sweden', 'Europe', 'North America', 'South America', 'Oceania', 'Asia', 'Africa?'];
-      var listoptions = [];
+    arrayOptions() {
+      var locations = ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America'];
+      var listitems = []
 
-      for (let i = 0; i<locations.length; i++) {
-        listoptions.push(<option key={locations[i]} value={locations[i]}>locations[i]</option>);
+      for (let i = 0; i < locations.length; i++) {
+        listitems.push(<option key={locations[i]} value={locations[i]}>{locations[i]}</option>)
       }
-      return listoptions;
+      return listitems;
     }
 
-    //places filter
-    placeFilter(e) {
-      let placefilter = this.state.sector;
-      placefilter = e.target.value;
-      this.setState({ placefilter });
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-          for (let i in exhibitorItem.props.exhibitor.locations) {
-              if (exhibitorItem.props.exhibitor.locations[i].name[0] == "S") {
-              }
-            }
-          });
+    locationFilter(e) {
+      let location = this.state.location;
+      location = e.target.value;
+      this.setState({ location });
     }
-
-
 
     buildOptions() {
         var arr1 = ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector','Pedagogy','Web Development','Solid Mechanics','Simulation Technology','Pharmacy','Nuclear Power','Fluid Mechanics','Wood-Processing Industry','Medical Technology','Media Technology','Marine Systems','Manufacturing Industry','Management Consulting','Management','Insurance','Finance & Consultancy','Construction','Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research','Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development','Interaction Design','Industry Design'];
@@ -289,7 +280,7 @@ class ExhibitorList extends React.Component {
                         />
                     </div>
 
-                    <div className="sector-container">
+                    <div className="dropdown-container">
                     <div className="select">
                         <select onChange={this.sectorFilter.bind(this)}>
                             <option value="All" selected>All Sectors</option>
@@ -299,11 +290,11 @@ class ExhibitorList extends React.Component {
                     </div>
                     </div>
 
-                    <div className="sector-container">
+                    <div className="dropdown-container">
                     <div className="select">
-                        <select onChange={this.placeFilter.bind(this)}>
+                        <select onChange={this.locationFilter.bind(this)}>
                             <option value="All" selected>Any</option>
-                            {this.placesArray()}
+                            {this.arrayOptions()}
                         </select>
                         <div className="select_arrow"></div>
                     </div>

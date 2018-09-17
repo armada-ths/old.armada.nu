@@ -32,6 +32,7 @@ class ExhibitorList extends React.Component {
             shine: '',
             num: 0,
             startupfilter: false,
+            placefilter: "Any",
             sector: "All"
         };
     }
@@ -147,6 +148,31 @@ class ExhibitorList extends React.Component {
         else if (startupfilter === true) { startupfilter = false }
         this.setState({ startupfilter })
     }
+
+    placesArray() {
+      var places = ['Sweden', 'Europe', 'North America', 'South America', 'Oceania', 'Asia', 'Africa?'];
+      var listoptions = [];
+
+      for (let i = 0; i<locations.length; i++) {
+        listoptions.push(<option key={locations[i]} value={locations[i]}>locations[i]</option>);
+      }
+      return listoptions;
+    }
+
+    //places filter
+    placeFilter(e) {
+      let placefilter = this.state.sector;
+      placefilter = e.target.value;
+      this.setState({ placefilter });
+      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+          for (let i in exhibitorItem.props.exhibitor.locations) {
+              if (exhibitorItem.props.exhibitor.locations[i].name[0] == "S") {
+              }
+            }
+          });
+    }
+
+
 
     buildOptions() {
         var arr1 = ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector','Pedagogy','Web Development','Solid Mechanics','Simulation Technology','Pharmacy','Nuclear Power','Fluid Mechanics','Wood-Processing Industry','Medical Technology','Media Technology','Marine Systems','Manufacturing Industry','Management Consulting','Management','Insurance','Finance & Consultancy','Construction','Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research','Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development','Interaction Design','Industry Design'];
@@ -268,6 +294,16 @@ class ExhibitorList extends React.Component {
                         <select onChange={this.sectorFilter.bind(this)}>
                             <option value="All" selected>All Sectors</option>
                             {this.buildOptions()}
+                        </select>
+                        <div className="select_arrow"></div>
+                    </div>
+                    </div>
+
+                    <div className="sector-container">
+                    <div className="select">
+                        <select onChange={this.placeFilter.bind(this)}>
+                            <option value="All" selected>Any</option>
+                            {this.placesArray()}
                         </select>
                         <div className="select_arrow"></div>
                     </div>

@@ -33,7 +33,10 @@ class ExhibitorList extends React.Component {
             num: 0,
             startupfilter: false,
             location: "Any",
-            sector: "All"
+            sector: "All",
+            locations : ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'],
+            sectors : ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector','Pedagogy','Web Development','Solid Mechanics','Simulation Technology','Pharmacy','Nuclear Power','Fluid Mechanics','Wood-Processing Industry','Medical Technology','Media Technology','Marine Systems','Manufacturing Industry','Management Consulting','Management','Insurance','Finance & Consultancy','Construction','Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research','Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development','Interaction Design','Industry Design'],
+
         };
     }
 
@@ -150,12 +153,11 @@ class ExhibitorList extends React.Component {
     }
 
     //combine arrayOptions and buildOptions, store arrays in state
-    arrayOptions() {
-      var locations = ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'];
+    buildOptions(array) {
       var listitems = []
 
-      for (let i = 0; i < locations.length; i++) {
-        listitems.push(<option key={locations[i]} value={locations[i]}>{locations[i]}</option>);
+      for (let i = 0; i < array.length; i++) {
+        listitems.push(<option key={array[i]} value={array[i]}>{array[i]}</option>);
       }
       return listitems;
     }
@@ -164,16 +166,6 @@ class ExhibitorList extends React.Component {
       let location = this.state.location;
       location = e.target.value;
       this.setState({ location });
-    }
-
-    buildOptions() {
-        var arr1 = ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector','Pedagogy','Web Development','Solid Mechanics','Simulation Technology','Pharmacy','Nuclear Power','Fluid Mechanics','Wood-Processing Industry','Medical Technology','Media Technology','Marine Systems','Manufacturing Industry','Management Consulting','Management','Insurance','Finance & Consultancy','Construction','Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research','Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development','Interaction Design','Industry Design'];
-        var arr2 = []
-
-        for (let i = 0; i < arr1.length; i++) {
-            arr2.push(<option key={arr1[i]} value={arr1[i]}>{arr1[i]}</option>)
-        }
-        return arr2;
     }
 
     sectorFilter(e) {
@@ -311,7 +303,7 @@ class ExhibitorList extends React.Component {
                     <div className="select">
                         <select onChange={this.sectorFilter.bind(this)}>
                             <option value="All" selected>All Sectors</option>
-                            {this.buildOptions()}
+                            {this.buildOptions(this.state.sectors)}
                         </select>
                         <div className="select_arrow"></div>
                     </div>
@@ -321,7 +313,7 @@ class ExhibitorList extends React.Component {
                     <div className="select">
                         <select onChange={this.locationFilter.bind(this)}>
                             <option value="Any" selected>Any</option>
-                            {this.arrayOptions()}
+                            {this.buildOptions(this.state.locations)}
                         </select>
                         <div className="select_arrow"></div>
                     </div>

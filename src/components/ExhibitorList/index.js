@@ -28,9 +28,10 @@ class ExhibitorList extends React.Component {
             isLoading: true,
             search: '',
             jobfilters: {},
-            filters: {},
             shine: '',
             num: 0,
+            diversityfilter: false,
+            sustainabilityfilter: false,
             startupfilter: false,
             location: "Any",
             sector: "All",
@@ -110,15 +111,6 @@ class ExhibitorList extends React.Component {
         );
     }
 
-    specialFilter(value){
-        let filters = this.state.filters;
-        filters['all']= false;
-        filters['diversity']= false;
-        filters['sustainability']= false;
-        filters[value]= true;
-        this.setState({filters})
-    }
-
     cssShine(value){
         if (global.document != undefined){
             let shineItems = global.document.getElementsByClassName(value);
@@ -152,7 +144,20 @@ class ExhibitorList extends React.Component {
         this.setState({ startupfilter })
     }
 
-    //combine arrayOptions and buildOptions, store arrays in state
+    diversityFilter() {
+        let diversityfilter = this.state.diversityfilter;
+        if (diversityfilter === false) { diversityfilter = true }
+        else if (diversityfilter === true) { diversityfilter = false }
+        this.setState({ diversityfilter })
+    }
+
+    sustainabilityFilter() {
+        let sustainabilityfilter = this.state.sustainabilityfilter;
+        if (sustainabilityfilter === false) { sustainabilityfilter = true }
+        else if (sustainabilityfilter === true) { sustainabilityfilter = false }
+        this.setState({ sustainabilityfilter })
+    }
+
     buildOptions(array) {
       var listitems = []
 
@@ -189,17 +194,16 @@ class ExhibitorList extends React.Component {
                 });
         }
 
-        if(this.state.filters['all'] === false){
-            if (this.state.filters['diversity'] === true){
-                filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
-                    return (exhibitorItem.props.exhibitor.diversity);
-                });
-            }
-            if (this.state.filters['sustainability'] === true){
-                filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
-                    return (exhibitorItem.props.exhibitor.sustainability);
-                });
-            }
+        if (this.state.diversityfilter === true) {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                return exhibitorItem.props.exhibitor.groups.name == 'diversity';
+            });
+        }
+
+        if (this.state.sustainabilityfilter === true) {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                return exhibitorItem.props.exhibitor.groups.name == 'sustainability';
+            });
         }
 
         //Loop through the properties of filters object:
@@ -220,7 +224,7 @@ class ExhibitorList extends React.Component {
         // Startup filter
         if (this.state.startupfilter === true) {
             filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-                return exhibitorItem.props.exhibitor.startup === true;
+                return exhibitorItem.props.exhibitor.groups.name == 'startup';
             });
         }
 
@@ -286,11 +290,20 @@ class ExhibitorList extends React.Component {
                         title={ "Exhibitors" }
                     />
                     {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
-                    <div className = "filter-special">
-                        <div id="diversity" onMouseEnter = {() => this.cssShine('purple')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity_a.svg'/></div>
-                        <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
 
+                    <div className = "filter-special">
+                        <div id="diversity" onMouseEnter = {() => this.cssShine('purple')}
+                                            onMouseLeave = {() => this.cssShineOff()}>
+                          <input type="checkbox" id="diversity-checkbox" onClick ={()=>this.diversityFilter()}/>
+                          <label htmlFor={"diversity-checkbox"}><img src='/assets/diversity_a.svg'/></label>
+                        </div>
+                        <div id="sustainability" onMouseEnter = {() => this.cssShine('green')}
+                                                 onMouseLeave = {() => this.cssShineOff()}>
+                         <input type="checkbox" id="sustainability-checkbox" onClick ={()=>this.sustainabilityFilter()}/>
+                         <label htmlFor={"sustainability-checkbox"}><img src='/assets/sustainability.svg'/></label>
+                        </div>
                     </div>
+
                     <div className = "search-containter">
                         <input type = "text"
                         placeholder= "Search Exhibitor"

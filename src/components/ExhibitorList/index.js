@@ -149,12 +149,13 @@ class ExhibitorList extends React.Component {
         this.setState({ startupfilter })
     }
 
+    //combine arrayOptions and buildOptions, store arrays in state
     arrayOptions() {
-      var locations = ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America'];
+      var locations = ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'];
       var listitems = []
 
       for (let i = 0; i < locations.length; i++) {
-        listitems.push(<option key={locations[i]} value={locations[i]}>{locations[i]}</option>)
+        listitems.push(<option key={locations[i]} value={locations[i]}>{locations[i]}</option>);
       }
       return listitems;
     }
@@ -231,6 +232,32 @@ class ExhibitorList extends React.Component {
             });
         }
 
+        //Location filter
+        if (this.state.location === "Any") {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                    return exhibitorItem;
+            });
+        }
+        else{
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+              if (this.state.location == 'Sweden') {
+                for (let i in exhibitorItem.props.exhibitor.locations) {
+                    if (exhibitorItem.props.exhibitor.locations[i].name[0] == 'S') {
+                        return true;
+                    }
+                }
+                return false;
+              } else {
+                for (let i in exhibitorItem.props.exhibitor.locations) {
+                    if (exhibitorItem.props.exhibitor.locations[i].name == 'World \u2013 ' + this.state.location) {
+                        return true;
+                    }
+                }
+                return false;
+              }
+            });
+        }
+
         // Sector filter
         if (this.state.sector === "All") {
             filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
@@ -293,7 +320,7 @@ class ExhibitorList extends React.Component {
                     <div className="dropdown-container">
                     <div className="select">
                         <select onChange={this.locationFilter.bind(this)}>
-                            <option value="All" selected>Any</option>
+                            <option value="Any" selected>Any</option>
                             {this.arrayOptions()}
                         </select>
                         <div className="select_arrow"></div>

@@ -8,6 +8,7 @@ import "./exhibitorlist.scss";
 import Helmet from "react-helmet"
 import Modal from "../Modal";
 import Loading from "../Loading"
+import Cat from "../Cat"
 
 
 const urlPropsQueryConfig = {
@@ -185,7 +186,6 @@ class ExhibitorList extends React.Component {
                     return (exhibitorItem.props.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1);
                 });
         }
-
         if(this.state.filters['all'] === false){
             if (this.state.filters['diversity'] === true){
                 filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
@@ -339,7 +339,7 @@ class ExhibitorList extends React.Component {
                         {this.state.isLoading ? <Loading/> :null}
                     </div>
                     <div className="exhibitor-feed">
-                        {filteredCompanies}
+                        {filteredCompanies.length && !this.state.isLoading ? filteredCompanies : <div className="Noresultsfound"><p className="noresultstext">Sorry, we couldn't find any companies that match your search. Please look at our cat instead!</p><Cat/></div>}
                     </div>
                 </div>
             )

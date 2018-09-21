@@ -28,11 +28,16 @@ class ExhibitorList extends React.Component {
             isLoading: true,
             search: '',
             jobfilters: {},
-            filters: {},
             shine: '',
             num: 0,
+            diversityfilter: false,
+            sustainabilityfilter: false,
             startupfilter: false,
-            sector: "All"
+            location: "Any",
+            sector: "All",
+            locations : ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'],
+            sectors : ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector','Pedagogy','Web Development','Solid Mechanics','Simulation Technology','Pharmacy','Nuclear Power','Fluid Mechanics','Wood-Processing Industry','Medical Technology','Media Technology','Marine Systems','Manufacturing Industry','Management Consulting','Management','Insurance','Finance & Consultancy','Construction','Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research','Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development','Interaction Design','Industry Design'],
+
         };
     }
 
@@ -106,15 +111,6 @@ class ExhibitorList extends React.Component {
         );
     }
 
-    specialFilter(value){
-        let filters = this.state.filters;
-        filters['all']= false;
-        filters['diversity']= false;
-        filters['sustainability']= false;
-        filters[value]= true;
-        this.setState({filters})
-    }
-
     cssShine(value){
         if (global.document != undefined){
             let shineItems = global.document.getElementsByClassName(value);
@@ -148,13 +144,39 @@ class ExhibitorList extends React.Component {
         this.setState({ startupfilter })
     }
 
-    buildOptions() {
-        var arr1 = ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector','Pedagogy','Web Development','Solid Mechanics','Simulation Technology','Pharmacy','Nuclear Power','Fluid Mechanics','Wood-Processing Industry','Medical Technology','Media Technology','Marine Systems','Manufacturing Industry','Management Consulting','Management','Insurance','Finance & Consultancy','Construction','Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research','Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development','Interaction Design','Industry Design'];
-        var arr2 = []
+    diversityFilter() {
+        let diversityfilter = this.state.diversityfilter;
+        if (diversityfilter === false) { diversityfilter = true }
+        else if (diversityfilter === true) { diversityfilter = false }
+        this.setState({ diversityfilter })
+    }
 
+<<<<<<< HEAD
         for (let i = 0; i < arr1.length; i++) {
             arr2.push(<option key={arr1[i]} value={arr1[i]}>{arr1[i]}</option>)
         }
+=======
+    sustainabilityFilter() {
+        let sustainabilityfilter = this.state.sustainabilityfilter;
+        if (sustainabilityfilter === false) { sustainabilityfilter = true }
+        else if (sustainabilityfilter === true) { sustainabilityfilter = false }
+        this.setState({ sustainabilityfilter })
+    }
+
+    buildOptions(array) {
+      var listitems = []
+
+      for (let i = 0; i < array.length; i++) {
+        listitems.push(<option key={array[i]} value={array[i]}>{array[i]}</option>);
+      }
+      return listitems;
+    }
+
+    locationFilter(e) {
+      let location = this.state.location;
+      location = e.target.value;
+      this.setState({ location });
+>>>>>>> 7b155e2f418ffa36922674f11fb3747766e60075
     }
 
     sectorFilter(e) {
@@ -178,17 +200,16 @@ class ExhibitorList extends React.Component {
                 });
         }
 
-        if(this.state.filters['all'] === false){
-            if (this.state.filters['diversity'] === true){
-                filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
-                    return (exhibitorItem.props.exhibitor.diversity);
-                });
-            }
-            if (this.state.filters['sustainability'] === true){
-                filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
-                    return (exhibitorItem.props.exhibitor.sustainability);
-                });
-            }
+        if (this.state.diversityfilter === true) {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                return exhibitorItem.props.exhibitor.groups.name == 'diversity';
+            });
+        }
+
+        if (this.state.sustainabilityfilter === true) {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                return exhibitorItem.props.exhibitor.groups.name == 'sustainability';
+            });
         }
 
         //Loop through the properties of filters object:
@@ -209,7 +230,33 @@ class ExhibitorList extends React.Component {
         // Startup filter
         if (this.state.startupfilter === true) {
             filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-                return exhibitorItem.props.exhibitor.startup === true;
+                return exhibitorItem.props.exhibitor.groups.name == 'startup';
+            });
+        }
+
+        //Location filter
+        if (this.state.location === "Any") {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                    return exhibitorItem;
+            });
+        }
+        else{
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+              if (this.state.location == 'Sweden') {
+                for (let i in exhibitorItem.props.exhibitor.locations) {
+                    if (exhibitorItem.props.exhibitor.locations[i].name[0] == 'S') {
+                        return true;
+                    }
+                }
+                return false;
+              } else {
+                for (let i in exhibitorItem.props.exhibitor.locations) {
+                    if (exhibitorItem.props.exhibitor.locations[i].name == 'World \u2013 ' + this.state.location) {
+                        return true;
+                    }
+                }
+                return false;
+              }
             });
         }
 
@@ -249,11 +296,20 @@ class ExhibitorList extends React.Component {
                         title={ "Exhibitors" }
                     />
                     {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
-                    <div className = "filter-special">
-                        <div id="diversity" onMouseEnter = {() => this.cssShine('purple')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity_a.svg'/></div>
-                        <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
 
+                    <div className = "filter-special">
+                        <div id="diversity" onMouseEnter = {() => this.cssShine('purple')}
+                                            onMouseLeave = {() => this.cssShineOff()}>
+                          <input type="checkbox" id="diversity-checkbox" onClick ={()=>this.diversityFilter()}/>
+                          <label htmlFor={"diversity-checkbox"}><img src='/assets/diversity_a.svg'/></label>
+                        </div>
+                        <div id="sustainability" onMouseEnter = {() => this.cssShine('green')}
+                                                 onMouseLeave = {() => this.cssShineOff()}>
+                         <input type="checkbox" id="sustainability-checkbox" onClick ={()=>this.sustainabilityFilter()}/>
+                         <label htmlFor={"sustainability-checkbox"}><img src='/assets/sustainability.svg'/></label>
+                        </div>
                     </div>
+
                     <div className = "search-containter">
                         <input type = "text"
                         placeholder= "Search Exhibitor"
@@ -262,11 +318,21 @@ class ExhibitorList extends React.Component {
                         />
                     </div>
 
-                    <div className="sector-container">
+                    <div className="dropdown-container">
                     <div className="select">
                         <select onChange={this.sectorFilter.bind(this)}>
                             <option value="All" selected>All Sectors</option>
-                            {this.buildOptions()}
+                            {this.buildOptions(this.state.sectors)}
+                        </select>
+                        <div className="select_arrow"></div>
+                    </div>
+                    </div>
+
+                    <div className="dropdown-container">
+                    <div className="select">
+                        <select onChange={this.locationFilter.bind(this)}>
+                            <option value="Any" selected>Any</option>
+                            {this.buildOptions(this.state.locations)}
                         </select>
                         <div className="select_arrow"></div>
                     </div>

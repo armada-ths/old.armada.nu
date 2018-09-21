@@ -151,11 +151,6 @@ class ExhibitorList extends React.Component {
         this.setState({ diversityfilter })
     }
 
-<<<<<<< HEAD
-        for (let i = 0; i < arr1.length; i++) {
-            arr2.push(<option key={arr1[i]} value={arr1[i]}>{arr1[i]}</option>)
-        }
-=======
     sustainabilityFilter() {
         let sustainabilityfilter = this.state.sustainabilityfilter;
         if (sustainabilityfilter === false) { sustainabilityfilter = true }

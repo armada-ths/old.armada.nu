@@ -336,6 +336,65 @@
 
 }
 
+.sector-container {
+  margin: auto;
+  max-width: 20em;
+  padding: 0.1em 2em 1.5em 2em;
+  text-align: center;
+}
+.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 95%;
+  box-shadow: 0 0.5em 0.35em -0.35em grey;
+}    .select select {
+      font-family: 'Arial';
+      display: inline-block;
+      width: 100%;
+      cursor: pointer;
+      padding: 10px 15px;
+      outline: 0;
+      border: 1px solid #fafafa;
+      border-radius: 3.3px;
+      background: #ffffff;
+      color: #7b7b7b;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+  }
+      .select select::-ms-expand {
+          display: none;
+      }
+      .select select:hover,
+      .select select:focus {
+          color: #000000;
+          background: #ffffff;
+      }
+      .select select:disabled {
+          opacity: 0.5;
+          pointer-events: none;
+      }
+.select_arrow {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  width: 0px;
+  height: 0px;
+  border: solid #00d790;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+  border-color: #00f3a3;
+}
+.select select:disabled ~ .select_arrow {
+  border-top-color: #00d790;
+}
 
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {

@@ -155,7 +155,6 @@ class ExhibitorList extends React.Component {
         for (let i = 0; i < arr1.length; i++) {
             arr2.push(<option key={arr1[i]} value={arr1[i]}>{arr1[i]}</option>)
         }
-        return arr2; 
     }
 
     sectorFilter(e) {

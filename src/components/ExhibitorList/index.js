@@ -171,7 +171,6 @@ class ExhibitorList extends React.Component {
       let location = this.state.location;
       location = e.target.value;
       this.setState({ location });
->>>>>>> 7b155e2f418ffa36922674f11fb3747766e60075
     }
 
     sectorFilter(e) {

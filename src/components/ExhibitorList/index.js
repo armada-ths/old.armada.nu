@@ -14,35 +14,45 @@ import Cat from "../Cat"
 const urlPropsQueryConfig = {
     exhibitorName: { type: UrlQueryParamTypes.string, queryParam: 'exhibitorName' },
 };
+
+//base of server adress
 const ais = 'https://ais.armada.nu/';
 
+//Easter egg button combos
 const armada2018 = ["a","r","m","a","d","a","2","0","1","8"];
 const banquet = ["b","a","n","q","u","e","t"];
+
 
 class ExhibitorList extends React.Component {
     constructor(props) {
         super(props); // adopts parent qualities
         this.state = {
             exhibitors: [],  // json object
-            exhibitorList: [],
-            showModal: false,
+            exhibitorList: [], //displayed exhibitors
+            showModal: false, //show individual company card
             exhibitorName: undefined,
             isLoading: true,
-            search: '',
+            search: '', //search query string
             jobfilters: {},
             shine: '',
-            num: 0,
             diversityfilter: false,
             sustainabilityfilter: false,
             startupfilter: false,
             location: "Any",
             sector: "All",
-            locations : ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'],
-            sectors : ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector','Pedagogy','Web Development','Solid Mechanics','Simulation Technology','Pharmacy','Nuclear Power','Fluid Mechanics','Wood-Processing Industry','Medical Technology','Media Technology','Marine Systems','Manufacturing Industry','Management Consulting','Management','Insurance','Finance & Consultancy','Construction','Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research','Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development','Interaction Design','Industry Design'],
+            locations : ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'], //TODO: fill dynamically from api {locations + sector}
+            sectors : ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector',
+            'Pedagogy','Web Development','Solid Mechanics','Simulation Technology','Pharmacy','Nuclear Power',
+            'Fluid Mechanics','Wood-Processing Industry','Medical Technology','Media Technology','Marine Systems',
+            'Manufacturing Industry','Management Consulting','Management','Insurance','Finance & Consultancy','Construction',
+            'Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research',
+            'Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development',
+            'Interaction Design','Industry Design'],
 
         };
     }
 
+    //currently only deals w/ getting data from api (unsure)
     componentDidMount() {  // only called when exhibitor page is created or updated.
         axios.get( ais + 'api/exhibitors?img_placeholder=true')  // fetch data witt promise (then) and res(ult)
             .then( (res)  => {
@@ -57,9 +67,13 @@ class ExhibitorList extends React.Component {
                 }
             });
     }
+
+    //search
     updateSearch(event){
         this.setState({search: event.target.value.substr(0,100)});
     }
+
+    //displays types of jobs offered by company in its Modal
     getJobContainer(exhibitor){
         return(  <div className = "job-container">
 
@@ -70,12 +84,14 @@ class ExhibitorList extends React.Component {
         )
     }
 
+
     showModal = (exhibitorName) => {
         this.setState({showModal: !this.state.showModal, exhibitorName});
         this.props.onChangeExhibitorName(exhibitorName);
     };
 
     displayExhibitor = (exhibitor) => {
+        //TODO: add more data to modal. locations etc.
         return (
             <Modal onClose={() => this.showModal(null)}>
                 <div className="modalimage-exhib">
@@ -105,7 +121,8 @@ class ExhibitorList extends React.Component {
                             <div className='icon'><img src='/assets/place.svg'/></div>
                             <div className="position">{exhibitor.exhibitor_location}</div>
                         </div>
-                        {/* {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null} */}
+                        {/* TODO: Add Map feature to Modal
+                          {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null} */}
                     </div>
                 </div>
 
@@ -113,6 +130,8 @@ class ExhibitorList extends React.Component {
         );
     }
 
+    //TODO: combine an simplify those two functions
+    //diversity and sustainability filters special effects {cssshine, cssShineOff}
     cssShine(value){
         if (global.document != undefined){
             let shineItems = global.document.getElementsByClassName(value);
@@ -132,13 +151,14 @@ class ExhibitorList extends React.Component {
         }
     }
 
+    //filter fnctions to be called onChange
     jobFilter(value){
         let jobfilters = this.state.jobfilters;
         jobfilters[value] = !jobfilters[value];
         this.setState({jobfilters})
     }
 
-    // Gets value from checkbox regarding startup filtering
+    //TODO: startup, diversity, and sustainability to be combined
     startupFilter() {
         let startupfilter = this.state.startupfilter;
         if (startupfilter === false) { startupfilter = true }
@@ -160,15 +180,6 @@ class ExhibitorList extends React.Component {
         this.setState({ sustainabilityfilter })
     }
 
-    buildOptions(array) {
-      var listitems = []
-
-      for (let i = 0; i < array.length; i++) {
-        listitems.push(<option key={array[i]} value={array[i]}>{array[i]}</option>);
-      }
-      return listitems;
-    }
-
     locationFilter(e) {
       let location = this.state.location;
       location = e.target.value;
@@ -181,6 +192,17 @@ class ExhibitorList extends React.Component {
         this.setState({ sector });
     }
 
+    //build options for dropdown filters
+    buildOptions(array) {
+      var listitems = []
+
+      for (let i = 0; i < array.length; i++) {
+        listitems.push(<option key={array[i]} value={array[i]}>{array[i]}</option>);
+      }
+      return listitems;
+    }
+
+    //TODO: divide and simplify into nested components
     render() {
         // Here you decide if list of exhibitors should be displayed or not
         let showExhibitors = true;
@@ -195,19 +217,28 @@ class ExhibitorList extends React.Component {
                 });
         }
 
+        //Diversity filter
         if (this.state.diversityfilter === true) {
             filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
                 return exhibitorItem.props.exhibitor.groups.name == 'diversity';
             });
         }
 
+        //Sustainability filter
         if (this.state.sustainabilityfilter === true) {
             filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
                 return exhibitorItem.props.exhibitor.groups.name == 'sustainability';
             });
         }
 
-        //Loop through the properties of filters object:
+        // Startup filter
+        if (this.state.startupfilter === true) {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                return exhibitorItem.props.exhibitor.groups.name == 'startup';
+            });
+        }
+
+        //Job type filter
         for(let filterkey in this.state.jobfilters) {
             if (this.state.jobfilters[filterkey] == true) {
                 filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
@@ -219,13 +250,6 @@ class ExhibitorList extends React.Component {
                     return false;
                 });
             }
-        }
-
-        // Startup filter
-        if (this.state.startupfilter === true) {
-            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-                return exhibitorItem.props.exhibitor.groups.name == 'startup';
-            });
         }
 
         //Location filter
@@ -270,6 +294,7 @@ class ExhibitorList extends React.Component {
                 return false;
             });
         }
+
 
         if (showExhibitors) {
             return (
@@ -329,16 +354,15 @@ class ExhibitorList extends React.Component {
                     <div className="dropdown-container">
                       <div className="select">
                           <select onChange={this.locationFilter.bind(this)}>
-                              <option value="Any" selected>Any</option>
+                              <option value="Any" selected>Any Location</option>
                               {this.buildOptions(this.state.locations)}
                           </select>
                           <div className="select_arrow"></div>
                       </div>
                     </div>
 
-                    {/* a point of improvement could be to create a list of available filters in the ais and then map them here.
-                    and not hardcode it as it is now. Then the options would change automatically if the jobs offered in the ais change
-                    no word for the coder and less risk of displaying the wrong filters */}
+                    {/* TODO: everything should be dynamic instead of hard-coded */}
+
                     <div className = "checkbox-filtering">
 
                         <div className = "checkbox-container">
@@ -376,6 +400,7 @@ class ExhibitorList extends React.Component {
                             <label htmlFor={"check7"}>Full Time Job</label>
                         </div>
 
+                        {/*TODO: start up should be separated from job filters*/}
                         <div className="checkbox-container">
                             <input type="checkbox" id="check8" onClick={() => this.startupFilter()} />
                             <label htmlFor={"check8"}>Startup</label>
@@ -383,11 +408,19 @@ class ExhibitorList extends React.Component {
 
                     </div>
 
+                    {/*Loading + no results found components*/}
                     <div className = "loading">
                         {this.state.isLoading ? <Loading/> :null}
                     </div>
                     <div className="exhibitor-feed">
-                        {filteredCompanies.length && !this.state.isLoading ? filteredCompanies : <div className="Noresultsfound"><p className="noresultstext">Sorry, we couldn't find any companies that match your search. Please look at our cat instead!</p><Cat/></div>}
+                        {filteredCompanies.length && !this.state.isLoading ? filteredCompanies :
+                          <div className="Noresultsfound">
+                            <p className="noresultstext">
+                              Sorry, we couldn't find any companies that match your search. Please look at our cat instead!
+                            </p>
+                              <Cat/>
+                          </div>
+                        }
                     </div>
                 </div>
             )
@@ -401,6 +434,8 @@ class ExhibitorList extends React.Component {
     }
 }
 
+//TODO: stop using proptypes
+//TODO: reorg of this code into proper places
 
 ExhibitorList.propTypes = {
     exhibitorName: PropTypes.string,

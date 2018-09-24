@@ -75,15 +75,15 @@ class ExhibitorList extends React.Component {
 
     //displays types of jobs offered by company in its Modal
     getJobContainer(exhibitor){
-        return(  <div className = "job-container">
+        return(
+          <div className = "job-container">
 
                 <h3>Job Opportunities</h3>
                 {exhibitor.employments.map((jobtype) => <div className="job-section">{jobtype.name}</div>)}
 
-            </div>
+          </div>
         )
     }
-
 
     showModal = (exhibitorName) => {
         this.setState({showModal: !this.state.showModal, exhibitorName});
@@ -91,7 +91,7 @@ class ExhibitorList extends React.Component {
     };
 
     displayExhibitor = (exhibitor) => {
-        //TODO: add more data to modal. locations etc.
+        //TODO: add more data to modal. locations etc, change how it's displayed
         return (
             <Modal onClose={() => this.showModal(null)}>
                 <div className="modalimage-exhib">
@@ -114,7 +114,17 @@ class ExhibitorList extends React.Component {
                             {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
                         </div>
                     </div>
+
                     {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
+
+                    <div className = "loc-container">
+                        <h3>Locations</h3>
+                        {exhibitor.locations.map((loc) =>
+                          <p className="location-section">
+                            {loc.name}
+                          </p>)}
+                    </div>
+
                     <div className='location-container'>
                         <h3>Find us at the fair</h3>
                         <div className='location'>
@@ -413,6 +423,7 @@ class ExhibitorList extends React.Component {
                     <div className = "loading">
                         {this.state.isLoading ? <Loading/> :null}
                     </div>
+                    {/*TODO: don't display cat when first loading*/}
                     <div className="exhibitor-feed">
                         {filteredCompanies.length && !this.state.isLoading ? filteredCompanies :
                           <div className="Noresultsfound">

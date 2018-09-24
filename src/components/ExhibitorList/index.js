@@ -316,6 +316,7 @@ class ExhibitorList extends React.Component {
                     />
                     {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
 
+                    {/*TODO: remove blue box around special filters*/}
                     <div className = "filter-special">
 
                       <input id="diversity" type="image" alt='diversity filter' src='/assets/diversity_a.svg'

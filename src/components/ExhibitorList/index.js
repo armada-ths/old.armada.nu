@@ -14,8 +14,9 @@ import Cat from "../Cat"
 const urlPropsQueryConfig = {
     exhibitorName: { type: UrlQueryParamTypes.string, queryParam: 'exhibitorName' },
 };
+const ais = 'https://ais.armada.nu/';
 
-const armada2017 = ["a","r","m","a","d","a","2","0","1","7"];
+const armada2018 = ["a","r","m","a","d","a","2","0","1","8"];
 const banquet = ["b","a","n","q","u","e","t"];
 
 class ExhibitorList extends React.Component {
@@ -43,7 +44,7 @@ class ExhibitorList extends React.Component {
     }
 
     componentDidMount() {  // only called when exhibitor page is created or updated.
-        axios.get('https://ais.armada.nu/api/exhibitors?img_placeholder=true')  // fetch data witt promise (then) and res(ult)
+        axios.get( ais + 'api/exhibitors?img_placeholder=true')  // fetch data witt promise (then) and res(ult)
             .then( (res)  => {
                 let exhibitors = res.data;  // create variable and store result within parameter data
                 exhibitors.sort((a, b) => a.name.localeCompare(b.name));
@@ -78,7 +79,7 @@ class ExhibitorList extends React.Component {
         return (
             <Modal onClose={() => this.showModal(null)}>
                 <div className="modalimage-exhib">
-                    <img src={"https://ais.armada.nu/" + exhibitor.logo_squared} />
+                    <img src={ais + exhibitor.logo_squared} />
                 </div>
 
                 <div className="modalinfo">
@@ -274,7 +275,7 @@ class ExhibitorList extends React.Component {
             return (
                 <div className = "exhibitors">
 
-                <EasterEgg keys={armada2017} timeout={7000}>
+                <EasterEgg keys={armada2018} timeout={7000}>
                   <div className="armadaRainbow easterEggPosition"/>
                 </EasterEgg>
 
@@ -291,16 +292,20 @@ class ExhibitorList extends React.Component {
                     {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
 
                     <div className = "filter-special">
-                        <div id="diversity" onMouseEnter = {() => this.cssShine('purple')}
-                                            onMouseLeave = {() => this.cssShineOff()}>
-                          <input type="checkbox" id="diversity-checkbox" onClick ={()=>this.diversityFilter()}/>
-                          <label htmlFor={"diversity-checkbox"}><img src='/assets/diversity_a.svg'/></label>
-                        </div>
-                        <div id="sustainability" onMouseEnter = {() => this.cssShine('green')}
-                                                 onMouseLeave = {() => this.cssShineOff()}>
-                         <input type="checkbox" id="sustainability-checkbox" onClick ={()=>this.sustainabilityFilter()}/>
-                         <label htmlFor={"sustainability-checkbox"}><img src='/assets/sustainability.svg'/></label>
-                        </div>
+
+                      <input id="diversity" type="image" alt='diversity filter' src='/assets/diversity_a.svg'
+                        onClick={()=>this.diversityFilter()}
+                        onMouseEnter = {() => this.cssShine('purple')}
+                        onMouseLeave = {() => this.cssShineOff()}
+                      />
+
+                      <input id="sustainability" type="image" alt='sustainability filter' src='/assets/sustainability.svg'
+                        onClick ={()=>this.sustainabilityFilter()}
+                        onMouseEnter = {() => this.cssShine('green')}
+                        onMouseLeave = {() => this.cssShineOff()}
+                      />
+
+
                     </div>
 
                     <div className = "search-containter">
@@ -312,23 +317,23 @@ class ExhibitorList extends React.Component {
                     </div>
 
                     <div className="dropdown-container">
-                    <div className="select">
-                        <select onChange={this.sectorFilter.bind(this)}>
-                            <option value="All" selected>All Sectors</option>
-                            {this.buildOptions(this.state.sectors)}
-                        </select>
-                        <div className="select_arrow"></div>
-                    </div>
+                      <div className="select">
+                          <select onChange={this.sectorFilter.bind(this)}>
+                              <option value="All" selected>All Sectors</option>
+                              {this.buildOptions(this.state.sectors)}
+                          </select>
+                          <div className="select_arrow"></div>
+                      </div>
                     </div>
 
                     <div className="dropdown-container">
-                    <div className="select">
-                        <select onChange={this.locationFilter.bind(this)}>
-                            <option value="Any" selected>Any</option>
-                            {this.buildOptions(this.state.locations)}
-                        </select>
-                        <div className="select_arrow"></div>
-                    </div>
+                      <div className="select">
+                          <select onChange={this.locationFilter.bind(this)}>
+                              <option value="Any" selected>Any</option>
+                              {this.buildOptions(this.state.locations)}
+                          </select>
+                          <div className="select_arrow"></div>
+                      </div>
                     </div>
 
                     {/* a point of improvement could be to create a list of available filters in the ais and then map them here.
@@ -340,34 +345,42 @@ class ExhibitorList extends React.Component {
                             <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee")} />
                             <label htmlFor={"check1"}>Trainee</label>
                         </div>
+
                         <div className = "checkbox-container">
                             <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master thesis")}/>
                             <label htmlFor={"check2"}>Master Thesis</label>
                         </div>
+
                         <div className = "checkbox-container">
                             <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer job")}/>
                             <label htmlFor={"check3"}>Summer Job</label>
                         </div>
+
                         <div className = "checkbox-container">
                             <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part time job")} />
                             <label htmlFor={"check4"}>Part Time Job</label>
                         </div>
+
                         <div className = "checkbox-container">
                             <input type="checkbox" id="check5" onClick ={()=>this.jobFilter("Internship")} />
                             <label htmlFor={"check5"}>Internship</label>
                         </div>
+
                         <div className = "checkbox-container">
                             <input type="checkbox" id="check6" onClick ={()=>this.jobFilter("Bachelor thesis")} />
                             <label htmlFor={"check6"}>Bachelor Thesis</label>
-                    </div>
+                        </div>
+
                         <div className = "checkbox-container">
                             <input type="checkbox" id="check7" onClick ={()=>this.jobFilter("Full time job")} />
                             <label htmlFor={"check7"}>Full Time Job</label>
-                    </div>
+                        </div>
+
                         <div className="checkbox-container">
                             <input type="checkbox" id="check8" onClick={() => this.startupFilter()} />
                             <label htmlFor={"check8"}>Startup</label>
                         </div>
+
                     </div>
 
                     <div className = "loading">
@@ -409,7 +422,7 @@ const ExhibitorItem = (props) => {
     return (
         <div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.name)}>
             <div className = "image-container">
-                <img src = {"https://ais.armada.nu/" + props.exhibitor.logo_squared} />
+                <img src = {ais + props.exhibitor.logo_squared} />
             </div>
             <p> {props.exhibitor.name} </p>
             {props.exhibitor.diversity == true

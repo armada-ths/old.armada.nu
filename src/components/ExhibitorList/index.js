@@ -427,10 +427,9 @@ class ExhibitorList extends React.Component {
                     <div className="exhibitor-feed">
                         {filteredCompanies.length && !this.state.isLoading ? filteredCompanies :
                           <div className="Noresultsfound">
-                            <p className="noresultstext">
+                              {!this.state.isLoading ? <div><p className="noresultstext">
                               Sorry, we couldn't find any companies that match your search. Please look at our cat instead!
-                            </p>
-                              <Cat/>
+                            </p><Cat/></div> : null}
                           </div>
                         }
                     </div>

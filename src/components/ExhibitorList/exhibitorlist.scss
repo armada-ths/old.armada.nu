@@ -197,6 +197,33 @@
   padding-top: 5%;
   font-weight: 600;
 }
+
+.showmore-container {
+  text-align:center;
+
+  .showmorebutton {
+    text-align: center;
+    background-color:#00d78f;
+    font-weight: 200;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    padding:16px 31px;
+    text-decoration:none;
+  }
+    .showmorebutton:hover {
+      background-color:#00a54a;
+      text-decoration: none;
+    }
+    .showmorebutton:active {
+      position:relative;
+      top:1px;
+    }
+}
+
 .exhibitor-feed .exhibitor-box{
   margin: 0em 5px 0em 5px;
   overflow: hidden;

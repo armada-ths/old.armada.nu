@@ -48,6 +48,7 @@ class ExhibitorList extends React.Component {
             'Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research',
             'Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development',
             'Interaction Design','Industry Design'],
+            showamount: 20
 
         };
     }
@@ -70,6 +71,7 @@ class ExhibitorList extends React.Component {
 
     //search
     updateSearch(event){
+        this.setdefault()
         this.setState({search: event.target.value.substr(0,100)});
     }
 
@@ -163,13 +165,27 @@ class ExhibitorList extends React.Component {
 
     //filter fnctions to be called onChange
     jobFilter(value){
+        this.setdefault()
         let jobfilters = this.state.jobfilters;
         jobfilters[value] = !jobfilters[value];
         this.setState({jobfilters})
     }
 
+    showMore(){
+        let showamount = this.state.showamount;
+        showamount += 20;
+        this.setState({showamount})
+    }
+
+    setdefault() {
+        let showamount = this.state.showamount;
+        showamount = 20;
+        this.setState({showamount})
+    }
+
     //TODO: startup, diversity, and sustainability to be combined
     startupFilter() {
+        this.setdefault()
         let startupfilter = this.state.startupfilter;
         if (startupfilter === false) { startupfilter = true }
         else if (startupfilter === true) { startupfilter = false }
@@ -177,6 +193,7 @@ class ExhibitorList extends React.Component {
     }
 
     diversityFilter() {
+        this.setdefault()
         let diversityfilter = this.state.diversityfilter;
         if (diversityfilter === false) { diversityfilter = true }
         else if (diversityfilter === true) { diversityfilter = false }
@@ -184,6 +201,7 @@ class ExhibitorList extends React.Component {
     }
 
     sustainabilityFilter() {
+        this.setdefault()
         let sustainabilityfilter = this.state.sustainabilityfilter;
         if (sustainabilityfilter === false) { sustainabilityfilter = true }
         else if (sustainabilityfilter === true) { sustainabilityfilter = false }
@@ -191,12 +209,14 @@ class ExhibitorList extends React.Component {
     }
 
     locationFilter(e) {
+    this.setdefault()
       let location = this.state.location;
       location = e.target.value;
       this.setState({ location });
     }
 
     sectorFilter(e) {
+        this.setdefault()
         let sector = this.state.sector;
         sector = e.target.value;
         this.setState({ sector });
@@ -419,13 +439,11 @@ class ExhibitorList extends React.Component {
 
                     </div>
 
-                    {/*Loading + no results found components*/}
                     <div className = "loading">
                         {this.state.isLoading ? <Loading/> :null}
                     </div>
-                    {/*TODO: don't display cat when first loading*/}
                     <div className="exhibitor-feed">
-                        {filteredCompanies.length && !this.state.isLoading ? filteredCompanies :
+                        {filteredCompanies.length && !this.state.isLoading ? filteredCompanies.splice(0,this.state.showamount) :
                           <div className="Noresultsfound">
                               {!this.state.isLoading ? <div><p className="noresultstext">
                               Sorry, we couldn't find any companies that match your search. Please look at our cat instead!
@@ -433,6 +451,10 @@ class ExhibitorList extends React.Component {
                           </div>
                         }
                     </div>
+                    {filteredCompanies.length > this.state.showamount ?
+                    <div className="showmore-container">
+                        <button className="showmorebutton" onClick={() => this.showMore()}>Show More</button>
+                    </div> : null}
                 </div>
             )
         } else {

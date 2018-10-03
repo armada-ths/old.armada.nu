@@ -177,6 +177,13 @@ class ExhibitorList extends React.Component {
         this.setState({showamount})
     }
 
+    showLess(){
+        let showamount = this.state.showamount;
+        showamount = 20;
+        this.setState({showamount})
+        window.scrollTo(0, 850);
+    }
+
     setdefault() {
         let showamount = this.state.showamount;
         showamount = 20;
@@ -455,6 +462,7 @@ class ExhibitorList extends React.Component {
                     <div className="showmore-container">
                         <button className="showmorebutton" onClick={() => this.showMore()}>Show More</button>
                     </div> : null}
+                    {filteredCompanies.length < this.state.showamount && !this.state.isLoading && filteredCompanies.length ? <div className="showmore-container"><button className="showmorebutton showlessbutton" onClick={() => this.showLess()}>Close</button></div> : null}
                 </div>
             )
         } else {

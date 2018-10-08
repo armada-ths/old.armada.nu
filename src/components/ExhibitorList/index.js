@@ -387,7 +387,7 @@ class ExhibitorList extends React.Component {
                     </div>
 
                     {/* TODO: everything should be dynamic instead of hard-coded */}
-
+                    <div className = "checkboxes">
                     <div className = "checkbox-filtering">
 
                         <div className = "checkbox-container">
@@ -434,6 +434,7 @@ class ExhibitorList extends React.Component {
                       </div>
 
                     </div>
+                  </div>
 
                     {/*Loading + no results found components*/}
                     <div className = "loading">

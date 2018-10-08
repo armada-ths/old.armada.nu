@@ -37,7 +37,9 @@ class ExhibitorList extends React.Component {
             diversityfilter: false,
             sustainabilityfilter: false,
             startupfilter: false,
-            location: "Any",
+            diversitysrc: '/assets/diversity_a.svg',
+            sustainabilitysrc: '/assets/sustainability.svg',
+            location: "Anywhere",
             sector: "All",
             locations : ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'], //TODO: fill dynamically from api {locations + sector}
             sectors : ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector',
@@ -180,16 +182,30 @@ class ExhibitorList extends React.Component {
 
     diversityFilter() {
         let diversityfilter = this.state.diversityfilter;
-        if (diversityfilter === false) { diversityfilter = true }
-        else if (diversityfilter === true) { diversityfilter = false }
+        let diversitysrc = this.state.diversitysrc;
+        if (diversityfilter === false) {
+          diversityfilter = true;
+          diversitysrc = '/assets/diversity_selected.svg';
+        } else if (diversityfilter === true) {
+          diversityfilter = false;
+          diversitysrc = '/assets/diversity_a.svg';
+        }
         this.setState({ diversityfilter })
+        this.setState({ diversitysrc })
     }
 
     sustainabilityFilter() {
         let sustainabilityfilter = this.state.sustainabilityfilter;
-        if (sustainabilityfilter === false) { sustainabilityfilter = true }
-        else if (sustainabilityfilter === true) { sustainabilityfilter = false }
+        let sustainabilitysrc = this.state.sustainabilitysrc;
+        if (sustainabilityfilter === false) {
+          sustainabilityfilter = true;
+          sustainabilitysrc = '/assets/sustainability_selected.svg';
+        } else if (sustainabilityfilter === true) {
+          sustainabilityfilter = false;
+          sustainabilitysrc = '/assets/sustainability.svg';
+        }
         this.setState({ sustainabilityfilter })
+        this.setState({ sustainabilitysrc })
     }
 
     // groupFilter(group) {
@@ -272,7 +288,7 @@ class ExhibitorList extends React.Component {
         }
 
         //Location filter
-        if (this.state.location === "Any") {
+        if (this.state.location === "Anywhere") {
             filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
                     return exhibitorItem;
             });
@@ -338,13 +354,13 @@ class ExhibitorList extends React.Component {
                     {/*TODO: remove blue box around special filters*/}
                     <div className = "filter-special">
 
-                      <input id="diversity" type="image" alt='diversity filter' src='/assets/diversity_a.svg'
+                      <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc}
                         onClick={()=>this.diversityFilter()}
                         onMouseEnter = {() => this.cssShine('purple')}
                         onMouseLeave = {() => this.cssShineOff()}
                       />
 
-                      <input id="sustainability" type="image" alt='sustainability filter' src='/assets/sustainability.svg'
+                      <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc}
                         onClick ={()=>this.sustainabilityFilter()}
                         onMouseEnter = {() => this.cssShine('green')}
                         onMouseLeave = {() => this.cssShineOff()}
@@ -369,7 +385,7 @@ class ExhibitorList extends React.Component {
                     <div className="dropdown-container">
                       <div className="select">
                           <select onChange={this.sectorFilter.bind(this)}>
-                              <option value="All" selected>All Sectors</option>
+                              <option value="All">All Sectors</option>
                               {this.buildOptions(this.state.sectors)}
                           </select>
                           <div className="select_arrow"></div>
@@ -379,7 +395,7 @@ class ExhibitorList extends React.Component {
                     <div className="dropdown-container">
                       <div className="select">
                           <select onChange={this.locationFilter.bind(this)}>
-                              <option value="Any" selected>Any Location</option>
+                              <option value="Any">Anywhere</option>
                               {this.buildOptions(this.state.locations)}
                           </select>
                           <div className="select_arrow"></div>

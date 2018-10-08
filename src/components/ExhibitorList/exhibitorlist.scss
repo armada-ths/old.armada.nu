@@ -44,13 +44,13 @@
   justify-content: center;
 }
 .exhibitors .filter-special input[type='image']{
-  padding: 0.5em;
-  height: 4em;
-  cursor: pointer;
+  padding: 1.5em;
+  height: 6em;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
+  outline: none;
 }
 .exhibitors .filter-special input[type='image']:hover{
   -webkit-transition: .3s ease-in-out;
@@ -65,7 +65,6 @@
 	padding: 0.1em 2em 1.5em 2em;
 	text-align: center;
   input{
-
 		box-shadow: 0 0.5em 0.35em -0.35em grey;
     height: 1.3em;
     border: 0.1em solid #fafafa;
@@ -74,7 +73,7 @@
 		width: 95%
   }
   input:focus {
-  //border: 0.15em solid #e4e4e4;
+  border: 0.15em solid $melon;
   }
 }
 
@@ -118,6 +117,7 @@
 	//display: table-cell;
 }
 
+/*Fixes for input type images*/
 
 /* Base for label styling */
 [type="checkbox"]:not(:checked),
@@ -306,7 +306,7 @@
   }
   input[type='image']:hover::before{
     -webkit-animation: shine .6s;
-    animation: shine .6s
+    animation: shine .6s;
   }
 }
 

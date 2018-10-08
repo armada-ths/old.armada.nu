@@ -22,7 +22,6 @@ const ais = 'https://ais.armada.nu/';
 const armada2018 = ["a","r","m","a","d","a","2","0","1","8"];
 const banquet = ["b","a","n","q","u","e","t"];
 
-
 class ExhibitorList extends React.Component {
     constructor(props) {
         super(props); // adopts parent qualities
@@ -79,8 +78,9 @@ class ExhibitorList extends React.Component {
           <div className = "job-container">
 
                 <h3>Job Opportunities</h3>
-                {exhibitor.employments.map((jobtype) => <div className="job-section">{jobtype.name}</div>)}
-
+                <ul>
+                  {exhibitor.employments.map((jobtype) => <li className="job-section">{jobtype.name}</li>)}
+                </ul>
           </div>
         )
     }
@@ -117,17 +117,19 @@ class ExhibitorList extends React.Component {
 
                     {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
 
-                    <div className = "loc-container">
+                    <div className = "location-container">
                         <h3>Locations</h3>
-                        {exhibitor.locations.map((loc) =>
-                          <p className="location-section">
-                            {loc.name}
-                          </p>)}
+                        <ul>
+                          {exhibitor.locations.map((loc) =>
+                            <li className="location-section">
+                              {loc.name}
+                            </li>)}
+                        </ul>
                     </div>
 
-                    <div className='location-container'>
+                    <div className='fairposition-container'>
                         <h3>Find us at the fair</h3>
-                        <div className='location'>
+                        <div className='fairposition'>
                             <div className='icon'><img src='/assets/place.svg'/></div>
                             <div className="position">{exhibitor.exhibitor_location}</div>
                         </div>
@@ -161,7 +163,7 @@ class ExhibitorList extends React.Component {
         }
     }
 
-    //filter fnctions to be called onChange
+    //filter functions to be called onChange
     jobFilter(value){
         let jobfilters = this.state.jobfilters;
         jobfilters[value] = !jobfilters[value];
@@ -189,6 +191,13 @@ class ExhibitorList extends React.Component {
         else if (sustainabilityfilter === true) { sustainabilityfilter = false }
         this.setState({ sustainabilityfilter })
     }
+
+    // groupFilter(group) {
+    //     let groupfilter = this.state.groupfilter[value];
+    //     if (groupfilter[group] === false) { groupfilter[group] = true }
+    //     else if (groupfilter[group] === true) { groupfilter[group] = false }
+    //     this.setState({ groupfilter[0] })
+    // }
 
     locationFilter(e) {
       let location = this.state.location;
@@ -341,15 +350,20 @@ class ExhibitorList extends React.Component {
                         onMouseLeave = {() => this.cssShineOff()}
                       />
 
-
                     </div>
 
-                    <div className = "search-containter">
+                    <div className = "search-container">
                         <input type = "text"
                         placeholder= "Search Exhibitor"
                                value={this.state.search}
                                onChange ={this.updateSearch.bind(this)}
                         />
+                    </div>
+
+                    {/*TODO: start up should be separated from job filters*/}
+                    <div className="checkbox-container">
+                        <input type="checkbox" id="check8" onClick={() => this.startupFilter()} />
+                        <label htmlFor={"check8"}>Startup</label>
                     </div>
 
                     <div className="dropdown-container">
@@ -377,18 +391,8 @@ class ExhibitorList extends React.Component {
                     <div className = "checkbox-filtering">
 
                         <div className = "checkbox-container">
-                            <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee")} />
-                            <label htmlFor={"check1"}>Trainee</label>
-                        </div>
-
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master thesis")}/>
-                            <label htmlFor={"check2"}>Master Thesis</label>
-                        </div>
-
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer job")}/>
-                            <label htmlFor={"check3"}>Summer Job</label>
+                            <input type="checkbox" id="check7" onClick ={()=>this.jobFilter("Full time job")} />
+                            <label htmlFor={"check7"}>Full Time Job</label>
                         </div>
 
                         <div className = "checkbox-container">
@@ -397,8 +401,17 @@ class ExhibitorList extends React.Component {
                         </div>
 
                         <div className = "checkbox-container">
-                            <input type="checkbox" id="check5" onClick ={()=>this.jobFilter("Internship")} />
-                            <label htmlFor={"check5"}>Internship</label>
+                            <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer job")}/>
+                            <label htmlFor={"check3"}>Summer Job</label>
+                        </div>
+
+                    </div>
+
+                    <div className = "checkbox-filtering">
+
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master thesis")}/>
+                            <label htmlFor={"check2"}>Master Thesis</label>
                         </div>
 
                         <div className = "checkbox-container">
@@ -406,16 +419,19 @@ class ExhibitorList extends React.Component {
                             <label htmlFor={"check6"}>Bachelor Thesis</label>
                         </div>
 
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check7" onClick ={()=>this.jobFilter("Full time job")} />
-                            <label htmlFor={"check7"}>Full Time Job</label>
-                        </div>
+                    </div>
 
-                        {/*TODO: start up should be separated from job filters*/}
-                        <div className="checkbox-container">
-                            <input type="checkbox" id="check8" onClick={() => this.startupFilter()} />
-                            <label htmlFor={"check8"}>Startup</label>
-                        </div>
+                    <div className = "checkbox-filtering">
+
+                      <div className = "checkbox-container">
+                          <input type="checkbox" id="check5" onClick ={()=>this.jobFilter("Internship")} />
+                          <label htmlFor={"check5"}>Internship</label>
+                      </div>
+
+                      <div className = "checkbox-container">
+                          <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee")} />
+                          <label htmlFor={"check1"}>Trainee</label>
+                      </div>
 
                     </div>
 

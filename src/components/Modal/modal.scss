@@ -1,6 +1,24 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
+@mixin modal-container {
+  padding: 1em 0em 1em 0em;
+  @media screen and (max-width: $breakpoint-mobile-flipped) {
+    padding: 0.5em 0em 0.5em 0em;
+  }
+}
+
+@mixin modal-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 300;
+  @media screen and (max-width: $breakpoint-mobile-flipped) {
+      li {
+      margin-left: 25%;
+    }
+  }
+}
 
 .popupcontainer{
   position: fixed;
@@ -110,34 +128,37 @@
 .modalinfo .description-container .description  p{
     padding-bottom: 1em;
   }
-.modalinfo .location-container {
+.modalinfo .fairposition-container {
     padding: 1em 0em 1em 0em;
   }
-.modalinfo .location-container .location{
+.modalinfo .fairposition-container .fairposition{
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.modalinfo .location-container .location .icon{
+.modalinfo .fairposition-container .fairposition .icon{
   width: 1.4em;
   height: 1.4em;
 }
-.modalinfo .location-container .position{
+.modalinfo .fairposition-container .position{
   padding: 0em 0em 0em 0.5em;
   align-self: center;
   font-weight: 300;
 }
-.modalinfo .location-container .map{
+.modalinfo .fairposition-container .map{
   padding: 2em 0em 2em 0em;
 }
 .modalinfo .job-container {
-    padding: 1em 0em 1em 0em;
+    @include modal-container;
   }
 .modalinfo .job-container .job-section{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-weight: 300;
+  @include modal-section;
+}
+.modalinfo .location-container {
+  @include modal-container;
+}
+.modalinfo .location-container .location-section{
+  @include modal-section;
 }
 a:hover {
   text-decoration: underline;
@@ -147,7 +168,7 @@ a:hover {
   .modalinfo .description-container {
       padding: 0.5em 3em 0.5em 3em;
     }
-    .modalinfo .location-container .location{
+    .modalinfo .fairposition-container .fairposition{
       font-weight: 300;
     }
 }
@@ -208,17 +229,10 @@ a:hover {
     font-size: $text-standard-mobile;
     line-height: $line-height-mobile;
   }
-
-  .modalinfo .job-container {
-      padding: 0.5em 0em 0.5em 0em;
-    }
-  .modalinfo .job-container .job-section li{
-    margin-left: 25%;
-  }
-  .modalinfo .location-container {
+  .modalinfo .fairposition-container {
       padding: 0.5em 1em 1em 1em;
     }
-    .modalinfo .location-container .location{
+    .modalinfo .fairposition-container .fairposition{
       display: flex;
       flex-direction: row;
       justify-content: center;

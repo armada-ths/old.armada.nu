@@ -59,7 +59,7 @@
   transform: scale(1.25);
 }
 
-.exhibitors .search-containter{
+.exhibitors .search-container{
   margin: auto;
 	max-width: 20em;
 	padding: 0.1em 2em 1.5em 2em;
@@ -402,7 +402,7 @@
 
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-	.exhibitors .search-containter{
+	.exhibitors .search-container{
 		max-width: 15em;
 	}
 

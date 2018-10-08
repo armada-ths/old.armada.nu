@@ -3,6 +3,9 @@
 
 @mixin modal-container {
   padding: 1em 0em 1em 0em;
+  ul {
+    padding: 0;
+  }
   @media screen and (max-width: $breakpoint-mobile-flipped) {
     padding: 0.5em 0em 0.5em 0em;
   }
@@ -13,11 +16,6 @@
   flex-direction: column;
   text-align: center;
   font-weight: 300;
-  @media screen and (max-width: $breakpoint-mobile-flipped) {
-      li {
-      margin-left: 25%;
-    }
-  }
 }
 
 .popupcontainer{

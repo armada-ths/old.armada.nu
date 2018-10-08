@@ -61,19 +61,20 @@
 
 .exhibitors .search-containter{
   margin: auto;
-	max-width: 20em;
-	padding: 0.1em 2em 1.5em 2em;
+	padding: 0.1em 2em 0.5em 2em;
 	text-align: center;
   input{
 
-		box-shadow: 0 0.5em 0.35em -0.35em grey;
     height: 1.3em;
-    border: 0.1em solid #fafafa;
-    border-radius: 0.3em;
+    border: 0.1em solid $melon;
+    border-radius: 1em;
     padding: 0.5em;
-		width: 95%
+    width: 70%;
+    font-size: 19px;
   }
   input:focus {
+    outline: none;
+    box-shadow: 0 0 4px $melon;
   //border: 0.15em solid #e4e4e4;
   }
 }
@@ -226,11 +227,12 @@
 }
 
 .exhibitor-feed .exhibitor-box{
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
   margin: 0em 5px 0em 5px;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 20px;
   margin-bottom: 0.5em;
-  border: solid $light-grey;
+  border: solid $melon;
   border-width: thin;
   width: 6.6em;
   height: 6.7em;
@@ -273,8 +275,10 @@
   border: 1px solid $melon;
 }
 .exhibitor-feed .exhibitor-box:hover{
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.06);
   -webkit-transform: scale(1.1);
-  transform: scale(1.07);
+  transform: scale(1.07) translateY(-2px);
+
 }
 
 .exhibitor-feed .exhibitor-box.green::before,
@@ -367,27 +371,45 @@
 .armadaConfetti {
 
 }
+.supercontainer{
+  width:100%;
+  text-align: center;
+}
 
+.drop1 {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.drop2 {
+  text-align: left;
+  padding-left: 10px;
+}
 .dropdown-container {
   margin: auto;
-  max-width: 20em;
-  padding: 0.1em 2em 1.5em 2em;
-  text-align: center;
+  display: inline-block;
+  width: 18em;
 }
 .select {
   position: relative;
   display: inline-block;
   margin-bottom: 15px;
-  width: 95%;
-  box-shadow: 0 0.5em 0.35em -0.35em grey;
+  height: 1.3em;
+  border: 0.1em solid $melon;
+  border-radius: 1em;
+  padding: 0.5em;
+  width: 70%;
+      &:hover{
+        box-shadow: 0 0 4px $melon;
+      }
 }    .select select {
+      font-size: 14px;
       font-family: 'Arial';
       display: inline-block;
       width: 100%;
       cursor: pointer;
-      padding: 10px 15px;
-      outline: 0;
-      border: 1px solid #fafafa;
+      outline: none;
+      border: none;
       border-radius: 3.3px;
       background: #ffffff;
       color: #7b7b7b;
@@ -453,7 +475,7 @@
         }
         p{
           font-size: 11px;
-          margin-top: -45px;
+          margin-top: -30px;
           line-height: $line-height-mobile;
         }
         .corner-special{

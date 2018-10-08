@@ -373,13 +373,13 @@ class ExhibitorList extends React.Component {
 
                     <div className = "search-containter">
                         <input type = "text"
-                        placeholder= "Search Exhibitor"
+                        placeholder= "Search Exhibitors"
                                value={this.state.search}
                                onChange ={this.updateSearch.bind(this)}
                         />
                     </div>
-
-                    <div className="dropdown-container">
+                    <div className="supercontainer">
+                    <div className="dropdown-container drop1">
                       <div className="select">
                           <select onChange={this.sectorFilter.bind(this)}>
                               <option value="All" selected>All Sectors</option>
@@ -389,14 +389,15 @@ class ExhibitorList extends React.Component {
                       </div>
                     </div>
 
-                    <div className="dropdown-container">
+                    <div className="dropdown-container drop2">
                       <div className="select">
                           <select onChange={this.locationFilter.bind(this)}>
-                              <option value="Any" selected>Any Location</option>
+                              <option value="Any" selected>All Countries</option>
                               {this.buildOptions(this.state.locations)}
                           </select>
                           <div className="select_arrow"></div>
                       </div>
+                    </div>
                     </div>
 
                     {/* TODO: everything should be dynamic instead of hard-coded */}

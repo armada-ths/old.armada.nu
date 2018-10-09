@@ -376,8 +376,6 @@ class ExhibitorList extends React.Component {
                         />
                     </div>
 
-                    {/*TODO: start up should be separated from job filters*/}
-
                     <div className="dropdown-container">
                       <div className="select">
                           <select onChange={this.sectorFilter.bind(this)}>

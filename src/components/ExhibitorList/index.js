@@ -377,10 +377,6 @@ class ExhibitorList extends React.Component {
                     </div>
 
                     {/*TODO: start up should be separated from job filters*/}
-                    <div className="checkbox-container">
-                        <input type="checkbox" id="check8" onClick={() => this.startupFilter()} />
-                        <label htmlFor={"check8"}>Startup</label>
-                    </div>
 
                     <div className="dropdown-container">
                       <div className="select">
@@ -449,6 +445,12 @@ class ExhibitorList extends React.Component {
                           <label htmlFor={"check1"}>Trainee</label>
                       </div>
 
+                    </div>
+                    <div className = "checkbox-filtering">
+                      <div className="checkbox-container">
+                          <input type="checkbox" id="startupcb" onClick={() => this.startupFilter()} />
+                          <label htmlFor={"startupcb"} id="startuplabel">Startup</label>
+                      </div>
                     </div>
                   </div>
 

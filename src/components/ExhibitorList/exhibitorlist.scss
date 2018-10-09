@@ -431,7 +431,7 @@
       }
 .select_arrow {
   position: absolute;
-  top: 12px;
+  top: 15px;
   right: 15px;
   width: 0px;
   height: 0px;
@@ -450,11 +450,19 @@
   border-top-color: #00d790;
 }
 
+@media screen and (max-width: $breakpoint-pad) {
+  .exhibitors .search-containter input {
+    width: 90%;
+  }
+
+  .drop1, .drop2 {
+    text-align: center;
+    padding: 0px;
+  }
+}
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-	.exhibitors .search-containter{
-		max-width: 15em;
-	}
+
 
 	.exhibitors .checkbox-container{
 		height: 2em;

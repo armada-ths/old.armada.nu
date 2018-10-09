@@ -402,6 +402,8 @@ class ExhibitorList extends React.Component {
 
                     {/* TODO: everything should be dynamic instead of hard-coded */}
 
+                    <h3>Job Opportunities</h3>
+
                     <div className = "checkbox-filtering">
 
                         <div className = "checkbox-container">

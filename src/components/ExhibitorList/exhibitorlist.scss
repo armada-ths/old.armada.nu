@@ -79,6 +79,13 @@
   }
 }
 
+@media only screen and (min-width : 320px) and (max-width : 568px) {
+  .search-containter input{
+    font-size: 16px !important;
+    margin: 5px 5px 5px 5px;
+  }
+}
+
 .checkbox-filtering{
   padding: 0em 3em 1em 3em;
   display: flex;
@@ -400,7 +407,7 @@
 .dropdown-container {
   margin: auto;
   display: inline-block;
-  width: 18em;
+  width: 15em;
 }
 .select {
   position: relative;

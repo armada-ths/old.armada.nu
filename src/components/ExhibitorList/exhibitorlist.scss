@@ -44,13 +44,13 @@
   justify-content: center;
 }
 .exhibitors .filter-special input[type='image']{
-  padding: 0.5em;
-  height: 4em;
-  cursor: pointer;
+  padding: 1.5em;
+  height: 6em;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
+  outline: none;
 }
 .exhibitors .filter-special input[type='image']:hover{
   -webkit-transition: .3s ease-in-out;
@@ -59,7 +59,7 @@
   transform: scale(1.25);
 }
 
-.exhibitors .search-containter{
+.exhibitors .search-container{
   margin: auto;
 	padding: 0.1em 2em 0.5em 2em;
 	text-align: center;
@@ -86,7 +86,7 @@
   }
 }
 
-.checkbox-filtering{
+.checkboxes{
   padding: 0em 3em 1em 3em;
   display: flex;
   flex-direction: row;
@@ -96,6 +96,18 @@
 	max-width: 700px;
 	//align-self: center;
 }
+
+.checkbox-filtering{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+	margin: 0;
+	max-width: 130px;
+	//align-self: center;
+}
+
 .checkbox-filtering label{
 	display: block;
 	//height: 100%;
@@ -110,10 +122,11 @@
 	font-size: 0.8em;
 	padding: 0em 0.5em 0em 0.5em;
 	//vertical-align: middle;
-	align-self: center;
+	align-self: flex-start;
 	//display: table-cell;
 }
 
+/*Fixes for input type images*/
 
 /* Base for label styling */
 [type="checkbox"]:not(:checked),
@@ -193,6 +206,10 @@
 // border: 1px solid #aaa!important;
 //}
 
+#startuplabel {
+  color: $melon;
+  font-weight: bold;
+}
 
 .exhibitor-feed {
   display: flex;
@@ -345,7 +362,7 @@
   }
   input[type='image']:hover::before{
     -webkit-animation: shine .6s;
-    animation: shine .6s
+    animation: shine .6s;
   }
 }
 

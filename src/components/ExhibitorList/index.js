@@ -22,7 +22,6 @@ const ais = 'https://ais.armada.nu/';
 const armada2018 = ["a","r","m","a","d","a","2","0","1","8"];
 const banquet = ["b","a","n","q","u","e","t"];
 
-
 class ExhibitorList extends React.Component {
     constructor(props) {
         super(props); // adopts parent qualities
@@ -38,7 +37,9 @@ class ExhibitorList extends React.Component {
             diversityfilter: false,
             sustainabilityfilter: false,
             startupfilter: false,
-            location: "Any",
+            diversitysrc: '/assets/diversity_a.svg',
+            sustainabilitysrc: '/assets/sustainability.svg',
+            location: "All",
             sector: "All",
             locations : ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'], //TODO: fill dynamically from api {locations + sector}
             sectors : ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector',
@@ -48,8 +49,7 @@ class ExhibitorList extends React.Component {
             'Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research',
             'Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development',
             'Interaction Design','Industry Design'],
-            showamount: 20
-
+            showamount: 20,
         };
     }
 
@@ -81,8 +81,9 @@ class ExhibitorList extends React.Component {
           <div className = "job-container">
 
                 <h3>Job Opportunities</h3>
-                {exhibitor.employments.map((jobtype) => <div className="job-section">{jobtype.name}</div>)}
-
+                <ul>
+                  {exhibitor.employments.map((jobtype) => <li className="job-section">{jobtype.name}</li>)}
+                </ul>
           </div>
         )
     }
@@ -119,23 +120,29 @@ class ExhibitorList extends React.Component {
 
                     {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
 
-                    <div className = "loc-container">
-                        <h3>Locations</h3>
-                        {exhibitor.locations.map((loc) =>
-                          <p className="location-section">
-                            {loc.name}
-                          </p>)}
+                    <div className = "location-container">
+                        <h3>Countries</h3>
+                        <ul>
+                          {exhibitor.locations.map((loc) =>
+                            <li className="location-section">
+                              {loc.name}
+                            </li>)}
+                        </ul>
                     </div>
 
-                    <div className='location-container'>
+
+
+                      {/* commented out until maps implemented
+                        <div className='fairposition-container'>
                         <h3>Find us at the fair</h3>
-                        <div className='location'>
+                        <div className='fairposition'>
                             <div className='icon'><img src='/assets/place.svg'/></div>
                             <div className="position">{exhibitor.exhibitor_location}</div>
                         </div>
+
                         {/* TODO: Add Map feature to Modal
-                          {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null} */}
-                    </div>
+                          {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null}}
+                    </div>*/}
                 </div>
 
             </Modal>
@@ -163,7 +170,7 @@ class ExhibitorList extends React.Component {
         }
     }
 
-    //filter fnctions to be called onChange
+    //filter functions to be called onChange
     jobFilter(value){
         this.setdefault()
         let jobfilters = this.state.jobfilters;
@@ -195,18 +202,39 @@ class ExhibitorList extends React.Component {
     diversityFilter() {
         this.setdefault()
         let diversityfilter = this.state.diversityfilter;
-        if (diversityfilter === false) { diversityfilter = true }
-        else if (diversityfilter === true) { diversityfilter = false }
+        let diversitysrc = this.state.diversitysrc;
+        if (diversityfilter === false) {
+          diversityfilter = true;
+          diversitysrc = '/assets/diversity_selected.svg';
+        } else if (diversityfilter === true) {
+          diversityfilter = false;
+          diversitysrc = '/assets/diversity_a.svg';
+        }
         this.setState({ diversityfilter })
+        this.setState({ diversitysrc })
     }
 
     sustainabilityFilter() {
         this.setdefault()
         let sustainabilityfilter = this.state.sustainabilityfilter;
-        if (sustainabilityfilter === false) { sustainabilityfilter = true }
-        else if (sustainabilityfilter === true) { sustainabilityfilter = false }
+        let sustainabilitysrc = this.state.sustainabilitysrc;
+        if (sustainabilityfilter === false) {
+          sustainabilityfilter = true;
+          sustainabilitysrc = '/assets/sustainability_selected.svg';
+        } else if (sustainabilityfilter === true) {
+          sustainabilityfilter = false;
+          sustainabilitysrc = '/assets/sustainability.svg';
+        }
         this.setState({ sustainabilityfilter })
+        this.setState({ sustainabilitysrc })
     }
+
+    // groupFilter(group) {
+    //     let groupfilter = this.state.groupfilter[value];
+    //     if (groupfilter[group] === false) { groupfilter[group] = true }
+    //     else if (groupfilter[group] === true) { groupfilter[group] = false }
+    //     this.setState({ groupfilter[0] })
+    // }
 
     locationFilter(e) {
     this.setdefault()
@@ -283,7 +311,7 @@ class ExhibitorList extends React.Component {
         }
 
         //Location filter
-        if (this.state.location === "Any") {
+        if (this.state.location === "All") {
             filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
                     return exhibitorItem;
             });
@@ -349,22 +377,21 @@ class ExhibitorList extends React.Component {
                     {/*TODO: remove blue box around special filters*/}
                     <div className = "filter-special">
 
-                      <input id="diversity" type="image" alt='diversity filter' src='/assets/diversity_a.svg'
+                      <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc}
                         onClick={()=>this.diversityFilter()}
                         onMouseEnter = {() => this.cssShine('purple')}
                         onMouseLeave = {() => this.cssShineOff()}
                       />
 
-                      <input id="sustainability" type="image" alt='sustainability filter' src='/assets/sustainability.svg'
+                      <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc}
                         onClick ={()=>this.sustainabilityFilter()}
                         onMouseEnter = {() => this.cssShine('green')}
                         onMouseLeave = {() => this.cssShineOff()}
                       />
 
-
                     </div>
 
-                    <div className = "search-containter">
+                    <div className = "search-container">
                         <input type = "text"
                         placeholder= "Search Exhibitors"
                                value={this.state.search}
@@ -375,7 +402,7 @@ class ExhibitorList extends React.Component {
                     <div className="dropdown-container drop1">
                       <div className="select">
                           <select onChange={this.sectorFilter.bind(this)}>
-                              <option value="All" selected>All Sectors</option>
+                              <option value="All">All Sectors</option>
                               {this.buildOptions(this.state.sectors)}
                           </select>
                           <div className="select_arrow"></div>
@@ -385,7 +412,7 @@ class ExhibitorList extends React.Component {
                     <div className="dropdown-container drop2">
                       <div className="select">
                           <select onChange={this.locationFilter.bind(this)}>
-                              <option value="Any" selected>All Countries</option>
+                              <option value="All" selected>All Countries</option>
                               {this.buildOptions(this.state.locations)}
                           </select>
                           <div className="select_arrow"></div>
@@ -397,21 +424,13 @@ class ExhibitorList extends React.Component {
 
                     <h3>Job Opportunities</h3>
 
+                    <div className = "checkboxes">
+
                     <div className = "checkbox-filtering">
 
                         <div className = "checkbox-container">
-                            <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee")} />
-                            <label htmlFor={"check1"}>Trainee</label>
-                        </div>
-
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master thesis")}/>
-                            <label htmlFor={"check2"}>Master Thesis</label>
-                        </div>
-
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer job")}/>
-                            <label htmlFor={"check3"}>Summer Job</label>
+                            <input type="checkbox" id="check7" onClick ={()=>this.jobFilter("Full time job")} />
+                            <label htmlFor={"check7"}>Full Time Job</label>
                         </div>
 
                         <div className = "checkbox-container">
@@ -420,8 +439,17 @@ class ExhibitorList extends React.Component {
                         </div>
 
                         <div className = "checkbox-container">
-                            <input type="checkbox" id="check5" onClick ={()=>this.jobFilter("Internship")} />
-                            <label htmlFor={"check5"}>Internship</label>
+                            <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer job")}/>
+                            <label htmlFor={"check3"}>Summer Job</label>
+                        </div>
+
+                    </div>
+
+                    <div className = "checkbox-filtering">
+
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master thesis")}/>
+                            <label htmlFor={"check2"}>Master Thesis</label>
                         </div>
 
                         <div className = "checkbox-container">
@@ -429,18 +457,32 @@ class ExhibitorList extends React.Component {
                             <label htmlFor={"check6"}>Bachelor Thesis</label>
                         </div>
 
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check7" onClick ={()=>this.jobFilter("Full time job")} />
-                            <label htmlFor={"check7"}>Full Time Job</label>
-                        </div>
+                    </div>
 
-                        {/*TODO: start up should be separated from job filters*/}
-                        <div className="checkbox-container">
-                            <input type="checkbox" id="check8" onClick={() => this.startupFilter()} />
-                            <label htmlFor={"check8"}>Startup</label>
-                        </div>
+                    <div className = "checkbox-filtering">
+
+                      <div className = "checkbox-container">
+                          <input type="checkbox" id="check5" onClick ={()=>this.jobFilter("Internship")} />
+                          <label htmlFor={"check5"}>Internship</label>
+                      </div>
+
+                      <div className = "checkbox-container">
+                          <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee")} />
+                          <label htmlFor={"check1"}>Trainee</label>
+                      </div>
 
                     </div>
+
+                    <div className = "checkbox-filtering">
+
+                      <div className="checkbox-container">
+                          <input type="checkbox" id="startupcb" onClick={() => this.startupFilter()} />
+                          <label htmlFor={"startupcb"} id="startuplabel">Startup</label>
+                      </div>
+
+                    </div>
+
+                  </div>
 
                     <div className = "loading">
                         {this.state.isLoading ? <Loading/> :null}

@@ -194,9 +194,21 @@
   justify-content: space-around;
   padding-bottom: 3em;
 }
-.noresultstext {
-  padding-top: 5%;
-  font-weight: 600;
+
+.Noresultsfound {
+  div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .noresultstext {
+        text-align: center;
+      }
+  }
+
+
+
 }
 
 .showmore-container {

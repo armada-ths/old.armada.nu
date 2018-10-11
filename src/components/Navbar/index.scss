@@ -2,18 +2,22 @@
 @import "../../styles/_fonts";
 
 .hamburger{
-    font-size: 1.5em;
+	font-size: 1.5em;
+	cursor: pointer;
 }
 
 .navbar-cross{
     margin-top:-5px;
-    font-size: 4em;
-    margin-bottom: -0.5em;
+		font-size: 4em;
+		margin-bottom: -0.5em;
+		cursor: pointer;
 }
 
 #navbar{
-  position: absolute;
-  width: 100%;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
   z-index: 100;
   text-align: center;
   font-family: $font-title;
@@ -61,13 +65,15 @@
 @media screen and (max-width: 1200px) {
 
 #navbar{
-    font-size: 0.7em;
+		font-size: 0.7em;
 }
 } 
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     #navbar{
-        top: 1em;
+				top: 1em;
+				overflow: auto;
+				position: absolute;
 
         .menu-wrapper {
             width: 80%;

@@ -43,42 +43,50 @@
   flex-direction: row;
   justify-content: center;
 }
-.exhibitors .filter-special img{
-  padding: 0.5em;
-  height: 4em;
-  cursor: pointer;
+.exhibitors .filter-special input[type='image']{
+  padding: 1.5em;
+  height: 6em;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
+  outline: none;
 }
-.exhibitors .filter-special img:hover{
+.exhibitors .filter-special input[type='image']:hover{
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
   -webkit-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.exhibitors .search-containter{
+.exhibitors .search-container{
   margin: auto;
-	max-width: 20em;
-	padding: 0.1em 2em 1.5em 2em;
+	padding: 0.1em 2em 0.5em 2em;
 	text-align: center;
   input{
 
-		box-shadow: 0 0.5em 0.35em -0.35em grey;
     height: 1.3em;
-    border: 0.1em solid #fafafa;
-    border-radius: 0.3em;
+    border: 0.1em solid $melon;
+    border-radius: 1em;
     padding: 0.5em;
-		width: 95%
+    width: 70%;
+    font-size: 19px;
   }
   input:focus {
+    outline: none;
+    box-shadow: 0 0 4px $melon;
   //border: 0.15em solid #e4e4e4;
   }
 }
 
-.checkbox-filtering{
+@media only screen and (min-width : 320px) and (max-width : 568px) {
+  .search-containter input{
+    font-size: 16px !important;
+    margin: 5px 5px 5px 5px;
+  }
+}
+
+.checkboxes{
   padding: 0em 3em 1em 3em;
   display: flex;
   flex-direction: row;
@@ -88,6 +96,18 @@
 	max-width: 700px;
 	//align-self: center;
 }
+
+.checkbox-filtering{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+	margin: 0;
+	max-width: 130px;
+	//align-self: center;
+}
+
 .checkbox-filtering label{
 	display: block;
 	//height: 100%;
@@ -102,10 +122,11 @@
 	font-size: 0.8em;
 	padding: 0em 0.5em 0em 0.5em;
 	//vertical-align: middle;
-	align-self: center;
+	align-self: flex-start;
 	//display: table-cell;
 }
 
+/*Fixes for input type images*/
 
 /* Base for label styling */
 [type="checkbox"]:not(:checked),
@@ -185,6 +206,10 @@
 // border: 1px solid #aaa!important;
 //}
 
+#startuplabel {
+  color: $melon;
+  font-weight: bold;
+}
 
 .exhibitor-feed {
   display: flex;
@@ -193,12 +218,57 @@
   justify-content: space-around;
   padding-bottom: 3em;
 }
+
+.Noresultsfound {
+  div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .noresultstext {
+        text-align: center;
+      }
+  }
+
+
+
+}
+
+.showmore-container {
+  text-align:center;
+
+  .showmorebutton {
+    outline: none;
+    text-align: center;
+    background-color:#00d78f;
+    font-weight: 200;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    padding:16px 31px;
+    text-decoration:none;
+  }
+    .showmorebutton:hover {
+      background-color:#00a54a;
+      text-decoration: none;
+    }
+    .showmorebutton:active {
+      position:relative;
+      top:1px;
+    }
+}
+
 .exhibitor-feed .exhibitor-box{
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
   margin: 0em 5px 0em 5px;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 20px;
   margin-bottom: 0.5em;
-  border: solid $light-grey;
+  border: solid $melon;
   border-width: thin;
   width: 6.6em;
   height: 6.7em;
@@ -241,8 +311,10 @@
   border: 1px solid $melon;
 }
 .exhibitor-feed .exhibitor-box:hover{
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.06);
   -webkit-transform: scale(1.1);
-  transform: scale(1.07);
+  transform: scale(1.07) translateY(-2px);
+
 }
 
 .exhibitor-feed .exhibitor-box.green::before,
@@ -274,7 +346,7 @@
 
 .filter-special:hover{
   overflow: hidden;
-  img::before{
+  input[type='image']::before{
     position: absolute;
     top: 0;
     left: -50%;
@@ -288,9 +360,9 @@
     -webkit-transform: skewX(-25deg);
     transform: skewX(-25deg);
   }
-  img:hover::before{
+  input[type='image']:hover::before{
     -webkit-animation: shine .6s;
-    animation: shine .6s
+    animation: shine .6s;
   }
 }
 
@@ -335,13 +407,98 @@
 .armadaConfetti {
 
 }
+.supercontainer{
+  width:100%;
+  text-align: center;
+}
 
+.drop1 {
+  text-align: right;
+  padding-right: 10px;
+}
 
+.drop2 {
+  text-align: left;
+  padding-left: 10px;
+}
+.dropdown-container {
+  margin: auto;
+  display: inline-block;
+  width: 15em;
+}
+.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  height: 1.3em;
+  border: 0.1em solid $melon;
+  border-radius: 1em;
+  padding: 0.5em;
+  width: 70%;
+      &:hover{
+        box-shadow: 0 0 4px $melon;
+      }
+}    .select select {
+      font-size: 14px;
+      font-family: 'Arial';
+      display: inline-block;
+      width: 100%;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      border-radius: 3.3px;
+      background: #ffffff;
+      color: #7b7b7b;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+  }
+      .select select::-ms-expand {
+          display: none;
+      }
+      .select select:hover,
+      .select select:focus {
+          color: #000000;
+          background: #ffffff;
+      }
+      .select select:disabled {
+          opacity: 0.5;
+          pointer-events: none;
+      }
+.select_arrow {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 0px;
+  height: 0px;
+  border: solid #00d790;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+  border-color: #00f3a3;
+}
+.select select:disabled ~ .select_arrow {
+  border-top-color: #00d790;
+}
+
+@media screen and (max-width: $breakpoint-pad) {
+  .exhibitors .search-containter input {
+    width: 90%;
+  }
+
+  .drop1, .drop2 {
+    text-align: center;
+    padding: 0px;
+  }
+}
 // flipped phone
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-	.exhibitors .search-containter{
-		max-width: 15em;
-	}
+
 
 	.exhibitors .checkbox-container{
 		height: 2em;
@@ -362,7 +519,7 @@
         }
         p{
           font-size: 11px;
-          margin-top: -45px;
+          margin-top: -30px;
           line-height: $line-height-mobile;
         }
         .corner-special{

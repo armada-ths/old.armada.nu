@@ -8,13 +8,18 @@ import "./exhibitorlist.scss";
 import Helmet from "react-helmet"
 import Modal from "../Modal";
 import Loading from "../Loading"
+import Cat from "../Cat"
 
 
 const urlPropsQueryConfig = {
     exhibitorName: { type: UrlQueryParamTypes.string, queryParam: 'exhibitorName' },
 };
 
-const armada2017 = ["a","r","m","a","d","a","2","0","1","7"];
+//base of server adress
+const ais = 'https://ais.armada.nu/';
+
+//Easter egg button combos
+const armada2018 = ["a","r","m","a","d","a","2","0","1","8"];
 const banquet = ["b","a","n","q","u","e","t"];
 
 class ExhibitorList extends React.Component {
@@ -22,23 +27,39 @@ class ExhibitorList extends React.Component {
         super(props); // adopts parent qualities
         this.state = {
             exhibitors: [],  // json object
-            exhibitorList: [],
-            showModal: false,
+            exhibitorList: [], //displayed exhibitors
+            showModal: false, //show individual company card
             exhibitorName: undefined,
             isLoading: true,
-            search: '',
+            search: '', //search query string
             jobfilters: {},
-            filters: {},
             shine: '',
+            diversityfilter: false,
+            sustainabilityfilter: false,
+            startupfilter: false,
+            diversitysrc: '/assets/diversity_a.svg',
+            sustainabilitysrc: '/assets/sustainability.svg',
+            location: "All",
+            sector: "All",
+            locations : ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'], //TODO: fill dynamically from api {locations + sector}
+            sectors : ['Retail','Graphic Productions','Recruitment','Architecture','Investment','Environmental Sector',
+            'Pedagogy','Web Development','Solid Mechanics','Simulation Technology','Pharmacy','Nuclear Power',
+            'Fluid Mechanics','Wood-Processing Industry','Medical Technology','Media Technology','Marine Systems',
+            'Manufacturing Industry','Management Consulting','Management','Insurance','Finance & Consultancy','Construction',
+            'Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research',
+            'Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development',
+            'Interaction Design','Industry Design'],
+            showamount: 20,
         };
     }
 
+    //currently only deals w/ getting data from api (unsure)
     componentDidMount() {  // only called when exhibitor page is created or updated.
-        axios.get('https://ais.armada.nu/api/exhibitors')  // fetch data witt promise (then) and res(ult)
+        axios.get( ais + 'api/exhibitors?img_placeholder=true')  // fetch data witt promise (then) and res(ult)
             .then( (res)  => {
                 let exhibitors = res.data;  // create variable and store result within parameter data
-                exhibitors.sort((a, b) => a.company.localeCompare(b.company));
-                let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem key={exhibitor.id} name={exhibitor.company}
+                exhibitors.sort((a, b) => a.name.localeCompare(b.name));
+                let exhibitorList = exhibitors.map((exhibitor) => <ExhibitorItem key={exhibitor.id} name={exhibitor.name}
                                                                                  exhibitor={exhibitor} showModal={this.showModal}/>);
                 this.setState({ exhibitors, exhibitorList, isLoading:false, });  // component saves its own data
                 // Get from url path the GET params ?id=number, to know what event to display
@@ -47,16 +68,23 @@ class ExhibitorList extends React.Component {
                 }
             });
     }
+
+    //search
     updateSearch(event){
+        this.setdefault()
         this.setState({search: event.target.value.substr(0,100)});
     }
+
+    //displays types of jobs offered by company in its Modal
     getJobContainer(exhibitor){
-        return(  <div className = "job-container">
+        return(
+          <div className = "job-container">
 
                 <h3>Job Opportunities</h3>
-                {exhibitor.job_types.map((jobtype) => <div className="job-section">{jobtype.name}</div>)}
-
-            </div>
+                <ul>
+                  {exhibitor.employments.map((jobtype) => <li className="job-section">{jobtype.name}</li>)}
+                </ul>
+          </div>
         )
     }
 
@@ -66,10 +94,11 @@ class ExhibitorList extends React.Component {
     };
 
     displayExhibitor = (exhibitor) => {
+        //TODO: add more data to modal. locations etc, change how it's displayed
         return (
             <Modal onClose={() => this.showModal(null)}>
                 <div className="modalimage-exhib">
-                    <img src={exhibitor.logo_url}/>
+                    <img src={ais + exhibitor.logo_squared} />
                 </div>
 
                 <div className="modalinfo">
@@ -88,30 +117,40 @@ class ExhibitorList extends React.Component {
                             {exhibitor.about.split('\n').map( (paragraph) => <p> {paragraph} </p> )}
                         </div>
                     </div>
-                    {exhibitor.job_types.length > 0 ?  this.getJobContainer(exhibitor) : null}
-                    <div className='location-container'>
+
+                    {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
+
+                    <div className = "location-container">
+                        <h3>Countries</h3>
+                        <ul>
+                          {exhibitor.locations.map((loc) =>
+                            <li className="location-section">
+                              {loc.name}
+                            </li>)}
+                        </ul>
+                    </div>
+
+
+
+                      {/* commented out until maps implemented
+                        <div className='fairposition-container'>
                         <h3>Find us at the fair</h3>
-                        <div className='location'>
+                        <div className='fairposition'>
                             <div className='icon'><img src='/assets/place.svg'/></div>
                             <div className="position">{exhibitor.exhibitor_location}</div>
                         </div>
-                        {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url}/></div> : null}
-                    </div>
+
+                        {/* TODO: Add Map feature to Modal
+                          {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null}}
+                    </div>*/}
                 </div>
 
             </Modal>
         );
     }
 
-    specialFilter(value){
-        let filters = this.state.filters;
-        filters['all']= false;
-        filters['diversity']= false;
-        filters['sustainability']= false;
-        filters[value]= true;
-        this.setState({filters})
-    }
-
+    //TODO: combine an simplify those two functions
+    //diversity and sustainability filters special effects {cssshine, cssShineOff}
     cssShine(value){
         if (global.document != undefined){
             let shineItems = global.document.getElementsByClassName(value);
@@ -131,20 +170,104 @@ class ExhibitorList extends React.Component {
         }
     }
 
+    //filter functions to be called onChange
     jobFilter(value){
+        this.setdefault()
         let jobfilters = this.state.jobfilters;
         jobfilters[value] = !jobfilters[value];
         this.setState({jobfilters})
     }
 
+    showMore(){
+        let showamount = this.state.showamount;
+        showamount = 183;
+        this.setState({showamount})
+    }
+
+    setdefault() {
+        let showamount = this.state.showamount;
+        showamount = 20;
+        this.setState({showamount})
+    }
+
+    //TODO: startup, diversity, and sustainability to be combined
+    startupFilter() {
+        this.setdefault()
+        let startupfilter = this.state.startupfilter;
+        if (startupfilter === false) { startupfilter = true }
+        else if (startupfilter === true) { startupfilter = false }
+        this.setState({ startupfilter })
+    }
+
+    diversityFilter() {
+        this.setdefault()
+        let diversityfilter = this.state.diversityfilter;
+        let diversitysrc = this.state.diversitysrc;
+        if (diversityfilter === false) {
+          diversityfilter = true;
+          diversitysrc = '/assets/diversity_selected.svg';
+        } else if (diversityfilter === true) {
+          diversityfilter = false;
+          diversitysrc = '/assets/diversity_a.svg';
+        }
+        this.setState({ diversityfilter })
+        this.setState({ diversitysrc })
+    }
+
+    sustainabilityFilter() {
+        this.setdefault()
+        let sustainabilityfilter = this.state.sustainabilityfilter;
+        let sustainabilitysrc = this.state.sustainabilitysrc;
+        if (sustainabilityfilter === false) {
+          sustainabilityfilter = true;
+          sustainabilitysrc = '/assets/sustainability_selected.svg';
+        } else if (sustainabilityfilter === true) {
+          sustainabilityfilter = false;
+          sustainabilitysrc = '/assets/sustainability.svg';
+        }
+        this.setState({ sustainabilityfilter })
+        this.setState({ sustainabilitysrc })
+    }
+
+    // groupFilter(group) {
+    //     let groupfilter = this.state.groupfilter[value];
+    //     if (groupfilter[group] === false) { groupfilter[group] = true }
+    //     else if (groupfilter[group] === true) { groupfilter[group] = false }
+    //     this.setState({ groupfilter[0] })
+    // }
+
+    locationFilter(e) {
+    this.setdefault()
+      let location = this.state.location;
+      location = e.target.value;
+      this.setState({ location });
+    }
+
+    sectorFilter(e) {
+        this.setdefault()
+        let sector = this.state.sector;
+        sector = e.target.value;
+        this.setState({ sector });
+    }
+
+    //build options for dropdown filters
+    buildOptions(array) {
+      var listitems = []
+
+      for (let i = 0; i < array.length; i++) {
+        listitems.push(<option key={array[i]} value={array[i]}>{array[i]}</option>);
+      }
+      return listitems;
+    }
+
+    //TODO: divide and simplify into nested components
     render() {
         // Here you decide if list of exhibitors should be displayed or not
-        let showExhibitors = false;
-        let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.company == this.state.exhibitorName)[0];
+        let showExhibitors = true;
+        let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.name == this.state.exhibitorName)[0];
         let filteredCompanies = this.state.exhibitorList.filter(
             (exhibitorItem) => {return (exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase()) );}
         );
-
         if (filteredCompanies.length < 1 ) {
             filteredCompanies = this.state.exhibitorList.filter(
                 (exhibitorItem) => {
@@ -152,25 +275,33 @@ class ExhibitorList extends React.Component {
                 });
         }
 
-        if(this.state.filters['all'] === false){
-            if (this.state.filters['diversity'] === true){
-                filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
-                    return (exhibitorItem.props.exhibitor.diversity);
-                });
-            }
-            if (this.state.filters['sustainability'] === true){
-                filteredCompanies = filteredCompanies.filter((exhibitorItem)=>{
-                    return (exhibitorItem.props.exhibitor.sustainability);
-                });
-            }
+        //Diversity filter
+        if (this.state.diversityfilter === true) {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                return exhibitorItem.props.exhibitor.groups.name == 'diversity';
+            });
         }
 
-        //Loop through the properties of filters object:
+        //Sustainability filter
+        if (this.state.sustainabilityfilter === true) {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                return exhibitorItem.props.exhibitor.groups.name == 'sustainability';
+            });
+        }
+
+        // Startup filter
+        if (this.state.startupfilter === true) {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                return exhibitorItem.props.exhibitor.groups.name == 'startup';
+            });
+        }
+
+        //Job type filter
         for(let filterkey in this.state.jobfilters) {
             if (this.state.jobfilters[filterkey] == true) {
                 filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-                    for (let jobtypeindex in exhibitorItem.props.exhibitor.job_types) {
-                        if (exhibitorItem.props.exhibitor.job_types[jobtypeindex].name == filterkey) {
+                    for (let jobtypeindex in exhibitorItem.props.exhibitor.employments) {
+                        if (exhibitorItem.props.exhibitor.employments[jobtypeindex].name == filterkey) {
                             return true;
                         }
                     }
@@ -179,11 +310,55 @@ class ExhibitorList extends React.Component {
             }
         }
 
+        //Location filter
+        if (this.state.location === "All") {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                    return exhibitorItem;
+            });
+        }
+        else{
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+              if (this.state.location == 'Sweden') {
+                for (let i in exhibitorItem.props.exhibitor.locations) {
+                    if (exhibitorItem.props.exhibitor.locations[i].name[0] == 'S') {
+                        return true;
+                    }
+                }
+                return false;
+              } else {
+                for (let i in exhibitorItem.props.exhibitor.locations) {
+                    if (exhibitorItem.props.exhibitor.locations[i].name == 'World \u2013 ' + this.state.location) {
+                        return true;
+                    }
+                }
+                return false;
+              }
+            });
+        }
+
+        // Sector filter
+        if (this.state.sector === "All") {
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                    return exhibitorItem;
+            });
+        }
+        else{
+            filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+                for (let sectorindex in exhibitorItem.props.exhibitor.industries) {
+                    if (exhibitorItem.props.exhibitor.industries[sectorindex].name == this.state.sector) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+        }
+
+
         if (showExhibitors) {
             return (
                 <div className = "exhibitors">
 
-                <EasterEgg keys={armada2017} timeout={7000}>
+                <EasterEgg keys={armada2018} timeout={7000}>
                   <div className="armadaRainbow easterEggPosition"/>
                 </EasterEgg>
 
@@ -198,48 +373,133 @@ class ExhibitorList extends React.Component {
                         title={ "Exhibitors" }
                     />
                     {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay) ) : null}
+
+                    {/*TODO: remove blue box around special filters*/}
                     <div className = "filter-special">
-                        <div id="diversity" onMouseEnter = {() => this.cssShine('purple')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('diversity')}><img src='/assets/diversity_a.svg'/></div>
-                        <div id="sustainability" onMouseEnter = {() => this.cssShine('green')} onMouseLeave = {() => this.cssShineOff()}onClick ={()=>this.specialFilter('sustainability')}><img src='/assets/sustainability.svg'/></div>
+
+                      <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc}
+                        onClick={()=>this.diversityFilter()}
+                        onMouseEnter = {() => this.cssShine('purple')}
+                        onMouseLeave = {() => this.cssShineOff()}
+                      />
+
+                      <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc}
+                        onClick ={()=>this.sustainabilityFilter()}
+                        onMouseEnter = {() => this.cssShine('green')}
+                        onMouseLeave = {() => this.cssShineOff()}
+                      />
 
                     </div>
-                    <div className = "search-containter">
+
+                    <div className = "search-container">
                         <input type = "text"
-                        placeholder= "Search Exhibitor"
+                        placeholder= "Search Exhibitors"
                                value={this.state.search}
                                onChange ={this.updateSearch.bind(this)}
                         />
                     </div>
+                    <div className="supercontainer">
+                    <div className="dropdown-container drop1">
+                      <div className="select">
+                          <select onChange={this.sectorFilter.bind(this)}>
+                              <option value="All">All Sectors</option>
+                              {this.buildOptions(this.state.sectors)}
+                          </select>
+                          <div className="select_arrow"></div>
+                      </div>
+                    </div>
 
-                    {/* a point of improvement could be to create a list of available filters in the ais and then map them here.
-                    and not hardcode it as it is now. Then the options would change automatically if the jobs offered in the ais change
-                    no word for the coder and less risk of displaying the wrong filters */}
+                    <div className="dropdown-container drop2">
+                      <div className="select">
+                          <select onChange={this.locationFilter.bind(this)}>
+                              <option value="All" selected>All Countries</option>
+                              {this.buildOptions(this.state.locations)}
+                          </select>
+                          <div className="select_arrow"></div>
+                      </div>
+                    </div>
+                    </div>
+
+                    {/* TODO: everything should be dynamic instead of hard-coded */}
+
+                    <h3>Job Opportunities</h3>
+
+                    <div className = "checkboxes">
+
                     <div className = "checkbox-filtering">
 
                         <div className = "checkbox-container">
-                            <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee Employment")} />
-                            <label htmlFor={"check1"}>Trainee</label>
+                            <input type="checkbox" id="check7" onClick ={()=>this.jobFilter("Full time job")} />
+                            <label htmlFor={"check7"}>Full Time Job</label>
                         </div>
+
                         <div className = "checkbox-container">
-                            <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master's Thesis")}/>
-                            <label htmlFor={"check2"}>Master Thesis</label>
-                        </div>
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer Jobs")}/>
-                            <label htmlFor={"check3"}>Summer Job</label>
-                        </div>
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part-time Jobs")} />
+                            <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part time job")} />
                             <label htmlFor={"check4"}>Part Time Job</label>
                         </div>
+
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer job")}/>
+                            <label htmlFor={"check3"}>Summer Job</label>
+                        </div>
+
                     </div>
+
+                    <div className = "checkbox-filtering">
+
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master thesis")}/>
+                            <label htmlFor={"check2"}>Master Thesis</label>
+                        </div>
+
+                        <div className = "checkbox-container">
+                            <input type="checkbox" id="check6" onClick ={()=>this.jobFilter("Bachelor thesis")} />
+                            <label htmlFor={"check6"}>Bachelor Thesis</label>
+                        </div>
+
+                    </div>
+
+                    <div className = "checkbox-filtering">
+
+                      <div className = "checkbox-container">
+                          <input type="checkbox" id="check5" onClick ={()=>this.jobFilter("Internship")} />
+                          <label htmlFor={"check5"}>Internship</label>
+                      </div>
+
+                      <div className = "checkbox-container">
+                          <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee")} />
+                          <label htmlFor={"check1"}>Trainee</label>
+                      </div>
+
+                    </div>
+
+                    <div className = "checkbox-filtering">
+
+                      <div className="checkbox-container">
+                          <input type="checkbox" id="startupcb" onClick={() => this.startupFilter()} />
+                          <label htmlFor={"startupcb"} id="startuplabel">Startup</label>
+                      </div>
+
+                    </div>
+
+                  </div>
 
                     <div className = "loading">
                         {this.state.isLoading ? <Loading/> :null}
                     </div>
                     <div className="exhibitor-feed">
-                        {filteredCompanies}
+                        {filteredCompanies.length && !this.state.isLoading ? filteredCompanies.splice(0,this.state.showamount) :
+                          <div className="Noresultsfound">
+                              {!this.state.isLoading ? <div><p className="noresultstext">
+                              Sorry, we couldn't find any companies that match your search. Please look at our cat instead!
+                            </p><Cat/></div> : null}
+                          </div>
+                        }
                     </div>
+                    {filteredCompanies.length > this.state.showamount ?
+                    <div className="showmore-container">
+                        <button className="showmorebutton" onClick={() => this.showMore()}>Show All</button>
+                    </div> : null}
                 </div>
             )
         } else {
@@ -252,6 +512,8 @@ class ExhibitorList extends React.Component {
     }
 }
 
+//TODO: stop using proptypes
+//TODO: reorg of this code into proper places
 
 ExhibitorList.propTypes = {
     exhibitorName: PropTypes.string,
@@ -271,11 +533,11 @@ const ExhibitorItem = (props) => {
     classname += props.exhibitor.diversity == true ? " purple": "";
 
     return (
-        <div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.company)}>
+        <div id={props.name} className = {"exhibitor-box " + classname} onClick={()=> props.showModal(props.exhibitor.name)}>
             <div className = "image-container">
-                <img src = {props.exhibitor.logo_url}/>
+                <img src = {ais + props.exhibitor.logo_squared} />
             </div>
-            <p> {props.exhibitor.company} </p>
+            <p> {props.exhibitor.name} </p>
             {props.exhibitor.diversity == true
                 ? <div className='corner-special'><img  src='/assets/diversity_a.svg'/></div>: null }
             {props.exhibitor.sustainability == true

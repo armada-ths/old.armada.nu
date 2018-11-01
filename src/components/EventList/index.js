@@ -78,7 +78,7 @@ class EventList extends React.Component {
                   </div>
                 </div>
                 <div className="description-container">
-                  <div className="description" style="white-space: pre-line;" dangerouslySetInnerHTML={{__html: event.description}}></div>
+                  <div className="description" style={{whiteSpace: 'pre-line'}} dangerouslySetInnerHTML={{__html: event.description}}></div>
                   </div>
                   </div>
               <div className="modalbutton">

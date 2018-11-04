@@ -1,5 +1,5 @@
 ---
-title: Exhibitor guide to THS Armada 2017
+title: Exhibitor guide to THS Armada 2018
 layout: PageSection
 priority: '1'
 header: /assets/LIBRARY.jpg

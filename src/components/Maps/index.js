@@ -1,20 +1,14 @@
 import React from "react";
 import axios from "axios";
-import PropTypes from "prop-types";
-import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./maps.scss";
 import Modal from "../Modal";
-
-const urlPropsQueryConfig = {
-  mapId: { type: UrlQueryParamTypes.number, queryParam: 'mapId' },
-};
 
 
 class Maps extends React.Component {
     constructor(props) {
         super(props); // adopts parent qualities
         this.state = {
-						fairlocations: ["Biblotekshall - höger", "Biblotekshall - vänster", "Biblotekshall - längst in",
+					fairlocations : ["Biblotekshall - höger", "Biblotekshall - vänster", "Biblotekshall - längst in",
 					"Biblotek - entre vänster", "Nya Matsalen", "Gamla Matsalen", "Student Lounge/Korridor",
 					"Ångsdomen", "Tidningsrummet", "Hyllan", "Kårbokhandeln"],
             maps: [],  // json object
@@ -30,15 +24,11 @@ class Maps extends React.Component {
 
             this.setState({ maps });  // component saves its own data
             // Get from url path the GET params ?id=number, to know what map to display
-            if (this.props.mapId !== undefined ){
-              this.setState({mapId: this.props.mapId, showModal:true});
-          }
           });
     }
 
     showModal = (mapId) => {
       this.setState({showModal: !this.state.showModal, mapId});
-      this.props.onChangeMapId(mapId);
     };
 
     displayMap = (map) => {
@@ -64,7 +54,7 @@ class Maps extends React.Component {
       return (
           <div className = "map-item">
               <div className = "image-section" onClick={this.showModal(this.state.fairlocations.indexOf(locname))}>
-                  <img src = {"https://hatrabbits.com/wp-content/uploads/2016/12/rare-combinaties.jpg"}/>
+                  <img src = {"https://i.gifer.com/PTYC.gif"}/>
               </div>
                 <h3 className ="name" >{locname}</h3>
           </div>
@@ -91,15 +81,4 @@ class Maps extends React.Component {
     }
 }
 
-Maps.propTypes = {
-    mapId: PropTypes.number,
-    onChangeMapId: PropTypes.func,
-}
-
-let toExport;
-if(global.window!=undefined){
-  toExport = addUrlProps({urlPropsQueryConfig})(Maps);
-}else{
-  toExport=Maps;
-}
-export default toExport;
+export default Maps;

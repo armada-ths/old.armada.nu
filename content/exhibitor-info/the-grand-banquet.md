@@ -1,28 +1,16 @@
 ---
-title: The Grand Banquet
+title: Check-in
 layout: PageSection
-priority: '22'
+priority: '2'
 header: /assets/Bankett.jpg
 dark: false
 ---
-**Date:** 21st of November
+When arriving at the fair, you visit the information desk to check-in your company/organization. Make sure to contact your host beforehand and tell them when you will arrive - they will meet you and help you with the check-in and stand area. Check-in your organization at the information desk in your specific exhibition hall.
+\
+\
+\
+**Check-in hours:**
 
-**Time:** 18:00
+19th of November: 13:00 - 20:00
 
-**Location:** Annexet, Ericsson Globe Arenas
-
-**Dresscode: **Dark suite
-
-## Schedule:
-
-**Before 12:00** All guests will be asked to confirm their attendance to the banquet by their respective Career Fair Hosts. If there has been any changes, please notify your Career Fair Host.
-
-**18:00** Doors will open to the banquet
-
-**19:00 **Dinner will be served
-
-**22:00** Doors will open to the after party Club Armada at Annexet. Taxi hosts from Taxi Stockholm will be available outside of the venue from this hour.
-
-**02:00** Club Armada will be closing.
-
-If you have any questions regarding the banquet, please contact Head of Banquet, Sofia Tollander at sofia.tollander@armada.nu
+20th of November: 08:00 - 10:00

@@ -8,6 +8,7 @@ import Page from "./layouts/Page"
 import PageError from "./layouts/PageError"
 import Homepage from "./layouts/Homepage"
 import Aboutpage from "./layouts/Aboutpage"
+import Matching from "./layouts/Matching"
 import Plainpage from "./layouts/Plainpage"
 import Recruitmentpage from "./layouts/Recruitmentpage"
 import Contactpage from "./layouts/Contactpage"
@@ -30,6 +31,7 @@ const PageContainer = (props) => (
       PageError,
       Homepage,
       Aboutpage,
+      Matching,
       Contactpage,
       News,
       Events,

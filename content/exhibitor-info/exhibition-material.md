@@ -1,12 +1,10 @@
 ---
-title: Exhibition material
+title: Elevators
 layout: PageSection
-priority: '6'
+priority: '9'
 header: /assets/sture.jpg
 dark: false
 ---
-Are you missing something in your exhibition material or booth? 
+Nymble: max 500 kg. 1.08 x 1.53 x 2 meters.
 
-Our partner Sture provides everything from chairs and tables to complete booth solutions.  
-
-Contact Sture Exhibitions & Events AB at andreas.tenggren@sture.se
+KTH Library: max 630 kg. 0.8 x 1.41 x 2 meters.

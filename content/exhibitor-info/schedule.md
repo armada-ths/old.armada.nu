@@ -13,14 +13,10 @@ dark: false
 
 * Exhibitor material won’t be possible to print at the fair due to a lack of printers. 
 
-\
-\
 **Give-away policies**
 
 The give-away policies are very strict at the fair. Please note what is not allowed for each building.
-\
-\
-\
+
 **Nymble**
 
 _Allowed:_
@@ -39,8 +35,6 @@ _Not allowed:_
 
 * Strongly scented products.
 
-\
-\
 **KTH Library**
 
 _Allowed:_
@@ -51,6 +45,4 @@ _Not allowed:_
 
 * Nothing eatable/drinkable than mentioned above.
 
-\
-\
 **KTH Entré has no restrictions.**

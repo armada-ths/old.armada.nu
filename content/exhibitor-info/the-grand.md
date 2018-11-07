@@ -1,5 +1,5 @@
 ---
-title: The Grand
+title: The Grand banquet
 layout: PageSection
 priority: '12'
 header: /assets/map.png

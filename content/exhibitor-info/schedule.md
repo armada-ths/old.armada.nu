@@ -1,18 +1,56 @@
 ---
-title: Exhibitor guide to THS Armada 2017
+title: General rules and guidelines
 layout: PageSection
-priority: '1'
+priority: '6'
 header: /assets/LIBRARY.jpg
 dark: false
 ---
-**Welcome to the career fair of 2017.** We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
+* Due to the environmental impact, we want you to minimize the volume of disposables at the fair. This includes cups and give-aways. Use the waste stations available.
 
-**Dates:**
+* Try to find alternative ways to share information regarding internships, jobs etc than printed material.
 
-21st of November - 22nd of November 
+* Refrigerators are not allowed in any building of the fair
 
-**Opening hours: **
+* Exhibitor material won’t be possible to print at the fair due to a lack of printers. 
 
-21st of November: 10:00 - 16:00
+\
+\
+**Give-away policies**
 
-22nd of November: 10:00 - 15:00
+The give-away policies are very strict at the fair. Please note what is not allowed for each building.
+\
+\
+\
+**Nymble**
+
+_Allowed:_
+
+* Drinks in enclosed containers
+
+* Wrapped candy
+
+* Fruit
+
+_Not allowed:_
+
+* Give-aways that requires any type of machine, included refrigerators.
+
+* Nuts, due to allergy and health risks.
+
+* Strongly scented products.
+
+\
+\
+**KTH Library**
+
+_Allowed:_
+
+* Wrapped candy and sealed water bottles.
+
+_Not allowed:_
+
+* Nothing eatable/drinkable than mentioned above.
+
+\
+\
+**KTH Entré has no restrictions.**

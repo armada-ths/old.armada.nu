@@ -1,30 +1,16 @@
 ---
-title: Check-in & travel
+title: CHECK-IN AND TRAVEL
 layout: PageSection
 priority: '2'
 header: /assets/map.png
 dark: true
 ---
-**Arriving at the fair **
-
-When arriving at the fair you visit our exhibitor information desk to check-in your company/organization, you do this together with your specific exhibition hall and your host. Your pre-ordered lunch tickets will be handed out at the exhibitor information desk.
-
+When arriving at the fair, you visit the information desk to check-in your company/organization. Make sure to contact your host beforehand and tell them when you will arrive - they will meet you and help you with the check-in and stand area. Check-in your organization at the information desk in your specific exhibition hall.
+\
+\
+\
 **Check-in hours:**
 
-21st of November: 08:00 - 10:00
+19th of November: 13:00 - 20:00
 
-22nd of November: 08:00 - 10:00
-
-**Making your way to the fair: **
-
-*Metro: *
-
-From the T-Central station you take the red line towards “Mörby Centrum”. Travel to the metro station “Tekniska Högskolan”.
-
-*Bus:*
-
-If you prefer the bus, there are several lines that passes KTH. The nearest station is “Östra station”. More information of public transportation is found on sl.se/en
-
-*Car: *
-
-The number of parking slots is very limited at KTH Campus. Therefore, we encourage you to use public transportation
+20th of November: 08:00 - 10:00

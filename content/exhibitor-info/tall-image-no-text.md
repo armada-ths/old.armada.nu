@@ -1,31 +1,12 @@
 ---
-title: Service information
+title: Exhibition area
 layout: PageSection
-priority: '3'
+priority: '5'
 header: /assets/lounflmblmge2.jpg
 dark: false
 ---
-**Exhibitor lounges:**
+We recommend you to install your exhibitor area Monday 20th of November 13:00-20:00 
 
-Kröken (Nymble) and Salongen (library, KTHB)
+* Synchronize your date and time of arrival with your career fair host. The host will then be able to show you where your exhibition area is located.
 
-**Opening hours: **
-
-21st of November: 08:30 - 16:00 (08:30 - 10:00 breakfast)
-
-22nd of November: 08:30 - 14:30 (08:30 - 10:00 breakfast)
-
-**Service- and information desks: **
-
-21st of November: 08:00 - 16:00
-
-22nd of November: 08:00 - 15:00
-
-**Lunch:**
-
-Lunch is served 10:30 - 14:00 in restaurant Syster & Bror.
-
-Lunch tickets will be handed out in the service desk when checking in before the fair and each lunch ticket has a specific time slot to attend.
-
-If you have questions regarding the service or lounges, please contact Maria Signell at maria.signell@armada.nu
-
+* In exceptional cases, you may install your exhibition area on early Tuesday morning 21st of November. Any exhibition area that is not installed before 09:00 this day will not be provided equal assistance.

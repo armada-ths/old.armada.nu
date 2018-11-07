@@ -1,10 +1,14 @@
 ---
-title: WIFI
+title: Exhibition area
 layout: PageSection
-priority: '10'
-header: /assets/exhibitorstand.png
+priority: '19'
+header: /assets/map.png
 dark: false
 ---
-Wifi: KTH-Conference 
+**Deconstruction of your stand:**
 
-Password: natezufi
+You will deconstruct your own exhibition area with limited assistance from your host. 
+
+Before leaving the area, you need to inform one in the Armada team. 
+
+Your exhibition material will be transported by Ryska Posten according to what you have agreed upon. You need to assure that all your cargos are properly documented and that your shipping address is correct. Do not leave the area until this it’s done.

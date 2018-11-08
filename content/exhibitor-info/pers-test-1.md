@@ -1,7 +1,7 @@
 ---
 title: Electricity
 layout: PageSection
-priority: '7'
+priority: '25'
 header: /assets/market2.png
 dark: true
 ---

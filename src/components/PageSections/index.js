@@ -73,7 +73,7 @@ const PageSections = (props, { collection }) => {
     )
     }else{
          return (
-        <div id="exhibitor_info">
+        <div id="exhibitor_info_mobile">
             <div id="intro_section">
                 {introSection}
             </div>

@@ -1,7 +1,7 @@
 ---
 title: General rules and guidelines
 layout: PageSection
-priority: '6'
+priority: '24'
 header: /assets/LIBRARY.jpg
 dark: false
 ---

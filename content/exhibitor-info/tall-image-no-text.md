@@ -1,7 +1,7 @@
 ---
 title: Exhibition area
 layout: PageSection
-priority: '5'
+priority: '23'
 header: /assets/lounflmblmge2.jpg
 dark: false
 ---

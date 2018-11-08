@@ -48,7 +48,6 @@ class PageSection extends React.Component {
                     <div className="pagesection-body-container">
                       <div className="pagesection-body">
                           <h1 className="h1_small">{this.props.title}</h1>
-                          <h2>{this.props.priority}</h2>
                           <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
                       </div>
                     </div>

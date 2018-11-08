@@ -21,11 +21,14 @@ const PageSections = (props, { collection }) => {
   let duringEnd = 17;
   let afterStart = 17;
   let afterEnd = 21;
+  let contactStart = 21;
+  let contactEnd = 24;
   
   let introSection = sections.slice(introStart,introEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
   let beforeSections = sections.slice(beforeStart,beforeEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
   let duringSections = sections.slice(duringStart,duringEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
   let afterSections = sections.slice(afterStart,afterEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
+  let contactSections = sections.slice(contactStart,contactEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
   
     return (
         <div id="exhibitor_info">
@@ -57,6 +60,14 @@ const PageSections = (props, { collection }) => {
                     {afterSections}
                 </div>
             </div>
+            <div className="outer_sections_div">
+                <div className="title_bar">
+                    <h1 id="contact_sections_title" className="sectionsTitle  sections_title_button" onClick={showOrHideContact}>Questions/Contact</h1>
+                </div>
+                <div id="contact_sections">
+                    {contactSections}
+                </div>
+            </div>
         </div>
     )
 }
@@ -72,9 +83,12 @@ function showOrHideDuring() {
    showOrHideSection("during_sections")
 }
 
-
 function showOrHideAfter() {
     showOrHideSection("after_sections");
+}
+
+function showOrHideContact() {
+    showOrHideSection("contact_sections");
 }
 
 function showOrHideSection(sectionName) {

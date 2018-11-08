@@ -1,7 +1,7 @@
 ---
 title: Social media
 layout: PageSection
-priority: '17'
+priority: '37'
 header: /assets/map.png
 dark: false
 ---

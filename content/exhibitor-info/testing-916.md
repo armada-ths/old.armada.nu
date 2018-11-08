@@ -1,7 +1,7 @@
 ---
 title: Travel to the fair
 layout: PageSection
-priority: '3'
+priority: '21'
 header: /assets/map.png
 dark: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: Invoice
 layout: PageSection
-priority: '21'
+priority: '43'
 header: /assets/map.png
 dark: false
 ---

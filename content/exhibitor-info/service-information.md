@@ -1,7 +1,7 @@
 ---
 title: Service information
 layout: PageSection
-priority: '11'
+priority: '31'
 header: /assets/map.png
 dark: false
 ---

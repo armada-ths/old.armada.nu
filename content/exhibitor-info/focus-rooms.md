@@ -1,7 +1,7 @@
 ---
 title: Focus rooms
 layout: PageSection
-priority: '14'
+priority: '34'
 header: /assets/map.png
 dark: false
 ---

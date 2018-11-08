@@ -1,7 +1,7 @@
 ---
 title: Check-out
 layout: PageSection
-priority: '18'
+priority: '40'
 header: /assets/map.png
 dark: false
 ---

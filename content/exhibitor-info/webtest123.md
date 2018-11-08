@@ -24,3 +24,5 @@ You will be informed in beforehand in what building your company will be placed 
 **KTH Library: **Osquars backe 31, 100 44 Stockholm 
 
 **KTH Entrance:** Drottning Kristinas väg 4, 114 28 Stockholm
+
+![](/assets/map.png)

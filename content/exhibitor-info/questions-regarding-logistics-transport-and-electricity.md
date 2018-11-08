@@ -1,7 +1,7 @@
 ---
 title: 'QUESTIONS REGARDING LOGISTICS, TRANSPORT AND ELECTRICITY'
 layout: PageSection
-priority: '22'
+priority: '50'
 header: /assets/map.png
 dark: false
 ---

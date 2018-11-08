@@ -8,8 +8,8 @@
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: #00d790;
-    margin: 15px;
-    width: 100%
+    margin: auto;
+    width: 90%;
 }
 .image {
   img {
@@ -47,9 +47,6 @@
     .title {
       color: blue;
     }
-    hr {
-        margin-left: 10px;
-    }
   }
 }
 
@@ -72,9 +69,9 @@
     }
   }
   .pagesection {
-    display: flex;
+    //display: flex;
     //flex-direction: column;
-    width: 100vw;
+    width: 100%;
   }
   .pagesection-body-container {
     width: auto;

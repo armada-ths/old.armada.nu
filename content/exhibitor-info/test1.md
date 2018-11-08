@@ -1,7 +1,7 @@
 ---
 title: Transportation of goods to the fair
 layout: PageSection
-priority: '4'
+priority: '22'
 header: /assets/MATTOR.jpg
 dark: false
 ---

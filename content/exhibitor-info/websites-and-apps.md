@@ -1,7 +1,7 @@
 ---
-title: Websites and Apps
+title: Website and Apps
 layout: PageSection
-priority: '15'
+priority: '36'
 header: /assets/map.png
 dark: false
 ---

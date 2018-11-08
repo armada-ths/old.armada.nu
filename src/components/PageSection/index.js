@@ -20,13 +20,6 @@ class PageSection extends React.Component {
                 this.setState({body: data.body});
             });
     }
-    isMobile() {
-        if (global.window != undefined) {
-            return window.innerWidth < 470 ? true : false
-        } else {
-            return false
-        }
-    }
 
     render = () => {
         if (this.props.priority == 1) {

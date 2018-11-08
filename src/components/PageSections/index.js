@@ -29,7 +29,8 @@ const PageSections = (props, { collection }) => {
   let duringSections = sections.slice(duringStart,duringEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
   let afterSections = sections.slice(afterStart,afterEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
   let contactSections = sections.slice(contactStart,contactEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
-  
+    
+    if (!isMobile()) {
     return (
         <div id="exhibitor_info">
             <div id="intro_section">
@@ -70,6 +71,48 @@ const PageSections = (props, { collection }) => {
             </div>
         </div>
     )
+    }else{
+         return (
+        <div id="exhibitor_info">
+            <div id="intro_section">
+                {introSection}
+            </div>
+            <script src="index.js"></script>
+            <div className="outer_sections_div_mobile">
+                <div className="title_bar">
+                    <h1 id="before_sections_title" className="sectionsTitle sections_title_button" onClick={showOrHideBefore}>Before the fair</h1>
+                </div>
+                <div id="before_sections">
+                    {beforeSections}
+                </div>
+            </div>
+            <div className="outer_sections_div_mobile">
+                <div className="title_bar">
+                    <h1 id="during_sections_title" className="sectionsTitle  sections_title_button" onClick={showOrHideDuring}>During the fair</h1>
+                </div>
+                <div id="during_sections">
+                    {duringSections}
+                </div>
+            </div>
+            <div className="outer_sections_div_mobile">
+                <div className="title_bar">
+                    <h1 id="after_sections_title" className="sectionsTitle  sections_title_button" onClick={showOrHideAfter}>After the fair</h1>
+                </div>
+                <div id="after_sections">
+                    {afterSections}
+                </div>
+            </div>
+            <div className="outer_sections_div_mobile">
+                <div className="title_bar">
+                    <h1 id="contact_sections_title" className="sectionsTitle  sections_title_button" onClick={showOrHideContact}>Questions/Contact</h1>
+                </div>
+                <div id="contact_sections">
+                    {contactSections}
+                </div>
+            </div>
+        </div>
+    )
+    }
 }
 PageSections.contextTypes = {
   collection: PropTypes.array.isRequired,
@@ -102,6 +145,14 @@ function showOrHideSection(sectionName) {
         titleElem.classList.add("sections_title_button");
     }
 }
+
+function isMobile() {
+        if (global.window != undefined) {
+            return window.innerWidth < 470 ? true : false
+        } else {
+            return false
+        }
+    }
 
 
 

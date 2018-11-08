@@ -1,7 +1,7 @@
 ---
 title: Elevators
 layout: PageSection
-priority: '9'
+priority: '27'
 header: /assets/sture.jpg
 dark: false
 ---

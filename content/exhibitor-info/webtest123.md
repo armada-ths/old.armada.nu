@@ -1,42 +1,26 @@
 ---
-title: General rules & give-away policy
+title: Exhibitor guide for THS Armada 2018
 layout: PageSection
-priority: '4'
-header: /assets/giveaway2.png
+priority: '1'
+header: /assets/map.png
 dark: true
 ---
-**General rules**
+**Welcome to the career fair of 2018.** We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
 
-* Due to the environmental impact, we want you to minimize the volume of disposables at the fair. This includes cups and give-aways.
-* Try to find alternative ways to share information regarding internships, jobs etc than printed material.
-* Refrigerators are not allowed in any building of the fair
+**Dates:** 20th-21st of November
 
-**Give-away policies**
+**Opening hours:** 
 
-The give-away policies are very strict at the fair. Please note what is not allowed for each building.
+20th of November: 10:00 - 16:00
 
-**Nymble**
+21st of November: 10:00 - 15:00 
 
-_Allowed:_
+**Locations:** 
 
-* Drinks in enclosed containers
-* Wrapped candy
-* Fruit
+You will be informed in beforehand in what building your company will be placed in.
 
-_Not allowed:_
+**Nymble: **Drottning Kristinas väg 15-19, 114 28 Stockholm
 
-* Give-aways that requires any type of machine, included refrigerators.
-* Nuts, due to allergy and health risks. 
-* Strongly scented products. 
+**KTH Library: **Osquars backe 31, 100 44 Stockholm 
 
-**KTHB (KTH Library)**
-
-_Allowed:_
-
-* Wrapped candy and sealed water bottles. 
-
-_Not allowed:_
-
-* Nothing eatable/drinkable than mentioned above. 
-
-**KTH Entré has no restrictions. **
+**KTH Entrance:** Drottning Kristinas väg 4, 114 28 Stockholm

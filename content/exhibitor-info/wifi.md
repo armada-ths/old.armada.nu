@@ -1,9 +1,9 @@
 ---
 title: WIFI
 layout: PageSection
-priority: '26'
-header: /assets/electr2.png
-dark: true
+priority: '30'
+header: /assets/map.png
+dark: false
 ---
 Wifi: KTH-Conference 
 

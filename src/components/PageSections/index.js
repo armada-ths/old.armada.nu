@@ -73,8 +73,8 @@ const PageSections = (props, { collection }) => {
     )
     }else{
          return (
-        <div id="exhibitor_info_mobile">
-            <div id="intro_section">
+        <div id="exhibitor_info">
+            <div id="intro_section_mobile">
                 {introSection}
             </div>
             <script src="index.js"></script>
@@ -104,7 +104,7 @@ const PageSections = (props, { collection }) => {
             </div>
             <div className="outer_sections_div_mobile">
                 <div className="title_bar">
-                    <h1 id="contact_sections_title" className="sectionsTitle  sections_title_button" onClick={showOrHideContact}>Questions/Contact</h1>
+                    <h1 id="contact_sections_title" className="sectionsTitle  sections_title_button" onClick={showOrHideContact}>Contact</h1>
                 </div>
                 <div id="contact_sections">
                     {contactSections}

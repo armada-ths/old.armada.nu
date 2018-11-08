@@ -1,7 +1,7 @@
 ---
 title: The Grand banquet
 layout: PageSection
-priority: '12'
+priority: '32'
 header: /assets/map.png
 dark: false
 ---

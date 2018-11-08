@@ -1,7 +1,7 @@
 ---
 title: Events during the fair
 layout: PageSection
-priority: '13'
+priority: '33'
 header: /assets/map.png
 dark: false
 ---

@@ -19,6 +19,8 @@ dark: true
 
 You will be informed in beforehand in what building your company will be placed in.
 
+![](/assets/map.png)
+
 **Nymble: **Drottning Kristinas väg 15-19, 114 28 Stockholm
 
 **KTH Library: **Osquars backe 31, 100 44 Stockholm 

@@ -1,7 +1,7 @@
 ---
 title: Exhibition area
 layout: PageSection
-priority: '41'
+priority: '30'
 header: /assets/map.png
 dark: false
 ---

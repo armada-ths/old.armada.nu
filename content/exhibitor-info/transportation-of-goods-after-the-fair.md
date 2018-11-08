@@ -1,7 +1,7 @@
 ---
 title: Transportation of goods after the fair
 layout: PageSection
-priority: '20'
+priority: '42'
 header: /assets/map.png
 dark: false
 ---

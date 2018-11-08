@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import axios from "axios"
-import { StickyContainer, Sticky } from 'react-sticky';
+//import { StickyContainer, Sticky } from 'react-sticky';
 
 import './pagesection.scss';
 
@@ -29,44 +29,26 @@ class PageSection extends React.Component {
     }
 
     render = () => {
-        if (!this.isMobile()) {
-
+        if (this.props.priority == 1) {
             return (
-                <StickyContainer className={"pagesection " + (this.props.right ? "right" : "left")}>
-                    <div className={"image "+ (this.props.dark ? "dark" : "light")}>
-                        <Sticky>
-                            {
-                                ({style}) => {
-                                    return (
-                                        <div style={style}>
-                                            <img src={this.props.header}/>
-                                        </div>
-                                    )
-                                }
-                            }
-                        </Sticky>
-                    </div>
-
+                <div className={"pagesection"}>
                     <div className="pagesection-body-container">
-                            <div className="pagesection-body">
-                                <h1 className="pagesection-title">{this.props.title}</h1>
-                                <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
-                            </div>
+                      <div className="pagesection-body">
+                          <h1 className="">{this.props.title}</h1><br/>
+                          <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
+                      </div>
                     </div>
-                </StickyContainer>
+                </div>
             )
         }
         else {
             return (
 
-                <div className={"pagesection " + (this.props.right ? "right" : "left")}>
-                    <div className={"image "+ (this.props.dark ? "dark" : "light")}>
-                        <img src={this.props.header}/>
-                    </div>
-
+                <div className={"pagesection with-row"}>
                     <div className="pagesection-body-container">
                       <div className="pagesection-body">
-                          <h1 className="pagesection-title">{this.props.title}</h1>
+                          <h1 className="h1_small">{this.props.title}</h1>
+                          <h2>{this.props.priority}</h2>
                           <div dangerouslySetInnerHTML={{__html: this.state.body}}/>
                       </div>
                     </div>
@@ -83,6 +65,7 @@ PageSection.propTypes = {
   title: PropTypes.string.isRequired,
   header: PropTypes.string,
   right: PropTypes.boolean,
+  priority: PropTypes.int,
   dark: PropTypes.boolean,
 }
 

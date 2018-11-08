@@ -1,7 +1,7 @@
 ---
 title: 'QUESTIONS REGARDING CHECK-IN, SERVICE DESKS AND BANQUET'
 layout: PageSection
-priority: '23'
+priority: '51'
 header: /assets/map.png
 dark: false
 ---

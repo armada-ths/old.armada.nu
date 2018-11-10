@@ -37,6 +37,47 @@
 }
 .exhibitors  {
   padding-top: 1em;
+
+  .basic-multi-select {
+    padding: 0.1em 2em 0.5em 2em;
+    outline: none;
+  }
+
+  .select__menu {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .select__control {
+    border: 0.1em solid $melon;
+    border-radius: 1em;
+    width: 73%;
+    margin: 0 auto;
+    font-size: 19px;
+    padding: 0.1em;
+
+    &:hover {
+      border-color: $melon !important;
+      cursor: pointer;
+    }
+  }
+
+  .select__control--is-focused {
+    box-shadow: 0 0 4px $melon;
+  }
+
+  .select__dropdown-indicator svg {
+    fill: $melon;
+  }
+
+  .select__value-container--has-value {
+    width: 300px;
+  }
+  .select__multi-value {
+    background-color: $melon;
+  }
 }
 .exhibitors .filter-special{
   display: flex;
@@ -84,46 +125,6 @@
     font-size: 16px !important;
     margin: 5px 5px 5px 5px;
   }
-}
-
-.checkboxes{
-  padding: 0em 3em 1em 3em;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-	margin: auto;
-	max-width: 700px;
-	//align-self: center;
-}
-
-.checkbox-filtering{
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-	margin: 0;
-	max-width: 130px;
-	//align-self: center;
-}
-
-.checkbox-filtering label{
-	display: block;
-	//height: 100%;
-	//width: 100%;
-	margin: 0;
-	align-self: center;
-
-}
-.checkbox-container{
-  width: 150px;
-	height: 2em;
-	font-size: 0.8em;
-	padding: 0em 0.5em 0em 0.5em;
-	//vertical-align: middle;
-	align-self: flex-start;
-	//display: table-cell;
 }
 
 /*Fixes for input type images*/

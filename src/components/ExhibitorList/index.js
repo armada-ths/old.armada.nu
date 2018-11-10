@@ -129,6 +129,7 @@ class ExhibitorList extends React.Component {
                     {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
 
                     <div className = "location-container">
+										{/*
                         <h3>Countries</h3>
                         <ul>
                           {exhibitor.locations.map((loc) =>
@@ -138,19 +139,15 @@ class ExhibitorList extends React.Component {
                         </ul>
                     </div>
 
-
-
-                      {/* commented out until maps implemented
-                        <div className='fairposition-container'>
-                        <h3>Find us at the fair</h3>
-                        <div className='fairposition'>
-                            <div className='icon'><img src='/assets/place.svg'/></div>
-                            <div className="position">{exhibitor.exhibitor_location}</div>
-                        </div>
-
-                        {/* TODO: Add Map feature to Modal
-                          {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null}}
-                    </div>*/}
+                    <div className='fairposition-container'>
+                    <h3>Find us at the fair</h3>
+                    <div className='fairposition'>
+                        <div className='icon'><img src='/assets/place.svg'/></div>
+                        <div className="position">{exhibitor.exhibitor_location}</div>
+                    </div>
+                    {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null}
+										*/}
+                    </div>
                 </div>
 
             </Modal>

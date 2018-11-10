@@ -17,6 +17,7 @@ import Events from "./layouts/Events"
 import ExhibitorInfo from "./layouts/ExhibitorInfo"
 import PageSection from "./components/PageSection"
 import Exhibitors from "./layouts/Exhibitors"
+import Mapspage from "./layouts/Mapspage"
 //PageSection is added as layout to avoid warnings from phenomic for having the
 //PageSections compoment that is used in ExhibitorInfo layout.
 //Phenomic complains about not finding PageSection otherwise as it
@@ -34,6 +35,7 @@ const PageContainer = (props) => (
       Contactpage,
       News,
       Events,
+      Mapspage,
       ExhibitorInfo,
       Plainpage,
       PageSection,

@@ -12,10 +12,6 @@ THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of 
 
 **Diversity **and **sustainability **form the core values at the heart of this pursuit.
 
-**Exhibitor interest for the career fair of 2018:**
-
-If you are interested to participate in the career fair of 2018, please submit information [here](https://goo.gl/forms/OlWbxZxPlnBltPfu2)
-
 ## Diversity
 
 <p style="text-align:center;">

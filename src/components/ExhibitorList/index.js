@@ -132,19 +132,19 @@ class ExhibitorList extends React.Component {
                     </div>
 										}
 
-                    <div className='fairposition-container'>
-	                    <h3>Find us at the fair</h3>
-	                    <div className='fairposition'>
-	                        <div className="position">
-													<p>(You can see a map of the career fair in <a href="/maps">Maps</a>)</p>
-														<ul>
-															{exhibitor.booths.map(booth =>
-																<li>{booth.location.parent.name + ' ' + booth.location.name + ' ' + booth.name}</li>)
-															}
-														</ul>
-													</div>
-	                    </div>
-                    </div>
+									<div className='fairposition-container'>
+										<h3>Find us at the fair</h3>
+										<div className='fairposition'>
+											<div className="position">
+												<p>(You can see a map of the career fair in <a href="/maps">Maps</a>)</p>
+												<ul>
+													{exhibitor.booths.map(booth =>
+														<li>{booth.location.parent.name + ' ' + booth.location.name + ' ' + booth.name}</li>)
+													}
+												</ul>
+											</div>
+										</div>
+									</div>
                 </div>
             </Modal>
         );

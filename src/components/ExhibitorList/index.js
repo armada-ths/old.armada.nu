@@ -132,20 +132,20 @@ class ExhibitorList extends React.Component {
                     </div>
 										}
 
-
-                      {/* commented out until maps implemented
-                        <div className='fairposition-container'>
-                        <h3>Find us at the fair</h3>
-                        <div className='fairposition'>
-                            <div className='icon'><img src='/assets/place.svg'/></div>
-                            <div className="position">{exhibitor.exhibitor_location}</div>
-                        </div>
-
-                        {/* TODO: Add Map feature to Modal
-                          {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null}}
-                    </div>*/}
+                    <div className='fairposition-container'>
+	                    <h3>Find us at the fair</h3>
+	                    <div className='fairposition'>
+	                        <div className='icon'><img src='/media/locations/e7a1b8689ae849cabbf6900699ee4c2b.png'/></div>
+	                        <div className="position">
+														<ul>
+															{exhibitor.booths.map(booth =>
+																<li>{booth.location.parent.name + ' ' + booth.location.name + ' ' + booth.name}</li>)
+															}
+														</ul>
+													</div>
+	                    </div>
+                    </div>
                 </div>
-
             </Modal>
         );
     }

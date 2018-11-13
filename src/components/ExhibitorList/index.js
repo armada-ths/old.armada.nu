@@ -135,8 +135,8 @@ class ExhibitorList extends React.Component {
                     <div className='fairposition-container'>
 	                    <h3>Find us at the fair</h3>
 	                    <div className='fairposition'>
-	                        <div className='icon'><img src='/media/locations/e7a1b8689ae849cabbf6900699ee4c2b.png'/></div>
 	                        <div className="position">
+													<p>(You can see a map of the career fair in <a href="/maps">Maps</a>)</p>
 														<ul>
 															{exhibitor.booths.map(booth =>
 																<li>{booth.location.parent.name + ' ' + booth.location.name + ' ' + booth.name}</li>)

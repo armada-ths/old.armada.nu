@@ -1,17 +1,18 @@
-import React from "react";
+import React, {Component} from "react";
 import axios from "axios";
 import "./maps.scss";
 import Modal from "../Modal";
+import Loading from '../Loading';
 
-class Maps extends React.Component {
+class Maps extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			locations: [],
 			imageURLs: [],
+			isLoading: true,
 		};
 	}
-
 
 	componentDidMount() {
 		axios.get('https://ais.armada.nu/api/exhibitors/locations')
@@ -20,7 +21,7 @@ class Maps extends React.Component {
 			locations = locations
 			.filter(location => location.has_map === true)
 			.sort((a,b) => a.id < b.id);
-			this.setState({locations});
+			this.setState({locations, isLoading: false});
 		});
 
 		for(let i=4;i<6;i++) {
@@ -31,22 +32,17 @@ class Maps extends React.Component {
 				});
 			});
 		}
-
-		// this.state.locations.map(location => (
-		// 	axios.get('https://ais.armada.nu/api/exhibitors/locations/' + location.id)
-		// 	.then(res2 =>{
-		// 		this.setState({
-		// 			imageURLs: [...this.state.imageURLs, res2.data.map.url]
-		// 		})
-		// 	})
-		// ));
 	}
 
 	render() {
 		return (
-			<ul>
-				{this.state.locations.map(location => (<li key={location.id}>{location.name}</li>))}
-			</ul>
+			<div>
+			{this.state.isLoading ? (<Loading />) : (
+				<ul>
+					{this.state.locations.map(location => (<li key={location.id}>{location.name}</li>))}
+				</ul>
+			)}
+			</div>
 		)
 	}
 }

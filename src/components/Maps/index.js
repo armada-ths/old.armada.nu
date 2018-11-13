@@ -35,7 +35,7 @@ class Maps extends React.Component {
 	render() {
 		return (
 			<ul>
-				<li>hello</li>
+				{this.state.locations.map(location => (<li>{location.name}</li>))}
 			</ul>
 		)
 	}

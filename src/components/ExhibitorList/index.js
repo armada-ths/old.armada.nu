@@ -120,6 +120,7 @@ class ExhibitorList extends React.Component {
 
                     {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
 
+										{exhibitor.locations.length > 0 &&
                     <div className = "location-container">
                         <h3>Countries</h3>
                         <ul>
@@ -129,7 +130,7 @@ class ExhibitorList extends React.Component {
                             </li>)}
                         </ul>
                     </div>
-
+										}
 
 
                       {/* commented out until maps implemented

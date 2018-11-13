@@ -31,7 +31,7 @@ Service- and information desks:
 
 **Lunch:**
 
-Lunch is served 10:30 - 14:00 in restaurant Syster & Bror, see map above for the location. Your lunch tickets will be provided digitally the morning 21st of November. Each lunch ticket has a specific time slot to attend.
+Lunch is served 11:00 - 14:00 in restaurant Syster & Bror, see map above for the location. Your lunch tickets will be provided digitally the morning 21st of November. Each lunch ticket has a specific time slot to attend.
 
 **Wardrobes:**
 

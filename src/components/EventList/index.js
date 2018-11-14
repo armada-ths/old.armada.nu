@@ -34,7 +34,7 @@ class EventList extends React.Component {
             // Get from url path the GET params ?id=number, to know what event to display
             if (this.props.eventId !== undefined ){
               this.setState({eventId: this.props.eventId, showModal:true, events});
-          	}
+						}
           });
     }
 

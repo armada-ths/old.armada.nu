@@ -9,12 +9,23 @@ var smoothScroll = {
         clearTimeout(this.timer);
     },
 
+    changeColor: function(){
+        document.getElementById("scrollarrowIMG").src="/assets/pil_melon.png";
+
+    },
+    changeBack: function(){
+        document.getElementById("scrollarrowIMG").src="/assets/pil.png";
+
+    },
+    
+    
+
     scrollTo: function (id, callback) {
         var settings = {
             duration: 1000,
             easing: {
                 outQuint: function (x, t, b, c, d) {
-                    return c*((t=t/d-1)*t*t*t*t + 1) + b;
+                    return (c*((t=t/d-1)*t*t*t*t + 1) + b)*1.9;
                 }
             }
         };
@@ -78,6 +89,13 @@ var smoothScroll = {
 class Jumbotron extends React.Component {
 
     mouseEnter(){
+        smoothScroll.changeColor();
+    }
+    mouseOut(){
+        smoothScroll.changeBack();
+    }
+
+    mouseDown(){
         smoothScroll.scrollTo("scrollarrow");
     }
 
@@ -98,8 +116,8 @@ class Jumbotron extends React.Component {
                     <img src={require('../../../content/assets/images/header-images/logo.png')} />
                     <p className="logo-date">THE FAIR 20-21 NOV 2018</p>
                     {header_class === "header-home" ? 
-                        <div id="scrollarrow" className="scroll-arrow" onMouseEnter={this.mouseEnter} >
-                            <img src="/assets/pil.png" alt="\/"/>
+                        <div id="scrollarrow" className="scroll-arrow" onMouseDown={this.mouseDown} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseOut}>
+                            <img id="scrollarrowIMG"src="/assets/pil.png" alt="\/"/>
                         </div> 
                         : null}
             </div>

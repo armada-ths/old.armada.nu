@@ -8,7 +8,6 @@
   width: 100%;
   text-align: center;
   background-size: cover;
-  transition: background-color $transition-duration linear;
 
 
   .logosection{
@@ -32,7 +31,14 @@
   & img{
     width: 100%;
   }
-
+  .img:hover {
+    filter: blur(20px) grayscale(20%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
   .apps-container {
     width: 72px;
     margin: 10px;

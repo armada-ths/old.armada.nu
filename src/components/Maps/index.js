@@ -35,13 +35,13 @@ class Maps extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="maps">
 			{this.state.isLoading ? (<Loading />) : (
 				<div className="map-grid">
 					{this.state.detailedLocations.map(location => (
 						<div className="map-item" key={location.id}>
-							<img src={'https://ais.armada.nu/' + location.map.url} />
-							<h3>{location.parent.name + ' - ' + location.name}</h3>
+							<img className="image-section" src={'https://ais.armada.nu/' + location.map.url} />
+							<h3 className="name">{location.parent.name + ' - ' + location.name}</h3>
 						</div>
 					))}
 				</div>

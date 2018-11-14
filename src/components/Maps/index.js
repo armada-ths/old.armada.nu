@@ -37,24 +37,18 @@ class Maps extends Component {
 		return (
 			<div>
 			{this.state.isLoading ? (<Loading />) : (
-				<div>
-					{this.state.detailedLocations.map(loc => (
-						<Map location={location} />
+				<div class="map-grid">
+					{this.state.detailedLocations.map(location => (
+						<div class="map-item" key={location.id}>
+							<img src={'https://ais.armada.nu/' + location.map.url} />
+							<h3>{location.parent.name + ' - ' + location.name}</h3>
+						</div>
 					))}
 				</div>
 			)}
 			</div>
 		)
 	}
-}
-
-function Map(props) {
-	return (
-		<div key={this.props.location.id}>
-			<img src={'https://ais.armada.nu/' + this.props.location.map.url} />
-			<h2>{this.props.location.parent.name + ' - ' + this.props.location.name}</h2>
-		</div>
-	);
 }
 
 export default Maps;

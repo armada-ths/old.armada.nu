@@ -9,7 +9,7 @@ class Maps extends Component {
 		super(props);
 		this.state = {
 			locations: [],
-			imageURLs: [],
+			detailedLocations: [],
 			isLoading: true,
 		};
 	}
@@ -19,32 +19,42 @@ class Maps extends Component {
 		.then(res => {
 			let locations = res.data;
 			locations = locations
-			.filter(location => location.has_map === true)
-			.sort((a,b) => a.id < b.id);
-			this.setState({locations, isLoading: false});
-		});
+			.filter(location => location.has_map === true);
 
-		for(let i=4;i<6;i++) {
-			axios.get('https://ais.armada.nu/api/exhibitors/locations/' + i)
-			.then(res => {
-				this.setState({
-					imageURLs: [...this.state.imageURLs, res.data.map.url]
+			locations.map(location => {
+				axios.get('https://ais.armada.nu/api/exhibitors/locations/' + location.id)
+				.then(res2 => {
+					let detailedLocation= res2.data;
+					this.setState({detailedLocations: [...this.state.detailedLocations, detailedLocation]});
 				});
 			});
-		}
+
+			this.setState({locations, isLoading: false});
+		});
 	}
 
 	render() {
 		return (
 			<div>
 			{this.state.isLoading ? (<Loading />) : (
-				<ul>
-					{this.state.locations.map(location => (<li key={location.id}>{location.name}</li>))}
-				</ul>
+				<div>
+					{this.state.detailedLocations.map(loc => (
+						<Map location={location} />
+					))}
+				</div>
 			)}
 			</div>
 		)
 	}
+}
+
+function Map(props) {
+	return (
+		<div key={this.props.location.id}>
+			<img src={'https://ais.armada.nu/' + this.props.location.map.url} />
+			<h2>{this.props.location.parent.name + ' - ' + this.props.location.name}</h2>
+		</div>
+	);
 }
 
 export default Maps;

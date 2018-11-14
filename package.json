@@ -144,6 +144,7 @@
     "react-page-click": "^4.0.2",
     "react-select": "^2.1.0",
     "react-sticky": "^6.0.1",
+    "react-text-transition": "^0.1.6",
     "react-url-query": "^1.2.0"
   }
 }

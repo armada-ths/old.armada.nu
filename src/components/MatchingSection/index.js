@@ -1,7 +1,10 @@
 import React from "react";
-import axios from "axios";
 import Select from 'react-select'
 import Loading from "../Loading"
+import Text from "../Text"
+import Card from "../Card"
+
+const ais = 'https://ais.armada.nu/';
 
 import "./MatchingSection.scss";
 
@@ -40,223 +43,12 @@ class MatchingSection extends React.Component {
             { value: 'Gym', label: 'Gym', id: "3" }, { value: 'Free Food', label: 'Free Food', id: "4" },
             { value: 'Car', label: 'Car', id: "5" },
             { value: 'Phone', label: 'Phone', id: "6" }, { value: 'Computer', label: 'Computer', id: "7" }, { value: 'Pay for overtime work', label: 'Pay for overtime work', id: "8" }, { value: 'Bonus system', label: 'Bonus system', id: "9" }, { value: 'Possibility to work in other countries', label: 'Possibility to work in other countries', id: "10" }, { value: 'Ability to work from home', label: 'Ability to work from home', id: "11" }, { value: 'Flexible work hours', label: 'Flexible work hours', id: "12" }]}],
-            exhibitors: [{
-                "id": 679,
-                "name": "Sigma AB",
-                "type": "Company",
-                "company_website": "http://www.sigma.se",
-                "about": "Sigma is a group of leading consulting companies with the objective to make our customers more competitive. Our means are technological know-how and a passion for constantly finding better solutions. Sigma has, since leaving the stock exchange 2013, founded 17 new companies and have 3300 employees. In 2005, the owner Dan Olofsson initiated the Star School project (later renamed Star for Life) in KwaZulu Natal, South Africa to fight HIV and aids. Star for Life involves more than 100 000 young people and their families in South Africa and Namibia.",
-                "purpose": "It\u2019s through \u201cpassion and execution\u201d that Sigma makes a difference. As a privately owned company with a long-term strategy, we make all the decisions regarding our own development. We are growing and we are glad that more and more passionate people are joining us, shaping the future for our company as well as making a contribution for a better tomorrow.",
-                "logo_squared": "/media/exhibitors/catalogue_logo_squared/e34e60e724a74a078f2ccdabeef0851d.jpg",
-                "logo_freesize": "/media/exhibitors/catalogue_logo_freesize/3e23c04afdee4a12b67a3ac620c75fea.png",
-                "contact_name": "Razu Yousuff",
-                "contact_email_address": "razu.yousuff@sigmatechnology.se",
-                "contact_phone_number": "+46760882557",
-                "industries": [{
-                    "id": 9,
-                    "name": "Solid Mechanics"
-                }, {
-                    "id": 10,
-                    "name": "Simulation Technology"
-                }, {
-                    "id": 26,
-                    "name": "Electronics"
-                }, {
-                    "id": 28,
-                    "name": "Industry"
-                }, {
-                    "id": 31,
-                    "name": "Systems Development"
-                }, {
-                    "id": 33,
-                    "name": "Computer Science & IT"
-                }, {
-                    "id": 34,
-                    "name": "Technical Consulting"
-                }, {
-                    "id": 35,
-                    "name": "Product Development"
-                }],
-                "values": [{
-                    "id": 12,
-                    "name": "Personal development"
-                }, {
-                    "id": 13,
-                    "name": "Corporate social responsibility (CSR)"
-                }],
-                "employments": [{
-                    "id": 1,
-                    "name": "Trainee"
-                }, {
-                    "id": 5,
-                    "name": "Master thesis"
-                }, {
-                    "id": 6,
-                    "name": "Bachelor thesis"
-                }, {
-                    "id": 7,
-                    "name": "Full time job"
-                }],
-                "locations": [{
-                    "id": 1,
-                    "name": "Sweden \u2013 Norrland"
-                }, {
-                    "id": 2,
-                    "name": "Sweden \u2013 Svealand"
-                }, {
-                    "id": 3,
-                    "name": "Sweden \u2013 G\u00f6taland"
-                }, {
-                    "id": 4,
-                    "name": "World \u2013 Europe"
-                }, {
-                    "id": 5,
-                    "name": "World \u2013 Asia"
-                }, {
-                    "id": 6,
-                    "name": "World \u2013 North America"
-                }],
-                "benefits": [{
-                    "id": 1,
-                    "name": "Professional development (education)"
-                }, {
-                    "id": 3,
-                    "name": "Gym"
-                }, {
-                    "id": 5,
-                    "name": "Car"
-                }, {
-                    "id": 6,
-                    "name": "Phone"
-                }, {
-                    "id": 7,
-                    "name": "Computer"
-                }, {
-                    "id": 8,
-                    "name": "Pay for overtime work"
-                }, {
-                    "id": 12,
-                    "name": "Flexible work hours"
-                }],
-                "average_age": null,
-                "founded": 1986,
-                "groups": [],
-                "fair_locations": []
-            }, {
-                "id": 742,
-                "name": "F\u00f6rsvarets materielverk",
-                "type": "Government agency",
-                "company_website": "http://www.fmv.se/",
-                "about": "FMV is the Swedish Defence Materiel Administration, a civilian governmental agency acting under the Ministry of Defence.",
-                "purpose": "We provide defence logistics to the Swedish Armed Forces. This means that we make sure the Swedish Armed Forces have the equipment and logistic services they need to execute their mission.",
-                "logo_squared": "/media/exhibitors/catalogue_logo_squared/cfb1cb1ac3074b908ebd643a11ad7076.png",
-                "logo_freesize": "/media/exhibitors/catalogue_logo_freesize/dbf6512568d5457aa9d582183f770b87.png",
-                "contact_name": "Katarina Lundstedt",
-                "contact_email_address": "katarina.lundstedt@fmv.se",
-                "contact_phone_number": "+46729730867",
-                "industries": [{
-                    "id": 17,
-                    "name": "Marine Systems"
-                }],
-                "values": [{
-                    "id": 5,
-                    "name": "Performance and results"
-                }, {
-                    "id": 10,
-                    "name": "Creative and dynamic"
-                }],
-                "employments": [{
-                    "id": 3,
-                    "name": "Summer job"
-                }, {
-                    "id": 5,
-                    "name": "Master thesis"
-                }, {
-                    "id": 6,
-                    "name": "Bachelor thesis"
-                }],
-                "locations": [{
-                    "id": 1,
-                    "name": "Sweden \u2013 Norrland"
-                }, {
-                    "id": 2,
-                    "name": "Sweden \u2013 Svealand"
-                }, {
-                    "id": 3,
-                    "name": "Sweden \u2013 G\u00f6taland"
-                }],
-                "benefits": [{
-                    "id": 3,
-                    "name": "Gym"
-                }, {
-                    "id": 6,
-                    "name": "Phone"
-                }, {
-                    "id": 7,
-                    "name": "Computer"
-                }, {
-                    "id": 12,
-                    "name": "Flexible work hours"
-                }],
-                "average_age": 48,
-                "founded": 1968,
-                "groups": [],
-                "fair_locations": []
-            }, {
-                "id": 741,
-                "name": "Stockholm School of Entrepreneurship",
-                "type": "Nonprofit organisation",
-                "company_website": "https://www.sses.se/",
-                "about": "Founded in 1999, Stockholm School of Entrepreneurship (SSES) is a global platform for interdisciplinary entrepreneurship education. From the cutting-edge of knowledge, we provide free, ECTS accredited courses, workshops and incubation for students and alumni from Stockholm\u2019s leading universities: KTH, KI, SSE, SU and Konstfack.",
-                "purpose": "Our purpose is to provide students from our member universities with the right tools and skills to follow their ideas.",
-                "logo_squared": "/media/exhibitors/catalogue_logo_squared/6a15ed2be0ed43d786de1c9d5f9dce19.png",
-                "logo_freesize": "/media/exhibitors/catalogue_logo_freesize/a7725bc0499c42a0a6db08167b9cffcc.png",
-                "contact_name": "Anna Espelage",
-                "contact_email_address": "anna.espelage@sses.se",
-                "contact_phone_number": "+46765641244",
-                "industries": [{
-                    "id": 7,
-                    "name": "Pedagogy"
-                }],
-                "values": [{
-                    "id": 1,
-                    "name": "Entrepreneurship"
-                }, {
-                    "id": 3,
-                    "name": "Diversity and inclusion"
-                }, {
-                    "id": 4,
-                    "name": "International environment and possibilities"
-                }, {
-                    "id": 9,
-                    "name": "Innovation"
-                }, {
-                    "id": 10,
-                    "name": "Creative and dynamic"
-                }, {
-                    "id": 11,
-                    "name": "Teamwork"
-                }, {
-                    "id": 12,
-                    "name": "Personal development"
-                }],
-                "employments": [{
-                    "id": 4,
-                    "name": "Part time job"
-                }],
-                "locations": [{
-                    "id": 2,
-                    "name": "Sweden \u2013 Svealand"
-                }],
-                "benefits": [{
-                    "id": 1,
-                    "name": "Professional development (education)"
-                }],
-                "average_age": null,
-                "founded": 1999,
-                "groups": [],
-                "fair_locations": []
-            }],
+            exhibitors: [],
+            industries: [],
+            values: [],
+            employments: [],
+            locations: [],
+            benefits: [],
             selectOptions : null,
             hide: false,
             isLoading: false
@@ -266,22 +58,58 @@ class MatchingSection extends React.Component {
     componentDidMount() {
     }
 
+    postData (url, data) {
+        var bindedthis = this;
+        fetch('https://cors-anywhere.herokuapp.com/' + url, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }).then(function (a) {
+            return a.json()
+        }).then(function (json) {
+            console.log(json)
+            bindedthis.setState({exhibitors: json})
+        }).catch(function() {
+            alert("Matching failed! Please try again later");
+        });
+    }
+
     submit() {
-        var array = []
-        for (let i = 0; i < this.state.options.length; i++) {
-            if(this.state[i]) {
-                array = array.concat(this.state[i])
-            }
+        if (this.state.industries.length == 0 && this.state.values.length == 0 && this.state.employments.length == 0 && this.state.locations.length == 0 && this.state.benefits.length == 0) {
+            alert("You have to select at least one option!")
         }
-        console.log(array)
-        this.setState({selectOptions: array})
+        else {
+
+        this.postData('https://ais.armada.nu/api/matching/', {
+            "industries": this.state.industries,
+            "values": this.state.values,
+            "employments": this.state.employments,
+            "locations": this.state.locations,
+            "benefits": this.state.benefits
+          })
         this.setState({hide: true})
+        }
+    }
+
+    matchagain() {
+        this.setState({hide: false})
+        this.setState({industries: []})
+        this.setState({values: []})
+        this.setState({employments: []})
+        this.setState({locations: []})
+        this.setState({benefits: []})
+        this.setState({exhibitors: []})
+
     }
 
     buildOptions(array) {
         var listitems = []
         for (let i = 0; i < array.length; i++) {
           listitems.push(<div><p>{array[i].question}</p><Select
+            placeholder="Select option(s)..."
             closeMenuOnSelect={false}
             isMulti
             isSearchable
@@ -296,32 +124,86 @@ class MatchingSection extends React.Component {
         return listitems;
       }
 
+      createStars(thisrating){
+        var rating = 0;
+        if (thisrating >= 0 && thisrating < 0.3) {rating = 125}
+        if (thisrating >= 0.3 && thisrating < 0.7) {rating = 100}
+        if (thisrating >= 1.0 && thisrating < 1.5) {rating = 75}
+        if (thisrating >= 1.5 && thisrating < 1.8) {rating = 50}
+        if (thisrating >= 1.8 && thisrating <= 2.0) {rating = 25}
+
+        return(
+          <div className="star-ratings-css">
+            <div className="star-ratings-css-top" style={{width:rating+'%'}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          </div>
+  
+        );
+      }
+
+      createJobs(i) {
+        let array = this.state.exhibitors;
+        array = array[i].exhibitor.employments.map(item => item.name).toString()
+        return array
+      }
+
+      createCard(i){
+        let array = this.state.exhibitors;
+        var textrating = Math.round(-50*(array[i].distance) + 100)
+        var background = {
+            backgroundImage: 'url('+ ais + array[i].exhibitor.logo_squared + ')'
+        }
+
+        if (i==0) {var dynamicclass = "corner gold"
+        var match = "Best match"}
+        else {dynamicclass = "corner"
+        match = "Match " + (i+1)}
+
+        return(
+          <div className="row">
+                <div className="example-1 card">
+                <div className="wrapper" style={background}>
+                    <div className={dynamicclass}>
+                    <span className="corner-title">{match}</span>
+                    <span className="stars">{this.createStars(array[i].distance)}</span>
+                    <span >{textrating + '% match'}</span>
+                    </div>
+                    <div className="data">
+                    <div className="content">
+                        <h1 className="title">{array[i].exhibitor.name}</h1>
+                        <p className="textcard">{array[i].exhibitor.about}</p>
+                        <p className="text jobs"><br/>{this.createJobs(i)}</p>           
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        );
+      }
+
 
       presentMatches() {
         var listitems = []
         let array = this.state.exhibitors;
-        for (let i = 0; i < array.length; i++) {
-          listitems.push(
-          <div className="matchcard">
-            <img src={"https://ais.armada.nu" + array[i].logo_squared} alt="Logo"/>
-            <div className="info_container">
-                <h3>{array[i].name}</h3>
-                <p>{array[i].about}</p>
-                <a href={array[i].company_website}>{array[i].company_website}</a>
-            </div>
-          </div>);
+        if (array.length > 0) {
+            for (let i = 0; i < array.length; i++) {
+            listitems.push(this.createCard(i))
+            }
+            return listitems;
         }
-        return listitems;
+        else {return <Text/>}
       }
 
-
-    handleChange = (index) => {
+      handleChange = (index) => {
         var bindedthis = this;
         return function(value) {
             var result = value.map(value => value.id);
-            bindedthis.setState(Object.assign(bindedthis.state, {
-                [index] : result
-              }));
+            result = result.map(Number);
+            if (index == 0) {bindedthis.setState({industries: result})}
+            if (index == 1) {bindedthis.setState({values: result})}
+            if (index == 2) {bindedthis.setState({employments: result})}
+            if (index == 3) {bindedthis.setState({locations: result})}
+            if (index == 4) {bindedthis.setState({benefits: result})}
         }
       }
     render() {
@@ -329,8 +211,10 @@ class MatchingSection extends React.Component {
             <div className="questions">
             {!this.state.hide ? <div className="optioncontainer">{this.buildOptions(this.state.options)}
                 <button className="match" onClick={() => this.submit()}>Get my match!</button></div> : null}
-            {this.state.hide ? <div>{this.presentMatches()}</div> : null}
+            {this.state.hide ? <div className="matchgrid">{this.presentMatches()}</div> : null}
             {this.state.isLoading ? <Loading/> : null}
+            {this.state.exhibitors.length ? <div className="trycontainer"><button className="match" onClick={() => this.matchagain()}>Try matching again!</button></div> : null}
+            
             </div>
         );
     }

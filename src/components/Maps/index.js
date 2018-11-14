@@ -37,9 +37,9 @@ class Maps extends Component {
 		return (
 			<div>
 			{this.state.isLoading ? (<Loading />) : (
-				<div class="map-grid">
+				<div className="map-grid">
 					{this.state.detailedLocations.map(location => (
-						<div class="map-item" key={location.id}>
+						<div className="map-item" key={location.id}>
 							<img src={'https://ais.armada.nu/' + location.map.url} />
 							<h3>{location.parent.name + ' - ' + location.name}</h3>
 						</div>

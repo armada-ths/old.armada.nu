@@ -128,8 +128,9 @@ class ExhibitorList extends React.Component {
 
                     {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
 
+										{exhibitor.locations.length > 0 &&
                     <div className = "location-container">
-										{/*
+									
                         <h3>Countries</h3>
                         <ul>
                           {exhibitor.locations.map((loc) =>
@@ -138,18 +139,22 @@ class ExhibitorList extends React.Component {
                             </li>)}
                         </ul>
                     </div>
+										}
 
-                    <div className='fairposition-container'>
-                    <h3>Find us at the fair</h3>
-                    <div className='fairposition'>
-                        <div className='icon'><img src='/assets/place.svg'/></div>
-                        <div className="position">{exhibitor.exhibitor_location}</div>
-                    </div>
-                    {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null}
-										*/}
-                    </div>
+									<div className='fairposition-container'>
+										<h3>Find us at the fair</h3>
+										<div className='fairposition'>
+											<div className="position">
+												<p>(You can see a map of the career fair in <a href="/maps">Maps</a>)</p>
+												<ul>
+													{exhibitor.booths.map(booth =>
+														<li>{booth.location.parent.name + ' ' + booth.location.name + ' ' + booth.name}</li>)
+													}
+												</ul>
+											</div>
+										</div>
+									</div>
                 </div>
-
             </Modal>
         );
     }

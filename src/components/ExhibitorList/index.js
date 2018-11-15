@@ -130,7 +130,7 @@ class ExhibitorList extends React.Component {
 
 										{exhibitor.locations.length > 0 &&
                     <div className = "location-container">
-									
+
                         <h3>Countries</h3>
                         <ul>
                           {exhibitor.locations.map((loc) =>
@@ -423,7 +423,7 @@ class ExhibitorList extends React.Component {
                     <div className="dropdown-container drop1">
                       <div className="select">
                           <select onChange={this.sectorFilter.bind(this)}>
-                              <option value="All">All Sectors</option>
+                              <option value="All" defaultValue>All Sectors</option>
                               {this.buildOptions(this.state.sectors)}
                           </select>
                           <div className="select_arrow"></div>
@@ -433,7 +433,7 @@ class ExhibitorList extends React.Component {
                     <div className="dropdown-container drop2">
                       <div className="select">
                           <select onChange={this.locationFilter.bind(this)}>
-                              <option value="All" selected>All Countries</option>
+                              <option value="All" defaultValue>All Countries</option>
                               {this.buildOptions(this.state.locations)}
                           </select>
                           <div className="select_arrow"></div>

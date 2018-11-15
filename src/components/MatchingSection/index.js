@@ -70,7 +70,6 @@ class MatchingSection extends React.Component {
         }).then(function (a) {
             return a.json()
         }).then(function (json) {
-            console.log(json)
             bindedthis.setState({exhibitors: json})
         }).catch(function() {
             alert("Matching failed! Please try again later");
@@ -137,7 +136,7 @@ class MatchingSection extends React.Component {
             <div className="star-ratings-css-top" style={{width:rating+'%'}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
             <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
           </div>
-  
+
         );
       }
 
@@ -172,7 +171,7 @@ class MatchingSection extends React.Component {
                     <div className="content">
                         <h1 className="title">{array[i].exhibitor.name}</h1>
                         <p className="textcard">{array[i].exhibitor.about}</p>
-                        <p className="text jobs"><br/>{this.createJobs(i)}</p>           
+                        <p className="text jobs"><br/>{this.createJobs(i)}</p>
                     </div>
                     </div>
                 </div>
@@ -214,7 +213,7 @@ class MatchingSection extends React.Component {
             {this.state.hide ? <div className="matchgrid">{this.presentMatches()}</div> : null}
             {this.state.isLoading ? <Loading/> : null}
             {this.state.exhibitors.length ? <div className="trycontainer"><button className="match" onClick={() => this.matchagain()}>Try matching again!</button></div> : null}
-            
+
             </div>
         );
     }

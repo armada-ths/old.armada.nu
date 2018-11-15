@@ -53,7 +53,6 @@ class Maps extends Component {
 	};
 
 	displayMap = (map) => {
-		console.log(map)
 		return (
 		<Modal onClose={() => this.showModal(null)}>
 			<div>

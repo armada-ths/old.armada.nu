@@ -159,7 +159,7 @@ class NewEvents extends React.Component {
     render() {
         let today = new Date();
         let comingEvents = this.state.events.filter(event => event.event_start * 1000 > today);
-        let pastEvents = this.state.events.filter(event => event.event_start * 1000 < today);
+
         // get the event to display. Don't know behaviour when this.state.eventId = undefined
         let eventToDisplay = this.state.events.filter(event => event.id == this.state.eventId)[0];
 
@@ -173,14 +173,6 @@ class NewEvents extends React.Component {
                     <h2> Upcoming Events </h2>
                     {comingEvents.length > 0 ? (comingEvents.map(this.getEventItem)) : (<p>Stay tuned!</p>)}
                   </div>
-                  <div className="thickline"><hr/></div>
-                  <div className='pastEvents'>
-                    <h2> Past Events </h2>
-                    <div className="pastEvent">
-                      {pastEvents.length > 0 ? (pastEvents.map(this.getEventItem)) : (<p>No past events</p>) }
-                    </div>
-                  </div>
-                  <div className="thickline"><hr/></div>
 
                 </div>
 

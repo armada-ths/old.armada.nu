@@ -1,7 +1,6 @@
 import React from "react";
 import Select from 'react-select'
 import Loading from "../Loading"
-import Text from "../Text"
 import  "../Card/Card.scss"
 
 const ais = 'https://ais.armada.nu/';
@@ -191,7 +190,7 @@ class MatchingSection extends React.Component {
             }
             return listitems;
         }
-        else {return <Text/>}
+        else {return <Loading />}
       }
 
       handleChange = (index) => {

@@ -124,7 +124,6 @@ class MatchingSection extends React.Component {
       }
 
       createStars(thisrating){
-				console.log(thisrating)
         var rating = 0;
         if (thisrating >= 0 && thisrating < 0.3) {rating = 125}
         if (thisrating >= 0.3 && thisrating < 0.7) {rating = 100}

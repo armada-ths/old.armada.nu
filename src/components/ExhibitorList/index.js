@@ -9,6 +9,7 @@ import Helmet from "react-helmet"
 import Modal from "../Modal";
 import Loading from "../Loading"
 import Cat from "../Cat"
+import Select from 'react-select'
 
 
 const urlPropsQueryConfig = {
@@ -49,6 +50,13 @@ class ExhibitorList extends React.Component {
             'Aerospace','Telecommunication','Electronics','Material Development','Industry','Energy Technology','Research',
             'Systems Development','Property & Infrastructure','Computer Science & IT','Technical Consulting','Product Development',
             'Interaction Design','Industry Design'],
+            jobs :[{ value: 'Full time job', label: 'Full Time Job'},
+            { value: 'Part time job', label: 'Part Time Job'},
+            { value: 'Summer job', label: 'Summer Job'},
+            { value: 'Internship', label: 'Internship'},
+            { value: 'Trainee', label: 'Trainee'},
+            { value: 'Master thesis', label: 'Master Thesis'},
+            { value: 'Bachelor thesis', label: 'Bachelor Thesis'}],
             showamount: 20,
         };
     }
@@ -121,6 +129,7 @@ class ExhibitorList extends React.Component {
                     {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
 
                     <div className = "location-container">
+										{/*
                         <h3>Countries</h3>
                         <ul>
                           {exhibitor.locations.map((loc) =>
@@ -130,19 +139,15 @@ class ExhibitorList extends React.Component {
                         </ul>
                     </div>
 
-
-
-                      {/* commented out until maps implemented
-                        <div className='fairposition-container'>
-                        <h3>Find us at the fair</h3>
-                        <div className='fairposition'>
-                            <div className='icon'><img src='/assets/place.svg'/></div>
-                            <div className="position">{exhibitor.exhibitor_location}</div>
-                        </div>
-
-                        {/* TODO: Add Map feature to Modal
-                          {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null}}
-                    </div>*/}
+                    <div className='fairposition-container'>
+                    <h3>Find us at the fair</h3>
+                    <div className='fairposition'>
+                        <div className='icon'><img src='/assets/place.svg'/></div>
+                        <div className="position">{exhibitor.exhibitor_location}</div>
+                    </div>
+                    {exhibitor.map_location_url.includes('missing') == false ? <div className="map"><img src={exhibitor.map_location_url} /></div> : null}
+										*/}
+                    </div>
                 </div>
 
             </Modal>
@@ -174,7 +179,7 @@ class ExhibitorList extends React.Component {
     jobFilter(value){
         this.setdefault()
         let jobfilters = this.state.jobfilters;
-        jobfilters[value] = !jobfilters[value];
+        jobfilters = value;
         this.setState({jobfilters})
     }
 
@@ -298,10 +303,10 @@ class ExhibitorList extends React.Component {
 
         //Job type filter
         for(let filterkey in this.state.jobfilters) {
-            if (this.state.jobfilters[filterkey] == true) {
+            if (this.state.jobfilters[filterkey]) {
                 filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
                     for (let jobtypeindex in exhibitorItem.props.exhibitor.employments) {
-                        if (exhibitorItem.props.exhibitor.employments[jobtypeindex].name == filterkey) {
+                        if (exhibitorItem.props.exhibitor.employments[jobtypeindex].name == this.state.jobfilters[filterkey].value) {
                             return true;
                         }
                     }
@@ -398,6 +403,17 @@ class ExhibitorList extends React.Component {
                                onChange ={this.updateSearch.bind(this)}
                         />
                     </div>
+                        <Select
+                        closeMenuOnSelect={false}
+                        isMulti
+                        isSearchable
+                        name="Job filter"
+                        placeholder="All Jobs"
+                        options = {this.state.jobs}
+                        onChange={event => this.jobFilter(event)}
+                        className="basic-multi-select"
+                        classNamePrefix="select"
+                        />
                     <div className="supercontainer">
                     <div className="dropdown-container drop1">
                       <div className="select">
@@ -421,68 +437,6 @@ class ExhibitorList extends React.Component {
                     </div>
 
                     {/* TODO: everything should be dynamic instead of hard-coded */}
-
-                    <h3>Job Opportunities</h3>
-
-                    <div className = "checkboxes">
-
-                    <div className = "checkbox-filtering">
-
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check7" onClick ={()=>this.jobFilter("Full time job")} />
-                            <label htmlFor={"check7"}>Full Time Job</label>
-                        </div>
-
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check4" onClick ={()=>this.jobFilter("Part time job")} />
-                            <label htmlFor={"check4"}>Part Time Job</label>
-                        </div>
-
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check3" onClick ={()=>this.jobFilter("Summer job")}/>
-                            <label htmlFor={"check3"}>Summer Job</label>
-                        </div>
-
-                    </div>
-
-                    <div className = "checkbox-filtering">
-
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check2" onClick ={()=>this.jobFilter("Master thesis")}/>
-                            <label htmlFor={"check2"}>Master Thesis</label>
-                        </div>
-
-                        <div className = "checkbox-container">
-                            <input type="checkbox" id="check6" onClick ={()=>this.jobFilter("Bachelor thesis")} />
-                            <label htmlFor={"check6"}>Bachelor Thesis</label>
-                        </div>
-
-                    </div>
-
-                    <div className = "checkbox-filtering">
-
-                      <div className = "checkbox-container">
-                          <input type="checkbox" id="check5" onClick ={()=>this.jobFilter("Internship")} />
-                          <label htmlFor={"check5"}>Internship</label>
-                      </div>
-
-                      <div className = "checkbox-container">
-                          <input type="checkbox" id="check1" onClick ={()=>this.jobFilter("Trainee")} />
-                          <label htmlFor={"check1"}>Trainee</label>
-                      </div>
-
-                    </div>
-
-                    <div className = "checkbox-filtering">
-
-                      <div className="checkbox-container">
-                          <input type="checkbox" id="startupcb" onClick={() => this.startupFilter()} />
-                          <label htmlFor={"startupcb"} id="startuplabel">Startup</label>
-                      </div>
-
-                    </div>
-
-                  </div>
 
                     <div className = "loading">
                         {this.state.isLoading ? <Loading/> :null}

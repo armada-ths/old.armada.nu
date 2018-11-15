@@ -134,13 +134,17 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "chart.js": "^1.1.1",
     "moment": "^2.19.1",
     "prop-types": "^15.6.0",
+    "react-chartjs": "^1.2.0",
     "react-confetti": "^2.0.1",
     "react-easter": "^1.0.6",
     "react-google-analytics": "^0.2.0",
     "react-page-click": "^4.0.2",
+    "react-select": "^2.1.0",
     "react-sticky": "^6.0.1",
+    "react-text-transition": "^0.1.6",
     "react-url-query": "^1.2.0"
   }
 }

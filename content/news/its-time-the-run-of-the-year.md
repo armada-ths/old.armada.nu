@@ -3,7 +3,7 @@ layout: News
 title: 'It’s time - the run of the year '
 date: 2018-10-03T22:00:00.000Z
 cover_wide: /assets/armadarun_cover.png
-featured: true
+featured: false
 ingress: 2.5 kilometer relay race. Are you ready? We are.
 ---
 Armada Run is a 2.5 kilometer relay race at KTH Campus that really opens the opportunity to challenge the co-workers of your future. Come and join EY, Preem, Sopra Steria, Teach for Sweden and Xylem in the race on October 16 at 5 pm!

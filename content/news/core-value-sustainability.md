@@ -2,7 +2,7 @@
 layout: News
 title: 'Core value: Sustainability '
 date: 2017-11-06T16:05:47.077Z
-cover_wide: /assets/new_sust.jpg
+cover_wide: /assets/new_sust2.jpg
 featured: false
 ---
 **Our perspective on sustainability**

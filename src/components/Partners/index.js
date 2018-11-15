@@ -23,14 +23,14 @@ class Partners extends React.Component {
 
     render() {
         return (
-            <div className="partners"> 
+            <div className="partners">
             <h2> Partners </h2>
-            <div className="partners-table"> 
+            <div className="partners-table">
             {this.state.partners.map(partner =>
-            (<a href={partner.link_url}>
-            <img key={partner.id} src={partner.logo_url} />
+            (<a  key={partner.id} href={partner.link_url}>
+            <img src={partner.logo_url} />
             </a>)
-            
+
           )}
 
         </div>

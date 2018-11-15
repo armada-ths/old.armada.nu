@@ -37,8 +37,16 @@
     color: $text-color-light;
 }
 
+.darkText{
+  color: $text-color-dark;
+}
+
+.nameBold{
+  font-weight: bold;
+}
+
 .contact-body {
-  background-color: $licorice;
+  background-color: white;
   min-height: 45vh;
   min-width: 100vw;
 }
@@ -52,7 +60,7 @@
 .contact-info {
   margin: 15px auto;
   text-align: center;
-  width: 330px;
+  width: 400px;
 }
 
 

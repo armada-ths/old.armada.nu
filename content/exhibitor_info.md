@@ -4,7 +4,7 @@ layout: ExhibitorInfo
 description: Information for exhibitors
 menuPage: true
 priority: '3'
-header: /assets/TheFair_small.jpg
+header: /assets/images/header-images/exhibitors.jpg
 ---
 
  

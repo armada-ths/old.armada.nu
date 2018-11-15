@@ -4,7 +4,7 @@ layout: Aboutpage
 description: About the fair
 menuPage: true
 priority: 5
-header: /assets/images/header-images/About.jpg
+header: /assets/images/header-images/Bankett.jpg
 ---
 # WHAT IS ARMADA?
 
@@ -15,7 +15,7 @@ THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of 
 ## Diversity
 
 <p style="text-align:center;">
-<img src="http://development.armada.nu/assets/diversity_a.svg" height="100em" width="100em"/>
+<img src="/assets/diversity-melon-nolabel.png" height="100em" width="100em"/>
 </p>
 
 THS Armada truly believes that the best teams are created when there is a clear focus on equality and diversity. It follows, that equal value and opportunities are fundamental in our work. In the past, it has been made possible for international students to be a part of the organisation. Today, we also focus on gender balance within the teams of THS Armada.
@@ -25,7 +25,7 @@ By actively working with this core value, THS Armada aspires to encourage studen
 ## Sustainability
 
 <p style="text-align:center;">
-<img src="http://development.armada.nu/assets/sustainability.svg" height="100em" width="100em"/>
+<img src="/assets/sustainability-melon-nolabel.png" height="100em" width="100em"/>
 </p>
 
 THS Armada has been climate neutral since 2015 and our belief in a green future motivates us to continuously make improvements towards a more sustainable fair. This year, we proudly announce that all events, the grand banquet and even the career fair itself serves solely vegetarian food and that all events are branded eco events.

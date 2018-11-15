@@ -119,7 +119,7 @@ class NewEvents extends React.Component {
         let eventdate = new Date (event.event_start * 1000);
         let registration_end = new Date (event.registration_end * 1000);
         return (
-            <div>
+            <div key={event.id}>
                 <div className = "event-item" onClick={()=>this.showModal(event.id)}>
                     <div className = "image-section">
                         <img src = { event.image_url }/>

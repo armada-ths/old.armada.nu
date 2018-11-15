@@ -2,7 +2,7 @@ import React from "react";
 import Select from 'react-select'
 import Loading from "../Loading"
 import Text from "../Text"
-import Card from "../Card"
+import  "../Card/Card.scss"
 
 const ais = 'https://ais.armada.nu/';
 
@@ -148,7 +148,7 @@ class MatchingSection extends React.Component {
 
       createCard(i){
         let array = this.state.exhibitors;
-        var textrating = Math.round(-50*(array[i].distance) + 100)
+        //var textrating = Math.round(-50*(array[i].distance) + 100)
         var background = {
             backgroundImage: 'url('+ ais + array[i].exhibitor.logo_squared + ')'
         }

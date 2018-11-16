@@ -363,6 +363,7 @@ class ExhibitorList extends React.Component {
             });
         }
 
+        let showall = filteredCompanies.length > this.state.showamount ? true : false;
 
         if (showExhibitors) {
             return (
@@ -455,7 +456,7 @@ class ExhibitorList extends React.Component {
                           </div>
                         }
                     </div>
-                    {filteredCompanies.length > this.state.showamount ?
+                    {showall ? 
                     <div className="showmore-container">
                         <button className="showmorebutton" onClick={() => this.showMore()}>Show All</button>
                     </div> : null}

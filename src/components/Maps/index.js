@@ -68,6 +68,8 @@ class Maps extends Component {
 
 		return (
 			<div>
+			<h4>Green room location: Gamla matsalen, Nymble</h4>
+			<h4>Diversity room location: Puben, Nymble</h4>
 			{this.state.showMaps ?
 			<div className="maps">
 			{this.state.showModal ? (this.displayMap(mapToDisplay) ) : null}
@@ -82,7 +84,7 @@ class Maps extends Component {
 				</div>
 			)}
 			</div>
-		: <h2>Maps coming soon!</h2>}
+		: <h4>Maps coming soon!</h4>}
 		</div>
 		)
 	}

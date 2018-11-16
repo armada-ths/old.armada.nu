@@ -1,0 +1,12 @@
+@import "../../styles/_variables";
+
+.textcontainer {
+  background-color: $melon;
+  margin-top: 100px;
+
+  p {
+    font-size: 35px;
+    color: white;
+    text-align: center;
+  }
+}

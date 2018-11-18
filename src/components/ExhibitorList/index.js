@@ -147,7 +147,6 @@ class ExhibitorList extends React.Component {
               <h3>Find us at the fair</h3>
               <div className='fairposition'>
                 <div className="position">
-                  <p>(You can see a map of the career fair in <a href="/maps">Maps</a>)</p>
                   <ul>
                     {exhibitor.booths.map(booth =>
                         <li style={{listStyle: 'none'}}>

@@ -14,7 +14,6 @@ import Recruitmentpage from "./layouts/Recruitmentpage"
 import Contactpage from "./layouts/Contactpage"
 import News from "./layouts/News"
 import Events from "./layouts/Events"
-import Mapspage from "./layouts/Mapspage"
 import ExhibitorInfo from "./layouts/ExhibitorInfo"
 import PageSection from "./components/PageSection"
 import Exhibitors from "./layouts/Exhibitors"
@@ -35,7 +34,6 @@ const PageContainer = (props) => (
       Contactpage,
       News,
       Events,
-			Mapspage,
       ExhibitorInfo,
       Plainpage,
       PageSection,

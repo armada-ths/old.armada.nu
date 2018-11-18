@@ -4,3 +4,5 @@ dist
 *.DS_Store
 *.swp
 *.idea/workspace.xml
+*.idea/codeStyles
+*.idea/checkstyle-idea.xml

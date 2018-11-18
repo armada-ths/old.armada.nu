@@ -90,7 +90,7 @@ class ExhibitorList extends React.Component {
 
           <h3>Job Opportunities</h3>
           <ul>
-            {exhibitor.employments.map((jobtype) => <li className="job-section">{jobtype.name}</li>)}
+            {exhibitor.employments.map((jobtype, index) => <li key={index} className="job-section">{jobtype.name}</li>)}
           </ul>
         </div>
     )
@@ -124,7 +124,7 @@ class ExhibitorList extends React.Component {
               <h5 className="purpose-text">{exhibitor.purpose}</h5>
               <br/>
               <div className="description">
-                {exhibitor.about.split('\n').map((paragraph) => <p> {paragraph} </p>)}
+                {exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>)}
               </div>
             </div>
 
@@ -135,8 +135,8 @@ class ExhibitorList extends React.Component {
 
               <h3>Countries</h3>
               <ul>
-                {exhibitor.locations.map((loc) =>
-                    <li className="location-section">
+                {exhibitor.locations.map((loc, index) =>
+                    <li key={index} className="location-section">
                       {loc.name}
                     </li>)}
               </ul>
@@ -145,20 +145,24 @@ class ExhibitorList extends React.Component {
 
             <div className='fairposition-container'>
               <h3>Find us at the fair</h3>
-              <div className='fairposition'>
-                <div className="position">
-                  <ul>
-                    {exhibitor.booths.map(booth =>
-                        <li style={{listStyle: 'none'}}>
-                          <a
-                              href={`https://maps.armada.nu/?location=${booth.location.id}&booth=${booth.id}`}
-                          >
-                            {booth.location.parent.name + ' ' + booth.location.name + ' - ' + booth.name}
-                            </a>
-                        </li>)
-                    }
-                  </ul>
-                </div>
+              <div>
+                <ul style={{padding: 0, margin: 0}}>
+                  {exhibitor.booths.map(booth =>
+                      <li key={booth.id} className="map-wrapper">
+                        <a
+                            style={{display: 'block', margin: '16px 0'}}
+                            href={`https://maps.armada.nu/?location=${booth.location.id}&booth=${booth.id}`}
+                        >
+                          {(booth.location.parent ? booth.location.parent.name + ' ' : '') + booth.location.name + ' - ' + booth.name}
+                        </a>
+                        <iframe
+                            className="iframe-map"
+                            src={`https://maps.armada.nu/?location=${booth.location.id}&booth=${booth.id}&embedded=1`}
+                        >
+                        </iframe>
+                      </li>)
+                  }
+                </ul>
               </div>
             </div>
           </div>

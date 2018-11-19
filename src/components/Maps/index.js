@@ -113,6 +113,8 @@ const Maps = () => {
 		<p>Gamla matsalen, Nymble </p>
 		<p className="diversity bold center">Diversity room:</p>
 		<p>Puben, Nymble</p>
+		<h4>Lounges</h4>
+		<p><div className="bold">Spotify:</div> Musikrummet</p>
 		<h3><a href="https://maps.armada.nu/" target="_blank">View Fair Maps</a></h3>
 	</div>
 )

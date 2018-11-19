@@ -458,7 +458,7 @@ class ExhibitorList extends React.Component {
                   <div className="select_arrow"></div>
                 </div>
               </div>
-              <p className="matching_link">Pssst! Find your perfect company by using our new <Link className="matching_link_style" to="/matching">matching functionality!</Link></p>
+              <p className="matching_link">Pssst! Find your perfect company by using Armada's new <Link className="matching_link_style" to="/matching">matching functionality!</Link></p>
             </div>
             
 

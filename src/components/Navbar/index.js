@@ -33,9 +33,7 @@ class Navbar extends React.Component {
           {page.title}
           </Link>
     ));
-
-    links.splice(3, 0, <a target="_blank" rel="noreferrer nofollow" href="https://maps.armada.nu/">Maps</a>)
-
+		
     let navbar = (
         <header>
           <div id="navbar">

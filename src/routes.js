@@ -2,7 +2,7 @@ import React from "react"
 import { Route, browserHistory } from "react-router"
 import { PageContainer as PhenomicPageContainer } from "phenomic"
 import { configureUrlQuery } from 'react-url-query';
-
+import Mapspage from "./layouts/Mapspage"
 import AppContainer from "./AppContainer"
 import Page from "./layouts/Page"
 import PageError from "./layouts/PageError"
@@ -39,6 +39,7 @@ const PageContainer = (props) => (
       PageSection,
       Exhibitors,
       Recruitmentpage,
+			Mapspage
     }}
   />
 );

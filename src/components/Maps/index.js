@@ -109,13 +109,13 @@
 const Maps = () => {
 	return (
 	<div className="center">
+		<h3 className="licorice"><a href="https://maps.armada.nu/" target="_blank">View Fair Maps</a></h3>
 		<h4>Green room:</h4>
 		<p>Gamla matsalen, Nymble </p>
 		<h4 className="diversity">Diversity room:</h4>
 		<p>Puben, Nymble</p>
 		<h4>Lounges</h4>
 		<p><div className="bold">Spotify:</div> Musikrummet</p>
-		<h3><a href="https://maps.armada.nu/" target="_blank">View Fair Maps</a></h3>
 	</div>
 )
 }

@@ -51,6 +51,13 @@
 	font-weight: bold;
 }
 
+.licorice a {
+	color: $licorice !important;
+	&:hover {
+		color: $melon !important;
+	}
+}
+
 .diversity {
 	color: $diversity !important;
 }

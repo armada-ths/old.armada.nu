@@ -10,6 +10,7 @@ import Modal from "../Modal";
 import Loading from "../Loading"
 import Cat from "../Cat"
 import Select from 'react-select'
+import {Link} from "react-router"
 
 
 const urlPropsQueryConfig = {
@@ -457,7 +458,9 @@ class ExhibitorList extends React.Component {
                   <div className="select_arrow"></div>
                 </div>
               </div>
+              <p className="matching_link">Pssst! Find your perfect company by using our new <Link className="matching_link_style" to="/matching">matching functionality!</Link></p>
             </div>
+            
 
             {/* TODO: everything should be dynamic instead of hard-coded */}
 

@@ -73,12 +73,13 @@ class MatchingSection extends React.Component {
             bindedthis.setState({exhibitors: json})
         }).catch(function() {
             alert("Matching failed! Please try again later");
+            bindedthis.matchagain();
         });
     }
 
     submit() {
-        if (this.state.industries.length == 0 && this.state.values.length == 0 && this.state.employments.length == 0 && this.state.locations.length == 0 && this.state.benefits.length == 0) {
-            alert("You have to select at least one option!")
+        if (this.state.industries.length == 0 || this.state.values.length == 0 || this.state.employments.length == 0 || this.state.locations.length == 0 || this.state.benefits.length == 0) {
+            alert("You have to select at least one option for every question!")
         }
         else {
 
@@ -101,7 +102,6 @@ class MatchingSection extends React.Component {
         this.setState({locations: []})
         this.setState({benefits: []})
         this.setState({exhibitors: []})
-
     }
 
     buildOptions(array) {
@@ -125,11 +125,11 @@ class MatchingSection extends React.Component {
 
       createStars(thisrating){
         var rating = 0;
-        if (thisrating >= 0 && thisrating < 0.3) {rating = 125}
-        if (thisrating >= 0.3 && thisrating < 0.7) {rating = 100}
-        if (thisrating >= 1.0 && thisrating < 1.5) {rating = 75}
-        if (thisrating >= 1.5 && thisrating < 1.8) {rating = 50}
-        if (thisrating >= 1.8 && thisrating <= 2.0) {rating = 25}
+        if (thisrating == 0) {rating = 125}
+        if (thisrating > 0 && thisrating <= 1.0) {rating = 100}
+        if (thisrating > 1.0 && thisrating <= 2.0) {rating = 75}
+        if (thisrating > 2.0 && thisrating <= 3.0) {rating = 50}
+        if (thisrating == 3.0) {rating = 25}
 
         return(
           <div className="star-ratings-css">
@@ -165,8 +165,8 @@ class MatchingSection extends React.Component {
                     <div className={dynamicclass}>
                     <span className="corner-title">{match}</span>
 
-{/*                    <span className="stars">{this.createStars(array[i].distance)}</span>
-                    <span >{textrating + '% match'}</span>*/}
+                   <span className="stars">{this.createStars(array[i].distance)}</span>
+                    {/* <span >{textrating + '% match'}</span>*/}
                     </div>
                     <div className="data">
                     <div className="content">

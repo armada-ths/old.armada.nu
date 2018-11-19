@@ -27,7 +27,7 @@ class Navbar extends React.Component {
   }
 
   render() {
-
+    console.log(this.state.pages)
     var links = this.state.pages.map(page => (
         <Link onClick={this.toggleExpand} to={page.__url}>
           {page.title}

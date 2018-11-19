@@ -3,7 +3,6 @@ import Select from 'react-select'
 import Loading from "../Loading"
 import Text from "../Text"
 import  "../Card/Card.scss"
-import Helmet from "react-helmet"
 
 const ais = 'https://ais.armada.nu/';
 

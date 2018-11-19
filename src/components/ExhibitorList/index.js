@@ -5,7 +5,6 @@ import Confetti from "react-confetti";
 import PropTypes from "prop-types";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./exhibitorlist.scss";
-import Helmet from "react-helmet"
 import Modal from "../Modal";
 import Loading from "../Loading"
 import Cat from "../Cat"

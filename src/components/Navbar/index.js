@@ -32,12 +32,13 @@ class Navbar extends React.Component {
           {page.title}
           </Link>
     ));
-		
+		let color = this.props.whiteHB ? "white" : "black";
+
     let navbar = (
         <header>
           <div id="navbar">
             <nav className={"menu-wrapper " + (this.state.expanded ? "visible" : "hidden")}>
-              <div className="menu-hamburger" onClick={this.toggleExpand}>
+              <div className={"menu-hamburger " + color } onClick={this.toggleExpand}>
                 {!this.state.expanded ? <div className="hamburger">☰</div> : (<div className="navbar-cross">˟</div>)}
               </div>
               <div className={"menu " + (this.state.expanded ? "visible" : "hidden")}>

@@ -14,19 +14,15 @@ import GoogleAnalyticsTracker from "./components/GoogleAnalyticsTracker"
 const AppContainer = (props) => {
     let pathname = props.location.pathname.endsWith("/") ? props.location.pathname : props.location.pathname + "/";
     let displayedPage = props.children._owner._context.collection.find((element) => element.__url === pathname);
-    let header = displayedPage ? displayedPage.header : null;
-    let vid = null;
-    let loadVideo = (global.window!=undefined);
-    if (loadVideo) {
-        vid = window.innerWidth >= 750 ? require('../content/assets/video/film.mp4') : null;
-    }
-    vid = pathname === "/" ? vid : null;
+
     return (
   <GoogleAnalyticsTracker params={props.params}>
   <Container>
     <DefaultHeadMeta />
-    <Navbar />
-    <Jumbotron image={header} video={vid}/>
+    <Navbar whiteHB = {pathname === '/'}/>
+		{pathname === '/' &&
+    <Jumbotron video={require('../content/assets/video/film.mp4')}/>
+		}
     <Content>
       { props.children }
     </Content>

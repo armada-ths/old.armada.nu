@@ -100,36 +100,31 @@ class Jumbotron extends React.Component {
     }
 
     render() {
-    let image = this.props.image ? ( <img alt="" src={this.props.image}/> ) : null;
-    let video = this.props.video ? (<video autoPlay="true" loop muted>
-            <source src={this.props.video} type="video/mp4"/> </video>) : null;
 
-    let video_or_image = video ? video : image;
-    let header_class = video ? "header-home" : "header-image";
 
     /*
      * The date here is hardcoded because there is no api that gives the dates as answer.
      **/
     return (
-			<div>
-			{ header_class == "header-home" ? (
-        <div id={"header"}>
-            <div className={header_class === "header-home" ? "logo-container fixed" : "logo-container"}>
-                    <img src={require('../../../content/assets/images/header-images/logo.png')} />
-                    <p className="logo-date">THE FAIR 20-21 NOV 2018</p>
-                    {header_class === "header-home" ?
-                        <div id="scrollarrow" className="scroll-arrow" onMouseDown={this.mouseDown} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseOut}>
-                            <img id="scrollarrowIMG"src="/assets/pil.png" alt="\/"/>
-                        </div>
-                        : null}
-            </div>
-            <div className={header_class}>
-                {video_or_image}
-            </div>
 
-        </div>
-			) : null}
-			</div>
+				<div id={"header"}>
+						<div className="logo-container fixed">
+										<img src={require('../../../content/assets/images/header-images/logo.png')} />
+										<p className="logo-date">THE FAIR 20-21 NOV 2018</p>
+
+												<div id="scrollarrow" className="scroll-arrow" onMouseDown={this.mouseDown} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseOut}>
+														<img id="scrollarrowIMG" src="/assets/pil.png" alt="\/"/>
+												</div>
+
+						</div>
+						<div className="header-home">
+						<video autoPlay="true" loop muted>
+										<source src={this.props.video} type="video/mp4"/>
+										</video>
+						</div>
+
+				</div>
+
     );
 }
 }

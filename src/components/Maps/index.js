@@ -66,7 +66,7 @@ class Maps extends React.Component {
 					{this.state.locations.map(location => (
 						<div className="map-item" key={location.id} onClick={() => this.showModal(location.id)}>
 							<img className="image-section" src={location.url} alt={location.name + ' map'}/>
-
+							<img src={location.listurl} />
 						</div>
 					))}
 				</div>

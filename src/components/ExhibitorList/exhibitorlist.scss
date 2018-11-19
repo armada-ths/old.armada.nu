@@ -45,36 +45,36 @@
 
   .basic-multi-select {
     padding: 0.1em 2em 0.5em 2em;
-    outline: none;
+    outline: 0;
+		border-width: thin;
   }
 
   .select__menu {
-    width: 80%;
+    width: 93%;
     text-align: center;
     margin: 0 auto;
     position: relative;
   }
 
   .select__control {
-    border: 0.1em solid $melon;
-    border-radius: 1em;
-    width: 73%;
+    border: solid;
+		border-width: thin;
+    width: 93%;
     margin: 0 auto;
     font-size: 19px;
     padding: 0.1em;
 
     &:hover {
-      border-color: $melon !important;
       cursor: pointer;
+			outline: 0;
     }
   }
 
   .select__control--is-focused {
-    box-shadow: 0 0 4px $melon;
+    box-shadow: 0 0 4px;
   }
 
   .select__dropdown-indicator svg {
-    fill: $melon;
   }
 
   .select__value-container--has-value {
@@ -111,16 +111,17 @@
 	text-align: center;
   input{
 
-    height: 1.3em;
-    border: 0.1em solid $melon;
-    border-radius: 1em;
+    height: 100%;
+    border: solid;
+		border-width: thin;
+		border-radius: 4px;
     padding: 0.5em;
-    width: 70%;
-    font-size: 19px;
+    width: 90%;
+    font-size: 18px;
   }
   input:focus {
-    outline: none;
-    box-shadow: 0 0 4px $melon;
+    outline: 0;
+    box-shadow: 0 0 4px;
   //border: 0.15em solid #e4e4e4;
   }
 }
@@ -272,9 +273,9 @@
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
   margin: 0em 5px 0em 5px;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 4px;
   margin-bottom: 0.5em;
-  border: solid $melon;
+  border: solid;
   border-width: thin;
   width: 6.6em;
   height: 6.7em;
@@ -447,12 +448,13 @@
   display: inline-block;
   margin-bottom: 15px;
   height: 1.3em;
-  border: 0.1em solid $melon;
-  border-radius: 1em;
+  border: 0.1em solid;
+	border-radius: 4px;
+	border-width: thin;
   padding: 0.5em;
-  width: 70%;
+  width: 90%;
       &:hover{
-        box-shadow: 0 0 4px $melon;
+        box-shadow: 0 0 4px;
       }
 }    .select select {
       font-size: 14px;
@@ -487,7 +489,7 @@
   right: 15px;
   width: 0px;
   height: 0px;
-  border: solid #00d790;
+  border: solid #7b7b7b;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
@@ -496,10 +498,10 @@
 }
 .select select:hover ~ .select_arrow,
 .select select:focus ~ .select_arrow {
-  border-color: #00f3a3;
+  border-color: #a2a2a2;
 }
 .select select:disabled ~ .select_arrow {
-  border-top-color: #00d790;
+  border-top-color: #7b7b7b;
 }
 
 @media screen and (max-width: $breakpoint-pad) {

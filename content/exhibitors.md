@@ -6,6 +6,3 @@ menuPage: true
 priority: 1
 header: /assets/images/header-images/About.jpg
 ---
-# Exhibitors
-
-**Sustainability **and **Diversity** form the core values at the heart of our organization. To highlight our core values, we have chosen to dedicate focus areas of the fair called Green Room and Diversity Room.

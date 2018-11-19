@@ -151,6 +151,7 @@ class ExhibitorList extends React.Component {
                       <li key={booth.id} className="map-wrapper">
                         <a
                             style={{display: 'block', margin: '16px 0'}}
+														target="_blank"
                             href={`https://maps.armada.nu/?location=${booth.location.id}&booth=${booth.id}`}
                         >
                           {(booth.location.parent ? booth.location.parent.name + ' ' : '') + booth.location.name + ' - ' + booth.name}

@@ -105,8 +105,8 @@
 // export default toExport;
 
 
-//TODO: NOT PERMANENT SOLUTION FIX PLEASE 
-const Maps = props => {
+//TODO: NOT PERMANENT SOLUTION FIX PLEASE
+const Maps = () => {
 	return (
 	<div className="center">
 		<p className="melon bold center">Green room:</p>

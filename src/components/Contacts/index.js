@@ -6,7 +6,8 @@ import "../../styles/global.scss"
 
 const Contacts =  () => {
 
-    return ( <div className="contact-body">
+    return ( <div><h1 className="helmet">Contact</h1>
+			<div className="contact-body">
                     <section className="contact">
                       <div className="content-wrapper row">
 
@@ -53,6 +54,7 @@ const Contacts =  () => {
                       </div>
                     </section>
                 </div>
+								</div>
     );
 
 }

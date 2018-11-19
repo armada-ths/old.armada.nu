@@ -4,7 +4,7 @@ import Contacts from "../../components/Contacts"
 
 
 const Contactpage = () => {
-    
+
 
   return (
         <Contacts />
@@ -13,6 +13,3 @@ const Contactpage = () => {
 
 
 export default Contactpage
-
-
-

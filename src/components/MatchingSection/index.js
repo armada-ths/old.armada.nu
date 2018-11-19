@@ -3,6 +3,7 @@ import Select from 'react-select'
 import Loading from "../Loading"
 import Text from "../Text"
 import  "../Card/Card.scss"
+import Helmet from "react-helmet"
 
 const ais = 'https://ais.armada.nu/';
 
@@ -208,6 +209,10 @@ class MatchingSection extends React.Component {
       }
     render() {
         return (
+					<div>
+						<h1 className="helmet">Matching</h1>
+						<p>Try out Armada's brand new <span className="bold">matching functionality</span> that matches </p>
+						<p>students with companies through their shared values!</p>
             <div className="questions">
             {!this.state.hide ? <div className="optioncontainer">{this.buildOptions(this.state.options)}
                 <button className="match" onClick={() => this.submit()}>Get my match!</button></div> : null}
@@ -216,6 +221,7 @@ class MatchingSection extends React.Component {
             {this.state.exhibitors.length ? <div className="trycontainer"><button className="match" onClick={() => this.matchagain()}>Try matching again!</button></div> : null}
 
             </div>
+					</div>
         );
     }
 

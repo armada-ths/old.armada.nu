@@ -148,7 +148,7 @@ class MatchingSection extends React.Component {
 
       createCard(i){
         let array = this.state.exhibitors;
-        //var textrating = Math.round(-50*(array[i].distance) + 100)
+        var textrating = Math.round(-33.3333*(array[i].distance) + 100)
         var background = {
             backgroundImage: 'url('+ ais + array[i].exhibitor.logo_squared + ')'
         }
@@ -166,7 +166,7 @@ class MatchingSection extends React.Component {
                     <span className="corner-title">{match}</span>
 
                    <span className="stars">{this.createStars(array[i].distance)}</span>
-                    {/* <span >{textrating + '% match'}</span>*/}
+                    <span >{textrating + '% match'}</span>
                     </div>
                     <div className="data">
                     <div className="content">

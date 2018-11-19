@@ -2,6 +2,7 @@ import React from "react"
 import {Link} from "react-router"
 
 import "./index.scss"
+import PropTypes from "prop-types";
 
 class Navbar extends React.Component {
 
@@ -53,6 +54,10 @@ class Navbar extends React.Component {
 
     return navbar;
   }
+}
+
+Navbar.propTypes = {
+	whiteHB: PropTypes.boolean,
 }
 
 export default Navbar

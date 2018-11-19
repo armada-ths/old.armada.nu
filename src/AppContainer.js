@@ -13,7 +13,6 @@ import GoogleAnalyticsTracker from "./components/GoogleAnalyticsTracker"
 
 const AppContainer = (props) => {
     let pathname = props.location.pathname.endsWith("/") ? props.location.pathname : props.location.pathname + "/";
-    let displayedPage = props.children._owner._context.collection.find((element) => element.__url === pathname);
 
     return (
   <GoogleAnalyticsTracker params={props.params}>

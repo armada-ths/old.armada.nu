@@ -109,9 +109,9 @@
 const Maps = () => {
 	return (
 	<div className="center">
-		<p className="melon bold center">Green room:</p>
+		<h4>Green room:</h4>
 		<p>Gamla matsalen, Nymble </p>
-		<p className="diversity bold center">Diversity room:</p>
+		<h4 className="diversity">Diversity room:</h4>
 		<p>Puben, Nymble</p>
 		<h4>Lounges</h4>
 		<p><div className="bold">Spotify:</div> Musikrummet</p>

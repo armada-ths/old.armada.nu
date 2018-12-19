@@ -1,18 +1,18 @@
 ---
 title: Recruitment
 layout: Recruitmentpage
-description: Recruitment 2018
-menuPage: false
+description: Recruitment 2019
+menuPage: true
 priority: 3
 header: /assets/TheFair_small.jpg
 ---
-# Recruitment 2018
+# Recruitment 2019
 
-**Apply no later than September 9!**
+**Application opens 1st of January 2019!**
 
 The team of THS Armada creates more than just a career fair - they create platforms where students and companies can shape their future. Together. 
 
-THS Armada is the largest organization in Scandinavia, annually attracting 180 companies and 12.000 visitors through a number of events and the beloved fair. The project continues until November 2018. THS Armada believes that diversity & inclusion create the most innovative teams, that sustainability is the cornerstone to a better future and that engagement is the main key for students and companies to find each other. Being a part of THS Armada is an amazing opportunity for challenges, new friendships, personal development and the chance to make an impact. 
+THS Armada is the largest organization in Scandinavia, annually attracting 180 companies and 12.000 visitors through a number of events and the beloved fair. The project continues until November 2019. THS Armada believes that diversity & inclusion create the most innovative teams, that sustainability is the cornerstone to a better future and that engagement is the main key for students and companies to find each other. Being a part of THS Armada is an amazing opportunity for challenges, new friendships, personal development and the chance to make an impact. 
 
 Currently, THS Armada recruits hosts to the following subgroups:
 

@@ -24,6 +24,4 @@ The Project Group is the core team of up to 20 students working with managing di
 
 ## Formal information
 
-Apply at the link and send your CV and personal letter before January 20th to a@armada.nu . Having questions about positions or can’t decide which role to apply to? Contact Ulrik Sköldkvist with your questions or book a fika! a@armada.nu or 070-790 98 44
-
-The application is open between January 1st and January 27th.
+The recruitment for role to the Project Group 2019 is closed, but if you are interested in future recruitment to THS Armada or just have questions about how it is to be a part of Armada. Contact Ulrik Sköldkvist with your questions or book a fika at a@armada.nu or 070-790 98 44!

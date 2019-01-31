@@ -1,12 +1,12 @@
 ---
 title: Recruitment
 layout: Recruitmentpage
-description: Recruitment 2018
+description: Recruitment 2019
 menuPage: true
 priority: 3
 header: /assets/TheFair_small.jpg
 ---
-# Shape THS Armada 2019 - Join the Project Group
+# Shape THS Armada 2019
 
 ## THS Armada
 
@@ -22,6 +22,6 @@ The Project Group is the core team of up to 20 students working with managing di
 
 **IT:** In a digital era, the digitisation process is one of the core pillars of THS Armada. Turning creative ideas from all groups into reality enhances the Armada Experience for all members, visitors and exhibitors. The IT team is the key to make the world a better place.
 
-## General Information
+## Information
 
-The recruitment for role to the Project Group 2019 is closed, but if you are interested in future recruitment to THS Armada or just have questions about how it is to be a part of Armada. Contact Ulrik Sköldkvist with your questions or book a fika at a@armada.nu or 070-790 98 44!
+The recruitment for the Project Group 2019 is closed, but if you are interested in future recruitment to THS Armada or just have questions about how it is to be a part of Armada. Contact Ulrik Sköldkvist with your questions or book a fika at a@armada.nu or 070-790 98 44!

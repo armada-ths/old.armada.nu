@@ -3,7 +3,7 @@ title: The Fair
 layout: Plainpage
 description: About the fair
 menuPage: true
-priority: 2
+priority: '2'
 header: /assets/library.png
 ---
 # General information

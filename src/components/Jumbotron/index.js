@@ -110,7 +110,7 @@ class Jumbotron extends React.Component {
 				<div id={"header"}>
 						<div className="logo-container fixed">
 										<img src={require('../../../content/assets/images/header-images/logo.png')} />
-										<p className="logo-date">THE FAIR 20-21 NOV 2018</p>
+										<p className="logo-date">THE FAIR 19-20 NOV 2019</p>
 
 												<div id="scrollarrow" className="scroll-arrow" onMouseDown={this.mouseDown} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseOut}>
 														<img id="scrollarrowIMG" src="/assets/pil.png" alt="\/"/>

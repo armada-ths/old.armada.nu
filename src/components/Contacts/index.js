@@ -14,7 +14,7 @@ const Contacts =  () => {
                         <div className="contact-info">
                           <h1 className="sub-heading darkText">Ulrik Sköldkvist</h1>
                           <h2 className="sub-heading">PROJECT MANAGER</h2>
-                          <p><a className="darkText" href="mailto:armada@ths.kth.se" target="_top">armada@ths.kth.se</a> | <a className="darkText" href="tel:+46707909844">+4673 022 15 51</a></p>
+                          <p><a className="darkText" href="mailto:armada@ths.kth.se" target="_top">armada@ths.kth.se</a> | <a className="darkText" href="tel:+46707909844">070-790 98 44</a></p>
                         </div>
                       </div>
                     </section>

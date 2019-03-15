@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Page from "../Page"
-import Recruitment from "../../components/Recruitment"
+// import Recruitment from "../../components/Recruitment"
 import "./index.scss"
 
 const Recruitmentpage = (props) => {
@@ -11,7 +11,7 @@ const Recruitmentpage = (props) => {
           <Page { ...props }/ >
 
 
-        <Recruitment/>
+        {/* <Recruitment/> */}
       </div>
   )
 }

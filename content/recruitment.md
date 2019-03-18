@@ -26,8 +26,6 @@ Here follows short descriptions of the different areas of THS Armada:
 
 **Logistics and Career Fair:** Creates the career fair experience through intensive planning and logistics. The final result is a two-day career fair with 15 000 visitors which is the foundation of the relationship between students and exhibitors.
 
-
-
 ## Information
 
-The application for IT is already open, do not forget to apply! Application for the remaining groups will open soon. If you are interested in the recruitment to THS Armada or have questions about how it is to be a part of Armada contact Ulrik Sköldkvist with your questions or book a fika at a@armada.nu or 070-790 98 44. You are also welcome to contact Agnes Gemvik (Head of Human Resources) at agnes.gemvik@armada.nu.
+The application for IT is already open, do not forget to apply! Application for the remaining groups will open soon. If you are interested in the recruitment to THS Armada or have questions about how it is to be a part of Armada contact Ulrik Sköldkvist (Project Manager) with your questions or book a fika at a@armada.nu or 070-790 98 44. You are also welcome to contact Agnes Gemvik (Head of Human Resources) at agnes.gemvik@armada.nu.

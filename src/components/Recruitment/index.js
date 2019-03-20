@@ -23,7 +23,7 @@ class Recruitment extends React.Component {
                 let result = res.data;  // create variable and store result within parameter data
                 this.setState({ groups: result[0].groups, 
                                 recruitmentName: result[0].name, 
-                                recruitmentLink: result[0].link, 
+                                recruitmentLink: result[0].link + "17", // 17 is added to lead directly to developer application
                                 recruitmentStart: result[0].start_date, 
                                 recruitmentEnd: result[0].end_date });  // component saves its own data
             });

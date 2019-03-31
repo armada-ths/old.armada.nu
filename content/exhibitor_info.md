@@ -2,7 +2,7 @@
 title: For Exhibitors
 layout: ExhibitorInfo
 description: Information for exhibitors
-menuPage: false
+menuPage: true
 priority: '4'
 header: /assets/for_exhibitors.jpg
 ---

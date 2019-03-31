@@ -1,6 +1,6 @@
 ---
 title: Coffee
-layout: Page
+layout: Coffee
 description: Coffee Campaign
 menuPage: false
 priority: '2'

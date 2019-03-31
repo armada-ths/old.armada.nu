@@ -1,0 +1,15 @@
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
+
+.coffee-background {
+  background-image: linear-gradient(to bottom, #f0fff5 0%, #00e194 100%);
+  width: 100%;
+}
+
+.coffee-container {
+  text-align: center;
+}
+
+.content {
+  margin: unset !important;
+}

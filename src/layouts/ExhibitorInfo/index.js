@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 // import PageSections from "../../components/PageSections"
 import Contacts from "../../components/Contacts"
-import Jumbotron from "../../components/Jumbotron"
 import Page from "../Page"
 import "./index.scss"
 

@@ -15,3 +15,7 @@ We truly believe that a value driven organization increase the engagement and pe
 **Diversity:** We believe that when you put different mindsets together, real change happens. We believe in a organizational culture of diversity and inclusion. Our fair and organization represents all students at KTH and everyone has the right to equal opportunities. We encourage all participating organizations to look at all talented students at KTH.
 
 **Sustainability:** Our belief in a green future and a sustainable workplace motivates us to continuously make internal and external improvements towards a more sustainable fair. And world.
+
+[**Click here**](register.armada.nu) to see the full invitation or you can go to register.armada.nu to register for this years fair
+
+I look forward to meeting you at this year’s THS Armada!

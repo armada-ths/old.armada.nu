@@ -14,4 +14,4 @@ THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of 
 
 **Exhibitor interest for the career fair of 2019:**
 
-If you are interested in participating in the career fair of 2019, please submit your information [here](https://goo.gl/forms/kHBOmpiNoGImGPoM2)
+If you are interested in participating in the career fair of 2019, please submit your information [here](http://register.armada.nu)

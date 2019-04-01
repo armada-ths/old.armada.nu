@@ -16,6 +16,6 @@ We truly believe that a value driven organization increase the engagement and pe
 
 **Sustainability:** Our belief in a green future and a sustainable workplace motivates us to continuously make internal and external improvements towards a more sustainable fair. And world.
 
-[**Click here**](https://armada.nu/assets/i19.pdf) to see the full invitation or you can go to [register.armada.nu](https://register.armada.nu) to register for this years fair
+[**Click here**](https://drive.google.com/file/d/1qfXJl5WKemuGqk6cgtYxBgepsTsV2rRJ/view) to see the full invitation or you can go to [register.armada.nu](https://register.armada.nu) to register for this years fair
 
 I look forward to meeting you at this year’s THS Armada!

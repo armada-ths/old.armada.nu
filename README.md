@@ -14,14 +14,29 @@ git clone [ADDRESS TO THIS REPOSITORY]
 
 To clone using SSH you need to setup your SSH keys with GitHub. Otherwise you can clone using the HTTPS option instead with your username and password.
 
-### 1. Install dependencies
+### 1. Ensure correct node and npm versions
+Node should be: 6.5.0 (To check write: node -v)
+Npm should be updated to the latest version 3.10.3 (To check write: npm -v)
+
+**Downgrading node:**
+```sh
+npm install -g n
+sudo n 6.5.0 
+```
+
+**Updating npm:**
+```sh
+npm install -g npm
+```
+
+### 2. Install dependencies
 Run this command to install the dependencies that armada.nu is built on. This only needs to be done the first time you download this repo, or after a new dependency has been added. 
 
 ```sh
 npm install
 ```
 
-### 2. Run development server
+### 3. Run development server
 
 ```sh
 npm start

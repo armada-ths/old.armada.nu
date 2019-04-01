@@ -15,8 +15,8 @@ git clone [ADDRESS TO THIS REPOSITORY]
 To clone using SSH you need to setup your SSH keys with GitHub. Otherwise you can clone using the HTTPS option instead with your username and password.
 
 ### 1. Ensure correct node and npm versions
-Node should be: 6.5.0 (To check write: node -v)
-Npm should be updated to the latest version 3.10.3 (To check write: npm -v)
+Node should be: 6.5.0 (To check write: node -v)  
+NPM should be updated to the latest version 3.10.3 (To check write: npm -v)
 
 **Downgrading node:**
 ```sh

@@ -19,6 +19,9 @@ const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
         "?features=es6&flags=gated" },
         ...props.scripts ? props.scripts : [],
       ] }
+      link={[
+        {"rel": "icon", "type": "image/ico", "href": require('../../../content/assets/favicon.ico'), "sizes": "57x57"}
+     ]}
     />
 
     { /* meta viewport safari/chrome/edge */ }

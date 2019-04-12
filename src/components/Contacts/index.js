@@ -1,13 +1,14 @@
 import React from "react"
 
 import "./contact.scss";
+import ContactCard from "../ContactCard"
 import "../../styles/global.scss"
 
 
 const Contacts =  () => {
 
     return ( <div><h1 className="helmet">Contact</h1>
-			<div className="contact-body">
+			{/* <div className="contact-body">
                     <section className="contact">
                       <div className="content-wrapper row">
 
@@ -18,6 +19,9 @@ const Contacts =  () => {
                         </div>
                       </div>
                     </section>
+                </div> */}
+                <div className="contact-list">
+                <ContactCard/>
                 </div>
 								</div>
     );

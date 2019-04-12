@@ -1,0 +1,72 @@
+@import "../../styles/_variables";
+@import "../../styles/global";
+
+.card-container {
+  position: relative;
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card-container .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card-container .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+  filter: gray; /* IE5+ */
+      -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+      -webkit-transition: all .8s ease-in-out; 
+}
+
+.card-container .card_image img:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+}
+
+.card-container .card_title {
+  top: 200px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 0 0 40px 40px;
+}
+
+.card-container:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+#card_text {
+  margin: 5px 0 0 10px !important;
+}
+
+#card_name {
+  color: white;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+#card_email {
+  left: 12px;
+  position: absolute;
+  display: inline-block;
+  height: 25px;
+  width: auto;
+}
+
+.title-white {
+  color: white;
+}

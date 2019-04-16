@@ -31,7 +31,7 @@ class ContactCard extends React.Component {
           <div id="topBar"></div>
           <div id="text-area">
             <p className="textcontent" id="clean_card_name">{this.props.name}</p>
-            <p className="textcontent" id="clean_card_title"> {this.props.title}</p>
+            <p className="textcontent" id="clean_card_title"> {this.props.title + " " + this.props.emoji}</p>
             <a href={"mailto:" + this.props.email} className="textcontent" id="clean_card_email">{this.props.email}</a>
           </div>
       </div>
@@ -44,7 +44,8 @@ ContactCard.propTypes = {
   name: PropTypes.string,
   imageUrl: PropTypes.string,
   title: PropTypes.string,
-  email: PropTypes.string
+  email: PropTypes.string,
+  emoji: PropTypes.string
 }
 
 export default ContactCard;

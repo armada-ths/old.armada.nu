@@ -1,24 +1,50 @@
 import React from "react"
+import PropTypes from "prop-types";
 
 import "./contactcard.scss";
 import "../../styles/global.scss"
 
 
-const ContactCard = () => {
+class ContactCard extends React.Component {
+  constructor(props) {
+    super(props); 
+  }
 
-  return (
-    <div className="card-container 1">
-    <div className="card_image"> <img src="https://i1.wp.com/www.kth.se/blogs/studentbloggen/files/2018/05/Oscar_bloggare_MG_1595-1.jpg?resize=900%2C600&ssl=1" /> </div>
-    <div className="card_title">
-      <div id="card_text">
-        <p id="card_name">Oscar Wiigh</p>
-        <p className="title-white">Head of Web Development</p>
-        <img id="card_email" src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-email-2.png&r=255&g=255&b=255"></img>
+  render () {
+    if(this.props.imageUrl !== "") {
+      return(
+        <div className="card-container 1">
+        <div className="card_image"> <img src={this.props.imageUrl} /> </div>
+        <div className="card_title">
+          <div id="card_text">
+            <p id="card_name">{this.props.name}</p>
+            <p className="title-white">{this.props.title}</p>
+            <p className="title-white">{this.props.email}</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  );
+      )
+    }
+    else {
+      return(
+        <div className="card-container2">
+          <div id="topBar"></div>
+          <div id="text-area">
+            <p className="textcontent" id="clean_card_name">{this.props.name}</p>
+            <p className="textcontent" id="clean_card_title"> {this.props.title}</p>
+            <a href={"mailto:" + this.props.email} className="textcontent" id="clean_card_email">{this.props.email}</a>
+          </div>
+      </div>
+      )
+    }
+  }
+}
 
+ContactCard.propTypes = {
+  name: PropTypes.string,
+  imageUrl: PropTypes.string,
+  title: PropTypes.string,
+  email: PropTypes.string
 }
 
 export default ContactCard;

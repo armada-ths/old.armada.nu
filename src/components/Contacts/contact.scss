@@ -7,6 +7,12 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+
+  #line {
+    width: 80%;
+    height: 1px;
+    background-color: $melon;
+  }
 }
 
 .row {

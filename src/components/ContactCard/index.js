@@ -27,20 +27,15 @@ class ContactCard extends React.Component {
     }
     else {
       return(
-        <div className="card-container2">
-          <div id="topBar"></div>
-          <div className="cardcontent">
-            <div id="img-area">
-              <img className="picturecontent" src={this.props.imageUrl} width="150px" height="150px"/> 
-              <a href={"mailto:" + this.props.email} className="textcontent" id="clean_card_email">{this.props.email}</a>
-            </div>
-            
-            <div id="text-area">
-              <p className="textcontent" id="clean_card_name">{this.props.name}</p>
-              <p className="textcontent" id="clean_card_title"> {this.props.title + " " + this.props.emoji}</p>
-              
-            </div>
+        <div className="card-container 1">
+        <div className="card_image"> <img src="/assets/ulrik.jpg" /> </div>
+        <div className="card_title">
+          <div id="card_text">
+            <p id="card_name">{this.props.name}</p>
+            <p className="title-white">{this.props.title}</p>
+            <p className="title-white">{this.props.email}</p>
           </div>
+        </div>
       </div>
       )
     }

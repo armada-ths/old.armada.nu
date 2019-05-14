@@ -122,11 +122,11 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 }
 
 .card-container .card_title {
-  top: 180px;
+  top: 210px;
   position: absolute;
   text-align: right;
   width: 100%;
-  height: 120px;
+  height: 90px;
   background-color: rgba(0,0,0, 0.6);
   border-radius: 0 0 40px 40px;
 }
@@ -140,7 +140,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 
 #card_text {
-  margin: 0 0 0 15px !important;
+  margin: 0 0 0 20px !important;
 }
 
 #card_name {
@@ -161,6 +161,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 .title-white {
   color: $melon;
+  font-size: 15px;
+
 }
 
 .cardcontent {

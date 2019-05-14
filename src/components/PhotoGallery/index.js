@@ -40,7 +40,8 @@ class PhotoGallery extends React.Component {
 
         this.state = {
             loaded: false,
-            photos: []
+            photos: [],
+            startFrom: 0
         };
     }
 
@@ -52,6 +53,7 @@ class PhotoGallery extends React.Component {
                     loaded: true,
                     photos: res.photoset.photo
                 });
+                setInterval(() => this.cyclePhotos(), 10000);
             })
             .catch(err => {
                 this.setState({
@@ -60,13 +62,29 @@ class PhotoGallery extends React.Component {
             });
     }
 
+    cyclePhotos() {
+        this.setState({
+            startFrom: (this.state.startFrom + this.props.photoCount) % this.state.photos.length
+        });
+    }
+
     render() {
-        const maxPhotoCount = this.props.maxPhotoCount || 1000;
+        const photoCount = this.props.photoCount;
+
+        let photos;
+        if (this.state.loaded) {
+            const startFrom = this.state.startFrom;
+            photos = this.state.photos.slice(startFrom, startFrom + photoCount);
+            if (photos.length < photoCount) {
+                photos = [...photos, ...this.state.photos.slice(0, photoCount - photos.length)];
+            }
+        }
+
         return (
             <div className="photo-gallery">
                 { !this.state.loaded ? 
                     <span></span> :
-                    this.state.photos.slice(0, maxPhotoCount).map(photo => {
+                    photos.map(photo => {
                         return <Photo key={photo.id}
                             fileURL={this.generateFlickrPhotoFileURL(photo.farm, photo.server, photo.id, photo.secret)}
                             pageURL={this.generateFlickrPhotoPageURL(photo.id)}
@@ -91,7 +109,7 @@ class PhotoGallery extends React.Component {
 }
 
 PhotoGallery.propTypes = {
-    maxPhotoCount: PropTypes.number
+    photoCount: PropTypes.number
 };
 
 export default PhotoGallery;

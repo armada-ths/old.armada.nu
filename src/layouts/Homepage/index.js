@@ -16,7 +16,7 @@ const Homepage = (props) => {
       <div className="body">
           <NewEvents />
 					<Partners />
-          <PhotoGallery maxPhotoCount={12} />
+          <PhotoGallery photoCount={6} />
       </div>
     </Page>
       </div>

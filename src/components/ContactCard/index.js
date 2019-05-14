@@ -28,7 +28,7 @@ class ContactCard extends React.Component {
     else {
       return(
         <div className="card-container 1">
-        <div className="card_image"> <img src="/assets/ulrik.jpg" /> </div>
+        <div className="card_image"> <img src="/assets/armadalogogreen.jpg" /> </div>
         <div className="card_title">
           <div id="card_text">
             <p id="card_name">{this.props.name}</p>

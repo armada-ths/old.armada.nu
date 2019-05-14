@@ -18,7 +18,7 @@ class ContactCard extends React.Component {
         <div className="card_title">
           <div id="card_text">
             <p id="card_name">{this.props.name}</p>
-            <p className="title-white">{this.props.title}</p>
+            <p className="title-white">{this.props.title} {this.props.emoji}</p>
             <p className="title-white">{this.props.email}</p>
           </div>
         </div>
@@ -32,7 +32,7 @@ class ContactCard extends React.Component {
         <div className="card_title">
           <div id="card_text">
             <p id="card_name">{this.props.name}</p>
-            <p className="title-white">{this.props.title}</p>
+            <p className="title-white">{this.props.title} {this.props.emoji}</p>
             <p className="title-white">{this.props.email}</p>
           </div>
         </div>

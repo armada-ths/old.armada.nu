@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Partners from '../../components/Partners';
 import NewEvents from "../../components/NewEvents"
 import Page from "../Page"
-import InstagramGallery from "../../components/InstagramGallery";
+import PhotoGallery from "../../components/PhotoGallery";
 
 const Homepage = (props) => {
 
@@ -16,7 +16,7 @@ const Homepage = (props) => {
       <div className="body">
           <NewEvents />
 					<Partners />
-          <InstagramGallery />
+          <PhotoGallery maxPhotoCount={12} />
       </div>
     </Page>
       </div>

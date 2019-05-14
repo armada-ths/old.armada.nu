@@ -1,10 +1,10 @@
-.instagram-gallery {
+.photo-gallery {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.instagram-image {
+.photo {
     flex-shrink: 0;
     width: 32%;
     background-color: antiquewhite; /* for development purpose */
@@ -16,14 +16,21 @@
     position: relative;
 }
 
-.image-info {
+.photo-info {
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.5s ease;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none !important;
 }
 
-.square:hover .image-info {
+.square:hover .photo-info {
     opacity: 1;
 }

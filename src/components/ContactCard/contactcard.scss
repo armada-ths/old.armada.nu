@@ -122,11 +122,11 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 }
 
 .card-container .card_title {
-  top: 200px;
+  top: 180px;
   position: absolute;
   text-align: right;
   width: 100%;
-  height: 100px;
+  height: 120px;
   background-color: rgba(0,0,0, 0.6);
   border-radius: 0 0 40px 40px;
 }
@@ -146,7 +146,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 #card_name {
   color: $melon;
   font-weight: 100;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 #card_email {

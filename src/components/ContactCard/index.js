@@ -21,6 +21,7 @@ class ContactCard extends React.Component {
             <p id="card_name">{this.props.name}</p>
             <p className="title-white">{this.props.title} {this.props.emoji}</p>
             <a className="title-white" href={"mailto:" + this.props.email}>{this.props.email}</a>
+            <a className="linkedin" href={this.props.linkedInUrl}><img id="linkedin_logo" draggable="false" src="/assets/linkedin.png" /></a>
           </div>
         </div>
       </div>
@@ -29,12 +30,16 @@ class ContactCard extends React.Component {
     else {
       return(
         <div className="card-container 1">
-        <div className="card_image"> <img draggable="false" src="/assets/armadalogogreen.jpg" /> </div>
+          <div className="card_image">
+            <img draggable="false" src="/assets/armadalogogreen.jpg" /> 
+          </div>
+        
         <div className="card_title">
           <div id="card_text">
             <p id="card_name">{this.props.name}</p>
             <p className="title-white">{this.props.title} {this.props.emoji}</p>
             <a className="title-white" href={"mailto:" + this.props.email}>{this.props.email}</a>
+            <a className="linkedin" href={this.props.linkedInUrl}><img id="linkedin_logo" draggable="false" src="/assets/linkedin.png"/></a>
           </div>
         </div>
       </div>
@@ -45,6 +50,7 @@ class ContactCard extends React.Component {
 
 ContactCard.propTypes = {
   name: PropTypes.string,
+  linkedInUrl: PropTypes.string,
   imageUrl: PropTypes.string,
   title: PropTypes.string,
   email: PropTypes.string,

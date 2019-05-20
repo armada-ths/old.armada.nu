@@ -141,6 +141,7 @@
     "react-easter": "^1.0.6",
     "react-google-analytics": "^0.2.0",
     "react-page-click": "^4.0.2",
+    "react-reveal": "^1.2.2",
     "react-select": "^2.1.0",
     "react-sticky": "^6.0.1",
     "react-url-query": "^1.2.0"

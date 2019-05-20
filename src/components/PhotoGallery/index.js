@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from "prop-types";
-
 import './photo-gallery.scss';
+import Zoom from 'react-reveal/Zoom';
 
 const FLICKR_API_KEY = '381c0c551c89c0f23e326456eae0c6a8';
-const FLICKR_PHOTOSET_ID = '72157704339470804';
+const FLICKR_PHOTOSET_ID = '72157708626862634';
 const FLICKR_USER_ID = '51450332@N02';
 
 class Photo extends React.Component {
@@ -17,13 +17,15 @@ class Photo extends React.Component {
             backgroundPosition: 'center'
         };
         return (
-            <div className="photo">
-                <div className="square" style={bgStyle}>
-                    <a className="photo-info" target="_blank" href={pageURL}>
-                        {this.props.title}
-                    </a>
+            <Zoom>
+                <div className="photo">
+                    <div className="square" style={bgStyle}>
+                        <a className="photo-info" target="_blank" href={pageURL}>
+                            {this.props.title}
+                        </a>
+                    </div>
                 </div>
-            </div>
+            </Zoom>
         );
     }
 }
@@ -85,7 +87,7 @@ class PhotoGallery extends React.Component {
                 { !this.state.loaded ? 
                     <span></span> :
                     photos.map(photo => {
-                        return <Photo key={photo.id}
+                         return <Photo key={photo.id}
                             fileURL={this.generateFlickrPhotoFileURL(photo.farm, photo.server, photo.id, photo.secret)}
                             pageURL={this.generateFlickrPhotoPageURL(photo.id)}
                             title={photo.title} />

@@ -55,7 +55,7 @@ class PhotoGallery extends React.Component {
                     loaded: true,
                     photos: res.photoset.photo
                 });
-                setInterval(() => this.cyclePhotos(), 10000);
+                this.interval = setInterval(() => this.cyclePhotos(), 10000);
             })
             .catch(err => {
                 this.setState({
@@ -63,6 +63,10 @@ class PhotoGallery extends React.Component {
                 });
             });
     }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+      }
 
     cyclePhotos() {
         this.setState({

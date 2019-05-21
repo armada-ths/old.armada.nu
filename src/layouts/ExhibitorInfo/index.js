@@ -14,7 +14,7 @@ const ExhibitorInfo = (props) => {
       <Page {...props}/>
       {/* <PageSections/> */}
       <div className="contact-list">
-      <ContactCard name="Ulrik Sköldkvist" title="Project Manager" emoji="👨‍✈️" email="a@armada.nu" imageUrl=""/>
+      <ContactCard name="Ulrik Sköldkvist" title="Project Manager" emoji="👨‍✈️" email="a@armada.nu" imageUrl="/assets/ulrik.jpg"/>
       </div>
     </div>
     </div>

@@ -1,0 +1,42 @@
+.photo-gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.photo {
+    flex-shrink: 0;
+    width: 32%;
+    //background-color: antiquewhite; /* for development purpose */
+    margin-bottom: 2%;
+}
+
+@media (max-width: 767px) {
+    .photo {
+        width: 49%;
+    }
+}
+.square {
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+}
+
+.photo-info {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.square:hover .photo-info {
+    opacity: 1;
+}

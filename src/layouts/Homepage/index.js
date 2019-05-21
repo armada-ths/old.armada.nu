@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import Partners from '../../components/Partners';
 import NewEvents from "../../components/NewEvents"
 import Page from "../Page"
+import PhotoGallery from "../../components/PhotoGallery";
 
 const Homepage = (props) => {
 
@@ -15,6 +16,7 @@ const Homepage = (props) => {
       <div className="body">
           <NewEvents />
 					<Partners />
+          <PhotoGallery photoCount={6} />
       </div>
     </Page>
       </div>

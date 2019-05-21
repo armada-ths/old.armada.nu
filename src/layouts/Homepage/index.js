@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Partners from '../../components/Partners';
-import NewEvents from "../../components/NewEvents"
+// import Partners from '../../components/Partners';
+// import NewEvents from "../../components/NewEvents"
 import Page from "../Page"
 import PhotoGallery from "../../components/PhotoGallery";
 
@@ -14,8 +14,9 @@ const Homepage = (props) => {
     <div>
     <Page { ...props }>
       <div className="body">
-          <NewEvents />
-					<Partners />
+          {/* <NewEvents />
+          <Partners /> */}
+          <h1>Armada in pictures</h1>
           <PhotoGallery photoCount={6} />
       </div>
     </Page>

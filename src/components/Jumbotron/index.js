@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import "./jumbotron.scss";
+import {Link} from "react-router"
 
 var smoothScroll = {
     timer: null,
@@ -116,9 +117,11 @@ class Jumbotron extends React.Component {
                     <img src={require('../../../content/assets/images/header-images/logo.png')} />
                     <p className="logo-date">THE FAIR 19-20 NOV 2019</p>
                     {header_class === "header-home" ? 
-                        <div id="scrollarrow" className="scroll-arrow" onMouseDown={this.mouseDown} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseOut}>
-                            <img id="scrollarrowIMG"src="/assets/pil.png" alt="\/"/>
-                        </div> 
+                    <div className="buttoncontainer">
+                        <Link to='https://register.armada.nu/' target="_blank" id="buttonleft" className="homepagebutton"><span>Register for Armada 2019!</span></Link>
+                        <Link to='/about' id="buttonright" className="homepagebutton"><span>Learn more about Armada!</span></Link>
+                    </div>
+
                         : null}
             </div>
             <div className={header_class}>

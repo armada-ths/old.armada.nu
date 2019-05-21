@@ -35,7 +35,7 @@ class Contacts extends React.Component {
   }
 
   createCards(start, end) {
-    return (ProjectGroup.filter((i, index) => (index < end && index >= start)).map((info, index) => <ContactCard name={info.name} key={index} title={info.title} email={info.email} emoji={info.emoji} imageUrl={info.imageUrl} />))
+    return (ProjectGroup.filter((i, index) => (index < end && index >= start)).map((info, index) => <ContactCard name={info.name} key={index} title={info.title} email={info.email} emoji={info.emoji} imageUrl={info.imageUrl} linkedInUrl={info.linkedInUrl}/>))
   }
   render() {
     return (<div><h1 className="helmet">Contact US</h1>

@@ -8,7 +8,13 @@
     flex-shrink: 0;
     width: 32%;
     //background-color: antiquewhite; /* for development purpose */
-    margin-bottom: 20px;
+    margin-bottom: 2%;
+}
+
+@media (max-width: 767px) {
+    .photo {
+        width: 49%;
+    }
 }
 .square {
     height: 0;

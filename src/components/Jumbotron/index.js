@@ -118,8 +118,8 @@ class Jumbotron extends React.Component {
                     <p className="logo-date">THE FAIR 19-20 NOV 2019</p>
                     {header_class === "header-home" ? 
                     <div className="buttoncontainer">
-                        <Link to='https://register.armada.nu/' target="_blank" id="buttonleft" className="homepagebutton"><span>Register for Armada 2019!</span></Link>
-                        <Link to='/about' id="buttonright" className="homepagebutton"><span>Learn more about Armada!</span></Link>
+                        <Link to='/exhibitor_info' id="buttonleft" className="homepagebutton"><span>Information for companies</span></Link>
+                        <Link to='/about' id="buttonright" className="homepagebutton"><span>Learn more about Armada</span></Link>
                     </div>
 
                         : null}

@@ -18,7 +18,7 @@ The Armada Team consist of KTH students and the THS Armada project continues unt
 
 
 
-The application for the Armada Operations Team is closed.
+The application for the Armada Host roles is now open.
 
 
 
@@ -34,4 +34,4 @@ Here follow short descriptions of the different areas of THS Armada:
 
 ## Information
 
-The application to the Armada Operations team is now closed. If you are interested in the recruitment to THS Armada or have questions about how it is to be a part of Armada contact Ulrik Sköldkvist with your questions or book a fika at a@armada.nu or 070-790 98 44. You are also welcome to contact Agnes Gemvik (Head of Human Resources) at agnes.gemvik@armada.nu.
+If you are interested in the recruitment to THS Armada or have questions about how it is to be a part of Armada contact Ulrik Sköldkvist with your questions or book a fika at a@armada.nu or 070-790 98 44. You are also welcome to contact Agnes Gemvik (Head of Human Resources) at agnes.gemvik@armada.nu.

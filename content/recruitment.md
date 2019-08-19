@@ -18,7 +18,7 @@ The Armada Team consist of KTH students and the THS Armada project continues unt
 
 
 
-The application for the Armada Host roles opens 19th of August.
+The application for the Armada Host roles is now open!
 
 
 

@@ -2,7 +2,7 @@
 title: Events
 layout: Events
 description: Description
-menuPage: false
+menuPage: true
 priority: 3
 header: /assets/images/header-images/recruitment.jpg
 ---

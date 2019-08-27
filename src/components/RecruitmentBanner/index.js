@@ -1,10 +1,11 @@
 import React from "react"
-import PropTypes from "prop-types"
-import styles from "./index.css"
+import {Link} from "react-router"
+import "./index.css"
 
-const RecruitmentBanner = () => (
-  <span/>
-)
-
+const RecruitmentBanner = () => {
+  return(
+  <Link to={'/recruitment'}><div className="recruitmentBanner">Host recruitment open now! Apply here!</div></Link>
+  )
+}
 
 export default RecruitmentBanner

@@ -1,0 +1,166 @@
+.faq-content-body {
+    position: relative;
+}
+
+.primary-container {
+    display: flex;
+    justify-content: center;
+    max-width: none;
+    text-align: center;
+    margin: 0 0 2.625rem;
+    width: 100%;
+
+}
+
+.page-width-container {
+    box-sizing: border-box;
+    margin: 0;
+    max-width: 75.125rem;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.main-content {
+    max-width: 48rem;
+}
+
+.main-content, .page {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.no-article-survey {
+    background: transparent;
+    box-shadow: none;
+    margin: 2.625rem 0 0;
+}
+
+.page {
+    padding: 0;
+}
+.page {
+    margin: 2.625rem 0 0;
+}
+
+.page {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 1.5rem 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+.page {
+    border: thin solid #dadce0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+}
+
+.accordion-homepage {
+    border: thin solid #dadce0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+}
+
+.accordion-homepage .parent:first-child, .accordion-homepage .parent:first-child > h2 {
+    border-top-left-radius: .625rem;
+    border-top-right-radius: .625rem;
+}
+
+.accordion-homepage .parent:first-child {
+    border-top: none;
+}
+
+.accordion-homepage .parent {
+    position: relative;
+}
+
+.accordion-homepage .parent {
+    border-top: thin solid #dadce0;
+    padding: 0;
+}
+
+.hcfe article section {
+    padding: 1rem;
+}
+
+.accordion-homepage .parent:not(.selected) h2 {
+    cursor: pointer;
+}
+
+homepage .parent:first-child > h2 {
+    border-top-left-radius: .625rem;
+    border-top-right-radius: .625rem;
+}
+
+.accordion-homepage .parent h2 {
+    outline: none;
+    position: relative;
+}
+
+.accordion-homepage .parent:last-child, .accordion-homepage .parent:last-child:not(.selected) > h2 {
+    border-bottom-left-radius: .625rem;
+    border-bottom-right-radius: .625rem;
+}
+
+.accordion-homepage h2 {
+    font-size: .875rem;
+    text-align: left;
+    padding: 1rem 3.25rem 1rem 4rem;
+}
+
+.accordion-homepage h2 {
+    background-color: #ffffff;
+    color: #202124;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    margin: 0;
+    padding: .875rem 3.25rem .875rem 1.75rem;
+}
+
+.hcfe h2 {
+    font-size: 1.5rem;
+}
+
+.hcfe h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 2rem;
+    margin: 0 0 .25rem;
+}
+
+.hcfe h1, .hcfe h2, .hcfe h3, .hcfe h4, .hcfe h5 {
+    color: #202124;
+    font-family: "Bebas Neue", Helvetica, Arial;
+    font-weight: 400;
+}
+
+.chevron {
+    height: 0.5rem;
+    position: absolute;
+    right: 1.75rem;
+    top: calc(50% - .4rem);
+    width: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

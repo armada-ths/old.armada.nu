@@ -1,7 +1,7 @@
 import React from "react"
 // import PropTypes from "prop-types"
 import Page from "../Page"
-import FAQHeader from "../../components/FAQ/FAQHeader"
+import FAQContainer from "../../components/FAQ"
 
 
 
@@ -12,7 +12,7 @@ const FAQpage = (props) => {
       <div >
         <div >
             {/* <Page { ...props }  /> */}
-            <FAQHeader />
+            <FAQContainer />
         </div>
       </div>
   )

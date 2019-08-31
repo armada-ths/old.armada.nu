@@ -2,9 +2,9 @@ import React from "react"
 
 const FAQHeader = () => {
     return(
-        <div>
-            <p1>FAQ HEADER</p1>
-        </div>
+        <header>
+            <h2>How can we help you?</h2>
+        </header>
     )
 }
 

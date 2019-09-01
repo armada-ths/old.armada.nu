@@ -1,3 +1,6 @@
+@import "../../styles/_variables";
+@import "../../styles/global";
+
 .faq-content-body {
     position: relative;
 }
@@ -61,6 +64,7 @@
     border: thin solid #dadce0;
     border-radius: .5rem;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .accordion-homepage .parent:first-child, .accordion-homepage .parent:first-child > h2 {
@@ -143,6 +147,26 @@ homepage .parent:first-child > h2 {
     right: 1.75rem;
     top: calc(50% - .4rem);
     width: 1.5rem;
+}
+
+.children {
+    background-color: #a1f6da;
+    position: relative;
+    text-align: left;
+}
+
+.answer {
+    font-size: 1.0rem;
+    font-weight: 450;
+    line-height: 1.2rem;
+    display: inline-block;
+    padding: 1rem 2rem 1rem 2rem;
+    
+}
+
+.category-header {
+    text-align: left;
+    padding-left: 2rem;
 }
 
 

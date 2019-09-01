@@ -64,7 +64,7 @@
     border: thin solid #dadce0;
     border-radius: .5rem;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    
 }
 
 .accordion-homepage .parent:first-child, .accordion-homepage .parent:first-child > h2 {
@@ -122,6 +122,10 @@ homepage .parent:first-child > h2 {
     line-height: 1.25rem;
     margin: 0;
     padding: .875rem 3.25rem .875rem 1.75rem;
+}
+
+.accordion-homepage h2:hover {
+    background-color: rgb(236, 236, 236);
 }
 
 .hcfe h2 {

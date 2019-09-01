@@ -2,6 +2,7 @@ import React from "react"
 import './index.scss'
 import chevronDown from '../../../content/assets/pil_melon.png'
 import chevronUp from '../../../content/assets/pil_melon_up.png'
+import PropTypes from "prop-types";
 
 
 
@@ -32,6 +33,11 @@ class FAQQuestion extends React.Component {
             </section>
         )
     }
+}
+
+FAQQuestion.propTypes = {
+    question: PropTypes.string,
+    answer: PropTypes.string
 }
 
 export default FAQQuestion

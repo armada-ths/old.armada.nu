@@ -2,7 +2,6 @@ import React from "react"
 import {Link} from "react-router"
 import './recruitment-banner.scss';
 
-
 const RecruitmentBanner = () => {
   return(
   <Link to={'/recruitment'}>

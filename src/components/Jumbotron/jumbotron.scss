@@ -9,7 +9,7 @@
 }
 
 .buttoncontainer {
-    margin-top: 50px;
+    margin-top: 0px;
     .homepagebutton {
         display: inline-block;
         margin: 15px 15px 15px 15px;
@@ -101,7 +101,7 @@
     z-index: 2;
     text-align: center;
     height: 65%;
-    margin-top: 5px;
+    margin-top: 30px;
 
     img {
         max-height:90%;
@@ -111,8 +111,8 @@
     p{
       font-family: "Bebas Neue", "Helvetica", "Arial";
       font-weight: 300;
-      font-size: 4vh;
-      margin-top: 16px;
+      font-size: calc(14px + 0.8vw);
+      margin-top: 8px;
       margin-bottom: 16px;
       color: $text-color-light;
       text-align: center;
@@ -133,7 +133,7 @@
 
 @media screen and (max-width: 1200px) {
     .buttoncontainer {
-        width: 300px;
+        width: 600px;
         margin-top: -15px;
         margin-bottom: 10px;
 

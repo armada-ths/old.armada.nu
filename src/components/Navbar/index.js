@@ -48,7 +48,7 @@ class Navbar extends React.Component {
                 {links}
               </div>
             </nav>
-            <RecruitmentBanner />
+            <RecruitmentBanner displayType={"desktop"}/>
           </div>
         </header>
     )

@@ -1,23 +1,41 @@
-import React from "react"
-import {Link} from "react-router"
+import React from "react";
+import {Link} from "react-router";
+import PropTypes from "prop-types";
 import './recruitment-banner.scss';
 
-const RecruitmentBanner = () => {
-  const path = window.location.pathname;
-  //console.log(path);
+class RecruitmentBanner extends React.Component {
   
-  let page = false;
-  if(path.match("^/$")) { // If we're in Armada homepage
-    page = true;
+  render() {
+    const path = window.location.pathname;
+    //console.log(path);
+    
+    let page = false;
+    if (path.match("^/$")) { // If we're in Armada homepage
+      page = true;
+    }
+
+    let dp = this.props.displayType;
+    let content;
+
+    if (dp === "desktop") {
+      content = <Link to={'/recruitment'}><div className="recruitmentBanner">Host recruitment open now! Apply here!</div></Link>
+    } else if (dp === "mobile") {
+      content = <Link to={'/recruitment'}><div className="recruitmentBannerMobile">Host recruitment open now! Apply here!</div></Link>
+    }
+
+    if (!page)
+      content = <span></span>
+
+    return(
+      <div>{content}</div>
+    );
+  
   }
-
-  let content;
-  if(page)
-    content = <Link to={'/recruitment'}><div className="recruitmentBanner">Host recruitment open now! Apply here!</div></Link>
-  else
-    content = <span></span>
-
-  return(<div>{content}</div>)
+  
 }
 
-export default RecruitmentBanner
+RecruitmentBanner.propTypes = {
+  displayType: PropTypes.string
+};
+
+export default RecruitmentBanner;

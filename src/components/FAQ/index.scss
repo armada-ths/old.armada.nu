@@ -108,6 +108,11 @@ homepage .parent:first-child > h2 {
     border-bottom-right-radius: .625rem;
 }
 
+.accordion-homepage .parent:last-child .children {
+    border-bottom-left-radius: .625rem;
+    border-bottom-right-radius: .625rem;
+}
+
 .accordion-homepage h2 {
     font-size: .875rem;
     text-align: left;
@@ -124,8 +129,12 @@ homepage .parent:first-child > h2 {
     padding: .875rem 3.25rem .875rem 1.75rem;
 }
 
-.accordion-homepage h2:hover {
-    background-color: rgb(236, 236, 236);
+
+
+@media (hover: none) {
+    .accordion-homepage h2:hover {
+        background-color: rgb(236, 236, 236);
+    }
 }
 
 .hcfe h2 {

@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import './recruitment.scss';
+import Testimonials from '../Testimonials/index'
 import {StickyContainer, Sticky} from 'react-sticky';
 import {PropTypes} from 'prop-types';
 
@@ -64,7 +65,7 @@ class Recruitment extends React.Component {
                                 }
                             }
                         </Sticky>
-
+                        <Testimonials/>
                         {groups}
 
                     </StickyContainer>

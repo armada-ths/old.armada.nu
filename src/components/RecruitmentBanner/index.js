@@ -6,7 +6,10 @@ import './recruitment-banner.scss';
 class RecruitmentBanner extends React.Component {
   
   render() {
-    const path = window.location.pathname;
+    var path = "/"
+    if (typeof window !== 'undefined') {
+      path = window.location.pathname;
+    }
     //console.log(path);
     
     let page = false;

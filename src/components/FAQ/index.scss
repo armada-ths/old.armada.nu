@@ -135,6 +135,38 @@ homepage .parent:first-child > h2 {
     .accordion-homepage h2:hover {
         background-color: rgb(236, 236, 236);
     }
+    
+}
+
+.terre {
+    margin-top: 100px;
+    width:50%; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media screen and (max-width: 600px) {
+    .terre {
+        width: 80%;
+    }
+}
+
+.faq-search-form {
+    input{
+        border: solid;
+        border-width: thin;
+        border-radius: 4px;
+        padding: 0.5em;
+        width: 80%;
+        max-width: 40rem;
+        font-size: 18px;
+      }
+      input:focus {
+        outline: 0;
+        box-shadow: 0 0 4px;
+      //border: 0.15em solid #e4e4e4;
+      }
 }
 
 .hcfe h2 {
@@ -166,6 +198,8 @@ homepage .parent:first-child > h2 {
     background-color: #a1f6da;
     position: relative;
     text-align: left;
+    transition: 300ms max-height ease;
+    overflow: hidden;
 }
 
 .answer {

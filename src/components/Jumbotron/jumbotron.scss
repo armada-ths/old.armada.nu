@@ -25,6 +25,12 @@
     }
 }
 
+body.header-invisible {
+    #header {
+        display: none;
+    }
+}
+
 #header {
     position: relative;
     min-height: $header-min-height;

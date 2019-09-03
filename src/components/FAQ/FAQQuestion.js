@@ -25,11 +25,11 @@ class FAQQuestion extends React.Component {
                     {this.props.question}
                 <img src={this.state.drawerOpen ? chevronUp : chevronDown} className='chevron' draggable="false"></img>
                 </h2>
-                {this.state.drawerOpen &&
-                <div className="children" style={{marginTop: 0}} >
+                
+                <div className="children" style={{marginTop: 0, maxHeight: this.state.drawerOpen ? '500px' : 0}} >
                     <p2 className="answer">{this.props.answer}</p2>
                 </div>
-                }
+                
             </section>
         )
     }

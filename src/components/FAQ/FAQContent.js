@@ -18,7 +18,9 @@ class FAQContent extends React.Component {
                 <section className='primary-container'>
                     <div className='page-width-container'>
                         <div className='main-content'>
-                            
+                            {this.props.faq_data.length == 0 && 
+                            <p style={{marginTop: '30px', textAlign: 'center'}}>No results found. Please broaden your search</p>
+                            }
                             {this.props.faq_data.map((category, idx) => {
                                 return(
                                     <article className='no-article-survey'>

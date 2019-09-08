@@ -1,0 +1,28 @@
+@import "../../styles/global";
+
+.recruitmentBanner, .recruitmentBannerMobile {
+  text-align: center;
+  color: white;
+  background-color: #00D790;
+  font-size: 1.5em;
+  text-transform: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.recruitmentBanner:hover, .recruitmentBannerMobile:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+  .recruitmentBanner {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $breakpoint-mobile-flipped) {
+  .recruitmentBannerMobile {
+    display: none;
+  }
+}

@@ -5,6 +5,7 @@ import Partners from '../../components/Partners';
 import Page from "../Page"
 import PhotoGallery from "../../components/PhotoGallery";
 import RecruitmentBanner from "../../components/RecruitmentBanner";
+import Testimonials from '../../components/Testimonials/'
 
 const Homepage = (props) => {
 
@@ -20,6 +21,7 @@ const Homepage = (props) => {
           <Partners /> */}
           <h1>Armada in pictures</h1>
           <PhotoGallery photoCount={6} />
+          <Testimonials/>
           <Partners/>
       </div>
     </Page>

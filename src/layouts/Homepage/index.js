@@ -4,7 +4,7 @@ import Partners from '../../components/Partners';
 // import NewEvents from "../../components/NewEvents"
 import Page from "../Page"
 import PhotoGallery from "../../components/PhotoGallery";
-import RecruitmentBanner from "../../components/RecruitmentBanner";
+// import RecruitmentBanner from "../../components/RecruitmentBanner";
 
 const Homepage = (props) => {
 
@@ -14,7 +14,7 @@ const Homepage = (props) => {
   return (
     <div>
     <Page { ...props }>
-      <RecruitmentBanner displayType={"mobile"}/>
+      {/* <RecruitmentBanner displayType={"mobile"}/> */}
       <div className="body">
           {/* <NewEvents />
           <Partners /> */}

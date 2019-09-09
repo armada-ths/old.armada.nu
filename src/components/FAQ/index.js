@@ -59,7 +59,6 @@ class FAQContainer extends React.Component {
             return group
         }).filter(group => group.body.length > 0)
 
-        console.log(copy)
         this.setState({
             searchResult: copy
         })

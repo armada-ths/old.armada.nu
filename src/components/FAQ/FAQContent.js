@@ -1,5 +1,6 @@
 import React from "react"
 import './index.scss'
+import PropTypes from "prop-types";
 import FAQQuestion from './FAQQuestion'
 
 
@@ -21,7 +22,7 @@ class FAQContent extends React.Component {
                             {this.props.faq_data.length == 0 && 
                             <p style={{marginTop: '30px', textAlign: 'center'}}>No results found. Please broaden your search</p>
                             }
-                            {this.props.faq_data.map((category, idx) => {
+                            {this.props.faq_data.map((category) => {
                                 return(
                                     <article className='no-article-survey'>
                                     <h3 className="category-header">{category.title}</h3>
@@ -42,5 +43,9 @@ class FAQContent extends React.Component {
         )
     }
 }
+
+FAQContent.propTypes = {
+    faq_data: PropTypes.string
+  }
 
 export default FAQContent

@@ -1,6 +1,4 @@
 import React from "react"
-// import PropTypes from "prop-types"
-import Page from "../Page"
 import FAQContainer from "../../components/FAQ"
 
 
@@ -24,7 +22,6 @@ class FAQpage extends React.Component {
     return (
       <div >
         <div >
-            {/* <Page { ...props }  /> */}
             <FAQContainer />
         </div>
       </div>

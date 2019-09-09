@@ -1,5 +1,6 @@
 import React from "react"
 import armadaLogo from '../../../content/assets/armada_round_logo_green.png'
+import PropTypes from "prop-types";
 
 const FAQHeader = (props) => {
     return(
@@ -12,6 +13,10 @@ const FAQHeader = (props) => {
         </div>
         
     )
+}
+
+FAQHeader.propTypes = {
+    onQuestionUpdate: PropTypes.string
 }
 
 export default FAQHeader

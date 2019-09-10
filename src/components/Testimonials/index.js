@@ -19,6 +19,9 @@ const Testimonials = () => {
     {name: "Linnea", role: "Head of Banquet", statement: "\"THS Armada - probably the best student organization in the world\"", image: "/assets/linnea.jpg"},
     {name: "", role: "", statement: "", image: ""},
   ];
+
+  // const person1 = Math.floor(Math.random() * 5);
+  // const person2 = Math.floor(Math.random() * 4) + 5;
   
   return(
       <div className="testimonials">

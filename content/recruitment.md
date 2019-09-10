@@ -14,9 +14,7 @@ In 1981, someone realised that students from KTH and their future employers need
 
 The Armada Team consist of KTH students and the THS Armada project continues until November 2019. It is an amazing opportunity for personal development, new friendships and experiences that you would not get in any class! The Armada Team is divided into four subgroups. Each subgroup works within separate areas, but all subgroups need to cooperate to create the Armada Experience. 
 
-The application for the Armada Host roles is now open!
-
-**Click on a role below to get more information about it.**
+The application for the Armada Host roles is now closed!
 
 ## Information
 

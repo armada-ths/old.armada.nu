@@ -16,7 +16,7 @@ const FAQHeader = (props) => {
 }
 
 FAQHeader.propTypes = {
-    onQuestionUpdate: PropTypes.string
+    onQuestionUpdate: PropTypes.func
 }
 
 export default FAQHeader

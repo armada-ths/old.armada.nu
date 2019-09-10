@@ -22,9 +22,9 @@ class FAQContent extends React.Component {
                             {this.props.faq_data.length == 0 && 
                             <p style={{marginTop: '30px', textAlign: 'center'}}>No results found. Please broaden your search</p>
                             }
-                            {this.props.faq_data.map((category) => {
+                            {this.props.faq_data.map((category, i) => {
                                 return(
-                                    <article className='no-article-survey'>
+                                    <article key={i} className='no-article-survey'>
                                     <h3 className="category-header">{category.title}</h3>
                                     <nav className='accordion-homepage'>
                                     {category.body.map((faq, i) => {
@@ -45,7 +45,7 @@ class FAQContent extends React.Component {
 }
 
 FAQContent.propTypes = {
-    faq_data: PropTypes.string
+    faq_data: PropTypes.array
   }
 
 export default FAQContent

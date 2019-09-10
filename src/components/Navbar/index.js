@@ -1,6 +1,5 @@
 import React from "react"
 import {Link} from "react-router"
-
 import "./index.scss"
 import PropTypes from "prop-types";
 // import RecruitmentBanner from "../RecruitmentBanner";
@@ -30,7 +29,7 @@ class Navbar extends React.Component {
 
   render() {
     var links = this.state.pages.map(page => (
-        <Link onClick={this.toggleExpand} to={page.__url}>
+        <Link key={page.title} onClick={this.toggleExpand} to={page.__url}>
           {page.title}
           </Link>
     ));
@@ -58,7 +57,7 @@ class Navbar extends React.Component {
 }
 
 Navbar.propTypes = {
-	whiteHB: PropTypes.boolean,
+	whiteHB: PropTypes.func,
 }
 
 export default Navbar

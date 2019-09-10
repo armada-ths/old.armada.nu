@@ -4,7 +4,8 @@ import Partners from '../../components/Partners';
 // import NewEvents from "../../components/NewEvents"
 import Page from "../Page"
 import PhotoGallery from "../../components/PhotoGallery";
-import RecruitmentBanner from "../../components/RecruitmentBanner";
+// import RecruitmentBanner from "../../components/RecruitmentBanner";
+import Testimonials from "../../components/Testimonials";
 
 const Homepage = (props) => {
 
@@ -14,12 +15,13 @@ const Homepage = (props) => {
   return (
     <div>
     <Page { ...props }>
-      <RecruitmentBanner displayType={"mobile"}/>
+      {/* <RecruitmentBanner displayType={"mobile"}/> */}
       <div className="body">
           {/* <NewEvents />
           <Partners /> */}
           <h1>Armada in pictures</h1>
           <PhotoGallery photoCount={6} />
+          <Testimonials/>
           <Partners/>
       </div>
     </Page>

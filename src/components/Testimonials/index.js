@@ -20,8 +20,8 @@ const Testimonials = () => {
     {name: "", role: "", statement: "", image: ""},
   ];
 
-  // const person1 = Math.floor(Math.random() * 5);
-  // const person2 = Math.floor(Math.random() * 4) + 5;
+  const person1 = Math.floor(Math.random() * 5);
+  const person2 = Math.floor(Math.random() * 4) + 5;
   
   return(
       <div className="testimonials">
@@ -29,21 +29,21 @@ const Testimonials = () => {
         <Zoom>
           <div className="flex-container">
             <div className="personal-testimonial">
-              <div className="testimonial-photo"><img className="personal-picture" src={testimonialObjects[0].image}/></div>
+              <div className="testimonial-photo"><img className="personal-picture" src={testimonialObjects[person1].image}/></div>
               <div className="testimonial-info">
-                <div className="testimonial-name">{testimonialObjects[0].name}</div>
-                <div className="testimonial-position">{testimonialObjects[0].role}</div>
+                <div className="testimonial-name">{testimonialObjects[person1].name}</div>
+                <div className="testimonial-position">{testimonialObjects[person1].role}</div>
                 <div className="testimonial-break">‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</div>
-                <div className="testimonial-text">{testimonialObjects[0].statement}</div>
+                <div className="testimonial-text">{testimonialObjects[person1].statement}</div>
               </div>
             </div>
             <div className="personal-testimonial">
-              <div className="testimonial-photo"><img className="personal-picture" src={testimonialObjects[1].image}/></div>
+              <div className="testimonial-photo"><img className="personal-picture" src={testimonialObjects[person2].image}/></div>
               <div className="testimonial-info">
-                <div className="testimonial-name">{testimonialObjects[1].name}</div>
-                <div className="testimonial-position">{testimonialObjects[1].role}</div>
+                <div className="testimonial-name">{testimonialObjects[person2].name}</div>
+                <div className="testimonial-position">{testimonialObjects[person2].role}</div>
                 <div className="testimonial-break">‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</div>
-                <div className="testimonial-text">{testimonialObjects[1].statement}</div>
+                <div className="testimonial-text">{testimonialObjects[person2].statement}</div>
               </div>
             </div>
           </div>

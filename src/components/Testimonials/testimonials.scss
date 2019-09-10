@@ -1,4 +1,6 @@
 @import "../../styles/_variables";
+@import "../../styles/global";
+
 .flex-container {
     display: flex;
   }
@@ -10,6 +12,17 @@
 
 .testimonial-photo{
     width: 30%;
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .flex-container {
+      display: block;
+    }
+
+    .personal-testimonial {
+        width: 100%;
+        margin-top: 1em;
+    }
 }
 
 .testimonial-info{

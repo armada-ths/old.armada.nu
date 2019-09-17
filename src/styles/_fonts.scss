@@ -1,5 +1,8 @@
-$font-regular: "Lato", "Helvetica", "Arial";
-$font-title: "Bebas Neue", "Helvetica", "Arial";
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+$font-regular: 'Lato', sans-serif;
+$font-title: 'Oswald', sans-serif;
 
 $title-font-size: 3em;
 $title-big-font-size: 80px;

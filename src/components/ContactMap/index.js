@@ -1,7 +1,7 @@
 import React from 'react';
 import './contact-map.scss';
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyD2JfWJkjCi244BhwBTiRbZgaSQCC6SpmM';
+const GOOGLE_MAPS_API_KEY = '';
 
 class ContactMap extends React.Component {
     constructor(props) {

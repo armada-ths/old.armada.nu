@@ -2,14 +2,17 @@
 @import "../../styles/_fonts";
 
 .hamburger{
-  margin-top: 0.5em;
+  //display: block;
+  margin-top: 0em;
 	font-size: 2em;
   cursor: pointer;
 }
 
 .navbar-cross{
-		font-size: 4em;
-		cursor: pointer;
+  //display: block;
+  font-size: 4em;
+  margin-top: -0.2em;
+  cursor: pointer;
 }
 
 #navbar{

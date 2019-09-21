@@ -2,14 +2,13 @@
 @import "../../styles/_fonts";
 
 .hamburger{
-	font-size: 1.5em;
-	cursor: pointer;
+  margin-top: 0.5em;
+	font-size: 2em;
+  cursor: pointer;
 }
 
 .navbar-cross{
-    margin-top:-5px;
 		font-size: 4em;
-		margin-bottom: -0.5em;
 		cursor: pointer;
 }
 
@@ -36,7 +35,8 @@
     //border-bottom-left-radius: 10px;
     //border-bottom-right-radius: 10px;
     display: inline-block;
-    padding: 15px 10px 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
     .menu-hamburger{
         display:none;
@@ -62,26 +62,27 @@
 
 
 @media screen and (max-width: 1200px) {
-
-#navbar{
-		font-size: 0.7em;
-}
+  #navbar{
+      font-size: 1.2em;
+  }
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-    #navbar{
-				top: 1em;
-				overflow: auto;
-				position: absolute;
+  
+  #navbar{
+				overflow: hidden;
+        position: absolute;
+        height: 100%;
 
         .menu-wrapper {
-            width: 80%;
-            padding: 15px 10px 10px 10px;
+            width: 100%;
+            min-height: 100vh;
 
             .menu-hamburger{
-                padding-right:10px;
                 text-align: right;
+                margin-right: 1em;
                 display: block;
+                overflow: auto;
             }
 
 						.white {
@@ -89,21 +90,18 @@
 						}
 
 						.black {
-							color: $licorice;
+							color: white;
 						}
 
             .menu{
                 display: flex;
                 flex-direction: column;
-                text-align: left;
+                text-align: center;
                 line-height: 1.8;
                 font-size: 1.5em;
                 a {
-                    border-right: none;
-                    border-bottom: 1px solid;
                     &:hover{
-                      border-right: none !important;
-                      border-bottom: 1px solid $text-color-light;
+                      color: white !important;
                     }
                 }
                 a:last-child{border-bottom: 0 !important;}
@@ -117,12 +115,12 @@
 
         .menu-wrapper.hidden {
             background-color: transparent;
-            text-align: right;
+            text-align: center;
             display: inline-block;
         }
 
         .menu-wrapper.visible{
-            background-color: $licorice;
+            background-color: #00D790;
         }
     }
 

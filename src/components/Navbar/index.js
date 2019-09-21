@@ -19,8 +19,23 @@ class Navbar extends React.Component {
     }
     this.state = {
       "expanded": false,
+      "mobile": false,
       pages
     };
+  }
+
+  componentDidMount() {
+    if(window.innerWidth < 850) {
+      this.setState({
+        mobile: true
+      });
+    } else {
+      this.setState({
+        mobile: false
+      });
+    }
+    //eslint-disable-next-line no-console
+    console.log(window.innerWidth);
   }
 
 
@@ -32,16 +47,16 @@ class Navbar extends React.Component {
     var links = this.state.pages.map(page => (
         <Link onClick={this.toggleExpand} to={page.__url}>
           {page.title}
-          </Link>
+        </Link>
     ));
 		let color = this.props.whiteHB ? "white" : "black";
 
     let navbar = (
         <header>
-          <div id="navbar">
+          <div id="navbar" style={this.state.mobile ? ((this.state.expanded && this.state.mobile) ? {position:"relative"} : {position:"absolute"}) : null}>
             <nav className={"menu-wrapper " + (this.state.expanded ? "visible" : "hidden")}>
-              <div className={"menu-hamburger " + color } onClick={this.toggleExpand}>
-                {!this.state.expanded ? <div className="hamburger">☰</div> : (<div className="navbar-cross">˟</div>)}
+              <div className={"menu-hamburger " + color }>
+                {!this.state.expanded ? <div className="hamburger"><span onClick={this.toggleExpand}>☰</span></div> : (<div className="navbar-cross"><span onClick={this.toggleExpand}>˟</span></div>)}
               </div>
               <div className={"menu " + (this.state.expanded ? "visible" : "hidden")}>
                 <Link onClick={this.toggleExpand} to='/'>HOME</Link>

@@ -19,6 +19,7 @@ class Navbar extends React.Component {
     this.state = {
       "expanded": false,
       "mobile": false,
+      "currentPage": window.location.pathname,
       pages
     };
   }
@@ -34,16 +35,17 @@ class Navbar extends React.Component {
       });
     }
     //eslint-disable-next-line no-console
-    console.log(window.innerWidth);
+    console.log(this.state.currentPage);
   }
 
   toggleExpand = () => {
     this.setState({"expanded": !this.state.expanded});
+    this.setState({"currentPage": window.location.pathname});
   }
 
   render() {
     var links = this.state.pages.map(page => (
-        <Link onClick={this.toggleExpand} to={page.__url}>
+        <Link className={page.__url.toLowerCase().includes(this.state.currentPage) && !this.state.currentPage.match("^/$")  ? "active-page" : null} onClick={this.toggleExpand} to={page.__url}>
           {page.title}
         </Link>
     ));
@@ -57,7 +59,7 @@ class Navbar extends React.Component {
                 {!this.state.expanded ? <div className="hamburger"><span onClick={this.toggleExpand}>☰</span></div> : (<div className="navbar-cross"><span onClick={this.toggleExpand}>˟</span></div>)}
               </div>
               <div className={"menu " + (this.state.expanded ? "visible" : "hidden")}>
-                <Link onClick={this.toggleExpand} to='/'>HOME</Link>
+                <Link className={this.state.currentPage.match("^/$") ? "active-page" : null} onClick={this.toggleExpand} to='/'>HOME</Link>
                 {links}
               </div>
             </nav>

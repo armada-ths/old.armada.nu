@@ -46,7 +46,7 @@
     .menu{
       a {
         display: inline-block;
-        border-right: 1px solid;
+        border-right: 1px white solid;
         text-decoration: none;
         transition: color 0.4s;
         color: $text-color-light;
@@ -55,6 +55,9 @@
           color: $melon !important;
           border-right: 1px solid white !important;
         }
+      }
+      .active-page {
+        color: $melon !important;
       }
       a:last-child{border-right: 0 !important;}
     }
@@ -100,6 +103,12 @@
                 text-align: center;
                 line-height: 1.8;
                 font-size: 1.5em;
+                .active-page {
+                  color: black !important;
+                  &:hover{
+                    color: black !important;
+                  }
+                }
                 a {
                     color: white !important;
                     border-right: none !important;

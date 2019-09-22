@@ -101,8 +101,12 @@
                 line-height: 1.8;
                 font-size: 1.5em;
                 a {
+                    color: white !important;
+                    border-right: none !important;
                     &:hover{
                       color: white !important;
+                      text-decoration: underline !important;
+                      border-right: none !important;
                     }
                 }
                 a:last-child{border-bottom: 0 !important;}

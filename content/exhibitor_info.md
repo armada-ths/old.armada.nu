@@ -19,7 +19,9 @@ Armada is happy to announce that we have hired DHL to handle the transportation.
 3. One EUR-pallet maximum measures 120x80x200 cm and maximum weight 950 kg
 4. One cage trolley maximum measures 120x80x200 cm and maximum weight 950 kg
 
-![dhl](/assets/dhl.png)
+<p style="text-align:center;">
+<img src="/assets/dhl.png" height="400em" width="400em"/>
+</p>
 
 All exhibitors who wants to send something bulky or more goods than what is included in one of the options above has to negotiate a price directly with DHL by filling in goods information in the linked booking PDF below and emailing it to DHL. They will then return with a price for transport. This will be billed directly by DHL to the concerning exhibitor. Please note that only bookings made through our Armada Transport form to DHL will be granted access to use the loading dock in the buildings on KTH Campus. This means you will not be able to hire your own transportation company unless you have the capability to carry your goods in by hand through the main entrance. This is due to strict limitations of space and accessibility in the fair buildings.
 

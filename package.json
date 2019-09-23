@@ -140,6 +140,7 @@
     "react-chartjs": "^1.2.0",
     "react-easter": "^1.0.6",
     "react-google-analytics": "^0.2.0",
+    "react-google-maps": "^7.0.0",
     "react-page-click": "^4.0.2",
     "react-reveal": "^1.2.2",
     "react-select": "^2.1.0",

@@ -73,7 +73,7 @@ class Navbar extends React.Component {
 }
 
 Navbar.propTypes = {
-	whiteHB: PropTypes.boolean,
+	whiteHB: PropTypes.func,
 }
 
 export default Navbar

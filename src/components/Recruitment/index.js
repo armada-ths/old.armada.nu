@@ -65,7 +65,6 @@ class Recruitment extends React.Component {
                                 }
                             }
                         </Sticky>
-                        <Testimonials/>
                         {groups}
 
                     </StickyContainer>
@@ -73,7 +72,10 @@ class Recruitment extends React.Component {
 
                 )
         } else {
-            return (<h4> Application is closed, stay tuned for new roles </h4>);
+            return (<div>
+                <h4> Application is closed, stay tuned for new roles </h4>
+                <Testimonials/>
+            </div>);
         }
     }
 }

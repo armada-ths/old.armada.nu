@@ -10,24 +10,24 @@ header: /assets/for_exhibitors.jpg
 
 ## Fair Schedule
 
-**Arrival (18 November) **
+**Arrival (18th of November) **
 
 * The company goods will arrive via Armada Transport throughout the morning.
 * Companies are welcome to check in and construct their booths from 13.00 to 20.00
 
-**Fair day 1 (19 November)**
+**Fair day 1 (19th of November)**
 
 * Companies are welcome to check in and construct  their booths from 08.00 to 10.00
 * The fair opens  at: 10.00
 * The fair closes at: 16.00
 * The Banquet starts at: 18.00 
 
-**Fair day 2 (20 November)**
+**Fair day 2 (20th of November)**
 
 * The fair opens at: 10.00
 * The fair closes at: 15.00
 
-**The day after (21 November)**
+**The day after (21st of November)**
 
 * The company goods will be picked up from campus and returned via Armada Transport.
 

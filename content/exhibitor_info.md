@@ -31,7 +31,7 @@ header: /assets/for_exhibitors.jpg
 
 * The company goods will be picked up from campus and returned via Armada Transport.
 
-_Note: This is a preliminary schedule and some changes may occur_
+_Note: This is a preliminary schedule and some changes may occur._
 
 ## Transport
 

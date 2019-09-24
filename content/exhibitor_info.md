@@ -8,7 +8,32 @@ header: /assets/for_exhibitors.jpg
 ---
 # Information for Exhibitors
 
-## TRANSPORT
+## Fair Schedule
+
+**Arrival (18 November) **
+
+* The company goods will arrive via Armada Transport throughout the morning.
+* Companies are welcome to check in and construct their booths from 13.00 to 20.00
+
+**Fair day 1 (19 November)**
+
+* Companies are welcome to check in and construct  their booths from 08.00 to 10.00
+* The fair opens  at: 10.00
+* The fair closes at: 16.00
+* The Banquet starts at: 18.00 
+
+**Fair day 2 (20 November)**
+
+* The fair opens at: 10.00
+* The fair closes at: 15.00
+
+**The day after (21 November)**
+
+* The company goods will be picked up from campus and returned via Armada Transport.
+
+_Note: This is a preliminary schedule and some changes may occur_
+
+## Transport
 
 This year Armada is proud to present the concept Armada Transport which includes free transportation (limitations apply below) of your goods to and from the fair. Your goods will be placed at your booth spot upon your arrival. The background behind offering this service is our aim to reduce Armada's impact on the environment and ensure a smooth exhibitor experience. We believe that it is more sustainable to have one transportation company transporting goods with a fewer amount of trucks driving on the road, rather than letting everyone find their own transportation solution leading to a higher climate impact with more trucks driving to KTH and more complex logistics.
 

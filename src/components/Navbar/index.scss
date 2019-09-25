@@ -4,7 +4,7 @@
 .hamburger{
   display: block;
   margin-top: 0em;
-	font-size: 2em;
+  font-size: 2em;
 }
 
 .navbar-cross{
@@ -76,11 +76,13 @@
   #navbar{
 				overflow: hidden;
         position: absolute;
-        height: 100%;
 
         .menu-wrapper {
             width: 100%;
-            min-height: 100vh;
+            
+            .visible {
+              height: 100vh;
+            }
 
             .menu-hamburger{
                 text-align: right;
@@ -104,9 +106,9 @@
                 line-height: 1.8;
                 font-size: 1.5em;
                 .active-page {
-                  color: black !important;
+                  //color: black !important;
                   &:hover{
-                    color: black !important;
+                    //color: black !important;
                   }
                 }
                 a {

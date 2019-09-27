@@ -67,6 +67,7 @@
 
 @media screen and (max-width: 1200px) {
   #navbar{
+      pointer-events: none;
       font-size: 1.2em;
   }
 }
@@ -85,6 +86,7 @@
             }
 
             .menu-hamburger{
+                pointer-events: all;
                 text-align: right;
                 margin-right: 1em;
                 display: block;
@@ -100,6 +102,7 @@
 						}
 
             .menu{
+                pointer-events: all;
                 display: flex;
                 flex-direction: column;
                 text-align: center;

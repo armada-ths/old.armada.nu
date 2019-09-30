@@ -19,7 +19,7 @@ class Navbar extends React.Component {
     this.state = {
       "expanded": false,
       "mobile": false,
-      "currentPage": window.location.pathname,
+      "currentPage": "/home",
       pages
     };
   }
@@ -40,7 +40,7 @@ class Navbar extends React.Component {
 
   toggleExpand = () => {
     this.setState({"expanded": !this.state.expanded});
-    this.setState({"currentPage": window.location.pathname});
+    //this.setState({"currentPage": window.location.pathname}); // window.location doesn't work in production...
   }
 
   render() {

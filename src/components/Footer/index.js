@@ -27,8 +27,8 @@ class Footer extends React.Component {
         let fb_logo = require('../../../content/assets/images/footer/facebook-logo.png');
         let insta_logo = require('../../../content/assets/images/footer/instagram-logo.png');
         let linkedin_logo = require('../../../content/assets/images/footer/linkedin-logo.png');
-        let google_play = require('../../../content/assets/images/footer/google-play.png');
-        let app_store = require('../../../content/assets/images/footer/app-store.png');
+        //let google_play = require('../../../content/assets/images/footer/google-play.png');
+        //let app_store = require('../../../content/assets/images/footer/app-store.png');
 
         this.state = {
             thsOrgs: [
@@ -59,7 +59,8 @@ class Footer extends React.Component {
                     link: "https://www.linkedin.com/company/armada",
                     src: linkedin_logo
                 },
-            ],
+            ]
+            /*
             apps: [
                 {
                     name: "google play",
@@ -72,6 +73,7 @@ class Footer extends React.Component {
                     src: app_store
                 },
             ]
+            */
         };
     }
 
@@ -115,10 +117,6 @@ class Footer extends React.Component {
                 {this.createTemplate(this.state.thsOrgs, "logo")}
                 <div className="divider"></div>
                 {this.createTemplate(this.state.social, "logo")}
-                <div className="divider"></div>
-                <div className="apps-container">
-                    {this.createTemplate(this.state.apps, "app")}
-                </div>
                 </div>
             </div>
         );

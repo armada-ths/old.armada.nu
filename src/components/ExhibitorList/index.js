@@ -396,16 +396,16 @@ class ExhibitorList extends React.Component {
             {/*TODO: remove blue box around special filters*/}
             <div className="filter-special">
 
-              <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc}
-                     onClick={() => this.diversityFilter()}
-                     onMouseEnter={() => this.cssShine('purple')}
-                     onMouseLeave={() => this.cssShineOff()}
+              <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc} disabled
+                     //onClick={() => this.diversityFilter()}
+                     //onMouseEnter={() => this.cssShine('purple')}
+                     //onMouseLeave={() => this.cssShineOff()}
               />
 
-              <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc}
-                     onClick={() => this.sustainabilityFilter()}
-                     onMouseEnter={() => this.cssShine('green')}
-                     onMouseLeave={() => this.cssShineOff()}
+              <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc} disabled
+                     //onClick={() => this.sustainabilityFilter()}
+                     //onMouseEnter={() => this.cssShine('green')}
+                     //onMouseLeave={() => this.cssShineOff()}
               />
 
             </div>

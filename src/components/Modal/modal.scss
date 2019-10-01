@@ -226,6 +226,40 @@ a:hover {
       }
     }
   }
+  .modalcontent {
+  
+    .modal-container {
+      display: block;
+      height: auto;
+    }
+    .modal-flex-1 {
+      position: relative;
+      width: 100%;
+      margin-top: 5%;
+      text-align: center;
+      img {
+        max-height: 30vh;
+        width: auto;
+      }
+      .modal-title {
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+    }
+    .modal-flex-2 {
+      width: 100%;
+      text-align: center;
+    }
+    .job-location-container {
+      display: block !important ;
+      .job-container {
+        width: 100%;
+      }
+      .location-container {
+        width: 100%;
+      }
+    }
+  }
   .modalcontent .modal-property{
     padding: 1em 0em 1em 0em;
   }

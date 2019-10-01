@@ -33,11 +33,10 @@
   margin: auto;
   top: 0;
   width: 50%;
-  border-radius: 5px;
+  //border-radius: 5px;
   background: white; //rgba(255, 255, 255, 0.9);
-  margin-bottom: 3em;
-  margin-top: 3em;
-  padding-bottom: 1em;
+  
+  //padding-bottom: 1em;
 }
 .shade {
   position: fixed;
@@ -173,13 +172,14 @@ a:hover {
 
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-
+  
   .popup {
-    width: 90vw;
+    width: 100vw;
+    overflow: auto !important;
   }
   .cross {
     position: fixed;
-    background-color: $grape;
+    color: black;
     right: 15px;
     top: 0px;
   }

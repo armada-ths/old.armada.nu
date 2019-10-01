@@ -281,7 +281,7 @@
   border: solid;
   border-width: thin;
   width: 6.6em;
-  height: 6.7em;
+  height: 7em;
   padding: 5px 5px 5px 5px;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -304,11 +304,11 @@
   }
 }
 .exhibitor-feed .exhibitor-box p{
-  margin-top: -35px;
+  margin-top: -40px;
   color: $licorice;
   text-align: center;
   line-height: 110%;
-  font-size: 0.6em;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -386,8 +386,8 @@
   justify-content: flex-end;
   img{
     padding: 0.3em;
-    width: 1em;
-    max-height: 1.1em;
+    width: 1.2em;
+    max-height: 1.2em;
   }
 }
 
@@ -540,12 +540,12 @@
         }
         p{
           font-size: 11px;
-          margin-top: -30px;
+          margin-top: -40px;
           line-height: $line-height-mobile;
         }
         .corner-special{
           img{
-            width: 20px;
+            width: 1.2em;
           }
         }
       }

@@ -119,7 +119,7 @@ class ExhibitorList extends React.Component {
 
             <div className="description-container">
               {/*<h3>{exhibitor.name}</h3>*/}
-              <h5 className="purpose-text">{exhibitor.purpose}</h5>
+              <h4 className="purpose-text">{exhibitor.purpose}</h4>
               <br/>
               <div className="description">
                 {exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>)}
@@ -404,6 +404,7 @@ class ExhibitorList extends React.Component {
                 className="basic-multi-select"
                 classNamePrefix="select"
             />
+            
             <div className="supercontainer">
               <div className="dropdown-container drop1">
                 <div className="select">
@@ -484,8 +485,7 @@ const ExhibitorItem = (props) => {
           <img src={ais + props.exhibitor.logo_squared}/>
         </div>
         <p> {props.exhibitor.name} </p>
-        {props.exhibitor.diversity == true
-            ? <div className='corner-special'><img src='/assets/diversity_a.svg'/></div> : null}
+        <div className='corner-special'><img src='/assets/diversity-black-nolabel.png'/></div>
         {props.exhibitor.sustainability == true
             ? <div className='corner-special'><img src='/assets/sustainability.svg'/></div> : null}
       </div>)

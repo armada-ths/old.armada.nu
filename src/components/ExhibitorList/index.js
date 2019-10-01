@@ -103,43 +103,51 @@ class ExhibitorList extends React.Component {
     //TODO: add more data to modal. locations etc, change how it's displayed
     return (
         <Modal onClose={() => this.showModal(null)}>
-          <div className="modalimage-exhib">
-            <img src={ais + exhibitor.logo_squared} alt={exhibitor.name + " logo"}/>
-          </div>
+          <div className="modal-container">
+            <div className="modal-flex-1">
+              <div className="modalimage-exhib">
+                <img src={ais + exhibitor.logo_squared} alt={exhibitor.name + " logo"}/>
+              </div>
+              <h1 className="modal-title">{exhibitor.name}</h1>
+            </div>
+            <div className="modal-flex-2">
+              <div className="modalinfo">
+                <div className='modal-property'>
+                  <div className='icon-group'>
+                    {exhibitor.diversity == true
+                        ? <img className='special' src='/assets/diversity_a.svg'/> : null}
+                    {exhibitor.sustainability == true
+                        ? <img className='special' src='/assets/sustainability.svg'/> : null}
+                  </div>
+                </div>
 
-          <div className="modalinfo">
-            <div className='modal-property'>
-              <div className='icon-group'>
-                {exhibitor.diversity == true
-                    ? <img className='special' src='/assets/diversity_a.svg'/> : null}
-                {exhibitor.sustainability == true
-                    ? <img className='special' src='/assets/sustainability.svg'/> : null}
+                <div className="description-container">
+                  {/*<h3>{exhibitor.name}</h3>*/}
+                  <h4 className="purpose-text">{exhibitor.purpose}</h4>
+                  <br/>
+                  <div className="description">
+                    {exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>)}
+                  </div>
+                </div>
+                
+                <div className="job-location-container">
+                  {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
+
+                  {exhibitor.locations.length > 0 &&
+                  <div className="location-container">
+
+                    <h3>Locations</h3>
+                    <ul>
+                      {exhibitor.locations.map((loc, index) =>
+                          <li key={index} className="location-section">
+                            {loc.name}
+                          </li>)}
+                    </ul>
+                  </div>
+                  }
+                </div>
               </div>
             </div>
-
-            <div className="description-container">
-              {/*<h3>{exhibitor.name}</h3>*/}
-              <h4 className="purpose-text">{exhibitor.purpose}</h4>
-              <br/>
-              <div className="description">
-                {exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>)}
-              </div>
-            </div>
-
-            {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
-
-            {exhibitor.locations.length > 0 &&
-            <div className="location-container">
-
-              <h3>Countries</h3>
-              <ul>
-                {exhibitor.locations.map((loc, index) =>
-                    <li key={index} className="location-section">
-                      {loc.name}
-                    </li>)}
-              </ul>
-            </div>
-            }
           </div>
         </Modal>
     );

@@ -22,12 +22,16 @@
 }
 
 .modalimage-exhib {
-  margin-right: 20%;
-  margin-left:  20%;
-  padding-top: 3%;
+  margin-right: 10%;
+  margin-left:  10%;
+  padding-top: 5%;
   img{
     width: 100%;
   }
+}
+
+.modal-title{
+  color: $text-color-dark;
 }
 
 .purpose-text {

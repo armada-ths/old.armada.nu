@@ -6,9 +6,10 @@
     min-height: 100%;   
     ul {
         li {
-            margin: 1em 0em;
+            margin: 1em 0.5em;
             min-height: 143px;
-            width: 32%;
+            width: 10%;
+            flex-grow: 1;
             min-height: 100%;
         }
     }
@@ -45,6 +46,7 @@ blockquote {
                 //min-height: 143px;
                 width: 90%;
                 margin-left: 5%;
+                margin-right: 5%;
             }
         }
     }

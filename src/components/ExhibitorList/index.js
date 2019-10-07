@@ -32,6 +32,7 @@ class ExhibitorList extends React.Component {
       isLoading: true,
       search: '', //search query string
       jobfilters: {},
+      sectorfilters: {},
       shine: '',
       diversityfilter: false,
       sustainabilityfilter: false,
@@ -41,13 +42,44 @@ class ExhibitorList extends React.Component {
       location: "All",
       sector: "All",
       locations: ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'], //TODO: fill dynamically from api {locations + sector}
-      sectors: ['Retail', 'Graphic Productions', 'Recruitment', 'Architecture', 'Investment', 'Environmental Sector',
-        'Pedagogy', 'Web Development', 'Solid Mechanics', 'Simulation Technology', 'Pharmacy', 'Nuclear Power',
-        'Fluid Mechanics', 'Wood-Processing Industry', 'Medical Technology', 'Media Technology', 'Marine Systems',
-        'Manufacturing Industry', 'Management Consulting', 'Management', 'Insurance', 'Finance & Consultancy', 'Construction',
-        'Aerospace', 'Telecommunication', 'Electronics', 'Material Development', 'Industry', 'Energy Technology', 'Research',
-        'Systems Development', 'Property & Infrastructure', 'Computer Science & IT', 'Technical Consulting', 'Product Development',
-        'Interaction Design', 'Industry Design'],
+      sectors: [{value: 'Retail', label: 'Retail'}, 
+        {value: 'Graphic Productions', label: 'Graphic Productions'}, 
+        {value: 'Recruitment', label: 'Recruitment'}, 
+        {value: 'Architecture', label: 'Architecture'}, 
+        {value: 'Investment', label: 'Investment'}, 
+        {value: 'Environmental Sector', label: 'Environmental Sector'},
+        {value: 'Pedagogy', label: 'Pedagogy'}, 
+        {value: 'Web Development', label: 'Web Development'}, 
+        {value: 'Solid Mechanics', label: 'Solid Mechanics'}, 
+        {value: 'Simulation Technology', label: 'Simulation Technology'}, 
+        {value: 'Pharmacy', label: 'Pharmacy'}, 
+        {value: 'Nuclear Power', label: 'Nuclear Power'},
+        {value: 'Fluid Mechanics', label: 'Fluid Mechanics'}, 
+        {value: 'Wood-Processing Industry', label: 'Wood-Processing Industry'}, 
+        {value: 'Medical Technology', label: 'Medical Technology'}, 
+        {value: 'Media Technology', label: 'Media Technology'}, 
+        {value: 'Marine Systems', label: 'Marine Systems'},
+        {value: 'Manufacturing Industry', label: 'Manufacturing Industry'}, 
+        {value: 'Management Consulting', label: 'Management Consulting'}, 
+        {value: 'Management', label: 'Management'}, 
+        {value: 'Insurance', label: 'Insurance'}, 
+        {value: 'Finance & Consultancy', label: 'Finance & Consultancy'}, 
+        {value: 'Construction', label: 'Construction'},
+        {value: 'Aerospace', label: 'Aerospace'},
+        {value: 'Telecommunication', label: 'Telecommunication'}, 
+        {value: 'Electronics', label: 'Electronics'}, 
+        {value: 'Material Development', label: 'Material Development'}, 
+        {value: 'Industry', label: 'Industry'}, 
+        {value: 'Energy Technology', label: 'Energy Technology'}, 
+        {value: 'Research', label: 'Research'}, 
+        {value: 'Systems Development', label: 'Systems Development'},
+        {value: 'Property & Infrastructure', label: 'Property & Infrastructure'}, 
+        {value: 'Computer Science & IT', label: 'Computer Science & IT'}, 
+        {value: 'Technical Consulting', label: 'Technical Consulting'}, 
+        {value: 'Product Development', label: 'Product Development'}, 
+        {value: 'Interaction Design', label: 'Interaction Design'},
+        {value: 'Industry Design', label: 'Industry Design'}
+      ],
       jobs: [{value: 'Full time job', label: 'Full Time Job'},
         {value: 'Part time job', label: 'Part Time Job'},
         {value: 'Summer job', label: 'Summer Job'},
@@ -123,7 +155,7 @@ class ExhibitorList extends React.Component {
 
                 <div className="description-container">
                   {/*<h3>{exhibitor.name}</h3>*/}
-                  <h4 className="purpose-text">{exhibitor.purpose}</h4>
+                  <p className="purpose-text"><b>{exhibitor.purpose}</b></p>
                   <br/>
                   <div className="description">
                     {exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>)}
@@ -180,6 +212,14 @@ class ExhibitorList extends React.Component {
     let jobfilters = this.state.jobfilters;
     jobfilters = value;
     this.setState({jobfilters})
+  }
+
+  //filter functions to be called onChange
+  sectorFilter(value) {
+    this.setdefault()
+    let sectorfilters = this.state.sectorfilters;
+    sectorfilters = value;
+    this.setState({sectorfilters})
   }
 
   showMore() {
@@ -249,13 +289,6 @@ class ExhibitorList extends React.Component {
     let location = this.state.location;
     location = e.target.value;
     this.setState({location});
-  }
-
-  sectorFilter(e) {
-    this.setdefault()
-    let sector = this.state.sector;
-    sector = e.target.value;
-    this.setState({sector});
   }
 
   //build options for dropdown filters
@@ -346,21 +379,18 @@ class ExhibitorList extends React.Component {
       });
     }
 
-    // Sector filter
-    if (this.state.sector === "All") {
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem;
-      });
-    }
-    else {
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        for (let sectorindex in exhibitorItem.props.exhibitor.industries) {
-          if (exhibitorItem.props.exhibitor.industries[sectorindex].name == this.state.sector) {
-            return true;
+    //Sector type filter
+    for (let filterkey in this.state.sectorfilters) {
+      if (this.state.sectorfilters[filterkey]) {
+        filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+          for (let sectorindex in exhibitorItem.props.exhibitor.industries) {
+            if (exhibitorItem.props.exhibitor.industries[sectorindex].name == this.state.sectorfilters[filterkey].value) {
+              return true;
+            }
           }
-        }
-        return false;
-      });
+          return false;
+        });
+      }
     }
 
     let showall = filteredCompanies.length > this.state.showamount ? true : false;
@@ -412,17 +442,21 @@ class ExhibitorList extends React.Component {
                 className="basic-multi-select"
                 classNamePrefix="select"
             />
+
+            <Select
+              closeMenuOnSelect={false}
+              isMulti
+              isSearchable
+              name="Sector filter"
+              placeholder="All Sectors"
+              options={this.state.sectors}
+              onChange={event => this.sectorFilter(event)}
+              className="basic-multi-select"
+              classNamePrefix="select"
+            />
             
             <div className="supercontainer">
-              <div className="dropdown-container drop1">
-                <div className="select">
-                  <select onChange={this.sectorFilter.bind(this)}>
-                    <option value="All" defaultValue>All Sectors</option>
-                    {this.buildOptions(this.state.sectors)}
-                  </select>
-                  <div className="select_arrow"></div>
-                </div>
-              </div>
+              
 
               <div className="dropdown-container drop2">
                 <div className="select">

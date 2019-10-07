@@ -22,7 +22,7 @@ class ContactMap extends React.Component {
   componentDidMount() {
     // create map
     this.map = L.map('map', {
-      center: [59.347228, 18.068245],
+      center: [59.347150, 18.067456],
       zoom: 16.5,
       zoomControl: false,
       layers: [

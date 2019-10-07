@@ -24,13 +24,17 @@ class ContactMap extends React.Component {
     this.map = L.map('map', {
       center: [59.347228, 18.068245],
       zoom: 16.5,
+      zoomControl: false,
       layers: [
         L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }),
       ]
     });
-    this.marker = L.marker([59.347252, 18.070580]).addTo(this.map);
+    L.marker([59.347252, 18.070580]).addTo(this.map);
+    L.control.zoom({
+      position:'topright'
+    }).addTo(this.map);
   }
   render() {
     

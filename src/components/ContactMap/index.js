@@ -22,17 +22,24 @@ class ContactMap extends React.Component {
   componentDidMount() {
     // create map
     this.map = L.map('map', {
-      center: [51.505, -0.09],
-      zoom: 13,
+      center: [59.347228, 18.068245],
+      zoom: 16.5,
       layers: [
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }),
       ]
     });
+    this.marker = L.marker([59.347252, 18.070580]).addTo(this.map);
   }
   render() {
-    return <div id="map"></div>
+    
+    return (<div>
+              <div id="map-container">
+                <div id="map-info"><p id="map-text">Find us at:<br/>THS Kårhus, Floor 2<br/>114 28 Stockholm</p></div>
+                <div id="map"></div>
+              </div>
+            </div>);
   }
  }
     export default ContactMap;

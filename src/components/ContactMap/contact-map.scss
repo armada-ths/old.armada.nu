@@ -1,4 +1,30 @@
+@import "../../styles/_variables";
+
+#map-container{
+  display: flex;
+  margin-top: 35px;
+}
+
 .leaflet-container {
     height: 400px;
     width: 100%;
+    z-index: 0;
   }
+
+#map-info{
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(0,0,0,0.6);
+  height: 400px;
+  width:50%;
+  z-index: 1;
+}
+
+#map-text{
+  text-align: center;
+  font-weight: 400;
+  padding: 150px 0;
+  font-family: "Bebas Neue", "Helvetica", "Arial";
+  font-size: 24px;
+  color: $melon;
+}

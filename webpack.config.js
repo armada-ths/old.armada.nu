@@ -146,6 +146,23 @@ export default (config = {}) => {
         // LESS: npm install --save-dev less less-loader
         // https://github.com/webpack/less-loader
         {
+          test: /\.css$/,
+          // depending on your need, you might need to scope node_modules
+          // for global CSS if you want to keep CSS Modules by default
+          // for your own CSS. If so, uncomment the line below
+          include: path.resolve(__dirname, "node_modules/leaflet/dist"),
+          loader: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: [
+              "css-loader",
+              {
+                loader: "postcss-loader",
+                query: { "plugins": postcssPlugins },
+              },
+            ]
+          }),
+        },
+        {
           test: /\.scss$/,
           include: path.resolve(__dirname, "src"),
           loader: ExtractTextPlugin.extract({

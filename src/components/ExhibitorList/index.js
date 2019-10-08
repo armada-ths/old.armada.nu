@@ -89,6 +89,9 @@ class ExhibitorList extends React.Component {
         {value: 'Bachelor thesis', label: 'Bachelor Thesis'}],
       showamount: 20,
     };
+    
+    let sortedSectors = this.state.sectors.sort((a, b) => a.label.localeCompare(b.label));
+    this.setState({sectors: sortedSectors});
   }
 
   //currently only deals w/ getting data from api (unsure)

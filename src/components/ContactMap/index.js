@@ -34,8 +34,8 @@ class ContactMap extends React.Component {
     var armadaIcon = L.icon({
       iconUrl: "/assets/armada_marker.png",
     
-      iconSize:     [80, 80], // size of the icon
-      iconAnchor:   [40, 80], // point of the icon which will correspond to marker's location
+      iconSize:     [60, 60], // size of the icon
+      iconAnchor:   [30, 60], // point of the icon which will correspond to marker's location
     });
     L.marker([59.347252, 18.070580], {icon:armadaIcon}).addTo(this.map);
     L.control.zoom({

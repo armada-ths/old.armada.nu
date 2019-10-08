@@ -35,6 +35,7 @@ class ContactMap extends React.Component {
     L.control.zoom({
       position:'topright'
     }).addTo(this.map);
+    this.map.scrollWheelZoom.disable();
   }
   render() {
     

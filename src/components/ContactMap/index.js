@@ -40,7 +40,7 @@ class ContactMap extends React.Component {
     
     return (<div>
               <div id="map-container">
-                <div id="map-info"><p id="map-text">Find us at:<br/>THS Kårhus, Floor 2<br/>114 28 Stockholm</p></div>
+                <div id="map-info"><p id="map-text">Find us at<br/>THS Kårhus, Nymble<br/>Drottning Kristinas väg 15-19<br/>114 28 Stockholm</p></div>
                 <div id="map"></div>
               </div>
             </div>);

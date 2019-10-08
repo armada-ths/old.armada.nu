@@ -1,7 +1,6 @@
 @import "../../styles/_variables";
 
 #map-container{
-  display: flex;
   margin-top: 35px;
 }
 
@@ -11,13 +10,28 @@
     z-index: 0;
   }
 
-#map-info{
-  position: absolute;
-  bottom: 0px;
-  background-color: rgba(0,0,0,0.6);
-  height: 400px;
-  width:50%;
-  z-index: 1;
+  #map-info{
+    background-color: rgba(0,0,0,0.8);
+    height: 400px;
+    width: 100%;
+    z-index: 1;
+  }
+
+
+@media only screen and (min-width: 600px){
+  #map-container{
+    display: flex;
+    margin-top: 35px;
+  }
+
+  #map-info{
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.6);
+    height: 400px;
+    width: 50%;
+    z-index: 1;
+  }
 }
 
 #map-text{

@@ -89,7 +89,7 @@ class ExhibitorList extends React.Component {
         {value: 'Bachelor thesis', label: 'Bachelor Thesis'}],
       showamount: 20,
     };
-    
+
     let sortedSectors = this.state.sectors.sort((a, b) => a.label.localeCompare(b.label));
     this.setState({sectors: sortedSectors});
   }
@@ -144,6 +144,7 @@ class ExhibitorList extends React.Component {
                 <img src={ais + exhibitor.logo_squared} alt={exhibitor.name + " logo"}/>
               </div>
               <h1 className="modal-title">{exhibitor.name}</h1>
+              <h3 className="map-link">Map Link</h3>
             </div>
             <div className="modal-flex-2">
               <div className="modalinfo">
@@ -464,7 +465,7 @@ class ExhibitorList extends React.Component {
               <div className="dropdown-container drop2">
                 <div className="select">
                   <select onChange={this.locationFilter.bind(this)}>
-                    <option value="All" defaultValue>All Countries</option>
+                    <option value="All" defaultValue>All Locations</option>
                     {this.buildOptions(this.state.locations)}
                   </select>
                   <div className="select_arrow"></div>

@@ -285,20 +285,20 @@ a:hover {
 
     }
   }
-  .modalinfo .description-container .description {
-    padding: 0em 1em 0.5em 1em;
-    font-size: $text-standard-mobile;
-    line-height: $line-height-mobile;
-  }
 
   .modalinfo .description-container {
     padding: 0em 1em 0.5em 1em;
+    p {
+      font-size: 1em;
     }
+  }
+
   .modalinfo .description-container .description {
-    padding: 0em 1em 0.5em 1em;
-    font-size: $text-standard-mobile;
+    //padding: 0em 1em 0.5em 1em;
+    //font-size: $text-standard-mobile;
     line-height: $line-height-mobile;
   }
+
   .modalinfo .fairposition-container {
       padding: 0.5em 1em 1em 1em;
     }

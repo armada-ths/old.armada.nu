@@ -23,7 +23,7 @@ class ContactMap extends React.Component {
     // create map
     this.map = L.map('map', {
       center: [59.347150, 18.067456],
-      zoom: 16.5,
+      zoom: 16,
       zoomControl: false,
       layers: [
         L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {

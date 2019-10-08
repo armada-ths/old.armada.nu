@@ -31,7 +31,13 @@ class ContactMap extends React.Component {
         }),
       ]
     });
-    L.marker([59.347252, 18.070580]).addTo(this.map);
+    var armadaIcon = L.icon({
+      iconUrl: "/assets/armada_marker.png",
+    
+      iconSize:     [80, 80], // size of the icon
+      iconAnchor:   [40, 80], // point of the icon which will correspond to marker's location
+    });
+    L.marker([59.347252, 18.070580], {icon:armadaIcon}).addTo(this.map);
     L.control.zoom({
       position:'topright'
     }).addTo(this.map);

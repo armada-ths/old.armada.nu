@@ -58,4 +58,8 @@ The booking system for transportation of booth goods to and from the fair is now
 
 In order to ensure that all exhibitor goods arrives safely and in one piece, it is important that you package your goods correctly. See [this](https://drive.google.com/file/d/1AG32WhQxk5OlG1SNM9px8ksywvFyVE3s/view) instruction for packaging tips from DHL for a safe shipment. Please note that it is under your responsibility to ensure that the goods you are sending to and from the fair are packaged correctly according to the packaging instructions and labelled at pick-up. If you have any questions regarding how you should pack your goods, please ask for further help and we will be at your service!
 
+**EXHIBITING AT BOTH ARKAD AND THS ARMADA?**
+
+ARKAD is Lunds Tekniska Högskola equivalent to THS Armada and is taking place just a week before Armada. Therefore, we have together with ARKAD arranged a transportation opportunity for companies exhibiting at both events. The same options as above is also included for transportation of company goods between the fairs. Please get in touch with your contact person at ARKAD in order to book this. Email [fair.arkad@tlth.se](<mailto: fair.arkad@tlth.se>) if you are uncertain who your contact person is at ARKAD.
+
 ##

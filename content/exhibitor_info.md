@@ -52,7 +52,12 @@ All exhibitors who wants to send something bulky or more goods than what is incl
 
 **HOW TO BOOK TRANSPORT**
 
-The booking system for transportation of booth goods to and from the fair is now open! In order to book transport you should download [this](https://drive.google.com/file/d/1pgUdfE9IM3zEuKVuL8XYmviRWqd9y284/view) PDF-form and fill it in with information regarding pickup/return address, which transportation alternative you wish to book and the dimensions and weight of your goods. After filling in the PDF you should email it directly to DHL on [tfe.sweden@dhl.com](<mailto: tfe.sweden@dhl.com>). The** deadline for booking is the 4th of November**, but do not wait until it is too late! **The goods must be packed prior to   DHL’s pick-up and You are responsible for packaging the goods**, the goods must be able to withstand normalhandling of goods in terminal. If you have any questions regarding booking of transports you can email DHL on [tfe.sweden@dhl.com](<mailto: tfe.sweden@dhl.com>) or call them at +46 31 799 4773. THS Armada’s own transport team will also be at your service on [transport@armada.nu](<mailto: tfe.sweden@dhl.com>) if you have any general questions regarding transport or logistics.
+The booking system for transportation of booth goods to and from the fair is now open! In order to book transport you should download the PDF-form below and fill it in with information regarding pickup/return address, which transportation alternative you wish to book and the dimensions and weight of your goods. 
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Transport_booking_form_THS Armada.pdf">
+   <button type="submit">Download transport PDF</button>
+</form>
+
+After filling in the PDF you should email it directly to DHL on [tfe.sweden@dhl.com](<mailto: tfe.sweden@dhl.com>). The** deadline for booking is the 4th of November**, but do not wait until it is too late! **The goods must be packed prior to   DHL’s pick-up and You are responsible for packaging the goods**, the goods must be able to withstand normalhandling of goods in terminal. If you have any questions regarding booking of transports you can email DHL on [tfe.sweden@dhl.com](<mailto: tfe.sweden@dhl.com>) or call them at +46 31 799 4773. THS Armada’s own transport team will also be at your service on [transport@armada.nu](<mailto: tfe.sweden@dhl.com>) if you have any general questions regarding transport or logistics.
 
 **PACKAGING INSTRUCTIONS**
 

@@ -61,7 +61,11 @@ After filling in the PDF you should email it directly to DHL on [tfe.sweden@dhl.
 
 **PACKAGING INSTRUCTIONS**
 
-In order to ensure that all exhibitor goods arrives safely and in one piece, it is important that you package your goods correctly. See [this](https://drive.google.com/file/d/1AG32WhQxk5OlG1SNM9px8ksywvFyVE3s/view) instruction for packaging tips from DHL for a safe shipment. Please note that it is under your responsibility to ensure that the goods you are sending to and from the fair are packaged correctly according to the packaging instructions and labelled at pick-up. If you have any questions regarding how you should pack your goods, please ask for further help and we will be at your service!
+In order to ensure that all exhibitor goods arrives safely and in one piece, it is important that you package your goods correctly. See instructions below for packaging tips from DHL for a safe shipment. Please note that it is under your responsibility to ensure that the goods you are sending to and from the fair are packaged correctly according to the packaging instructions and labelled at pick-up. If you have any questions regarding how you should pack your goods, please ask for further help and we will be at your service!
+
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Packaging_instructions.pdf">
+   <button type="submit">Download packaging instructions</button>
+</form>
 
 **EXHIBITING AT BOTH ARKAD AND THS ARMADA?**
 

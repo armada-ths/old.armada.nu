@@ -95,6 +95,13 @@
       color: blue;
       text-decoration: underline;
     }
+    .exhibitor-website {
+      margin-top: 1em;
+      text-decoration: underline;
+    }
+    .exhibitor-website a {
+      color: blue;
+    }
   }
   .modal-flex-2 {
     width: 60%;
@@ -162,6 +169,9 @@
   }
 .modalinfo .description-container .description  p{
     padding-bottom: 1em;
+  }
+  .modalinfo .description-container .climate-compensation {
+    text-align: left;
   }
 .modalinfo .fairposition-container {
     padding: 1em 0em 1em 0em;
@@ -297,6 +307,10 @@ a:hover {
     //padding: 0em 1em 0.5em 1em;
     //font-size: $text-standard-mobile;
     line-height: $line-height-mobile;
+  }
+
+  .modalinfo .description-container .climate-compensation {
+    text-align: center;
   }
 
   .modalinfo .fairposition-container {

@@ -145,6 +145,7 @@ class ExhibitorList extends React.Component {
               </div>
               <h1 className="modal-title">{exhibitor.name}</h1>
               <h3 className="map-link">Map Link</h3>
+              <h3 className="exhibitor-website"><a href={exhibitor.company_website}>Company's website</a></h3>
             </div>
             <div className="modal-flex-2">
               <div className="modalinfo">
@@ -164,6 +165,7 @@ class ExhibitorList extends React.Component {
                   <div className="description">
                     {exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>)}
                   </div>
+                  <div className="climate-compensation">{exhibitor.climate_compensation ? <i>&#127811; This company has paid for climate compensation &#127811;</i> : null}</div>
                 </div>
                 
                 <div className="job-location-container">
@@ -325,14 +327,14 @@ class ExhibitorList extends React.Component {
     //Diversity filter
     if (this.state.diversityfilter === true) {
       filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem.props.exhibitor.groups.name == 'diversity';
+        return exhibitorItem.props.exhibitor.location_special == 'Diversity Room';
       });
     }
 
     //Sustainability filter
     if (this.state.sustainabilityfilter === true) {
       filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem.props.exhibitor.groups.name == 'sustainability';
+        return exhibitorItem.props.exhibitor.location_special == 'Green Room';
       });
     }
 
@@ -414,14 +416,14 @@ class ExhibitorList extends React.Component {
             {/*TODO: remove blue box around special filters*/}
             <div className="filter-special">
 
-              <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc} disabled
-                     //onClick={() => this.diversityFilter()}
+              <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc} 
+                     onClick={() => this.diversityFilter()}
                      //onMouseEnter={() => this.cssShine('purple')}
                      //onMouseLeave={() => this.cssShineOff()}
               />
 
-              <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc} disabled
-                     //onClick={() => this.sustainabilityFilter()}
+              <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc} 
+                     onClick={() => this.sustainabilityFilter()}
                      //onMouseEnter={() => this.cssShine('green')}
                      //onMouseLeave={() => this.cssShineOff()}
               />
@@ -531,9 +533,8 @@ const ExhibitorItem = (props) => {
           <img src={ais + props.exhibitor.logo_squared}/>
         </div>
         <p> {props.exhibitor.name} </p>
-        <div className='corner-special'><img src='/assets/diversity-black-nolabel.png'/></div>
-        {props.exhibitor.sustainability == true
-            ? <div className='corner-special'><img src='/assets/sustainability.svg'/></div> : null}
+        {props.exhibitor.location_special == "Diversity Room" ? <div className='corner-special'><img src='/assets/diversity-black-nolabel.png'/></div> : null}
+        {props.exhibitor.location_special == "Green Room" ? <div className='corner-special'><img src='/assets/sustainability-black-nolabel.png'/></div> : null}
       </div>)
 }
 

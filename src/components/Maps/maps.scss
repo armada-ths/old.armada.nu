@@ -52,17 +52,32 @@
 	font-weight: bold;
 }
 
-.space {
-	padding-top: 1em;
+.map-link {
+	padding: 30px 30px 30px 30px;
 }
 
-.licorice a {
+.map-link a {
 	color: $licorice !important;
 	&:hover {
-		color: $melon !important;
+		color: black !important;
 	}
 }
 
 .diversity {
 	color: $diversity !important;
+}
+
+.vyer-map {
+	width: 80%;
+	height: 600px;
+	margin-left: 10%;
+	margin-bottom: 1em;
+}
+
+.map-grid {
+	pointer-events: auto;
+}
+
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
 }

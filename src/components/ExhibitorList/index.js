@@ -144,7 +144,7 @@ class ExhibitorList extends React.Component {
                 <img src={ais + exhibitor.logo_squared} alt={exhibitor.name + " logo"}/>
               </div>
               <h1 className="modal-title">{exhibitor.name}</h1>
-              <h3 className="map-link">Map Link</h3>
+              {exhibitor.vyer_position ? <h3 className="map-link"><a href={exhibitor.vyer_position}>Map Link</a></h3> : null}
               <h3 className="exhibitor-website"><a href={exhibitor.company_website}>Company's website</a></h3>
             </div>
             <div className="modal-flex-2">

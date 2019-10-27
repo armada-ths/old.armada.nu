@@ -1,6 +1,6 @@
 ---
 title: Diversity
-layout: Page
+layout: Diversitypage
 description: Page
 menuPage: false
 priority: '10'

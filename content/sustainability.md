@@ -16,6 +16,8 @@ This year, THS Armada offers the participating companies to climate compensate f
 
 As an organisationen, we want to reduce our environmental impact as much as possible.Therefore, each year THS Armada strives to be certified as an Eco-labeled event by the KeepSweden Tidy Foundation. The certification process challenge us to improve our environmental impact in many different areas.We proudly present that the THS Armada career fair 2019 is labeled as an Eco event!
 
+![eco](/assets/image003.jpg)
+
 **Green Room**
 
 THS Armada has dedicated an area of the fair to companies that we deem to be the frontrunners in our vision for a sustainable future. This area is called Green Room. The exhibitors in Green Room are eager to share their work in regards to minimising their environmental impact. Visiting Green Room is a must if you’re interested in sustainability, the sustainability field or if you want to know how different companies can work with sustainability.

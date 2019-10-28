@@ -52,15 +52,13 @@
 	font-weight: bold;
 }
 
-vyer-link {
+.vyer-link {
 	padding: 30px 30px 30px 30px;
 }
 
-vyer-link a {
-	color: $licorice !important;
-	&:hover {
-		color: black !important;
-	}
+.vyer-link a {
+	color: black !important;
+	
 }
 
 .diversity {

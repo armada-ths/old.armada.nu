@@ -6,7 +6,7 @@ menuPage: false
 priority: '11'
 header: /assets/sustain.jpg
 ---
-Sustainability is one of THS Armada’s core values. We believe that sustainability is one of the key concepts in making the world a better place, a place where humanity and nature can live together in harmony without depleting nature’s resources. THS Armada’s Diversity  policy can be found here:
+Sustainability is one of THS Armada’s core values. We believe that sustainability is one of the key concepts in making the world a better place, a place where humanity and nature can live together in harmony without depleting nature’s resources. THS Armada’s Diversity policy can be found here: [armada.nu/diversity](https://armada.nu/diversity/)
 
 ## **Climate compensation**
 
@@ -25,3 +25,9 @@ As an organisationen, we want to reduce our environmental impact as much as poss
 ## **Green Room**
 
 THS Armada has dedicated an area of the fair to companies that we deem to be the frontrunners in our vision for a sustainable future. This area is called Green Room. The exhibitors in Green Room are eager to share their work in regards to minimising their environmental impact. Visiting Green Room is a must if you’re interested in sustainability, the sustainability field or if you want to know how different companies can work with sustainability.
+
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Sustainability_Diversity-Policy.pdf">
+
+   <button type="submit">Download Sustainability Guidelines</button>
+
+</form>

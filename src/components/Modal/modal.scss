@@ -91,16 +91,21 @@
       padding-left: 10%;
     }
     .map-link {
-      margin-top: 1em;
+      margin-top: 0.2em;
       color: blue;
-      text-decoration: underline;
+      text-decoration: none;
+    }
+    .map-link a {
+      color: blue;
+      font-size: 0.8em;
     }
     .exhibitor-website {
-      margin-top: 1em;
-      text-decoration: underline;
+      margin-top: 0.8em;
+      text-decoration: none;
     }
     .exhibitor-website a {
       color: blue;
+      font-size: 0.8em;
     }
   }
   .modal-flex-2 {
@@ -298,6 +303,7 @@ a:hover {
 
   .modalinfo .description-container {
     padding: 0em 1em 0.5em 1em;
+    margin-top: -2em;
     p {
       font-size: 1em;
     }

@@ -62,7 +62,7 @@ class Maps extends React.Component {
 			<div>
 			<div className="center">
 				<h1 className="helmet">Maps</h1>
-				<h3 className="map-link"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj" target="_blank">View Interactive Map</a></h3>
+				<h3 className="vyer-link"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj" target="_blank">View Interactive Map <br /> (in separate tab)</a></h3>
 				{!this.state.mobile ? 
 					<div className="map-grid"><iframe className="vyer-map" src="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj"></iframe></div>
 					: null}

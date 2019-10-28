@@ -144,8 +144,8 @@ class ExhibitorList extends React.Component {
                 <img src={ais + exhibitor.logo_squared} alt={exhibitor.name + " logo"}/>
               </div>
               <h1 className="modal-title">{exhibitor.name}</h1>
-              {exhibitor.vyer_position ? <h3 className="map-link"><a href={exhibitor.vyer_position}>Map Link</a></h3> : null}
               <h3 className="exhibitor-website"><a href={exhibitor.company_website}>Company's website</a></h3>
+              {exhibitor.vyer_position ? <h3 className="map-link"><a href={exhibitor.vyer_position}>Map position</a></h3> : null}
             </div>
             <div className="modal-flex-2">
               <div className="modalinfo">
@@ -163,7 +163,7 @@ class ExhibitorList extends React.Component {
                   <p className="purpose-text"><b>{exhibitor.purpose}</b></p>
                   <br/>
                   <div className="description">
-                    {exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>)}
+                    {exhibitor.about ? exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>) : null}
                   </div>
                   <div className="climate-compensation">{exhibitor.climate_compensation ? <i>&#127811; This company has paid for climate compensation &#127811;</i> : null}</div>
                 </div>

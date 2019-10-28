@@ -1,13 +1,11 @@
 import React from "react";
-// import Select from 'react-select'
 import Loading from "../Loading"
-// import Text from "../Text"
 import axios from "axios";
 import  "../Card/Card.scss"
 import MatchingQuestion from "./MatchingQuestion"; 
 import MatchingWelcomeScreen from "./MatchingWelcomeScreen"
 
-const ais = 'https://ais.armada.nu/';
+// const ais = 'https://ais.armada.nu/';
 
 import "./MatchingSection.scss";
 
@@ -28,7 +26,8 @@ class MatchingSection extends React.Component {
             isLoading: false,
             started: false,
             optionIndex: 0,
-            currentOption: {}
+            currentOption: {},
+            weights: [5,5,5,5,5]
         };
     }
 
@@ -81,25 +80,17 @@ class MatchingSection extends React.Component {
         }
     }
 
-    matchagain() {
-        this.setState({hide: false})
-        this.setState({industries: []})
-        this.setState({values: []})
-        this.setState({employments: []})
-        this.setState({locations: []})
-        this.setState({benefits: []})
-        this.setState({exhibitors: []})
-    }
-
     carousel(option){
       return (
-          <div className="matching-question">
-            <MatchingQuestion question={option.question} prevClick={this.prevOption} nextClick={this.nextOption} answers={option.answers} handleChange={this.handleChange(this.state.optionIndex)} preSelected={this.getResult(this.state.optionIndex)} />
-              
+          <div className="matching-question-card" >
+            <MatchingQuestion question={option.question} nextDisabled={this.state.optionIndex === this.state.options.length-1} prevDisabled={this.state.optionIndex === 0} prevClick={this.prevOption} nextClick={this.nextOption} answers={option.answers} handleChange={this.handleChange(this.state.optionIndex)} preSelected={this.getResult(this.state.optionIndex)} onWeightChange={this.onWeightChange} index={this.state.optionIndex} />
+            {/* sliderValue={this.state.weights[this.state.optionIndex]} */}
           </div>
         )
     }
 
+
+    
     prevOption = () => {
       const prevIndex = this.state.optionIndex-1;
       this.setState({
@@ -109,102 +100,23 @@ class MatchingSection extends React.Component {
     }
 
     nextOption = () => {
+      this.setState({hide: true})
       const nextIndex = this.state.optionIndex+1;
       this.setState({
         currentOption: this.state.options[nextIndex],
-        optionIndex: nextIndex
+        optionIndex: nextIndex,
+        hide: false
       })
     }
 
-    // buildOptions(array) {
-    //     var listitems = []
-    //     for (let i = 0; i < array.length; i++) {
-    //       listitems.push(<div><p>{array[i].question}</p><Select
-    //         placeholder="Select option(s)..."
-    //         closeMenuOnSelect={false}
-    //         isMulti
-    //         isSearchable
-    //         name="Hej"
-    //         options = {array[i].answers}
-    //         onChange={this.handleChange(i)}
-    //         className="basic-multi-select"
-    //         classNamePrefix="select"
-    //     />
-    //     </div>);
-    //     }
-    //     return listitems;
-    //   }
-
-    //   createStars(thisrating){
-    //     var rating = 0;
-    //     if (thisrating == 0) {rating = 125}
-    //     if (thisrating > 0 && thisrating <= 1.0) {rating = 100}
-    //     if (thisrating > 1.0 && thisrating <= 2.0) {rating = 75}
-    //     if (thisrating > 2.0 && thisrating <= 3.0) {rating = 50}
-    //     if (thisrating == 3.0) {rating = 25}
-
-    //     return(
-    //       <div className="star-ratings-css">
-    //         <div className="star-ratings-css-top" style={{width:rating+'%'}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-    //         <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-    //       </div>
-
-    //     );
-    //   }
-
-    //   createJobs(i) {
-    //     let array = this.state.exhibitors;
-    //     array = array[i].exhibitor.employments.map(item => item.name).toString()
-    //     return array
-    //   }
-
-    //   createCard(i){
-    //     let array = this.state.exhibitors;
-    //     var textrating = Math.round(-33.3333*(array[i].distance) + 100)
-    //     var background = {
-    //         backgroundImage: 'url('+ ais + array[i].exhibitor.logo_squared + ')'
-    //     }
-
-    //     if (i==0) {var dynamicclass = "corner gold"
-    //     var match = "Best match"}
-    //     else {dynamicclass = "corner"
-    //     match = "Match " + (i+1)}
-
-    //     return(
-    //       <div className="row">
-    //             <div className="example-1 card">
-    //             <div className="wrapper" style={background}>
-    //                 <div className={dynamicclass}>
-    //                 <span className="corner-title">{match}</span>
-
-    //                <span className="stars">{this.createStars(array[i].distance)}</span>
-    //                 <span >{textrating + '% match'}</span>
-    //                 </div>
-    //                 <div className="data">
-    //                 <div className="content">
-    //                     <h1 className="title">{array[i].exhibitor.name}</h1>
-    //                     <p className="textcard">{array[i].exhibitor.about}</p>
-    //                     <p className="text jobs"><br/>{this.createJobs(i)}</p>
-    //                 </div>
-    //                 </div>
-    //             </div>
-    //             </div>
-    //         </div>
-    //     );
-    //   }
-
-
-    //   presentMatches() {
-    //     var listitems = []
-    //     let array = this.state.exhibitors;
-    //     if (array.length > 0) {
-    //         for (let i = 0; i < array.length; i++) {
-    //         listitems.push(this.createCard(i))
-    //         }
-    //         return listitems;
-    //     }
-    //     else {return <Text/>}
-    //   }
+    onWeightChange = (index, value) => {
+      let temp = this.state.weights;
+      temp[index] = value-0; // Make sure it's a number
+      this.setState({weights: temp})
+      /* eslint-disable no-console */
+      console.log(this.state.weights);
+      /* eslint-enable no-console */
+    }
 
       handleChange = (index) => {
         /* eslint-disable no-console */
@@ -255,11 +167,6 @@ class MatchingSection extends React.Component {
             res = this.state.locations;
             break;
         }
-        const temp = this.state.options[index].answers.filter( value => {
-          !res.includes(value.id)
-       });
-        console.log('hej');
-        console.log(res);
         return res;
       }
 

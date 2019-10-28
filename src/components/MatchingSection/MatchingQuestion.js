@@ -19,39 +19,29 @@ class MatchingQuestion extends React.Component {
     // }
 
     handleSelect = (selectedOptions) => {
-        /* eslint-disable no-console */
-        // console.log(selectedOptions);
-        /* eslint-enable no-console */
-        // this.setState({selected: selectedOptions})
         this.props.handleChange(selectedOptions);
-        // this.props.handleChange(selectedOptions);
-        // this.props.preSelected();
     }
 
     onClick = (e) => {
         const id = e.target.id;
-        /* eslint-disable no-console */
-        // console.log('hello from onclick', id);
-        // console.log();
-        /* eslint-enable no-console */
-        // this.props.handleChange(this.state.selected);
         if(id === "next") {
             this.props.nextClick()
         } else if(id === "prev"){
             this.props.prevClick()
         }
-        
+        this.props.onWeightChange(this.props.index, this.state.value)
     }
 
     handleSlider = (e) => {
         this.setState({value: e.target.value})
+        // this.props.onWeightChange(e.target.value);
     }
     
     render() {
         return (
             <div>
                 <img src={MatchingLogo} />
-                <h2 className="helmet">{this.props.question}</h2>
+                <h3 className="helmet">{this.props.question}</h3>
                     <p>Try out Armada's brand new <span className="bold">matching functionality</span> that matches </p>
                     <p>students with companies through their shared values!</p>
                 <div className="questions">
@@ -61,7 +51,7 @@ class MatchingQuestion extends React.Component {
                     closeMenuOnSelect={false}
                     isMulti
                     isSearchable
-                    name="Hej"
+                    
                     options = {this.props.answers}
                     onChange={this.handleSelect}
                     defaultValue={this.props.preSelected}
@@ -74,7 +64,7 @@ class MatchingQuestion extends React.Component {
                     <div className="slidecontainer">
                     <input
                         className="slider"
-                        style={{background: MatchingLogo}} 
+                        // style={{background: MatchingLogo}} 
                         id="typeinp" 
                         type="range" 
                         min="0" max="10" 
@@ -85,10 +75,12 @@ class MatchingQuestion extends React.Component {
                     </div>
                         
                         
+                    {/* TODO: Handle matching when done */}
+                    <div className="nav-btns">
+                        <button className="match" id="prev" disabled={this.props.prevDisabled} onClick={this.onClick}>Previous question!</button>
+                        <button className="match" id="next" disabled={this.props.nextDisabled} onClick={this.onClick}>{this.props.nextDisabled ? "Get matching!" : "Next question!"}</button>
+                    </div>
                     
-                    
-                    <button className="match" id="prev" onClick={this.onClick}>Previous question!</button>
-                    <button className="match" id="next" onClick={this.onClick}>Next question!</button>
                 </div>
                 
             </div>
@@ -103,6 +95,10 @@ MatchingQuestion.propTypes = {
     preSelected: PropTypes.func,
     prevClick: PropTypes.func,
     nextClick: PropTypes.func,
+    nextDisabled: PropTypes.bool,
+    prevDisabled: PropTypes.bool,
+    onWeightChange: PropTypes.func,
+    index: PropTypes.number,
 }
 
 export default MatchingQuestion;

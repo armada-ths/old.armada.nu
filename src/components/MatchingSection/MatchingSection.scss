@@ -1,17 +1,73 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
+
+
+
+#prev {
+  border-radius: 5px;
+  left: 5vw;
+  float: left;
+  margin-left: 5vw;
+}
+
+#next {
+  border-radius: 5px;
+  // right: 2vw;
+  float: right;
+  margin-right: 5vw;
+}
+
+#start-btn {
+  align-self: center;
+  // right: 20%;
+  // bottom: 20px;
+}
+
 .questions {
-    margin: 0px 10px 275px 10px;
+    margin: 0px 10% 22% 10%;
     
-    .matching-question {
-        text-align: center;
-        
+    p {
+      text-align: center;
+      padding-bottom: 4px;
     }
+    button {
+      // align-self: baseline;
+      // position: absolute;
+      bottom: 10px;
+      width: 15vw;
+      max-height: 12vw;
+      border-radius: 5px;
+      
+    }
+
+
+    .matching-question {
+      text-align: center;
+    }
+
+
+    .matching-question-card {
+        text-align: center;
+        // width:0%;
+        // overflow:hidden;
+        // -webkit-transition: width 1s ease-in-out;
+        // -moz-transition: width 1s ease-in-out;
+        // -o-transition: width 1s ease-in-out;
+        // transition: width 1s ease-in-out;
+        // width: 100%;
+    }
+
+    // .matching-question-card {
+    //   width: 60%;
+    //   left: 50%;
+    //   justify-items: center;
+    // }
+    
 
     .slider {
         -webkit-appearance: none;
-        width: 100%;
+        width: 60vw;
         height: 10px;
         border-radius: 5px;
         background: #d3d3d3;

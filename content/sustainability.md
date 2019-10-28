@@ -16,7 +16,7 @@ This year, THS Armada offers the participating companies to climate compensate f
 
 As an organisationen, we want to reduce our environmental impact as much as possible.Therefore, each year THS Armada strives to be certified as an Eco-labeled event by the KeepSweden Tidy Foundation. The certification process challenge us to improve our environmental impact in many different areas.We proudly present that the THS Armada career fair 2019 is labeled as an Eco event!
 
-<p style="text-align:center;">
+<p style="text-align: center !important;">
 
 <img src="/assets/image003.jpg" height="200em" width="200em"/>
 

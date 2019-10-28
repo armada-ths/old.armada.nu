@@ -367,21 +367,12 @@ class ExhibitorList extends React.Component {
     }
     else {
       filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        if (this.state.location == 'Sweden') {
-          for (let i in exhibitorItem.props.exhibitor.locations) {
-            if (exhibitorItem.props.exhibitor.locations[i].name[0] == 'S') {
-              return true;
-            }
+        for (let i in exhibitorItem.props.exhibitor.locations) {
+          if (exhibitorItem.props.exhibitor.locations[i].name == this.state.location) {
+            return true;
           }
-          return false;
-        } else {
-          for (let i in exhibitorItem.props.exhibitor.locations) {
-            if (exhibitorItem.props.exhibitor.locations[i].name == 'World \u2013 ' + this.state.location) {
-              return true;
-            }
-          }
-          return false;
         }
+        return false;
       });
     }
 

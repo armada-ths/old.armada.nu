@@ -54,6 +54,10 @@ class Maps extends React.Component {
 	);
 	}
 
+	divScroll() {
+		document.body.style.overflow = "hidden";
+	}
+
 	render() {
 
 		//let specialrooms = <div><h4 className="space">Green room</h4><p>Gamla matsalen, Nymble </p><h4 className="diversity space">Diversity room</h4><p>Puben, Nymble</p></div>;
@@ -64,7 +68,7 @@ class Maps extends React.Component {
 				<h1 className="helmet">Maps</h1>
 				<h3 className="vyer-link"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj" target="_blank">View Interactive Map <br /> (in separate tab)</a></h3>
 				{!this.state.mobile ? 
-					<div className="map-grid"><iframe className="vyer-map" src="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj"></iframe></div>
+					<div className="map-grid"><iframe className="vyer-map" onMouseOver={this.divScroll} src="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj"></iframe></div>
 					: null}
 				
 			</div>

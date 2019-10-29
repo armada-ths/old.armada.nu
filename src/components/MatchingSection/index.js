@@ -43,7 +43,8 @@ class MatchingSection extends React.Component {
             { value: 'Gym', label: 'Gym', id: "3" }, { value: 'Free Food', label: 'Free Food', id: "4" },
             { value: 'Car', label: 'Car', id: "5" },
             { value: 'Phone', label: 'Phone', id: "6" }, { value: 'Computer', label: 'Computer', id: "7" }, { value: 'Pay for overtime work', label: 'Pay for overtime work', id: "8" }, { value: 'Bonus system', label: 'Bonus system', id: "9" }, { value: 'Possibility to work in other countries', label: 'Possibility to work in other countries', id: "10" }, { value: 'Ability to work from home', label: 'Ability to work from home', id: "11" }, { value: 'Flexible work hours', label: 'Flexible work hours', id: "12" }]}],
-            exhibitors: [],
+            match_result: null,
+            show_more: false,
             industries: [],
             values: [],
             employments: [],
@@ -70,8 +71,8 @@ class MatchingSection extends React.Component {
         }).then(function (a) {
             return a.json()
         }).then(function (json) {
-            bindedthis.setState({exhibitors: json})
-        }).catch(function() {
+            bindedthis.setState({match_result: json})
+        }).catch(function(e) {
             alert("Matching failed! Please try again later");
             bindedthis.matchagain();
         });
@@ -79,29 +80,31 @@ class MatchingSection extends React.Component {
 
     submit() {
         if (this.state.industries.length == 0 || this.state.values.length == 0 || this.state.employments.length == 0 || this.state.locations.length == 0 || this.state.benefits.length == 0) {
-            alert("You have to select at least one option for every question!")
-        }
-        else {
+        //    alert("You have to select at least one option for every question!")
+        //}
+        //else {
 
-        this.postData('https://ais.armada.nu/api/matching/', {
-            "industries": this.state.industries,
-            "values": this.state.values,
-            "employments": this.state.employments,
-            "locations": this.state.locations,
-            "benefits": this.state.benefits
-          })
+        this.postData('https://ais.armada.nu/api/matching/',{
+          "industries": {"answer": [1], "weight": 1},
+          "values": {"answer": [], "weight": 1},
+          "employments": {"answer": [1, 2, 3, 4], "weight": 0.5},
+          "locations": {"answer": [4, 5, 6], "weight": 0.3},
+          "competences": {"answer": [33, 34, 35], "weight": 1},
+          "cities": {"answer": "Stockholm, Göteborg", "weight": 0},
+          "response_size": 4
+        })
         this.setState({hide: true})
         }
     }
 
     matchagain() {
-        this.setState({hide: false})
+        this.setState({hide: false, show_more: false})
         this.setState({industries: []})
         this.setState({values: []})
         this.setState({employments: []})
         this.setState({locations: []})
         this.setState({benefits: []})
-        this.setState({exhibitors: []})
+        this.setState({match_result: null})
     }
 
     buildOptions(array) {
@@ -123,13 +126,8 @@ class MatchingSection extends React.Component {
         return listitems;
       }
 
-      createStars(thisrating){
-        var rating = 0;
-        if (thisrating == 0) {rating = 125}
-        if (thisrating > 0 && thisrating <= 1.0) {rating = 100}
-        if (thisrating > 1.0 && thisrating <= 2.0) {rating = 75}
-        if (thisrating > 2.0 && thisrating <= 3.0) {rating = 50}
-        if (thisrating == 3.0) {rating = 25}
+      createStars(similarity){
+        var rating = similarity * 100;
 
         return(
           <div className="star-ratings-css">
@@ -140,58 +138,127 @@ class MatchingSection extends React.Component {
         );
       }
 
-      createJobs(i) {
-        let array = this.state.exhibitors;
-        array = array[i].exhibitor.employments.map(item => item.name).toString()
-        return array
+      createJobs(exhibitor_id) {
+        let exhibitor = this.state.match_result.exhibitors[exhibitor_id];
+        let array = exhibitor.employments.map(item => item.name)
+        return array.join(", ")
       }
 
-      createCard(i){
-        let array = this.state.exhibitors;
-        var textrating = Math.round(-33.3333*(array[i].distance) + 100)
+      createCard(result, best){
+        let exhibitor_id = result.exhibitor_id;
+        let exhibitor = this.state.match_result.exhibitors[exhibitor_id];
+        //var textrating = Math.round(best[i].similarity*100);
         var background = {
-            backgroundImage: 'url('+ ais + array[i].exhibitor.logo_squared + ')'
+            backgroundImage: 'url('+ ais + exhibitor.logo_squared + ')'
         }
 
-        if (i==0) {var dynamicclass = "corner gold"
-        var match = "Best match"}
-        else {dynamicclass = "corner"
-        match = "Match " + (i+1)}
+        if (best) {
+          var dynamicclass = "corner gold"
+          var match = "Best"
+        }
+        else {
+          dynamicclass = "corner"
+          match = "Match"
+        }
 
-        return(
+        return (
           <div className="row">
-                <div className="example-1 card">
-                <div className="wrapper" style={background}>
-                    <div className={dynamicclass}>
-                    <span className="corner-title">{match}</span>
+            <div className="example-1 card card-hover-disabled">
+              <div className="wrapper" style={background}>
+                <div className={dynamicclass}>
+                  <span className="corner-title">{match}</span>
 
-                   <span className="stars">{this.createStars(array[i].distance)}</span>
-                    <span >{textrating + '% match'}</span>
-                    </div>
-                    <div className="data">
-                    <div className="content">
-                        <h1 className="title">{array[i].exhibitor.name}</h1>
-                        <p className="textcard">{array[i].exhibitor.about}</p>
-                        <p className="text jobs"><br/>{this.createJobs(i)}</p>
-                    </div>
-                    </div>
+                  <span className="stars">{this.createStars(result.similarity)}</span>
+                  {/* <span >{textrating + '% match'}</span> */}
                 </div>
+              </div>
+              <div className="data">
+                <div className="content">
+                  <div className="matching-details">
+                    {this.presentMatchDetails(exhibitor_id)}
+                  </div>
+                  <h1 className="title">{exhibitor.name}</h1>
+                  <p className="textcard">{exhibitor.about}</p>
+                  <p className="text jobs"><br />{this.createJobs(exhibitor_id)}</p>
                 </div>
+              </div>
             </div>
+          </div>
         );
+      }
+
+      presentMatchDetails(exhibitor_id) {
+        var categories = [
+          "competences", "industries", "employments", "values", "locations" //, "cities"
+        ];
+
+        var similarities = this.state.match_result.similarities;
+        var mapped = {};
+
+        // convert similatiries object to mapped structure
+        // { "category": { exhibitor_id: similarity_score, ... } }
+        categories.forEach(cat => {
+          mapped[cat] = {}
+          similarities[cat].forEach(result => {
+            mapped[cat][result.exhibitor_id] = result.similarity;
+          });
+        });
+
+        var toUpper = lower => lower.charAt(0).toUpperCase() + lower.substring(1);
+
+        var matchingCat= categories
+          .filter(cat => mapped[cat][exhibitor_id]) // find similarity categories where exhibitor_id exists
+
+        return [
+          <div>
+            {matchingCat.map(cat => <div>{toUpper(cat)}</div>)}
+          </div>,
+          <div className="score-bar-container">
+            {matchingCat.map(cat => {
+              var style = {
+                background: '#00d790',
+                width: (mapped[cat][exhibitor_id] * 100) + "%"
+              }
+              return (<div style={style}>match</div>)
+            })}
+          </div>
+        ];
       }
 
 
       presentMatches() {
         var listitems = []
-        let array = this.state.exhibitors;
-        if (array.length > 0) {
-            for (let i = 0; i < array.length; i++) {
-            listitems.push(this.createCard(i))
+        if (this.state.match_result) {
+            for (let i = 0; i < this.state.match_result.similarities.total.length; i++) {
+                listitems.push(
+                    this.createCard(this.state.match_result.similarities.total[i], i==0)
+                )
             }
             return listitems;
         }
         else {return <Text/>}
+      }
+
+      presentMoreMatches() {
+        var listitems = [];
+        if (!this.state.match_result) return null;
+
+        var similarities = this.state.match_result.similarities;
+        // skip exbihitor in total category, they are already shown
+        var skip = similarities.total.map(result => result.exhibitor_id);
+
+        for (var cat in similarities) {
+          similarities[cat].forEach(result => {
+            if (skip.indexOf(result.exhibitor_id) >= 0) return;
+
+            skip.push(result.exhibitor_id);
+            listitems.push(
+              this.createCard(result, false)
+            )
+          });
+        }
+
+        return listitems;
       }
 
       handleChange = (index) => {
@@ -206,6 +273,7 @@ class MatchingSection extends React.Component {
             if (index == 4) {bindedthis.setState({benefits: result})}
         }
       }
+    
     render() {
         return (
 					<div>
@@ -217,7 +285,18 @@ class MatchingSection extends React.Component {
                 <button className="match" onClick={() => this.submit()}>Get my match!</button></div> : null}
             {this.state.hide ? <div className="matchgrid">{this.presentMatches()}</div> : null}
             {this.state.isLoading ? <Loading/> : null}
-            {this.state.exhibitors.length ? <div className="trycontainer"><button className="match" onClick={() => this.matchagain()}>Try matching again!</button></div> : null}
+            {this.state.match_result ? <div className="trycontainer"><button className="match" onClick={() => this.matchagain()}>Try matching again!</button></div> : null}
+            <br />
+            <br />
+            <br />
+            <br />
+            {!this.state.match_result ? null :
+              this.state.show_more ? 
+                <div>
+                  {this.presentMoreMatches()}
+                  <div className="trycontainer"><button className="match" onClick={() => this.matchagain()}>Try matching again!</button></div>
+                </div> : 
+                <div className="trycontainer"><button className="match" onClick={() => this.setState({ show_more:true })}>Show more companies</button></div>}
 
             </div>
 					</div>

@@ -82,7 +82,7 @@
     font-size: 25px;
     height: 25px;
     width: 100px;
-    left: -14.5px;
+    left: -1.5px;
     margin: 0 auto;
     position: relative;
     padding-bottom: 10px;
@@ -124,5 +124,42 @@
         max-width: 33%;
         margin: 20px;
         max-height: 80px;
+    }
+}
+
+.card-hover-disabled {
+    margin: 0 auto;
+
+    .wrapper {
+        height: 0;
+        min-height: 0;
+        padding-bottom: 100%;
+        background-position: center center;
+    }
+    .data {
+        position: relative;
+        transform: none;
+    }
+}
+
+.matching-details {
+    display: flex;
+
+    div {
+        margin-bottom: 4px;
+    }
+
+    .score-bar-container {
+        margin-left: 10px;
+        width: 200px;
+        flex-shrink: 1;
+        color: transparent;
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+    .card-hover-disabled {
+       width: 100%;
+       padding: 0;
     }
 }

@@ -43,6 +43,10 @@ class EventList extends React.Component {
       this.props.onChangeEventId(eventId);
     };
 
+    getOrdinalNum = (n) => {
+      return n + (n > 0 ? ['th', 'st', 'nd', 'rd'][(n > 3 && n < 21) || n % 10 > 3 ? 0 : n % 10] : '');
+    }
+
     displayEvent = (event) => {
       let today = new Date();
       let eventdate = new Date (event.event_start * 1000);
@@ -65,7 +69,7 @@ class EventList extends React.Component {
                 {eventdate > today ? (
                   <a href={event.signup_link}>
                   <button className="rsvpbutton">
-                    <span>SIGN UP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}</span>
+                    <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span>
                   </button>
                 </a>):(
                   <a href={event.signup_link}>
@@ -78,7 +82,7 @@ class EventList extends React.Component {
                     <img className='icon' src='/assets/calendar-round.svg'/>
                     {eventdate.getDate() != eventdate_end.getDate() ? (
                     <p> {eventdate.getDate() + '-' + eventdate_end.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>
-                    ):( <p> {eventdate.getDate() + ' ' + monthNames[eventdate.getMonth()]} </p>)}
+                    ):( <p> {this.getOrdinalNum(eventdate.getDate()) + ' ' + monthNames[eventdate.getMonth()]} </p>)}
                   </div>
                   <div className='icon-group'>
                     <img className='icon' src='/assets/clock.svg'/>
@@ -97,7 +101,7 @@ class EventList extends React.Component {
                 {eventdate > today ? (
                   <a href={event.signup_link}>
                   <button className="rsvpbutton">
-                    <span>SIGN UP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}</span>
+                    <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span>
                   </button>
                 </a>):(
                   <a href={event.signup_link}>
@@ -128,7 +132,7 @@ class EventList extends React.Component {
                         <h3 className ="name" >{event.name} </h3>
                         <div className='event-property'>
                             <img className='icon' src='/assets/calendar-round.svg'/>
-                            <p> {date.getDate()} {monthNames[date.getMonth()]} </p>
+                            <p> {this.getOrdinalNum(date.getDate())} {monthNames[date.getMonth()]} </p>
                         </div>
                         <div className='event-property'>
                             <img className='icon' src='/assets/place.svg'/>
@@ -141,7 +145,7 @@ class EventList extends React.Component {
                         <div className="modalbutton">
                 {eventdate > today ? (
                   <button className="rsvpbutton">
-                    <span>SIGN UP BEFORE {registration_end.getDate()} {monthNames[registration_end.getMonth()]}</span>
+                    <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span>
                   </button>
                 ):(
                   <button className="rsvpclosed">

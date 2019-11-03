@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Page from "../Page"
+import DiversityList from "../../components/DiversityList"
 
 import "./index.scss"
 
@@ -9,8 +10,8 @@ const Diversitypage = (props) => {
   return (
       <div className="content">
         <div className="diversitypage-container">
-          <Page { ...props } >
-          </Page>
+          <Page { ...props } />
+          <DiversityList/>
         </div>
       </div>
   )

@@ -106,19 +106,19 @@ class DiversityList extends React.Component {
           });
     }
 
-     //Diversity filter
-     if (this.state.diversityfilter === true) {
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem.props.exhibitor.location_special = 'Diversity Room';
-      });
-    }
-
-    //Sustainability filter
-    if (this.state.sustainabilityfilter === true) {
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem.props.exhibitor.location_special = 'Green Room';
-      });
-    }
+        //Diversity filter
+        if (this.state.diversityfilter === true) {
+          filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+            return exhibitorItem.props.exhibitor.location_special == 'Diversity Room';
+          });
+        }
+    
+        //Sustainability filter
+        if (this.state.sustainabilityfilter === true) {
+          filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+            return exhibitorItem.props.exhibitor.location_special == 'Green Room';
+          });
+        }
 
     let showall = filteredCompanies.length > this.state.showamount ? true : false;
 

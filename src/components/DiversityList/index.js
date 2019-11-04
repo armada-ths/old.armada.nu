@@ -26,8 +26,6 @@ class DiversityList extends React.Component {
       search: '', //search query string
       jobfilters: {},
       shine: '',
-      diversityfilter: true,
-      sustainabilityfilter: false,
       location: "All",
       sector: "All",
       locations: ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'], //TODO: fill dynamically from api {locations + sector}
@@ -107,14 +105,14 @@ class DiversityList extends React.Component {
     }
 
         //Diversity filter
-        if (this.state.diversityfilter === true) {
+        if (window.location.href.includes('diversity')) {
           filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
             return exhibitorItem.props.exhibitor.location_special == 'Diversity Room';
           });
         }
     
         //Sustainability filter
-        if (this.state.sustainabilityfilter === true) {
+        if (window.location.href.includes('sustainability')) {
           filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
             return exhibitorItem.props.exhibitor.location_special == 'Green Room';
           });
@@ -125,7 +123,7 @@ class DiversityList extends React.Component {
     if (showExhibitors) {
       return (
           <div className="exhibitors">
-						<h1>Companies Working With Diversity</h1>
+						<h1>Companies Working With This Core Value</h1>
             {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay)) : null}
             <div className="loading">
               {this.state.isLoading ? <Loading/> : null}

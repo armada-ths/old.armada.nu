@@ -7,11 +7,12 @@ import DiversityList from "../../components/DiversityList"
 import "./index.scss"
 
 const Diversitypage = (props) => {
+
   return (
       <div className="content">
         <div className="diversitypage-container">
           <Page { ...props } />
-          <DiversityList/>
+          <DiversityList {...props}/>
         </div>
       </div>
   )

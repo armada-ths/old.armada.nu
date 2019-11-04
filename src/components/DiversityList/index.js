@@ -5,7 +5,6 @@ import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import "./index.scss";
 import Modal from "../Modal";
 import Loading from "../Loading"
-import Cat from "../Cat"
 
 
 const urlPropsQueryConfig = {
@@ -27,11 +26,8 @@ class DiversityList extends React.Component {
       search: '', //search query string
       jobfilters: {},
       shine: '',
-      diversityfilter: false,
+      diversityfilter: true,
       sustainabilityfilter: false,
-      startupfilter: false,
-      diversitysrc: '/assets/diversity_a.svg',
-      sustainabilitysrc: '/assets/sustainability.svg',
       location: "All",
       sector: "All",
       locations: ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'], //TODO: fill dynamically from api {locations + sector}
@@ -49,7 +45,7 @@ class DiversityList extends React.Component {
         {value: 'Trainee', label: 'Trainee'},
         {value: 'Master thesis', label: 'Master Thesis'},
         {value: 'Bachelor thesis', label: 'Bachelor Thesis'}],
-      showamount: 30,
+      showamount: 20,
     };
   }
 
@@ -75,6 +71,12 @@ class DiversityList extends React.Component {
     this.props.onChangeExhibitorName(exhibitorName);
   };
 
+  showMore() {
+    let showamount = this.state.showamount;
+    showamount = 183;
+    this.setState({showamount})
+  }
+
   displayExhibitor = (exhibitor) => {
     //TODO: add more data to modal. locations etc, change how it's displayed
     return (
@@ -91,6 +93,7 @@ class DiversityList extends React.Component {
   render() {
     // Here you decide if list of exhibitors should be displayed or not
     let showExhibitors = true;
+    let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.name == this.state.exhibitorName)[0];
     let filteredCompanies = this.state.exhibitorList.filter(
         (exhibitorItem) => {
           return (exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase()));
@@ -103,12 +106,27 @@ class DiversityList extends React.Component {
           });
     }
 
+     //Diversity filter
+     if (this.state.diversityfilter === true) {
+      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+        return exhibitorItem.props.exhibitor.location_special = 'Diversity Room';
+      });
+    }
+
+    //Sustainability filter
+    if (this.state.sustainabilityfilter === true) {
+      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+        return exhibitorItem.props.exhibitor.location_special = 'Green Room';
+      });
+    }
+
+    let showall = filteredCompanies.length > this.state.showamount ? true : false;
+
     if (showExhibitors) {
       return (
           <div className="exhibitors">
-
 						<h1>Companies Working With Diversity</h1>
-
+            {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay)) : null}
             <div className="loading">
               {this.state.isLoading ? <Loading/> : null}
             </div>
@@ -116,10 +134,14 @@ class DiversityList extends React.Component {
               {filteredCompanies.length && !this.state.isLoading ? filteredCompanies.splice(0, this.state.showamount) :
                   <div className="Noresultsfound">
                     {!this.state.isLoading ? <div><p className="noresultstext">
-                      Sorry, we couldn't find any companies that match your search. Please look at our cat instead!
-                    </p><Cat/></div> : null}
+                      Sorry, we couldn't find any companies at the moment!
+                    </p></div> : null}
                   </div>
               }
+              {showall ?
+                <div className="showmore-container">
+                  <button className="showmorebutton" onClick={() => this.showMore()}>Show All</button>
+                </div> : null}
             </div>
 
           </div>

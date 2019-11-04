@@ -7,6 +7,7 @@ import Modal from "../Modal";
 import Loading from "../Loading"
 
 
+
 const urlPropsQueryConfig = {
   exhibitorName: {type: UrlQueryParamTypes.string, queryParam: 'exhibitorName'},
 };
@@ -63,6 +64,17 @@ class CoreValueList extends React.Component {
         });
   }
 
+  getJobContainer(exhibitor) {
+    return (
+        <div className="job-container">
+
+          <h3>Job Opportunities</h3>
+          <ul>
+            {exhibitor.employments.map((jobtype, index) => <li key={index} className="job-section">{jobtype.name}</li>)}
+          </ul>
+        </div>
+    )
+  }
 
   showModal = (exhibitorName) => {
     this.setState({showModal: !this.state.showModal, exhibitorName});
@@ -78,11 +90,57 @@ class CoreValueList extends React.Component {
   displayExhibitor = (exhibitor) => {
     //TODO: add more data to modal. locations etc, change how it's displayed
     return (
-        <Modal onClose={() => this.showModal(null)}>
+      <Modal onClose={() => this.showModal(null)}>
+      <div className="modal-container">
+        <div className="modal-flex-1">
           <div className="modalimage-exhib">
             <img src={ais + exhibitor.logo_squared} alt={exhibitor.name + " logo"}/>
           </div>
-        </Modal>
+          <h1 className="modal-title">{exhibitor.name}</h1>
+          <h3 className="exhibitor-website"><a href={exhibitor.company_website}>Company's website</a></h3>
+          {exhibitor.vyer_position ? <h3 className="map-link"><a href={exhibitor.vyer_position}>Map position</a></h3> : null}
+        </div>
+        <div className="modal-flex-2">
+          <div className="modalinfo">
+            <div className='modal-property'>
+              <div className='icon-group'>
+                {exhibitor.diversity == true
+                    ? <img className='special' src='/assets/diversity_a.svg'/> : null}
+                {exhibitor.sustainability == true
+                    ? <img className='special' src='/assets/sustainability.svg'/> : null}
+              </div>
+            </div>
+
+            <div className="description-container">
+              {/*<h3>{exhibitor.name}</h3>*/}
+              <p className="purpose-text"><b>{exhibitor.purpose}</b></p>
+              <br/>
+              <div className="description">
+                {exhibitor.about ? exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>) : null}
+              </div>
+              <div className="climate-compensation">{exhibitor.climate_compensation ? <i>&#127811; This company has paid for climate compensation &#127811;</i> : null}</div>
+            </div>
+            
+            <div className="job-location-container">
+              {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
+
+              {exhibitor.locations.length > 0 &&
+              <div className="location-container">
+
+                <h3>Locations</h3>
+                <ul>
+                  {exhibitor.locations.map((loc, index) =>
+                      <li key={index} className="location-section">
+                        {loc.name}
+                      </li>)}
+                </ul>
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </Modal>
     );
   }
   
@@ -123,7 +181,7 @@ class CoreValueList extends React.Component {
     if (showExhibitors) {
       return (
           <div className="exhibitors">
-						<h1>Companies Working With This Core Value</h1>
+						<h1 className="exhibitor-title">Companies Working With This Core Value</h1>
             {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay)) : null}
             <div className="loading">
               {this.state.isLoading ? <Loading/> : null}

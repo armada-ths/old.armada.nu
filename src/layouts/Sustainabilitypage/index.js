@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Page from "../Page"
-import DiversityList from "../../components/DiversityList"
+import CoreValueList from "../../components/CoreValueList"
 
 import "./index.scss"
 
@@ -11,7 +11,7 @@ const Sustainabilitypage = (props) => {
       <div className="content">
         <div className="sustainabilitypage-container">
           <Page { ...props } />
-          <DiversityList {...props}/>
+          <CoreValueList {...props}/>
         </div>
       </div>
   )

@@ -14,7 +14,7 @@ const urlPropsQueryConfig = {
 //base of server adress
 const ais = 'https://ais.armada.nu/';
 
-class DiversityList extends React.Component {
+class CoreValueList extends React.Component {
   constructor(props) {
     super(props); // adopts parent qualities
     this.state = {
@@ -157,16 +157,16 @@ class DiversityList extends React.Component {
 //TODO: stop using proptypes
 //TODO: reorg of this code into proper places
 
-DiversityList.propTypes = {
+CoreValueList.propTypes = {
   exhibitorName: PropTypes.string,
   onChangeExhibitorName: PropTypes.func,
 }
 
 let toExport;
 if (global.window != undefined) {
-  toExport = addUrlProps({urlPropsQueryConfig})(DiversityList);
+  toExport = addUrlProps({urlPropsQueryConfig})(CoreValueList);
 } else {
-  toExport = DiversityList;
+  toExport = CoreValueList;
 }
 export default toExport;
 

@@ -8,7 +8,7 @@ import Modal from "../Modal";
 import Loading from "../Loading"
 import Cat from "../Cat"
 import Select from 'react-select'
-import {Link} from "react-router"
+// import {Link} from "react-router"
 
 
 const urlPropsQueryConfig = {
@@ -32,6 +32,8 @@ class ExhibitorList extends React.Component {
       isLoading: true,
       search: '', //search query string
       jobfilters: {},
+      sectorfilters: {},
+      locationfilters: {},
       shine: '',
       diversityfilter: false,
       sustainabilityfilter: false,
@@ -40,14 +42,52 @@ class ExhibitorList extends React.Component {
       sustainabilitysrc: '/assets/sustainability.svg',
       location: "All",
       sector: "All",
-      locations: ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'], //TODO: fill dynamically from api {locations + sector}
-      sectors: ['Retail', 'Graphic Productions', 'Recruitment', 'Architecture', 'Investment', 'Environmental Sector',
-        'Pedagogy', 'Web Development', 'Solid Mechanics', 'Simulation Technology', 'Pharmacy', 'Nuclear Power',
-        'Fluid Mechanics', 'Wood-Processing Industry', 'Medical Technology', 'Media Technology', 'Marine Systems',
-        'Manufacturing Industry', 'Management Consulting', 'Management', 'Insurance', 'Finance & Consultancy', 'Construction',
-        'Aerospace', 'Telecommunication', 'Electronics', 'Material Development', 'Industry', 'Energy Technology', 'Research',
-        'Systems Development', 'Property & Infrastructure', 'Computer Science & IT', 'Technical Consulting', 'Product Development',
-        'Interaction Design', 'Industry Design'],
+      locations: [{value: 'Sweden', label: 'Sweden'},
+        {value: 'Europe', label: 'Europe'}, 
+        {value: 'Asia', label: 'Asia'},
+        {value: 'Oceania', label: 'Oceania'},
+        {value: 'North America', label: 'North America'}, 
+        {value: 'South America', label: 'South America'},
+        {value: 'Africa', label: 'Africa'}
+      ],
+      sectors: [{value: 'Retail', label: 'Retail'}, 
+        {value: 'Graphic Productions', label: 'Graphic Productions'}, 
+        {value: 'Recruitment', label: 'Recruitment'}, 
+        {value: 'Architecture', label: 'Architecture'}, 
+        {value: 'Investment', label: 'Investment'}, 
+        {value: 'Environmental Sector', label: 'Environmental Sector'},
+        {value: 'Pedagogy', label: 'Pedagogy'}, 
+        {value: 'Web Development', label: 'Web Development'}, 
+        {value: 'Solid Mechanics', label: 'Solid Mechanics'}, 
+        {value: 'Simulation Technology', label: 'Simulation Technology'}, 
+        {value: 'Pharmacy', label: 'Pharmacy'}, 
+        {value: 'Nuclear Power', label: 'Nuclear Power'},
+        {value: 'Fluid Mechanics', label: 'Fluid Mechanics'}, 
+        {value: 'Wood-Processing Industry', label: 'Wood-Processing Industry'}, 
+        {value: 'Medical Technology', label: 'Medical Technology'}, 
+        {value: 'Media Technology', label: 'Media Technology'}, 
+        {value: 'Marine Systems', label: 'Marine Systems'},
+        {value: 'Manufacturing Industry', label: 'Manufacturing Industry'}, 
+        {value: 'Management Consulting', label: 'Management Consulting'}, 
+        {value: 'Management', label: 'Management'}, 
+        {value: 'Insurance', label: 'Insurance'}, 
+        {value: 'Finance & Consultancy', label: 'Finance & Consultancy'}, 
+        {value: 'Construction', label: 'Construction'},
+        {value: 'Aerospace', label: 'Aerospace'},
+        {value: 'Telecommunication', label: 'Telecommunication'}, 
+        {value: 'Electronics', label: 'Electronics'}, 
+        {value: 'Material Development', label: 'Material Development'}, 
+        {value: 'Industry', label: 'Industry'}, 
+        {value: 'Energy Technology', label: 'Energy Technology'}, 
+        {value: 'Research', label: 'Research'}, 
+        {value: 'Systems Development', label: 'Systems Development'},
+        {value: 'Property & Infrastructure', label: 'Property & Infrastructure'}, 
+        {value: 'Computer Science & IT', label: 'Computer Science & IT'}, 
+        {value: 'Technical Consulting', label: 'Technical Consulting'}, 
+        {value: 'Product Development', label: 'Product Development'}, 
+        {value: 'Interaction Design', label: 'Interaction Design'},
+        {value: 'Industry Design', label: 'Industry Design'}
+      ],
       jobs: [{value: 'Full time job', label: 'Full Time Job'},
         {value: 'Part time job', label: 'Part Time Job'},
         {value: 'Summer job', label: 'Summer Job'},
@@ -57,6 +97,9 @@ class ExhibitorList extends React.Component {
         {value: 'Bachelor thesis', label: 'Bachelor Thesis'}],
       showamount: 20,
     };
+
+    let sortedSectors = this.state.sectors.sort((a, b) => a.label.localeCompare(b.label));
+    this.setState({sectors: sortedSectors});
   }
 
   //currently only deals w/ getting data from api (unsure)
@@ -103,65 +146,52 @@ class ExhibitorList extends React.Component {
     //TODO: add more data to modal. locations etc, change how it's displayed
     return (
         <Modal onClose={() => this.showModal(null)}>
-          <div className="modalimage-exhib">
-            <img src={ais + exhibitor.logo_squared} alt={exhibitor.name + " logo"}/>
-          </div>
-
-          <div className="modalinfo">
-            <div className='modal-property'>
-              <div className='icon-group'>
-                {exhibitor.diversity == true
-                    ? <img className='special' src='/assets/diversity_a.svg'/> : null}
-                {exhibitor.sustainability == true
-                    ? <img className='special' src='/assets/sustainability.svg'/> : null}
+          <div className="modal-container">
+            <div className="modal-flex-1">
+              <div className="modalimage-exhib">
+                <img src={ais + exhibitor.logo_squared} alt={exhibitor.name + " logo"}/>
               </div>
+              <h1 className="modal-title">{exhibitor.name}</h1>
+              {exhibitor.company_website ? <h3 className="exhibitor-website"><a href={exhibitor.company_website}>Company's website</a></h3> : null}
+              {exhibitor.vyer_position ? <h3 className="map-link"><a href={exhibitor.vyer_position}>Map position</a></h3> : null}
             </div>
+            <div className="modal-flex-2">
+              <div className="modalinfo">
+                <div className='modal-property'>
+                  <div className='icon-group'>
+                    {exhibitor.diversity == true
+                        ? <img className='special' src='/assets/diversity_a.svg'/> : null}
+                    {exhibitor.sustainability == true
+                        ? <img className='special' src='/assets/sustainability.svg'/> : null}
+                  </div>
+                </div>
 
-            <div className="description-container">
-              {/*<h3>{exhibitor.name}</h3>*/}
-              <h5 className="purpose-text">{exhibitor.purpose}</h5>
-              <br/>
-              <div className="description">
-                {exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>)}
-              </div>
-            </div>
+                <div className="description-container">
+                  {/*<h3>{exhibitor.name}</h3>*/}
+                  <p className="purpose-text"><b>{exhibitor.purpose}</b></p>
+                  <br/>
+                  <div className="description">
+                    {exhibitor.about ? exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>) : null}
+                  </div>
+                  <div className="climate-compensation">{exhibitor.climate_compensation ? <i>&#127811; This company has paid for climate compensation &#127811;</i> : null}</div>
+                </div>
+                
+                <div className="job-location-container">
+                  {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
 
-            {exhibitor.employments.length > 0 ? this.getJobContainer(exhibitor) : null}
+                  {exhibitor.locations.length > 0 &&
+                  <div className="location-container">
 
-            {exhibitor.locations.length > 0 &&
-            <div className="location-container">
-
-              <h3>Countries</h3>
-              <ul>
-                {exhibitor.locations.map((loc, index) =>
-                    <li key={index} className="location-section">
-                      {loc.name}
-                    </li>)}
-              </ul>
-            </div>
-            }
-
-            <div className='fairposition-container'>
-              <h3>Find us at the fair</h3>
-              <div>
-                <ul style={{padding: 0, margin: 0}}>
-                  {exhibitor.booths.map(booth =>
-                      <li key={booth.id} className="map-wrapper">
-                        <a
-                            style={{display: 'block', margin: '16px 0'}}
-														target="_blank"
-                            href={`https://maps.armada.nu/?location=${booth.location.id}&booth=${booth.id}`}
-                        >
-                          {(booth.location.parent ? booth.location.parent.name + ' ' : '') + booth.location.name + ' - ' + booth.name}
-                        </a>
-                        <iframe
-                            className="iframe-map"
-                            src={`https://maps.armada.nu/?location=${booth.location.id}&booth=${booth.id}&embedded=1`}
-                        >
-                        </iframe>
-                      </li>)
+                    <h3>Locations</h3>
+                    <ul>
+                      {exhibitor.locations.map((loc, index) =>
+                          <li key={index} className="location-section">
+                            {loc.name}
+                          </li>)}
+                    </ul>
+                  </div>
                   }
-                </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -196,6 +226,21 @@ class ExhibitorList extends React.Component {
     let jobfilters = this.state.jobfilters;
     jobfilters = value;
     this.setState({jobfilters})
+  }
+
+  //filter functions to be called onChange
+  sectorFilter(value) {
+    this.setdefault()
+    let sectorfilters = this.state.sectorfilters;
+    sectorfilters = value;
+    this.setState({sectorfilters})
+  }
+
+  locationFilter(value) {
+    this.setdefault()
+    let locationfilters = this.state.locationfilters;
+    locationfilters = value;
+    this.setState({locationfilters});
   }
 
   showMore() {
@@ -260,20 +305,6 @@ class ExhibitorList extends React.Component {
   //     this.setState({ groupfilter[0] })
   // }
 
-  locationFilter(e) {
-    this.setdefault()
-    let location = this.state.location;
-    location = e.target.value;
-    this.setState({location});
-  }
-
-  sectorFilter(e) {
-    this.setdefault()
-    let sector = this.state.sector;
-    sector = e.target.value;
-    this.setState({sector});
-  }
-
   //build options for dropdown filters
   buildOptions(array) {
     var listitems = []
@@ -304,14 +335,14 @@ class ExhibitorList extends React.Component {
     //Diversity filter
     if (this.state.diversityfilter === true) {
       filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem.props.exhibitor.groups.name == 'diversity';
+        return exhibitorItem.props.exhibitor.location_special == 'Diversity Room';
       });
     }
 
     //Sustainability filter
     if (this.state.sustainabilityfilter === true) {
       filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem.props.exhibitor.groups.name == 'sustainability';
+        return exhibitorItem.props.exhibitor.location_special == 'Green Room';
       });
     }
 
@@ -336,47 +367,32 @@ class ExhibitorList extends React.Component {
       }
     }
 
-    //Location filter
-    if (this.state.location === "All") {
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem;
-      });
-    }
-    else {
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        if (this.state.location == 'Sweden') {
-          for (let i in exhibitorItem.props.exhibitor.locations) {
-            if (exhibitorItem.props.exhibitor.locations[i].name[0] == 'S') {
+    //Sector type filter
+    for (let filterkey in this.state.sectorfilters) {
+      if (this.state.sectorfilters[filterkey]) {
+        filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+          for (let sectorindex in exhibitorItem.props.exhibitor.industries) {
+            if (exhibitorItem.props.exhibitor.industries[sectorindex].name == this.state.sectorfilters[filterkey].value) {
               return true;
             }
           }
           return false;
-        } else {
-          for (let i in exhibitorItem.props.exhibitor.locations) {
-            if (exhibitorItem.props.exhibitor.locations[i].name == 'World \u2013 ' + this.state.location) {
-              return true;
-            }
-          }
-          return false;
-        }
-      });
+        });
+      }
     }
 
-    // Sector filter
-    if (this.state.sector === "All") {
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem;
-      });
-    }
-    else {
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        for (let sectorindex in exhibitorItem.props.exhibitor.industries) {
-          if (exhibitorItem.props.exhibitor.industries[sectorindex].name == this.state.sector) {
-            return true;
+    //Location type filter
+    for (let filterkey in this.state.locationfilters) {
+      if (this.state.locationfilters[filterkey]) {
+        filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+          for (let locationindex in exhibitorItem.props.exhibitor.locations) {
+            if (exhibitorItem.props.exhibitor.locations[locationindex].name == this.state.locationfilters[filterkey].value) {
+              return true;
+            }
           }
-        }
-        return false;
-      });
+          return false;
+        });
+      }
     }
 
     let showall = filteredCompanies.length > this.state.showamount ? true : false;
@@ -396,16 +412,16 @@ class ExhibitorList extends React.Component {
             {/*TODO: remove blue box around special filters*/}
             <div className="filter-special">
 
-              <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc}
+              <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc} 
                      onClick={() => this.diversityFilter()}
-                     onMouseEnter={() => this.cssShine('purple')}
-                     onMouseLeave={() => this.cssShineOff()}
+                     //onMouseEnter={() => this.cssShine('purple')}
+                     //onMouseLeave={() => this.cssShineOff()}
               />
 
-              <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc}
+              <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc} 
                      onClick={() => this.sustainabilityFilter()}
-                     onMouseEnter={() => this.cssShine('green')}
-                     onMouseLeave={() => this.cssShineOff()}
+                     //onMouseEnter={() => this.cssShine('green')}
+                     //onMouseLeave={() => this.cssShineOff()}
               />
 
             </div>
@@ -428,28 +444,34 @@ class ExhibitorList extends React.Component {
                 className="basic-multi-select"
                 classNamePrefix="select"
             />
-            <div className="supercontainer">
-              <div className="dropdown-container drop1">
-                <div className="select">
-                  <select onChange={this.sectorFilter.bind(this)}>
-                    <option value="All" defaultValue>All Sectors</option>
-                    {this.buildOptions(this.state.sectors)}
-                  </select>
-                  <div className="select_arrow"></div>
-                </div>
-              </div>
 
-              <div className="dropdown-container drop2">
-                <div className="select">
-                  <select onChange={this.locationFilter.bind(this)}>
-                    <option value="All" defaultValue>All Countries</option>
-                    {this.buildOptions(this.state.locations)}
-                  </select>
-                  <div className="select_arrow"></div>
-                </div>
-              </div>
+            <Select
+              closeMenuOnSelect={false}
+              isMulti
+              isSearchable
+              name="Sector filter"
+              placeholder="All Sectors"
+              options={this.state.sectors}
+              onChange={event => this.sectorFilter(event)}
+              className="basic-multi-select"
+              classNamePrefix="select"
+            />
+
+            <Select
+              closeMenuOnSelect={false}
+              isMulti
+              isSearchable
+              name="Location filter"
+              placeholder="All Locations"
+              options={this.state.locations}
+              onChange={event => this.locationFilter(event)}
+              className="basic-multi-select"
+              classNamePrefix="select"
+            />
+            
+            {/* <div className="supercontainer">
               <p className="matching_link">Pssst! Find your perfect company by using Armada's new <Link className="matching_link_style" to="/matching">matching functionality!</Link></p>
-            </div>
+            </div> */}
 
 
             {/* TODO: everything should be dynamic instead of hard-coded */}
@@ -508,10 +530,8 @@ const ExhibitorItem = (props) => {
           <img src={ais + props.exhibitor.logo_squared}/>
         </div>
         <p> {props.exhibitor.name} </p>
-        {props.exhibitor.diversity == true
-            ? <div className='corner-special'><img src='/assets/diversity_a.svg'/></div> : null}
-        {props.exhibitor.sustainability == true
-            ? <div className='corner-special'><img src='/assets/sustainability.svg'/></div> : null}
+        {props.exhibitor.location_special == "Diversity Room" ? <div className='corner-special'><img src='/assets/diversity-black-nolabel.png'/></div> : null}
+        {props.exhibitor.location_special == "Green Room" ? <div className='corner-special'><img src='/assets/sustainability-black-nolabel.png'/></div> : null}
       </div>)
 }
 

@@ -32,12 +32,11 @@
   z-index: 400;
   margin: auto;
   top: 0;
-  width: 50%;
-  border-radius: 5px;
+  width: 100%;
+  //border-radius: 5px;
   background: white; //rgba(255, 255, 255, 0.9);
-  margin-bottom: 3em;
-  margin-top: 3em;
-  padding-bottom: 1em;
+  
+  //padding-bottom: 1em;
 }
 .shade {
   position: fixed;
@@ -54,7 +53,7 @@
   }
 }
 .cross{
-  color: $text-color-light;
+  color: $text-color-dark;
   padding: 0.05em 0.05em 0.1em 0.05em;
   border-radius: 0em 0em 0.1em 0.1em;
   z-index: 9999;
@@ -73,6 +72,47 @@
 .modalcontent {
   overflow-wrap: break-word;
   text-align: justify;
+
+  .modal-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  .modal-flex-1 {
+    position: relative;
+    width: 40%;
+    text-align: center;
+    img {
+      max-height: 50vh;
+      width: auto;
+    }
+    .modal-title {
+      padding-top: 10%;
+      padding-right: 10%;
+      padding-left: 10%;
+    }
+    .map-link {
+      margin-top: 0.2em;
+      color: blue;
+      text-decoration: none;
+    }
+    .map-link a {
+      color: blue;
+      font-size: 0.8em;
+    }
+    .exhibitor-website {
+      margin-top: 0.8em;
+      text-decoration: none;
+    }
+    .exhibitor-website a {
+      color: blue;
+      font-size: 0.8em;
+    }
+  }
+  .modal-flex-2 {
+    width: 60%;
+    text-align: center
+  }
+
   .modalinfo{
     padding: 1em 10px;
   }
@@ -81,6 +121,15 @@
     flex-direction: column;
     padding: 1em 0em 1em 0em;
     align-self: center;
+  }
+  .job-location-container {
+    display: flex !important ;
+    .job-container {
+      width: 50%;
+    }
+    .location-container {
+      width: 50%;
+    }
   }
   .modal-property .icon{
     width: 25px;
@@ -125,6 +174,9 @@
   }
 .modalinfo .description-container .description  p{
     padding-bottom: 1em;
+  }
+  .modalinfo .description-container .climate-compensation {
+    text-align: left;
   }
 .modalinfo .fairposition-container {
     padding: 1em 0em 1em 0em;
@@ -173,13 +225,14 @@ a:hover {
 
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-
+  
   .popup {
-    width: 90vw;
+    width: 100vw;
+    overflow: auto !important;
   }
   .cross {
     position: fixed;
-    background-color: $grape;
+    color: $text-color-dark;
     right: 15px;
     top: 0px;
   }
@@ -190,6 +243,40 @@ a:hover {
       right: 5px;
       .cross{
         color: $text-color-light;
+      }
+    }
+  }
+  .modalcontent {
+  
+    .modal-container {
+      display: block;
+      height: auto;
+    }
+    .modal-flex-1 {
+      position: relative;
+      width: 100%;
+      margin-top: 5%;
+      text-align: center;
+      img {
+        max-height: 30vh;
+        width: auto;
+      }
+      .modal-title {
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+    }
+    .modal-flex-2 {
+      width: 100%;
+      text-align: center;
+    }
+    .job-location-container {
+      display: block !important ;
+      .job-container {
+        width: 100%;
+      }
+      .location-container {
+        width: 100%;
       }
     }
   }
@@ -213,20 +300,25 @@ a:hover {
 
     }
   }
-  .modalinfo .description-container .description {
-    padding: 0em 1em 0.5em 1em;
-    font-size: $text-standard-mobile;
-    line-height: $line-height-mobile;
-  }
 
   .modalinfo .description-container {
     padding: 0em 1em 0.5em 1em;
+    margin-top: -2em;
+    p {
+      font-size: 1em;
     }
+  }
+
   .modalinfo .description-container .description {
-    padding: 0em 1em 0.5em 1em;
-    font-size: $text-standard-mobile;
+    //padding: 0em 1em 0.5em 1em;
+    //font-size: $text-standard-mobile;
     line-height: $line-height-mobile;
   }
+
+  .modalinfo .description-container .climate-compensation {
+    text-align: center;
+  }
+
   .modalinfo .fairposition-container {
       padding: 0.5em 1em 1em 1em;
     }
@@ -238,9 +330,31 @@ a:hover {
     }
 }
 
+.event-picture {
+  padding-top: 0.5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 25%;
+}
+
 @media screen and (max-width: $breakpoint-ipad) {
   .modalcontent .modal-property-event{
     padding: 1em 0em 1em 2.5em;
+    margin-bottom: 2em;
   }
 
+  .event-picture {
+    max-width: 40%;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+  .event-picture {
+    max-width: 50%;
+  }
+
+  .event-info {
+    font-size: 2em !important;
+  }
 }

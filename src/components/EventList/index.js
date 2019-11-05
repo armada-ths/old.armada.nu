@@ -61,10 +61,10 @@ class EventList extends React.Component {
         <Modal onClose={() => this.showModal(null)}>
         <div>
           <div className="modalimage-event">
-            <img src={event.image_url}/>
+            <img className="event-picture" src={event.image_url}/>
             </div>
             <div className="modalinfo">
-              <h2>{event.name}</h2>
+              <h2 className="event-info">{event.name}</h2>
               <div className="modalbutton">
                 {eventdate > today ? (
                   <a href={event.signup_link}>
@@ -129,7 +129,7 @@ class EventList extends React.Component {
                         <img src = { event.image_url }/>
                     </div>
                     <div className = "details-section">
-                        <h3 className ="name" >{event.name} </h3>
+                        <h3 className="event-name" >{event.name} </h3>
                         <div className='event-property'>
                             <img className='icon' src='/assets/calendar-round.svg'/>
                             <p> {this.getOrdinalNum(date.getDate())} {monthNames[date.getMonth()]} </p>

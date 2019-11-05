@@ -2,7 +2,7 @@
 // import axios from "axios";
  import "./maps.scss";
  import Modal from "../Modal";
- import Loading from '../Loading';
+ //import Loading from '../Loading';
  import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
  import PropTypes from "prop-types";
 
@@ -14,19 +14,27 @@ class Maps extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			locations: [{id: 1, name: "KTH-B & Entre", url: "/assets/images/KTHB_entre.png", listurl: "/assets/images/KTHB_entre-companies.png"} ,
-																{id: 2, name: "Nymble", url: "/assets/images/nymble.png", listurl: "/assets/images/nymble-companies.png"}],
 			showModal: false,
 			mapId: undefined,
 			isLoading: false,
+			mobile: true
 		};
 	}
 
 	componentDidMount() {
 
-			if (this.props.mapId !== undefined ){
-				this.setState({mapId: this.props.mapId, showModal:true});
-			}
+		if (this.props.mapId !== undefined ){
+			this.setState({mapId: this.props.mapId, showModal:true});
+		}
+		if(window.innerWidth < 850) {
+			this.setState({
+				mobile: true
+			});
+		} else {
+			this.setState({
+				mobile: false
+			});
+		}
 	}
 
 	showModal = (mapId) => {
@@ -46,32 +54,33 @@ class Maps extends React.Component {
 	);
 	}
 
+	divScroll() {
+		document.body.style.overflow = "hidden";
+	}
+
 	render() {
-		let mapToDisplay = this.state.locations.filter(location => location.id == this.state.mapId)[0];
+
+		//let specialrooms = <div><h4 className="space">Green room</h4><p>Gamla matsalen, Nymble </p><h4 className="diversity space">Diversity room</h4><p>Puben, Nymble</p></div>;
 
 		return (
 			<div>
 			<div className="center">
 				<h1 className="helmet">Maps</h1>
-				<h4 className="licorice space"><a href="https://maps.armada.nu/" target="_blank">View Interactive Maps</a></h4>
-				<h4 className="space">Green room:</h4>
-				<p>Gamla matsalen, Nymble </p>
-				<h4 className="diversity space">Diversity room:</h4>
-				<p>Puben, Nymble</p>
-			</div>
-			<div className="maps">
-			{this.state.showModal ? (this.displayMap(mapToDisplay) ) : null}
-			{this.state.isLoading ? (<Loading />) : (
-				<div className="map-grid">
-					{this.state.locations.map(location => (
-						<div className="map-item" key={location.id} onClick={() => this.showModal(location.id)}>
-							<img className="image-section" src={location.url} alt={location.name + ' map'}/>
-							<img src={location.listurl} />
-						</div>
-					))}
+				{!this.state.mobile ? <h3 className="vyer-link"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj" target="_blank">View Interactive Map (in separate tab)</a></h3>  : null}
+				{!this.state.mobile ? <div className="map-instructions">
+						<h3 className="map-inst-header">How to use the map below</h3>
+						<h4 className="map-steps">Double click mouse button to zoom in</h4>
+						<h4 className="map-steps">Shift + double click mouse button to zoom out</h4>
+					</div> 
+				: null}
+				{!this.state.mobile ? <div className="map-grid"><iframe className="vyer-map" onMouseOver={this.divScroll} src="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj"></iframe></div> : null}
+				{this.state.mobile ? <div className="map-icon-container"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj" target="_blank"><img className="mobile-map-icon" src="/assets/mapicon.png"></img></a></div> : null}
+				<h4 className="powered-by">Map powered by</h4>
+				<div className="vyer-icon-container">
+					<a href="https://www.vyer.io/"><img className="vyer-icon" src="/assets/vyer.png"></img></a>
 				</div>
-			)}
 			</div>
+
 		</div>
 		)
 	}

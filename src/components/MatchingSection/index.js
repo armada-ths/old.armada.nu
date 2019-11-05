@@ -89,8 +89,13 @@ class MatchingSection extends React.Component {
         this.setState({values: []})
         this.setState({employments: []})
         this.setState({locations: []})
-        this.setState({benefits: []})
+        this.setState({competences: []})
         this.setState({match_result: null})
+        this.setState({
+          optionIndex:0,
+          weights: [5, 5, 5, 5, 5],
+          currentOption: this.state.options[0],
+        })
     }
 
       createStars(similarity){
@@ -311,7 +316,6 @@ class MatchingSection extends React.Component {
     }
 
     render() {
-      console.log(this.state.match_result);
         return (
 					<div>
             

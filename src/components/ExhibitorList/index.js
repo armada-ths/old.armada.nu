@@ -173,7 +173,7 @@ class ExhibitorList extends React.Component {
                   <div className="description">
                     {exhibitor.about ? exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>) : null}
                   </div>
-                  <div className="climate-compensation">{exhibitor.climate_compensation ? <i>&#127811; This company has paid for climate compensation &#127811;</i> : null}</div>
+                  <div className="climate-compensation">{exhibitor.climate_compensation ? <i>&#127811; This company has climate compensated for their participation in  Armada &#127811;</i> : null}</div>
                 </div>
                 
                 <div className="job-location-container">

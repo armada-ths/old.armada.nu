@@ -6,4 +6,3 @@ menuPage: false
 priority: 4
 header: /assets/images/header-images/About.jpg
 ---
-Body

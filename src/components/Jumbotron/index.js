@@ -119,7 +119,7 @@ class Jumbotron extends React.Component {
                     {header_class === "header-home" ? 
                     <div className="buttoncontainer">
                         <Link to='/exhibitor_info' id="buttonleft" className="homepagebutton"><span>Information for companies</span></Link>
-                        <Link to='/about' id="buttonright" className="homepagebutton"><span>Learn more about Armada</span></Link>
+                        <Link to='/exhibitors' id="buttonright" className="homepagebutton"><span>Exhibitors at the fair</span></Link>
                     </div>
 
                         : null}

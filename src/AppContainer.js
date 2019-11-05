@@ -18,7 +18,7 @@ const AppContainer = (props) => {
     let vid = null;
     let loadVideo = (global.window!=undefined);
     if (loadVideo) {
-        vid = window.innerWidth >= 750 ? require('../content/assets/video/film.mp4') : null;
+        vid = window.innerWidth >= 750 ? require('../content/assets/video/film1.mp4') : null;
     }
     vid = pathname === "/" ? vid : null;
     return (

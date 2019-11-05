@@ -45,8 +45,6 @@ class MatchingQuestion extends React.Component {
             <div>
                 <img src={MatchingLogo} />
                 <h3 className="helmet">{this.props.question}</h3>
-                    <p>Try out Armada's brand new <span className="bold">matching functionality</span> that matches </p>
-                    <p>students with companies through their shared values!</p>
                 <div className="questions">
                 <Select
                     placeholder="Select option(s)..."

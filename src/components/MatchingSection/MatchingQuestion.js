@@ -78,7 +78,7 @@ class MatchingQuestion extends React.Component {
                     {/* TODO: Handle matching when done */}
                     <div className="nav-btns">
                         <button className="match" id="prev" disabled={this.props.prevDisabled} onClick={this.onClick}>Previous question!</button>
-                        <button className="match" id="next" disabled={this.props.nextDisabled} onClick={this.onClick}>{this.props.nextDisabled ? "Get matching!" : "Next question!"}</button>
+                        <button className="match" id="next" onClick={this.props.nextDisabled ? this.props.onSubmit : this.onClick}>{this.props.nextDisabled ? "Get matching!" : "Next question!"}</button>
                     </div>
                     
                 </div>

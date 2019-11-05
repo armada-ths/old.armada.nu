@@ -4,8 +4,9 @@ import axios from "axios";
 import  "../Card/Card.scss"
 import MatchingQuestion from "./MatchingQuestion"; 
 import MatchingWelcomeScreen from "./MatchingWelcomeScreen"
+import Text from '../Text'
 
-// const ais = 'https://ais.armada.nu/';
+const ais = 'https://ais.armada.nu/';
 
 import "./MatchingSection.scss";
 
@@ -65,17 +66,17 @@ class MatchingSection extends React.Component {
     }
 
     submit() {
-        if (this.state.industries.length == 0 || this.state.values.length == 0 || this.state.employments.length == 0 || this.state.locations.length == 0 || this.state.benefits.length == 0) {
-            alert("You have to select at least one option for every question!")
+        if (this.state.industries.length == 0 && this.state.values.length == 0 && this.state.employments.length == 0 && this.state.locations.length == 0 && this.state.competences.length == 0) {
+            alert("You have to select at least one option for at least one question!")
         }
         else {
-          this.postData('https://ais.armada.nu/api/matching/',{
-            "industries": {"answer": [1], "weight": 1},
-            "values": {"answer": [], "weight": 1},
-            "employments": {"answer": [1, 2, 3, 4], "weight": 0.5},
-            "locations": {"answer": [4, 5, 6], "weight": 0.3},
-            "competences": {"answer": [33, 34, 35], "weight": 1},
-            "cities": {"answer": "Stockholm, Göteborg", "weight": 0},
+          this.postData('https://ais.armada.nu/api/matching/', {
+            "industries": {"answer": this.state.industries.map(i => i.id), "weight": this.state.weights[1]},
+            "values": {"answer": this.state.values.map(i => i.id), "weight": this.state.weights[0]},
+            "employments": {"answer": this.state.employments.map(i => i.id), "weight": this.state.weights[3]},
+            "locations": {"answer": this.state.locations.map(i => i.id), "weight": this.state.weights[4]},
+            "competences": {"answer": this.state.competences.map(i => i.id), "weight": this.state.weights[2]},
+            "cities": {"answer": "Stockholm", "weight": 0},
             "response_size": 4
           })
           this.setState({hide: true})
@@ -106,7 +107,7 @@ class MatchingSection extends React.Component {
     carousel(option){
       return (
           <div className="matching-question-card" >
-            <MatchingQuestion question={option.question} nextDisabled={this.state.optionIndex === this.state.options.length-1} prevDisabled={this.state.optionIndex === 0} prevClick={this.prevOption} nextClick={this.nextOption} answers={option.answers} handleChange={this.handleChange(this.state.optionIndex)} preSelected={this.getResult(this.state.optionIndex)} onWeightChange={this.onWeightChange} index={this.state.optionIndex} />
+            <MatchingQuestion onSubmit={() => this.submit()} question={option.question} nextDisabled={this.state.optionIndex === this.state.options.length - 1} prevDisabled={this.state.optionIndex === 0} prevClick={this.prevOption} nextClick={this.nextOption} answers={option.answers} handleChange={this.handleChange(this.state.optionIndex)} preSelected={this.getResult(this.state.optionIndex)} onWeightChange={this.onWeightChange} index={this.state.optionIndex} />
             {/* sliderValue={this.state.weights[this.state.optionIndex]} */}
           </div>
         )
@@ -304,12 +305,18 @@ class MatchingSection extends React.Component {
         return res;
       }
 
+    renderQuestions() {
+      return this.state.started === true && this.state.isLoading === false ? this.carousel(this.state.currentOption) : 
+        <MatchingWelcomeScreen handleClick={this.handleClick}/>;
+    }
+
     render() {
+      console.log(this.state.match_result);
         return (
 					<div>
             
             <div className="questions">
-            {this.state.started === true && this.state.isLoading === false ? this.carousel(this.state.currentOption) :  <MatchingWelcomeScreen handleClick={this.handleClick}/>} 
+            {this.state.hide ? this.presentMatches() : this.renderQuestions()}
             {this.state.isLoading ? <Loading/> : null}
             {this.state.match_result ? <div className="trycontainer"><button className="match" onClick={() => this.matchagain()}>Try matching again!</button></div> : null}
             <br />

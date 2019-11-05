@@ -14,9 +14,12 @@ class MatchingQuestion extends React.Component {
         }
     }
 
-    // componentWillReceiveProps = () => {
-    //     this.setState({selected: })
-    // }
+    componentDidUpdate(prevProps) {
+        // Typical usage (don't forget to compare props):
+        if (this.props.question !== prevProps.question) {
+          this.setState({ value: this.props.weight });
+        }
+      }
 
     handleSelect = (selectedOptions) => {
         this.props.handleChange(selectedOptions);

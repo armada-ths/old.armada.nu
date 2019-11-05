@@ -1,62 +1,48 @@
 import React from "react";
-import Select from 'react-select'
 import Loading from "../Loading"
-import Text from "../Text"
+import axios from "axios";
 import  "../Card/Card.scss"
+import MatchingQuestion from "./MatchingQuestion"; 
+import MatchingWelcomeScreen from "./MatchingWelcomeScreen"
 
-const ais = 'https://ais.armada.nu/';
+// const ais = 'https://ais.armada.nu/';
 
 import "./MatchingSection.scss";
 
 class MatchingSection extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            options : [{question: "What industries are you interested in?", answers :[{ value: 'Retail', label: 'Retail', id: "1" },
-            { value: 'Graphic Productions', label: 'Graphic Productions', id: "2" },
-            { value: 'Recruitment', label: 'Recruitment', id: "3" }, { value: 'Architecture', label: 'Architecture', id: "4" }, { value: 'Investment', label: 'Investment', id: "5" }, { value: 'Environmental Sector', label: 'Environmental Sector', id: "6" }, { value: 'Pedagogy', label: 'Pedagogy', id: "7" }, { value: 'Web Development', label: 'Web Development', id: "8" }, { value: 'Solid Mechanics', label: 'Solid Mechanics', id: "9" }, { value: 'Simulation Technology', label: 'Simulation Technology', id: "10" }, { value: 'Pharmacy', label: 'Pharmacy', id: "11" }, { value: 'Nuclear Power', label: 'Nuclear Power', id: "12" }, { value: 'Fluid Mechanics', label: 'Fluid Mechanics', id: "13" }, { value: 'Wood-Processing Industry', label: 'Wood-Processing Industry', id: "14" }, { value: 'Medical Technology', label: 'Medical Technology', id: "15" }, { value: 'Media Technology', label: 'Media Technology', id: "16" }, { value: 'Marine Systems', label: 'Marine Systems', id: "17" }, { value: 'Manufacturing Industry', label: 'Manufacturing Industry', id: "18" }, { value: 'Management Consulting', label: 'Management Consulting', id: "19" }, { value: 'Management', label: 'Management', id: "20" }, { value: 'Insurance', label: 'Insurance', id: "21" }, { value: 'Finance & Consultancy', label: 'Finance & Consultancy', id: "22" }, { value: 'Construction', label: 'Construction', id: "23" }, { value: 'Aerospace', label: 'Aerospace', id: "24" }, { value: 'Telecommunication', label: 'Telecommunication', id: "25" }, { value: 'Electronics', label: 'Electronics', id: "26" }, { value: 'Material Development', label: 'Material Development', id: "27" }, { value: 'Industry', label: 'Industry', id: "28" }, { value: 'Energy Technology', label: 'Energy Technology', id: "29" }, { value: 'Research', label: 'Research', id: "30" }, { value: 'Systems Development', label: 'Systems Development', id: "31" }, { value: 'Property & Infrastructure', label: 'Property & Infrastructure', id: "32" }, { value: 'Computer Science & IT', label: 'Computer Science & IT', id: "33" }, { value: 'Technical Consulting', label: 'Technical Consulting', id: "34" }, { value: 'Product Development', label: 'Product Development', id: "35" }, { value: 'Interaction Design', label: 'Interaction Design', id: "36" }, { value: 'Industry Design', label: 'Industry Design', id: "37" }]},
-            {question: "What values are important to you?", answers :[{ value: 'Entrepreneurship', label: 'Entrepreneurship', id: "1" },
-            { value: 'Active work for gender equality', label: 'Active work for gender equality', id: "2" },
-            { value: 'Diversity and inclusion', label: 'Diversity and inclusion', id: "3" },
-            { value: 'International environment and possibilities', label: 'International environment and possibilities', id: "4" },
-            { value: 'Performance and results', label: 'Performance and results', id: "5" },
-            { value: 'Environmental liability', label: 'Environmental liability', id: "6" },
-            { value: 'Sustainability', label: 'Sustainability', id: "7" },
-            { value: 'Organisational transparency', label: 'Organisational transparency', id: "8" },
-            { value: 'Innovation', label: 'Innovation', id: "9" },
-            { value: 'Creative and dynamic', label: 'Creative and dynamic', id: "10" },
-            { value: 'Teamwork', label: 'Teamwork', id: "11" },
-            { value: 'Personal development', label: 'Personal development', id: "12" },
-            { value: 'Corporate social responsibility (CSR)', label: 'Corporate social responsibility (CSR)', id: "13" }]},{question: "What kind of employments are you interested in?", answers :[{ value: 'Trainee', label: 'Trainee', id: "1" },
-            { value: 'Internship', label: 'Internship', id: "2" },
-            { value: 'Summer job', label: 'Summer job', id: "3" }, { value: 'Part-time job', label: 'Part-time job', id: "4" },
-            { value: 'Master thesis', label: 'Master thesis', id: "5" },
-            { value: 'Bachelor thesis', label: 'Bachelor thesis', id: "6" }, { value: 'Full time job', label: 'Full time job', id: "7" }]},
-            {question: "Where in the world?", answers :[{ value: 'Sweden – Norrland', label: 'Sweden – Norrland', id: "1" },
-            { value: 'Sweden – Svealand', label: 'Sweden – Svealand', id: "2" },
-            { value: 'Sweden – Götaland', label: 'Sweden – Götaland', id: "3" }, { value: 'World – Europe', label: 'World – Europe', id: "4" },
-            { value: 'World – Asia', label: 'World – Asia', id: "5" },
-            { value: 'World – North America', label: 'World – North America', id: "6" }, { value: 'World – South America', label: 'World – South America', id: "7" }, { value: 'World – Oceania', label: 'World – Oceania', id: "8" }, { value: 'World – Africa', label: 'World – Africa', id: "9" }]},
-            {question: "What benefits are important to you?", answers :[{ value: 'Professional development (education)', label: 'Professional development (education)', id: "1" },
-            { value: 'Extra long vacation', label: 'Extra long vacation', id: "2" },
-            { value: 'Gym', label: 'Gym', id: "3" }, { value: 'Free Food', label: 'Free Food', id: "4" },
-            { value: 'Car', label: 'Car', id: "5" },
-            { value: 'Phone', label: 'Phone', id: "6" }, { value: 'Computer', label: 'Computer', id: "7" }, { value: 'Pay for overtime work', label: 'Pay for overtime work', id: "8" }, { value: 'Bonus system', label: 'Bonus system', id: "9" }, { value: 'Possibility to work in other countries', label: 'Possibility to work in other countries', id: "10" }, { value: 'Ability to work from home', label: 'Ability to work from home', id: "11" }, { value: 'Flexible work hours', label: 'Flexible work hours', id: "12" }]}],
             match_result: null,
             show_more: false,
+            options : [],
             industries: [],
             values: [],
+            competences: [],
             employments: [],
             locations: [],
             benefits: [],
             selectOptions : null,
             hide: false,
-            isLoading: false
+            isLoading: false,
+            started: false,
+            optionIndex: 0,
+            currentOption: {},
+            weights: [5,5,5,5,5]
         };
     }
 
     componentDidMount() {
+        axios.get('https://ais.armada.nu/api/matching/choices')  // fetch data witt promise (then) and res(ult)
+        .then((res)  => {
+          const optionsRes = res.data.options;  // create variable and store result within parameter data
+          this.setState({ 
+            options: optionsRes,
+            currentOption: optionsRes[0] 
+          });  // component saves its own data
+        }).catch(() => {
+          alert("Failed to get data. Try again later.");
+        });
     }
 
     postData (url, data) {
@@ -80,20 +66,19 @@ class MatchingSection extends React.Component {
 
     submit() {
         if (this.state.industries.length == 0 || this.state.values.length == 0 || this.state.employments.length == 0 || this.state.locations.length == 0 || this.state.benefits.length == 0) {
-        //    alert("You have to select at least one option for every question!")
-        //}
-        //else {
-
-        this.postData('https://ais.armada.nu/api/matching/',{
-          "industries": {"answer": [1], "weight": 1},
-          "values": {"answer": [], "weight": 1},
-          "employments": {"answer": [1, 2, 3, 4], "weight": 0.5},
-          "locations": {"answer": [4, 5, 6], "weight": 0.3},
-          "competences": {"answer": [33, 34, 35], "weight": 1},
-          "cities": {"answer": "Stockholm, Göteborg", "weight": 0},
-          "response_size": 4
-        })
-        this.setState({hide: true})
+            alert("You have to select at least one option for every question!")
+        }
+        else {
+          this.postData('https://ais.armada.nu/api/matching/',{
+            "industries": {"answer": [1], "weight": 1},
+            "values": {"answer": [], "weight": 1},
+            "employments": {"answer": [1, 2, 3, 4], "weight": 0.5},
+            "locations": {"answer": [4, 5, 6], "weight": 0.3},
+            "competences": {"answer": [33, 34, 35], "weight": 1},
+            "cities": {"answer": "Stockholm, Göteborg", "weight": 0},
+            "response_size": 4
+          })
+          this.setState({hide: true})
         }
     }
 
@@ -107,25 +92,6 @@ class MatchingSection extends React.Component {
         this.setState({match_result: null})
     }
 
-    buildOptions(array) {
-        var listitems = []
-        for (let i = 0; i < array.length; i++) {
-          listitems.push(<div><p>{array[i].question}</p><Select
-            placeholder="Select option(s)..."
-            closeMenuOnSelect={false}
-            isMulti
-            isSearchable
-            name="Hej"
-            options = {array[i].answers}
-            onChange={this.handleChange(i)}
-            className="basic-multi-select"
-            classNamePrefix="select"
-        />
-        </div>);
-        }
-        return listitems;
-      }
-
       createStars(similarity){
         var rating = similarity * 100;
 
@@ -134,10 +100,19 @@ class MatchingSection extends React.Component {
             <div className="star-ratings-css-top" style={{width:rating+'%'}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
             <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
           </div>
-
-        );
+        )
       }
 
+    carousel(option){
+      return (
+          <div className="matching-question-card" >
+            <MatchingQuestion question={option.question} nextDisabled={this.state.optionIndex === this.state.options.length-1} prevDisabled={this.state.optionIndex === 0} prevClick={this.prevOption} nextClick={this.nextOption} answers={option.answers} handleChange={this.handleChange(this.state.optionIndex)} preSelected={this.getResult(this.state.optionIndex)} onWeightChange={this.onWeightChange} index={this.state.optionIndex} />
+            {/* sliderValue={this.state.weights[this.state.optionIndex]} */}
+          </div>
+        )
+    }
+
+        
       createJobs(exhibitor_id) {
         let exhibitor = this.state.match_result.exhibitors[exhibitor_id];
         let array = exhibitor.employments.map(item => item.name)
@@ -239,6 +214,34 @@ class MatchingSection extends React.Component {
         else {return <Text/>}
       }
 
+    
+    prevOption = () => {
+      const prevIndex = this.state.optionIndex-1;
+      this.setState({
+        currentOption: this.state.options[prevIndex],
+        optionIndex: prevIndex
+      })
+    }
+
+    nextOption = () => {
+      this.setState({hide: true})
+      const nextIndex = this.state.optionIndex+1;
+      this.setState({
+        currentOption: this.state.options[nextIndex],
+        optionIndex: nextIndex,
+        hide: false
+      })
+    }
+
+    onWeightChange = (index, value) => {
+      let temp = this.state.weights;
+      temp[index] = value-0; // Make sure it's a number
+      this.setState({weights: temp})
+      /* eslint-disable no-console */
+      console.log(this.state.weights);
+      /* eslint-enable no-console */
+    }
+
       presentMoreMatches() {
         var listitems = [];
         if (!this.state.match_result) return null;
@@ -264,26 +267,49 @@ class MatchingSection extends React.Component {
       handleChange = (index) => {
         var bindedthis = this;
         return function(value) {
-            var result = value.map(value => value.id);
+        
+          var result = value.map(value => value.id);
             result = result.map(Number);
-            if (index == 0) {bindedthis.setState({industries: result})}
-            if (index == 1) {bindedthis.setState({values: result})}
-            if (index == 2) {bindedthis.setState({employments: result})}
-            if (index == 3) {bindedthis.setState({locations: result})}
-            if (index == 4) {bindedthis.setState({benefits: result})}
+            if (index == 0) {bindedthis.setState({values: value})}
+            if (index == 1) {bindedthis.setState({industries: value})}
+            if (index == 2) {bindedthis.setState({competences: value})}
+            if (index == 3) {bindedthis.setState({employments: value})}
+            if (index == 4) {bindedthis.setState({locations: value})}
         }
       }
-    
+
+      handleClick = () => {
+        this.setState({started: !this.state.started})
+      }
+
+      getResult = (index) => {
+        let res = [];
+        switch (index) {
+          case 0:
+            res = this.state.values;
+            break;
+          case 1:
+            res = this.state.industries;
+            break;
+          case 2:
+            res = this.state.competences;
+            break;
+          case 3:
+            res = this.state.employments;
+            break;
+          case 4:
+            res = this.state.locations;
+            break;
+        }
+        return res;
+      }
+
     render() {
         return (
 					<div>
-						<h1 className="helmet">Matching</h1>
-						<p>Try out Armada's brand new <span className="bold">matching functionality</span> that matches </p>
-						<p>students with companies through their shared values!</p>
+            
             <div className="questions">
-            {!this.state.hide ? <div className="optioncontainer">{this.buildOptions(this.state.options)}
-                <button className="match" onClick={() => this.submit()}>Get my match!</button></div> : null}
-            {this.state.hide ? <div className="matchgrid">{this.presentMatches()}</div> : null}
+            {this.state.started === true && this.state.isLoading === false ? this.carousel(this.state.currentOption) :  <MatchingWelcomeScreen handleClick={this.handleClick}/>} 
             {this.state.isLoading ? <Loading/> : null}
             {this.state.match_result ? <div className="trycontainer"><button className="match" onClick={() => this.matchagain()}>Try matching again!</button></div> : null}
             <br />
@@ -299,6 +325,7 @@ class MatchingSection extends React.Component {
                 <div className="trycontainer"><button className="match" onClick={() => this.setState({ show_more:true })}>Show more companies</button></div>}
 
             </div>
+            
 					</div>
         );
     }

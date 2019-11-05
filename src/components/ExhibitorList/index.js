@@ -33,6 +33,7 @@ class ExhibitorList extends React.Component {
       search: '', //search query string
       jobfilters: {},
       sectorfilters: {},
+      locationfilters: {},
       shine: '',
       diversityfilter: false,
       sustainabilityfilter: false,
@@ -41,7 +42,14 @@ class ExhibitorList extends React.Component {
       sustainabilitysrc: '/assets/sustainability.svg',
       location: "All",
       sector: "All",
-      locations: ['Sweden', 'Europe', 'Asia', 'Oceania', 'North America', 'South America', 'Africa'], //TODO: fill dynamically from api {locations + sector}
+      locations: [{value: 'Sweden', label: 'Sweden'},
+        {value: 'Europe', label: 'Europe'}, 
+        {value: 'Asia', label: 'Asia'},
+        {value: 'Oceania', label: 'Oceania'},
+        {value: 'North America', label: 'North America'}, 
+        {value: 'South America', label: 'South America'},
+        {value: 'Africa', label: 'Africa'}
+      ],
       sectors: [{value: 'Retail', label: 'Retail'}, 
         {value: 'Graphic Productions', label: 'Graphic Productions'}, 
         {value: 'Recruitment', label: 'Recruitment'}, 
@@ -228,6 +236,13 @@ class ExhibitorList extends React.Component {
     this.setState({sectorfilters})
   }
 
+  locationFilter(value) {
+    this.setdefault()
+    let locationfilters = this.state.locationfilters;
+    locationfilters = value;
+    this.setState({locationfilters});
+  }
+
   showMore() {
     let showamount = this.state.showamount;
     showamount = 183;
@@ -289,13 +304,6 @@ class ExhibitorList extends React.Component {
   //     else if (groupfilter[group] === true) { groupfilter[group] = false }
   //     this.setState({ groupfilter[0] })
   // }
-
-  locationFilter(e) {
-    this.setdefault()
-    let location = this.state.location;
-    location = e.target.value;
-    this.setState({location});
-  }
 
   //build options for dropdown filters
   buildOptions(array) {
@@ -359,29 +367,26 @@ class ExhibitorList extends React.Component {
       }
     }
 
-    //Location filter
-    if (this.state.location === "All") {
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem;
-      });
-    }
-    else {
-      filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        for (let i in exhibitorItem.props.exhibitor.locations) {
-          if (exhibitorItem.props.exhibitor.locations[i].name == this.state.location) {
-            return true;
-          }
-        }
-        return false;
-      });
-    }
-
     //Sector type filter
     for (let filterkey in this.state.sectorfilters) {
       if (this.state.sectorfilters[filterkey]) {
         filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
           for (let sectorindex in exhibitorItem.props.exhibitor.industries) {
             if (exhibitorItem.props.exhibitor.industries[sectorindex].name == this.state.sectorfilters[filterkey].value) {
+              return true;
+            }
+          }
+          return false;
+        });
+      }
+    }
+
+    //Location type filter
+    for (let filterkey in this.state.locationfilters) {
+      if (this.state.locationfilters[filterkey]) {
+        filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
+          for (let locationindex in exhibitorItem.props.exhibitor.locations) {
+            if (exhibitorItem.props.exhibitor.locations[locationindex].name == this.state.locationfilters[filterkey].value) {
               return true;
             }
           }
@@ -451,19 +456,20 @@ class ExhibitorList extends React.Component {
               className="basic-multi-select"
               classNamePrefix="select"
             />
+
+            <Select
+              closeMenuOnSelect={false}
+              isMulti
+              isSearchable
+              name="Location filter"
+              placeholder="All Locations"
+              options={this.state.locations}
+              onChange={event => this.locationFilter(event)}
+              className="basic-multi-select"
+              classNamePrefix="select"
+            />
             
             <div className="supercontainer">
-              
-
-              <div className="dropdown-container drop2">
-                <div className="select">
-                  <select onChange={this.locationFilter.bind(this)}>
-                    <option value="All" defaultValue>All Locations</option>
-                    {this.buildOptions(this.state.locations)}
-                  </select>
-                  <div className="select_arrow"></div>
-                </div>
-              </div>
               <p className="matching_link">Pssst! Find your perfect company by using Armada's new <Link className="matching_link_style" to="/matching">matching functionality!</Link></p>
             </div>
 

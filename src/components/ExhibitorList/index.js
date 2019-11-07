@@ -431,7 +431,7 @@ class ExhibitorList extends React.Component {
             </EasterEgg>
 
 						<h1>Exhibitors</h1>
-						<p><span className="bold" >Sustainability & Diversity</span> form the core values at the heart of our organization. To highlight our core values, we have chosen to dedicate focus areas of the fair called Green Room and Diversity Room.</p>
+						<p><span className="bold" >Sustainability & Diversity</span> form the core values at the heart of our organization. To highlight our core values, we have chosen to dedicate focus areas of the fair called Green Room and Diversity Room. If an exhibitor is tagged with one of the images below, they are in one of these rooms!</p>
             {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay)) : null}
 
             {/*TODO: remove blue box around special filters*/}

@@ -50,7 +50,7 @@ class EventList extends React.Component {
     displayEvent = (event) => {
       let today = new Date();
       let eventdate = new Date (event.event_start * 1000);
-      let registration_end = new Date (event.registration_end * 1000);
+      // let registration_end = new Date (event.registration_end * 1000);
       let minutes = "0" + eventdate.getMinutes();
       let hours = eventdate.getHours();
       let eventdate_end = new Date (event.event_end * 1000);
@@ -69,7 +69,8 @@ class EventList extends React.Component {
                 {eventdate > today ? (
                   <a href={event.signup_link}>
                   <button className="rsvpbutton">
-                    <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span>
+                    {/* <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span> */}
+                    <span>SIGN UP HERE</span>
                   </button>
                 </a>):(
                   <a href={event.signup_link}>
@@ -101,7 +102,8 @@ class EventList extends React.Component {
                 {eventdate > today ? (
                   <a href={event.signup_link}>
                   <button className="rsvpbutton">
-                    <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span>
+                    {/* <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span> */}
+                    <span>SIGN UP HERE</span>
                   </button>
                 </a>):(
                   <a href={event.signup_link}>
@@ -121,7 +123,7 @@ class EventList extends React.Component {
 
         let today = new Date();
         let eventdate = new Date (event.event_start * 1000);
-        let registration_end = new Date (event.registration_end * 1000);
+        // let registration_end = new Date (event.registration_end * 1000);
         return (
             <div>
                 <div className = "event-item" onClick={()=>this.showModal(event.id)}>
@@ -145,7 +147,8 @@ class EventList extends React.Component {
                         <div className="modalbutton">
                 {eventdate > today ? (
                   <button className="rsvpbutton">
-                    <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span>
+                    {/* <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span> */}
+                    <span>SIGN UP HERE</span>
                   </button>
                 ):(
                   <button className="rsvpclosed">

@@ -82,6 +82,7 @@
     width: 40%;
     text-align: center;
     img {
+      border-radius: 12px;
       max-height: 50vh;
       width: auto;
     }
@@ -90,20 +91,12 @@
       padding-right: 10%;
       padding-left: 10%;
     }
-    .map-link {
+    .links {
       margin-top: 0.2em;
       color: blue;
       text-decoration: none;
     }
-    .map-link a {
-      color: blue;
-      font-size: 0.8em;
-    }
-    .exhibitor-website {
-      margin-top: 0.8em;
-      text-decoration: none;
-    }
-    .exhibitor-website a {
+    .links a {
       color: blue;
       font-size: 0.8em;
     }

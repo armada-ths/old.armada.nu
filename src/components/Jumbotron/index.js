@@ -116,8 +116,8 @@ class Jumbotron extends React.Component {
         <div id={"header"}>
             <div className={header_class === "header-home" ? "logo-container fixed" : "logo-container"}>
                     <img src={require('../../../content/assets/images/header-images/logo.png')} />
-                    <CountdownComponent/>
                     <p className="logo-date">THE FAIR 19-20 NOV 2019</p>
+                    <CountdownComponent/>
                     {header_class === "header-home" ? 
                     <div className="buttoncontainer">
                         <Link to='/exhibitor_info' id="buttonleft" className="homepagebutton"><span>Information for companies</span></Link>

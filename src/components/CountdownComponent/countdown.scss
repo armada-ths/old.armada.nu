@@ -1,0 +1,46 @@
+@import '../../styles/_variables';
+
+.countdown-container {
+    position: relative;
+    color: #fff;
+    z-index: 2; 
+}
+
+.countdown-width-container {
+
+    #countdown-numbers {
+        color: white; 
+        font-weight: bold;
+        font-size: calc(30px + 0.8vw);
+        text-align: center;
+        margin: 0;
+    }
+
+    .countDownRow {
+        display: block;
+    }
+
+    .countDownColumn {
+        float: left;
+        width: 25%;
+        text-align: center;
+    }
+    
+    #timeUnit {
+        text-align: center;
+        line-height: 0;
+        font-weight: bold;
+        font-size: calc(10px + 0.8vw);
+        color: #fff;
+        padding: 1px;
+        margin-top: -2px;
+    }
+}
+
+// @media screen and (min-height: 1000px) {
+//     .logo-container{
+//         p{
+//             font-size: 2em;
+//         }
+//     }
+// }

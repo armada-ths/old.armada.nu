@@ -73,6 +73,10 @@
   overflow-wrap: break-word;
   text-align: justify;
 
+  .modal-subheaders {
+    font-size: 1.2em;
+  }
+
   .modal-container {
     display: flex;
     min-height: 100vh;

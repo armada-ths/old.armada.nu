@@ -86,7 +86,8 @@ class ExhibitorList extends React.Component {
         {value: 'Property & Infrastructure', label: 'Property & Infrastructure'},
         {value: 'Infrastructure', label: 'Infrastructure'}, 
         {value: 'Technical Consulting', label: 'Technical Consulting'}, 
-        {value: 'Consulting', label: 'Consulting'},
+        {value: 'IT Consulting', label: 'IT Consulting'},
+        {value: 'Software Development', label: 'Software Development'},
         {value: 'Railway', label: 'Railway'}, 
         {value: 'Product Development', label: 'Product Development'}, 
         {value: 'Interaction Design', label: 'Interaction Design'},
@@ -133,7 +134,7 @@ class ExhibitorList extends React.Component {
     return (
         <div className="job-container">
 
-          <h3>Job Opportunities</h3>
+          <h3 className="modal-subheaders">Job Opportunities</h3>
           <ul>
             {exhibitor.employments.map((jobtype, index) => <li key={index} className="job-section">{jobtype.name}</li>)}
           </ul>
@@ -180,7 +181,7 @@ class ExhibitorList extends React.Component {
                   <div className="description">
                     {exhibitor.about ? exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>) : null}
                   </div>
-                  <div className="climate-compensation">{exhibitor.climate_compensation ? <i>&#127811; This company has climate compensated for their participation in  Armada &#127811;</i> : null}</div>
+                  <div className="climate-compensation">{exhibitor.climate_compensation ? <i>&#127811; This company has climate compensated for their participation in  THS Armada &#127811;</i> : null}</div>
                 </div>
                 
                 <div className="job-location-container">
@@ -189,7 +190,7 @@ class ExhibitorList extends React.Component {
                   {exhibitor.locations.length > 0 &&
                   <div className="location-container">
 
-                    <h3>Locations</h3>
+                    <h3 className="modal-subheaders">Locations</h3>
                     <ul>
                       {exhibitor.locations.map((loc, index) =>
                           <li key={index} className="location-section">
@@ -198,6 +199,23 @@ class ExhibitorList extends React.Component {
                     </ul>
                   </div>
                   }
+                {exhibitor.competences.length > 0 &&
+                <div className="location-container">
+                  <h3 className="modal-subheaders">Competences</h3>
+                  <ul>
+                    {exhibitor.competences.map((comp, index) =>
+                      <li key={index} className="location-section">
+                        {comp.name}
+                      </li>)}
+                  </ul>
+                </div>
+                }
+                {exhibitor.cities.length > 0 &&
+                <div className="location-container">
+                  <h3 className="modal-subheaders">Cities</h3>
+                    {exhibitor.cities}
+                </div>
+                }
                 </div>
               </div>
             </div>
@@ -457,7 +475,7 @@ class ExhibitorList extends React.Component {
               isMulti
               isSearchable
               name="Sector filter"
-              placeholder="All Sectors"
+              placeholder="All Industries"
               options={this.state.sectors}
               onChange={event => this.sectorFilter(event)}
               className="basic-multi-select"

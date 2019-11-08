@@ -2,7 +2,7 @@
 title: Maps
 layout: Mapspage
 description: View all maps of the fair
-menuPage: true
+menuPage: false
 priority: 3
 header: /assets/images/header-images/About.jpg
 ---

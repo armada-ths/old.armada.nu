@@ -55,6 +55,22 @@ body {
   height: auto;
 }
 
+#diversity-color {
+  color: $diversity;
+}
+
+#diversity-day {
+  color: $diversity;
+}
+
+#diversity-room {
+  color: $diversity;
+}
+
+#diversity {
+  color: $diversity;
+}
+
 .body {
   // TODO: this class needs to be renamed
   max-width: 850px;

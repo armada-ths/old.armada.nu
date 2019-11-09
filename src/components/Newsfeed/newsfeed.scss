@@ -1,13 +1,16 @@
 @import '../../styles/_variables';
 
 .newsfeed {
-    margin: 3em 0em 6em 0em; 
+    margin: 1em 0em 0em 0em; 
 
-    min-height: 100%;
+    min-height: 100%;   
     ul {
         li {
-            margin: 1em 0em;
+            margin: 1em 0.5em;
             min-height: 143px;
+            width: 10%;
+            flex-grow: 1;
+            min-height: 100%;
         }
     }
 
@@ -18,14 +21,14 @@ blockquote {
 }
 
 .newsitem.regular {
-    display: flex;
-    flex-direction: row;
+    min-height: 100%;
+    //display: flex;
+    //flex-direction: row;
 }
 
 .armada-news {
     text-align: center;
     border-bottom: 1px solid $melon;
-    margin: 2em 1em 3em 1em;
 }
 
 .post {
@@ -38,8 +41,11 @@ blockquote {
        margin: 3em 0em 6em 0em;  // nytt
         ul {
             li {
-                margin: 3em 0em;
-                min-height: 143px;
+                //margin: 3em 0em;
+                //min-height: 143px;
+                width: 90%;
+                margin-left: 5%;
+                margin-right: 5%;
             }
         }
     }

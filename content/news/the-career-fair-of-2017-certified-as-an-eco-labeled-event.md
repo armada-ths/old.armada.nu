@@ -1,6 +1,7 @@
 ---
 layout: News
 title: The career fair of 2017 - certified as an eco-labeled event
+category: 'GENERAL'
 cover_wide: /assets/swe_clean.jpg
 featured: false
 ingress: >-

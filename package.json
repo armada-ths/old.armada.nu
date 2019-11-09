@@ -139,6 +139,7 @@
     "moment": "^2.19.1",
     "prop-types": "^15.6.0",
     "react-chartjs": "^1.2.0",
+    "react-countdown-now": "^2.1.2",
     "react-easter": "^1.0.6",
     "react-google-analytics": "^0.2.0",
     "react-google-maps": "^7.0.0",

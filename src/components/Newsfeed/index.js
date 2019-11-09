@@ -3,11 +3,11 @@ import PropTypes from "prop-types"
 import enhanceCollection from "phenomic/lib/enhance-collection"
 
 import PagesList from "../../components/PagesList"
-import PagePreview from "../../components/PagePreview"
+//import PagePreview from "../../components/PagePreview"
 
 import "./newsfeed.scss"
 
-const defaultNumberOfPosts = 20
+const defaultNumberOfPosts = 3
 
 const Newsfeed = (props, { collection }) => {
 
@@ -20,13 +20,13 @@ const Newsfeed = (props, { collection }) => {
 
   let displayedArticleIndex = latestPosts.findIndex( (element) => {
       return element.title === props.displayed_article;
-      });
+  });
 
-  if (displayedArticleIndex >=0){
-      latestPosts.splice(displayedArticleIndex,1);
+  if (displayedArticleIndex >= 0) {
+      latestPosts.splice(displayedArticleIndex, 1);
   }
 
-
+  /*
   const featuredPostIndex = latestPosts.findIndex( (element) =>{
       return element.featured;
     });
@@ -35,22 +35,25 @@ const Newsfeed = (props, { collection }) => {
     if (featuredPostIndex >= 0) {
         latestPosts.splice(featuredPostIndex, 1);
     }
+  */
+  
+  const posts = latestPosts.length > 0 ? <PagesList pages={latestPosts} /> : null;
 
-    const posts = latestPosts.length > 0 ? <PagesList pages={latestPosts} /> : null;
+  let feed =(
+    <div className="newsfeed">
+      <div className="armada-news">
+        <h1 id="newstitle">Armada News</h1>
+      </div>
+      {/* featuredPost */}
+      { posts }
+    </div>
+  );
 
-    let feed =( <div className="newsfeed">
-        <div className="armada-news">
-          <h1 id="newstitle">Armada News</h1>
-        </div>
-        { featuredPost }
-        {posts}
-      </div>);
-
-    return (
-        <div>
-            {feed}
-        </div>
-    )
+  return (
+      <div>
+          {feed}
+      </div>
+  )
 }
 
 Newsfeed.propTypes = {

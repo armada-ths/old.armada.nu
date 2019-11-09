@@ -9,6 +9,10 @@
   //padding: 1em 0em;
 }
 
+#information-for-exhibitors {
+  margin-bottom: 0.5em;
+}
+
 @media screen and (max-width: $breakpoint-mobile-flipped){
   .info-container {
     padding: 3em 1em;
@@ -17,4 +21,9 @@
     //margin: auto;
     //padding: 1em 0em;
   }
+  
+  #information-for-exhibitors {
+    font-size: 2em;
+  }
+
 }

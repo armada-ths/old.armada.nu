@@ -106,7 +106,7 @@ body.header-invisible {
     z-index: 2;
     text-align: center;
     height: 65%;
-    margin-top: 30px;
+    margin-top: 0px;
 
     img {
         max-height:90%;
@@ -132,6 +132,24 @@ body.header-invisible {
     .logo-container{
         p{
             font-size: 2em;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+    .logo-container{
+        p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .logo-container{
+        p{
+            margin-top: 0px;
+            margin-bottom: 0px;
         }
     }
 }

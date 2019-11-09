@@ -3,7 +3,8 @@
 .countdown-container {
     position: relative;
     color: #fff;
-    z-index: 2; 
+    z-index: 2;
+    width: 500px;
 }
 
 .countdown-width-container {
@@ -11,9 +12,9 @@
     #countdown-numbers {
         color: white; 
         font-weight: bold;
-        font-size: calc(30px + 0.8vw);
+        font-size: calc(40px + 0.8vw);
         text-align: center;
-        margin: 0;
+        margin-top: 20px;
     }
 
     .countDownRow {
@@ -37,10 +38,17 @@
     }
 }
 
-// @media screen and (min-height: 1000px) {
-//     .logo-container{
-//         p{
-//             font-size: 2em;
-//         }
-//     }
-// }
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .countdown-container {
+        width: 300px;
+
+        #countdown-numbers {
+            font-size: calc(30px + 0.8vw);
+            margin-top: 0;
+        }
+    
+        #timeunit {
+            font-size: calc(10px + 0.8vw);
+        }
+    }
+}

@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import "./jumbotron.scss";
-import {Link} from "react-router"
 import CountdownComponent from "../CountdownComponent"
 
 var smoothScroll = {
@@ -118,13 +117,6 @@ class Jumbotron extends React.Component {
                     <img src={require('../../../content/assets/images/header-images/logo.png')} />
                     <p className="logo-date">THE FAIR 19-20 NOV 2019</p>
                     <CountdownComponent/>
-                    {header_class === "header-home" ? 
-                    <div className="buttoncontainer">
-                        <Link to='/exhibitor_info' id="buttonleft" className="homepagebutton"><span>Information for companies</span></Link>
-                        <Link to='/exhibitors' id="buttonright" className="homepagebutton"><span>Exhibitors at the fair</span></Link>
-                    </div>
-
-                        : null}
             </div>
             <div className={header_class}>
                 {video_or_image}

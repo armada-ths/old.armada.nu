@@ -1,11 +1,12 @@
 ---
 layout: News
 title: 'THS ARMADA MAGAZINE '
-category: 'NEWS'
+category: NEWS
 date: 2019-11-09T14:15:01.231Z
 cover_wide: /assets/magazine.jpg
-ingress: Armada has a new official magazine!
+cover_square: /assets/magazine.jpg
 featured: true
+ingress: Armada has a new official magazine!
 ---
 <br/>
 "Armada" is the official magazine for KTH's carrer fair THS Armada. The magazine will be included in the newest edition of Ny Teknik, and will reach the majority of all engineers in Sweden!

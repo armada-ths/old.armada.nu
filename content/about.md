@@ -12,22 +12,9 @@ THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of 
 
 **Diversity **and **sustainability **form the core values at the heart of this pursuit.
 
-## Diversity
+## Diversity & Sustainability
 
-<p style="text-align:center;">
-<img src="/assets/diversity-melon-nolabel.png" height="100em" width="100em"/>
-</p>
-
-THS Armada truly believes that the best teams are created when there is a clear focus on equality and diversity. It follows, that equal value and opportunities are fundamental in our work. In the past, it has been made possible for international students to be a part of the organisation. Today, we also focus on gender balance within the teams of THS Armada.
-
-By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Therefore, we devote a special part of our fair to promoting diversity, namely **Diversity Room.** Companies at Diversity Room are some of the most progressive when it comes to inclusion and diversity in the workplace.
-
-## Sustainability
-
-<p style="text-align:center;">
-<img src="/assets/sustainability-melon-nolabel.png" height="100em" width="100em"/>
-</p>
-
-THS Armada has been climate neutral since 2015 and our belief in a green future motivates us to continuously make improvements towards a more sustainable fair. This year, we proudly announce that all events, the grand banquet and even the career fair itself serves solely vegetarian food and that all events are branded eco events.
-
-THS Armada has dedicated an area of the fair to companies that we deem to be the frontrunners in our vision for a sustainable future. This area is called **Green Room**. The participants of Green Room are eager to share their work in regards to minimising environmental impact.
+We at THS Armada believe that Sustainability and Diversity are crucial for the workings of any
+organization. Hence, our two core values include Sustainability and Diversity. You can read
+more about how THS Armada works with these core values in their respective tabs.
+https://armada.nu/diversity & https://armada.nu/sustainability 

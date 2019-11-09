@@ -2,7 +2,7 @@
 title: Diversity
 layout: Diversitypage
 description: Page
-menuPage: true
+menuPage: false
 priority: '10'
 header: /assets/diversity-header.jpg
 ---

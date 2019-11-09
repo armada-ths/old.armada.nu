@@ -31,26 +31,37 @@ class PagePreview extends React.Component {
 
       const ingressSection = this.props.featured ? (<p className="ingress"> {this.props.ingress} </p>) : <p className="description"> {this.props.description.substring(0,40) + "..."} </p>;
 
+      const months = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+      ];
       const dateSection = (pageDate &&
             <small>
               { " " }
               <time key={ pageDate.toISOString() }>
-                { pageDate.toDateString() }
+                {pageDate.getDate()}<br />
+                { months[pageDate.getMonth()] }
               </time>
             </small>
           )
 
       return (
-        <div className={"newsitem " +  (this.props.featured ? "featured" : "regular")}>
-          <Link to={this.props.__url} className={!this.isMobile() ? "regular-news-link" : null}>
-            <img src={this.props.cover_wide ? this.props.cover_wide : this.props.cover_square} />
-            <div className="preview-content">
-            <h2>{ this.props.title }</h2>
+        <div className={"newsitem " +  /*(this.props.featured ? "featured" : "regular")*/ "regular"}>
+          <div className="image-container" style={{ backgroundImage: "url('" + (this.props.cover_wide ? this.props.cover_wide : this.props.cover_square) + "'" }}>
+            <div className="newsitem-datesection">{dateSection}</div>
+            {this.props.category && <div className='newsitem-category'>{this.props.category}</div>}
+          </div>
+          <div className="preview-content">
+
+            <h2><Link to={this.props.__url}>{this.props.title}</Link></h2>
             {this.isMobile() && !this.props.featured ? (<br />) : null}
-            {dateSection}
-            {!this.isMobile() || this.props.featured ? ingressSection : null} 
-            </div>
-          </Link>
+            {/* {dateSection} */}
+            {!this.isMobile() || this.props.featured ? ingressSection : null}
+
+            <Link to={this.props.__url} className={!this.isMobile() ? "regular-news-link" : null}>
+              Read more
+            </Link>
+          </div>
         </div>
       )
     }
@@ -61,6 +72,7 @@ PagePreview.propTypes = {
   __filename: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string,
+  category: PropTypes.string,
   cover_wide: PropTypes.string,
   description: PropTypes.string,
   cover_square: PropTypes.string,

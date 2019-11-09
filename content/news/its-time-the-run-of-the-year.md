@@ -1,6 +1,7 @@
 ---
 layout: News
 title: 'It’s time - the run of the year '
+category: 'GENERAL'
 date: 2018-10-03T22:00:00.000Z
 cover_wide: /assets/armadarun_cover.png
 featured: false

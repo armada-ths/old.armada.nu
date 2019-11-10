@@ -4,7 +4,7 @@ layout: Diversitypage
 description: Page
 menuPage: false
 priority: '10'
-header: /assets/diversity-header.jpg
+header: /assets/diversity_header.jpg
 ---
 ## **Diversity**
 

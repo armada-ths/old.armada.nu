@@ -32,7 +32,7 @@ Exhibitors in Green Room 2019 and the reasoning for having them in the room can 
 here:
 
 <form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/green-room.pdf">
-   <button type="submit">See Exhibitors in the Diversity Room</button>
+   <button type="submit">See Exhibitors in the Green Room</button>
 </form>
 
 ## **Climate compensation**

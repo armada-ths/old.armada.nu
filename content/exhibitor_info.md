@@ -192,7 +192,7 @@ Location: [Hyllan, Nymble floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftE
 
 Get inspired by innovative early-stage companies that have come out of KTH. 
 
-Location: [KTH Entré, floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/piS4w7TK6DQ8spaihekBaqkM)
+Location: [KTH Entré, floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/piBDtFAd7NAmrovUHpziGeZo)
 
 **SAFETY**
 

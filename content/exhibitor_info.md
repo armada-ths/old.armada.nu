@@ -40,7 +40,7 @@ You can find the location of your booth by visiting our [map](https://armada.nu/
 
 When arriving at the fair, you shall visit the information desk to check-in your company/organization. Make sure to contact your host beforehand and tell them when you will arrive - they will meet you and help you with the check-in and stand area. Check-in your organization at the information desk in your specific exhibition hall. 
 
-Click here to open the map and view where the information desks are located. Do you want to know which building you will be located in, to find the correct information desk to check in at? Search for your company on the map [here](https://armada.nu/maps/). You will check in your company in the same building you have been placed.
+[Click here](https://armada.nu/maps/) to open the map and view where the information desks are located. Do you want to know which building you will be located in, to find the correct information desk to check in at? Search for your company on the map [here](https://armada.nu/maps/). You will check in your company in the same building you have been placed.
 
 **Check-in hours**
 
@@ -213,7 +213,7 @@ All exhibition areas will be locked and patrolled during closed hours. If you wo
 
 **Schedule**
 
-All guests will be asked to confirm their attendance to the banquet by their respective career fair hosts. If there has been any changes, please notify your career fair host. All guests will receive an email during the day regarding their placement at the dinner, including the names of the people at their table.
+All guests will be asked to confirm their attendance to the banquet by their respective career fair hosts. If there has been any changes, please notify your career fair host. All guests will receive an email before the end of the first fair day regarding their placement at the dinner. Regarding student-give-away tickets the contact information of the student needs to be reported to the information desk before 15:00.
 
 **18:00** Doors will open to the banquet
 

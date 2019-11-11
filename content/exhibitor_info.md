@@ -277,34 +277,34 @@ Your invoice will be sent to your confirmed address after the fair, no later tha
 
 ### QUESTIONS REGARDING LOGISTICS, TRANSPORT AND ELECTRICITY
 
-Lukas Lindroos
+<p style="text-align: center !important;">Lukas Lindroos</p>
 
-Head of Logistics 
+<p style="text-align: center !important;">Head of Logistics</p>
 
-<mailto:lukas.lindroos@armada.nu>
+<p style="text-align: center !important;"><a href="mailto:lukas.lindroos@armada.nu">lukas.lindroos@armada.nu</a></p>
 
-+46 73-850 32 99
+<p style="text-align: center !important;">+46 73-850 32 99</p>
 
 ### QUESTIONS REGARDING CHECK-IN, SERVICE DESKS AND BANQUET
 
-Filip Jacobson
+<p style="text-align: center !important;">Filip Jacobson
 
-Head of Business Relations and Events
+<p style="text-align: center !important;">Head of Business Relations and Events
 
-<mailto:filip.jacobson@armada.nu>
+<p style="text-align: center !important;"><a href="mailto:filip.jacobson@armada.nu">filip.jacobson@armada.nu</a></p>
 
-+46 70-402 03 41
+
+<p style="text-align: center !important;">+46 70-402 03 41
 
 ### GENERAL QUESTIONS
 
-Ulrik Sköldkvist
+<p style="text-align: center !important;">Ulrik Sköldkvist</p>
 
-Project Manager
+<p style="text-align: center !important;">Project Manager</p>
 
-<mailto:a@armada.nu>
+<p style="text-align: center !important;"><a href="mailto:a@armada.nu">a@armada.nu</a></p>
 
-+46 70-790 98 44
-
+<p style="text-align: center !important;">+46 70-790 98 44</p>
 
 
 ##

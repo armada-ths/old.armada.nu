@@ -3,7 +3,7 @@ title: Sustainability
 layout: Sustainabilitypage
 description: Armada Sustainability
 menuPage: true
-priority: '4'
+priority: 7
 header: /assets/sustainability_header.jpg
 ---
 ## **Sustainability**

@@ -3,7 +3,7 @@ title: About
 layout: Aboutpage
 description: About the fair
 menuPage: true
-priority: 6
+priority: 9
 header: /assets/images/header-images/Bankett.jpg
 ---
 # WHAT IS ARMADA?

@@ -3,7 +3,7 @@ title: Contact
 layout: Contactpage
 description: ' '
 menuPage: true
-priority: 7
+priority: 10
 header: /assets/thefair.jpg
 ---
 # Contact

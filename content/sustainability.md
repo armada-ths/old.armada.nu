@@ -2,8 +2,8 @@
 title: Sustainability
 layout: Sustainabilitypage
 description: Armada Sustainability
-menuPage: false
-priority: '9'
+menuPage: true
+priority: '4'
 header: /assets/sustainability_header.jpg
 ---
 ## **Sustainability**

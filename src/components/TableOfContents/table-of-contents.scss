@@ -1,0 +1,61 @@
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
+
+.toc-container {
+    text-align: center;
+    background-color: $melon;
+    padding-bottom: 0.2em;
+    padding-top: 0.2em;
+}
+
+.toc-header {
+    //text-decoration: underline;
+    margin-bottom: 0.2em;
+}
+
+.toc-header, .toc-element a {
+    text-align: center;
+    color: white;
+}
+
+.toc-element {
+    font-size: 1.5em;
+    margin-top: 0.2em;
+    text-decoration: underline;
+}
+
+.toc-subelement {
+    margin-top: 0.2em;
+    text-decoration: underline;
+}
+
+.toc-subelement a {
+    text-align: center;
+    margin: 0.0em;
+    color: white;
+    font-weight: normal;
+}
+
+#fair-schedule, #transport {
+    padding-top: 64px;
+}
+
+#how-to-book-transport, #packaging-instructions, #exhibiting-at-both-arkad-and-ths-armada {
+    padding-top: 64px;
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+
+    .toc-element {
+        margin-top: 0.2em;
+    }
+
+    #fair-schedule, #transport {
+        padding-top: 16px;
+    }
+    
+    #how-to-book-transport, #packaging-instructions, #exhibiting-at-both-arkad-and-ths-armada {
+        padding-top: 16px;
+    }
+    
+}

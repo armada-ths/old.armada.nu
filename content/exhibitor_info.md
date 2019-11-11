@@ -6,7 +6,7 @@ menuPage: true
 priority: '3'
 header: /assets/for_exhibitors.jpg
 ---
-# Information for Exhibitors
+
 
 ## Fair Schedule
 
@@ -50,7 +50,7 @@ Armada is happy to announce that we have hired DHL to handle the transportation.
 
 All exhibitors who wants to send something bulky or more goods than what is included in one of the options above has to negotiate a price directly with DHL by filling in goods information in the linked booking PDF below and emailing it to DHL. They will then return with a price for transport. This will be billed directly by DHL to the concerning exhibitor. Please note that only bookings made through our Armada Transport form to DHL will be granted access to use the loading dock in the buildings on KTH Campus. This means you will not be able to hire your own transportation company unless you have the capability to carry your goods in by hand through the main entrance. This is due to strict limitations of space and accessibility in the fair buildings.
 
-**HOW TO BOOK TRANSPORT**
+#### HOW TO BOOK TRANSPORT
 
 The booking system for transportation of booth goods to and from the fair is now open! In order to book transport you should download the PDF-form below and fill it in with information regarding pickup/return address, which transportation alternative you wish to book and the dimensions and weight of your goods. 
 <form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Transport_booking_form_THS Armada.pdf">
@@ -59,7 +59,7 @@ The booking system for transportation of booth goods to and from the fair is now
 
 After filling in the PDF you should email it directly to DHL on [tfe.sweden@dhl.com](<mailto: tfe.sweden@dhl.com>). The** deadline for booking is the 4th of November**, but do not wait until it is too late! **The goods must be packed prior to   DHL’s pick-up and You are responsible for packaging the goods**, the goods must be able to withstand normalhandling of goods in terminal. If you have any questions regarding booking of transports you can email DHL on [tfe.sweden@dhl.com](<mailto: tfe.sweden@dhl.com>) or call them at +46 31 799 4773. THS Armada’s own transport team will also be at your service on [transport@armada.nu](<mailto: tfe.sweden@dhl.com>) if you have any general questions regarding transport or logistics.
 
-**PACKAGING INSTRUCTIONS**
+#### PACKAGING INSTRUCTIONS
 
 In order to ensure that all exhibitor goods arrives safely and in one piece, it is important that you package your goods correctly. See instructions below for packaging tips from DHL for a safe shipment. Please note that it is under your responsibility to ensure that the goods you are sending to and from the fair are packaged correctly according to the packaging instructions and labelled at pick-up. If you have any questions regarding how you should pack your goods, please ask for further help and we will be at your service!
 
@@ -67,8 +67,8 @@ In order to ensure that all exhibitor goods arrives safely and in one piece, it 
    <button type="submit">Download packaging instructions</button>
 </form>
 
-**EXHIBITING AT BOTH ARKAD AND THS ARMADA?**
+#### EXHIBITING AT BOTH ARKAD AND THS ARMADA?
 
 ARKAD is Lunds Tekniska Högskola equivalent to THS Armada and is taking place just a week before Armada. Therefore, we have together with ARKAD arranged a transportation opportunity for companies exhibiting at both events. The same options as above is also included for transportation of company goods between the fairs. Please get in touch with your contact person at ARKAD in order to book this. Email [fair.arkad@tlth.se](<mailto: fair.arkad@tlth.se>) if you are uncertain who your contact person is at ARKAD.
 
-##
+

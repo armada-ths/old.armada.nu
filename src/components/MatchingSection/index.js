@@ -111,10 +111,13 @@ class MatchingSection extends React.Component {
 
     carousel(option){
       return (
+        <div >
+          <div className="wrapper">
           <div className="matching-question-card" >
             <MatchingQuestion onSubmit={() => this.submit()} question={option.question} nextDisabled={this.state.optionIndex === this.state.options.length - 1} prevDisabled={this.state.optionIndex === 0} prevClick={this.prevOption} nextClick={this.nextOption} answers={option.answers} handleChange={this.handleChange(this.state.optionIndex)} preSelected={this.getResult(this.state.optionIndex)} onWeightChange={this.onWeightChange} index={this.state.optionIndex} weight={this.state.weights[this.state.optionIndex]} />
-            {/* sliderValue={this.state.weights[this.state.optionIndex]} */}
           </div>
+          </div>
+        </div>
         )
     }
 

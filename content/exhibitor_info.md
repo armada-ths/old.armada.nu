@@ -271,7 +271,7 @@ When the fair closes on the November 20th you are responsible for packing and la
 
 Your invoice will be sent to your confirmed address after the fair, no later than December 20th. General payment terms are 30 calendar days. Special payment terms must have been agreed by both parties beforehand. 
 
-## CONTACT INFO
+<!-- ## CONTACT INFO
 
  
 
@@ -304,7 +304,7 @@ Your invoice will be sent to your confirmed address after the fair, no later tha
 
 <p style="text-align: center !important;"><a href="mailto:a@armada.nu">a@armada.nu</a></p>
 
-<p style="text-align: center !important;">+46 70-790 98 44</p>
+<p style="text-align: center !important;">+46 70-790 98 44</p> -->
 
 
 ##

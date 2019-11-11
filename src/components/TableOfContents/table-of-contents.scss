@@ -9,7 +9,7 @@
 }
 
 .toc-header {
-    text-decoration: underline;
+    //text-decoration: underline;
     margin-bottom: 0.2em;
 }
 
@@ -21,10 +21,12 @@
 .toc-element {
     font-size: 1.5em;
     margin-top: 0.2em;
+    text-decoration: underline;
 }
 
 .toc-subelement {
     margin-top: 0.2em;
+    text-decoration: underline;
 }
 
 .toc-subelement a {

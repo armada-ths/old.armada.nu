@@ -44,9 +44,9 @@ When arriving at the fair, you shall visit the information desk to check-in your
 
 **Check-in hours**
 
-November 19th: 	13:00 - 20:00
+November 18th: 	13:00 - 20:00
 
-November 20th: 	08:00 - 10:00
+November 19th: 	08:00 - 10:00
 
 ### TRAVEL TO THE FAIR
 

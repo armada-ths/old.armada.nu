@@ -243,7 +243,7 @@ In order to browse the catalogue and read about the latest news and events, plea
 
 Facebook: [/thsarmada](https://www.facebook.com/thsarmada/)
 
-Intagram: [@thsarmada](https://www.instagram.com/thsarmada/)
+Instagram: [@thsarmada](https://www.instagram.com/thsarmada/)
 
 LinkedIn: [THS Armada](https://www.linkedin.com/company/armada/)
 

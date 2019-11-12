@@ -9,6 +9,6 @@ dark: false
 
 Facebook: /thsarmada
 
-Intagram: @thsarmada
+Instagram: @thsarmada
 
 Go to www.flickr.com/armadakth to find pictures from the fair and events.

@@ -37,11 +37,12 @@
     font-weight: normal;
 }
 
-#fair-schedule, #transport {
-    padding-top: 64px;
+.phenomic-BodyContainer ul li {
+    font-family: $font-regular !important;
+    font-weight: 300;
 }
 
-#how-to-book-transport, #packaging-instructions, #exhibiting-at-both-arkad-and-ths-armada {
+.phenomic-BodyContainer h2, .phenomic-BodyContainer h3 {
     padding-top: 64px;
 }
 
@@ -51,11 +52,7 @@
         margin-top: 0.2em;
     }
 
-    #fair-schedule, #transport {
-        padding-top: 16px;
-    }
-    
-    #how-to-book-transport, #packaging-instructions, #exhibiting-at-both-arkad-and-ths-armada {
+    .phenomic-BodyContainer h2, .phenomic-BodyContainer h3 {
         padding-top: 16px;
     }
     

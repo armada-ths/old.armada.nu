@@ -31,7 +31,7 @@ class TableOfContents extends React.Component {
                 <Collapsible triggerStyle={style} trigger="&#xfe40;">
                     <h4 className="toc-subelement"><a href="#service-information">&#8226; Service information</a></h4>
                     <h4 className="toc-subelement"><a href="#focus-rooms">&#8226; Focus Rooms</a></h4>
-                    <h4 className="toc-subelement"><a href="#focus-rooms">&#8226; Safety</a></h4>
+                    <h4 className="toc-subelement"><a href="#safety">&#8226; Safety</a></h4>
                     <h4 className="toc-subelement"><a href="#the-grand-banquet">&#8226; The grand banquet</a></h4>
                     <h4 className="toc-subelement"><a href="#events-during-the-fair">&#8226; Events during the fair</a></h4>
                     <h4 className="toc-subelement"><a href="#website">&#8226; Website</a></h4>

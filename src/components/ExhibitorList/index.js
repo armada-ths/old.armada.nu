@@ -200,20 +200,20 @@ class ExhibitorList extends React.Component {
                   </div>
                   }
                 {exhibitor.competences.length > 0 &&
-                <div className="location-container">
+                <div className="competence-container">
                   <h3 className="modal-subheaders">Competences</h3>
                   <ul>
                     {exhibitor.competences.map((comp, index) =>
-                      <li key={index} className="location-section">
+                      <li key={index} className="competence-section">
                         {comp.name}
                       </li>)}
                   </ul>
                 </div>
                 }
                 {exhibitor.cities.length > 0 &&
-                <div className="location-container">
+                <div className="city-container">
                   <h3 className="modal-subheaders">Cities</h3>
-                    {exhibitor.cities}
+                    <p className="city-string">{exhibitor.cities}</p>
                 </div>
                 }
                 </div>

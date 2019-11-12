@@ -122,10 +122,22 @@
   .job-location-container {
     display: flex !important ;
     .job-container {
-      width: 50%;
+      width: 25%;
     }
     .location-container {
-      width: 50%;
+      width: 25%;
+    }
+    .competence-container {
+      width: 25%;
+    }
+    .city-container {
+      width: 25%;
+      font-weight: 300;
+    }
+    .city-container p {
+      text-align: center;
+      margin-top: 1em;
+      line-height: 1.2em;
     }
   }
   .modal-property .icon{
@@ -204,7 +216,19 @@
 .modalinfo .location-container {
   @include modal-container;
 }
+.modalinfo .competence-container {
+  @include modal-container;
+}
+.modalinfo .city-container {
+  @include modal-container;
+}
 .modalinfo .location-container .location-section{
+  @include modal-section;
+}
+.modalinfo .competence-container .competence-section{
+  @include modal-section;
+}
+.modalinfo .city-container .city-section{
   @include modal-section;
 }
 a:hover {
@@ -273,6 +297,12 @@ a:hover {
         width: 100%;
       }
       .location-container {
+        width: 100%;
+      }
+      .competence-container {
+        width: 100%;
+      }
+      .city-container {
         width: 100%;
       }
     }
@@ -353,5 +383,9 @@ a:hover {
 
   .event-info {
     font-size: 2em !important;
+  }
+
+  .city-string {
+    font-size: 18px !important;
   }
 }

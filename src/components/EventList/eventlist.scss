@@ -38,6 +38,7 @@
     display: flex;
     flex-direction: row;
     height: 1.5em;
+    margin-bottom: 0.3em;
   }
 .event-item .details-section .event-property .icon{
     width: 1.5em;
@@ -48,6 +49,8 @@
   margin: 0;
     text-align: left;
     align-self: center;
+    line-height: 1em;
+    font-weight: bold;
   }
 .event-item:hover {
   cursor: pointer;

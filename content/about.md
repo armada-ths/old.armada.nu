@@ -16,5 +16,5 @@ THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of 
 
 We at THS Armada believe that Sustainability and Diversity are crucial for the workings of any
 organization. Hence, our two core values include Sustainability and Diversity. You can read
-more about how THS Armada works with these core values in their respective tabs.
-https://armada.nu/diversity & https://armada.nu/sustainability 
+more about how THS Armada works with these core values in their respective tabs:
+<a href="https://armada.nu/diversity">Diversity</a> & <a href="https://armada.nu/sustainability">Sustainability</a>. 

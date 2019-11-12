@@ -2,8 +2,8 @@
 title: Matching
 layout: Matching
 description: Matching functionality
-menuPage: false
-priority: 2
+menuPage: true
+priority: 5
 header: /assets/TheFair_small.jpg
 ---
 

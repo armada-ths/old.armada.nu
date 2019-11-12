@@ -59,7 +59,7 @@ class MatchingSection extends React.Component {
             return a.json()
         }).then(function (json) {
             bindedthis.setState({match_result: json})
-        }).catch(function(e) {
+        }).catch(function() {
             alert("Matching failed! Please try again later");
             bindedthis.matchagain();
         });
@@ -103,8 +103,20 @@ class MatchingSection extends React.Component {
 
         return(
           <div className="star-ratings-css">
-            <div className="star-ratings-css-top" style={{width:rating+'%'}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <div className="star-ratings-css-top" style={{width:rating+'%'}}>
+              <i className="fa-star-icon"></i>
+              <i className="fa-star-icon"></i>
+              <i className="fa-star-icon"></i>
+              <i className="fa-star-icon"></i>
+              <i className="fa-star-icon"></i>
+            </div>
+            <div className="star-ratings-css-bottom">
+              <i className="fa-star-icon"></i>
+              <i className="fa-star-icon"></i>
+              <i className="fa-star-icon"></i>
+              <i className="fa-star-icon"></i>
+              <i className="fa-star-icon"></i>
+            </div>
           </div>
         )
       }
@@ -246,9 +258,6 @@ class MatchingSection extends React.Component {
       let temp = this.state.weights;
       temp[index] = value-0; // Make sure it's a number
       this.setState({weights: temp})
-      /* eslint-disable no-console */
-      console.log(this.state.weights);
-      /* eslint-enable no-console */
     }
 
       presentMoreMatches() {
@@ -260,6 +269,10 @@ class MatchingSection extends React.Component {
         var skip = similarities.total.map(result => result.exhibitor_id);
 
         for (var cat in similarities) {
+          if (cat == 'cities') {
+            continue;
+          }
+
           similarities[cat].forEach(result => {
             if (skip.indexOf(result.exhibitor_id) >= 0) return;
 
@@ -276,9 +289,6 @@ class MatchingSection extends React.Component {
       handleChange = (index) => {
         var bindedthis = this;
         return function(value) {
-        
-          var result = value.map(value => value.id);
-            result = result.map(Number);
             if (index == 0) {bindedthis.setState({values: value})}
             if (index == 1) {bindedthis.setState({industries: value})}
             if (index == 2) {bindedthis.setState({competences: value})}

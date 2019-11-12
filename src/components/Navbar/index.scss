@@ -82,7 +82,8 @@
             width: 100%;
             
             .visible {
-              height: 100vh;
+              max-height: 200vh;
+              margin-top: -1.5em;
             }
 
             .menu-hamburger{

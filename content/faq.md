@@ -2,7 +2,7 @@
 title: FAQ
 layout: FAQpage
 description: Page
-menuPage: false
+menuPage: true
 priority: '7'
 header: /assets/53image.JPG
 ---

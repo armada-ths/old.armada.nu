@@ -66,14 +66,14 @@ class Maps extends React.Component {
 			<div>
 			<div className="center">
 				<h1 className="helmet">Maps</h1>
-				{!this.state.mobile ? <h3 className="vyer-link"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj" target="_blank">View Interactive Map (in separate tab)</a></h3>  : null}
+				{!this.state.mobile ? <h3 className="vyer-link"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/filter?story=syLyAScxudoXAnsGW12XTuLj" target="_blank">View Interactive Map (in separate tab)</a></h3>  : null}
 				{!this.state.mobile ? <div className="map-instructions">
 						<h3 className="map-inst-header">How to use the map below</h3>
 						<h4 className="map-steps">Double click mouse button to zoom in</h4>
 						<h4 className="map-steps">Shift + double click mouse button to zoom out</h4>
 					</div> 
 				: null}
-				{!this.state.mobile ? <div className="map-grid"><iframe className="vyer-map" onMouseOver={this.divScroll} src="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj"></iframe></div> : null}
+				{!this.state.mobile ? <div className="map-grid"><iframe className="vyer-map" onMouseOver={this.divScroll} src="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/filter?story=syLyAScxudoXAnsGW12XTuLj"></iframe></div> : null}
 				{this.state.mobile ? <div className="map-icon-container"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj" target="_blank"><img className="mobile-map-icon" src="/assets/mapicon.png"></img></a></div> : null}
 				<h4 className="powered-by">Map powered by</h4>
 				<div className="vyer-icon-container">

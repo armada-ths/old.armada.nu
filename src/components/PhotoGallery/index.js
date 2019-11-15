@@ -87,6 +87,8 @@ class PhotoGallery extends React.Component {
         }
 
         return (
+            <div>
+            <h1 id="gallerytitle">Armada in pictures</h1>
             <div className="photo-gallery">
                 { !this.state.loaded ? 
                     <span></span> :
@@ -97,6 +99,7 @@ class PhotoGallery extends React.Component {
                             title={photo.title} />
                     })
                 }
+            </div>
             </div>
         );
     }

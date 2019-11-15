@@ -6,7 +6,6 @@ import Newsfeed from '../../components/Newsfeed';
 import Page from "../Page"
 import PhotoGallery from "../../components/PhotoGallery";
 // import RecruitmentBanner from "../../components/RecruitmentBanner";
-import Testimonials from "../../components/Testimonials";
 import "./homepage.scss"
 
 const Homepage = (props) => {
@@ -22,9 +21,7 @@ const Homepage = (props) => {
           {/* <NewEvents />
           <Partners /> */}
           <Newsfeed />
-          <h1 id="gallerytitle">Armada in pictures</h1>
-          <PhotoGallery photoCount={6} />
-          <Testimonials/>
+          <PhotoGallery photoCount={6}/>
           <Partners/>
       </div>
     </Page>

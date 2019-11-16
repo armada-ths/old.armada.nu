@@ -1,5 +1,5 @@
 ---
-title: FAQ
+title: Student FAQ
 layout: FAQpage
 description: Page
 menuPage: true

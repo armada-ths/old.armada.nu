@@ -90,7 +90,7 @@ MatchingQuestion.propTypes = {
     question: PropTypes.string,
     answers: PropTypes.array,
     handleChange: PropTypes.func,
-    preSelected: PropTypes.func,
+    preSelected: PropTypes.array,
     prevClick: PropTypes.func,
     nextClick: PropTypes.func,
     nextDisabled: PropTypes.bool,

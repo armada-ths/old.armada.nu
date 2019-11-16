@@ -49,7 +49,7 @@ class MatchingQuestion extends React.Component {
                 <h3 className="question-header">{this.props.question}</h3>
                 <div className="questions">
                 <Select
-                    placeholder="Select option(s)..."
+                    placeholder="Select one or more options..."
                     value={this.props.preSelected}
                     closeMenuOnSelect={false}
                     isMulti

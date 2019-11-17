@@ -678,6 +678,7 @@ class ExhibitorList extends React.Component {
           </div>
           <Select
             closeMenuOnSelect={false}
+            blurInputOnSelect={false}
             isMulti
             isSearchable
             name="Job filter"
@@ -690,6 +691,7 @@ class ExhibitorList extends React.Component {
 
           <Select
             closeMenuOnSelect={false}
+            blurInputOnSelect={false}
             isMulti
             isSearchable
             name="Sector filter"
@@ -702,6 +704,7 @@ class ExhibitorList extends React.Component {
 
           <Select
             closeMenuOnSelect={false}
+            blurInputOnSelect={false}
             isMulti
             isSearchable
             name="Competence filter"
@@ -714,6 +717,7 @@ class ExhibitorList extends React.Component {
 
           <Select
             closeMenuOnSelect={false}
+            blurInputOnSelect={false}
             isMulti
             isSearchable
             name="Location filter"

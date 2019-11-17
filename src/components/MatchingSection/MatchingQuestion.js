@@ -52,6 +52,7 @@ class MatchingQuestion extends React.Component {
                     placeholder="Select one or more options..."
                     value={this.props.preSelected}
                     closeMenuOnSelect={false}
+                    blurInputOnSelect={false}
                     isMulti
                     isSearchable= {false}
                     

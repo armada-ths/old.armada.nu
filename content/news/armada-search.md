@@ -6,6 +6,7 @@ date: 2019-11-01T14:15:01.231Z
 cover_wide: /assets/exhibitor-search.jpg
 ingress: Filter and search all of the companies at THS Armada!
 featured: true
+header: /assets/news-header.jpg
 ---
 <br/>
 Finding out what companies are exhibiting at the THS Armada fair has never been easier!

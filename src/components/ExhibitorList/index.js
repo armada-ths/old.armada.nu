@@ -354,8 +354,9 @@ class ExhibitorList extends React.Component {
             </div>
             <h1 className="modal-title">{exhibitor.name}</h1>
             <div>
+              {exhibitor.vyer_position ? <h3 className="links"><a href={exhibitor.vyer_position} target="_blank">Click for Map position</a></h3> : null}
+              {exhibitor.fair_location ? <h3 id="fair-location">{exhibitor.fair_location}</h3> : null}
               {exhibitor.company_website ? <h3 className="links"><a href={exhibitor.company_website} target="_blank">{exhibitor.name + " Website"}</a></h3> : null}
-              {exhibitor.vyer_position ? <h3 className="links"><a href={exhibitor.vyer_position} target="_blank">Map position</a></h3> : null}
               {exhibitor.flyer ? <h3 className="links"><a href={ais + exhibitor.flyer} target="_blank">{exhibitor.name + " Digital Flyer"}</a></h3> : null}
             </div>
           </div>

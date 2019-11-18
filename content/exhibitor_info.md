@@ -93,7 +93,7 @@ Do not distribute unnecessary products that may result in waste or debris during
 
 _Allowed:_
 
-* Drinks in enclosed containers
+* Sealed water bottles.
 * Wrapped candy
 * Whole fruit
 
@@ -249,13 +249,11 @@ LinkedIn: [THS Armada](https://www.linkedin.com/company/armada/)
 
 Flickr: [THS Armada](https://www.flickr.com/photos/armadakth)
 
-## AFTER THE FAIR 
+## AFTER THE FAIR
 
 ### CHECK-OUT
 
 Before leaving, a member from THS Armada will ask a representative from your organization to confirm your invoice address and also confirm any additions made to your invoice during the fair. Furthermore, you need to make sure that all exhibitor material left behind for transport or storing is properly packaged and marked with delivery address and company name. This will be done on the second fair day November 20th.
-
-
 
 ### DECONSTRUCTION
 
@@ -305,6 +303,5 @@ Your invoice will be sent to your confirmed address after the fair, no later tha
 <p style="text-align: center !important;"><a href="mailto:a@armada.nu">a@armada.nu</a></p>
 
 <p style="text-align: center !important;">+46 70-790 98 44</p> -->
-
 
 ##

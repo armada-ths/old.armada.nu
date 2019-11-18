@@ -9,6 +9,10 @@
     margin-right: auto;
 }
 
+.happening {
+    color: white !important;
+}
+
 .countdown-width-container {
 
     #countdown-numbers {
@@ -16,7 +20,7 @@
         font-weight: bold;
         font-size: calc(40px + 0.8vw);
         text-align: center;
-        margin-top: 20px;
+        margin-top: 5px;
     }
 
     .countDownRow {

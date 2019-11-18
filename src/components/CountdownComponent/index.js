@@ -6,7 +6,9 @@ import Countdown, { zeroPad } from 'react-countdown-now';
 class CountdownComponent extends React.Component {
 
     render() {
-    const DATE_OF_CAREER_FAIR = new Date('November 19, 2019 08:00:00');
+    const DATE_OF_CAREER_FAIR = new Date('November 19, 2019 10:00:00');
+    var DATE_NOW = new Date();
+    const dateboolean = DATE_OF_CAREER_FAIR < DATE_NOW;
 
         const countDownRenderer = ({ days, hours, minutes, seconds }) => {
             return (
@@ -37,11 +39,13 @@ class CountdownComponent extends React.Component {
      * The date here is hardcoded because there is no api that gives the dates as answer.
      **/
     return (
-                <div className="countdown-container">
-                    <div className="countdown-width-container">
-                        <Countdown date={DATE_OF_CAREER_FAIR} renderer={countDownRenderer} />
-                    </div>
-                </div>
+        <div className="countdown-container">
+        <div className="countdown-width-container">
+            <Countdown date={DATE_OF_CAREER_FAIR} renderer={countDownRenderer} />
+        </div>
+        {dateboolean ? <h3 className="happening">Welcome to the Armada Fair!</h3> : null}
+    </div>
+                
     );
 }
 }

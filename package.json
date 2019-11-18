@@ -141,6 +141,7 @@
     "react-chartjs": "^1.2.0",
     "react-collapsible": "^2.6.0",
     "react-countdown-now": "^2.1.2",
+    "react-device-detect": "^1.9.10",
     "react-easter": "^1.0.6",
     "react-google-analytics": "^0.2.0",
     "react-google-maps": "^7.0.0",

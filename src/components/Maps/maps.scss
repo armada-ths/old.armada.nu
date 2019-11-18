@@ -114,13 +114,17 @@
 }
 
 .mobile-map-icon {
-	max-width: 50%;
+	max-width: 22%;
 }
 
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
 
 	.vyer-icon {
+		max-width: 50%;
+	}
+
+	.mobile-map-icon {
 		max-width: 50%;
 	}
 

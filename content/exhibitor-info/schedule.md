@@ -20,7 +20,7 @@ _Allowed:_
 
 * Sealed water bottles.
 * Wrapped candy
-* Fruit
+* Whole fruits
 
 _Not allowed:_
 

@@ -18,7 +18,7 @@ The give-away policies are very strict at the fair. Please note what is not allo
 
 _Allowed:_
 
-* Sealed water bottles.
+* Sealed water bottles
 * Wrapped candy
 * Whole fruits
 

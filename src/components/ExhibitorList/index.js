@@ -85,7 +85,7 @@ class ExhibitorList extends React.Component {
       { value: 'Nanotechnology', label: 'Nanotechnology' },
       { value: 'Research', label: 'Research' },
       { value: 'Property & Infrastructure', label: 'Property & Infrastructure' },
-      { value: 'Infrastructure', label: 'Infrastructure' },
+      { value: 'IT Infrastructure', label: 'IT Infrastructure' },
       { value: 'Technical Consulting', label: 'Technical Consulting' },
       { value: 'IT Consulting', label: 'IT Consulting' },
       { value: 'Software Development', label: 'Software Development' },

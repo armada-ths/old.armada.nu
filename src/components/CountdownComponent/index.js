@@ -40,10 +40,8 @@ class CountdownComponent extends React.Component {
      **/
     return (
         <div className="countdown-container">
-        <div className="countdown-width-container">
-            <Countdown date={DATE_OF_CAREER_FAIR} renderer={countDownRenderer} />
-        </div>
-        {dateboolean ? <h3 className="happening">Welcome to the Armada Fair!</h3> : null}
+        
+        {dateboolean ? <h3 className="happening">Welcome to the Armada Fair!</h3> : <div className="countdown-width-container"><Countdown date={DATE_OF_CAREER_FAIR} renderer={countDownRenderer} /></div>}
     </div>
                 
     );

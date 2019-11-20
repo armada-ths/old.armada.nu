@@ -14,5 +14,5 @@ header: /assets/news-header.jpg
 
 Read more about some of our participating companies and other exciting articles! (In collaboration with Borg &Owilli (Available in Swedish only)
 
-[Access the magazine here!](https://issuu.com/borgowilli1/docs/b_o_armada_2019_tryckf_rdig_sidor)
+[Access the magazine here!](https://armada.businesstories.se/tidningsarkiv/)
 

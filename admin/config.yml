@@ -60,7 +60,7 @@ collections:
       - {label: "In menu", name: "menuPage", widget: "boolean", default: false}
       - {label: "Priority", name: "priority", widget: "number"}
       - {label: "Header", name: "header", widget: "image", optional: true}
-      - {label: "Body", name: "body", widget: "markdown", optional: true}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
 
   - name: "exhibitor-info"
     label: "Exhibitor Info"

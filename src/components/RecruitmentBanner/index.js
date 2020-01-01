@@ -1,9 +1,24 @@
 import React from "react";
 import {Link} from "react-router";
+import axios from "axios";
 import PropTypes from "prop-types";
 import './recruitment-banner.scss';
 
 class RecruitmentBanner extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        showbanner: false
+    };
+}
+
+  componentDidMount() {
+    axios.get('https://ais.armada.nu/api/recruitment')
+        .then( (res)  => {
+            if (res.data.length > 0) {this.setState({ showbanner: true});}
+        });
+}
   
   render() {
     var path = "/"
@@ -20,10 +35,10 @@ class RecruitmentBanner extends React.Component {
     let dp = this.props.displayType;
     let content;
 
-    if (dp === "desktop") {
-      content = <Link to={'/recruitment'}><div className="recruitmentBanner">Host recruitment open now! Apply here!</div></Link>
-    } else if (dp === "mobile") {
-      content = <Link to={'/recruitment'}><div className="recruitmentBannerMobile">Host recruitment open now! Apply here!</div></Link>
+    if (dp === "desktop" && this.state.showbanner) {
+      content = <Link to={'/recruitment'}><div className="recruitmentBanner">Recruitment open now! Apply here!</div></Link>
+    } else if (dp === "mobile" && this.state.showbanner) {
+      content = <Link to={'/recruitment'}><div className="recruitmentBannerMobile">Recruitment open now! Apply here!</div></Link>
     }
 
     if (!page)

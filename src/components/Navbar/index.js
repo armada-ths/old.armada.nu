@@ -2,7 +2,7 @@ import React from "react"
 import {Link} from "react-router"
 import "./index.scss"
 import PropTypes from "prop-types";
-// import RecruitmentBanner from "../RecruitmentBanner";
+import RecruitmentBanner from "../RecruitmentBanner";
 
 class Navbar extends React.Component {
 
@@ -63,7 +63,7 @@ class Navbar extends React.Component {
                 {links}
               </div>
             </nav>
-            {/* <RecruitmentBanner displayType={"desktop"}/> */}
+            <RecruitmentBanner displayType={"desktop"}/>
           </div>
         </header>
     )

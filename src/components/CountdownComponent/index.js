@@ -6,7 +6,7 @@ import Countdown, { zeroPad } from 'react-countdown-now';
 class CountdownComponent extends React.Component {
 
     render() {
-    const DATE_OF_CAREER_FAIR = new Date('November 19, 2019 10:00:00');
+    const DATE_OF_CAREER_FAIR = new Date('November 17, 2020 10:00:00');
     var DATE_NOW = new Date();
     const dateboolean = DATE_OF_CAREER_FAIR < DATE_NOW;
 

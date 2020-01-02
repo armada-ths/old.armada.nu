@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Page from "../Page"
-import Partners from "../../components/Partners"
+// import Partners from "../../components/Partners"
 
 import "./index.scss"
 
@@ -12,7 +12,7 @@ const Aboutpage = (props) => {
         <div className="aboutpage-container">
           <Page { ...props } >
           </Page>
-        <Partners/>
+        {/* <Partners/> */}
         </div>
       </div>
   )

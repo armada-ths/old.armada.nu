@@ -59,6 +59,7 @@ class Contacts extends React.Component {
       <div className="contact-list">
         {this.createCards(16, 20)}
       </div>
+      <h1>More to come!</h1>
     </div>
     );
   }

@@ -6,17 +6,17 @@ menuPage: true
 priority: 6
 header: /assets/for_exhibitors.jpg
 ---
-**Welcome to the career fair of 2019**. We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
+**Welcome to the career fair of 2020**. We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
 
 ## General Info
 
-**Dates:** November 19th-20th 
+**Dates:** November 17th-18th 
 
 **Fair opening hours: **
 
-November 19th: 	10:00 - 16:00
+November 17th: 	10:00 - 16:00
 
-November 20th: 	10:00 - 15:00
+November 18th: 	10:00 - 15:00
 
 **Booth placement:**
 
@@ -44,9 +44,9 @@ When arriving at the fair, you shall visit the information desk to check-in your
 
 **Check-in hours**
 
-November 18th: 	13:00 - 20:00
+November 16th: 	13:00 - 20:00
 
-November 19th: 	08:00 - 10:00
+November 17th: 	08:00 - 10:00
 
 ### TRAVEL TO THE FAIR
 
@@ -72,7 +72,7 @@ In case you have something minor (eg small bags, boxes) which you don’t need t
 
 ### EXHIBITION AREA
 
-* We recommend you to install your exhibitor area Monday November 18th  13:00-20:00.
+* We recommend you to install your exhibitor area Monday November 16th  13:00-20:00.
 * In exceptional cases, you may install your exhibition area on early Tuesday morning November 19th. Any exhibition area that is not installed before 09:00 this day will not be provided equal assistance.
 * Synchronize your date and time of arrival with your career fair host. The host will then be able to show you where your exhibition area is located. 
 
@@ -154,9 +154,9 @@ There is one lounge for exhibitors in [Kröken, Nymble](https://app.vyer.com/sit
 
 The opening hours for the exhibitors’ lounges are: 
 
-November 19th: 08:30 - 16:00 (breakfast served 08:30 - 10:00)
+November 17th: 08:30 - 16:00 (breakfast served 08:30 - 10:00)
 
-November 20th: 08:30 - 14:30 (breakfast served 08:30 - 10:00)
+November 18th: 08:30 - 14:30 (breakfast served 08:30 - 10:00)
 
 **Service- and information desks**
 
@@ -164,9 +164,9 @@ Click [here](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/ogZ9zBLd7
 
 The opening hours for the information desks are: 
 
-November 19th: 	08:00 - 16:00
+November 17th: 	08:00 - 16:00
 
-November 20th: 	09:00 - 15:00
+November 18th: 	09:00 - 15:00
 
 **Lunch**
 
@@ -196,7 +196,7 @@ Location: [KTH Entré, floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfe
 
 ### SAFETY
 
-All exhibition areas will be locked and patrolled during closed hours. If you would like to store any valuable items overnight we are able to offer you safety storage please visit any of the information desk for further instructions. You are able to check-in your valuables between 15.30-17.00 on the 19th and check-out between 09.00-10.30 the 20th.
+All exhibition areas will be locked and patrolled during closed hours. If you would like to store any valuable items overnight we are able to offer you safety storage please visit any of the information desk for further instructions. You are able to check-in your valuables between 15.30-17.00 on the 17th and check-out between 09.00-10.30 the 18th.
 
 * THS Armada is not responsible for any valuables during the fair. 
 * Respect your organization’s provided area and do not promote your brand elsewhere during the fair. 
@@ -205,7 +205,7 @@ All exhibition areas will be locked and patrolled during closed hours. If you wo
 
 ### THE GRAND BANQUET
 
-**Date: **November 19th
+**Date: **November 17th
 
 **Time: **18:00 - 01:00
 

@@ -5,15 +5,15 @@ priority: '1'
 header: /assets/map.png
 dark: true
 ---
-**Welcome to the career fair of 2018.** We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
+**Welcome to the career fair of 2020.** We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
 
-**Dates:** 20th-21st of November
+**Dates:** 17th-18th of November
 
 **Opening hours:** 
 
-20th of November: 10:00 - 16:00
+17th of November: 10:00 - 16:00
 
-21st of November: 10:00 - 15:00 
+18st of November: 10:00 - 15:00 
 
 **Locations:** 
 

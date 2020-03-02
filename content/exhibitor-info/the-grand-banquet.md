@@ -11,6 +11,6 @@ When arriving at the fair, you visit the information desk to check-in your compa
 \
 **Check-in hours:**
 
-19th of November: 13:00 - 20:00
+16th of November: 13:00 - 20:00
 
-20th of November: 08:00 - 10:00
+17th of November: 08:00 - 10:00

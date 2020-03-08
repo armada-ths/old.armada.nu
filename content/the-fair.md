@@ -10,8 +10,8 @@ header: /assets/library.png
 
 THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of Technology. Every year, more than 12,000 of Sweden's top engineering and architectural students flock to visit the fair to meet their future employers. 
 
-**Dates: **19th of November - 20st of November 2019
+**Dates: **17th of November - 18st of November 2020
 
-**Exhibitor interest for the career fair of 2019:**
+**Exhibitor interest for the career fair of 2020:**
 
-If you are interested in participating in the career fair of 2019, please submit your information [here](http://register.armada.nu)
+If you are interested in participating in the career fair of 2020, please submit your information [here](http://register.armada.nu)

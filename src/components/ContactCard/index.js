@@ -13,6 +13,7 @@ class ContactCard extends React.Component {
 
   render() {
     // if(this.props.imageUrl !== "") {
+    // eslint-disable-next-line no-use-before-define no-constant-condition
     if (false) {
       return (
         <div className="card-container 1">

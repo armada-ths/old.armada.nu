@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-// import Partners from '../../components/Partners';
+import Partners from '../../components/Partners';
 // import NewEvents from "../../components/NewEvents"
 import Newsfeed from '../../components/Newsfeed';
 import Page from "../Page"
@@ -20,7 +20,7 @@ const Homepage = (props) => {
       <div className="body">
           <Newsfeed />
           <PhotoGallery photoCount={6}/>
-          {/* <Partners/> */}
+          {<Partners/>}
       </div>
     </Page>
       </div>

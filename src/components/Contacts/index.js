@@ -3,29 +3,28 @@ import React from "react"
 import "./contact.scss";
 import ContactCard from "../ContactCard"
 import "../../styles/global.scss"
-
+//
 const ProjectGroup = [
-  { name: "Daniel Aston", title: "Project Manager", email: "a@armada.nu", emoji:'👨‍✈️', imageUrl: "/assets/daniel.jpg", linkedInUrl: "https://www.linkedin.com/in/danielaston/" },
-  // { name: "Ulrik Sköldkvist", title: "Project Manager", email: "a@armada.nu", emoji:'👨‍✈️', imageUrl: "/assets/ulrik.jpg", linkedInUrl: "https://www.linkedin.com/in/ulriksk/" },
-  // { name: "Agnes Gemvik", title: "Head of HR", email: "agnes.gemvik@armada.nu", emoji:'⛑', imageUrl: "/assets/agnes.jpg", linkedInUrl: "https://www.linkedin.com/in/agnes-gemvik-065829175/" },
-  // { name: "Philip Börjesson", title: "Art Director", email: "philip.borjesson@armada.nu", emoji:'👨‍🎨', imageUrl: "/assets/philip.jpg", linkedInUrl: "https://www.linkedin.com/in/philip-h-borjesson/" },
-  // { name: "Staffan Konstholm", title: "Head of Media", email: "staffan.konstholm@armada.nu", emoji:'🎬', imageUrl: "/assets/staffan.jpg", linkedInUrl: "https://www.linkedin.com/in/staffan-konstholm-51b810155/" },
-  // { name: "Ghea Sagita", title: "Head of Marketing", email: "ghea.sagita@armada.nu", emoji:'✍️',imageUrl: "/assets/ghea.jpg", linkedInUrl: "https://www.linkedin.com/in/gheasagita/" },
-  // { name: "Filip Jacobson", title: "Head of Business Relations and Events", email: "filip.jacobson@armada.nu", emoji:'🤝', imageUrl: "/assets/filip.jpg", linkedInUrl: "https://www.linkedin.com/in/filip-jacobson/" },
-  // { name: "Fahami Annan Green", title: "Head of Sales", email: "fahami.annan.green@armada.nu", emoji:'📈', imageUrl: "/assets/fahami.jpg", linkedInUrl: "https://www.linkedin.com/in/fahami-annan-green-b97202162/" },
-  // { name: "Ferhat Kaya", title: "Head of Sales", email: "ferhat.kaya@armada.nu", emoji:'📈', imageUrl: "/assets/ferhat.jpg", linkedInUrl: "https://www.linkedin.com/in/ferhatkaya-/" },
-  // { name: "Daniel Aston", title: "Head of Sales", email: "daniel.aston@armada.nu", emoji:'📈', imageUrl: "/assets/daniel.jpg", linkedInUrl: "https://www.linkedin.com/in/danielaston/" },
-  // { name: "Ella Andersson", title: "Head of Events", email: "ella.andersson@armada.nu", emoji:'🎉', imageUrl: "/assets/ella.jpg", linkedInUrl: "https://www.linkedin.com/in/ella-andersson-1a359463/" },
-  // { name: "Linnea Thorstensson", title: "Head of Banquet", email: "linnea.thorstensson@armada.nu", emoji:'💃', imageUrl: "/assets/linnea.jpg", linkedInUrl: "https://www.linkedin.com/in/linneathorstensson/" },
-  // { name: "Henrik Siren", title: "Head of Logistics and Career Fair", email: "henrik.siren@armada.nu", emoji:'👷‍♂️', imageUrl: "/assets/henrik.jpg", linkedInUrl: "https://www.linkedin.com/in/henrik-siren/" },
-  // { name: "Lukas Lindroos", title: "Head of Logistics", email: "lukas.lindroos@armada.nu", emoji:'👷‍♂️', imageUrl: "/assets/lukas.jpg", linkedInUrl: "https://www.linkedin.com/in/lukas-lindroos-1889a8102/" },
-  // { name: "Emilia Jakobson Stålhane", title: "Head of Career Fair", email: "emilia.stalhane@armada.nu", emoji:'👷‍♀️', imageUrl: "/assets/emilia.jpg", linkedInUrl: "https://www.linkedin.com/in/emilia-stalhane/" },
-  // { name: "Jacob Larsson", title: "Head of Career Fair", email: "jacob.larsson@armada.nu", emoji:'👷‍♂️', imageUrl: "/assets/jacob.jpg", linkedInUrl: "https://www.linkedin.com/in/ejacoblarsson/" },
-  // { name: "Luigi Morrone", title: "Head of Service", email: "luigi.morrone@armada.nu", emoji:'👨‍🔧', imageUrl: "/assets/luigi.jpg", linkedInUrl: "https://www.linkedin.com/in/luigi-morrone-481368178/" },
-  // { name: "Niklas Wallhed", title: "Head of Sustainability and Diversity", email: "niklas.wallhed@armada.nu", emoji:'♻️', imageUrl: "/assets/niklas.jpg", linkedInUrl: "https://www.linkedin.com/in/niklaswallhed/" },
-  // { name: "Niclas Hedberg", title: "Head of IT", email: "niclas.hedberg@armada.nu", emoji:'💻', imageUrl: "/assets/niclas.jpg", linkedInUrl: "https://www.linkedin.com/in/niclashedberg/" },
-  // { name: "Oscar Wiigh", title: "Head of Web Development", email: "oscar.wiigh@armada.nu", emoji:'💻', imageUrl: "/assets/oscar.jpg", linkedInUrl: "https://www.linkedin.com/in/wiigh/" },
-  // { name: "Sara Gustafsson", title: "Head of Internal Systems", email: "sara.gustafsson@armada.nu", emoji:'💻', imageUrl: "/assets/sara.jpg", linkedInUrl: "https://www.linkedin.com/in/saragson/" },
+  { name: "Daniel Aston", title: "Project Manager", email: "a@armada.nu", emoji: '👨‍✈️', imageUrl: "/assets/images/PG20/DanielDrake.jpg", linkedInUrl: "https://www.linkedin.com/in/danielaston/" },
+  { name: "Arvid Nilsson", title: "Head of HR", email: "arvid.nilsson@armada.nu", emoji: '⛑', imageUrl: "/assets/images/PG20/ArvidAligator.jpg", linkedInUrl: "https://www.linkedin.com/in/arvid-nilsson-564808182/" },
+  { name: "Moa Lilja", title: "Art Director", email: "moa.lilja@armada.nu", emoji: '👨‍🎨', imageUrl: "/assets/images/PG20/Moa_.jpg", linkedInUrl: "https://www.linkedin.com/in/moa-kajsa-lilja-48b162115/" },
+  { name: "Sandra Ransed", title: "Head of Media & Marketing", email: "sandra.ransed@armada.nu", emoji: '🎬', imageUrl: "/assets/images/PG20/SandraSavage.jpg", linkedInUrl: "https://www.linkedin.com/in/sandraransed/" },
+  { name: "Kevin Stojanovski", title: "Head of Business Relations and Events", email: "kevin.stojanovski@armada.nu", emoji: '🤝', imageUrl: "/assets/images/PG20/KevinKelvin.jpg", linkedInUrl: "https://www.linkedin.com/in/kevinstojanovski/" },
+  { name: "Pavel Askari", title: "Head of Sales", email: "pavel.askari@armada.nu", emoji: '📈', imageUrl: "/assets/images/PG20/PavelPeach.jpg", linkedInUrl: "https://www.linkedin.com/in/pavel-askari-705a40180/" },
+  { name: "Natasha Mridha", title: "Head of Sales", email: "natasha.mridha@armada.nu", emoji: '📈', imageUrl: "/assets/images/PG20/NatashaNote.jpg", linkedInUrl: "https://www.linkedin.com/in/natashamridha/" },
+  { name: "Anna Gentek", title: "Head of Sales", email: "anna.gentek@armada.nu", emoji: '📈', imageUrl: "/assets/images/PG20/AnnaApple.jpg", linkedInUrl: "https://www.linkedin.com/in/anna-gentek-a0545b141/" },
+  { name: "Jakob Huber", title: "Head of Events", email: "jakob.huber@armada.nu", emoji: '🎉', imageUrl: "/assets/images/PG20/JakobJazz.jpg", linkedInUrl: "https://www.linkedin.com/in/jakob-k-huber/" },
+  { name: "Josefine Havdelin", title: "Head of Banquet", email: "josefine.havdelin@armada.nu", emoji: '💃', imageUrl: "/assets/images/PG20/JosefineJogging.jpg", linkedInUrl: "https://www.linkedin.com/in/josefine-havdelin-9298a4b3/" },
+  { name: "Leonard Hökby", title: "Head of Logistics and Career Fair", email: "leonard.hokby@armada.nu", emoji: '👷‍♂️', imageUrl: "/assets/images/PG20/LeoLionPoster.jpg", linkedInUrl: "https://www.linkedin.com/in/leonard-h%C3%B6kby-660b22174/" },
+  { name: "Filip Rydén", title: "Head of Logistics", email: "filip.ryden@armada.nu", emoji: '👷‍♂️', imageUrl: "/assets/images/PG20/Filip_.jpg", linkedInUrl: "https://www.linkedin.com/in/filip-ryd%C3%A9n-a32b3717a/" },
+  { name: "Lukas Wallhager", title: "Head of Career Fair", email: "lukas.wallhager@armada.nu", emoji: '👷‍♀️', imageUrl: "/assets/images/PG20/LucasLiqour.jpg", linkedInUrl: "https://www.linkedin.com/in/lucaswallhager/" },
+  { name: "Alessio Russo", title: "Head of Career Fair", email: "alessio.russo@armada.nu", emoji: '👷‍♂️', imageUrl: "/assets/images/PG20/AlessioArticle.jpg", linkedInUrl: "https://www.linkedin.com/in/russoalessio/" },
+  { name: "Elias Ljunggren", title: "Head of Service", email: "elias.ljunggren@armada.nu", emoji: '👨‍🔧', imageUrl: "/assets/images/PG20/EliasEagle.jpg", linkedInUrl: "https://www.linkedin.com/in/eliasljunggren/" },
+  { name: "Camilla Blomqvist", title: "Head of Sustainability", email: "camilla.blomqvist@armada.nu", emoji: '♻️', imageUrl: "/assets/images/PG20/CamillaChocolate.jpg", linkedInUrl: "https://www.linkedin.com/in/camilla-blomqvist-b896b817a/" },
+  { name: "Elise Brouillette", title: "Head of Diversity", email: "elise.brouillette@armada.nu", emoji: '❤️', imageUrl: "", linkedInUrl: "https://www.linkedin.com/in/camilla-blomqvist-b896b817a/" },
+  { name: "Oscar Rohde Dahlberg", title: "Head of IT", email: "oscar.dahlberg@armada.nu", emoji: '💻', imageUrl: "/assets/images/PG20/OscarOcean.jpg", linkedInUrl: "https://www.linkedin.com/in/oscarrohdedahlberg/" },
+  { name: "Ann-Catrin Lindkvist", title: "Head of Web Development", email: "anncatrin.lindkvist@armada.nu", emoji: '💻', imageUrl: "/assets/images/PG20/ACAlphabet.jpg", linkedInUrl: "https://www.linkedin.com/in/ann-catrin-lindkvist/" },
+  { name: "Louise Zetterlund", title: "Head of Internal Systems", email: "louise.zetterlund@armada.nu", emoji: '💻', imageUrl: "/assets/images/PG20/Louise_.jpg", linkedInUrl: "https://www.linkedin.com/in/louise-zetterlund/" },
 ]
 
 
@@ -36,7 +35,7 @@ class Contacts extends React.Component {
   }
 
   createCards(start, end) {
-    return (ProjectGroup.filter((i, index) => (index < end && index >= start)).map((info, index) => <ContactCard name={info.name} key={index} title={info.title} email={info.email} emoji={info.emoji} imageUrl={info.imageUrl} linkedInUrl={info.linkedInUrl}/>))
+    return (ProjectGroup.filter((i, index) => (index < end && index >= start)).map((info, index) => <ContactCard name={info.name} key={index} title={info.title} email={info.email} emoji={info.emoji} imageUrl={info.imageUrl} linkedInUrl={info.linkedInUrl} />))
   }
   render() {
     return (<div><h1 className="helmet">Contact ARMADA</h1>
@@ -59,7 +58,7 @@ class Contacts extends React.Component {
       <div className="contact-list">
         {this.createCards(16, 20)}
       </div>
-      <h1>More to come!</h1>
+      <h1></h1>
     </div>
     );
   }

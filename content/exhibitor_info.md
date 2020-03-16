@@ -6,17 +6,19 @@ menuPage: true
 priority: 6
 header: /assets/for_exhibitors.jpg
 ---
-**Welcome to the career fair of 2019**. We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
+**Welcome to the career fair of 2020**. We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
 
 ## General Info
 
-**Dates:** November 19th-20th 
+If you are interested in the career fair 2020 and would like to be contacted when the registration opens, please fill in this [form](https://docs.google.com/forms/d/e/1FAIpQLScXKSonoB0dTH9IxRbuyWxN-KZHQ3j7y7_Zfawok1hzba9Ulg/viewform).
+
+**Dates:** November 17th-18th 
 
 **Fair opening hours: **
 
-November 19th: 	10:00 - 16:00
+November 17th: 	10:00 - 16:00
 
-November 20th: 	10:00 - 15:00
+November 18th: 	10:00 - 15:00
 
 **Booth placement:**
 
@@ -44,9 +46,9 @@ When arriving at the fair, you shall visit the information desk to check-in your
 
 **Check-in hours**
 
-November 18th: 	13:00 - 20:00
+November 16th: 	13:00 - 20:00
 
-November 19th: 	08:00 - 10:00
+November 17th: 	08:00 - 10:00
 
 ### TRAVEL TO THE FAIR
 
@@ -66,14 +68,14 @@ The number of parking slots is **very** limited at KTH Campus. Therefore, we enc
 
 Armada transports goods to and from the fair. Our transport partner this year is DHL. The purpose with Armada Transport is to make the fair experience as smooth as possible, while reducing the number of trucks at the fair. Your goods will be transported to the fair at KTH, so that when you and colleagues arrive on November 18th to set up your booth, your goods will already be placed in your booth.
 
-Note that it is not allowed to arrange any own transportation with external carriers other than Armada Transport (DHL). In case you for some reason must have an exception from this rule then you need a written confirmation from Armada’s Head of Logistics (<mailto:lukas.lindroos@armada.nu>) and your delivery must have recieved a time slot in advance specified in date/time. Any goods transported by external carriers will not be provided equal service as goods sent through Armada Transport.
+Note that it is not allowed to arrange any own transportation with external carriers other than Armada Transport (DHL). In case you for some reason must have an exception from this rule then you need a written confirmation from Armada’s Head of Logistics ([filip.ryden@armada.nu](mailto:lukas.lindroos@armada.nu)) and your delivery must have recieved a time slot in advance specified in date/time. Any goods transported by external carriers will not be provided equal service as goods sent through Armada Transport.
 
 In case you have something minor (eg small bags, boxes) which you don’t need transport aid for, then you also have the possibility to carry these goods by hand through the main entrance. It is not allowed to carry anything big and bulky since the entrances serves as emergency exits and the goods must not block these paths in case of emergency.
 
 ### EXHIBITION AREA
 
-* We recommend you to install your exhibitor area Monday November 18th  13:00-20:00.
-* In exceptional cases, you may install your exhibition area on early Tuesday morning November 19th. Any exhibition area that is not installed before 09:00 this day will not be provided equal assistance.
+* We recommend you to install your exhibitor area Monday November 17th  13:00-20:00.
+* In exceptional cases, you may install your exhibition area on early Tuesday morning November 18th. Any exhibition area that is not installed before 09:00 this day will not be provided equal assistance.
 * Synchronize your date and time of arrival with your career fair host. The host will then be able to show you where your exhibition area is located. 
 
 ### GENERAL RULES AND GUIDELINES
@@ -154,9 +156,9 @@ There is one lounge for exhibitors in [Kröken, Nymble](https://app.vyer.com/sit
 
 The opening hours for the exhibitors’ lounges are: 
 
-November 19th: 08:30 - 16:00 (breakfast served 08:30 - 10:00)
+November 17th: 08:30 - 16:00 (breakfast served 08:30 - 10:00)
 
-November 20th: 08:30 - 14:30 (breakfast served 08:30 - 10:00)
+November 18th: 08:30 - 14:30 (breakfast served 08:30 - 10:00)
 
 **Service- and information desks**
 
@@ -164,9 +166,9 @@ Click [here](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/ogZ9zBLd7
 
 The opening hours for the information desks are: 
 
-November 19th: 	08:00 - 16:00
+November 17th: 	08:00 - 16:00
 
-November 20th: 	09:00 - 15:00
+November 18th: 	09:00 - 15:00
 
 **Lunch**
 
@@ -196,7 +198,7 @@ Location: [KTH Entré, floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfe
 
 ### SAFETY
 
-All exhibition areas will be locked and patrolled during closed hours. If you would like to store any valuable items overnight we are able to offer you safety storage please visit any of the information desk for further instructions. You are able to check-in your valuables between 15.30-17.00 on the 19th and check-out between 09.00-10.30 the 20th.
+All exhibition areas will be locked and patrolled during closed hours. If you would like to store any valuable items overnight we are able to offer you safety storage please visit any of the information desk for further instructions. You are able to check-in your valuables between 15.30-17.00 on the 17th and check-out between 09.00-10.30 the 18th.
 
 * THS Armada is not responsible for any valuables during the fair. 
 * Respect your organization’s provided area and do not promote your brand elsewhere during the fair. 
@@ -205,7 +207,7 @@ All exhibition areas will be locked and patrolled during closed hours. If you wo
 
 ### THE GRAND BANQUET
 
-**Date: **November 19th
+**Date: **November 18th
 
 **Time: **18:00 - 01:00
 

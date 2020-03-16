@@ -16,4 +16,4 @@ The Armada Team consist of KTH students and the THS Armada project continues unt
 
 ## Information
 
-The application for the Operations Team 2020 will open soon! If you feel like you want to be a part of the core team of THS Armada, contact Daniel Aston with your questions or book a fika at a@armada.nu.
+The application for the Operations Team 2020 are now open! If you feel like you want to be a part of the core team of THS Armada, contact Head of HR Arvid Nilsson with your questions at arvid.nilsson@armada.nu.

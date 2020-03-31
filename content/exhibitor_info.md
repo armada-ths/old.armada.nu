@@ -12,6 +12,14 @@ header: /assets/for_exhibitors.jpg
 
 The registration is open! If you and your company want to be a part of Armada 2020 you can now register at [register.armada.nu](register.armada.nu). 
 
+If you want to see full invitation click on the button below!
+
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Sustainability_Diversity-Policy2.pdf">
+
+   <button type="submit">Download Invitation</button>
+
+</form>
+
 **Dates:** November 17th-18th 
 
 **Fair opening hours: **

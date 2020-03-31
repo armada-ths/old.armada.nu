@@ -10,7 +10,7 @@ header: /assets/for_exhibitors.jpg
 
 ## General Info
 
-If you are interested in the career fair 2020 and would like to be contacted when the registration opens, please fill in this [form](https://docs.google.com/forms/d/e/1FAIpQLScXKSonoB0dTH9IxRbuyWxN-KZHQ3j7y7_Zfawok1hzba9Ulg/viewform).
+The registration is open! If you and your company want to be a part of Armada 2020 you can now register at [register.armada.nu](register.armada.nu). 
 
 **Dates:** November 17th-18th 
 

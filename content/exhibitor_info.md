@@ -14,7 +14,7 @@ The registration is open! If you and your company want to be a part of Armada 20
 
 If you want to see full invitation click on the button below!
 
-<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Sustainability_Diversity-Policy2.pdf">
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Inbjudan.pdf">
 
    <button type="submit">Download Invitation</button>
 

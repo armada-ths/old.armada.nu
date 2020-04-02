@@ -18,7 +18,7 @@ opportunities are fundamental in our work. By actively working with this core va
 Armada aspires to encourage students and companies to make their workplace inclusive. THS
 Armada’s Diversity policy can be found here below!
 
-<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Sustainability_Diversity-Policy2.pdf">
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Diversity_policy_.pdf">
    <button type="submit">Download Diversity Policy</button>
 </form>
 

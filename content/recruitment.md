@@ -16,4 +16,4 @@ The Armada Team consist of KTH students and the THS Armada project continues unt
 
 ## Information
 
-The application for the Operations Team 2020 are now open! If you feel like you want to be a part of the core team of THS Armada, contact Project Manager with your questions at a@armada.nu.
+The application for hosts will open this fall! If you have any questions about THS Armada and upcoming recruitment, contact Project Manager, Daniel with your questions at a@armada.nu.

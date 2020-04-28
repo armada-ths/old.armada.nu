@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, TileLayer, Marker, Popup  } from 'react-leaflet-universal'
+import { Map, TileLayer, Marker } from 'react-leaflet-universal'
 import 'leaflet/dist/leaflet.css';
 import "./contact-map.scss";
 import L from 'leaflet';

@@ -21,6 +21,10 @@
     z-index: 1;
   }
 
+  .leaflet-interactive {
+    cursor: grab;
+  }
+
 
 @media only screen and (min-width: 600px){
   #map-container{

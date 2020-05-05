@@ -8,20 +8,16 @@ const Testimonials = () => {
   // https://www.react-reveal.com/docs/
   
   const testimonialObjects = [
-    {name: "Ananya", role: "Diversity Coordinator", statement: "\"I feel proud and excited to be part of scandinavia's largest student fair\"", image: "/assets/ananya.jpg"},
-    {name: "Staffan", role: "Head of Media", statement: "\"We're fun people to hang with, come and talk to us!\"", image: "/assets/staffan.jpg"},
-    {name: "Jacob", role: "Head of Career Fair", statement: "\"THS Armada is perhaps the best platform for student engagement at KTH\"", image: "/assets/jacob.jpg"},
-    {name: "Luise", role: "Team Leader Lounges", statement: "\"We do more than just serve free coffee, join the team to find out what!\"", image: "/assets/luise.jpg"},
-    {name: "Marc", role: "Team Leader Career Fair", statement: "\"Armada is a great way to develop professionally and meet new people\"", image: "/assets/marc.jpg"},
-    {name: "Pauline", role: "Photo Team Coordinator", statement: "\"I'm very excited to be a part of Scandinavias largest career fair!\"", image: "/assets/pauline.jpeg"},
-    {name: "Ella", role: "Head of Events", statement: "\"Joining Armada is just like Nike's slogan: Just Do It!\"", image: "/assets/ella.jpg"},
-    {name: "Abhishek", role: "Team Leader Career Fair", statement: "\"Organizing the biggest career fair with lots of fun...Would never miss this chance\"", image: "/assets/abhishek.jpg"},
-    {name: "Linnea", role: "Head of Banquet", statement: "\"THS Armada - probably the best student organization in the world\"", image: "/assets/linnea.jpg"},
-    {name: "", role: "", statement: "", image: ""},
+    {name: "Daniel Aston", role: "Project Manager", statement: "I've met so many fun people", image: "/assets/images/PG20/danieldrake.jpg"},
+    {name: "Lucas Wallhager", role: "Head of Career Fair", statement: "Armada is a great opportunity to develop skills for the future in a fun environment, where everyone is working for a common goal", image: "/assets/images/PG20/lucasliqour.jpg"},
+    {name: "Elias Ljunggren", role: "Head of Service and Sponsorship", statement: "Armada is freakin' amaaazing!!", image: "/assets/images/PG20/eliaseagle.jpg"},
+    {name: "Pavel Askari", role: "Head of Sales", statement: "It’s a experience you will never forget!", image: "/assets/images/PG20/pavelpeach.jpg"},
+    {name: "Leonard Hökby", role: "Head of Logistics and Career Fair", statement: "You get the chance to do something meaningful and fun at the same time.", image: "/assets/images/PG20/leolionposter.jpg"},
+    {name: "Camilla Blomqvist", role: "Head of Sustainability", statement: "I love being a part of Armada and that I have the ability to make it more sustainable than ever!", image: "/assets/images/PG20/camillachocolate.jpg"},
   ];
 
   const person1 = Math.floor(Math.random() * 5);
-  const person2 = Math.floor(Math.random() * 4) + 5;
+  const person2 = person1 + 1 % testimonialObjects.length;
   
   return(
       <div className="testimonials">
@@ -34,7 +30,7 @@ const Testimonials = () => {
                 <div className="testimonial-name">{testimonialObjects[person1].name}</div>
                 <div className="testimonial-position">{testimonialObjects[person1].role}</div>
                 <div className="testimonial-break">‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</div>
-                <div className="testimonial-text">{testimonialObjects[person1].statement}</div>
+                <div className="testimonial-text"><q>{testimonialObjects[person1].statement}</q></div>
               </div>
             </div>
             <div className="personal-testimonial">
@@ -43,7 +39,7 @@ const Testimonials = () => {
                 <div className="testimonial-name">{testimonialObjects[person2].name}</div>
                 <div className="testimonial-position">{testimonialObjects[person2].role}</div>
                 <div className="testimonial-break">‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</div>
-                <div className="testimonial-text">{testimonialObjects[person2].statement}</div>
+                <div className="testimonial-text"><q>{testimonialObjects[person2].statement}</q></div>
               </div>
             </div>
           </div>

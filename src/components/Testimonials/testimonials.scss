@@ -49,6 +49,10 @@
     color: white;
 }
 
+q { quotes: '\201c' '\201d'; }
+q:before { content: open-quote; }
+q:after  { content: close-quote; }
+
 .testimonials {
     background-color: rgb(45,45,45);
     color: $melon;

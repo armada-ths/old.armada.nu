@@ -47,7 +47,7 @@ class PagePreview extends React.Component {
 
       return (
         <div className={"newsitem " +  /*(this.props.featured ? "featured" : "regular")*/ "regular"}>
-          <div className="image-container" style={{ backgroundImage: "url(" + (this.props.cover_wide ? this.props.cover_wide : this.props.cover_square) + ")" }}>>
+          <div className="image-container" style={{ backgroundImage: "url(" + (this.props.cover_wide ? this.props.cover_wide : this.props.cover_square) + ")" }}>
             <div className="newsitem-datesection">{dateSection}</div>
             {this.props.category && <div className='newsitem-category'>{this.props.category}</div>}
           </div>

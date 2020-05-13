@@ -206,16 +206,16 @@ class MatchingSection extends React.Component {
           .filter(cat => mapped[cat][exhibitor_id]) // find similarity categories where exhibitor_id exists
 
         return [
-          <div>
-            {matchingCat.map(cat => <div>{toUpper(cat)}</div>)}
+          <div key={1}>
+            {matchingCat.map((cat, i) => <div key={i}>{toUpper(cat)}</div>)}
           </div>,
-          <div className="score-bar-container">
-            {matchingCat.map(cat => {
+          <div className="score-bar-container" key={2}>
+            {matchingCat.map((cat, i) => {
               var style = {
                 background: '#00d790',
                 width: (mapped[cat][exhibitor_id] * 100) + "%"
               }
-              return (<div style={style}>match</div>)
+              return (<div key={i} style={style}>match</div>)
             })}
           </div>
         ];

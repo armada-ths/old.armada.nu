@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types"
 
 import ga from "react-google-analytics";
 const GoogleAnalyticsInitiailizer = ga.Initializer;
@@ -17,7 +18,7 @@ export default class GoogleAnalyticsTracker extends Component {
     metadata: PropTypes.object.isRequired,
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     if (isClient) {
       const { pkg } = this.context.metadata;
       if (isProduction) {
@@ -30,7 +31,7 @@ export default class GoogleAnalyticsTracker extends Component {
     }
   }
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
     if (props.params.splat !== this.props.params.splat) {
       this.logPageview();
     }

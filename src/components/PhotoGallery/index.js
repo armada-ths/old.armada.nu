@@ -20,7 +20,7 @@ class Photo extends React.Component {
             <Zoom>
                 <div className="photo">
                     <div className="square" style={bgStyle}>
-                        <a className="photo-info" target="_blank" href={pageURL}>
+                        <a className="photo-info" target="_blank" rel="noreferrer" href={pageURL}>
                             {this.props.title}
                         </a>
                     </div>

@@ -33,18 +33,16 @@ class Recruitment extends React.Component {
 
 
     render() {
-            const groups = Object.keys(this.state.groups).map((groupkey)=> {
-                return (<div className='groups'>
-                    <h3 className='group-header' >{groupkey}</h3>
-
-                    {this.state.groups[groupkey].map((role) => {
-
-                        return( <RoleSection role={role} />);
-
-                    })}
-
-                </div>)
-                });
+            const groups = Object.keys(this.state.groups).map((groupkey, i)=> {
+                return (
+                    <div className='groups' key={i}>
+                        <h3 className='group-header' >{groupkey}</h3>
+                        {this.state.groups[groupkey].map((role, j) => {
+                            return( <RoleSection role={role} key={`${j}`}/>);
+                        })}
+                    </div>
+                )
+            });
         if (groups.length > 0) {
             return (
                 <div className="rolelist">

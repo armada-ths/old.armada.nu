@@ -44,8 +44,11 @@ class Navbar extends React.Component {
   }
 
   render() {
-    var links = this.state.pages.map(page => (
-        <Link className={page.__url.toLowerCase().includes(this.state.currentPage) && !this.state.currentPage.match("^/$")  ? "active-page" : null} onClick={this.toggleExpand} to={page.__url}>
+    var links = this.state.pages.map((page, index) => (
+        <Link className={page.__url.toLowerCase().includes(this.state.currentPage) && !this.state.currentPage.match("^/$")  ? "active-page" : null} 
+              onClick={this.toggleExpand} 
+              to={page.__url}
+              key={index}>
           {page.title}
         </Link>
     ));

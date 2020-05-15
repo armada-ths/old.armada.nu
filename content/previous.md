@@ -6,4 +6,4 @@ menuPage: false
 priority: '4'
 header: /assets/for_exhibitors.jpg
 ---
-
+See last year's exhibitors.

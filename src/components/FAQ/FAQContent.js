@@ -29,7 +29,7 @@ class FAQContent extends React.Component {
                                     <nav className='accordion-homepage'>
                                     {category.body.map((faq, i) => {
                                         return(
-                                            <FAQQuestion key={i} question={faq.question} answer={faq.answer}/>
+                                            <FAQQuestion key={i} question={faq.question} answer={faq.displayAnswer ? faq.displayAnswer : faq.answer}/>
                                         );
                                     })}
                                 </nav>

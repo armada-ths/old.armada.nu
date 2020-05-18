@@ -207,6 +207,10 @@ homepage .parent:first-child > h2 {
     overflow: hidden;
 }
 
+.children a {
+    color: $diversity;
+}
+
 .answer {
     font-size: 1.0rem;
     font-weight: 450;

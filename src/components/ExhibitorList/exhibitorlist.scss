@@ -112,6 +112,14 @@
 }
 */
 
+.search {
+  padding-bottom: 1em;
+}
+
+.filter-special.display-none, .filters.display-none {
+  display: none;
+}
+
 .exhibitors .search-container{
   margin: auto;
 	padding: 0.1em 2em 0.5em 2em;
@@ -282,7 +290,6 @@
   overflow: hidden;
   border-radius: 4px;
   margin-bottom: 0.5em;
-  border: solid;
   border-width: thin;
   width: 6.6em;
   height: 7em;

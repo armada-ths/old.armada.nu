@@ -25,6 +25,7 @@ class ExhibitorList extends React.Component {
   constructor(props) {
     super(props); // adopts parent qualities
     this.state = {
+      previousYear: new Date(new Date().setFullYear(new Date().getFullYear() - 1)).getFullYear().toString(), //get the previous year
       exhibitors: [],  // json object
       exhibitorList: [], //displayed exhibitors
       showModal: false, //show individual company card
@@ -305,7 +306,7 @@ class ExhibitorList extends React.Component {
 
   //currently only deals w/ getting data from api (unsure)
   componentDidMount() {  // only called when exhibitor page is created or updated.
-    axios.get(ais + 'api/exhibitors?img_placeholder=true')  // fetch data witt promise (then) and res(ult)
+    axios.get(ais + `api/exhibitors?img_placeholder=true${this.props.lastYear ? '&year='+this.state.previousYear : ''}`)
       .then((res) => {
         let exhibitors = res.data;  // create variable and store result within parameter data
         exhibitors.sort((a, b) => a.name.localeCompare(b.name));
@@ -354,8 +355,8 @@ class ExhibitorList extends React.Component {
             </div>
             <h1 className="modal-title">{exhibitor.name}</h1>
             <div>
-              {exhibitor.vyer_position ? <h3 className="links"><a href={exhibitor.vyer_position} target="_blank" rel="noreferrer">Click for Map position</a></h3> : null}
-              {exhibitor.fair_location ? <h3 id="fair-location">{exhibitor.fair_location}</h3> : null}
+              {exhibitor.vyer_position && !this.props.lastYear ? <h3 className="links"><a href={exhibitor.vyer_position} target="_blank" rel="noreferrer">Click for Map position</a></h3> : null}
+              {exhibitor.fair_location && !this.props.lastYear ? <h3 id="fair-location">{exhibitor.fair_location}</h3> : null}
               {exhibitor.company_website ? <h3 className="links"><a href={exhibitor.company_website} target="_blank" rel="noreferrer">{exhibitor.name + " Website"}</a></h3> : null}
               {exhibitor.flyer ? <h3 className="links"><a href={ais + exhibitor.flyer} target="_blank" rel="noreferrer">{exhibitor.name + " Digital Flyer"}</a></h3> : null}
             </div>
@@ -372,7 +373,6 @@ class ExhibitorList extends React.Component {
               </div>
 
               <div className="description-container">
-                {/*<h3>{exhibitor.name}</h3>*/}
                 <p className="purpose-text"><b>{exhibitor.purpose}</b></p>
                 <br />
                 <div className="description">
@@ -527,13 +527,6 @@ class ExhibitorList extends React.Component {
     this.setState({ sustainabilitysrc })
   }
 
-  // groupFilter(group) {
-  //     let groupfilter = this.state.groupfilter[value];
-  //     if (groupfilter[group] === false) { groupfilter[group] = true }
-  //     else if (groupfilter[group] === true) { groupfilter[group] = false }
-  //     this.setState({ groupfilter[0] })
-  // }
-
   //build options for dropdown filters
   buildOptions(array) {
     var listitems = []
@@ -648,85 +641,78 @@ class ExhibitorList extends React.Component {
             <div className="armadaRainbow easterEggPosition" />
           </EasterEgg>
 
-          <h1>Exhibitors</h1>
-          <p><span className="bold" >Sustainability & Diversity</span> form the core values at the heart of our organization. To highlight our core values, we have chosen to dedicate focus areas of the fair called Green Room and Diversity Room. If an exhibitor is tagged with one of the images below, they are in one of these rooms! These are the exhibitors for last year&apos;s fair!</p>
+          <h1>{this.props.lastYear ? "Last Year's " : ""}Exhibitors</h1>
+          <br/>
+          <p style={{paddingBottom: this.props.lastYear ? '1em' : {}}}>{this.props.lastYear ? `These are the exhibitors from the ${this.state.previousYear} fair.` : <span><span className="bold" >Sustainability & Diversity</span> form the core values at the heart of our organization. To highlight our core values, we have chosen to dedicate focus areas of the fair called Green Room and Diversity Room. If an exhibitor is tagged with one of the images below, they are in one of these rooms!</span>}</p>
           {this.state.showModal ? (this.displayExhibitor(exhibitorToDisplay)) : null}
 
-          {/*TODO: remove blue box around special filters*/}
-          <div className="filter-special">
-
-            <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc}
-              onClick={() => this.diversityFilter()}
-            //onMouseEnter={() => this.cssShine('purple')}
-            //onMouseLeave={() => this.cssShineOff()}
-            />
-
-            <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc}
-              onClick={() => this.sustainabilityFilter()}
-            //onMouseEnter={() => this.cssShine('green')}
-            //onMouseLeave={() => this.cssShineOff()}
-            />
-
+          <div className={`filter-special ${this.props.lastYear ? 'display-none' : ''}`}>
+            <input id="diversity" type="image" alt='diversity filter' src={this.state.diversitysrc} onClick={() => this.diversityFilter()} />
+            <input id="sustainability" type="image" alt='sustainability filter' src={this.state.sustainabilitysrc} onClick={() => this.sustainabilityFilter()} />
           </div>
 
-          <div className="search-container">
-            <input type="text"
-              placeholder="Search Exhibitors"
-              value={this.state.search}
-              onChange={this.updateSearch.bind(this)}
-            />
+          <div className="search">
+            <div className="search-container">
+              <input type="text"
+                placeholder="Search Exhibitors"
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+              />
+            </div>
+            <div className={`filters ${this.props.lastYear ? 'display-none' : ''}`}>
+              <Select
+                closeMenuOnSelect={false}
+                blurInputOnSelect={false}
+                isMulti
+                isSearchable
+                name="Job filter"
+                placeholder="All Jobs"
+                options={this.state.jobs}
+                onChange={event => this.jobFilter(event)}
+                className="basic-multi-select"
+                classNamePrefix="select"
+              />
+
+              <Select
+                closeMenuOnSelect={false}
+                blurInputOnSelect={false}
+                isMulti
+                isSearchable
+                name="Sector filter"
+                placeholder="All Industries"
+                options={this.state.sectors}
+                onChange={event => this.sectorFilter(event)}
+                className="basic-multi-select"
+                classNamePrefix="select"
+              />
+
+              <Select
+                closeMenuOnSelect={false}
+                blurInputOnSelect={false}
+                isMulti
+                isSearchable
+                name="Competence filter"
+                placeholder="All Competences"
+                options={this.state.competences}
+                onChange={event => this.competenceFilter(event)}
+                className="basic-multi-select"
+                classNamePrefix="select"
+              />
+
+              <Select
+                closeMenuOnSelect={false}
+                blurInputOnSelect={false}
+                isMulti
+                isSearchable
+                name="Location filter"
+                placeholder="All Locations"
+                options={this.state.locations}
+                onChange={event => this.locationFilter(event)}
+                className="basic-multi-select"
+                classNamePrefix="select"
+              />
+            </div>
           </div>
-          <Select
-            closeMenuOnSelect={false}
-            blurInputOnSelect={false}
-            isMulti
-            isSearchable
-            name="Job filter"
-            placeholder="All Jobs"
-            options={this.state.jobs}
-            onChange={event => this.jobFilter(event)}
-            className="basic-multi-select"
-            classNamePrefix="select"
-          />
-
-          <Select
-            closeMenuOnSelect={false}
-            blurInputOnSelect={false}
-            isMulti
-            isSearchable
-            name="Sector filter"
-            placeholder="All Industries"
-            options={this.state.sectors}
-            onChange={event => this.sectorFilter(event)}
-            className="basic-multi-select"
-            classNamePrefix="select"
-          />
-
-          <Select
-            closeMenuOnSelect={false}
-            blurInputOnSelect={false}
-            isMulti
-            isSearchable
-            name="Competence filter"
-            placeholder="All Competences"
-            options={this.state.competences}
-            onChange={event => this.competenceFilter(event)}
-            className="basic-multi-select"
-            classNamePrefix="select"
-          />
-
-          <Select
-            closeMenuOnSelect={false}
-            blurInputOnSelect={false}
-            isMulti
-            isSearchable
-            name="Location filter"
-            placeholder="All Locations"
-            options={this.state.locations}
-            onChange={event => this.locationFilter(event)}
-            className="basic-multi-select"
-            classNamePrefix="select"
-          />
 
           {/* <div className="supercontainer">
               <p className="matching_link">Pssst! Find your perfect company by using Armada's new <Link className="matching_link_style" to="/matching">matching functionality!</Link></p>
@@ -769,6 +755,7 @@ class ExhibitorList extends React.Component {
 ExhibitorList.propTypes = {
   exhibitorName: PropTypes.string,
   onChangeExhibitorName: PropTypes.func,
+  lastYear: PropTypes.bool
 }
 
 let toExport;

@@ -126,7 +126,7 @@
     "whatwg-fetch": "^0.11.0"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.18.1",
     "chart.js": "^1.1.1",
     "leaflet": "^1.5.1",
     "moment": "^2.19.1",

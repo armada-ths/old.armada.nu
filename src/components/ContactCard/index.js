@@ -21,7 +21,7 @@ class ContactCard extends React.Component {
               <p id="card_name">{this.props.name}</p>
               <p className="title-white">{this.props.title} {this.props.emoji}</p>
               <a className="title-white" href={"mailto:" + this.props.email}>{this.props.email}</a>
-              <a className="linkedin" href={this.props.linkedInUrl} target='_blank'><img id="linkedin_logo" draggable="false" src="/assets/linkedin.png" /></a>
+              <a className="linkedin" href={this.props.linkedInUrl} target='_blank' rel="noreferrer"><img id="linkedin_logo" draggable="false" src="/assets/linkedin.png" /></a>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@ class ContactCard extends React.Component {
             <p id="card_name">{this.props.name}</p>
             <p className="title-white">{this.props.title} {this.props.emoji}</p>
             <a className="title-white" href={"mailto:" + this.props.email}>{this.props.email}</a>
-            <a className="linkedin" href={this.props.linkedInUrl} target='_blank'><img id="linkedin_logo" draggable="false" src="/assets/linkedin.png" /></a>
+            <a className="linkedin" href={this.props.linkedInUrl} target='_blank' rel="noreferrer"><img id="linkedin_logo" draggable="false" src="/assets/linkedin.png" /></a>
           </div>
         </div>
       </div>

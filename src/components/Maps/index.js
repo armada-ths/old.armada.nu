@@ -74,8 +74,8 @@ class Maps extends React.Component {
 					</div> 
 				: null}
 				{!this.state.mobile && !isSafari ? <div className="map-grid"><iframe className="vyer-map" onMouseOver={this.divScroll} src="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/filter?story=syLyAScxudoXAnsGW12XTuLj"></iframe></div> : null}
-				{this.state.mobile || isSafari ? <div className="map-icon-container"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj" target="_blank"><img className="mobile-map-icon" src="/assets/mapicon.png"></img></a></div> : null}
-				{!this.state.mobile && !isSafari ? <h3 className="vyer-link"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/filter?story=syLyAScxudoXAnsGW12XTuLj" target="_blank">Open map in separate tab</a></h3>  : null}
+				{this.state.mobile || isSafari ? <div className="map-icon-container"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj" target="_blank" rel="noreferrer"><img className="mobile-map-icon" src="/assets/mapicon.png"></img></a></div> : null}
+				{!this.state.mobile && !isSafari ? <h3 className="vyer-link"><a href="https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/filter?story=syLyAScxudoXAnsGW12XTuLj" target="_blank" rel="noreferrer">Open map in separate tab</a></h3>  : null}
 				<h4 className="powered-by">Map powered by</h4>
 				<div className="vyer-icon-container">
 					<a href="https://www.vyer.io/"><img className="vyer-icon" src="/assets/vyer.png"></img></a>

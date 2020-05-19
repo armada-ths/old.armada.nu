@@ -1,7 +1,6 @@
 import React from "react";
 import "./table-of-contents.scss";
 import Collapsible from 'react-collapsible';
-//import PropTypes from "prop-types";
 
 const style = {
     color: 'white',

@@ -24,11 +24,11 @@ const PageSections = (props, { collection }) => {
   let contactStart = 21;
   let contactEnd = 24;
   
-  let introSection = sections.slice(introStart,introEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
-  let beforeSections = sections.slice(beforeStart,beforeEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
-  let duringSections = sections.slice(duringStart,duringEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
-  let afterSections = sections.slice(afterStart,afterEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
-  let contactSections = sections.slice(contactStart,contactEnd).map( (section, index) => (<PageSection {...section} right={index%2==0}/>) );
+  let introSection = sections.slice(introStart,introEnd).map( (section, index) => (<PageSection {...section} key={index} right={index%2==0}/>) );
+  let beforeSections = sections.slice(beforeStart,beforeEnd).map( (section, index) => (<PageSection {...section} key={index} right={index%2==0}/>) );
+  let duringSections = sections.slice(duringStart,duringEnd).map( (section, index) => (<PageSection {...section} key={index} right={index%2==0}/>) );
+  let afterSections = sections.slice(afterStart,afterEnd).map( (section, index) => (<PageSection {...section} key={index} right={index%2==0}/>) );
+  let contactSections = sections.slice(contactStart,contactEnd).map( (section, index) => (<PageSection {...section} key={index} right={index%2==0}/>) );
     
     if (!isMobile()) {
     return (

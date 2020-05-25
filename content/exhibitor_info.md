@@ -16,6 +16,8 @@ If you want to see full invitation click on the button below!
 
 <form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Inbjudan.pdf">
 
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/armada%2020.pdf">
+
 <button type="submit">Download Invitation</button>
 
 </form>

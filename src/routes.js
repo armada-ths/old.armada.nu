@@ -22,6 +22,7 @@ import Coffee from "./layouts/Coffee"
 import Diversitypage from "./layouts/Diversitypage"
 import Sustainabilitypage from "./layouts/Sustainabilitypage"
 import Previous from "./layouts/Previous"
+import Career from "./layouts/Career"
 //PageSection is added as layout to avoid warnings from phenomic for having the
 //PageSections compoment that is used in ExhibitorInfo layout.
 //Phenomic complains about not finding PageSection otherwise as it
@@ -49,7 +50,8 @@ const PageContainer = (props) => (
       Coffee,
       Mapspage,
       Diversitypage,
-      Sustainabilitypage
+      Sustainabilitypage,
+      Career
     }}
   />
 );

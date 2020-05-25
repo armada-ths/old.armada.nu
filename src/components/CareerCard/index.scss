@@ -1,0 +1,126 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+
+.career-accordion {
+    border-bottom: thin solid #dadce0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+
+    .apply {
+        width: 100%;
+        background-color: $melon;
+
+        h2 {
+            color: #fff;
+        }
+    }
+
+    .accordion-header {
+        padding: 1em;
+    }
+
+    .arrow {
+        height: 0.5rem;
+        position: absolute;
+        right: 1.75rem;
+        top: calc(50% - .4rem);
+        width: 1.5rem;
+    }
+
+    .accordion-parent {
+        
+        position: relative;
+        padding: 0;
+        cursor: pointer;
+
+        :first-child {
+            border-top: none;
+        }
+
+        :first-child, :first-child > h2 {
+            border-top-left-radius: .625rem;
+            border-top-right-radius: .625rem;
+        }
+
+        h4, h5 {
+            color: $licorice;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+    }
+
+    .accordion-children {
+        position: relative;
+        text-align: left;
+        transition: 200ms max-height ease;
+        overflow: hidden;
+    }
+    
+    .accordion-children a {
+        color: $diversity;
+    }
+
+    .chevron {
+        height: 0.5rem;
+        position: absolute;
+        right: 1.75rem;
+        top: calc(50% - .4rem);
+        width: 1.5rem;
+
+        &.open {
+            transform: rotate(180deg);
+        }
+    }
+    
+    
+}
+
+
+.career-card {
+    border: thin solid #dadce0;
+    border-radius: 0.5em;
+    padding: 1em;
+    display: flex;
+
+    .content {
+        flex: 1;
+    }
+
+    .arrow {
+        float: right;
+        height: 10px;
+    }
+
+    .arrow img {
+        height: inherit;
+    }
+
+    h4, h5 {
+        text-align: left;
+        font-weight: 500;
+    }
+
+    h4 {
+        color: $licorice;
+        font-size: 1rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .career-card {
+            padding:  0.5em;
+        }
+
+        h4, h5 {
+        font-size: 0.5rem;
+        }
+    }
+}

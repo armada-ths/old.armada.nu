@@ -1,9 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-
 import Page from "../Page"
 
 import "./index.scss"
+import Sustainability from '../../components/Sustainability'
 
 const Sustainabilitypage = (props) => {
   return (
@@ -11,6 +11,7 @@ const Sustainabilitypage = (props) => {
         <div className="sustainabilitypage-container">
           <Page { ...props } >
           </Page>
+          <Sustainability/>
         </div>
       </div>
   )

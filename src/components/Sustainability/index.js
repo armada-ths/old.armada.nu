@@ -71,8 +71,6 @@ const Sustainability = () => {
         <p className="text">
           We want to be as sustainable as possible, both environmentally and socially, which we do by reducing our ecological footprint and promoting diversity and equity. Therefore, we apply for <b id="sustainability-color">Hållbart Evenemang</b> (Eng: Sustainable Event). Previous years we have been eco-labeled with <b id="sustainability-color">Håll Sverige Rent</b> (Eng: Keep Sweden Tidy).
           </p>
-        <img id="certificat" src="/assets/sustainability/hallbartevenemangCertificat.jpg"/>
-
         <form id="submitForm" target="blank" method="get" action="https://hallbartevenemang.se/">
            <button type="submit">Check out their website</button>
         </form>

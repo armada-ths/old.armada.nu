@@ -1,0 +1,48 @@
+@import "../../styles/global";
+@import "../../styles/_variables";
+
+.background_Images {
+  padding: 1em;
+  width: 100%;
+}
+.background_Images:hover {
+  transform: scale(0.98);
+}
+.background_Images.Small {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 32.5%;
+	display: inline-block;
+  padding: 0.1em;
+  padding-bottom: 1em;
+}
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5.5em;
+  padding: 1em;
+}
+#certificat {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+  border-radius: 25px;
+}
+
+#submitForm {
+	text-align: center;
+	padding: 1em;
+}
+.text {
+	margin: 2px 0 0 20px !important;
+	word-break: word;
+	text-align: left;
+}
+.newSection {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}

@@ -4,8 +4,7 @@
 
 
 .career-accordion {
-    border-bottom: thin solid #dadce0;
-    border-radius: .5rem;
+    border-bottom: thin solid $light-grey;
     box-sizing: border-box;
 
     .apply {
@@ -14,23 +13,20 @@
 
         h2 {
             color: #fff;
+            padding: 0.2em;
+            font-weight: 700;
         }
     }
 
     .accordion-header {
         padding: 1em;
+        flex: 0.8;
     }
 
-    .arrow {
-        height: 0.5rem;
-        position: absolute;
-        right: 1.75rem;
-        top: calc(50% - .4rem);
-        width: 1.5rem;
-    }
 
     .accordion-parent {
         
+        display: flex;
         position: relative;
         padding: 0;
         cursor: pointer;
@@ -49,6 +45,25 @@
             text-align: left;
             font-weight: 500;
         }
+
+        .chips {
+            padding-top: 0.5em;
+
+            .chip {
+                padding: 0 1em;
+                border: thin solid $melon;
+                border-radius: 100px;
+                margin: 0.2em;
+                display: inline-flex;
+                color: $licorice;
+                align-items: center;
+                height: 32px;
+                font-size: 14px;
+                cursor: pointer;
+                margin-left: -0.2em;
+                margin-right: 0.6em;
+            }
+        }
         
     }
 
@@ -63,7 +78,7 @@
         color: $diversity;
     }
 
-    .chevron {
+    .arrow {
         height: 0.5rem;
         position: absolute;
         right: 1.75rem;

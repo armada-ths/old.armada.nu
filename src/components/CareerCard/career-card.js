@@ -19,8 +19,12 @@ class CareerCard extends React.Component {
                 <div className='accordion-header'>
                     <h4>Spotify</h4>
                     <h5>Data Scientist, Premium Products Discovery</h5>
+                    <div className='chips'>  
+                        <div className='chip'>Summer</div>
+                        <div className='chip'>Part-time</div>
+                    </div>
                 </div>
-                <img src="/assets/pil_melon.c12dca46463a9160e3ccffad3c2d4076.png" className={`chevron ${this.state.drawerOpen ? 'open' : ''}`} draggable="false"/> 
+                <img src="/assets/pil_melon.c12dca46463a9160e3ccffad3c2d4076.png" className={`arrow ${this.state.drawerOpen ? 'open' : ''}`} draggable="false"/> 
             </section> 
             
             <div className="accordion-children" style={{marginTop: 0, maxHeight: this.state.drawerOpen ? '500px' : 0}} >

@@ -8,11 +8,15 @@ import CareerCard from '../../components/CareerCard/career-card'
 const Career = (props) => {
 
   return (
-    <div>
+    <div className='career'>
       <Page {...props}/>
-      <CareerCard/>
-      
-      <CareerCard/>
+      <div className='content'>
+        <h1>Career</h1>
+        <input placeholder='Search jobs...'/>
+        <CareerCard/>
+        <CareerCard/>
+        <CareerCard/>
+      </div>
     </div>
   )
 }

@@ -1,2 +1,29 @@
 @import "../../styles/global";
 @import "../../styles/_variables";
+
+.career {
+    display: flex;
+    justify-content: center;
+
+    input {
+        padding: 1em;
+        border: thin solid $light-grey;
+        border-radius: 1em;
+        outline: none;
+        margin: 1em;
+    }
+
+    .content {
+        flex: 0.7;
+        padding-top: 2em;
+    }
+
+    
+@media screen and (max-width: $breakpoint-mobile) {
+
+    .content {
+        flex: 1;
+    }
+}
+
+}

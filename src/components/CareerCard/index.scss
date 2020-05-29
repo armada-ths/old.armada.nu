@@ -46,6 +46,12 @@
             font-weight: 500;
         }
 
+        .external {
+            height: 1.2em;
+            padding-left: 0.2em;
+            vertical-align:-0.1875em;
+        }
+
         .chips {
             padding-top: 0.5em;
 
@@ -72,10 +78,27 @@
         text-align: left;
         transition: 200ms max-height ease;
         overflow: hidden;
-    }
-    
-    .accordion-children a {
-        color: $diversity;
+
+        .job-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        a {
+            color: $diversity;
+        }
+
+        h3 {
+            text-align: left;
+        }
+
+        
+        @media screen and (max-width: $breakpoint-mobile) {
+            .job-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
     }
 
     .arrow {
@@ -90,52 +113,4 @@
         }
     }
     
-    
-}
-
-
-.career-card {
-    border: thin solid #dadce0;
-    border-radius: 0.5em;
-    padding: 1em;
-    display: flex;
-
-    .content {
-        flex: 1;
-    }
-
-    .arrow {
-        float: right;
-        height: 10px;
-    }
-
-    .arrow img {
-        height: inherit;
-    }
-
-    h4, h5 {
-        text-align: left;
-        font-weight: 500;
-    }
-
-    h4 {
-        color: $licorice;
-        font-size: 1rem;
-    }
-
-    h5 {
-        font-size: 1rem;
-        font-weight: 500;
-    }
-
-    @media screen and (max-width: 600px) {
-
-        .career-card {
-            padding:  0.5em;
-        }
-
-        h4, h5 {
-        font-size: 0.5rem;
-        }
-    }
 }

@@ -1,0 +1,55 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+.career {
+    display: flex;
+    justify-content: center;
+
+    input {
+        padding: 1em;
+        border: thin solid #808080;
+        border-radius: 0.5em;
+        outline: none;
+        margin: 1em;
+    }
+
+    .content {
+        flex: 0.7;
+        padding: 2em 0 2em 0;
+
+        @media screen and (max-width: $breakpoint-pad) {
+                flex: 0.85;
+        }
+        @media screen and (max-width: $breakpoint-mobile) {
+                flex: 1;
+                padding: 2em 0 0 0;
+        }
+    }
+}
+
+.career-header {
+    padding: 1em;
+}
+
+.not-found {
+    padding: 1em;
+}
+
+.chip {
+    padding: 0 1em;
+    border: thin solid $melon;
+    border-radius: 100px;
+    margin: 0.2em;
+    display: inline-flex;
+    color: $licorice;
+    align-items: center;
+    height: 32px;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+
+    &.selected {
+        background-color: $melon;
+    }
+}

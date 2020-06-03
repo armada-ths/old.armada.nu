@@ -1,0 +1,198 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.career-accordion {
+    border-bottom: thin solid $light-grey;
+
+    .no-select {
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .apply {
+        flex: 1;
+        background-color: $melon;
+
+        a:hover {
+            text-decoration: none;
+            
+/* Chrome, Safari, Opera */
+-webkit-animation-name:myfirst;
+-webkit-animation-duration:10s;
+-webkit-animation-timing-function:linear;
+-webkit-animation-delay:0s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:alternate;
+-webkit-animation-play-state:running;
+/* Standard syntax */
+animation-name:myfirst;
+animation-duration:10s;
+animation-timing-function:linear;
+animation-delay:0s;
+animation-iteration-count:infinite;
+animation-direction:alternate;
+animation-play-state:running;
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst
+{
+0%   {background: #16a085; left:0px; top:0px;}
+25%  {background: #1abc9c; left:0px; top:0px;}
+50%  {background: #9b59b6; left:0px; top:0px;}
+75%  {background: #8e44ad; left:0px; top:0px;}
+100% {background: #16a085; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes myfirst
+{
+0%   {background: #16a085; left:0px; top:0px;}
+25%  {background: #1abc9c; left:0px; top:0px;}
+50%  {background: #9b59b6; left:0px; top:0px;}
+75%  {background: #8e44ad; left:0px; top:0px;}
+100% {background: #16a085; left:0px; top:0px;}
+}
+        }
+
+        h2 {
+            color: #fff;
+            padding: 0.2em;
+            font-weight: 700;
+        }
+    }
+
+    .accordion-header {
+        padding: 1em;
+        flex: 0.8;
+    }
+
+
+    .accordion-parent {
+        display: flex;
+        position: relative;
+        padding: 0;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        
+        :first-child {
+            border-top: none;
+        }
+
+        :first-child, :first-child > h2 {
+            border-top-left-radius: .625rem;
+            border-top-right-radius: .625rem;
+        }
+
+        h4, h5 {
+            color: $licorice;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        h4 {
+            span {
+                padding-right: 0.2em;
+            }
+        }
+
+        h5 {
+            .location {
+                color: $diversity;
+            }
+        }
+
+        .external {
+            height: 1.2em;
+            vertical-align:-0.1875em;
+        }
+
+        .chips {
+            padding-top: 0.5em;
+
+            .chip {
+                padding: 0 1em;
+                border: thin solid $melon;
+                border-radius: 100px;
+                margin: 0.2em;
+                display: inline-flex;
+                color: $licorice;
+                align-items: center;
+                height: 32px;
+                font-size: 14px;
+                cursor: pointer;
+                margin-left: -0.2em;
+                margin-right: 0.6em;
+
+                &.selected {
+                    background-color: $melon;
+                }
+            }
+            
+        }
+        
+    }
+
+    .accordion-children {
+        position: relative;
+        text-align: left;
+        transition: 200ms max-height ease;
+        overflow: hidden;
+
+        .job-grid {
+            border-top: thin solid $light-grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0 0 1rem 0;
+
+            .job-info {
+                flex: 1;
+                font-size: 1.0rem;
+                font-weight: 450;
+                line-height: 1.2rem;
+                display: inline-block;
+                padding: 1rem;
+                white-space: pre-wrap;
+            }
+
+            .apply {
+                padding-left: 0.5em;
+
+                @media screen and (max-width: $breakpoint-mobile) {
+                    padding: 0;
+                    margin: auto;
+                }
+            }
+        }
+
+        a {
+            color: $diversity;
+        }
+
+        h3 {
+            text-align: left;
+        }
+
+        
+        @media screen and (max-width: $breakpoint-mobile) {
+            .job-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    }
+
+    .arrow {
+        height: 0.5rem;
+        position: absolute;
+        right: 1.75rem;
+        top: calc(50% - .4rem);
+        width: 1.5rem;
+
+        &.open {
+            transform: rotate(180deg);
+        }
+    }
+    
+}

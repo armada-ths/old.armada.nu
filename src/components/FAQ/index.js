@@ -19,7 +19,7 @@ const faq_data = [
         {question: "How many companies are coming to the Armada fair?", answer: "You can see all the exhibiting companies at armada.nu/exhibitors", displayAnswer: <span>You can see all the exhibiting companies at <a href="/exhibitors/">armada.nu/exhibitors</a>.</span>},
         {question: "What is the Green Room?", answer: "A place at the fair where companies that actively work with sustainability-related questions stand."},
         {question: "What is the Diversity Room?", answer: "A place at the fair where companies that actively work with diversity-related questions stand."},
-        {question: "Where can I find last year's exhibitors?", answer: "Head to armada.nu/previous to find last year's exhibitors.", displayAnswer: <span>Head to <a href="/previous/">armada.nu/previous</a> to find last year's exhibitors.</span>},
+        {question: "Where can I find last year's exhibitors?", answer: "Head to armada.nu/previous to find last year's exhibitors.", displayAnswer: <span>Head to <a href="/previous/">armada.nu/previous</a> to find last year&apos;s exhibitors.</span>},
 ]},
 {title: "MAPS AND LOCATIONS", body: [
     {question: "Where are the Information Desks located?", answer: "There are two information desks. The first one is located outside KårX in Nymble and the second one is located in the Library, on the right-hand side just before entering the big hall."},

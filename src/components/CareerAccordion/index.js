@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const CareerAccordion = (props) => {
 
     const handleAccordionClick = (e) => {
-        if(!e.target.className.includes('external') && !e.target.className.includes('chip')) {
+        if(!e.target.className.includes('external')) {
             props.setAccordion(props.id)
         }
     }
@@ -39,7 +39,7 @@ const CareerAccordion = (props) => {
             <img src='/assets/pil_melon.c12dca46463a9160e3ccffad3c2d4076.png' className={`arrow no-select ${props.accordions[props.id] ? 'open' : ''}`} draggable='false'/> 
         </section> 
         <div className='accordion-children' style={{marginTop: 0, maxHeight: props.accordions[props.id] ? '8000px' : 0}} >
-            <div className='job-grid'>
+            <div className='job-cont'>
                 <div className='job-info'>
                     <h3>The job</h3>
                     {props.aboutJob}
@@ -55,11 +55,10 @@ const CareerAccordion = (props) => {
             </div>
             
             <div className='apply'>
-                    <a href={props.external} target='_blank' rel='noreferrer'>
-                        
-                    <h2>Apply now</h2>{/*<button className='no-select'>Apply now</button>*/}
-                    </a>
-                </div>
+                <a href={props.external} target='_blank' rel='noreferrer'>
+                    <h2>Apply now</h2>
+                </a>
+            </div>
         </div>
     </nav>)
 }
@@ -79,6 +78,5 @@ CareerAccordion.propTypes = {
     setChip: PropTypes.func,
     location: PropTypes.string
 }
-
 
 export default CareerAccordion

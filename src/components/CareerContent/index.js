@@ -27,10 +27,11 @@ class CareerContent extends React.Component {
 
     componentDidMount() {
         //TODO Replace with the career endpoint when it's done
+        //Don't forget to remove the splice
         axios.get(`https://ais.armada.nu/api/exhibitors/?year=2019`)
             .then((res) => {
             let jobs = res.data;
-            let jobList = jobs.map((job) => { 
+            let jobList = jobs.splice(20,30).map((job) => { 
                 return {
                     company: job.name,
                     jobTitle: job.industries.length > 0 ? job.industries[0].name : 'A job',
@@ -70,7 +71,6 @@ class CareerContent extends React.Component {
     }
 
     updateJobResults() {
-
         let copy = this.state.jobs.map(a => Object.assign({}, a));
 
         copy = copy.filter(job => {
@@ -96,11 +96,10 @@ class CareerContent extends React.Component {
             jobsResult: copy,
             accordions: {}
         })
-
     }
     
     render() {
-        return(<div className='content'>
+        return(<div className='career-content'>
             <div className='career-header'>
                 <h1>Career</h1>
                 <p>
@@ -138,13 +137,9 @@ class CareerContent extends React.Component {
                             {this.state.noAvailable ? 'There are currently no jobs available. Check back soon!' : 'No jobs were found. Please adjust your search.'}
                         </p>
                     </div>
-                }
+            }
         </div>)
     }
 }
-
-CareerContent.propTypes = {
-}
-
 
 export default CareerContent

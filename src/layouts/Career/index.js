@@ -4,7 +4,6 @@ import Page from '../Page'
 import './index.scss'
 import CareerContent from '../../components/CareerContent'
 
-
 const Career = (props) => {
 
   return (<div>
@@ -14,6 +13,7 @@ const Career = (props) => {
       <Page {...props}/>
     </div>
   )
+  
 }
 
 Career.propTypes = {

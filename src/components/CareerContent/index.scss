@@ -1,10 +1,19 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-
-.career {
+.career-content {
+    flex: 0.7;
+    padding: 2em 0 2em 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+
+    @media screen and (max-width: $breakpoint-pad) {
+            flex: 0.85;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+            flex: 1;
+            padding: 2em 0 0 0;
+    }
 
     input {
         padding: 1em;
@@ -13,43 +22,38 @@
         outline: none;
         margin: 1em;
     }
+    
+    .career-header {
+        padding: 1em;
+    }
 
-    .content {
-        flex: 0.7;
-        padding: 2em 0 2em 0;
+    .not-found {
+        padding: 1em;
+    }
+    
+    .chip {
+        padding: 0 1em;
+        border: thin solid $melon;
+        border-radius: 2em;
+        margin: 0.2em;
+        display: inline-flex;
+        color: $licorice;
+        align-items: center;
+        height: 2.5em;
+        font-size: 14px;
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 500ms ease-in-out;
 
-        @media screen and (max-width: $breakpoint-pad) {
-                flex: 0.85;
+        &.selected {
+            background-color: $melon;
         }
-        @media screen and (max-width: $breakpoint-mobile) {
-                flex: 1;
-                padding: 2em 0 0 0;
+
+        &:hover {
+            background-color: $melon;
         }
     }
+
 }
 
-.career-header {
-    padding: 1em;
-}
 
-.not-found {
-    padding: 1em;
-}
-
-.chip {
-    padding: 0 1em;
-    border: thin solid $melon;
-    border-radius: 100px;
-    margin: 0.2em;
-    display: inline-flex;
-    color: $licorice;
-    align-items: center;
-    height: 32px;
-    font-size: 14px;
-    cursor: pointer;
-    user-select: none;
-
-    &.selected {
-        background-color: $melon;
-    }
-}

@@ -8,8 +8,6 @@ header: /assets/for_exhibitors.jpg
 ---
 **Welcome to the career fair of 2020**. We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
 
-<form style="text-align:left; margin-bottom: 1em;" method="get" action="/assets/armada2020.pdf">
-
 ## General Info
 
 The registration is open! If you and your company want to be a part of Armada 2020 you can now register at [register.armada.nu](https://register.armada.nu).

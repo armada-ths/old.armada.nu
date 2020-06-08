@@ -1,7 +1,6 @@
-import React from "react";
-import axios from "axios";
-
-import "./partners.scss";
+import React from 'react';
+import axios from 'axios';
+import './partners.scss';
 
 class Partners extends React.Component {
     constructor(props) {
@@ -22,20 +21,18 @@ class Partners extends React.Component {
 
 
     render() {
-        return (
-            <div className="partners">
-            <h2> Partners </h2>
-            <div className="partners-table">
-            {this.state.partners.map(partner =>
-            (<a  key={partner.id} href={partner.link_url}>
-            <img src={partner.logo_url} />
-            </a>)
-
-          )}
-
-        </div>
-            </div>
-        );
+        return (<div className='partners'>
+                { this.state.partners.length > 0 ? <div>
+                    <h2>Partners</h2>
+                    <div className='partners-table'>
+                        {this.state.partners.map(partner =>
+                            (<a  key={partner.id} href={partner.link_url}>
+                            <img src={partner.logo_url} />
+                            </a>)
+                        )}
+                    </div>
+                </div> : <div></div> }
+        </div>);
     }
 
 }

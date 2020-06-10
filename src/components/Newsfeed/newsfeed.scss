@@ -1,76 +1,11 @@
 @import '../../styles/_variables';
 
 .newsfeed {
-    margin: 1em 0em 0em 0em; 
-
-    min-height: 100%;   
-    ul {
-        li {
-            margin: 1em 0.5em;
-            min-height: 143px;
-            width: 10%;
-            flex-grow: 1;
-            min-height: 100%;
-        }
-    }
-
-    p {
-        text-align: initial;
+    padding-top: 1em;
+    
+    .armada-news {
+        text-align: center;
+        border-bottom: 1px solid $melon;
     }
 
 }
-
-blockquote {
-    margin: 0em 0em;
-}
-
-.armada-news {
-    text-align: center;
-    border-bottom: 1px solid $melon;
-}
-
-.post {
-    //post item margins should go here if applicable.
-    height: 200px;
-}
-
-@media screen and (max-width: $breakpoint-mobile) {
-    .newsfeed {
-        ul {
-            li {
-                //margin: 3em 0em;
-                //min-height: 143px;
-                width: 90%;
-                margin-left: 5%;
-                margin-right: 5%;
-            }
-        }
-    }
-}
-
-
-
-/*
-@media all and (max-width: $breakpoint-pad) {
-    ul.newsfeed {
-        li.regular {
-            img {
-                max-width: 100%;
-                max-height: 120px;
-                margin-right: 0;
-            }
-        }
-    }
-
-    .newstitle {
-        margin: $mobile-edge;
-    }
-
-    .newsitem.regular {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-}
-*/

@@ -5,7 +5,6 @@ category: NEWS
 date: 2019-11-09T14:15:01.231Z
 cover_wide: /assets/magazine.jpg
 cover_square: /assets/magazine.jpg
-featured: true
 ingress: Armada has a new official magazine!
 header: /assets/news-header.jpg
 ---

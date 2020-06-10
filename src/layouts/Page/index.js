@@ -64,7 +64,7 @@ const Page = (
 }
 
 Page.propTypes = {
-  isLoading: PropTypes.boolean,
+  isLoading: PropTypes.bool,
   children: PropTypes.node,
   __filename: PropTypes.string,
   __url: PropTypes.string,

@@ -112,8 +112,6 @@ a:hover {
   cursor: pointer;
 }
 
-
-
 h1, h2, h3, h4, h5, h6 {
         text-align: center;
         margin: 0;
@@ -143,9 +141,27 @@ h3 {
   line-height: 1.25em;
 }
 
-
 .justified {
   text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.no-tap-highlight {
+  -webkit-tap-highlight-color: transparent;
 }
 
 @supports (text-align-last: center) {

@@ -1,121 +1,83 @@
 import React from 'react'
-import "./index.scss"
+import './index.scss'
 
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-        shownItems: this.isMobile() ? 1 : 3,
+        shownItems: this.onMobile() ? 1 : 3,
         items: props.items, 
-        current: {}, 
-        isNext: true,
-        
+        current: 0,
     };
     
     this.handlerPrev = this.handlerPrev.bind(this);
     this.handlerNext = this.handlerNext.bind(this);
     this.goToHistoryClick = this.goToHistoryClick.bind(this);
-    this.state.current = { start: 0, end: this.state.shownItems }
   }
 
-    isMobile() {
-        if (global.window!=undefined) {
-        return window.innerWidth < 470 ? true : false
-        } else {
-        return false
-        }
-    }
+  onMobile() {
+    return global.window != undefined ? window.innerWidth < 700 : false
+  }
 
-    resize = () => { 
-        this.setState({shownItems: this.isMobile() ? 1 : 3})
-        
-        this.state.current = { start: this.state.current.start, end: this.state.current.start + this.state.shownItems }
-        this.forceUpdate();
-    }
+  resize = () => { 
+    this.setState({shownItems: this.onMobile() ? 1 : 3})
+    //TODO update current
+    this.forceUpdate();
+  }
 
-    componentDidMount() {
-        window.addEventListener('resize', this.resize)
-        /*setInterval(
-            function() {
-                this.handlerNext()
-            }
-            .bind(this),
-            4000
-        );*/
-    }
+  componentDidMount() {
+    window.addEventListener('resize', this.resize)
+  }
 
-    componentWillUnmount() {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.resize)
-    }
+  }
   
   handlerPrev() {
     let index = this.state.current,
-        length = this.state.items.length;
+        length = this.state.items.length - 1,
+        shownItems = this.state.shownItems
     
-    if( index.start === 0 ) {
-        index = { start: length - 1 - this.state.shownItems, end: -1 };
-        } else {
-            
-        index = { start: index.start - this.state.shownItems, end: index.end - this.state.shownItems };
-        }
-
     this.setState({
-      current: index,
-      isNext: false
+      current: (index - shownItems < 0) ? length - (length % shownItems) : index - shownItems
     });
   }
   
   handlerNext() {
     let index = this.state.current,
-        length = this.state.items.length - 1;
-
-        
-    
-    if( index.end >= length ) {
-      index = { start: 0, end: this.state.shownItems };
-    } else {
-        
-    index = { start: index.start + this.state.shownItems, end: index.end + this.state.shownItems };
-    }
-    
+        length = this.state.items.length - 1,
+        shownItems = this.state.shownItems
     
     this.setState({
-      current: index,
-      isNext: true
+      current: (index + shownItems > length) ? 0 : index + shownItems
     });
   }
   
-  goToHistoryClick( curIndex, index ) {
-    let next = (curIndex < index);
-    this.setState({
-      current: index,
-      isNext: next
-    });                 
+  goToHistoryClick(index) {
+    this.setState({current: index});                 
+  }
+
+  isTraversable() {
+    return this.state.items.length > this.state.shownItems
   }
   
   render(){
-    let index = this.state.current,
-        isnext = this.state.isNext,
-        item = this.state.items[index];
-  
     return (
       <div>
-        <div className="carousel">
-            
-           <div className="carousel-control prev" onClick={this.handlerPrev}><span></span></div>
-            <div className="carousel-items">
-
-            {this.state.items.slice(this.state.current.start,this.state.current.end)}
-            </div>
-           <div className="carousel-control next" onClick={this.handlerNext}><span></span></div>
+        <div className='carousel'>
+          { this.isTraversable() ? <div className='carousel-control prev no-tap-highlight' onClick={this.handlerPrev}><span></span></div> : <div/> }
+          <div className='carousel-items' style={{gridTemplateColumns: `repeat(${this.state.shownItems}, 1fr)`}}>
+            {this.state.items.slice(this.state.current, this.state.current + this.state.shownItems)}
+          </div>
+          { this.isTraversable() ? <div className='carousel-control next no-tap-highlight' onClick={this.handlerNext}><span></span></div> : <div/>}
 
           </div>          
-            <History 
+          { this.isTraversable() ? <History 
                 shownItems={this.state.shownItems}
                 current={this.state.current} 
                 items={this.state.items}
                 changeSilde={this.goToHistoryClick}
-            />
+          /> : <div/> }
       </div>
     )
   }
@@ -126,26 +88,25 @@ class History extends React.Component {
     super(props);
   }
 
-    group = (items, n) => items.reduce((acc, x, i) => {
+  group = (items, n) => items.reduce((acc, x, i) => {
     const idx = Math.floor(i / n);
     acc[idx] = [...(acc[idx] || []), x];
     return acc;
   }, []);
   
   render() {
-    let current = this.props.current;
-    let items = this.group(this.props.items, this.props.shownItems).map( (el, index) => {
-      let name = ((index * this.props.shownItems) >= current.start && index * this.props.shownItems + this.props.shownItems <= current.end) ? 'active' : '';
-        return (
-            <div 
-                className={'history-item ' + name} 
-                onClick={ () => this.props.changeSilde(current, index) }
-            ></div>
-        )
-    });
+    let current = this.props.current, shownItems = this.props.shownItems
     
     return (
-      <div className='carousel-history'>{items}</div>
+      <div className='carousel-history'>
+        { this.group(this.props.items, this.props.shownItems).map((el, index) => (
+            <div
+              key={index}
+              className={`history-item ${((index * shownItems) >= current && index * shownItems + shownItems <= (current + shownItems)) ? 'active' : ''}`} 
+              onClick={ () => this.props.changeSilde(index * shownItems) }
+            ></div>
+        )) }
+      </div>
     )
   }
 }

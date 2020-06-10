@@ -13,7 +13,6 @@
         display: block;
         border: 0;
         cursor: pointer;
-        background-color: rgba(0, 0, 0, 0);
 
         &:hover {
             span {
@@ -49,7 +48,6 @@
 
     .carousel-items {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
         column-gap: 1em;
 
         @media screen and (max-width: $breakpoint-mobile) {
@@ -58,26 +56,33 @@
         
     }
 
-    .carousel-history {
-        display: flex;
-        justify-content: center;
 
-        .history-item {
-            border: none;
-            outline: none;
-            background-color: #c0c0c0;
-            width: 0.5em;
-            height: 0.2em;
-            cursor: pointer;
-            -webkit-transition: background-color 300ms ease;
-            transition: background-color 300ms ease;
-            margin: 1em;
+}
 
-            &.active {
-                background-color: $melon;
-            }
+
+.carousel-history {
+    display: flex;
+    justify-content: center;
+
+    .history-item {
+        border: none;
+        outline: none;
+        background-color: #c0c0c0;
+        width: 0.5em;
+        height: 0.2em;
+        cursor: pointer;
+        -webkit-transition: background-color 300ms ease;
+        transition: background-color 300ms ease;
+        margin: 1em 0.8em 0 0;
+        border-radius: 0.5em;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin: 1em 0.5em 0.5em;
         }
-        
-    }
 
+        &.active {
+            background-color: $melon;
+        }
+    }
+    
 }

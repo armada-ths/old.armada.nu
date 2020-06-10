@@ -5,8 +5,8 @@ category: 'GENERAL'
 date: 2018-11-15T10:06:28.184Z
 cover_wide: /assets/eftersläpp.jpg
 cover_square: /assets/eftersläpp+.jpg
-featured: false
 ingress: The Grand Banquet of THS Armada is proud to announce The After Party!
+archived: true
 ---
 Finish off the first day of Scandinavia's most anticipated career fair by attending one of the biggest parties of the year!
 

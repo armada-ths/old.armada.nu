@@ -1,70 +1,35 @@
-import React from "react"
-import PropTypes from "prop-types"
-import {Link} from 'react-router'
-
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link}  from 'react-router'
 import './preview.scss';
 
-class PagePreview extends React.Component {
+const PagePreview = (props) => {
 
-  constructor(props){
-      super(props);
-      this.state = {
-        open:false,
-      };
-  }
+  const pageDate = props.date ? new Date(props.date) : null
+  const months = [
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+  ];
 
-  toggle_open(){
-      this.setState({open: !this.state.open});
-  }
-
-  isMobile() {
-      if (global.window!=undefined) {
-        return window.innerWidth < 470 ? true : false
-      } else {
-        return false
-      }
-  }
-
-  render = () => {
-
-      const pageDate = this.props.date ? new Date(this.props.date) : null
-
-      const ingressSection = <p className="description"> {this.props.description} </p>;
-
-      const months = [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-      ];
-      const dateSection = (pageDate &&
-            <small>
-              { " " }
-              <time key={ pageDate.toISOString() }>
-                {pageDate.getDate()}<br />
-                { months[pageDate.getMonth()] }
-              </time>
-            </small>
-          )
-
-      return (
-        <div className={"newsitem " +  /*(this.props.featured ? "featured" : "regular")*/ "regular"}>
-          <div className="image-container" style={{ backgroundImage: "url(" + (this.props.cover_wide ? this.props.cover_wide : this.props.cover_square) + ")" }}>
-            <div className="newsitem-datesection">{dateSection}</div>
-            {this.props.category && <div className='newsitem-category'>{this.props.category}</div>}
-          </div>
-          <div className="preview-content">
-
-            
-            <h2><Link to={this.props.__url}>{this.props.title}</Link></h2>
-            {ingressSection}
-
-          </div>
-          
-          <Link to={this.props.__url} className={!this.isMobile() ? "regular-news-link" : null}>
-              Read more
-            </Link>
+  return (<div className={'news-item no-select'}>
+      <div className='image-container' style={{ backgroundImage: 'url(' + (props.cover_wide ? props.cover_wide : props.cover_square) + ')' }}>
+        <div className='news-item-datesection'>
+          {`${pageDate.getDate()} ${months[pageDate.getMonth()]}`}
         </div>
-      )
-    }
+        {props.category && <div className='news-item-category'>{props.category}</div>}
+      </div>
+
+      <div className='preview-content'>
+        <h2>
+          <Link to={props.__url}>{props.title}</Link>
+        </h2>
+        <p className='description'>{props.ingress ? props.ingress : props.description}</p>
+      </div>
+  
+      <Link to={props.__url} className={'news-link'}>
+          Read more
+        </Link>
+    </div>)
 }
 
 PagePreview.propTypes = {
@@ -76,7 +41,7 @@ PagePreview.propTypes = {
   cover_wide: PropTypes.string,
   description: PropTypes.string,
   cover_square: PropTypes.string,
-  featured: PropTypes.boolean,
+  archived: PropTypes.bool,
   ingress: PropTypes.string,
 }
 

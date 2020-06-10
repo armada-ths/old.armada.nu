@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.pages-list {
+  padding: 2em 0 2em;
+
+  .pages-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
+
+    @media screen and (max-width: $breakpoint-pad) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+}

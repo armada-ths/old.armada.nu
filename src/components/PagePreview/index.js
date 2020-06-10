@@ -29,7 +29,7 @@ class PagePreview extends React.Component {
 
       const pageDate = this.props.date ? new Date(this.props.date) : null
 
-      const ingressSection = this.props.featured ? (<p className="ingress"> {this.props.ingress} </p>) : <p className="description"> {this.props.description.substring(0,40) + "..."} </p>;
+      const ingressSection = <p className="description"> {this.props.description} </p>;
 
       const months = [
         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -53,15 +53,15 @@ class PagePreview extends React.Component {
           </div>
           <div className="preview-content">
 
+            
             <h2><Link to={this.props.__url}>{this.props.title}</Link></h2>
-            {this.isMobile() && !this.props.featured ? (<br />) : null}
-            {/* {dateSection} */}
-            {!this.isMobile() || this.props.featured ? ingressSection : null}
+            {ingressSection}
 
-            <Link to={this.props.__url} className={!this.isMobile() ? "regular-news-link" : null}>
+          </div>
+          
+          <Link to={this.props.__url} className={!this.isMobile() ? "regular-news-link" : null}>
               Read more
             </Link>
-          </div>
         </div>
       )
     }

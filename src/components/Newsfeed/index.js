@@ -7,7 +7,7 @@ import PagesList from "../../components/PagesList"
 
 import "./newsfeed.scss"
 
-const defaultNumberOfPosts = 3
+const defaultNumberOfPosts = -1
 
 const Newsfeed = (props, { collection }) => {
 
@@ -16,7 +16,6 @@ const Newsfeed = (props, { collection }) => {
     sort: "date",
     reverse: true,
   })
-  .slice(0, props.numberOfPosts || defaultNumberOfPosts)
 
   let displayedArticleIndex = latestPosts.findIndex( (element) => {
       return element.title === props.displayed_article;
@@ -26,32 +25,18 @@ const Newsfeed = (props, { collection }) => {
       latestPosts.splice(displayedArticleIndex, 1);
   }
 
-  /*
-  const featuredPostIndex = latestPosts.findIndex( (element) =>{
-      return element.featured;
-    });
-
-    const featuredPost = featuredPostIndex >=0 ? <PagePreview {...latestPosts[featuredPostIndex]} /> : null;
-    if (featuredPostIndex >= 0) {
-        latestPosts.splice(featuredPostIndex, 1);
-    }
-  */
+  //latestPosts = latestPosts.slice(0, props.numberOfPosts || defaultNumberOfPosts)
   
-  const posts = latestPosts.length > 0 ? <PagesList pages={latestPosts} /> : null;
+  const posts = latestPosts.length > 0 ? <PagesList isNewsList={props.isNewsList} pages={latestPosts} /> : null;
 
-  let feed =(
-    <div className="newsfeed">
-      <div className="armada-news">
-        <h1 id="newstitle">Armada News</h1>
-      </div>
-      {/* featuredPost */}
-      { posts }
-    </div>
-  );
+  
 
-  return (
-      <div>
-          {feed}
+  return ( 
+        <div className="newsfeed">
+          <div className="armada-news">
+            <h1 id="newstitle">Armada News</h1>
+          </div>
+          {posts}
       </div>
   )
 }
@@ -59,6 +44,7 @@ const Newsfeed = (props, { collection }) => {
 Newsfeed.propTypes = {
   numberOfPosts: PropTypes.number,
   displayed_article: PropTypes.string,
+  isNewsList: PropTypes.bool
 }
 
 Newsfeed.contextTypes = {

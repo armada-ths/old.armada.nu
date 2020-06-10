@@ -18,7 +18,7 @@ const Homepage = (props) => {
     <Page { ...props }>
       {/* <RecruitmentBanner displayType={"mobile"}/> */}
       <div className="body">
-          <Newsfeed />
+          <Newsfeed numberOfPosts={3}/>
           <PhotoGallery photoCount={6}/>
           {<Partners/>}
       </div>

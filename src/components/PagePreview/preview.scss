@@ -2,31 +2,55 @@
 @import "../../styles/_fonts";
 
 
-@mixin size($width, $height: $width) {
-      width: $width;
-      height: $height;
-}
-
 img {
         max-width: 100%;
         height: auto;
 }
 
-.preview-content{
+.preview-content {
+    flex-grow: 1;
+    margin: 0;
+    padding: 1em 1em 0.5em 1em;
+
     a ~ h1:hover,h2:hover {
-      text-align: left;
-      text-decoration: underline;
+        text-align: left;
+        text-decoration: underline;
     }
     h1,h2 {
-      text-align: left;
-      font-size: 1.5em; 
+        text-align: left;
+        font-size: 1.2em; 
+      
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        
+    @media screen and (max-width: $breakpoint-mobile) {
+        
+        line-clamp: 1;
+        -webkit-line-clamp: 1;
     }
-    margin: 0px;
-    padding: 1em 1em 0 1em;
+    }
 }
+
 .ingress, .description {
     font-size: 1rem;
     margin-top: 1em 0em;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+        
+        line-clamp: 1;
+        -webkit-line-clamp: 1;
+    }
 }
 .ingress:hover {
   text-decoration: none;
@@ -38,32 +62,26 @@ img {
     //margin: 2em 0em;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
     .image-container {
         position: relative; 
         height: 0;
-        width: 100%;
         padding-bottom: 58%;
         background-size: cover;
-        /*
-		//margin: 0em 1em 0em 0em;
-        width: auto;
-        height: auto;
-        max-height: 281px;
-        */
+        flex-grow: 1;
     }
     .regular-news-link {
-        width: 100%;
+        padding: 0 0 1em 1em;
         font-size: 1rem;
-        margin-top: 0.5em;
-        //display: flex;
-        //flex-direction: row;
     }
 }
 
 
 .newsitem.featured {
-    //margin: 3em 0em;
-    margin: 0em 0em;   // new
+    margin: 0em 0em;
 	.preview-content {
 		margin: 0em 0em 3em 0em;
 	}
@@ -78,7 +96,7 @@ img {
     position: absolute;
     top: 5px;
     right: 5px;
-    background: #00d790;
+    background: $melon;
     border-radius: 50%;
     padding: 0.2rem 1.2rem;
     color: #fff;
@@ -94,61 +112,3 @@ img {
     color: #fff;
     font-family: $font-title;
 }
-
-
-/*
-@media screen and (max-width: $breakpoint-pad) {
-
-    .newsitem {
-        img{
-            height: 12em;
-            width: 100%;
-        }
-    }
-	.newsitem.regular {
-		img {
-			margin: 0em;
-		}
-	}
-}
-
-@media screen and (max-width: $breakpoint-mobile) {
-    .post {
-        margin: 0em 0em;
-        height: 200px;
-    }
-    .preview-content {
-        margin: 1em $mobile-edge;
-    }
-
-    .newsitem.featured {
-        .preview-content {
-            margin: 1em 5vw 0em 5vw;
-        }
-        img {
-            margin: 0em 0em 0em 0em;
-            width:100%;
-            height: auto;
-       }
-    }
-
-    .newsitem.regular {
-        margin: 0em 0em;
-        .preview-content {
-            margin: -200px 0px 0px 0px;
-            h2 {
-                display: inline;
-                background-color: #fff;
-                padding: 0.2em 0.25em 0em 0.25em;
-            }
-            time {
-                display: inline;
-                width: auto;
-                margin: 0px;
-                background-color: #fff;
-                padding: 0em 0em 0em 0.5em;
-            }
-        }
-    }
-}
-*/

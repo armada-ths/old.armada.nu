@@ -5,7 +5,7 @@ category: 'GENERAL'
 date: 2019-11-03T10:06:28.184Z
 display_date: false
 cover_wide: /assets/for_exhibitors.jpg
-ingress: The definitive guide for companies exhibiting at the fair!
+ingress: The definitive guide for exhibitors!
 header: /assets/news-header.jpg
 archived: false
 ---

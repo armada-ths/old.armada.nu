@@ -3,6 +3,7 @@ layout: News
 title: 'THS ARMADA MAGAZINE '
 category: NEWS
 date: 2019-11-09T14:15:01.231Z
+display_date: true
 cover_wide: /assets/magazine.jpg
 cover_square: /assets/magazine.jpg
 ingress: Armada has a new official magazine!

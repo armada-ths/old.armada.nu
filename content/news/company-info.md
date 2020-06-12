@@ -3,10 +3,11 @@ layout: News
 title: 'Company information'
 category: 'GENERAL'
 date: 2019-11-03T10:06:28.184Z
+display_date: false
 cover_wide: /assets/for_exhibitors.jpg
 ingress: The definitive guide for companies exhibiting at the fair!
 header: /assets/news-header.jpg
-archived: true
+archived: false
 ---
 
 <br/>

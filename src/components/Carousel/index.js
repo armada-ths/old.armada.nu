@@ -1,11 +1,19 @@
 import React from 'react'
 import './index.scss'
 
+const desktopShownItems = 3;
+
+const group = (items, n) => items.reduce((acc, x, i) => {
+  const idx = Math.floor(i / n);
+  acc[idx] = [...(acc[idx] || []), x];
+  return acc;
+}, []);
+
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-        shownItems: this.onMobile() ? 1 : 3,
+        shownItems: this.onMobile() ? 1 : desktopShownItems,
         items: props.items, 
         current: 0,
     };
@@ -20,9 +28,11 @@ export default class Carousel extends React.Component {
   }
 
   resize = () => { 
-    this.setState({shownItems: this.onMobile() ? 1 : 3})
-    //TODO update current
-    this.forceUpdate();
+    const shownItems = this.onMobile() ? 1 : desktopShownItems;
+    if(shownItems !== this.state.shownItems) {
+      this.setState({shownItems, current: 0})
+      this.forceUpdate()
+    }
   }
 
   componentDidMount() {
@@ -87,19 +97,13 @@ class History extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  group = (items, n) => items.reduce((acc, x, i) => {
-    const idx = Math.floor(i / n);
-    acc[idx] = [...(acc[idx] || []), x];
-    return acc;
-  }, []);
   
   render() {
     let current = this.props.current, shownItems = this.props.shownItems
     
     return (
       <div className='carousel-history'>
-        { this.group(this.props.items, this.props.shownItems).map((el, index) => (
+        { group(this.props.items, this.props.shownItems).map((el, index) => (
             <div
               key={index}
               className={`history-item ${((index * shownItems) >= current && index * shownItems + shownItems <= (current + shownItems)) ? 'active' : ''}`} 

@@ -4,7 +4,8 @@ title: How we increased our social sustainability
 category: 'GENERAL'
 cover_wide: /assets/03102017-DSC_0009n2.png
 date: 2017-10-19T13:18:44.096Z
-archived: true
+display_date: true
+archived: false
 ---
 _Karolina Lind, Charlotte Hedlund, Tobias Porserud _
 

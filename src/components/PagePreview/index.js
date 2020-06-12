@@ -13,9 +13,9 @@ const PagePreview = (props) => {
 
   return (<div className={'news-item no-select'}>
       <div className='image-container' style={{ backgroundImage: 'url(' + (props.cover_wide ? props.cover_wide : props.cover_square) + ')' }}>
-        <div className='news-item-datesection'>
+        { props.display_date ? <div className='news-item-datesection'>
           {`${pageDate.getDate()} ${months[pageDate.getMonth()]}`}
-        </div>
+        </div> : <div/> }
         {props.category && <div className='news-item-category'>{props.category}</div>}
       </div>
 
@@ -37,6 +37,7 @@ PagePreview.propTypes = {
   __filename: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string,
+  display_date: PropTypes.bool,
   category: PropTypes.string,
   cover_wide: PropTypes.string,
   description: PropTypes.string,

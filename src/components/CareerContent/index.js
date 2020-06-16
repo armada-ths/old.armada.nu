@@ -32,6 +32,7 @@ class CareerContent extends React.Component {
             .then((res) => {
             let jobs = res.data;
             let jobList = jobs.splice(20,30).map((job) => { 
+                console.log((job.logo_squared ? job.logo_squared : job.logo_freesize))
                 return {
                     company: job.name,
                     jobTitle: job.industries.length > 0 ? job.industries[0].name : 'A job',
@@ -42,7 +43,8 @@ class CareerContent extends React.Component {
                     aboutCompany: job.about,
                     tags: job.employments.map(function(elem){
                         return elem.name;
-                    }).sort()
+                    }).sort(),
+                    logo: (job.logo_squared ? job.logo_squared : job.logo_freesize)
                 } 
             });
             this.setState({
@@ -110,7 +112,7 @@ class CareerContent extends React.Component {
                 </p>
             </div>
             
-            <input placeholder='Search jobs...' onChange={(e) => this.handleSearch(e.target.value)}/>
+            <input placeholder='Search jobs...' className='job-query' onChange={(e) => this.handleSearch(e.target.value)}/>
             <div style={{flexDirection: 'row', paddingLeft: '0.5em'}}>
                 { this.state.tags.map(tag => <div key={tag} className={`chip ${this.state.chips[tag] ? 'selected' : ''}`} onClick={() => this.handleChipClick(tag)}>{tag}</div>) }
             </div>
@@ -130,7 +132,8 @@ class CareerContent extends React.Component {
                         accordions={this.state.accordions}
                         setAccordion={(accordion) => this.handleAccordionClick(accordion)}
                         chips={this.state.chips}
-                        setChip={(chip) => this.handleChipClick(chip)} />
+                        setChip={(chip) => this.handleChipClick(chip)}
+                        logo={job.logo} />
                 ) : 
                     <div className='not-found'>
                         <p>

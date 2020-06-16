@@ -13,6 +13,13 @@ const CareerAccordion = (props) => {
     return(<nav className='career-accordion' id={props.id}>
         <section className={`accordion-parent ${props.accordions[props.id] ? 'open' : ''}`} onClick={handleAccordionClick}>
             <div className='accordion-header'>
+                
+                <div className='company-logo'>
+
+                <img src={'https://ais.armada.nu' + props.logo} className={` no-select ${props.accordions[props.id] ? 'open' : ''}`} draggable='false'/> 
+                </div>
+                <div className='job-header'>
+
                 <h4>
                     <span>{props.jobTitle}</span>
                     { props.external ? 
@@ -26,7 +33,16 @@ const CareerAccordion = (props) => {
                     {props.location ? ',' : ''}
                     <span className='location'> {props.location}</span>
                 </h5>
-                <div className='chips'> 
+                
+                </div>
+                {/**/}
+            </div>
+            <img src='/assets/pil_melon.c12dca46463a9160e3ccffad3c2d4076.png' className={`arrow no-select ${props.accordions[props.id] ? 'open' : ''}`} draggable='false'/> 
+        </section> 
+        <div className='accordion-children' style={{marginTop: 0, maxHeight: props.accordions[props.id] ? '8000px' : 0}} >
+            <div className='job-cont'>
+                
+            <div className='chips'> 
                     {
                         props.tags.map(chip=> 
                             <div key={chip} className={`chip ${props.chips[chip] ? 'selected' : ''}`} onClick={() => props.setChip(chip)}>
@@ -35,11 +51,6 @@ const CareerAccordion = (props) => {
                         )
                     }
                 </div>
-            </div>
-            <img src='/assets/pil_melon.c12dca46463a9160e3ccffad3c2d4076.png' className={`arrow no-select ${props.accordions[props.id] ? 'open' : ''}`} draggable='false'/> 
-        </section> 
-        <div className='accordion-children' style={{marginTop: 0, maxHeight: props.accordions[props.id] ? '8000px' : 0}} >
-            <div className='job-cont'>
                 <div className='job-info'>
                     <h3>The job</h3>
                     {props.aboutJob}
@@ -76,7 +87,8 @@ CareerAccordion.propTypes = {
     tags: PropTypes.array,
     chips: PropTypes.object,
     setChip: PropTypes.func,
-    location: PropTypes.string
+    location: PropTypes.string,
+    logo: PropTypes.string
 }
 
 export default CareerAccordion

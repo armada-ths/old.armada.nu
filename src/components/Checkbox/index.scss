@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+
+    .checkbox {
+        width: 0.6em;
+        height: 0.6em;
+        outline: thin solid $melon;
+        transition: background-color 200ms ease;
+        
+
+        &.selected {
+            background-color: $melon;
+            border: 2px solid #fff;
+        }
+    }
+
+    span {
+        padding-left: 0.2em;
+        font-size: 0.7em;
+    }
+
+}
+

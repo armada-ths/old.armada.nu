@@ -23,9 +23,9 @@ const SustainabilityInterviews = () => {
     return (<div>
       <h2>What does sustainability mean to you?</h2>
       <div>
-        <img className="card_Image" src={InterviewAnswers[0].imageUrl} height="200em" width="260em"/>
-        <img className="card_Image" src={InterviewAnswers[1].imageUrl} height="200em" width="260em"/>
-        <img className="card_Image" src={InterviewAnswers[2].imageUrl} height="200em" width="260em"/>
+        <img alt="" className="card_Image" src={InterviewAnswers[0].imageUrl} height="200em" width="260em"/>
+        <img alt="" className="card_Image" src={InterviewAnswers[1].imageUrl} height="200em" width="260em"/>
+        <img alt="" className="card_Image" src={InterviewAnswers[2].imageUrl} height="200em" width="260em"/>
       </div>
       <div className="question">
         <p className="text name">{InterviewAnswers[0].name}</p>

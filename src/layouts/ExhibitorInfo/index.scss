@@ -16,14 +16,17 @@
 @media screen and (max-width: $breakpoint-mobile-flipped){
   .info-container {
     padding: 3em 1em;
-    //position: static;
-    //max-width: 850px;
-    //margin: auto;
-    //padding: 1em 0em;
   }
   
   #information-for-exhibitors {
     font-size: 2em;
   }
 
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -57px;
+  visibility: hidden;
 }

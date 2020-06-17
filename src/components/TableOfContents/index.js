@@ -10,7 +10,6 @@ const style = {
 
 class TableOfContents extends React.Component {
 
-
     render() {
         return (
             <div className="toc-container">
@@ -43,12 +42,6 @@ class TableOfContents extends React.Component {
                     <h4 className="toc-subelement"><a href="#transport-of-goods-after-the-fair">&#8226; Transport of goods after the fair</a></h4>
                     <h4 className="toc-subelement"><a href="#invoice">&#8226; Invoice</a></h4>
                 </Collapsible>
-                {/* <h3 className="toc-element"><a href="#contact-info">Contact Info</a></h3>
-                <Collapsible triggerStyle={style} trigger="&#xfe40;">
-                    <h4 className="toc-subelement"><a href="#questions-regarding-logistics-transport-and-electricity">&#8226; Questions regarding logistics, transport and electricity</a></h4>
-                    <h4 className="toc-subelement"><a href="#questions-regarding-check-in-service-desks-and-banquet">&#8226; Questions regarding check-in, service desks and banquet</a></h4>
-                    <h4 className="toc-subelement"><a href="#general-questions">&#8226; General questions</a></h4>
-                </Collapsible> */}
             </div>
         );
     }

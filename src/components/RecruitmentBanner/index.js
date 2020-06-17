@@ -1,7 +1,6 @@
 import React from "react";
-import {Link} from "react-router";
+import {Link} from "gatsby";
 import axios from "axios";
-import PropTypes from "prop-types";
 import './recruitment-banner.scss';
 
 class RecruitmentBanner extends React.Component {
@@ -51,9 +50,5 @@ class RecruitmentBanner extends React.Component {
   }
   
 }
-
-RecruitmentBanner.propTypes = {
-  displayType: PropTypes.string
-};
 
 export default RecruitmentBanner;

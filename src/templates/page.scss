@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+
+    .content {
+        display: flex;
+        margin: auto;
+        max-width: 850px;
+
+        &.large {
+            max-width: 80%;
+            width: 80%;
+        }
+    }
+
+}

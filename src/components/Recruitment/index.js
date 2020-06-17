@@ -1,9 +1,8 @@
 import React from "react";
 import axios from "axios";
 import './recruitment.scss';
-import Testimonials from '../Testimonials/index'
+import Testimonials from '../Testimonials'
 import {StickyContainer, Sticky} from 'react-sticky';
-import {PropTypes} from 'prop-types';
 
 
 
@@ -22,11 +21,14 @@ class Recruitment extends React.Component {
         axios.get('https://ais.armada.nu/api/recruitment')  // fetch data witt promise (then) and res(ult)
             .then( (res)  => {
                 let result = res.data;  // create variable and store result within parameter data
-                this.setState({ groups: result[0].groups, 
-                                recruitmentName: result[0].name, 
-                                recruitmentLink: result[0].link,
-                                recruitmentStart: result[0].start_date, 
-                                recruitmentEnd: result[0].end_date });  // component saves its own data
+                if(result.length > 0) {
+
+                    this.setState({ groups: result[0].groups, 
+                        recruitmentName: result[0].name, 
+                        recruitmentLink: result[0].link,
+                        recruitmentStart: result[0].start_date, 
+                        recruitmentEnd: result[0].end_date });  // component saves its own data
+                }
             });
     }
 
@@ -103,10 +105,6 @@ class RoleSection extends React.Component {
 
     }
 
-}
-
-RoleSection.propTypes = {
-    role: PropTypes.object,
 }
 
 

@@ -2,10 +2,7 @@ import React from "react"
 import './testimonials.scss';
 import Zoom from 'react-reveal/Zoom';
 
-
 const Testimonials = () => {
-
-  // https://www.react-reveal.com/docs/
   
   const testimonialObjects = [
     {name: "Daniel Aston", role: "Project Manager", statement: "I've met so many fun people", image: "/assets/images/PG20/danieldrake.jpg"},
@@ -25,7 +22,7 @@ const Testimonials = () => {
         <Zoom>
           <div className="flex-container">
             <div className="personal-testimonial">
-              <div className="testimonial-photo"><img className="personal-picture" src={testimonialObjects[person1].image}/></div>
+              <div className="testimonial-photo"><img alt="" className="personal-picture" src={testimonialObjects[person1].image}/></div>
               <div className="testimonial-info">
                 <div className="testimonial-name">{testimonialObjects[person1].name}</div>
                 <div className="testimonial-position">{testimonialObjects[person1].role}</div>
@@ -34,7 +31,7 @@ const Testimonials = () => {
               </div>
             </div>
             <div className="personal-testimonial">
-              <div className="testimonial-photo"><img className="personal-picture" src={testimonialObjects[person2].image}/></div>
+              <div className="testimonial-photo"><img alt="" className="personal-picture" src={testimonialObjects[person2].image}/></div>
               <div className="testimonial-info">
                 <div className="testimonial-name">{testimonialObjects[person2].name}</div>
                 <div className="testimonial-position">{testimonialObjects[person2].role}</div>

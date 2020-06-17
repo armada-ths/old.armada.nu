@@ -1,23 +1,16 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
 
-import Page from "../Page"
+import './index.scss'
+import Page from '../../templates/page'
 
-import "./index.scss"
-
-const Diversitypage = (props) => {
+const DiversityPage = (props) => {
   return (
-      <div className="content">
-        <div className="diversitypage-container">
-          <Page { ...props } >
-          </Page>
+      <div className='content'>
+        <div className='diversitypage-container'>
+          <Page { ...props } />
         </div>
       </div>
   )
 }
 
-Diversitypage.propTypes = {
-  head: PropTypes.object.isRequired,
-}
-
-export default Diversitypage
+export default DiversityPage

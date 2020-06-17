@@ -1,6 +1,7 @@
 ---
+slug: /diversity
 title: Diversity
-layout: Diversitypage
+layout: DiversityPage
 description: Page
 menuPage: true
 priority: 8

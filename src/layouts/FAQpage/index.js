@@ -5,10 +5,7 @@ import FAQContainer from "../../components/FAQ"
 
 import "./index.scss"
 
-class FAQpage extends React.Component {
-  constructor(props){
-      super(props)
-  }
+class FAQPage extends React.Component {
 
   componentDidMount() {
     document.body.classList.add('header-invisible')
@@ -29,8 +26,4 @@ class FAQpage extends React.Component {
   }
 }
 
-// FAQpage.propTypes = {
-//   head: PropTypes.object.isRequired,
-// }
-
-export default FAQpage
+export default FAQPage

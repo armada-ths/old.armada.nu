@@ -16,8 +16,7 @@ class Photo extends React.Component {
             backgroundSize: 'cover',
             backgroundPosition: 'center'
         };
-        return (
-            <Zoom>
+        return (<Zoom>
                 <div className="photo">
                     <div className="square" style={bgStyle}>
                         <a className="photo-info" target="_blank" rel="noreferrer" href={pageURL}>

@@ -1,10 +1,8 @@
 import React from "react"
-import PropTypes from "prop-types"
 
-import Page from "../Page"
-// import Partners from "../../components/Partners"
 
 import "./index.scss"
+import Page from "../../templates/page"
 
 const Aboutpage = (props) => {
   return (
@@ -12,14 +10,9 @@ const Aboutpage = (props) => {
         <div className="aboutpage-container">
           <Page { ...props } >
           </Page>
-        {/* <Partners/> */}
         </div>
       </div>
   )
-}
-
-Aboutpage.propTypes = {
-  head: PropTypes.object.isRequired,
 }
 
 export default Aboutpage

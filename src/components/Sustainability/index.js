@@ -15,7 +15,7 @@ const Sustainability = () => {
     return (<div>
       <div>
         <h2>Sustainability</h2>
-        <img id="logo" src="/assets/sustainability-melon-nolabel.png"/>
+        <img alt="" id="logo" src="/assets/sustainability-melon-nolabel.png"/>
         <p className="text">
         <b id="sustainability-color">Sustainability</b> is one of the key elements required in making the world a better place, a place
         where humanity and nature can live together in harmony without depleting nature’s resources. It
@@ -27,9 +27,9 @@ const Sustainability = () => {
         </form>
       </div>
       <div>
-        <img className="background_Images Small" src="/assets/sustainability/sustainability_background2.jpeg" height="200em" width="260em"/>
-        <img className="background_Images Small" src="/assets/sustainability/sustainability_background4.jpeg" height="200em" width="260em"/>
-        <img className="background_Images Small" src="/assets/sustainability/sustainability_background7.jpeg" height="200em" width="260em"/>
+        <img alt="" className="background_Images Small" src="/assets/sustainability/sustainability_background2.jpeg" height="200em" width="260em"/>
+        <img alt="" className="background_Images Small" src="/assets/sustainability/sustainability_background4.jpeg" height="200em" width="260em"/>
+        <img alt="" className="background_Images Small" src="/assets/sustainability/sustainability_background7.jpeg" height="200em" width="260em"/>
       </div>
       <div className="newSection">
         <h2>Green Room</h2>
@@ -46,7 +46,7 @@ const Sustainability = () => {
            <button type="submit">See Exhibitors in the Green Room</button>
         </form>
       </div>
-      <img className="background_Images" src="/assets/sustainability/sustainability_background1.jpeg"/>
+      <img alt="" className="background_Images" src="/assets/sustainability/sustainability_background1.jpeg"/>
       <div className="newSection">
         <h2>Climate Compensation</h2>
         <p className="text">
@@ -62,9 +62,9 @@ const Sustainability = () => {
         </form>
       </div>
       <div>
-        <img className="background_Images Small" src="/assets/sustainability/sustainability_background8.jpeg" height="200em" width="260em"/>
-        <img className="background_Images Small" src="/assets/sustainability/sustainability_background9.jpeg" height="200em" width="260em"/>
-        <img className="background_Images Small" src="/assets/sustainability/sustainability_background10.jpeg" height="200em" width="260em"/>
+        <img alt="" className="background_Images Small" src="/assets/sustainability/sustainability_background8.jpeg" height="200em" width="260em"/>
+        <img alt="" className="background_Images Small" src="/assets/sustainability/sustainability_background9.jpeg" height="200em" width="260em"/>
+        <img alt="" className="background_Images Small" src="/assets/sustainability/sustainability_background10.jpeg" height="200em" width="260em"/>
       </div>
       <div className="newSection">
         <h2>Sustainability Certification</h2>
@@ -75,7 +75,7 @@ const Sustainability = () => {
            <button type="submit">Check out their website</button>
         </form>
       </div>
-      <img className="background_Images" src="/assets/sustainability/sustainability_background5.jpeg"/>
+      <img alt="" className="background_Images" src="/assets/sustainability/sustainability_background5.jpeg"/>
       <div className="newSection">
         <h2>Sustainability Day</h2>
         <p className="text">
@@ -85,7 +85,7 @@ const Sustainability = () => {
       <div className="newSection">
       <SustainabilityInterviews/>
       </div>
-      <img className="background_Images" src="/assets/sustainability/sustainability_background3.jpeg"/>
+      <img alt="" className="background_Images" src="/assets/sustainability/sustainability_background3.jpeg"/>
       <div className="newSection">
         <h2>Help us become more sustainable</h2>
         <p id="text">Do you have any ideas or suggestions to help us work more sustainable?  We would love to hear them!​</p>

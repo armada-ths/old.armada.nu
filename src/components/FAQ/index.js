@@ -1,7 +1,7 @@
 import React from "react"
 import FAQHeader from './FAQHeader'
 import FAQContent from './FAQContent'
-import background from '../../../content/assets/faqbanner.png'
+import background from '../../../static/assets/faqbanner.png'
 
 //FAQ questions and answers. Only question and answer are used in search. Define displayAnswer to use elements such as link-tags in the answer.
 const faq_data = [
@@ -55,7 +55,7 @@ class FAQContainer extends React.Component {
         return(
             <div>
                 <div className="faq-search-form">
-                    <img className="terre" src={background}></img>
+                    <img alt='' className="terre" src={background}></img>
                     <FAQHeader onQuestionUpdate={this.updateSearchResult} />
                 </div>
                 <div >

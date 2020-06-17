@@ -1,4 +1,5 @@
 ---
+slug: /about
 title: About
 layout: Aboutpage
 description: About the fair
@@ -10,7 +11,7 @@ header: /assets/images/header-images/Bankett.jpg
 
 THS Armada arranges Scandinavia's largest career fair at KTH Royal Institute of Technology. Every year, more than 12,000 of Sweden's top engineering and architectural students flock to visit the fair to meet their future employers. Each year we strive to exceed their expectations and to give both students and employees the best possible chance to interact.
 
-**Diversity **and **sustainability **form the core values at the heart of this pursuit.
+<b>Diversity</b> and <b>sustainability</b> form the core values at the heart of this pursuit.
 
 ## Diversity & Sustainability
 

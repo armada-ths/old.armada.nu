@@ -1,42 +1,32 @@
-import React from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-import "./partners.scss";
+import './partners.scss';
+import Loading from '../Loading';
 
-class Partners extends React.Component {
-    constructor(props) {
-        super(props);
+const Partners = () => {
 
-        this.state = {
-            partners: []
-        };
-    }
+    const [isLoading, setIsLoading] = useState(true);
+    const [partners, setPartners] = useState([]);
 
-    componentDidMount() {
+    useEffect(() => {
         axios.get('https://ais.armada.nu/api/partners')
-          .then( (res)  => {
-            const partners = res.data;
-            this.setState({ partners });
+          .then((res)  => {
+            setPartners(res.data);
+            setIsLoading(false);
           });
-    }
+    })
 
-
-    render() {
-        return (
-            <div className="partners">
-            <h2> Partners </h2>
-            <div className="partners-table">
-            {this.state.partners.map(partner =>
-            (<a  key={partner.id} href={partner.link_url}>
-            <img src={partner.logo_url} />
-            </a>)
-
-          )}
-
-        </div>
+    return (isLoading ? <Loading/> : <div className='partners'>
+            { partners.length > 0 ? <h2>Partners</h2> : <></> }
+            <div className='partners-table'>
+                {partners.map(partner =>
+                    <a  key={partner.id} href={partner.link_url}>
+                        <img src={partner.logo_url} alt={partner.name}/>
+                    </a>
+                )}
             </div>
-        );
-    }
+        </div>);
 
 }
 

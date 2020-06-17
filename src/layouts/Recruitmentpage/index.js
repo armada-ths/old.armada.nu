@@ -1,23 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Page from "../Page"
-import Recruitment from "../../components/Recruitment"
-import "./index.scss"
+import React from 'react'
+import './index.scss'
+import Page from '../../templates/page'
+import Recruitment from '../../components/Recruitment'
 
-const Recruitmentpage = (props) => {
-  return (
-      <div className="Recruitment-container">
-
-          <Page { ...props }/>
-
-
+const RecruitmentPage = (props) => {
+  return (<div className='recruitment-container'>
+        <Page {...props}/>
         <Recruitment/>
-      </div>
-  )
+      </div>)
 }
 
-Recruitmentpage.propTypes = {
-  head: PropTypes.object.isRequired,
-}
-
-export default Recruitmentpage
+export default RecruitmentPage

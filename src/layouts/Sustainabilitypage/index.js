@@ -1,24 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Page from "../Page"
-
-import "./index.scss"
+import React from 'react'
+import './index.scss'
 import Sustainability from '../../components/Sustainability'
 
-const Sustainabilitypage = (props) => {
+const SustainabilityPage = (props) => {
   return (
-      <div className="content">
-        <div className="sustainabilitypage-container">
-          <Page { ...props } >
-          </Page>
+      <div className='content'>
+        <div className='sustainability-container'>
           <Sustainability/>
         </div>
       </div>
   )
 }
 
-Sustainabilitypage.propTypes = {
-  head: PropTypes.object.isRequired,
-}
-
-export default Sustainabilitypage
+export default SustainabilityPage

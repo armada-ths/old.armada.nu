@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './index.scss'
-import useWindowDimensions from '../../hooks/useWindowDimensions'
+import useWindowSize from '../../hooks/useWindowSize'
 
 const desktopShownItems = 3;
 
@@ -20,11 +20,11 @@ const Carousel = (props) => {
   const [shownItems, setShownItems] = useState(desktopShownItems);
   const [isTraversable, setIsTraversable] = useState(length > shownItems)
 
-  const windowDimensions = useWindowDimensions();
+  const windowSize = useWindowSize();
 
   useEffect(() => {
-    setOnMobile(windowDimensions.width < 700)
-  }, [windowDimensions.width])
+      setOnMobile(windowSize.width < 700)
+  }, [windowSize])
 
   useEffect(() => {
     setShownItems(onMobile ? 1 : desktopShownItems)

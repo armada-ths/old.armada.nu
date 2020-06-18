@@ -1,10 +1,10 @@
 backend:
   name: github
   repo: armada-ths/armada.nu
-  branch: master
+  branch: gatsby-migration
 
 public_folder: "/assets"
-media_folder: "content/assets"
+media_folder: "static/assets"
 publish_mode: editorial_workflow
 
 
@@ -33,27 +33,28 @@ collections:
     folder: "content/news"
     create: true
     sort: "date:desc" # Default is title:asc
-    slug: "{{slug}}"
     card: {type: "alltype", text: "title"}
     fields:
+      - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Layout", name: "layout", widget: "hidden", default: "News"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover_wide", name: "cover_wide", widget: "image", required: false}
       - {label: "Cover_square", name: "cover_square", widget: "image", required: false}
-      - {label: "Featured", name: "featured", widget: "boolean", default: false}
+      - {label: "Archived", name: "archived", widget: "boolean", default: false}
       - {label: "Ingress", name: "ingress", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Header", name: "header", widget: "image", required: false}
+      - {label: "Display date", name: "display_date", widget: "boolean", default: false}
 
   - name: "pages"
     label: "Pages"
     folder: "content"
     create: true
-    slug: "{{slug}}"
     card: {type: "alltype", text: "title"}
     fields:
+      - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Layout", name: "layout", widget: "string", default: "Page"}
       - {label: "Description", name: "description", widget: "text", default: "Page"}
@@ -62,16 +63,3 @@ collections:
       - {label: "Header", name: "header", widget: "image", optional: true}
       - {label: "Body", name: "body", widget: "markdown", required: false}
 
-  - name: "exhibitor-info"
-    label: "Exhibitor Info"
-    folder: "content/exhibitor-info"
-    create: true
-    slug: "{{slug}}"
-    card: {type: "alltype", text: "title"}
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Layout", name: "layout", widget: "string", default: "PageSection"}
-      - {label: "Priority", name: "priority", widget: "number"}
-      - {label: "Header", name: "header", widget: "image", optional: true}
-      - {label: "Dark Background", name: "dark", widget: "boolean", default: false}
-      - {label: "Body", name: "body", widget: "markdown"}

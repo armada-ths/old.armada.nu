@@ -5,12 +5,14 @@ import Loadable from 'react-loadable';
 import Loading from '../components/Loading';
 
 const Page = (props) => {
-  return (<>
+  return (<div className='page-container'>
+        {props.header}
         <div
             dangerouslySetInnerHTML={{ __html: props.html }}
         />
         {props.children}
-    </>)
+        {props.footer}
+    </div>)
 }
 
-export default Loadable({ loader: () =>  import('./test') , loading() { return <Loading/> }});
+export default Page;

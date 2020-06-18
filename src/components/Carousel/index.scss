@@ -1,0 +1,88 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.carousel {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+
+    .carousel-control {
+        z-index: 2;
+        height: 100%;
+        display: block;
+        border: 0;
+        cursor: pointer;
+
+        &:hover {
+            span {
+                opacity: 0.95;
+            }
+        }
+
+        span {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            position: relative;
+            box-sizing: border-box;
+            opacity: 0.65;
+            border-bottom: 3px solid $melon;
+            border-left: 3px solid $melon;
+            -webkit-transition: opacity 300ms ease;
+            transition: opacity 300ms ease;
+            margin: 0.5em;
+        }
+        
+        &.prev span {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        &.next span {
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+        
+    }
+
+    .carousel-items {
+        display: grid;
+        column-gap: 1em;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+            grid-template-columns: 1fr;
+        }
+        
+    }
+
+
+}
+
+
+.carousel-history {
+    display: flex;
+    justify-content: center;
+
+    .history-item {
+        border: none;
+        outline: none;
+        background-color: #c0c0c0;
+        width: 0.5em;
+        height: 0.2em;
+        cursor: pointer;
+        -webkit-transition: background-color 300ms ease;
+        transition: background-color 300ms ease;
+        margin: 1em 0.8em 0 0;
+        border-radius: 0.5em;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin: 1em 0.5em 0.5em;
+        }
+
+        &.active {
+            background-color: $melon;
+        }
+    }
+    
+}

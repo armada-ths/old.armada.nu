@@ -17,8 +17,8 @@ const Partners = () => {
           });
     })
 
-    return (isLoading ? <Loading/> : <div className='partners'>
-            { partners.length > 0 ? <h2>Partners</h2> : <></> }
+    return (isLoading ? <Loading/> : partners.length > 0 ? <div className='partners'>
+             <h2>Partners</h2>
             <div className='partners-table'>
                 {partners.map(partner =>
                     <a  key={partner.id} href={partner.link_url}>
@@ -26,7 +26,7 @@ const Partners = () => {
                     </a>
                 )}
             </div>
-        </div>);
+        </div> : <></> );
 
 }
 

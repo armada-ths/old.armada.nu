@@ -11,17 +11,19 @@ import ContactPage from "../layouts/ContactPage"
 import Aboutpage from "../layouts/Aboutpage"
 import DiversityPage from "../layouts/diversitypage"
 import ExhibitorInfo from "../layouts/ExhibitorInfo"
+import News from "../layouts/News"
 import { Helmet } from "react-helmet"
 
 const components = {
-    RecruitmentPage: RecruitmentPage,
-    SustainabilityPage: SustainabilityPage,
-    DiversityPage: DiversityPage,
-    FAQPage: FAQPage,
-    Homepage: Homepage,
-    ExhibitorInfo: ExhibitorInfo,
-    Aboutpage: Aboutpage,
-    ContactPage: ContactPage
+  RecruitmentPage: RecruitmentPage,
+  SustainabilityPage: SustainabilityPage,
+  DiversityPage: DiversityPage,
+  FAQPage: FAQPage,
+  Homepage: Homepage,
+  ExhibitorInfo: ExhibitorInfo,
+  Aboutpage: Aboutpage,
+  ContactPage: ContactPage,
+  News: News,
 };
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -49,11 +51,13 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date
         slug
         title
         header
         layout
+        cover_wide
+        ingress
       }
     }
   }

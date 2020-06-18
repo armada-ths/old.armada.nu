@@ -1,0 +1,131 @@
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
+
+.maps {
+  width: 100%;
+  height:100%;
+  margin: auto;
+}
+
+.maps-grid {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+
+}
+
+.map-item {
+	width:20em;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    cursor: hand;
+		padding-top: 1em;
+
+		.name{
+		 	text-align: center;
+		}
+
+		&:hover {
+		  cursor: pointer;
+		  cursor: hand;
+		  .name{
+		    text-decoration: underline;
+		  }
+		}
+}
+
+.modalimage-map {
+  img{
+    width: 100%;
+  }
+}
+
+.center p {
+	text-align: center !important;
+	line-height: 1.7em;
+}
+.bold {
+	font-weight: bold;
+}
+
+.vyer-link {
+	padding: 20px 30px 30px 30px;
+}
+
+.vyer-link a {
+	color: blue!important;
+	
+}
+
+.diversity {
+	color: $diversity !important;
+}
+
+.vyer-map {
+	width: 80%;
+	height: 600px;
+	margin-left: 10%;
+	margin-bottom: 1em;
+    border: 1px solid black;
+}
+
+.map-grid {
+	pointer-events: auto;
+}
+
+.map-instructions {
+	background-color: $melon;
+	color: white;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-bottom: 1em;
+	margin-left: 10%;
+	width: 80%;
+}
+
+.map-inst-header {
+	text-decoration: underline;
+}
+
+.map-inst-header, .map-steps {
+	color: white;
+	padding: 0.1em;
+	font-weight: normal;
+}
+
+.vyer-icon-container {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.vyer-icon {
+	margin-top: 0.5em;
+	max-width: 12%;
+}
+
+.map-icon-container {
+	text-align: center;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.mobile-map-icon {
+	max-width: 22%;
+}
+
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+
+	.vyer-icon {
+		max-width: 50%;
+	}
+
+	.mobile-map-icon {
+		max-width: 50%;
+	}
+
+}

@@ -24,7 +24,7 @@ const Carousel = (props) => {
 
   useEffect(() => {
     setOnMobile(windowDimensions.width < 700)
-  }, [windowDimensions.width < 700])
+  }, [windowDimensions.width])
 
   useEffect(() => {
     setShownItems(onMobile ? 1 : desktopShownItems)

@@ -23,14 +23,18 @@
     "react": "^16.12.0",
     "react-collapsible": "^2.8.0",
     "react-countdown-now": "^2.1.2",
+    "react-device-detect": "^1.13.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-leaflet": "^2.7.0",
     "react-leaflet-universal": "^2.2.1",
     "react-loadable": "^5.5.0",
+    "react-page-click": "^4.0.4",
     "react-reveal": "^1.2.2",
+    "react-select": "^3.1.0",
     "react-sticky": "^6.0.3",
-    "react-topbar-progress-indicator": "^4.1.0"
+    "react-topbar-progress-indicator": "^4.1.0",
+    "react-url-query": "^1.5.0"
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.13.0",

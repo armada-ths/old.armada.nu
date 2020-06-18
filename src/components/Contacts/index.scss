@@ -1,0 +1,25 @@
+@import "../../styles/_variables";
+@import "../../styles/global";
+
+.contacts {
+  
+  h1 {
+    padding-top: 1.5em;
+  }
+
+  .contact-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .line {
+      width: 80%;
+      height: 1px;
+      background-color: $melon;
+    }
+  
+  }
+
+}

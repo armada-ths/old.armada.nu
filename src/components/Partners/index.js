@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import './partners.scss';
+import './index.scss';
 import Loading from '../Loading';
 
 const Partners = () => {

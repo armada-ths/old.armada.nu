@@ -11,8 +11,8 @@ const FAQQuestion = (props) => {
         setDrawerOpen(!drawerOpen)
     }
 
-    return(<section className='parent' onClick={questionOnClicked}>
-        <h2 tabIndex='0' aria-expanded='false'>
+    return(<section role='presentation' className='parent' onClick={questionOnClicked}>
+        <h2 aria-expanded='false'>
             {props.question}
         <img alt='' src={drawerOpen ? chevronUp : chevronDown} className='chevron' draggable='false'/>
         </h2>

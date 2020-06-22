@@ -1,7 +1,7 @@
 import React from 'react';
 import { Map, TileLayer, Marker } from 'react-leaflet-universal';
 import 'leaflet/dist/leaflet.css';
-import './contact-map.scss';
+import './index.scss';
 import L from 'leaflet';
 
 delete L.Icon.Default.prototype._getIconUrl;

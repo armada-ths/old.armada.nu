@@ -32,7 +32,7 @@ const Carousel = (props) => {
 
   useEffect(() => {
     setIsTraversable(length > shownItems)
-  }, [shownItems])
+  }, [shownItems, length])
 
   const handlerPrev = () => {
     setCurrent((current - shownItems < 0) ? length - (length % shownItems) : current - shownItems)
@@ -48,11 +48,11 @@ const Carousel = (props) => {
 
   return (<div>
     <div className='carousel'>
-      { isTraversable ? <div className='carousel-control prev no-tap-highlight' onClick={handlerPrev}><span></span></div> : <div/> }
+      { isTraversable ? <div role='presentation' className='carousel-control prev no-tap-highlight' onClick={handlerPrev}><span></span></div> : <div/> }
       <div className='carousel-items' style={{gridTemplateColumns: `repeat(${shownItems}, 1fr)`}}>
         {items.slice(current, current + shownItems)}
       </div>
-      { isTraversable ? <div className='carousel-control next no-tap-highlight' onClick={handlerNext}><span></span></div> : <div/>}
+      { isTraversable ? <div role='presentation' className='carousel-control next no-tap-highlight' onClick={handlerNext}><span></span></div> : <div/>}
 
       </div>          
       { isTraversable ? <History 
@@ -69,6 +69,7 @@ const History = ({shownItems, current, items, changeSilde}) => {
     <div className='carousel-history'>
       { group(items, shownItems).map((el, index) => (
           <div
+            role='presentation'
             key={index}
             className={`history-item ${((index * shownItems) >= current && index * shownItems + shownItems <= (current + shownItems)) ? 'active' : ''}`} 
             onClick={() => changeSilde(index * shownItems)}

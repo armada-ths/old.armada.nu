@@ -3,42 +3,42 @@ import './index.scss';
 
 const Cat = () => {
 
-  return (<div id='test'>
-      <div className='main'>
-        <span className='stand'></span>
-        <div className='cat'>
-         <div className='body'></div>
-         <div className='head'>
-           <div className='ear'></div>
-         <div className='ear'></div>
-         </div>
-         <div className='face'>
-          <div className='nose'></div>
-         <div className='whisker-container'>
-           <div className='whisker'></div>
-           <div className='whisker'></div>
-         </div>
-         <div className='whisker-container'>
-           <div className='whisker'></div>
-           <div className='whisker'></div>
-         </div>
-         </div>
-         <div className='tail-container'>
+  return (<div className='cat-container'>
+    <div className='main'>
+      <span className='stand'/>
+      <div className='cat'>
+        <div className='body'/>
+        <div className='head'>
+          <div className='ear'/>
+          <div className='ear'/>
+        </div>
+        <div className='face'>
+          <div className='nose'/>
+          <div className='whisker-container'>
+              <div className='whisker'/>
+              <div className='whisker'/>
+            </div>
+            <div className='whisker-container'>
+              <div className='whisker'/>
+              <div className='whisker'/>
+            </div>
+        </div>
+        <div className='tail-container'>
           <div className='tail'>
             <div className='tail'>
               <div className='tail'>
                 <div className='tail'>
                   <div className='tail'>
                     <div className='tail'>
-                      <div className='tail'></div>
+                      <div className='tail'/>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-         </div>
-       </div>
+        </div>
+      </div>
     </div>
   </div>);
   

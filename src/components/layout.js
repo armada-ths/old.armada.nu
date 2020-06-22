@@ -5,16 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { graphql, StaticQuery } from "gatsby"
-import Navbar from "./navbar/navbar"
-import Jumbotron from "./jumbotron/jumbotron"
-import { Helmet } from "react-helmet"
+import React from 'react'
+import { graphql, StaticQuery } from 'gatsby'
+import Navbar from './Navbar'
+import Jumbotron from './Jumbotron'
 
 import './layout.scss'
 import '../styles/global.scss'
-import Footer from "./footer/footer"
-const Layout = ({ video, header, children }) => (
+import Footer from './Footer'
+const Layout = ({ video, header, location, children }) => (
   <StaticQuery
     query={graphql`
       query MyQuery {
@@ -36,18 +35,16 @@ const Layout = ({ video, header, children }) => (
         }
       }
     `}
-    render={data => (
-      <React.Fragment>
-        <div className='layout'>
-          <Navbar pages={data.allMarkdownRemark.edges.map(edge => edge.node.frontmatter)} />
-          <Jumbotron video={video} image={header} />
-          <div>
-            {children}
-          </div>
+    render={data => (<>
+      <div className='layout'>
+        <Navbar location={location} pages={data.allMarkdownRemark.edges.map(edge => edge.node.frontmatter)} />
+        <Jumbotron video={video} image={header} />
+        <div>
+          {children}
         </div>
-        <Footer/>
-      </React.Fragment>
-    )}
+      </div>
+      <Footer/>
+    </>)}
   />
 )
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link }  from 'gatsby'
-import './preview.scss';
+import './index.scss';
 
 const PagePreview = (props) => {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import './footer.scss';
+import './index.scss';
 
 const Footer = () => {
 
@@ -40,7 +40,6 @@ const Footer = () => {
             },
         ]
     };
-
 
     const renderLinkLogos = (param) => {
         return (param.map(item =>

@@ -1,6 +1,6 @@
 import React from "react"
-import "./jumbotron.scss";
-import Countdown from "../countdown/countdown"
+import "./index.scss";
+import Countdown from "../Countdown"
 
 var smoothScroll = {
     timer: null,

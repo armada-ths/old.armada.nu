@@ -119,7 +119,7 @@ $tail-interval: (11 - 7.5) / $tail-wags;
 @include effect('right-ear', $k-right-ear);
 
 
-#test {
+.cat-container {
   margin-top: 3.5em;
 }
 

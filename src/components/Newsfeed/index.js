@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
-import './newsfeed.scss'
+import './index.scss'
 import Carousel from '../Carousel'
 import PagePreview from '../PagePreview'
 

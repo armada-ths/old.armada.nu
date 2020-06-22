@@ -1,9 +1,6 @@
 import React from 'react'
 import './page.scss'
 
-import Loadable from 'react-loadable';
-import Loading from '../components/Loading';
-
 const Page = (props) => {
   return (<div className='page-container'>
         {props.header}

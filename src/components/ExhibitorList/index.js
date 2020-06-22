@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
-import "./exhibitorlist.scss";
+import "./index.scss";
 import Modal from "../Modal";
 import Loading from "../Loading"
 import Cat from "../Cat"

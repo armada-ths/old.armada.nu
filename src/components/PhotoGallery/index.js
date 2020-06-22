@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import './photo-gallery.scss';
+import './index.scss';
 import Zoom from 'react-reveal/Zoom';
 
 const FLICKR_API_KEY = '381c0c551c89c0f23e326456eae0c6a8';

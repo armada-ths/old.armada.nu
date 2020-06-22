@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import './recruitment.scss';
+import './index.scss';
 import Testimonials from '../Testimonials'
 import {StickyContainer, Sticky} from 'react-sticky';
 
@@ -89,7 +89,7 @@ class RoleSection extends React.Component {
 
     render() {
            return ( <div className='role-container'>
-                <div className='role-header' onClick={() => this.setState({collapsed: !this.state.collapsed})} >
+                <div role='presentation' className='role-header' onClick={() => this.setState({collapsed: !this.state.collapsed})} >
                     <div className='role-header-left' >
                         <h4>  {this.props.role.name  }</h4>
                     </div>

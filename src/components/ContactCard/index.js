@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import './index.scss';
 
 const ContactCard = ({name, linkedInUrl, imageUrl, title, email, emoji}) => {
@@ -19,6 +20,15 @@ const ContactCard = ({name, linkedInUrl, imageUrl, title, email, emoji}) => {
     </div>
   </div>)
   
+}
+
+ContactCard.propTypes = {
+  name: PropTypes.string,
+  linkedInUrl: PropTypes.string,
+  imageUrl: PropTypes.string,
+  title: PropTypes.string,
+  email: PropTypes.string,
+  emoji: PropTypes.string
 }
 
 export default ContactCard;

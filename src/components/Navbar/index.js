@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby'
 import './index.scss'
 import RecruitmentBanner from '../RecruitmentBanner';
@@ -32,13 +33,11 @@ const Navbar = (props) => {
     </Link>
   ));
 
-  let color = props.whiteHB ? 'white' : 'black';
-
   return(<>
       <div id='navbar' style={onMobile ? ((expanded && onMobile) ? { position: 'relative' } : { position: 'absolute' }) : null}>
         { onMobile && <RecruitmentBanner location={props.location}/> }
         <nav className={'menu-wrapper ' + (expanded ? 'visible' : 'hidden')}>
-          <div className={'menu-hamburger ' + color }>
+          <div className={'menu-hamburger'}>
             {!expanded ? <div className='hamburger'><span role='presentation' onClick={toggleExpanded}>☰</span></div> : (<div className='navbar-cross'><span role='presentation' onClick={toggleExpanded}>˟</span></div>)}
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
@@ -50,6 +49,11 @@ const Navbar = (props) => {
       </div>
   </>);
 
+}
+
+Navbar.propTypes = {
+  pages: PropTypes.array,
+  location: PropTypes.string,
 }
 
 export default Navbar

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import './index.scss'
 import chevronDown from '../../../static/assets/pil_melon.png'
 import chevronUp from '../../../static/assets/pil_melon_up.png'
@@ -21,4 +22,10 @@ const FAQQuestion = (props) => {
         </div>
     </section>)
 }
+
+FAQQuestion.propTypes = {
+    question: PropTypes.string,
+    answer: PropTypes.string
+}
+
 export default FAQQuestion

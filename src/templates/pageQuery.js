@@ -17,6 +17,10 @@ import News from '../layouts/News'
 import Exhibitors from '../layouts/Exhibitors'
 import Previous from '../layouts/Previous'
 import MapsPage from '../layouts/Mapspage'
+import PlainPage from '../layouts/PlainPage'
+import Matching from '../layouts/Matching'
+import Events from '../layouts/Events'
+import Coffee from '../layouts/Coffee'
 
 const components = {
   RecruitmentPage: RecruitmentPage,
@@ -30,7 +34,11 @@ const components = {
   News: News,
   Exhibitors: Exhibitors,
   Previous: Previous,
-  MapsPage: MapsPage
+  MapsPage: MapsPage,
+  PlainPage: PlainPage,
+  Matching: Matching,
+  Events: Events,
+  Coffee: Coffee
 };
 
 export default function Template({
@@ -48,7 +56,7 @@ export default function Template({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ]}
     >
-    </Helmet><Layout location={frontmatter.slug} video={frontmatter.slug === '/'} header={frontmatter.header}>
+    </Helmet><Layout location={frontmatter.slug} header={frontmatter.header}>
     {components[layout] ? React.createElement(components[layout], markdownRemark) : null}
   </Layout>
   </>)

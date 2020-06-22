@@ -15,10 +15,11 @@ const Partners = () => {
             setPartners(res.data);
             setIsLoading(false);
           });
-    })
+    }, [])
 
-    return (isLoading ? <Loading/> : partners.length > 0 ? <div className='partners'>
-             <h2>Partners</h2>
+    return (isLoading ? <Loading/> : partners.length > 0 ? 
+        <div className='partners'>
+            <h2>Partners</h2>
             <div className='partners-table'>
                 {partners.map(partner =>
                     <a  key={partner.id} href={partner.link_url}>

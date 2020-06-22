@@ -1,13 +1,21 @@
-import React from "react"
+import React from 'react'
+import Layout from '../components/layout'
+import './404.scss'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+const NotFoundPage = ({ error, errorText }) => (<Layout>
+  <div className='not-found'>
+    <div className='oops'><span aria-label='oops' role='img'>😱</span> Oooops!</div>
+      <p className='error-title'>
+        <strong>404 </strong>
+        Page Not Found
+      </p>
+      <div>
+        It seems you found a broken link.
+        Sorry about that.
+        <br />
+        Do not hesitate to report this page <span aria-label='grin' role='img'>😁</span>.
+      </div>
+    </div>
   </Layout>
 )
 

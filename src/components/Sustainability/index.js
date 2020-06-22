@@ -11,7 +11,6 @@ import './index.scss';
 
 const Sustainability = () => {
 
-
     return (<div>
       <div>
         <h2>Sustainability</h2>

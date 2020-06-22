@@ -1,4 +1,5 @@
  import React from 'react';
+ import PropTypes from 'prop-types';
  import './index.scss';
  import Modal from '../Modal';
  import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
@@ -83,6 +84,13 @@ class Maps extends React.Component {
 		)
 	}
 }
+
+
+Maps.propTypes = {
+    mapId: PropTypes.number,
+    onChangeMapId: PropTypes.func,
+}
+
 
 let toExport;
 if(global.window!==undefined){

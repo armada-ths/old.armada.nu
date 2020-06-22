@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
 import './index.scss'
 import Carousel from '../Carousel'
 import PagePreview from '../PagePreview'
 
-const Newsfeed = ({ video, header, children }) => (
+const Newsfeed = ({ current }) => (
   <StaticQuery
     query={graphql`
     query NewsQuery {
@@ -39,10 +40,17 @@ const Newsfeed = ({ video, header, children }) => (
         <div className='armada-news'>
           <h1 id='newstitle'>Armada News</h1>
         </div>
-        { <Carousel items={data.allMarkdownRemark.edges.map(edge => <PagePreview key={edge.node.id} {...edge.node.frontmatter}/>)} />}
+        <Carousel 
+          items={data.allMarkdownRemark.edges.filter(edge => edge.node.frontmatter.slug !== current).map(edge => 
+            <PagePreview key={edge.node.id} {...edge.node.frontmatter}/>
+          )} />
       </div>
     )}
   />
 )
+
+Newsfeed.propTypes = {
+	current: PropTypes.string,
+}
 
 export default Newsfeed

@@ -17,4 +17,8 @@ const Modal = ({onClose, ...rest}) => (
   </div>
 );
 
+Modal.propTypes = {
+  onClose: () => {}
+};
+
 export default Modal

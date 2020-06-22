@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
-import axios from 'axios';
-import './index.scss';
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+import axios from 'axios'
+import './index.scss'
 
 const RecruitmentBanner = ({location}) => {
 
@@ -21,6 +22,10 @@ const RecruitmentBanner = ({location}) => {
     </Link> }
   </>)
 
+}
+
+RecruitmentBanner.propTypes = {
+  location: PropTypes.string,
 }
 
 export default RecruitmentBanner;

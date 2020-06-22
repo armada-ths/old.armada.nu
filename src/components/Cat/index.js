@@ -41,7 +41,7 @@ const Cat = () => {
       </div>
     </div>
   </div>);
-  
+
 }
 
 export default Cat;

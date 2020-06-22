@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './page.scss'
 
 const Page = (props) => {
@@ -10,6 +11,13 @@ const Page = (props) => {
         {props.children}
         {props.footer}
     </div>)
+}
+
+Page.propTypes = {
+    header: PropTypes.element,
+    html: PropTypes.element.isRequired,
+    children: PropTypes.element,
+    footer: PropTypes.element,
 }
 
 export default Page;

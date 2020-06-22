@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import './index.scss'
 import useWindowSize from '../../hooks/useWindowSize'
 
@@ -77,6 +78,17 @@ const History = ({shownItems, current, items, changeSilde}) => {
       )) }
     </div>
   )
+}
+
+Carousel.propTypes = {
+  items: PropTypes.array,
+}
+
+History.propTypes = {
+  shownItems: PropTypes.number,
+  current: PropTypes.number,
+  items: PropTypes.array,
+  changeSilde: PropTypes.func,
 }
 
 export default Carousel

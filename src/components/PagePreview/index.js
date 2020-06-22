@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link }  from 'gatsby'
 import './index.scss';
 
@@ -31,4 +32,18 @@ const PagePreview = (props) => {
         </Link>
     </div>)
 }
+
+PagePreview.propTypes = {
+  slug: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string,
+  display_date: PropTypes.bool,
+  category: PropTypes.string,
+  cover_wide: PropTypes.string,
+  description: PropTypes.string,
+  cover_square: PropTypes.string,
+  archived: PropTypes.bool,
+  ingress: PropTypes.string,
+}
+
 export default PagePreview

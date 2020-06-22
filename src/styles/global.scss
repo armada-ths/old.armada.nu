@@ -52,8 +52,11 @@ body {
   overflow-x: hidden;
   margin: 0px;
   position: relative;
-  min-height: 100%;
   height: auto;
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 #diversity-color {
@@ -257,4 +260,11 @@ li {
 
 img {
   border: none;
+}
+
+#___gatsby {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-around;
 }

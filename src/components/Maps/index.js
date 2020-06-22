@@ -44,8 +44,8 @@ class Maps extends React.Component {
 		return (
 		<Modal onClose={() => this.showModal(null)}>
 			<div>
-				<img src={map.url} />
-				<img src={map.listurl} />
+				<img alt='' src={map.url} />
+				<img alt='' src={map.listurl} />
 			</div>
 			<h3>{map.name}</h3>
 		</Modal>
@@ -70,12 +70,12 @@ class Maps extends React.Component {
 						<h4 className='map-steps'>Shift + double click mouse button to zoom out</h4>
 					</div> 
 				: null}
-				{!this.state.mobile && !isSafari ? <div className='map-grid'><iframe className='vyer-map' onMouseOver={this.divScroll} src='https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/filter?story=syLyAScxudoXAnsGW12XTuLj'></iframe></div> : null}
-				{this.state.mobile || isSafari ? <div className='map-icon-container'><a href='https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj' target='_blank' rel='noreferrer'><img className='mobile-map-icon' src='/assets/mapicon.png'></img></a></div> : null}
+				{!this.state.mobile && !isSafari ? <div className='map-grid'><iframe title='vyer' className='vyer-map' onMouseOver={this.divScroll} onFocus={this.divScroll} src='https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/filter?story=syLyAScxudoXAnsGW12XTuLj'/></div> : null}
+				{this.state.mobile || isSafari ? <div className='map-icon-container'><a href='https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj' target='_blank' rel='noreferrer'><img alt='' className='mobile-map-icon' src='/assets/mapicon.png'/></a></div> : null}
 				{!this.state.mobile && !isSafari ? <h3 className='vyer-link'><a href='https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/filter?story=syLyAScxudoXAnsGW12XTuLj' target='_blank' rel='noreferrer'>Open map in separate tab</a></h3>  : null}
 				<h4 className='powered-by'>Map powered by</h4>
 				<div className='vyer-icon-container'>
-					<a href='https://www.vyer.io/'><img className='vyer-icon' src='/assets/vyer.png'></img></a>
+					<a href='https://www.vyer.io/'><img alt='' className='vyer-icon' src='/assets/vyer.png'/></a>
 				</div>
 			</div>
 
@@ -85,7 +85,7 @@ class Maps extends React.Component {
 }
 
 let toExport;
-if(global.window!=undefined){
+if(global.window!==undefined){
   toExport = addUrlProps({urlPropsQueryConfig})(Maps);
 }else{
   toExport=Maps;

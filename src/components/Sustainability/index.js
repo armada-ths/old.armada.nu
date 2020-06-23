@@ -88,7 +88,7 @@ const Sustainability = () => {
       <div className='newSection'>
         <h2>Help us become more sustainable</h2>
         <p id='text'>Do you have any ideas or suggestions to help us work more sustainable?  We would love to hear them!​</p>
-        <form id='submitForm' method='get' action='https://armada.nu/contact/'>
+        <form id='submitForm' method='get' action='/contact/'>
            <button type='submit'>Contact us</button>
         </form>
       </div>

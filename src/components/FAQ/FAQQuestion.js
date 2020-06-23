@@ -25,7 +25,10 @@ const FAQQuestion = (props) => {
 
 FAQQuestion.propTypes = {
     question: PropTypes.string,
-    answer: PropTypes.string
+    answer: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.element
+    ])
 }
 
 export default FAQQuestion

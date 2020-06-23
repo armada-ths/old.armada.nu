@@ -15,7 +15,7 @@ const Page = (props) => {
 
 Page.propTypes = {
     header: PropTypes.element,
-    html: PropTypes.element.isRequired,
+    html: PropTypes.string.isRequired,
     children: PropTypes.element,
     footer: PropTypes.element,
 }

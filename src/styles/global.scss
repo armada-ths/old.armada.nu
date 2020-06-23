@@ -53,6 +53,7 @@ body {
   margin: 0px;
   position: relative;
   height: auto;
+
   
   min-height: 100vh;
   display: flex;
@@ -257,7 +258,6 @@ li {
 
 }
 
-
 img {
   border: none;
 }
@@ -267,4 +267,16 @@ img {
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-around;
+}
+
+#gatsby-focus-wrapper {
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.layout { 
+  margin: auto;
 }

@@ -7,7 +7,7 @@ import { StickyContainer, Sticky } from 'react-sticky';
 
 const Recruitment = () => {
     const navbarOffset = 60;
-    const [groups, setGroups] = useState({'aaadaaaa': [{description: 'test', name: 'Web'}],'aaaa': [{description: 'test', name: 'Web'}],'test': [{description: 'test', name: 'Web'}], 'it': [{description: 'test', name: 'Web'}]})
+    const [groups, setGroups] = useState()
     const [recruitmentLink, setRecruitmentLink] = useState('')
     
     useEffect(() => {

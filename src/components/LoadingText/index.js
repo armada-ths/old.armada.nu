@@ -43,7 +43,7 @@ const LoadingText = () => {
     }, 1000);
 
     return () => clearInterval(loop);
-  }, []);
+  });
 
   return (
     <div className='loading-text'>

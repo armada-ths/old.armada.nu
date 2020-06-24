@@ -26,6 +26,7 @@ const Navbar = (props) => {
 
   var links = menuPages.map((page, index) => (
     <Link
+          activeClassName='active'
           onClick={toggleExpanded} 
           to={page.slug}
           key={index}>
@@ -41,7 +42,7 @@ const Navbar = (props) => {
             {!expanded ? <div className='hamburger'><span role='presentation' onClick={toggleExpanded}>☰</span></div> : (<div className='navbar-cross'><span role='presentation' onClick={toggleExpanded}>˟</span></div>)}
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
-            <Link onClick={toggleExpanded} to='/'>HOME</Link>
+            <Link onClick={toggleExpanded} activeClassName='active' to='/'>HOME</Link>
             {links}
           </div>
         </nav>

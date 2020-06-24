@@ -4,10 +4,12 @@ import Page from '../../templates/page'
 import Recruitment from '../../components/Recruitment'
 
 const RecruitmentPage = (props) => {
+
   return (<div className='recruitment-container'>
-        <Page {...props}/>
-        <Recruitment/>
-      </div>)
+      <Page {...props}/>
+      <Recruitment/>
+    </div>)
+
 }
 
 export default RecruitmentPage

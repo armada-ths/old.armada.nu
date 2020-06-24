@@ -49,13 +49,22 @@
         transition: color 0.4s;
         color: $text-color-light;
         padding: 5px 20px;
+
         &:hover{
           color: $melon !important;
           border-right: 1px solid white !important;
         }
+
+        &:last-child{
+          border-right: 0 !important;
+        }
+
+        &.active {
+          color: $melon;
+        }
+
       }
 
-      a:last-child{border-right: 0 !important;}
     }
   }
 }

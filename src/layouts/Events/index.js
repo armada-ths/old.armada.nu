@@ -4,7 +4,7 @@ import EventList from '../../components/EventList'
 import './index.scss'
 import Page from '../../templates/page'
 
-const Events= (props) => {
+const Events = (props) => {
   return (
     <div className='Events-container'>
       <Page { ...props }/>

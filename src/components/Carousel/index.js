@@ -3,16 +3,9 @@ import PropTypes from 'prop-types'
 import './index.scss'
 import useWindowSize from '../../hooks/useWindowSize'
 
-const desktopShownItems = 3;
-
-const group = (items, n) => items.reduce((acc, x, i) => {
-  const idx = Math.floor(i / n);
-  acc[idx] = [...(acc[idx] || []), x];
-  return acc;
-}, []);
-
 const Carousel = (props) => {
-  
+
+  const desktopShownItems = 3;
   const items = props.items
   const length = props.items.length
 
@@ -66,6 +59,13 @@ const Carousel = (props) => {
 }
 
 const History = ({shownItems, current, items, changeSilde}) => {
+
+  const group = (items, n) => items.reduce((acc, x, i) => {
+    const idx = Math.floor(i / n);
+    acc[idx] = [...(acc[idx] || []), x];
+    return acc;
+  }, []);
+
   return (
     <div className='carousel-history'>
       { group(items, shownItems).map((el, index) => (

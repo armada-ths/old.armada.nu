@@ -4,6 +4,7 @@ import './index.scss'
 import Page from '../../templates/page'
 
 const Matching = (props) => {
+
   return (
       <div className='content'>
         <div className='matching-container'>
@@ -12,6 +13,7 @@ const Matching = (props) => {
         </div>
       </div>
   )
+  
 }
 
 export default Matching

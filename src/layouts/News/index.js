@@ -5,6 +5,7 @@ import Newsfeed from '../../components/Newsfeed'
 import './news.scss'
 
 const News = (props) => {
+
   const pageDate = props.frontmatter.date ? new Date(props.frontmatter.date) : null
 
   return (
@@ -36,8 +37,8 @@ const News = (props) => {
             </div>
         </div>
       </div>
-  </div>
-  )
+  </div>)
+  
 }
 
 News.propTypes = {

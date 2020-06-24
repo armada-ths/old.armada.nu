@@ -8,6 +8,7 @@ const Previous = (props) => {
       <ExhibitorList {...props} lastYear />
     </div>
   )
+  
 }
 
 export default Previous

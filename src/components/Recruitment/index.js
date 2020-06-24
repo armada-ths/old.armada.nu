@@ -31,7 +31,7 @@ const Recruitment = () => {
                                 <div style={{...style, top: `${navbarOffset + style.top}px`}}>
                                     <div className={'apply-section'}>
                                         <a href={'https://ais.armada.nu/' + recruitmentLink}>
-                                            <button> APPLY HERE</button>
+                                            <button>APPLY HERE</button>
                                         </a>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@ const Recruitment = () => {
         </div> 
         : 
         <div>
-            <h4> Application is closed, stay tuned for new roles </h4>
+            <h4>Application is closed, stay tuned for new roles</h4>
             <Testimonials/>
         </div>
 }

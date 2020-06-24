@@ -8,13 +8,12 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
-import Navbar from './Navbar'
-import Jumbotron from './Jumbotron'
+import Navbar from '../Navbar'
+import Jumbotron from '../Jumbotron'
 import { isMobile } from 'react-device-detect'
 
-import './layout.scss'
-import '../styles/global.scss'
-import Footer from './Footer'
+import './index.scss'
+import Footer from '../Footer'
 const Layout = ({ header, location, children }) => (
   <StaticQuery
     query={graphql`

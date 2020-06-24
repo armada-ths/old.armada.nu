@@ -6,12 +6,12 @@ import Layout from '../components/layout'
 import './page.scss'
 
 import Homepage from '../layouts/Homepage'
-import RecruitmentPage from '../layouts/Recruitmentpage'
-import SustainabilityPage from '../layouts/Sustainabilitypage'
+import RecruitmentPage from '../layouts/RecruitmentPage'
+import SustainabilityPage from '../layouts/SustainabilityPage'
 import FAQPage from '../layouts/FAQpage'
-import ContactPage from '../layouts/Contactpage'
-import Aboutpage from '../layouts/Aboutpage'
-import DiversityPage from '../layouts/Diversitypage'
+import ContactPage from '../layouts/ContactPage'
+import AboutPage from '../layouts/AboutPage'
+import DiversityPage from '../layouts/DiversityPage'
 import ExhibitorInfo from '../layouts/ExhibitorInfo'
 import News from '../layouts/News'
 import Exhibitors from '../layouts/Exhibitors'
@@ -29,7 +29,7 @@ const components = {
   FAQPage: FAQPage,
   Homepage: Homepage,
   ExhibitorInfo: ExhibitorInfo,
-  Aboutpage: Aboutpage,
+  AboutPage: AboutPage,
   ContactPage: ContactPage,
   News: News,
   Exhibitors: Exhibitors,

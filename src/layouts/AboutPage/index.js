@@ -2,7 +2,7 @@ import React from 'react'
 import './index.scss'
 import Page from '../../templates/page'
 
-const Aboutpage = (props) => {
+const AboutPage = (props) => {
   return (
       <div className='content'>
         <div className='aboutpage-container'>
@@ -12,4 +12,4 @@ const Aboutpage = (props) => {
   )
 }
 
-export default Aboutpage
+export default AboutPage

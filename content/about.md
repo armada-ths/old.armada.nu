@@ -1,7 +1,7 @@
 ---
 slug: /about
 title: About
-layout: Aboutpage
+layout: AboutPage
 description: About the fair
 menuPage: true
 priority: 9

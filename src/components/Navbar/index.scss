@@ -1,19 +1,7 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
-.hamburger{
-  display: block;
-  margin-top: 0em;
-  font-size: 2em;
-}
-
-.navbar-cross{
-  display: block;
-  font-size: 4em;
-  margin-top: -0.2em;
-}
-
-#navbar{
+#navbar {
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -25,8 +13,7 @@
   letter-spacing: 1.4px;
   text-transform: uppercase;
 
-
-  >.hidden{
+  >.hidden {
       display: none;
   }
 
@@ -37,11 +24,12 @@
     padding-top: 10px;
     padding-bottom: 10px;
 
-    .menu-hamburger{
+    .menu-hamburger {
         display:none;
     }
 
-    .menu{
+    .menu {
+
       a {
         display: inline-block;
         border-right: 1px white solid;
@@ -50,30 +38,29 @@
         color: $text-color-light;
         padding: 5px 20px;
 
-        &:hover{
+        &:hover {
           color: $melon !important;
           border-right: 1px solid white !important;
-        }
-
-        &:last-child{
-          border-right: 0 !important;
         }
 
         &.active {
           color: $melon;
         }
 
+        &:last-child {
+          border-right: 0 !important;
+        }
+
       }
 
     }
-  }
-}
 
-
-@media screen and (max-width: 1200px) {
-  #navbar{
-      font-size: 1.2em;
   }
+
+  @media screen and (max-width: 1200px) {
+    font-size: 1.2em;
+  }
+
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
@@ -90,23 +77,13 @@
               margin-top: -1.5em;
             }
 
-            .menu-hamburger{
+            .menu-hamburger {
                 pointer-events: all;
-                text-align: right;
-                margin-right: 1em;
                 display: block;
-                overflow: auto;
+                height: 4em;
             }
 
-						.white {
-							color: white;
-						}
-
-						.black {
-							color: white;
-						}
-
-            .menu{
+            .menu {
                 pointer-events: all;
                 display: flex;
                 flex-direction: column;
@@ -115,15 +92,20 @@
                 font-size: 1.5em;
 
                 a {
+                  color: white !important;
+                  border-right: none !important;
+
+                  &:hover {
                     color: white !important;
+                    text-decoration: underline !important;
                     border-right: none !important;
-                    &:hover{
-                      color: white !important;
-                      text-decoration: underline !important;
-                      border-right: none !important;
-                    }
+                  }
+
                 }
-                a:last-child{border-bottom: 0 !important;}
+
+                a:last-child {
+                  border-bottom: 0 !important;
+                }
             }
 
             .hidden {
@@ -138,7 +120,7 @@
             display: inline-block;
         }
 
-        .menu-wrapper.visible{
+        .menu-wrapper.visible {
             background-color: #00D790;
         }
     }

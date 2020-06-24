@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import './index.scss'
 import RecruitmentBanner from '../RecruitmentBanner';
 import useWindowSize from '../../hooks/useWindowSize';
+import HamburgerButton from '../HamburgerButton';
 
 const Navbar = (props) => {
   const windowSize = useWindowSize();
@@ -39,7 +40,7 @@ const Navbar = (props) => {
         { onMobile && <RecruitmentBanner location={props.location}/> }
         <nav className={'menu-wrapper ' + (expanded ? 'visible' : 'hidden')}>
           <div className={'menu-hamburger'}>
-            {!expanded ? <div className='hamburger'><span role='presentation' onClick={toggleExpanded}>☰</span></div> : (<div className='navbar-cross'><span role='presentation' onClick={toggleExpanded}>˟</span></div>)}
+            <HamburgerButton isActive={expanded} onClick={toggleExpanded}/>
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
             <Link onClick={toggleExpanded} activeClassName='active' to='/'>HOME</Link>

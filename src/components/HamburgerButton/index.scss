@@ -1,0 +1,78 @@
+@import '../../styles/_variables';
+
+.hamburger-button {
+    position: relative;
+    height: 1.5em;
+    width: 1.8em;
+    cursor: pointer;
+    display: block;
+    -webkit-tap-highlight-color: transparent;
+    float: right;
+    margin-top: 0.2em;
+    margin-right: 0.5em;
+
+    div {
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background-color: #fff;
+    
+        opacity: 1;
+
+        &:nth-child(1) {
+            top: 0;
+        }
+
+        &:nth-child(2), &:nth-child(3) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:nth-child(4) {
+            bottom: 0;
+        }
+    }
+
+    &.active {
+
+        div {
+
+            &:nth-child(1) {
+                top: 50%;
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            &:nth-child(2) {
+                transform: rotate(-45deg);
+            }
+
+            &:nth-child(3) {
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(4) {
+                bottom: 50%;
+                transform: scale(0);
+                opacity: 0;
+            }
+
+        }
+    }
+}
+
+.header-invisible {
+
+    .hamburger-button {
+
+        div {
+            background-color: $melon;
+        }
+
+        &.active div {
+            background-color: #fff;
+        }
+
+    }
+
+}

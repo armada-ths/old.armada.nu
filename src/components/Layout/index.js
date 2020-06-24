@@ -39,7 +39,7 @@ const Layout = ({ header, location, children }) => (
     render={data => (<>
       <div className='layout'>
         <Navbar location={location} pages={data.allMarkdownRemark.edges.map(edge => edge.node.frontmatter)} />
-        <Jumbotron video={location === '/' && !isMobile} image={header} />
+        <Jumbotron video={location === '/' && !isMobile} image={location.startsWith('/news') ? '/assets/news-header.jpg' : header} />
         <div>
           {children}
         </div>

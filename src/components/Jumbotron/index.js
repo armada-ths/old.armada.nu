@@ -6,11 +6,11 @@ import Logo from '../../../static/assets/images/header-images/logo.png'
 
 const Jumbotron = (props) => {
 
-    let image = props.image ? <img alt='' src={props.image}/> : null;
+    let image = <img alt='' src={props.image}/>
     let video = props.video ? (
         <video autoPlay loop muted>
             <source src={Video} type='video/mp4'/> 
-        </video>) : null;
+        </video>) : null
 
     //TODO Request API endpoint from ais for fair date
     return (<div id='header'>

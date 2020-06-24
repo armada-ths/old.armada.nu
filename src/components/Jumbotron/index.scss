@@ -36,10 +36,12 @@ body.header-invisible {
     min-height: $header-min-height;
     background-color: $licorice;
     .header-image{
+
         background-color: $licorice;
         height: $header-height;
         z-index: -2;
         overflow: hidden;
+
         img{
             filter: blur(2px) brightness(0.9);
             min-width: 100%;
@@ -48,7 +50,7 @@ body.header-invisible {
             width: 100vw;
             object-fit: cover;
             z-index: 1;
-
+            transform: scale(1.03);
         }
     }
 
@@ -86,20 +88,6 @@ body.header-invisible {
         }
     }
 }
-
-#header:after {
-    content  : "";
-    position : absolute;
-    z-index  : 1;
-    bottom   : 0;
-    left     : 0;
-    pointer-events   : none;
-    background-image : linear-gradient(to bottom, 
-                      rgba(0, 0, 0, 0), 
-                      rgb(0, 0, 0) 90%);
-    width    : 100%;
-    height   : 2em;
-  }
 
 .logo-container {
     @include centerer;

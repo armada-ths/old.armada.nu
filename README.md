@@ -1,3 +1,77 @@
+# Armada.nu
+
+Armada.nu is built upon [Gatsby](https://www.gatsbyjs.org/) and [Netlify CMS](https://github.com/netlify/netlify-cms). 
+
+Netlify CMS is a Content Management System that provides a graphical interface to edit the website.
+Gatsby is a static site generator that creates a website out of what is created using the CMS.
+
+## Setup
+
+You will need access though the Armada team to be able to contribute as a developer or writer. To contribute as a developer, start by cloning this repository.
+
+```git
+git clone <url>
+```
+
+To clone using SSH you need to setup your SSH keys with GitHub (recommended). Otherwise you can clone using the HTTPS option instead with your username and password.
+
+### 1. Ensure correct node and npm versions
+
+Node should be version: 12-14 (To check write: node -v)  
+NPM should be updated to the latest version.
+
+**Installing node:**
+
+***Windows***  
+If you are in need of multiple node versions we recommend [nvm-windows](https://github.com/coreybutler/nvm-windows).
+```
+nvm install <version>
+nvm use <version>
+```
+
+***Mac/Linux (through Node Verison Manager)***
+```sh
+npm install -g n
+sudo n 14
+```
+
+**Updating npm:**
+
+```sh
+npm install -g npm
+```
+
+### 2. Install dependencies
+
+Run this command to install the dependencies that armada.nu is built on. This only needs to be done the first time you download this repo, or after a new dependency has been added.
+
+```sh
+npm i
+```
+
+### 3. Install Gatsby CLI
+
+```
+npm install -g gatsby-cli
+```
+
+### 4. Run development server
+
+```sh
+gatsby develop
+```
+
+The site will be running att localhost:8000  
+You can find the Netlify CMS admin panel at localhost:60650/admin/
+
+## Build for production
+
+To build for production there is a script available through Gatsby. This can be run manually to create a production ready site. Be sure to check that the build succeeds before attempting to merge your changes with master.
+
+```sh
+gatsby build
+```
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
@@ -5,12 +79,8 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  Gatsby quick start
 </h1>
-
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
 ## 🚀 Quick start
 

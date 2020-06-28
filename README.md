@@ -30,6 +30,7 @@ nvm use <version>
 ```
 
 ***Mac/Linux (through Node Verison Manager)***
+
 ```sh
 npm install -g n
 sudo n 14
@@ -153,3 +154,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+

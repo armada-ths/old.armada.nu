@@ -1,0 +1,34 @@
+@import '../../styles/global';
+@import '../../styles/_variables';
+
+.card_Image {
+  border-radius: 25px;
+  height: "200em";
+  width: "250em";
+  margin: 0.5em;
+	display: inline-block;
+  margin-top: 1em;
+}
+.card_Image:hover {
+  transform: scale(0.98);
+}
+.question {
+	float: left;
+	display: inline-block;
+	width: 15em;
+}
+
+.text {
+	margin: 2px 0 0 20px !important;
+	word-break: break-word;
+	text-align: left;
+	padding-bottom: 5px;
+}
+.text.Question {
+	font-weight: bold;
+}
+.text.name {
+	text-align: center;
+	color: $melon;
+	font-weight: bold;
+}

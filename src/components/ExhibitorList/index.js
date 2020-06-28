@@ -1,15 +1,13 @@
 import React from "react";
 import axios from "axios";
-import EasterEgg from "react-easter";
 import PropTypes from "prop-types";
 import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
-import "./exhibitorlist.scss";
+import "./index.scss";
 import Modal from "../Modal";
 import Loading from "../Loading"
 import Cat from "../Cat"
 import Select from 'react-select'
 // import {Link} from "react-router"
-
 
 const urlPropsQueryConfig = {
   exhibitorName: { type: UrlQueryParamTypes.string, queryParam: 'exhibitorName' },
@@ -18,8 +16,6 @@ const urlPropsQueryConfig = {
 //base of server adress
 const ais = 'https://ais.armada.nu/';
 
-//Easter egg button combos
-const armada2018 = ["a", "r", "m", "a", "d", "a", "2", "0", "1", "8"];
 
 class ExhibitorList extends React.Component {
   constructor(props) {
@@ -306,7 +302,7 @@ class ExhibitorList extends React.Component {
 
   //currently only deals w/ getting data from api (unsure)
   componentDidMount() {  // only called when exhibitor page is created or updated.
-    axios.get(ais + `api/exhibitors?img_placeholder=true${this.props.lastYear ? '&year='+this.state.previousYear : ''}`)
+    axios.get(ais + `api/exhibitors?img alt=''_placeholder=true${this.props.lastYear ? '&year='+this.state.previousYear : ''}`)
       .then((res) => {
         let exhibitors = res.data;  // create variable and store result within parameter data
         exhibitors.sort((a, b) => a.name.localeCompare(b.name));
@@ -365,10 +361,10 @@ class ExhibitorList extends React.Component {
             <div className="modalinfo">
               <div className='modal-property'>
                 <div className='icon-group'>
-                  {exhibitor.diversity == true
-                    ? <img className='special' src='/assets/diversity_a.svg' /> : null}
-                  {exhibitor.sustainability == true
-                    ? <img className='special' src='/assets/sustainability.svg' /> : null}
+                  {exhibitor.diversity
+                    ? <img alt='' className='special' src='/assets/diversity_a.svg' /> : null}
+                  {exhibitor.sustainability
+                    ? <img alt='' className='special' src='/assets/sustainability.svg' /> : null}
                 </div>
               </div>
 
@@ -378,7 +374,7 @@ class ExhibitorList extends React.Component {
                 <div className="description">
                   {exhibitor.about ? exhibitor.about.split('\n').map((paragraph, index) => <p key={index}> {paragraph} </p>) : null}
                 </div>
-                <div className="climate-compensation">{exhibitor.climate_compensation ? <i style={{fontSize: "large"}}>&#127811; This company has climate compensated for their participation in  THS Armada &#127811;</i> : null}</div>
+                <div className="climate-compensation">{exhibitor.climate_compensation ? <i style={{fontSize: "large"}}><span role="img" aria-label="leaf">&#127811;</span> This company has climate compensated for their participation in  THS Armada <span role="img" aria-label="leaf">&#127811;</span></i> : null}</div>
               </div>
 
               <div className="job-location-container">
@@ -424,7 +420,7 @@ class ExhibitorList extends React.Component {
   //TODO: combine an simplify those two functions
   //diversity and sustainability filters special effects {cssshine, cssShineOff}
   cssShine(value) {
-    if (global.document != undefined) {
+    if (global.document !== undefined) {
       let shineItems = global.document.getElementsByClassName(value);
       for (let i = 0; i < shineItems.length; i++) {
         shineItems[i].className += ' shine-loop';
@@ -433,7 +429,7 @@ class ExhibitorList extends React.Component {
   }
 
   cssShineOff() {
-    if (global.document != undefined) {
+    if (global.document !== undefined) {
       let shineItems = global.document.getElementsByClassName('shine-loop');
       while (shineItems.length > 0) {
         let className = shineItems[0].className;
@@ -488,10 +484,10 @@ class ExhibitorList extends React.Component {
   startupFilter() {
     this.setdefault()
     let startupfilter = this.state.startupfilter;
-    if (startupfilter === false) {
+    if (!startupfilter) {
       startupfilter = true
     }
-    else if (startupfilter === true) {
+    else if (startupfilter) {
       startupfilter = false
     }
     this.setState({ startupfilter })
@@ -541,7 +537,7 @@ class ExhibitorList extends React.Component {
   render() {
     // Here you decide if list of exhibitors should be displayed or not
     let showExhibitors = true;
-    let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.name == this.state.exhibitorName)[0];
+    let exhibitorToDisplay = this.state.exhibitors.filter(exhibitor => exhibitor.name === this.state.exhibitorName)[0];
     let filteredCompanies = this.state.exhibitorList.filter(
       (exhibitorItem) => {
         return (exhibitorItem.props.name.toLowerCase().startsWith(this.state.search.toLowerCase()));
@@ -555,23 +551,23 @@ class ExhibitorList extends React.Component {
     }
 
     //Diversity filter
-    if (this.state.diversityfilter === true) {
+    if (this.state.diversityfilter) {
       filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem.props.exhibitor.location_special == 'Diversity Room';
+        return exhibitorItem.props.exhibitor.location_special === 'Diversity Room';
       });
     }
 
     //Sustainability filter
-    if (this.state.sustainabilityfilter === true) {
+    if (this.state.sustainabilityfilter) {
       filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem.props.exhibitor.location_special == 'Green Room';
+        return exhibitorItem.props.exhibitor.location_special === 'Green Room';
       });
     }
 
     // Startup filter
-    if (this.state.startupfilter === true) {
+    if (this.state.startupfilter) {
       filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
-        return exhibitorItem.props.exhibitor.groups.name == 'startup';
+        return exhibitorItem.props.exhibitor.groups.name === 'startup';
       });
     }
 
@@ -580,7 +576,7 @@ class ExhibitorList extends React.Component {
       if (this.state.jobfilters[filterkey]) {
         filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
           for (let jobtypeindex in exhibitorItem.props.exhibitor.employments) {
-            if (exhibitorItem.props.exhibitor.employments[jobtypeindex].name == this.state.jobfilters[filterkey].value) {
+            if (exhibitorItem.props.exhibitor.employments[jobtypeindex].name === this.state.jobfilters[filterkey].value) {
               return true;
             }
           }
@@ -594,7 +590,7 @@ class ExhibitorList extends React.Component {
       if (this.state.sectorfilters[filterkey]) {
         filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
           for (let sectorindex in exhibitorItem.props.exhibitor.industries) {
-            if (exhibitorItem.props.exhibitor.industries[sectorindex].name == this.state.sectorfilters[filterkey].value) {
+            if (exhibitorItem.props.exhibitor.industries[sectorindex].name === this.state.sectorfilters[filterkey].value) {
               return true;
             }
           }
@@ -608,7 +604,7 @@ class ExhibitorList extends React.Component {
       if (this.state.competencefilters[filterkey]) {
         filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
           for (let competenceindex in exhibitorItem.props.exhibitor.competences) {
-            if (exhibitorItem.props.exhibitor.competences[competenceindex].name == this.state.competencefilters[filterkey].value) {
+            if (exhibitorItem.props.exhibitor.competences[competenceindex].name === this.state.competencefilters[filterkey].value) {
               return true;
             }
           }
@@ -622,7 +618,7 @@ class ExhibitorList extends React.Component {
       if (this.state.locationfilters[filterkey]) {
         filteredCompanies = filteredCompanies.filter((exhibitorItem) => {
           for (let locationindex in exhibitorItem.props.exhibitor.locations) {
-            if (exhibitorItem.props.exhibitor.locations[locationindex].name == this.state.locationfilters[filterkey].value) {
+            if (exhibitorItem.props.exhibitor.locations[locationindex].name === this.state.locationfilters[filterkey].value) {
               return true;
             }
           }
@@ -636,10 +632,6 @@ class ExhibitorList extends React.Component {
     if (showExhibitors) {
       return (
         <div className="exhibitors">
-
-          <EasterEgg keys={armada2018} timeout={7000}>
-            <div className="armadaRainbow easterEggPosition" />
-          </EasterEgg>
 
           <h1>{this.props.lastYear ? "Last Year's " : ""}Exhibitors</h1>
           <br/>
@@ -655,6 +647,7 @@ class ExhibitorList extends React.Component {
             <div className="search-container">
               <input type="text"
                 placeholder="Search Exhibitors"
+                aria-label="search"
                 value={this.state.search}
                 onChange={this.updateSearch.bind(this)}
               />
@@ -759,7 +752,7 @@ ExhibitorList.propTypes = {
 }
 
 let toExport;
-if (global.window != undefined) {
+if (global.window !== undefined) {
   toExport = addUrlProps({ urlPropsQueryConfig })(ExhibitorList);
 } else {
   toExport = ExhibitorList;
@@ -767,17 +760,17 @@ if (global.window != undefined) {
 export default toExport;
 
 const ExhibitorItem = (props) => {
-  let classname = props.exhibitor.sustainability == true ? " green" : "";
-  classname += props.exhibitor.diversity == true ? " purple" : "";
+  let classname = props.exhibitor.sustainability ? " green" : "";
+  classname += props.exhibitor.diversity ? " purple" : "";
 
   return (
-    <div id={props.name} className={"exhibitor-box " + classname} onClick={() => props.showModal(props.exhibitor.name)}>
+    <div id={props.name} role="presentation" className={"exhibitor-box " + classname} onClick={() => props.showModal(props.exhibitor.name)}>
       <div className="image-container">
-        <img src={ais + props.exhibitor.logo_squared} />
+        <img alt='' src={ais + props.exhibitor.logo_squared} />
       </div>
       <p> {props.exhibitor.name} </p>
-      {props.exhibitor.location_special == "Diversity Room" ? <div className='corner-special'><img src='/assets/diversity-black-nolabel.png' /></div> : null}
-      {props.exhibitor.location_special == "Green Room" ? <div className='corner-special'><img src='/assets/sustainability-black-nolabel.png' /></div> : null}
+      {props.exhibitor.location_special === "Diversity Room" ? <div className='corner-special'><img alt='' src='/assets/diversity-black-nolabel.png' /></div> : null}
+      {props.exhibitor.location_special === "Green Room" ? <div className='corner-special'><img alt='' src='/assets/sustainability-black-nolabel.png' /></div> : null}
     </div>)
 }
 

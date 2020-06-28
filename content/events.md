@@ -1,4 +1,5 @@
 ---
+slug: /events
 title: Events
 layout: Events
 description: Description

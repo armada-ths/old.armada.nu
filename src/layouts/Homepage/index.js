@@ -1,34 +1,24 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
 import Partners from '../../components/Partners';
-// import NewEvents from "../../components/NewEvents"
+import './index.scss'
+import Page from '../../templates/page';
+import Loading from '../../components/Loading';
+import Loadable from 'react-loadable'
 import Newsfeed from '../../components/Newsfeed';
-import Page from "../Page"
-import PhotoGallery from "../../components/PhotoGallery";
-// import RecruitmentBanner from "../../components/RecruitmentBanner";
-import "./homepage.scss"
 
 const Homepage = (props) => {
 
-
-
+  const PhotoGallery = Loadable({ loader: () => import('../../components/PhotoGallery'), loading() { return <Loading/> }});
 
   return (
-    <div>
     <Page { ...props }>
-      {/* <RecruitmentBanner displayType={"mobile"}/> */}
-      <div className="body">
-          <Newsfeed />
+      <div className='body'>
+        <Newsfeed/>
           <PhotoGallery photoCount={6}/>
-          {<Partners/>}
+          <Partners/>
       </div>
     </Page>
-      </div>
   )
-}
-
-Homepage.propTypes = {
-    head: PropTypes.object.isRequired,
 }
 
 export default Homepage

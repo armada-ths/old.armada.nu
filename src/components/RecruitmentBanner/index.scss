@@ -1,0 +1,21 @@
+@import '../../styles/global';
+
+.recruitment-banner {
+  text-align: center;
+  color: #fff;
+  background-color: #00D790;
+  font-size: 1.5em;
+  text-transform: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: #fff;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 1em;
+  }
+  
+}

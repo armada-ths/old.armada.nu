@@ -1,15 +1,16 @@
 ---
+slug: /news/the-career-fair-of-2017-certified-as-an-eco-labeled-event
 layout: News
 title: The career fair of 2017 - certified as an eco-labeled event
 category: 'GENERAL'
 cover_wide: /assets/swe_clean.jpg
-featured: false
 ingress: >-
   "Keep Sweden Tidy manages an environmental award: Eco-labeled Event – The
   Foundation’s Environmental Award for Events (Miljömärkt Event) are given to
   public events, for example contests and concerts, which work actively on
   reducing their environmental impact."
 date: 2017-10-27T15:41:15.631Z
+archived: true
 ---
 One of THS Armada's core values is environmental sustainability and we constantly make decisions and improvements in direction of our core values. Therefore, all events of 2017 arranged by THS Armada is labled as Eco Events. This means that we have taken an active step to reduce our environmental and climate impact through a comprised checklist. The criterias of an Eco-labeled Event covers eight categories including waste management, transport and climatic influence.
 

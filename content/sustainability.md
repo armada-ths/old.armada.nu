@@ -1,6 +1,7 @@
 ---
+slug: /sustainability
 title: Sustainability
-layout: Sustainabilitypage
+layout: SustainabilityPage
 description: Armada Sustainability
 menuPage: true
 priority: 7

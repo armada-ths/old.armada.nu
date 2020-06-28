@@ -1,113 +1,86 @@
-import React from "react";
-import axios from "axios";
-import './recruitment.scss';
-import Testimonials from '../Testimonials/index'
-import {StickyContainer, Sticky} from 'react-sticky';
-import {PropTypes} from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types'
+import './index.scss';
+import Testimonials from '../Testimonials'
+import { StickyContainer, Sticky } from 'react-sticky';
 
-
-
-class Recruitment extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            groups: [],  // json object
-            recruitmentName: undefined,
-            recruitmentStart: undefined,
-            recruitmentEnd: undefined,
-        };
-    }
-
-    componentDidMount() {  // only called when page is created or updated.
-        axios.get('https://ais.armada.nu/api/recruitment')  // fetch data witt promise (then) and res(ult)
-            .then( (res)  => {
-                let result = res.data;  // create variable and store result within parameter data
-                this.setState({ groups: result[0].groups, 
-                                recruitmentName: result[0].name, 
-                                recruitmentLink: result[0].link,
-                                recruitmentStart: result[0].start_date, 
-                                recruitmentEnd: result[0].end_date });  // component saves its own data
-            });
-    }
-
-
-
-    render() {
-            const groups = Object.keys(this.state.groups).map((groupkey, i)=> {
-                return (
+const Recruitment = () => {
+    const navbarOffset = 60;
+    const [groups, setGroups] = useState()
+    const [recruitmentLink, setRecruitmentLink] = useState('')
+    
+    useEffect(() => {
+        axios.get('https://ais.armada.nu/api/recruitment')
+          .then((res)  => {
+            let result = res.data;
+            if(result.length > 0) {
+                setGroups(result[0].groups)
+                setRecruitmentLink(result[0].link)
+            }
+          });
+    }, [])
+    
+    return groups ?
+        <div className='rolelist'>
+            <StickyContainer>
+                <Sticky topOffset={-navbarOffset}>
+                    {
+                        ({style}) => {
+                            return (
+                                <div style={{...style, top: `${navbarOffset + style.top}px`}}>
+                                    <div className={'apply-section'}>
+                                        <a href={'https://ais.armada.nu/' + recruitmentLink}>
+                                            <button>APPLY HERE</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    }
+                </Sticky>
+                { Object.keys(groups).map((groupKey, i)=>
                     <div className='groups' key={i}>
-                        <h3 className='group-header' >{groupkey}</h3>
-                        {this.state.groups[groupkey].map((role, j) => {
+                        <h3 className='group-header'>{groupKey}</h3>
+                        {groups[groupKey].map((role, j) => {
                             return( <RoleSection role={role} key={`${j}`}/>);
                         })}
                     </div>
-                )
-            });
-        if (groups.length > 0) {
-            return (
-                <div className="rolelist">
-
-                    <StickyContainer>
-                        <Sticky>
-                            {
-                                ({style}) => {
-                                    return (
-                                        <div style={style}>
-                                            <div className={"applysection"}>
-                                                <a href={'https://ais.armada.nu/' + this.state.recruitmentLink}>
-                                                    <button> APPLY HERE</button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            }
-                        </Sticky>
-                        {groups}
-
-                    </StickyContainer>
-                </div>
-
-                )
-        } else {
-            return (<div>
-                <h4> Application is closed, stay tuned for new roles </h4>
-                <Testimonials/>
-            </div>);
-        }
-    }
+                )}
+            </StickyContainer>
+        </div> 
+        : 
+        <div>
+            <h4>Application is closed, stay tuned for new roles</h4>
+            <Testimonials/>
+        </div>
 }
 
-class RoleSection extends React.Component {
+const RoleSection = ({role}) => {
 
-    constructor() {
-        super();
-        this.state = {collapsed: true};
-    }
+    const [collapsed, setCollapsed] = useState(true);
 
-    render() {
-           return ( <div className='role-container'>
-                <div className='role-header' onClick={() => this.setState({collapsed: !this.state.collapsed})} >
-                    <div className='role-header-left' >
-                        <h4>  {this.props.role.name  }</h4>
-                    </div>
-                    <div className='role-header-right' >
-                        <p className={'arrow-icon' + (this.state.collapsed ? ' collapsed-arrow': ' expanded-arrow')}> › </p>
-                    </div>
-                </div>
-               <div className={'role-description' + (this.state.collapsed ? ' collapsed': ' expanded')}>
-                {!this.state.collapsed ? <p>  {this.props.role.description  }</p> : null }
-               </div>
+    return (<div className='role-container'>
+        <div role='presentation' className='role-header' onClick={() => setCollapsed(!collapsed)} >
+            <div className='role-header-left' >
+                <h4>{role.name}</h4>
             </div>
-           );
-
-    }
+            <div className='role-header-right' >
+                <p className={'arrow-icon' + (collapsed ? ' collapsed-arrow': ' expanded-arrow')}> › </p>
+            </div>
+        </div>
+        <div className={'role-description' + (collapsed ? ' collapsed': ' expanded')}>
+            {!collapsed ? <p>{role.description}</p> : null }
+        </div>
+    </div>);
 
 }
 
 RoleSection.propTypes = {
-    role: PropTypes.object,
+    role: PropTypes.shape({
+        name: PropTypes.string,
+        description: PropTypes.string
+    }),
 }
-
-
+  
 export default Recruitment;

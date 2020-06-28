@@ -1,27 +1,25 @@
-import React from "react"
-import PropTypes from "prop-types"
-
-import Page from "../Page"
-import Newsfeed from "../../components/Newsfeed"
-
+import React from 'react'
+import PropTypes from 'prop-types'
+import Page from '../../templates/page';
+import Newsfeed from '../../components/Newsfeed'
 import './news.scss'
 
 const News = (props) => {
-  // it's up to you to choose what to do with this layout ;)
-  const pageDate = props.head.date ? new Date(props.head.date) : null
+
+  const pageDate = props.frontmatter.date ? new Date(props.frontmatter.date) : null
 
   return (
-    <div className="content">
-      <div className="body">
-        <div className ="newsarticle">
-          <img src={props.head.cover_wide} />
-          <div className="article-text">
-            <h1> {props.head.title} </h1>
-            <p className="ingress"> {props.head.ingress} </p>
+    <div className='content'>
+      <div className='body'>
+        <div className='newsarticle'>
+          <img alt='' src={props.frontmatter.cover_wide} />
+          <div className='article-text'>
+            <h1> {props.frontmatter.title} </h1>
+            <p className='ingress'> {props.frontmatter.ingress} </p>
               <Page
                 { ...props }
                 footer={
-                  <div className="signature">
+                  <div className='signature'>
                     THS ARMADA <br/>
                     {
                     pageDate &&
@@ -35,16 +33,24 @@ const News = (props) => {
                 }
               >
             </Page>
+            <Newsfeed current={props.frontmatter.slug} />
             </div>
         </div>
-        <Newsfeed displayed_article={props.head.title}/>
       </div>
-  </div>
-  )
+  </div>)
+  
 }
 
 News.propTypes = {
-  head: PropTypes.object.isRequired,
+  frontmatter: PropTypes.shape({
+    date: PropTypes.string,
+    slug: PropTypes.string,
+    title: PropTypes.string,
+    header: PropTypes.string,
+    layout: PropTypes.string,
+    cover_wide: PropTypes.string,
+    ingress: PropTypes.string
+  })
 }
 
 export default News

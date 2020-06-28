@@ -1,6 +1,7 @@
 ---
+slug: /maps
 title: Maps
-layout: Mapspage
+layout: MapsPage
 description: View all maps of the fair
 menuPage: false
 priority: 4

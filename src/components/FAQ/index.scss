@@ -1,5 +1,5 @@
-@import "../../styles/_variables";
-@import "../../styles/global";
+@import '../../styles/_variables';
+@import '../../styles/global';
 
 .faq-content-body {
     position: relative;
@@ -40,21 +40,13 @@
 }
 
 .page {
-    padding: 0;
-}
-.page {
-    margin: 2.625rem 0 0;
-}
-
-.page {
     background-color: #ffffff;
     box-sizing: border-box;
     padding: 1.5rem 1rem;
     text-align: left;
     width: 100%;
-}
-
-.page {
+    padding: 0;
+    margin: 2.625rem 0 0;
     border: thin solid #dadce0;
     border-radius: .5rem;
     box-sizing: border-box;
@@ -78,11 +70,9 @@
 
 .accordion-homepage .parent {
     position: relative;
-}
-
-.accordion-homepage .parent {
     border-top: thin solid #dadce0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .hcfe article section {
@@ -127,15 +117,6 @@ homepage .parent:first-child > h2 {
     line-height: 1.25rem;
     margin: 0;
     padding: .875rem 3.25rem .875rem 1.75rem;
-}
-
-
-
-@media (hover: none) {
-    .accordion-homepage h2:hover {
-        background-color: rgb(236, 236, 236);
-    }
-    
 }
 
 .terre {
@@ -187,7 +168,7 @@ homepage .parent:first-child > h2 {
 
 .hcfe h1, .hcfe h2, .hcfe h3, .hcfe h4, .hcfe h5 {
     color: #202124;
-    font-family: "Bebas Neue", Helvetica, Arial;
+    font-family: 'Bebas Neue', Helvetica, Arial;
     font-weight: 400;
 }
 
@@ -217,7 +198,7 @@ homepage .parent:first-child > h2 {
     line-height: 1.2rem;
     display: inline-block;
     padding: 1rem 2rem 1rem 2rem;
-    
+    margin: 0;
 }
 
 .category-header {

@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Page from "../Page"
-import EventList from "../../components/EventList"
-import "./index.scss"
+import React from 'react'
+import PropTypes from 'prop-types'
+import EventList from '../../components/EventList'
+import './index.scss'
+import Page from '../../templates/page'
 
-const Events= (props) => {
+const Events = (props) => {
   return (
-    <div className="Events-container">
+    <div className='Events-container'>
       <Page { ...props }/>
       <EventList {...props}/>
     </div>

@@ -27,6 +27,7 @@
 
     .menu-hamburger {
         display:none;
+        position: relative;
     }
 
     .menu {
@@ -68,19 +69,24 @@
   
   #navbar{
 				overflow: hidden;
+        position: absolute;
 
         .menu-wrapper {
             width: 100%;
+            padding-top: 0;
             
-            .visible {
-              max-height: 200vh;
-              margin-top: -1.5em;
+            &.visible {
+              .menu-hamburger {
+                position: absolute;
+                right: 0;
+              }
             }
 
             .menu-hamburger {
                 pointer-events: all;
                 display: block;
-                height: 4em;
+                height: 1em;
+                padding-top: 0.5em;
             }
 
             .menu {
@@ -88,8 +94,9 @@
                 display: flex;
                 flex-direction: column;
                 text-align: center;
-                line-height: 1.8;
-                font-size: 1.5em;
+                justify-content: space-evenly;
+                width: 100%;
+                height: 100vh;
 
                 a {
                   color: white !important;

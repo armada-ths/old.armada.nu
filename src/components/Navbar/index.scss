@@ -5,6 +5,7 @@
   overflow: hidden;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 100;
   text-align: center;
@@ -67,7 +68,6 @@
   
   #navbar{
 				overflow: hidden;
-        position: absolute;
 
         .menu-wrapper {
             width: 100%;
@@ -121,7 +121,7 @@
         }
 
         .menu-wrapper.visible {
-            background-color: #00D790;
+            background-color: $melon;
         }
     }
 

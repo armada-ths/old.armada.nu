@@ -6,6 +6,7 @@ const Contacts = () => {
   
   const projectGroup = [
     { name: 'Daniel Aston', title: 'Project Manager', email: 'a@armada.nu', emoji: '👨‍✈️', imageUrl: '/assets/images/PG20/danieldrake.jpg', linkedInUrl: 'https://www.linkedin.com/in/danielaston/' },
+    { name: 'Saga Zheng', title: 'Head of HR', email: 'saga.zheng@armada.nu', emoji: '💞', imageUrl: '', linkedInUrl: 'https://www.linkedin.com/in/saga-zheng-22a590113/' },
     { name: 'Moa Lilja', title: 'Art Director', email: 'moa.lilja@armada.nu', emoji: '👨‍🎨', imageUrl: '/assets/images/PG20/moa_.jpg', linkedInUrl: 'https://www.linkedin.com/in/moa-kajsa-lilja-48b162115/' },
     { name: 'Sandra Ransed', title: 'Head of Media & Marketing', email: 'sandra.ransed@armada.nu', emoji: '🎬', imageUrl: '/assets/images/PG20/sandrasavage.jpg', linkedInUrl: 'https://www.linkedin.com/in/sandraransed/' },
     { name: 'Kevin Stojanovski', title: 'Head of Business Relations and Events', email: 'kevin.stojanovski@armada.nu', emoji: '🤝', imageUrl: '/assets/images/PG20/kevinkelvin.jpg', linkedInUrl: 'https://www.linkedin.com/in/kevinstojanovski/' },

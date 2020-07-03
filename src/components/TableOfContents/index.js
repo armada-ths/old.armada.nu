@@ -1,47 +1,96 @@
-import React from 'react';
-import './index.scss';
-import Collapsible from 'react-collapsible';
+import React, { useState } from 'react'
+import './index.scss'
+import Arrow from '../../../static/assets/pil_melon.png'
 
-const style = {
-    color: 'white',
-    cursor: 'pointer',
-    fontSize: '25px'
+const tableOfContents = [
+    {
+        title: 'General info',
+        anchor: 'general-info',
+        sections: [
+            { title: 'What is a virtual career fair?', anchor: 'what-is-a-virtual-career-fair' }
+        ]
+    },    
+    {
+        title: 'Before the fair',
+        anchor: 'before-the-fair',
+        sections: [
+            { title: 'How to create your booth', anchor: 'create-booth' },
+            /*
+            { title: 'Check-in', anchor: 'check-in' }
+            */
+            { title: 'Travel to the fair', anchor: 'travel-to-the-fair' }
+            /*
+            { title: 'Transport of goods to the fair', anchor: 'transport-of-goods-to-the-fair' }
+            { title: 'Exhibition area', anchor: 'exhibition-area' }
+            { title: 'General rules and guidelines', anchor: 'general-rules-and-guidelines' }
+            { title: 'Electricity', anchor: 'electricity' }
+            { title: 'Elevators', anchor: 'elevators' }
+            */
+        ]
+    },  
+    {
+        title: 'During the fair',
+        anchor: 'during-the-fair',
+        sections: [
+            /*
+            { title: 'Service information', anchor: 'service-information' }
+            { title: 'Focus Rooms', anchor: 'focus-rooms' }
+            { title: 'Safety', anchor: 'safety' }
+            { title: 'The grand banquet', anchor: 'the-grand-banquet' }
+            { title: 'Website', anchor: 'website' }
+            */
+            { title: 'Social media', anchor: 'social-media' },
+        ]
+    },  
+    {
+        title: 'After the fair',
+        anchor: 'after-the-fair',
+        sections: [
+            /*
+            { title: 'Check-out', anchor: 'check-out' },
+            { title: 'Deconstruction', anchor: 'deconstruction' },
+            { title: 'Transport of goods after the fair', anchor: 'transport-of-goods-after-the-fair' },
+            */
+            { title: 'Invoice', anchor: 'invoice' },
+        ]
+    },
+]
+
+const ContentHeader = ({title, anchor, sections}) => {
+
+    const [expanded, setExpanded] = useState(false);
+    const toggleExpanded = (e) => {
+        if(e.target.nodeName !== 'H4') setExpanded(!expanded)
+    }
+
+    return (<div className='toc-header'>
+        <div className='toc-parent' onClick={toggleExpanded} role='presentation'>
+            <a href={`#${anchor}`}>
+                <h4>{title}</h4>
+            </a>
+            { sections.length > 0 ? <img className={expanded ? 'expanded' : ''} src={Arrow} alt='' /> : <></> }
+        </div>
+        <div className={`toc-child ${expanded ? '' : 'hidden'}`}>
+            { sections.map(section => 
+                <a href={`#${section.anchor}`}>
+                    <h5>{section.title}</h5>
+                </a>
+            )}
+        </div>
+    </div>)
+
 }
 
 const TableOfContents = () => {
+
     return (
-        <div className='toc-container'>
-            <h2 className='toc-header'>Table of contents</h2>
-            <h3 className='toc-element' style={{marginBottom: '26px'}}><a href='#general-info'>General Info</a></h3>
-            <h3 className='toc-element'><a href='#before-the-fair'>Before the fair</a></h3>
-            <Collapsible triggerStyle={style} trigger='&#xfe40;'>
-                <h4 className='toc-subelement'><a href='#check-in'>&#8226; Check-in</a></h4>
-                <h4 className='toc-subelement'><a href='#travel-to-the-fair'>&#8226; Travel to the fair</a></h4>
-                <h4 className='toc-subelement'><a href='#transport-of-goods-to-the-fair'>&#8226; Transport of goods to the fair</a></h4>
-                <h4 className='toc-subelement'><a href='#exhibition-area'>&#8226; Exhibition area</a></h4>
-                <h4 className='toc-subelement'><a href='#general-rules-and-guidelines'>&#8226; GENERAL RULES AND GUIDELINES</a></h4>
-                <h4 className='toc-subelement'><a href='#electricity'>&#8226; Electricity</a></h4>
-                <h4 className='toc-subelement'><a href='#elevators'>&#8226; Elevators</a></h4>
-            </Collapsible>
-            <h3 className='toc-element'><a href='#during-the-fair'>During the fair</a></h3>
-            <Collapsible triggerStyle={style} trigger='&#xfe40;'>
-                <h4 className='toc-subelement'><a href='#service-information'>&#8226; Service information</a></h4>
-                <h4 className='toc-subelement'><a href='#focus-rooms'>&#8226; Focus Rooms</a></h4>
-                <h4 className='toc-subelement'><a href='#safety'>&#8226; Safety</a></h4>
-                <h4 className='toc-subelement'><a href='#the-grand-banquet'>&#8226; The grand banquet</a></h4>
-                <h4 className='toc-subelement'><a href='#events-during-the-fair'>&#8226; Events during the fair</a></h4>
-                <h4 className='toc-subelement'><a href='#website'>&#8226; Website</a></h4>
-                <h4 className='toc-subelement'><a href='#social-media'>&#8226; Social Media</a></h4>
-            </Collapsible>
-            <h3 className='toc-element'><a href='#after-the-fair'>After the fair</a></h3>
-            <Collapsible triggerStyle={style} trigger='&#xfe40;'>
-                <h4 className='toc-subelement'><a href='#check-out'>&#8226; Check-out</a></h4>
-                <h4 className='toc-subelement'><a href='#deconstruction'>&#8226; Deconstruction</a></h4>
-                <h4 className='toc-subelement'><a href='#transport-of-goods-after-the-fair'>&#8226; Transport of goods after the fair</a></h4>
-                <h4 className='toc-subelement'><a href='#invoice'>&#8226; Invoice</a></h4>
-            </Collapsible>
+        <div className='table-of-contents'>
+            <h3>Table of Contents</h3>
+            { tableOfContents.map(content =>
+                <ContentHeader {...content} />
+            )}
         </div>
-    );
+    )
 }
 
 export default TableOfContents

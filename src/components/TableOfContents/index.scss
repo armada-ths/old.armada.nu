@@ -1,6 +1,57 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
+.table-of-contents {
+
+    h3 {
+        font-weight: 300;
+    }
+
+    a:focus {
+        text-decoration: none;
+    }
+
+    .toc-parent {
+        border-bottom: thin solid $melon;
+        padding: 0.5em 0 0.5em 0;
+        display: flex;
+        flex-direction: row;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        cursor: pointer;
+
+        img {
+            margin: 0.5em 0 0 auto;
+            margin-right: 0.5em;
+            height: 0.5em;
+
+            &.expanded {
+                transform: rotate(180deg);
+            }
+        }
+
+        h4 {
+            text-align: left;
+        }
+    }
+
+    .toc-child {
+        padding: 0.5em 0 0.5em 0;
+
+        &.hidden {
+            display: none;
+        }
+
+        h5 {
+            text-align: left;
+            font-weight: 200;
+        }
+    }
+}
+
 .toc-container {
     text-align: center;
     background-color: $melon;

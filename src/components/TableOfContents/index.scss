@@ -21,12 +21,14 @@
         -webkit-user-drag: none;
         -webkit-user-select: none;
         -ms-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        
         cursor: pointer;
 
         img {
-            margin: 0.5em 0 0 auto;
+            margin: 0.7rem 0 0 auto;
             margin-right: 0.5em;
-            height: 0.5em;
+            height: 0.4em;
 
             &.expanded {
                 transform: rotate(180deg);
@@ -49,62 +51,6 @@
             text-align: left;
             font-weight: 200;
         }
-    }
-}
-
-.toc-container {
-    text-align: center;
-    background-color: $melon;
-    padding-bottom: 0.2em;
-    padding-top: 0.2em;
-    margin-bottom: 1.2em;
-}
-
-.toc-header {
-    //text-decoration: underline;
-    margin-bottom: 0.2em;
-}
-
-.toc-header, .toc-element a {
-    text-align: center;
-    color: white;
-}
-
-.toc-element {
-    font-size: 1.5em;
-    margin-top: 0.2em;
-    text-decoration: underline;
-}
-
-.toc-subelement {
-    margin-top: 0.2em;
-    text-decoration: underline;
-}
-
-.toc-subelement a {
-    text-align: center;
-    margin: 0.0em;
-    color: white;
-    font-weight: normal;
-}
-
-.phenomic-BodyContainer ul li {
-    font-family: $font-regular !important;
-    font-weight: 300;
-}
-
-.phenomic-BodyContainer h2, .phenomic-BodyContainer h3 {
-    padding-top: 64px;
-}
-
-@media screen and (max-width: $breakpoint-mobile-flipped) {
-
-    .toc-element {
-        margin-top: 0.2em;
-    }
-
-    .phenomic-BodyContainer h2, .phenomic-BodyContainer h3 {
-        padding-top: 16px;
     }
     
 }

@@ -34,7 +34,7 @@
 
       a {
         display: inline-block;
-        border-right: 1px white solid;
+        border-right: 1px #fff solid;
         text-decoration: none;
         transition: color 0.4s;
         color: $text-color-light;
@@ -42,7 +42,7 @@
 
         &:hover {
           color: $melon !important;
-          border-right: 1px solid white !important;
+          border-right: 1px solid #fff !important;
         }
 
         &.active {
@@ -97,13 +97,16 @@
                 justify-content: space-evenly;
                 width: 100%;
                 height: 100vh;
+                height: calc(100vh - 60px);
 
                 a {
-                  color: white !important;
+                  color: #fff !important;
                   border-right: none !important;
+                  font-size: 1.2em;
+                  -webkit-tap-highlight-color: transparent;
 
                   &:hover {
-                    color: white !important;
+                    color: #fff !important;
                     text-decoration: underline !important;
                     border-right: none !important;
                   }

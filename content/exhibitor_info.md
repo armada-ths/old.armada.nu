@@ -7,6 +7,142 @@ menuPage: true
 priority: 6
 header: /assets/for_exhibitors.jpg
 ---
+**Welcome to the career fair of 2020**. Because of the current circumstances THS Armada, as well as many other fairs, will be arranged on a​ **virtual platform** with a hybrid of​ **virtual and physical restriction compliant event weeks** this year. We want to give you a great experience to remember. Therefore, we are in the process of gathering everything you need to know before, during and after the fair. We are going to be updating this page with information as we go along. In the meantime - do not hesitate to contact us if you want to know more.
+
+<a class="anchor" id="general-info"></a>
+## General Info
+
+The registration for this year’s virtual THS Armada fair will be open between August 3rd and September 13th! If you and your company want to be apart of Armada 2020 you will then register at​ [register.armada.nu](https://register.armada.nu). Would you like a reminder when the registration opens? Fill in this form: [Reminder form for THS Armada 2020](https://forms.gle/VVBLS7SB5zFdo1vA9).
+
+<!---
+If you want to see full invitation click on the button below!
+
+<form style="display: flex; justify-content:center; margin-bottom: 1em;" method="get" action="/assets/Inbjudan.pdf">
+
+<button type="submit">Download Invitation</button>
+
+</form>-->
+
+<b>Dates:</b> November 17th-18th 
+
+<a class="anchor" id="what-is-a-virtual-career-fair"></a>
+### WHAT IS A VIRTUAL CAREER FAIR?
+
+The platform that will be used is designed to optimize relevance and thus reduce the noise between students and exhibitors, streamline the application process and simplify the post-processing of the candidates met during the fair. This will be done, among other things, through an algorithm matching student profiles with what you are looking for, links from your job ads directly from the platform and the opportunity to look back at the conversations you have had with students post fair.
+
+<ul><li><i>What does a virtual fair actually look like?</i></li></ul>
+
+We will showcase material and go through the platform in depth as we
+contact you after the registration period opens in August and the
+beginning of September. In short, exhibitors and students gather on the
+same online platform. You as an exhibitor will create a profile with text,
+image and video material as well as choose what skills you are looking for
+for your career opportunities. With the information as a basis, you can
+chat live with students. If you find the candidate interesting, you can start
+a video call. During both career fair days, there will be the opportunity to
+arrange live presentations directly on the platform. Why not pitch that
+internship, talk about your new product or showcase your cool office?
+
+<a class="anchor" id="before-the-fair"></a>
+## Before the fair
+
+<a class="anchor" id="create-booth"></a>
+### HOW TO CREATE YOUR BOOTH
+
+Creating your booth on the platform is an easy 4 step process. We will be
+using the same platform as several other technical university fairs,
+meaning that you can reuse your booth between fairs. If you are only going
+to exhibit at THS Armada you will be guided by us and our partner in how
+to create it efficiently. It will take anywhere from 15 minutes to a couple of
+hours depending on what employer branding material you already have.
+You will be able to create your booth as soon as you have registered to the
+fair so that students can start researching you on the platform, however
+you can edit the information up until a few days prior to the fair.
+
+<a class="anchor" id="travel-to-the-fair"></a>
+### TRAVEL TO THE FAIR
+
+**No travelling**
+
+You will be able to exhibit at the virtual fair from wherever you are
+situated in the world. If it is your own home desk or at your office - you
+choose!
+
+<!---
+<a class="anchor" id="transport-of-goods-to-the-fair"></a>
+### TRANSPORT OF GOODS TO THE FAIR
+
+Armada transports goods to and from the fair. Our transport partner this year is DHL. The purpose with Armada Transport is to make the fair experience as smooth as possible, while reducing the number of trucks at the fair. Your goods will be transported to the fair at KTH, so that when you and colleagues arrive on November 18th to set up your booth, your goods will already be placed in your booth.
+
+Note that it is not allowed to arrange any own transportation with external carriers other than Armada Transport (DHL). In case you for some reason must have an exception from this rule then you need a written confirmation from Armada’s Head of Logistics ([filip.ryden@armada.nu](mailto:lukas.lindroos@armada.nu)) and your delivery must have recieved a time slot in advance specified in date/time. Any goods transported by external carriers will not be provided equal service as goods sent through Armada Transport.
+
+In case you have something minor (eg small bags, boxes) which you don’t need transport aid for, then you also have the possibility to carry these goods by hand through the main entrance. It is not allowed to carry anything big and bulky since the entrances serves as emergency exits and the goods must not block these paths in case of emergency.
+
+
+<a class="anchor" id="focus-rooms"></a>
+### FOCUS ROOMS
+
+**Green Room**
+
+Location: [Gamla matsalen, Nymble floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/search?query=Green%20Room)
+
+**Diversity Room**
+
+Location: [Hyllan, Nymble floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/search?query=Diversity%20Room)
+
+<a class="anchor" id="events-during-the-fair"></a>
+### EVENTS DURING THE FAIR
+
+Internship Pitch November 19th (more information [here](https://armada.nu/events/?eventId=29))
+
+Internship Pitch November 20th (more information [here](https://armada.nu/events/?eventId=62))
+
+Individual Meetings (KTHB Library, more information [here](https://armada.nu/events/?eventId=30))
+
+All these events require pre-registration. If you are registered for any event you should receive an email confirmation with schedule and location for the event. If you have further questions, please contact your host.
+
+-->
+
+<a class="anchor" id="during-the-fair"></a>
+## During the fair
+
+<a class="anchor" id="social-media"></a>
+### SOCIAL MEDIA
+
+\#thsarmada
+
+Facebook: [/thsarmada](https://www.facebook.com/thsarmada/)
+
+Instagram: [@thsarmada](https://www.instagram.com/thsarmada/)
+
+LinkedIn: [THS Armada](https://www.linkedin.com/company/armada/)
+
+Flickr: [THS Armada](https://www.flickr.com/photos/armadakth)
+
+<a class="anchor" id="after-the-fair"></a>
+## AFTER THE FAIR
+
+<!--
+<a class="anchor" id="chat-access"></a>
+### HAVE ACCESS TO YOUR CHATS
+
+* You will deconstruct your own exhibition area with limited
+assistance from your host.
+* Before leaving the area, you need to inform one in the Armada team
+or the information desk.
+* Your exhibition material will be transported by DHL according to
+what you have agreed upon. You need to assure that all your cargos
+are properly packaged and labeled and that your shipping address is
+correct. Do not leave the area until it's done. Armada’s transport
+coordinators can help you if you have questions regarding packaging
+or labeling the goods.
+-->
+
+<a class="anchor" id="invoice"></a>
+### INVOICE
+
+Your invoice will be sent to your confirmed address after the fair, no later than December 20th. General payment terms are 30 calendar days. Special payment terms must have been agreed by both parties beforehand. 
+<!-- 
 **Welcome to the career fair of 2020**. We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
 
 <a class="anchor" id="general-info"></a>
@@ -301,6 +437,8 @@ When the fair closes on the November 20th you are responsible for packing and la
 ### INVOICE
 
 Your invoice will be sent to your confirmed address after the fair, no later than December 20th. General payment terms are 30 calendar days. Special payment terms must have been agreed by both parties beforehand. 
+
+-->
 
 <!-- ## CONTACT INFO
 

@@ -1,0 +1,15 @@
+@import '../../styles/_variables';
+
+.spinner {
+    border: 0.4em solid #f3f3f3;
+    border-top: 0.4em solid $melon;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    animation: spin 1000ms linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

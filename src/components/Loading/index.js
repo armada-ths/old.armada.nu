@@ -1,5 +1,6 @@
 import React from 'react'
 import TopBarProgressIndicator from 'react-topbar-progress-indicator'
+import Spinner from '../Spinner'
 
 TopBarProgressIndicator.config({
   barColors: {
@@ -10,12 +11,12 @@ TopBarProgressIndicator.config({
 })
 
 const Loading = () => (
-  <div>
-    <TopBarProgressIndicator />
-    <div >
-      <div />
+  <>
+    <TopBarProgressIndicator/>
+    <div style={{display: 'flex', justifyContent: 'center', padding: '1em'}} >
+      <Spinner/>
     </div>
-  </div>
+  </>
 )
 
 export default Loading

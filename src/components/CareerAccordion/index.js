@@ -1,6 +1,8 @@
 import React from 'react'
 import './index.scss'
 import PropTypes from 'prop-types'
+import Arrow from '../../../static/assets/pil_melon.png'
+import ExternalLinkIcon from '../../../static/assets/external-link-outline.svg'
 
 const CareerAccordion = (props) => {
 
@@ -24,7 +26,7 @@ const CareerAccordion = (props) => {
                     <span>{props.jobTitle}</span>
                     { props.external ? 
                         <a href={props.external} target='_blank' rel='noreferrer'>
-                            <img className='external no-select' src='/assets/external-link-outline.svg'/>
+                            <img className='external no-select' src={ExternalLinkIcon}/>
                         </a> : null
                     }
                 </h4>
@@ -37,7 +39,7 @@ const CareerAccordion = (props) => {
                 </div>
                 {/**/}
             </div>
-            <img src='/assets/pil_melon.c12dca46463a9160e3ccffad3c2d4076.png' className={`arrow no-select ${props.accordions[props.id] ? 'open' : ''}`} draggable='false'/> 
+            <img src={Arrow} className={`arrow no-select ${props.accordions[props.id] ? 'open' : ''}`} draggable='false'/> 
         </section> 
         <div className='accordion-children' style={{marginTop: 0, maxHeight: props.accordions[props.id] ? '8000px' : 0}} >
             <div className='job-cont'>

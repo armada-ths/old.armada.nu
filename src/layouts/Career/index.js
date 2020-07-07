@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Page from '../Page'
 import './index.scss'
 import CareerContent from '../../components/CareerContent'
+import Page from '../../templates/page'
 
 const Career = (props) => {
 

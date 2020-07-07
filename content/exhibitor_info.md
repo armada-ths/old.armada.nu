@@ -1,4 +1,5 @@
 ---
+slug: /exhibitor_info
 title: For Exhibitors
 layout: ExhibitorInfo
 description: Information for exhibitors
@@ -8,21 +9,22 @@ header: /assets/for_exhibitors.jpg
 ---
 **Welcome to the career fair of 2020**. We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
 
+<a class="anchor" id="general-info"></a>
 ## General Info
 
 The registration is open! If you and your company want to be a part of Armada 2020 you can now register at [register.armada.nu](https://register.armada.nu).
 
 If you want to see full invitation click on the button below!
 
-<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Inbjudan.pdf">
+<form style="display: flex; justify-content:center; margin-bottom: 1em;" method="get" action="/assets/Inbjudan.pdf">
 
 <button type="submit">Download Invitation</button>
 
 </form>
 
-**Dates:** November 17th-18th 
+<b>Dates:</b> November 17th-18th 
 
-**Fair opening hours: **
+**Fair opening hours:**
 
 November 17th: 	10:00 - 16:00
 
@@ -44,8 +46,10 @@ You can find the location of your booth by visiting our [map](https://armada.nu/
 
 </div>
 
+<a class="anchor" id="before-the-fair"></a>
 ## Before the fair
 
+<a class="anchor" id="check-in"></a>
 ### CHECK-IN
 
 When arriving at the fair, you shall visit the information desk to check-in your company/organization. Make sure to contact your host beforehand and tell them when you will arrive - they will meet you and help you with the check-in and stand area. Check-in your organization at the information desk in your specific exhibition hall. 
@@ -58,6 +62,7 @@ November 16th: 	13:00 - 20:00
 
 November 17th: 	08:00 - 10:00
 
+<a class="anchor" id="travel-to-the-fair"></a>
 ### TRAVEL TO THE FAIR
 
 **Metro**
@@ -72,6 +77,7 @@ If you prefer the bus, there are several lines that passes KTH. The nearest stat
 
 The number of parking slots is **very** limited at KTH Campus. Therefore, we encourage you to use public transportation. Note that THS Armada do not offer parking lots.
 
+<a class="anchor" id="transport-of-goods-to-the-fair"></a>
 ### TRANSPORT OF GOODS TO THE FAIR
 
 Armada transports goods to and from the fair. Our transport partner this year is DHL. The purpose with Armada Transport is to make the fair experience as smooth as possible, while reducing the number of trucks at the fair. Your goods will be transported to the fair at KTH, so that when you and colleagues arrive on November 18th to set up your booth, your goods will already be placed in your booth.
@@ -80,12 +86,14 @@ Note that it is not allowed to arrange any own transportation with external carr
 
 In case you have something minor (eg small bags, boxes) which you don’t need transport aid for, then you also have the possibility to carry these goods by hand through the main entrance. It is not allowed to carry anything big and bulky since the entrances serves as emergency exits and the goods must not block these paths in case of emergency.
 
+<a class="anchor" id="exhibition-area"></a>
 ### EXHIBITION AREA
 
 * We recommend you to install your exhibitor area Monday November 17th  13:00-20:00.
 * In exceptional cases, you may install your exhibition area on early Tuesday morning November 18th. Any exhibition area that is not installed before 09:00 this day will not be provided equal assistance.
 * Synchronize your date and time of arrival with your career fair host. The host will then be able to show you where your exhibition area is located. 
 
+<a class="anchor" id="general-rules-and-guidelines"></a>
 ### GENERAL RULES AND GUIDELINES
 
 * Due to the environmental impact, we want you to minimize the volume of disposables at the fair. This includes cups and give-aways. Use the waste stations available.
@@ -129,6 +137,7 @@ _Not allowed:_
 
 This building has no special restrictions.
 
+<a class="anchor" id="electricity"></a>
 ### ELECTRICITY
 
 * You have requested an amount of electrical outlets and power consumption to match the needs of your organization at the fair. Please respect your fellow exhibitors and do not use any outlets except those specifically marked with your company's name. 
@@ -142,12 +151,14 @@ Wifi: KTH-Conference
 
 Password is handed out in the information desks upon check-in.
 
+<a class="anchor" id="elevators"></a>
 ### ELEVATORS
 
 Nymble: 		max 500 kg / 1.08 x 1.53 x 2.00 meters.
 
 KTH Library: 		max 630 kg / 0.80 x 1.41 x 2.00 meters.
 
+<a class="anchor" id="during-the-fair"></a>
 ## DURING THE FAIR
 
 **WIFI**
@@ -156,6 +167,7 @@ Wifi: KTH-Conference
 
 Password is handed out in the information desks upon check-in.
 
+<a class="anchor" id="service-information"></a>
 ### SERVICE INFORMATION
 
 **Exhibitor lounges**
@@ -188,6 +200,7 @@ Click [here](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/og57aQJ4b
 
 In case you need to lock up stuff overnight, please check the section SAFETY further down on the page.
 
+<a class="anchor" id="focus-rooms"></a>
 ### FOCUS ROOMS
 
 **Green Room**
@@ -204,6 +217,7 @@ Get inspired by innovative early-stage companies that have come out of KTH.
 
 Location: [KTH Entré, floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/piBDtFAd7NAmrovUHpziGeZo)
 
+<a class="anchor" id="safety"></a>
 ### SAFETY
 
 All exhibition areas will be locked and patrolled during closed hours. If you would like to store any valuable items overnight we are able to offer you safety storage please visit any of the information desk for further instructions. You are able to check-in your valuables between 15.30-17.00 on the 17th and check-out between 09.00-10.30 the 18th.
@@ -213,6 +227,7 @@ All exhibition areas will be locked and patrolled during closed hours. If you wo
 * Please identify the nearest emergency exit and fire extinguisher in your exhibition room, for your own safety. 
 * Please read through the safety instruction that has been provided by THS Armada prior to the fair.
 
+<a class="anchor" id="the-grand-banquet"></a>
 ### THE GRAND BANQUET
 
 **Date: **November 18th
@@ -233,6 +248,7 @@ All guests will be asked to confirm their attendance to the banquet by their res
 
 **01:00** The after party will be closing
 
+<a class="anchor" id="events-during-the-fair"></a>
 ### EVENTS DURING THE FAIR
 
 Internship Pitch November 19th (more information [here](https://armada.nu/events/?eventId=29))
@@ -243,10 +259,12 @@ Individual Meetings (KTHB Library, more information [here](https://armada.nu/eve
 
 All these events require pre-registration. If you are registered for any event you should receive an email confirmation with schedule and location for the event. If you have further questions, please contact your host.
 
+<a class="anchor" id="website"></a>
 ### WEBSITE
 
 In order to browse the catalogue and read about the latest news and events, please visit our website at [www.armada.nu](http://www.armada.nu). The website provides the feature of matchmaking between visitors and exhibitors, enabling the user to find the exhibitors most suited for them. Here you can also browse our interactive map of the fair by going to [www.armada.nu/maps](http://www.armada.nu/maps). 
 
+<a class="anchor" id="social-media"></a>
 ### SOCIAL MEDIA
 
 \#thsarmada
@@ -259,22 +277,27 @@ LinkedIn: [THS Armada](https://www.linkedin.com/company/armada/)
 
 Flickr: [THS Armada](https://www.flickr.com/photos/armadakth)
 
+<a class="anchor" id="after-the-fair"></a>
 ## AFTER THE FAIR
 
+<a class="anchor" id="check-out"></a>
 ### CHECK-OUT
 
 Before leaving, a member from THS Armada will ask a representative from your organization to confirm your invoice address and also confirm any additions made to your invoice during the fair. Furthermore, you need to make sure that all exhibitor material left behind for transport or storing is properly packaged and marked with delivery address and company name. This will be done on the second fair day November 20th.
 
+<a class="anchor" id="deconstruction"></a>
 ### DECONSTRUCTION
 
 * You will deconstruct your own exhibition area with limited assistance from your host. 
 * Before leaving the area, you need to inform one in the Armada team or the information desk. 
 * Your exhibition material will be transported by DHL according to what you have agreed upon. You need to assure that all your cargos are properly packaged and labeled and that your shipping address is correct. Do not leave the area until it's done. Armada’s transport coordinators can help you if you have questions regarding packaging or labeling the goods.
 
+<a class="anchor" id="transport-of-goods-after-the-fair"></a>
 ### TRANSPORT OF GOODS AFTER THE FAIR
 
 When the fair closes on the November 20th you are responsible for packing and labeling your goods. When you have packed and labeled your goods,  you leave the goods at your booth area and the logistics team will hand it over to DHL. They will return it to you at a location and time decided in your earlier email conversation with DHL. Note that Armada is not responsible for shipping goods not booked through Armada Transport (DHL) and it is not allowed for you to leave any non-DHL goods behind, Armada have the right to charge you an administrative fee equal to the cost of storing the non-DHL goods left behind.
 
+<a class="anchor" id="invoice"></a>
 ### INVOICE
 
 Your invoice will be sent to your confirmed address after the fair, no later than December 20th. General payment terms are 30 calendar days. Special payment terms must have been agreed by both parties beforehand. 

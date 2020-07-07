@@ -1,10 +1,11 @@
 ---
+slug: /news/core-value-sustainability
 layout: News
 title: 'Core value: Sustainability '
 category: 'GENERAL'
 date: 2017-11-06T16:05:47.077Z
 cover_wide: /assets/new_sust2.jpg
-featured: false
+description: Sustainability has multiple meanings and can refer to environmental, social and economical sustainability amongst other things. Environmental sustainability entails minimising our impact on the environment to the benefit of a more sustainable future for coming generations.
 ---
 **Our perspective on sustainability**
 

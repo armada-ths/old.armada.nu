@@ -1,0 +1,95 @@
+@import '../../styles/_variables';
+@import "../../styles/_fonts";
+
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+
+    @media screen and (max-width: $breakpoint-mobile) {
+        width: 80vw;
+    }
+
+    .image-container {
+        position: relative; 
+        height: 0;
+        padding-bottom: 58%;
+        background-size: cover;
+        flex-grow: 1;
+
+        .news-item-datesection {
+            position: absolute;
+            right: 0;
+            background: rgba($melon, 0.8);
+            border-radius: 0 0 0 50%;
+            padding: 0.8em 0.5em 0.8em 0.8em;
+            color: #fff;
+            font-family: $font-title;
+            text-align: center;
+            width: 3em;
+            height: 2em;
+            font-size: 0.8em;
+            box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
+        }
+
+        .news-item-category {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: $melon;
+            padding: 0.2rem 1rem;
+            color: #fff;
+            font-family: $font-title;
+        }
+    }
+
+    .preview-content {
+        flex-grow: 1;
+        margin: 0;
+        padding: 1em 1em 0.5em 1em;
+        height: 6.5em;
+
+        p {
+            text-align: initial;
+        }
+    
+        a ~ h1:hover,h2:hover {
+            text-align: left;
+            text-decoration: underline;
+        }
+
+        h1,h2 {
+            text-align: left;
+            font-size: 1.2em; 
+          
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        
+        }
+
+        .ingress, .description {
+            font-size: 0.85em;
+            margin-top: 1em 0em;
+            line-height: 1.2;
+            
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            line-clamp: 3;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+
+    .news-link {
+        padding: 0 0 1em 1em;
+        font-size: 1rem;
+    }
+    
+}

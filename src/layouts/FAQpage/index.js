@@ -1,36 +1,20 @@
-import React from "react"
-import FAQContainer from "../../components/FAQ"
+import React, { useEffect } from 'react'
+import FAQContainer from '../../components/FAQ'
 
+import './index.scss'
 
+const FAQPage = () => {
 
-import "./index.scss"
-
-class FAQpage extends React.Component {
-  constructor(props){
-      super(props)
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     document.body.classList.add('header-invisible')
-  }
 
-  componentWillUnmount() {
-    document.body.classList.remove('header-invisible')
-  }
+    return () => {
+      document.body.classList.remove('header-invisible')
+    }
+  }, [])
 
-  render(){
-    return (
-      <div >
-        <div >
-            <FAQContainer />
-        </div>
-      </div>
-    )
-  }
+  return <FAQContainer />
+
 }
 
-// FAQpage.propTypes = {
-//   head: PropTypes.object.isRequired,
-// }
-
-export default FAQpage
+export default FAQPage

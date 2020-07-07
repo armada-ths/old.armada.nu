@@ -19,7 +19,7 @@
 
     .ingress {
         font-size: 1.2em;
-        text-align: justify;
+        text-align: unset;
         font-style: italic;
     }
 }
@@ -34,6 +34,7 @@
 @media screen and (max-width: $breakpoint-mobile) {
 
     .newsarticle {
+        margin-top: 0.5em;
         width: 100vw;
         img {
             width: 100%;

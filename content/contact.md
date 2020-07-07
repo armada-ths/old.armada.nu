@@ -1,6 +1,7 @@
 ---
+slug: /contact
 title: Contact
-layout: Contactpage
+layout: ContactPage
 description: ' '
 menuPage: true
 priority: 10

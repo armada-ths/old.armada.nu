@@ -1,6 +1,7 @@
 ---
+slug: /recruitment
 title: Recruitment
-layout: Recruitmentpage
+layout: RecruitmentPage
 description: Recruitment 2020
 menuPage: true
 priority: 3

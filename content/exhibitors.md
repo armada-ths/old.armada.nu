@@ -1,4 +1,5 @@
 ---
+slug: /exhibitors
 title: Exhibitors
 layout: Exhibitors
 description: View all exhibitors at the fair

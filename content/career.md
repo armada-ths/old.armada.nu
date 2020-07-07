@@ -1,4 +1,5 @@
 ---
+slug: /career
 title: Career
 layout: Career
 description: Job opportunities for students

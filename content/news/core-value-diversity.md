@@ -1,10 +1,11 @@
 ---
+slug: /news/core-value-diversity
 layout: News
 title: 'Core value: Diversity '
 category: 'GENERAL'
 date: 2017-11-06T15:37:01.231Z
 cover_wide: /assets/new_div2.jpg
-featured: false
+description: In a diverse work environment, it is essential to respect and appreciate differences in ethnicity, gender, age, physical abilities, sexual orientation, education and religion amongst individuals of the organisation.
 ---
 **Our perspective on diversity**
 

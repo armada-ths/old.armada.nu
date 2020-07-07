@@ -1,0 +1,18 @@
+@import '../../styles/_variables';
+
+.newsfeed {
+    padding: 1em 0 1em 0;
+
+    .armada-news {
+        text-align: center;
+        border-bottom: 1px solid $melon;
+        margin-bottom: 1em;
+            
+        @media screen and (max-width: $breakpoint-mobile) {
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+    }
+}

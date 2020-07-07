@@ -1,6 +1,7 @@
 ---
+slug: /faq
 title: Student FAQ
-layout: FAQpage
+layout: FAQPage
 description: Page
 menuPage: true
 priority: 8

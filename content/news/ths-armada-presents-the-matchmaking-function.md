@@ -1,10 +1,11 @@
 ---
+slug: /news/ths-armada-presents-the-matchmaking-function
 layout: News
 title: 'THS Armada presents: the matchmaking function'
 category: 'GENERAL'
 date: 2017-11-21T13:04:08.778Z
 cover_wide: /assets/applic.jpg
-featured: false
+archived: true
 ---
 THS Armada want to create more than just a fair – we want to create a complete platform where we increase the chance for students and companies to find each other. That’s why Quality is one of our core values.
 

@@ -1,0 +1,52 @@
+
+@import '../../styles/_variables';
+
+#map-container{
+  margin-top: 35px;
+}
+
+#map{
+  width:400px;
+}
+
+.leaflet-container {
+    height: 400px;
+    width: 100%;
+    z-index: 0;
+  }
+
+  #map-info{
+    background-color: rgba(0,0,0,0.8);
+    height: 400px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .leaflet-interactive {
+    cursor: grab;
+  }
+
+
+@media only screen and (min-width: 600px){
+  #map-container{
+    display: flex;
+    margin-top: 35px;
+  }
+
+  #map-info{
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.6);
+    height: 400px;
+    width: 50%;
+    z-index: 1;
+  }
+}
+
+#map-text{
+  text-align: center;
+  padding: 150px 0;
+  font-family: "Bebas Neue", "Helvetica", "Arial";
+  font-size: 21px;
+  color: white;
+}

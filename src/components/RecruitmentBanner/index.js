@@ -1,59 +1,31 @@
-import React from "react";
-import {Link} from "react-router";
-import axios from "axios";
-import PropTypes from "prop-types";
-import './recruitment-banner.scss';
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+import axios from 'axios'
+import './index.scss'
 
-class RecruitmentBanner extends React.Component {
+const RecruitmentBanner = ({location}) => {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-        showbanner: false
-    };
-}
+  const [showBanner, setShowBanner] = useState(false);
+  const recLink = '/recruitment';
 
-  componentDidMount() {
+  useEffect(() => {
     axios.get('https://ais.armada.nu/api/recruitment')
-        .then( (res)  => {
-            if (res.data.length > 0) {this.setState({ showbanner: true});}
-        });
-}
-  
-  render() {
-    var path = "/"
-    if (typeof window !== 'undefined') {
-      path = window.location.pathname;
-    }
-    //console.log(path);
-    
-    let page = false;
-    if (path.match("^/$")) { // If we're in Armada homepage
-      page = true;
-    }
+      .then((res)  => {
+        setShowBanner(res.data.length > 0);
+      });
+  }, [])
 
-    let dp = this.props.displayType;
-    let content;
+  return (<>
+    { showBanner && location !== recLink && <Link to={recLink}>
+      <div className='recruitment-banner'>Recruitment open now! Apply here!</div>
+    </Link> }
+  </>)
 
-    if (dp === "desktop" && this.state.showbanner) {
-      content = <Link to={'/recruitment'}><div className="recruitmentBanner">Recruitment open now! Apply here!</div></Link>
-    } else if (dp === "mobile" && this.state.showbanner) {
-      content = <Link to={'/recruitment'}><div className="recruitmentBannerMobile">Recruitment open now! Apply here!</div></Link>
-    }
-
-    if (!page)
-      content = <span></span>
-
-    return(
-      <div>{content}</div>
-    );
-  
-  }
-  
 }
 
 RecruitmentBanner.propTypes = {
-  displayType: PropTypes.string
-};
+  location: PropTypes.string,
+}
 
 export default RecruitmentBanner;

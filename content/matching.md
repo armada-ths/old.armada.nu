@@ -1,4 +1,5 @@
 ---
+slug: /matching
 title: Matching
 layout: Matching
 description: Matching functionality

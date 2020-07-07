@@ -1,15 +1,14 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
-
-.Exhibitors-container {
+.exhibitors-container {
   padding: 3em 0em;
   max-width: $page-width;
   margin: auto;
-}
 
-
-@media screen and (max-width: $breakpoint-mobile-flipped){
-  .Exhibitors-container {
+  @media screen and (max-width: $breakpoint-mobile-flipped){
     padding: 3em 1em;
   }
+  
 }
+
+

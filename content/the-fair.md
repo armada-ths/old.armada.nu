@@ -1,9 +1,10 @@
 ---
+slug: /the-fair
 title: The Fair
-layout: Plainpage
+layout: PlainPage
 description: About the fair
 menuPage: false
-priority: '2'
+priority: 2
 header: /assets/library.png
 ---
 # General information

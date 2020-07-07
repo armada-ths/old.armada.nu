@@ -1,82 +1,61 @@
-import React from "react"
-import {Link} from "react-router"
-import "./index.scss"
-import PropTypes from "prop-types";
-import RecruitmentBanner from "../RecruitmentBanner";
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby'
+import './index.scss'
+import RecruitmentBanner from '../RecruitmentBanner';
+import useWindowSize from '../../hooks/useWindowSize';
+import HamburgerButton from '../HamburgerButton';
 
-class Navbar extends React.Component {
+const Navbar = (props) => {
+  const windowSize = useWindowSize();
 
-  constructor(props) {
-    super(props)
+  const [expanded, setExpanded] = useState(false);
+  const [onMobile, setOnMobile] = useState(windowSize.width < 850);
+  const menuPages = props.pages.filter((page) => page.menuPage);
+  
+  menuPages.sort((a, b) => {
+    return a.priority - b.priority;
+  })
 
-    let pages = [];
-    if (global.window != undefined) {
-      pages = global.window.__COLLECTION__.filter((page) => page.menuPage);
-      pages.sort((a, b) => {
-        return a.priority - b.priority;
-      });
-    }
-    this.state = {
-      "expanded": false,
-      "mobile": false,
-      "currentPage": "/home",
-      pages
-    };
+  useEffect(() => {
+    setOnMobile(windowSize.width < 850)
+  }, [windowSize])
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
   }
 
-  componentDidMount() {
-    if(window.innerWidth < 850) {
-      this.setState({
-        mobile: true
-      });
-    } else {
-      this.setState({
-        mobile: false
-      });
-    }
-    //eslint-disable-next-line no-console
-    console.log(this.state.currentPage);
-  }
+  var links = menuPages.map((page, index) => (
+    <Link
+          activeClassName='active'
+          onClick={toggleExpanded} 
+          to={page.slug}
+          key={index}>
+      {page.title}
+    </Link>
+  ));
 
-  toggleExpand = () => {
-    this.setState({"expanded": !this.state.expanded});
-    //this.setState({"currentPage": window.location.pathname}); // window.location doesn't work in production...
-  }
-
-  render() {
-    var links = this.state.pages.map((page, index) => (
-        <Link className={page.__url.toLowerCase().includes(this.state.currentPage) && !this.state.currentPage.match("^/$")  ? "active-page" : null} 
-              onClick={this.toggleExpand} 
-              to={page.__url}
-              key={index}>
-          {page.title}
-        </Link>
-    ));
-		let color = this.props.whiteHB ? "white" : "black";
-
-    let navbar = (
-        <header>
-          <div id="navbar" style={this.state.mobile ? ((this.state.expanded && this.state.mobile) ? {position:"relative"} : {position:"absolute"}) : null}>
-            <nav className={"menu-wrapper " + (this.state.expanded ? "visible" : "hidden")}>
-              <div className={"menu-hamburger " + color }>
-                {!this.state.expanded ? <div className="hamburger"><span onClick={this.toggleExpand}>☰</span></div> : (<div className="navbar-cross"><span onClick={this.toggleExpand}>˟</span></div>)}
-              </div>
-              <div className={"menu " + (this.state.expanded ? "visible" : "hidden")}>
-                <Link className={this.state.currentPage.match("^/$") ? "active-page" : null} onClick={this.toggleExpand} to='/'>HOME</Link>
-                {links}
-              </div>
-            </nav>
-            <RecruitmentBanner displayType={"desktop"}/>
+  return(<>
+      <div id='navbar' style={onMobile ? ((expanded && onMobile) ? { position: 'relative' } : { position: 'absolute' }) : null}>
+        { onMobile && <RecruitmentBanner location={props.location}/> }
+        <nav className={'menu-wrapper ' + (expanded ? 'visible' : 'hidden')}>
+          <div className={'menu-hamburger'}>
+            <HamburgerButton isActive={expanded} onClick={toggleExpanded}/>
           </div>
-        </header>
-    )
+          <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
+            <Link onClick={toggleExpanded} activeClassName='active' to='/'>HOME</Link>
+            {links}
+          </div>
+        </nav>
+        { !onMobile && <RecruitmentBanner location={props.location}/> }
+      </div>
+  </>);
 
-    return navbar;
-  }
 }
 
 Navbar.propTypes = {
-	whiteHB: PropTypes.func,
+  pages: PropTypes.array,
+  location: PropTypes.string,
 }
 
 export default Navbar

@@ -96,8 +96,11 @@
                 text-align: center;
                 justify-content: space-evenly;
                 width: 100%;
-                height: 100vh;
-                height: calc(100vh - 60px);
+                
+                @media screen and (max-width: $breakpoint-mobile) {
+                  height: 100vh;
+                  height: calc(100vh - 60px);
+                }
 
                 a {
                   color: #fff !important;

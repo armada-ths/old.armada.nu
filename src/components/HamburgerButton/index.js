@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classNames'
 import './index.scss'
 
 const HamburgerButton = ({onClick, isActive, melon}) => {
@@ -9,7 +10,12 @@ const HamburgerButton = ({onClick, isActive, melon}) => {
             <div 
                 role='presentation'
                 onClick={onClick} 
-                className={`hamburger-button ${isActive ? ' active' : ''} ${melon ? 'melon' : ''}`}>
+                className={classNames({
+                    'hamburger-button': true,
+                    'active': isActive,
+                    'melon': melon
+                    })
+                }>
                 <div></div>
                 <div></div>
                 <div></div>

@@ -1,7 +1,14 @@
+@import '../../styles/variables';
+
 .photo-gallery {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    .gallery-title {
+        border-bottom: 1px solid $melon;
+        margin-bottom: 40px;
+    }
 }
 
 .photo {

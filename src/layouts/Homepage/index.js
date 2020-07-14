@@ -12,7 +12,7 @@ const Homepage = (props) => {
 
   return (
     <Page { ...props }>
-      <div className='body'>
+      <div className='homepage'>
         <Newsfeed/>
           <PhotoGallery photoCount={6}/>
           <Partners/>

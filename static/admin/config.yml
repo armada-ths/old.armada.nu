@@ -61,5 +61,6 @@ collections:
       - {label: "In menu", name: "menuPage", widget: "boolean", default: false}
       - {label: "Priority", name: "priority", widget: "number"}
       - {label: "Header", name: "header", widget: "image", optional: true}
+      - {label: "No Jumbotron", name: "noJumbotron", widget: "boolean", optional: true, default: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
 

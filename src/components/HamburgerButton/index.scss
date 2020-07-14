@@ -11,6 +11,18 @@
     margin-top: 0.2em;
     margin-right: 0.5em;
 
+    &.melon {
+
+        div {
+            background-color: $melon;
+        }
+
+        &.active div {
+            background-color: #fff;
+        }
+
+    }
+
     div {
         position: absolute;
         height: 5px;
@@ -59,20 +71,4 @@
 
         }
     }
-}
-
-.header-invisible {
-
-    .hamburger-button {
-
-        div {
-            background-color: $melon;
-        }
-
-        &.active div {
-            background-color: #fff;
-        }
-
-    }
-
 }

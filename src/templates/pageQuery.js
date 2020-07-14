@@ -56,7 +56,7 @@ export default function Template({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ]}
     >
-    </Helmet><Layout location={frontmatter.slug} header={frontmatter.header}>
+    </Helmet><Layout jumbotron={!frontmatter.noJumbotron} location={frontmatter.slug} header={frontmatter.header}>
     {components[layout] ? React.createElement(components[layout], markdownRemark) : null}
   </Layout>
   </>)
@@ -74,6 +74,7 @@ export const pageQuery = graphql`
         layout
         cover_wide
         ingress
+        noJumbotron
       }
     }
   }

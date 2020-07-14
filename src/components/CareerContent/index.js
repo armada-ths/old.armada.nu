@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import './index.scss'
 import axios from 'axios'
+import Select from 'react-select'
 import Loading from '../Loading'
 import CareerAccordion from '../CareerAccordion'
 
 const CareerContent = () => {
-    
+
     const [isLoading, setIsLoading] = useState(true)
     const [noAvailable, setNoAvailable] = useState(false)
 
-    const [tags, setTags] = useState([])
+    const [employments, setEmployments] = useState([])
+    const [competences, setCompetences] = useState([])
+    const [activeTags, setActiveTags] = useState([])
     const [jobs, setJobs] = useState([])
     const [jobsResult, setJobsResult] = useState([])
     const [searchQuery, setSearchQuery] = useState('')
     const [accordions, setAccordions] = useState({})
     const [chips, setChips] = useState({})
+
+    const getCategoryOptions = (list, attr) => (
+        list.map(job => job[attr]).flat().filter((elem, index, self) => (index === self.indexOf(elem))).sort()
+    )
 
     //TODO Replace with the career endpoint when it's done
     //Don't forget to remove the splice
@@ -30,7 +37,10 @@ const CareerContent = () => {
                     aboutJob: job.about,
                     lookingFor: job.about,
                     aboutCompany: job.about,
-                    tags: job.employments.map(function(elem){
+                    employments: job.employments.map(function(elem){
+                        return elem.name;
+                    }).sort(),
+                    competences: job.competences.map(function(elem){
                         return elem.name;
                     }).sort(),
                     logo: (job.logo_squared ? job.logo_squared : job.logo_freesize)
@@ -38,7 +48,8 @@ const CareerContent = () => {
             })
             setJobs(jobList)
             setNoAvailable(jobList.length === 0)
-            setTags(jobList.map(job => job.tags).flat().filter((elem, index, self) => (index === self.indexOf(elem))).sort())
+            setEmployments(getCategoryOptions(jobList, 'employments'))
+            setCompetences(getCategoryOptions(jobList, 'competences'))
             setJobsResult(jobList)
             setIsLoading(false)
         }).catch(err => 
@@ -52,18 +63,29 @@ const CareerContent = () => {
         }
         const updateJobResults = () => {
             let copy = jobs.map(a => Object.assign({}, a));
+            console.log(activeTags)
     
+                /*
             copy = copy.filter(job => {
-                return getActiveTags().length > 0 ? job.tags.filter(
+                return activeTags ? job.employments.filter(
                     function(e) {
                       return this.indexOf(e) >= 0;
                     },
-                    getActiveTags()
+                    activeTags.map(tag => tag.value)
+                ).length > 0 : copy
+            })*/
+
+            copy = copy.filter(job => {
+                return activeTags ? job.competences.filter(
+                    function(e) {
+                      return this.indexOf(e) >= 0;
+                    },
+                    activeTags.map(tag => tag.value)
                 ).length > 0 : copy
             })
     
             copy = searchQuery.length > 1 ? copy.filter(job => 
-                job.tags.map(function(x){ return x.toLowerCase().replace(/[^a-z0-9]/gi,'') }).includes(searchQuery.replace(/[^a-z0-9]/gi,'')) || 
+                job.employments.map(function(x){ return x.toLowerCase().replace(/[^a-z0-9]/gi,'') }).includes(searchQuery.replace(/[^a-z0-9]/gi,'')) || 
                 job.company.toLowerCase().includes(searchQuery) || 
                 job.jobTitle.toLowerCase().includes(searchQuery) || 
                 job.location.toLowerCase().includes(searchQuery) || 
@@ -76,7 +98,7 @@ const CareerContent = () => {
             setAccordions({})
         }
         updateJobResults()
-    }, [jobs, searchQuery, chips])
+    }, [jobs, searchQuery, chips, activeTags])
     
     const handleSearch = (query) => {
         setSearchQuery(query.toLowerCase())
@@ -89,6 +111,49 @@ const CareerContent = () => {
     const handleChipClick = (chip) => {
         setChips({...chips, [chip]: !chips[chip] })
     }
+    
+  const options = [
+    {
+      label: "Employment types",
+      options: employments.map(tag => { return {label: tag, value: tag}})
+    },
+    {
+        label: "Competences",
+        options: competences.map(tag => { return {label: tag, value: tag}})
+    },
+    {
+        label: "School years",
+        options: [
+            { label: "Year 1", value: "1" },
+            { label: "Year 2", value: "2" },
+        ]
+    },
+    { label: "A root option", value: "value_3" },
+    { label: "Another root option", value: "value_4" }
+  ];
+    const formatGroupLabel = (data) => {
+        const groupStyles = {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+        };
+        const groupBadgeStyles = {
+          backgroundColor: '#EBECF0',
+          borderRadius: '2em',
+          color: '#172B4D',
+          display: 'inline-block',
+          fontSize: 12,
+          fontWeight: 'normal',
+          lineHeight: '1',
+          minWidth: 1,
+          padding: '0.16666666666667em 0.5em',
+          textAlign: 'center',
+        };
+        return <div style={groupStyles}>
+            <span>{data.label}</span>
+            <span style={groupBadgeStyles}>{data.options.length}</span>
+        </div>
+    };
 
     return(<div className='career-content'>
         <div className='career-header'>
@@ -101,9 +166,22 @@ const CareerContent = () => {
             </p>
         </div>
         
+        <Select
+            placeholder='Select one or more options...'
+            value={activeTags}
+            closeMenuOnSelect={false}
+            blurInputOnSelect={false}
+            isMulti
+            isSearchable= {false}
+            options = {options}
+            onChange={(value) => setActiveTags(value)}
+            defaultValue={activeTags}
+            formatGroupLabel={formatGroupLabel}
+            className='basic-multi-select'
+            classNamePrefix='select'/>
         <input aria-label='search' placeholder='Search jobs...' className='job-query' onChange={(e) => handleSearch(e.target.value)}/>
         <div style={{flexDirection: 'row', paddingLeft: '0.5em'}}>
-            { tags.map(tag => <div key={tag} role='presentation' className={`chip ${chips[tag] ? 'selected' : ''}`} onClick={() => handleChipClick(tag)}>{tag}</div>) }
+            { employments.map(tag => <div key={tag} role='presentation' className={`chip ${chips[tag] ? 'selected' : ''}`} onClick={() => handleChipClick(tag)}>{tag}</div>) }
         </div>
         { isLoading ? <Loading /> :
             jobsResult.length > 0 ? jobsResult.map((job, i)=>
@@ -117,7 +195,7 @@ const CareerContent = () => {
                     aboutJob={job.aboutJob}
                     lookingFor={job.lookingFor}
                     aboutCompany={job.aboutCompany}
-                    tags={job.tags}
+                    tags={job.employments}
                     accordions={accordions}
                     setAccordion={(accordion) => handleAccordionClick(accordion)}
                     chips={chips}

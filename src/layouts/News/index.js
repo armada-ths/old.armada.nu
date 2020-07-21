@@ -9,7 +9,7 @@ const News = (props) => {
   const pageDate = props.frontmatter.date ? new Date(props.frontmatter.date) : null
 
   return (
-    <div className='content'>
+    <div className='newspage'>
       <div className='body'>
         <div className='newsarticle'>
           <img alt='' src={props.frontmatter.cover_wide} />

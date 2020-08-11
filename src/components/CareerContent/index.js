@@ -114,19 +114,23 @@ const CareerContent = () => {
     
   const options = [
     {
+        label: "School years",
+        options: [
+            { label: "Year 1", value: "year_1" },
+            { label: "Year 2", value: "year_2" },
+            { label: "Year 3", value: "year_3" },
+            { label: "Year 4", value: "year_4" },
+            { label: "Year 5", value: "year_5" },
+            { label: "Unspecified", value: "year_unspecified" },
+        ]
+    },
+    {
       label: "Employment types",
       options: employments.map(tag => { return {label: tag, value: tag}})
     },
     {
         label: "Competences",
         options: competences.map(tag => { return {label: tag, value: tag}})
-    },
-    {
-        label: "School years",
-        options: [
-            { label: "Year 1", value: "1" },
-            { label: "Year 2", value: "2" },
-        ]
     },
     { label: "A root option", value: "value_3" },
     { label: "Another root option", value: "value_4" }

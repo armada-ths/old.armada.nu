@@ -16,7 +16,7 @@ const tableOfContents = [
             { title: 'Things taken into consideration when choosing the platform', anchor: 'consideration' },
             { title: 'How the platform works', anchor: 'how-the-platform-works' },
             { title: 'How do students find exhibitors on the platform', anchor: 'students-find-exhibitors' },
-            { title: 'How you find students on the platform', anchor: 'you-find-exhibitors' },
+            { title: 'How you find students on the platform', anchor: 'you-find-students' },
             { title: 'How we are going to attract students to the platform', anchor: 'attract-students' },
             { title: 'A talent pool created after the fair', anchor: 'talent-pool' },
             { title: 'Insights after the fair', anchor: 'insights' },
@@ -56,7 +56,7 @@ const ContentHeader = ({title, anchor, sections}) => {
         </div>
         <div className={`toc-child ${expanded ? '' : 'hidden'}`}>
             { sections.map(section => 
-                <a href={`#${section.anchor}`}>
+                <a key={section.anchor} href={`#${section.anchor}`}>
                     <h5>{section.title}</h5>
                 </a>
             )}
@@ -71,7 +71,7 @@ const TableOfContents = () => {
         <div className='table-of-contents'>
             <h3>Table of Contents</h3>
             { tableOfContents.map(content =>
-                <ContentHeader {...content} />
+                <ContentHeader key={content.anchor} {...content} />
             )}
         </div>
     )

@@ -18,7 +18,7 @@ The registration for the fair is open between **August 3rd** and **September 13t
 Take your chance to get in touch with students this year by using the registration link below:
 <form style="display: flex; justify-content:center; margin-bottom: 1em;" method="get" action="https://register.armada.nu">
 
-<button type="submit">Register now</button>
+<button type="submit">Register</button>
 
 </form>
 
@@ -40,9 +40,9 @@ There will also be live presentations running on the platform throughout the two
 <a class="anchor" id="students-find-exhibitors"></a>
 #### How do students find exhibitors on the platform
 
-Students will be able to see a grade of relevance based on your desired criterions. Our ambition is that this will increase relevance and therefore increase the quality of the fair in general. 
+Students will be able to see a grade of relevance based on your desired criteria. Our ambition is that this will increase relevance and therefore increase the quality of the fair in general. 
 
-<a class="anchor" id="you-find-exhibitors"></a>
+<a class="anchor" id="you-find-students"></a>
 #### How you find students on the platform
 
 You can filter on desired programs and masters, academic age etc. on all students registered on the platform. When you have found your candidates you can reach out to them yourself as well.
@@ -50,7 +50,7 @@ You can filter on desired programs and masters, academic age etc. on all student
 <a class="anchor" id="attract-students"></a>
 ####  How we are going to attract students to the platform
 
-Many of our students at KTH have started reaching out asking what will happen with Armada this year, this because of struggles getting jobs. This indicates that the will is larger than ever. 
+Many of our students at KTH have started reaching out asking what will happen with Armada this year, this because of struggles getting jobs. This indicates that the interest and will is larger than ever. 
 
 Since we are not planning an extensive fair at our campus, we are going to divert a lot more of our resources both manpower and money towards internal marketing. One of the greatest measures of getting people online is our Armada Competition. We are going to gamify the platform in a way nudging students to create a full profile, chat with more exhibitors and visit more live presentations. The students that perform the best will get great prizes. You can be a part of sponsoring the competition with either monetary proceeds or with items.
 
@@ -86,8 +86,7 @@ The four steps are:
 
 The time it will take will depend on what material you already possess, but the process will take between half an hour and a few hours.
 
-You can read more on the virtual fair guide
-*link to Company-VCF-Guide-stalls-and-interactions.pdf* //TODO Add link
+You can read more about creating your booth in the **[virtual fair guide](/assets/Company VCF Guide - stalls and interactions.pdf)**.
 
 <a class="anchor" id="faq"></a>
 ## FAQ
@@ -95,7 +94,6 @@ You can read more on the virtual fair guide
 <a class="anchor" id="faq-schedule"></a>
 ### Schedule
 
-The schedule can be found below:  
 **3rd of Aug** - Registration for the Virtual Fair Opens  
 **13th of September** - Registration for the Virtual Fair Closes  
 **26th of October - 17th November** - Event weeks  
@@ -108,7 +106,7 @@ The schedule can be found below:
 
 #### How do we register for the THS ARMADA Virtual Career Fair?
 
-Anyone can sign up to this year’s fair since we have not got a limit of space. To register you go to [register.armada.nu](https://register.armada.nu) and login. 
+Anyone can sign up to this year’s fair since space is unlimited. To register you go to [register.armada.nu](https://register.armada.nu) and login. 
 
 #### Can my company get more exposure during the fair?
 

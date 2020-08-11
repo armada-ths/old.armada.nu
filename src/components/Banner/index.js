@@ -16,7 +16,10 @@ const Banner = ({ location, link, children }) => {
 Banner.propTypes = {
   location: PropTypes.string,
   link: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
 }
 
 export default Banner

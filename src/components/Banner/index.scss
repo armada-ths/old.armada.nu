@@ -1,11 +1,11 @@
 @import '../../styles/global';
+@import '../../styles/_variables';
 
-.recruitment-banner {
+.banner {
   text-align: center;
   color: #fff;
-  background-color: #00D790;
-  font-size: 1.5em;
-  text-transform: none;
+  background-color: $melon;
+  font-size: 1.2em;
   padding-top: 8px;
   padding-bottom: 8px;
 

@@ -1,27 +1,33 @@
-@import '../../styles/_variables';
-@import '../../styles/_fonts';
+@import "../../styles/_variables";
+@import "../../styles/_fonts";
 
 .info-container {
   padding: 3em 0em;
   max-width: $page-width;
-  //position: static;
   margin: auto;
-  //padding: 1em 0em;
+
+  .page-container {
+    h3,
+    h4 {
+      text-align: left;
+      font-weight: 500;
+    }
+  }
 }
 
 #information-for-exhibitors {
   margin-bottom: 0.5em;
 }
 
-@media screen and (max-width: $breakpoint-mobile-flipped){
+@media screen and (max-width: $breakpoint-mobile-flipped) {
   .info-container {
     padding: 3em 1em;
   }
-  
+
   #information-for-exhibitors {
     font-size: 2em;
   }
-
+  
 }
 
 a.anchor {
@@ -30,3 +36,5 @@ a.anchor {
   top: -57px;
   visibility: hidden;
 }
+
+

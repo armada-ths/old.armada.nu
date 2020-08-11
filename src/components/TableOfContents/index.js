@@ -4,67 +4,51 @@ import Arrow from '../../../static/assets/pil_melon.png'
 
 const tableOfContents = [
     {
-        title: 'General info',
-        anchor: 'general-info',
+        title: 'Register here',
+        anchor: 'register-here',
         sections: [
-            { title: 'What is a virtual career fair?', anchor: 'what-is-a-virtual-career-fair' }
         ]
     },    
     {
-        title: 'Before the fair',
-        anchor: 'before-the-fair',
+        title: 'Virtual Career Fair',
+        anchor: 'virtual-career-fair',
         sections: [
-            { title: 'How to create your booth', anchor: 'create-booth' },
-            /*
-            { title: 'Check-in', anchor: 'check-in' }
-            */
-            { title: 'Travel to the fair', anchor: 'travel-to-the-fair' }
-            /*
-            { title: 'Transport of goods to the fair', anchor: 'transport-of-goods-to-the-fair' }
-            { title: 'Exhibition area', anchor: 'exhibition-area' }
-            { title: 'General rules and guidelines', anchor: 'general-rules-and-guidelines' }
-            { title: 'Electricity', anchor: 'electricity' }
-            { title: 'Elevators', anchor: 'elevators' }
-            */
+            { title: 'Things taken into consideration when choosing the platform', anchor: 'consideration' },
+            { title: 'How the platform works', anchor: 'how-the-platform-works' },
+            { title: 'How do students find exhibitors on the platform', anchor: 'students-find-exhibitors' },
+            { title: 'How you find students on the platform', anchor: 'you-find-exhibitors' },
+            { title: 'How we are going to attract students to the platform', anchor: 'attract-students' },
+            { title: 'A talent pool created after the fair', anchor: 'talent-pool' },
+            { title: 'Insights after the fair', anchor: 'insights' },
+            { title: 'Not only a virtual fair', anchor: 'not-only-a-virtual-fair' },
+            { title: 'Creating your virtual booth', anchor: 'create-booth' },
         ]
     },  
     {
-        title: 'During the fair',
-        anchor: 'during-the-fair',
+        title: 'FAQ',
+        anchor: 'faq',
         sections: [
-            /*
-            { title: 'Service information', anchor: 'service-information' }
-            { title: 'Focus Rooms', anchor: 'focus-rooms' }
-            { title: 'Safety', anchor: 'safety' }
-            { title: 'The grand banquet', anchor: 'the-grand-banquet' }
-            { title: 'Website', anchor: 'website' }
-            */
-            { title: 'Social media', anchor: 'social-media' },
+            { title: 'Schedule', anchor: 'faq-schedule' },
+            { title: 'Registration', anchor: 'faq-registration' },
+            { title: 'Cancellation', anchor: 'faq-cancellation' },
+            { title: 'Virtual Platform (Graduateland) ', anchor: 'faq-virtual-platform' },
         ]
-    },  
-    {
-        title: 'After the fair',
-        anchor: 'after-the-fair',
-        sections: [
-            /*
-            { title: 'Check-out', anchor: 'check-out' },
-            { title: 'Deconstruction', anchor: 'deconstruction' },
-            { title: 'Transport of goods after the fair', anchor: 'transport-of-goods-after-the-fair' },
-            */
-            { title: 'Invoice', anchor: 'invoice' },
-        ]
-    },
+    }
 ]
 
 const ContentHeader = ({title, anchor, sections}) => {
 
     const [expanded, setExpanded] = useState(false);
-    const toggleExpanded = (e) => {
-        if(e.target.nodeName !== 'H4') setExpanded(!expanded)
+    const toggleExpanded = (e, anchor) => {
+        if(e.target.nodeName !== 'H4' && sections.length > 0) {
+            setExpanded(!expanded)
+        } else if (sections.length === 0) {
+            document.getElementById(anchor).scrollIntoView();
+        }
     }
 
     return (<div className='toc-header'>
-        <div className='toc-parent' onClick={toggleExpanded} role='presentation'>
+        <div className='toc-parent' onClick={(e) => toggleExpanded(e, anchor)} role='presentation'>
             <a href={`#${anchor}`}>
                 <h4>{title}</h4>
             </a>

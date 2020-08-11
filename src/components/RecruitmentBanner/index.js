@@ -1,31 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
 import axios from 'axios'
-import './index.scss'
+import Banner from '../Banner'
 
-const RecruitmentBanner = ({location}) => {
-
-  const [showBanner, setShowBanner] = useState(false);
-  const recLink = '/recruitment';
+const RecruitmentBanner = ({ location }) => {
+  const [showBanner, setShowBanner] = useState(false)
 
   useEffect(() => {
-    axios.get('https://ais.armada.nu/api/recruitment')
-      .then((res)  => {
-        setShowBanner(res.data.length > 0);
-      });
+    axios.get('https://ais.armada.nu/api/recruitment').then(res => {
+      setShowBanner(res.data.length > 0)
+    })
   }, [])
 
-  return (<>
-    { showBanner && location !== recLink && <Link to={recLink}>
-      <div className='recruitment-banner'>Recruitment open now! Apply here!</div>
-    </Link> }
-  </>)
-
+  return (
+    showBanner ? <Banner location={location} link={'/recruitment'}>
+      Recruitment open now! Apply here!
+    </Banner> : <></>
+  )
 }
 
 RecruitmentBanner.propTypes = {
   location: PropTypes.string,
 }
 
-export default RecruitmentBanner;
+export default RecruitmentBanner

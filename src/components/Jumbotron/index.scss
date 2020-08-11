@@ -28,6 +28,8 @@
     position: relative;
     min-height: $header-min-height;
     background-color: $licorice;
+    margin-top: 3em;
+
     .header-image{
 
         background-color: $licorice;
@@ -112,6 +114,7 @@
 
 .logo-container.fixed{
     height: 45%;
+    margin-top: -3em;
 }
 
 @media screen and (min-height: 1000px) {
@@ -123,6 +126,7 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
+
     .logo-container{
         p{
             margin-top: 0px;
@@ -132,6 +136,11 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
+    
+    #header {
+        margin-top: 0;
+    }
+
     .logo-container{
         p{
             margin-top: 0px;

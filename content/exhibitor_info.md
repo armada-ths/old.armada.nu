@@ -7,472 +7,157 @@ menuPage: true
 priority: 6
 header: /assets/for_exhibitors.jpg
 ---
-**Welcome to the career fair of 2020**. Because of the current circumstances THS Armada, as well as many other fairs, will be arranged on a​ **virtual platform** with a hybrid of​ **virtual and physical restriction compliant event weeks** this year. We want to give you a great experience to remember. Therefore, we are in the process of gathering everything you need to know before, during and after the fair. We are going to be updating this page with information as we go along. In the meantime - do not hesitate to contact us if you want to know more.
 
-<a class="anchor" id="general-info"></a>
-## General Info
+<a class="anchor" id="register-here"></a>
+## Register here
 
-The registration for this year’s virtual THS Armada fair will be open between August 3rd and September 13th! If you and your company want to be apart of Armada 2020 you will then register at​ [register.armada.nu](https://register.armada.nu). Would you like a reminder when the registration opens? Fill in this form: [Reminder form for THS Armada 2020](https://forms.gle/VVBLS7SB5zFdo1vA9).
+We are happy to, for the 40th time, invite you to THS Armada - only this time virtually. We have a brand new offering this year and are looking forward to creating the most frictionless fair ever. More information about what is a part of the offering is found in the **[product catalogue](/assets/Product_catalogue_virtual.pdf)**.
 
-<!---
-If you want to see full invitation click on the button below!
+The registration for the fair is open between **August 3rd** and **September 13th**. If you have already completed the initial registration you will be able to register by entering [register.armada.nu](https://register.armada.nu). If not, you just need to send us an email to [kevin.stojanovski@armada.nu](mailto:kevin.stojanovski@armada.nu) and we will enable you to sign up swiftly.
 
-<form style="display: flex; justify-content:center; margin-bottom: 1em;" method="get" action="/assets/Inbjudan.pdf">
+Take your chance to get in touch with students this year by using the registration link below:
+<form style="display: flex; justify-content:center; margin-bottom: 1em;" method="get" action="https://register.armada.nu">
 
-<button type="submit">Download Invitation</button>
-
-</form>-->
-
-<b>Dates:</b> November 17th-18th 
-
-<a class="anchor" id="what-is-a-virtual-career-fair"></a>
-### WHAT IS A VIRTUAL CAREER FAIR?
-
-The platform that will be used is designed to optimize relevance and thus reduce the noise between students and exhibitors, streamline the application process and simplify the post-processing of the candidates met during the fair. This will be done, among other things, through an algorithm matching student profiles with what you are looking for, links from your job ads directly from the platform and the opportunity to look back at the conversations you have had with students post fair.
-
-<ul><li><i>What does a virtual fair actually look like?</i></li></ul>
-
-We will showcase material and go through the platform in depth as we
-contact you after the registration period opens in August and the
-beginning of September. In short, exhibitors and students gather on the
-same online platform. You as an exhibitor will create a profile with text,
-image and video material as well as choose what skills you are looking for
-for your career opportunities. With the information as a basis, you can
-chat live with students. If you find the candidate interesting, you can start
-a video call. During both career fair days, there will be the opportunity to
-arrange live presentations directly on the platform. Why not pitch that
-internship, talk about your new product or showcase your cool office?
-
-<a class="anchor" id="before-the-fair"></a>
-## Before the fair
-
-<a class="anchor" id="create-booth"></a>
-### HOW TO CREATE YOUR BOOTH
-
-Creating your booth on the platform is an easy 4 step process. We will be
-using the same platform as several other technical university fairs,
-meaning that you can reuse your booth between fairs. If you are only going
-to exhibit at THS Armada you will be guided by us and our partner in how
-to create it efficiently. It will take anywhere from 15 minutes to a couple of
-hours depending on what employer branding material you already have.
-You will be able to create your booth as soon as you have registered to the
-fair so that students can start researching you on the platform, however
-you can edit the information up until a few days prior to the fair.
-
-<a class="anchor" id="travel-to-the-fair"></a>
-### TRAVEL TO THE FAIR
-
-**No travelling**
-
-You will be able to exhibit at the virtual fair from wherever you are
-situated in the world. If it is your own home desk or at your office - you
-choose!
-
-<!---
-<a class="anchor" id="transport-of-goods-to-the-fair"></a>
-### TRANSPORT OF GOODS TO THE FAIR
-
-Armada transports goods to and from the fair. Our transport partner this year is DHL. The purpose with Armada Transport is to make the fair experience as smooth as possible, while reducing the number of trucks at the fair. Your goods will be transported to the fair at KTH, so that when you and colleagues arrive on November 18th to set up your booth, your goods will already be placed in your booth.
-
-Note that it is not allowed to arrange any own transportation with external carriers other than Armada Transport (DHL). In case you for some reason must have an exception from this rule then you need a written confirmation from Armada’s Head of Logistics ([filip.ryden@armada.nu](mailto:lukas.lindroos@armada.nu)) and your delivery must have recieved a time slot in advance specified in date/time. Any goods transported by external carriers will not be provided equal service as goods sent through Armada Transport.
-
-In case you have something minor (eg small bags, boxes) which you don’t need transport aid for, then you also have the possibility to carry these goods by hand through the main entrance. It is not allowed to carry anything big and bulky since the entrances serves as emergency exits and the goods must not block these paths in case of emergency.
-
-
-<a class="anchor" id="focus-rooms"></a>
-### FOCUS ROOMS
-
-**Green Room**
-
-Location: [Gamla matsalen, Nymble floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/search?query=Green%20Room)
-
-**Diversity Room**
-
-Location: [Hyllan, Nymble floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/search?query=Diversity%20Room)
-
-<a class="anchor" id="events-during-the-fair"></a>
-### EVENTS DURING THE FAIR
-
-Internship Pitch November 19th (more information [here](https://armada.nu/events/?eventId=29))
-
-Internship Pitch November 20th (more information [here](https://armada.nu/events/?eventId=62))
-
-Individual Meetings (KTHB Library, more information [here](https://armada.nu/events/?eventId=30))
-
-All these events require pre-registration. If you are registered for any event you should receive an email confirmation with schedule and location for the event. If you have further questions, please contact your host.
-
--->
-
-<a class="anchor" id="during-the-fair"></a>
-## During the fair
-
-<a class="anchor" id="social-media"></a>
-### SOCIAL MEDIA
-
-\#thsarmada
-
-Facebook: [/thsarmada](https://www.facebook.com/thsarmada/)
-
-Instagram: [@thsarmada](https://www.instagram.com/thsarmada/)
-
-LinkedIn: [THS Armada](https://www.linkedin.com/company/armada/)
-
-Flickr: [THS Armada](https://www.flickr.com/photos/armadakth)
-
-<a class="anchor" id="after-the-fair"></a>
-## AFTER THE FAIR
-
-<!--
-<a class="anchor" id="chat-access"></a>
-### HAVE ACCESS TO YOUR CHATS
-
-* You will deconstruct your own exhibition area with limited
-assistance from your host.
-* Before leaving the area, you need to inform one in the Armada team
-or the information desk.
-* Your exhibition material will be transported by DHL according to
-what you have agreed upon. You need to assure that all your cargos
-are properly packaged and labeled and that your shipping address is
-correct. Do not leave the area until it's done. Armada’s transport
-coordinators can help you if you have questions regarding packaging
-or labeling the goods.
--->
-
-<a class="anchor" id="invoice"></a>
-### INVOICE
-
-Your invoice will be sent to your confirmed address after the fair, no later than December 20th. General payment terms are 30 calendar days. Special payment terms must have been agreed by both parties beforehand. 
-<!-- 
-**Welcome to the career fair of 2020**. We want to give you a great experience and a visit to remember. Therefore, we have gathered everything you need to know before, during and after the fair. We hope that this guide answers all your questions and if you feel like something is missing - do not hesitate to contact us. 
-
-<a class="anchor" id="general-info"></a>
-## General Info
-
-The registration is open! If you and your company want to be a part of Armada 2020 you can now register at [register.armada.nu](https://register.armada.nu).
-
-If you want to see full invitation click on the button below!
-
-<form style="display: flex; justify-content:center; margin-bottom: 1em;" method="get" action="/assets/Inbjudan.pdf">
-
-<button type="submit">Download Invitation</button>
+<button type="submit">Register now</button>
 
 </form>
 
-<b>Dates:</b> November 17th-18th 
+<a class="anchor" id="virtual-career-fair"></a>
+## Virtual Career Fair
 
-**Fair opening hours:**
+<a class="anchor" id="consideration"></a>
+#### Things taken into consideration when choosing the platform
 
-November 17th: 	10:00 - 16:00
+When deciding to go virtual we wanted to focus on improving the fair concept where digital beats physical. Therefore we are using a platform that facilitates higher quality on the contacts made. In order to do this we decided on not creating a 3d world, but go for a more clean cut gallery view with filter functions.
 
-November 18th: 	10:00 - 15:00
+<a class="anchor" id="how-the-platform-works"></a>
+#### How the platform works
 
-**Booth placement:**
+You will create a profile on the platform with information about your organisation, Q&A’s, links to your career portal, pictures and videos etc. When a student enters your profile they will be able to see the content and reach out to one of your employees to talk about either topics of your choice, or just generally. If the student seems like a good candidate you can ask to start a video chat and really give an impression and maybe even encourage the student to apply for one of your current job opportunities directly from the platform.
 
-You can find the location of your booth by visiting our [map](https://armada.nu/maps/).
+There will also be live presentations running on the platform throughout the two days which all students visiting the fair will be able to see while online. This is a perfect opportunity for you to talk about internships, show off your office or discuss the future of your field.
 
-**Nymble:** [Drottning Kristinas väg 15-19, 114 28 Stockholm](https://goo.gl/maps/poiBTTE53h8ZTXtFA)
+<a class="anchor" id="students-find-exhibitors"></a>
+#### How do students find exhibitors on the platform
 
-**KTH Library:** [Osquars backe 31, 114 28 Stockholm](https://goo.gl/maps/nyq9tFT6oSqhhpb27)
+Students will be able to see a grade of relevance based on your desired criterions. Our ambition is that this will increase relevance and therefore increase the quality of the fair in general. 
 
-**KTH Entrance:** [Drottning Kristinas väg 4, 114 28 Stockholm](https://goo.gl/maps/ACfmcv8Yy41sLp1k6)
+<a class="anchor" id="you-find-exhibitors"></a>
+#### How you find students on the platform
 
-<div id="imgstuff" style="text-align: center !important;">
+You can filter on desired programs and masters, academic age etc. on all students registered on the platform. When you have found your candidates you can reach out to them yourself as well.
 
-   <img style="border-radius: 25px;" src="/assets/map.png" height="300em" />
+<a class="anchor" id="attract-students"></a>
+####  How we are going to attract students to the platform
 
-</div>
+Many of our students at KTH have started reaching out asking what will happen with Armada this year, this because of struggles getting jobs. This indicates that the will is larger than ever. 
 
-<a class="anchor" id="before-the-fair"></a>
-## Before the fair
+Since we are not planning an extensive fair at our campus, we are going to divert a lot more of our resources both manpower and money towards internal marketing. One of the greatest measures of getting people online is our Armada Competition. We are going to gamify the platform in a way nudging students to create a full profile, chat with more exhibitors and visit more live presentations. The students that perform the best will get great prizes. You can be a part of sponsoring the competition with either monetary proceeds or with items.
 
-<a class="anchor" id="check-in"></a>
-### CHECK-IN
+<a class="anchor" id="talent-pool"></a>
+####  A talent pool created after the fair
 
-When arriving at the fair, you shall visit the information desk to check-in your company/organization. Make sure to contact your host beforehand and tell them when you will arrive - they will meet you and help you with the check-in and stand area. Check-in your organization at the information desk in your specific exhibition hall. 
+Your chats will be saved on the platform during a time period after the fair. These chats can be treated like a talent pool meaning that you can stay in touch with the students and make sure that you do not only meet them once, but follow them over time.
 
-[Click here](https://armada.nu/maps/) to open the map and view where the information desks are located. Do you want to know which building you will be located in, to find the correct information desk to check in at? Search for your company on the map [here](https://armada.nu/maps/). You will check in your company in the same building you have been placed.
+<a class="anchor" id="insights"></a>
+####  Insights after the fair
 
-**Check-in hours**
+Computers are great at compiling information and gathering data. After the fair you can request your fair insights containing which degrees the students are taking, what graduation year you have attracted, how many students have visited etc.
 
-November 16th: 	13:00 - 20:00
+This data can be used to further improve your marketing towards students when segmenting target groups and analyzing if your current strategy is working as intended.
 
-November 17th: 	08:00 - 10:00
+<a class="anchor" id="not-only-a-virtual-fair"></a>
+#### Not only a virtual fair
 
-<a class="anchor" id="travel-to-the-fair"></a>
-### TRAVEL TO THE FAIR
+We are creating a hybrid of physical and virtual events. You can read more about our events in the product catalogue which can be found on the top of this page. Physical events will be created in a way that follows the restrictions. We do not want you to travel to KTH to respect the spread of the disease, meaning that we are more than happy if you choose to ask us to create a virtual event for you.
 
-**Metro**
+<a class="anchor" id="create-booth"></a>
+#### Creating your virtual booth
 
-From the station T-Centralen you take the red line towards “Mörby Centrum”. Travel to the metro station [“Tekniska Högskolan”](https://sl.se/#/Travel/SearchTravelById/T-Centralen%20(Stockholm)/Tekniska%20högskolan%20(Stockholm)/9001/9204/null/depart/sv/null/null/2,8,1,4,96,/null/null/null/null/null/false/null/0/0/null/false/0/,0/0/,0/normal/Sl). More information about public transportation is found on <https://sl.se>.
+The steps of creating a virtual booth are few and easy. All of the large technical university fairs have decided to use the same platform meaning that you only have to create your booth once even if you decide to exhibit in other parts of the country as well. 
 
-**Bus**
+Once you register for the fair you will receive a link and guidelines on how to create the booth. THS Armada and our fair partner will be at hand for support for setting up the booths, however it is a very simple process that we do not expect you to need help with. 
 
-If you prefer the bus, there are several lines that passes KTH. The nearest station is “Östra station”, and is located right by “Tekniska Högskolan” metro station. More information about public transportation is found on [https://sl.se](https://sl.se.).
+The four steps are:
+1. Booth settings
+2. Chat topics settings
+3. Candidate requirements
+4. Team
 
-**Car**
+The time it will take will depend on what material you already possess, but the process will take between half an hour and a few hours.
 
-The number of parking slots is **very** limited at KTH Campus. Therefore, we encourage you to use public transportation. Note that THS Armada do not offer parking lots.
+You can read more on the virtual fair guide
+*link to Company-VCF-Guide-stalls-and-interactions.pdf* //TODO Add link
 
-<a class="anchor" id="transport-of-goods-to-the-fair"></a>
-### TRANSPORT OF GOODS TO THE FAIR
+<a class="anchor" id="faq"></a>
+## FAQ
 
-Armada transports goods to and from the fair. Our transport partner this year is DHL. The purpose with Armada Transport is to make the fair experience as smooth as possible, while reducing the number of trucks at the fair. Your goods will be transported to the fair at KTH, so that when you and colleagues arrive on November 18th to set up your booth, your goods will already be placed in your booth.
+<a class="anchor" id="faq-schedule"></a>
+### Schedule
 
-Note that it is not allowed to arrange any own transportation with external carriers other than Armada Transport (DHL). In case you for some reason must have an exception from this rule then you need a written confirmation from Armada’s Head of Logistics ([filip.ryden@armada.nu](mailto:lukas.lindroos@armada.nu)) and your delivery must have recieved a time slot in advance specified in date/time. Any goods transported by external carriers will not be provided equal service as goods sent through Armada Transport.
+The schedule can be found below:  
+**3rd of Aug** - Registration for the Virtual Fair Opens  
+**13th of September** - Registration for the Virtual Fair Closes  
+**26th of October - 17th November** - Event weeks  
+**3rd of November** – Deadline to create your Virtual Booth  
+**17th- 18th November** -  Armada Virtual Career Fair  
 
-In case you have something minor (eg small bags, boxes) which you don’t need transport aid for, then you also have the possibility to carry these goods by hand through the main entrance. It is not allowed to carry anything big and bulky since the entrances serves as emergency exits and the goods must not block these paths in case of emergency.
+<a class="anchor" id="faq-registration"></a>
+### Registration  
+<br/>
 
-<a class="anchor" id="exhibition-area"></a>
-### EXHIBITION AREA
+#### How do we register for the THS ARMADA Virtual Career Fair?
 
-* We recommend you to install your exhibitor area Monday November 17th  13:00-20:00.
-* In exceptional cases, you may install your exhibition area on early Tuesday morning November 18th. Any exhibition area that is not installed before 09:00 this day will not be provided equal assistance.
-* Synchronize your date and time of arrival with your career fair host. The host will then be able to show you where your exhibition area is located. 
+Anyone can sign up to this year’s fair since we have not got a limit of space. To register you go to [register.armada.nu](https://register.armada.nu) and login. 
 
-<a class="anchor" id="general-rules-and-guidelines"></a>
-### GENERAL RULES AND GUIDELINES
+#### Can my company get more exposure during the fair?
 
-* Due to the environmental impact, we want you to minimize the volume of disposables at the fair. This includes cups and give-aways. Use the waste stations available.
-* Try to find alternative ways to share information regarding internships, jobs etc than printed material. The usage of QR - codes are highly appreciated
-* Refrigerators are not allowed in any building of the fair.
-* Exhibitor materials won’t be possible to print at the fair due to a lack of printers. 
+Many opportunities are available for you as a company to go the extra mile before and during these days to get more exposure. Here are some examples:
 
-**Give-away policies**
+* Increased exposure on Graduateland
+* Your logo presented on Armada website
+* Have your products at Nymble in our lounge
+* Be a part of one of our short films
 
-THS Armada has a **‘’No flyer policy’’** which means that exhibitors are **strongly discouraged** to distribute flyers during the fair.  Use flyers **only** if you think that they really add any additional value to your communication with the visiting students.
+Otherwise we can always create a customized offer that suits your company’s vision.
 
-Do not distribute unnecessary products that may result in waste or debris during the event. Above all, avoid plastic and products that are in packaging. If you are going to distribute give-aways, we ask you to keep them sustainable and serve a clear purpose. They should have a value for the recipient so that they come into use.
+#### Can we sponsor Virtual Armada?
 
-**Nymble**
+Yes, absolutely! You as an exhibitor can sponsor Armada in many ways, even if you are not exhibiting the virtual fair. We are more than happy to discuss partnership opportunities with you.
 
-_Allowed:_
+#### We signed up during the initial registration period. What has happened to our contracts?
 
-* Sealed water bottles.
-* Wrapped candy
-* Whole fruit
+All contracts already signed for the physical event will be made void. On August 3rd, we will open the virtual career fair registration. The registration period will close on September 13th. 
 
-_Not allowed:_
+<a class="anchor" id="faq-cancellation"></a>
+### Cancellation 
+<br/>
 
-* Give-aways that requires any type of machine, included popcorn machines, refrigerators etc.
-* Nuts, due to allergies and health risks.
-* Strongly scented products.
+#### Is it possible to  cancel my registration?
 
-**KTH Library**
+Cancellation of registration is possible between August 3rd and September 13th and it comes with a proportional fee translating 50% of the total virtual base kit price. If you decide to cancel your participation after September 13th you will pay the full price of the fair and amendments.
 
-_Allowed:_
 
-* Wrapped candy
-* Sealed water bottles.
+<a class="anchor" id="faq-virtual-platform"></a>
+### Virtual Platform (Graduateland) 
+<br/>
 
-_Not allowed:_
+#### What is Graduateland?
 
-* Nothing edible/drinkable than mentioned above.
-* No helium balloons of any kind.
+Graduateland is an online service that connects current university students and recent graduates with employers. 
 
-**KTH Entré**
+#### How Does it Work?
 
-This building has no special restrictions.
+Companies and students are able to create a profile on the platform and upload their specific material or resumé, as well as match together to establish employment.
 
-<a class="anchor" id="electricity"></a>
-### ELECTRICITY
+#### How do we communicate with the students?
 
-* You have requested an amount of electrical outlets and power consumption to match the needs of your organization at the fair. Please respect your fellow exhibitors and do not use any outlets except those specifically marked with your company's name. 
-* The power distribution is planned according to your specified power consumption. If you know that you need more/less power than requested or wish to change the number of requested outlets, please contact Lukas Lindroos (<mailto:lukas.lindroos@armada.nu>).
-* Changes requested during the fair may not be possible. 
-* If you experience technical problems, notify your host.
+As an exhibitor you can easily view the full database and  see profiles of all the students attending the fair, especially your virtual exhibition.  When desirable, you have the opportunity to reach out to relevant and interesting candidates on the platform.
 
-**WIFI**
+#### How do you get the best student match?
 
-Wifi: KTH-Conference 
+All users on the platform will have a score of how well a profile matches with another one. You will be able to filter search and therefore increase relevance and reduce the time wasted.
 
-Password is handed out in the information desks upon check-in.
+#### How will Armada ensure students will attend the platform? 
 
-<a class="anchor" id="elevators"></a>
-### ELEVATORS
-
-Nymble: 		max 500 kg / 1.08 x 1.53 x 2.00 meters.
-
-KTH Library: 		max 630 kg / 0.80 x 1.41 x 2.00 meters.
-
-<a class="anchor" id="during-the-fair"></a>
-## DURING THE FAIR
-
-**WIFI**
-
-Wifi: KTH-Conference 
-
-Password is handed out in the information desks upon check-in.
-
-<a class="anchor" id="service-information"></a>
-### SERVICE INFORMATION
-
-**Exhibitor lounges**
-
-There is one lounge for exhibitors in [Kröken, Nymble](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/piKtPcBnnCiAmUvR1RJpBnAG) and one in [South-East Gallery, KTH Library](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/piUndVQVXfiUTUek6nNj9ntt). Breakfast, coffee, and fika is served here for all exhibitor representatives. Exhibitors in KTH Entré are directed to the lounges in the other two buildings. 
-
-The opening hours for the exhibitors’ lounges are: 
-
-November 17th: 08:30 - 16:00 (breakfast served 08:30 - 10:00)
-
-November 18th: 08:30 - 14:30 (breakfast served 08:30 - 10:00)
-
-**Service- and information desks**
-
-Click [here](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/ogZ9zBLd74fGpAw1DzM4Vur) to open the map and view the information desks.
-
-The opening hours for the information desks are: 
-
-November 17th: 	08:00 - 16:00
-
-November 18th: 	09:00 - 15:00
-
-**Lunch**
-
-Lunch is served between 11:00 - 14:00 in the restaurant, Syster O Bror (click [here](https://www.google.com/maps/place/Syster+O+Bror/@59.348517,18.071073,15z/data=!4m2!3m1!1s0x0:0x7b0fa65dcaf7ef2d?sa=X&ved=2ahUKEwj_xfbU1drlAhXiwqYKHSPaCiAQ_BIwFnoECAsQCA) for map). Your lunch tickets will be sent digitally to the email address entered on the ticket on the morning of November 19th. Each lunch ticket have been assigned a specific time slot. Make sure to visit the lunch restaurant during these dedicated time slots.
-
-**Wardrobes **
-
-Click [here](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/og57aQJ4bajbm3Daonukncsf) to open the map and view the wardrobes.
-
-In case you need to lock up stuff overnight, please check the section SAFETY further down on the page.
-
-<a class="anchor" id="focus-rooms"></a>
-### FOCUS ROOMS
-
-**Green Room**
-
-Location: [Gamla matsalen, Nymble floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/search?query=Green%20Room)
-
-**Diversity Room**
-
-Location: [Hyllan, Nymble floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/search?query=Diversity%20Room)
-
-**Start up Arena by KTH Innovation**
-
-Get inspired by innovative early-stage companies that have come out of KTH. 
-
-Location: [KTH Entré, floor 2](https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa/target/piBDtFAd7NAmrovUHpziGeZo)
-
-<a class="anchor" id="safety"></a>
-### SAFETY
-
-All exhibition areas will be locked and patrolled during closed hours. If you would like to store any valuable items overnight we are able to offer you safety storage please visit any of the information desk for further instructions. You are able to check-in your valuables between 15.30-17.00 on the 17th and check-out between 09.00-10.30 the 18th.
-
-* THS Armada is not responsible for any valuables during the fair. 
-* Respect your organization’s provided area and do not promote your brand elsewhere during the fair. 
-* Please identify the nearest emergency exit and fire extinguisher in your exhibition room, for your own safety. 
-* Please read through the safety instruction that has been provided by THS Armada prior to the fair.
-
-<a class="anchor" id="the-grand-banquet"></a>
-### THE GRAND BANQUET
-
-**Date: **November 18th
-
-**Time: **18:00 - 01:00
-
-**Location:** [Münchenbryggeriet](https://goo.gl/maps/dnBpCpnYPSgdom2t8)
-
-**Schedule**
-
-All guests will be asked to confirm their attendance to the banquet by their respective career fair hosts. If there has been any changes, please notify your career fair host. All guests will receive an email before the end of the first fair day regarding their placement at the dinner. Regarding student-give-away tickets the contact information of the student needs to be reported to the information desk before 15:00.
-
-**18:00** Doors will open to the banquet
-
-**19:00** Dinner will be served
-
-**21:45** Doors will open to the after party
-
-**01:00** The after party will be closing
-
-<a class="anchor" id="events-during-the-fair"></a>
-### EVENTS DURING THE FAIR
-
-Internship Pitch November 19th (more information [here](https://armada.nu/events/?eventId=29))
-
-Internship Pitch November 20th (more information [here](https://armada.nu/events/?eventId=62))
-
-Individual Meetings (KTHB Library, more information [here](https://armada.nu/events/?eventId=30))
-
-All these events require pre-registration. If you are registered for any event you should receive an email confirmation with schedule and location for the event. If you have further questions, please contact your host.
-
-<a class="anchor" id="website"></a>
-### WEBSITE
-
-In order to browse the catalogue and read about the latest news and events, please visit our website at [www.armada.nu](http://www.armada.nu). The website provides the feature of matchmaking between visitors and exhibitors, enabling the user to find the exhibitors most suited for them. Here you can also browse our interactive map of the fair by going to [www.armada.nu/maps](http://www.armada.nu/maps). 
-
-<a class="anchor" id="social-media"></a>
-### SOCIAL MEDIA
-
-\#thsarmada
-
-Facebook: [/thsarmada](https://www.facebook.com/thsarmada/)
-
-Instagram: [@thsarmada](https://www.instagram.com/thsarmada/)
-
-LinkedIn: [THS Armada](https://www.linkedin.com/company/armada/)
-
-Flickr: [THS Armada](https://www.flickr.com/photos/armadakth)
-
-<a class="anchor" id="after-the-fair"></a>
-## AFTER THE FAIR
-
-<a class="anchor" id="check-out"></a>
-### CHECK-OUT
-
-Before leaving, a member from THS Armada will ask a representative from your organization to confirm your invoice address and also confirm any additions made to your invoice during the fair. Furthermore, you need to make sure that all exhibitor material left behind for transport or storing is properly packaged and marked with delivery address and company name. This will be done on the second fair day November 20th.
-
-<a class="anchor" id="deconstruction"></a>
-### DECONSTRUCTION
-
-* You will deconstruct your own exhibition area with limited assistance from your host. 
-* Before leaving the area, you need to inform one in the Armada team or the information desk. 
-* Your exhibition material will be transported by DHL according to what you have agreed upon. You need to assure that all your cargos are properly packaged and labeled and that your shipping address is correct. Do not leave the area until it's done. Armada’s transport coordinators can help you if you have questions regarding packaging or labeling the goods.
-
-<a class="anchor" id="transport-of-goods-after-the-fair"></a>
-### TRANSPORT OF GOODS AFTER THE FAIR
-
-When the fair closes on the November 20th you are responsible for packing and labeling your goods. When you have packed and labeled your goods,  you leave the goods at your booth area and the logistics team will hand it over to DHL. They will return it to you at a location and time decided in your earlier email conversation with DHL. Note that Armada is not responsible for shipping goods not booked through Armada Transport (DHL) and it is not allowed for you to leave any non-DHL goods behind, Armada have the right to charge you an administrative fee equal to the cost of storing the non-DHL goods left behind.
-
-<a class="anchor" id="invoice"></a>
-### INVOICE
-
-Your invoice will be sent to your confirmed address after the fair, no later than December 20th. General payment terms are 30 calendar days. Special payment terms must have been agreed by both parties beforehand. 
-
--->
-
-<!-- ## CONTACT INFO
-
- 
-
-### QUESTIONS REGARDING LOGISTICS, TRANSPORT AND ELECTRICITY
-
-<p style="text-align: center !important;">Lukas Lindroos</p>
-
-<p style="text-align: center !important;">Head of Logistics</p>
-
-<p style="text-align: center !important;"><a href="mailto:lukas.lindroos@armada.nu">lukas.lindroos@armada.nu</a></p>
-
-<p style="text-align: center !important;">+46 73-850 32 99</p>
-
-### QUESTIONS REGARDING CHECK-IN, SERVICE DESKS AND BANQUET
-
-<p style="text-align: center !important;">Filip Jacobson
-
-<p style="text-align: center !important;">Head of Business Relations and Events
-
-<p style="text-align: center !important;"><a href="mailto:filip.jacobson@armada.nu">filip.jacobson@armada.nu</a></p>
-
-
-<p style="text-align: center !important;">+46 70-402 03 41
-
-### GENERAL QUESTIONS
-
-<p style="text-align: center !important;">Ulrik Sköldkvist</p>
-
-<p style="text-align: center !important;">Project Manager</p>
-
-<p style="text-align: center !important;"><a href="mailto:a@armada.nu">a@armada.nu</a></p>
-
-<p style="text-align: center !important;">+46 70-790 98 44</p> -->
-
-##
+Students will prior to the career fair create their virtual profiles in order to be able to participate. We at Armada will be announcing this process several weeks before the career fair taking place.

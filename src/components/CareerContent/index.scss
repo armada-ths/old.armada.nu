@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .career-content {
     flex: 0.7;
@@ -8,29 +8,48 @@
     flex-direction: column;
 
     @media screen and (max-width: $breakpoint-pad) {
-            flex: 0.85;
+        flex: 0.85;
     }
+
     @media screen and (max-width: $breakpoint-mobile) {
-            flex: 1;
-            padding: 2em 0 0 0;
+        flex: 1;
+        padding: 2em 0 0 0;
     }
 
     .job-query {
-        padding: 1em;
-        border: thin solid #808080;
-        border-radius: 0.5em;
-        outline: none;
-        margin: 1em;
-    }
-    
-    .career-header {
-        padding: 1em;
+        padding: 1em 1em 0 1em;
+        display: flex;
+        flex-direction: column;
+        scroll-margin-top: 3rem;
+
+        @media screen and (max-width: $breakpoint-mobile-flipped) {
+            scroll-margin-top: initial;
+        }
+
+        .job-search {
+            border: none;
+            border-bottom: thin solid hsl(0, 0%, 80%);
+            outline: none;
+            margin: 1em 0;
+            padding: 0.5em;
+            font-size: 14pt;
+        }
+
+        .results {
+            padding: 0 0.5em;
+        }
     }
 
-    .not-found {
-        padding: 1em;
+    .career-header {
+        padding: 1em 1em 0 1em;
     }
-    
+
+    .career-not-found {
+		display: flex;
+		flex: 1;
+		justify-content: center;
+    }
+
     .chip {
         padding: 0 1em;
         border: thin solid $melon;
@@ -53,151 +72,4 @@
             background-color: $melon;
         }
     }
-
 }
-
-// Styling Cross-Browser Compatible Range Inputs with Sass
-// Github: https://github.com/darlanrod/input-range-sass
-// Author: Darlan Rod https://github.com/darlanrod
-// Version 1.5.2
-// MIT License
-
-$track-color: #eceff1 !default;
-$thumb-color: $melon !default;
-
-$thumb-radius: 12px !default;
-$thumb-height: 24px !default;
-$thumb-width: 24px !default;
-$thumb-shadow-size: 0 !default;
-$thumb-shadow-blur: 0 !default;
-$thumb-shadow-color: rgba(0, 0, 0, .2) !default;
-$thumb-border-width: 0 !default;
-$thumb-border-color: #eceff1 !default;
-
-$track-width: auto !default;
-$track-height: 8px !default;
-$track-shadow-size: 0 !default;
-$track-shadow-blur: 0 !default;
-$track-shadow-color: rgba(0, 0, 0, .2) !default;
-$track-border-width: 2px !default;
-$track-border-color: #cfd8dc !default;
-
-$track-radius: 5px !default;
-$contrast: 5% !default;
-
-$ie-bottom-track-color: darken($track-color, $contrast) !default;
-
-@mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
-  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%);
-}
-
-@mixin track {
-  cursor: default;
-  height: $track-height;
-  transition: all .2s ease;
-  width: $track-width;
-}
-
-@mixin thumb {
-  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
-  background: $thumb-color;
-  border: $thumb-border-width solid $thumb-border-color;
-  border-radius: $thumb-radius;
-  box-sizing: border-box;
-  cursor: default;
-  height: $thumb-height;
-  width: $thumb-width;
-}
-
-[type='range'] {
-  -webkit-appearance: none;
-  background: transparent;
-  margin: $thumb-height / 2 0;
-  width: $track-width;
-
-  &::-moz-focus-outer {
-    border: 0;
-  }
-
-  &:focus {
-    outline: 0;
-
-    &::-webkit-slider-runnable-track {
-      background: lighten($track-color, $contrast);
-    }
-
-    &::-ms-fill-lower {
-      background: $track-color;
-    }
-
-    &::-ms-fill-upper {
-      background: lighten($track-color, $contrast);
-    }
-  }
-
-  &::-webkit-slider-runnable-track {
-    @include track;
-    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
-    background: $track-color;
-    border: $track-border-width solid $track-border-color;
-    border-radius: $track-radius;
-  }
-
-  &::-webkit-slider-thumb {
-    @include thumb;
-    -webkit-appearance: none;
-    margin-top: ((-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2);
-  }
-
-  &::-moz-range-track {
-    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
-    @include track;
-    background: $track-color;
-    border: $track-border-width solid $track-border-color;
-    border-radius: $track-radius;
-    height: $track-height / 2;
-  }
-
-  &::-moz-range-thumb {
-    @include thumb;
-  }
-
-  &::-ms-track {
-    @include track;
-    background: transparent;
-    border-color: transparent;
-    border-width: ($thumb-height / 2) 0;
-    color: transparent;
-  }
-
-  &::-ms-fill-lower {
-    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
-    background: $ie-bottom-track-color;
-    border: $track-border-width solid $track-border-color;
-    border-radius: ($track-radius * 2);
-  }
-
-  &::-ms-fill-upper {
-    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
-    background: $track-color;
-    border: $track-border-width solid $track-border-color;
-    border-radius: ($track-radius * 2);
-  }
-
-  &::-ms-thumb {
-    @include thumb;
-    margin-top: $track-height / 4;
-  }
-
-  &:disabled {
-    &::-webkit-slider-thumb,
-    &::-moz-range-thumb,
-    &::-ms-thumb,
-    &::-webkit-slider-runnable-track,
-    &::-ms-fill-lower,
-    &::-ms-fill-upper {
-      cursor: not-allowed;
-    }
-  }
-}
-

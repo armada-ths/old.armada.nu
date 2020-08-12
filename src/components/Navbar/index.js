@@ -36,11 +36,11 @@ const Navbar = (props) => {
   ));
 
   return(<>
-      <div id='navbar' style={onMobile ? ((expanded && onMobile) ? { position: 'relative' } : { position: 'absolute' }) : null}>
+      <div id='navbar'>
         { onMobile && <RecruitmentBanner location={props.location}/> }
         <nav className={'menu-wrapper ' + (expanded ? 'visible' : 'hidden')}>
           <div className={'menu-hamburger'}>
-            <HamburgerButton isActive={expanded} onClick={toggleExpanded}/>
+            <HamburgerButton melon={!props.jumbotron} isActive={expanded} onClick={toggleExpanded}/>
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
             <Link onClick={toggleExpanded} activeClassName='active' to='/'>HOME</Link>
@@ -56,6 +56,7 @@ const Navbar = (props) => {
 Navbar.propTypes = {
   pages: PropTypes.array,
   location: PropTypes.string,
+  jumbotron: PropTypes.bool
 }
 
 export default Navbar

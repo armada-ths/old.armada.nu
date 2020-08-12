@@ -5,6 +5,7 @@
   overflow: hidden;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 100;
   text-align: center;
@@ -26,13 +27,14 @@
 
     .menu-hamburger {
         display:none;
+        position: relative;
     }
 
     .menu {
 
       a {
         display: inline-block;
-        border-right: 1px white solid;
+        border-right: 1px #fff solid;
         text-decoration: none;
         transition: color 0.4s;
         color: $text-color-light;
@@ -40,7 +42,7 @@
 
         &:hover {
           color: $melon !important;
-          border-right: 1px solid white !important;
+          border-right: 1px solid #fff !important;
         }
 
         &.active {
@@ -71,16 +73,20 @@
 
         .menu-wrapper {
             width: 100%;
+            padding-top: 0;
             
-            .visible {
-              max-height: 200vh;
-              margin-top: -1.5em;
+            &.visible {
+              .menu-hamburger {
+                position: absolute;
+                right: 0;
+              }
             }
 
             .menu-hamburger {
                 pointer-events: all;
                 display: block;
-                height: 4em;
+                height: 1em;
+                padding-top: 0.5em;
             }
 
             .menu {
@@ -88,15 +94,22 @@
                 display: flex;
                 flex-direction: column;
                 text-align: center;
-                line-height: 1.8;
-                font-size: 1.5em;
+                justify-content: space-evenly;
+                width: 100%;
+                
+                @media screen and (max-width: $breakpoint-mobile) {
+                  height: 100vh;
+                  height: calc(100vh - 60px);
+                }
 
                 a {
-                  color: white !important;
+                  color: #fff !important;
                   border-right: none !important;
+                  font-size: 1.2em;
+                  -webkit-tap-highlight-color: transparent;
 
                   &:hover {
-                    color: white !important;
+                    color: #fff !important;
                     text-decoration: underline !important;
                     border-right: none !important;
                   }
@@ -121,7 +134,7 @@
         }
 
         .menu-wrapper.visible {
-            background-color: #00D790;
+            background-color: $melon;
         }
     }
 

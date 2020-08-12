@@ -1,5 +1,4 @@
-@import "../../styles/variables";
-
+@import '../../styles/variables';
 
 @mixin centerer {
   position: absolute;
@@ -22,12 +21,6 @@
         &:hover {
             transform: scale(1.1);
         }
-    }
-}
-
-body.header-invisible {
-    #header {
-        display: none;
     }
 }
 
@@ -107,7 +100,7 @@ body.header-invisible {
     }
 
     p{
-      font-family: "Bebas Neue", "Helvetica", "Arial";
+      font-family: 'Bebas Neue', 'Helvetica', 'Arial';
       font-weight: 300;
       font-size: calc(14px + 0.8vw);
       margin-top: 8px;

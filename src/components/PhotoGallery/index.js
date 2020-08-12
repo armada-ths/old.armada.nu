@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import './index.scss';
 import Zoom from 'react-reveal/Zoom';
 
@@ -12,14 +12,14 @@ class Photo extends React.Component {
         const fileURL = this.props.fileURL;
         const pageURL = this.props.pageURL;
         const bgStyle = {
-            backgroundImage: `url("${fileURL}")`,
+            backgroundImage: `url('${fileURL}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
         };
         return (<Zoom>
-                <div className="photo">
-                    <div className="square" style={bgStyle}>
-                        <a className="photo-info" target="_blank" rel="noreferrer" href={pageURL}>
+                <div className='photo'>
+                    <div className='square' style={bgStyle}>
+                        <a className='photo-info' target='_blank' rel='noreferrer' href={pageURL}>
                             {this.props.title}
                         </a>
                     </div>
@@ -87,8 +87,8 @@ class PhotoGallery extends React.Component {
 
         return (
             <div>
-            <h1 id="gallerytitle">Armada in pictures</h1>
-            <div className="photo-gallery">
+            <h1 className='gallery-title'>Armada in pictures</h1>
+            <div className='photo-gallery'>
                 { !this.state.loaded ? 
                     <span></span> :
                     photos.map(photo => {

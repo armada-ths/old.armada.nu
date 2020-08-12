@@ -13,6 +13,7 @@
         display: block;
         border: 0;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
 
         &:hover {
             span {

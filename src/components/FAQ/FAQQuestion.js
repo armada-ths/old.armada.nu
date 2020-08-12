@@ -13,7 +13,7 @@ const FAQQuestion = (props) => {
     }
 
     return(<section role='presentation' className='parent' onClick={questionOnClicked}>
-        <h2 aria-expanded='false'>
+        <h2>
             {props.question}
         <img alt='' src={drawerOpen ? chevronUp : chevronDown} className='chevron' draggable='false'/>
         </h2>

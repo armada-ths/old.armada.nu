@@ -30,13 +30,33 @@
             border: none;
             border-bottom: thin solid hsl(0, 0%, 80%);
             outline: none;
-            margin: 1em 0;
+            margin-bottom: 1em;
             padding: 0.5em;
             font-size: 14pt;
         }
+        
+        .advanced-search {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            > div {
+                flex: 0 49%;
+                margin-top: 0.2em;
+
+                @media screen and (max-width: $breakpoint-mobile-flipped) {  
+                    flex: 0 0 100%;
+                }
+
+                h4 {
+                    font-weight: 400;
+                    text-align: left;
+                }
+            }
+        }
 
         .results {
-            padding: 0 0.5em;
+            padding: 1em 0;
         }
     }
 

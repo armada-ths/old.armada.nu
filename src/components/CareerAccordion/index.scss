@@ -59,6 +59,15 @@
         .locations {
             color: $diversity;
             font-size: 85%;
+
+            .location {
+                transition: border-bottom 200ms ease;
+                border-bottom: thin solid transparent;
+
+                &:hover, &.selected {
+                    border-bottom: thin solid $diversity;
+                }
+            }
         }
 
         .external {

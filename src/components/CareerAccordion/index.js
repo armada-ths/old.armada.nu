@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './index.scss'
 import PropTypes from 'prop-types'
 import Arrow from '../../../static/assets/pil_melon.png'
@@ -50,10 +50,35 @@ const CareerAccordion = props => {
                         </h4>
                         <h5>
                             {props.company}
-                            {props.location ? ',' : ''}
                             <span className='locations'>
                                 {' '}
-                                {props.locations.join(', ')}
+                                {props.locations.map(location => (
+                                    <Fragment key={location}>
+                                        <span
+                                            className={`location ${
+                                                props.activeTags['locations']
+                                                    ? props.activeTags[
+                                                          'locations'
+                                                      ].filter(
+                                                          e =>
+                                                              e.label ===
+                                                              location
+                                                      ).length > 0
+                                                        ? 'selected'
+                                                        : ''
+                                                    : ''
+                                            }`}
+                                            onClick={() =>
+                                                props.setChip({
+                                                    category: 'locations',
+                                                    label: location,
+                                                })
+                                            }
+                                        >
+                                            {location}
+                                        </span>{' '}
+                                    </Fragment>
+                                ))}
                             </span>
                         </h5>
                     </div>
@@ -93,18 +118,22 @@ const CareerAccordion = props => {
                         <div className='chips'>
                             {props.tags.map(tag => (
                                 <div
-                                    key={tag}
+                                    key={`${tag.category}_${tag.label}`}
                                     role='presentation'
                                     className={`chip ${
-                                        props.activeTags.filter(
-                                            e => e.value === tag
-                                        ).length > 0
-                                            ? 'selected'
+                                        props.activeTags[tag.category]
+                                            ? props.activeTags[
+                                                  tag.category
+                                              ].filter(
+                                                  e => e.label === tag.label
+                                              ).length > 0
+                                                ? 'selected'
+                                                : ''
                                             : ''
                                     }`}
                                     onClick={() => props.setChip(tag)}
                                 >
-                                    {tag}
+                                    {tag.label}
                                 </div>
                             ))}
                         </div>
@@ -132,7 +161,7 @@ CareerAccordion.propTypes = {
     lookingFor: PropTypes.string,
     aboutCompany: PropTypes.string,
     tags: PropTypes.array,
-    activeTags: PropTypes.array,
+    activeTags: PropTypes.objectOf(PropTypes.array),
     accordions: PropTypes.object,
     setAccordion: PropTypes.func,
     setChip: PropTypes.func,

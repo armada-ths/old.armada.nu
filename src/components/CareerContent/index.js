@@ -8,6 +8,7 @@ import CareerAccordion from '../CareerAccordion'
 import useDebounce from '../../hooks/useDebounce'
 
 const CareerContent = ({ children }) => {
+    const [initialLoad, setInitialLoad] = useState(true)
     const [isLoading, setIsLoading] = useState(true)
     const [noAvailable, setNoAvailable] = useState(false)
 
@@ -165,12 +166,14 @@ const CareerContent = ({ children }) => {
                             .sort()
                     )
                 }
-                setIsLoading(false)
             })
             .catch(() => {
                 setNoAvailable(true)
-                setIsLoading(false)
-            })
+			})
+			.finally(() => {
+				setIsLoading(false)
+				setInitialLoad(false)
+			})
     }, [])
 
     useEffect(() => {
@@ -334,7 +337,7 @@ const CareerContent = ({ children }) => {
                                 }
                                 className='basic-multi-select'
                                 classNamePrefix='select'
-                                isLoading={isLoading}
+                                isLoading={initialLoad}
                             />
                         </div>
                     ))}

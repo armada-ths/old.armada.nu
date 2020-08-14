@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './page.scss'
 
 const Page = (props) => {
   return (<div className='page-container'>

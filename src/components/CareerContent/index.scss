@@ -17,7 +17,7 @@
     }
 
     .job-query {
-        padding: 1em 1em 0 1em;
+        padding: 0 1em;
         display: flex;
         flex-direction: column;
         scroll-margin-top: 3rem;
@@ -30,9 +30,9 @@
             border: none;
             border-bottom: thin solid hsl(0, 0%, 80%);
             outline: none;
-            margin-bottom: 1em;
             padding: 0.5em;
             font-size: 14pt;
+            margin-top: 1em;
         }
         
         .advanced-search {
@@ -64,10 +64,15 @@
         padding: 1em 1em 0 1em;
     }
 
+    .career-loading {
+        padding: 2em 0;
+    }
+
     .career-not-found {
 		display: flex;
 		flex: 1;
-		justify-content: center;
+        justify-content: center;
+        padding: 0 1em;
     }
 
     .chip {

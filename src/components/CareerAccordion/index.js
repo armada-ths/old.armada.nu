@@ -55,6 +55,7 @@ const CareerAccordion = props => {
                                 {props.locations.map(location => (
                                     <Fragment key={location}>
                                         <span
+                                            role='presentation'
                                             className={`location ${
                                                 props.activeTags['locations']
                                                     ? props.activeTags[

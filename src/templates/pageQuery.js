@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
-import './page.scss'
 
 import Homepage from '../layouts/Homepage'
 import RecruitmentPage from '../layouts/RecruitmentPage'

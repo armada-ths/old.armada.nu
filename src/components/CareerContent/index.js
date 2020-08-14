@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
 import './index.scss'
 import axios from 'axios'
 import Select from 'react-select'
 import Loading from '../Loading'
 import CareerAccordion from '../CareerAccordion'
+import useDebounce from '../../hooks/useDebounce'
 
-const CareerContent = () => {
+const CareerContent = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true)
     const [noAvailable, setNoAvailable] = useState(false)
 
@@ -23,8 +25,9 @@ const CareerContent = () => {
     })
     const [jobs, setJobs] = useState([])
     const [jobsResult, setJobsResult] = useState([])
-    const [searchQuery, setSearchQuery] = useState('')
     const [accordions, setAccordions] = useState({})
+    const [searchQuery, setSearchQuery] = useState('')
+    const debouncedSearchQuery = useDebounce(searchQuery, 300)
 
     const filters = [
         {
@@ -33,8 +36,9 @@ const CareerContent = () => {
             set: setSchoolYears,
             placeholder: 'Select school years...',
             category: 'schoolYears',
-            attrName: 'schoolYears',
+            attr: 'schoolYears',
             tag: true,
+            isArray: true,
         },
         {
             label: 'Employment type',
@@ -42,8 +46,9 @@ const CareerContent = () => {
             set: setEmployments,
             placeholder: 'Select employment type...',
             category: 'employments',
-            attrName: 'employments',
+            attr: 'employments',
             tag: true,
+            isArray: true,
         },
         {
             label: 'Competences',
@@ -51,8 +56,9 @@ const CareerContent = () => {
             set: setCompetences,
             placeholder: 'Select competences...',
             category: 'competences',
-            attrName: 'competences',
+            attr: 'competences',
             tag: true,
+            isArray: true,
         },
         {
             label: 'Locations',
@@ -60,8 +66,9 @@ const CareerContent = () => {
             set: setLocations,
             placeholder: 'Select locations...',
             category: 'locations',
-            attrName: 'locations',
+            attr: 'locations',
             tag: false,
+            isArray: true,
         },
         {
             label: 'Companies',
@@ -69,13 +76,27 @@ const CareerContent = () => {
             set: setCompanies,
             placeholder: 'Select companies...',
             category: 'companies',
-            attrName: 'company',
+            attr: 'company',
             tag: false,
+            isArray: false,
         },
     ]
 
+    const searchFields = [
+        ...filters.map(filter => filter.attr),
+        'jobTitle',
+        'aboutJob',
+    ]
+
+    const latestFilters = useRef(filters)
+    const latestSearchFields = useRef(searchFields)
+
+    useEffect(() => {
+        latestFilters.current = filters
+        latestSearchFields.current = searchFields
+    })
+
     //TODO Replace with the career endpoint when it's done
-    //Don't forget to remove the splice
     useEffect(() => {
         const sampleSchoolYears = [
             ['Year 1', 'Year 2'],
@@ -91,7 +112,7 @@ const CareerContent = () => {
             .get(`https://ais.armada.nu/api/exhibitors/?year=2019`)
             .then(res => {
                 let data = res.data
-                let jobList = data.splice(50, 30).map(job => {
+                let jobList = data.map(job => {
                     return {
                         company: job.name,
                         jobTitle:
@@ -132,10 +153,10 @@ const CareerContent = () => {
                 setJobs(jobList)
                 setJobsResult(jobList)
                 setNoAvailable(jobList.length === 0)
-                for (const filter of filters) {
+                for (const filter of latestFilters.current) {
                     filter.set(
                         jobList
-                            .map(job => job[filter.attrName])
+                            .map(job => job[filter.attr])
                             .flat()
                             .filter(
                                 (elem, index, self) =>
@@ -146,90 +167,111 @@ const CareerContent = () => {
                 }
                 setIsLoading(false)
             })
-            .catch(() => setIsLoading(false))
+            .catch(() => {
+                setNoAvailable(true)
+                setIsLoading(false)
+            })
     }, [])
+
+    useEffect(() => {
+        setIsLoading(true)
+    }, [searchQuery])
 
     useEffect(() => {
         const updateJobResults = () => {
             let copy = jobs.map(el => Object.assign({}, el))
 
-            const filterOnAttr = (job, category, attrName) => {
+            const filterOnAttr = (job, category, attr) => {
                 return activeTags[category].length > 0
                     ? activeTags[category]
                           .map(el => el.label)
-                          .includes(job[attrName])
+                          .includes(job[attr])
                     : true
             }
 
-            const filterOnAttrArray = (job, attrName) => {
-                return activeTags[attrName].length > 0
-                    ? job[attrName].filter(
+            const filterOnAttrArray = (job, attr) => {
+                return activeTags[attr].length > 0
+                    ? job[attr].filter(
                           function (e) {
                               return this.indexOf(e) >= 0
                           },
-                          activeTags[attrName].map(tag => tag.label)
+                          activeTags[attr].map(tag => tag.label)
                       ).length > 0
                     : true
             }
 
-            const searchAttr = (job, attrName) => {
+            const searchAttr = (job, attr) => {
                 const prepareSearchStr = (str, clean) => {
-                    const lowercase = str.toLowerCase()
+                    const lowercase = str.trim().toLowerCase()
                     return clean
                         ? lowercase.replace(/[^a-z0-9]/gi, '')
                         : lowercase
                 }
-                return Array.isArray(job[attrName])
-                    ? job[attrName].filter(function (el) {
+
+                return Array.isArray(job[attr])
+                    ? job[attr].filter(function (el) {
                           return (
-                              prepareSearchStr(el).includes(searchQuery) ||
+                              prepareSearchStr(el).includes(
+                                  debouncedSearchQuery
+                              ) ||
                               prepareSearchStr(el, true).includes(
-                                  prepareSearchStr(searchQuery, true)
+                                  prepareSearchStr(debouncedSearchQuery, true)
                               )
                           )
                       }).length > 0
-                    : prepareSearchStr(job[attrName]).includes(searchQuery) ||
-                          prepareSearchStr(job[attrName], true).includes(
-                              searchQuery
+                    : prepareSearchStr(job[attr]).includes(
+                          debouncedSearchQuery
+                      ) ||
+                          prepareSearchStr(job[attr], true).includes(
+                              debouncedSearchQuery
                           )
             }
-            copy = activeTags
-                ? Object.values(activeTags).flat().length > 0
-                    ? copy.filter(
-                          job =>
-                              filterOnAttrArray(job, 'competences') &&
-                              filterOnAttrArray(job, 'employments') &&
-                              filterOnAttrArray(job, 'schoolYears') &&
-                              filterOnAttrArray(job, 'locations') &&
-                              filterOnAttr(job, 'companies', 'company')
-                      )
-                    : copy
-                : copy
 
-            copy =
-                searchQuery.length > 1
-                    ? copy.filter(
-                          job =>
-                              searchAttr(job, 'competences') ||
-                              searchAttr(job, 'employments') ||
-                              searchAttr(job, 'schoolYears') ||
-                              searchAttr(job, 'locations') ||
-                              searchAttr(job, 'company') ||
-                              searchAttr(job, 'jobTitle') ||
-                              searchAttr(job, 'aboutJob') ||
-                              searchAttr(job, 'lookingFor') ||
-                              searchAttr(job, 'aboutCompany')
-                      )
-                    : copy
+            if (Object.values(activeTags).flat().length > 0) {
+                copy = copy.filter(job =>
+                    latestFilters.current
+                        .map(el =>
+                            el.isArray
+                                ? filterOnAttrArray(job, el.attr)
+                                : filterOnAttr(job, el.category, el.attr)
+                        )
+                        .every(el => el)
+                )
+            }
+
+            if (debouncedSearchQuery.length > 1) {
+                copy = copy.filter(job =>
+                    latestSearchFields.current
+                        .map(field => searchAttr(job, field))
+                        .some(el => el)
+                )
+            }
 
             setJobsResult(copy)
             setAccordions({})
         }
         updateJobResults()
-    }, [jobs, searchQuery, activeTags])
+        setIsLoading(jobs.length === 0)
+    }, [jobs, debouncedSearchQuery, activeTags])
+
+    const getJobTags = job => {
+        return [].concat.apply(
+            [],
+            filters
+                .filter(filter => filter.tag)
+                .map(filter =>
+                    job[filter.category].map(el => {
+                        return {
+                            label: el,
+                            category: filter.category,
+                        }
+                    })
+                )
+        )
+    }
 
     const handleSearch = query => {
-        setSearchQuery(query.toLowerCase())
+        setSearchQuery(query.trim().toLowerCase())
     }
 
     const handleAccordionClick = accordion => {
@@ -242,16 +284,16 @@ const CareerContent = () => {
             .scrollIntoView({ behavior: 'smooth' })
     }
 
-    const handleChipClick = chip => {
-        const chipOption = { label: chip.label, value: chip.label }
-        const activeCategoryTags = activeTags[chip.category]
+    const handleChipClick = ({ label, category }) => {
+        const chipOption = { label: label, value: label }
+        const activeCategoryTags = activeTags[category]
         const selected =
-            activeCategoryTags.filter(e => e.value === chip.label).length > 0
+            activeCategoryTags.filter(e => e.value === label).length > 0
         setActiveTags({
             ...activeTags,
             ...{
-                [chip.category]: selected
-                    ? activeCategoryTags.filter(e => e.value !== chip.label)
+                [category]: selected
+                    ? activeCategoryTags.filter(e => e.value !== label)
                     : activeCategoryTags
                     ? [...activeCategoryTags, chipOption]
                     : [chipOption],
@@ -269,26 +311,10 @@ const CareerContent = () => {
         <div className='career-content' id='career-content'>
             <div className='career-header'>
                 <h1>Career</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Pellentesque eu eros in lacus mollis mattis. In augue
-                    libero, maximus sit amet tempus pretium, gravida sed magna.
-                    Vestibulum quis massa rhoncus turpis pretium commodo.
-                    Integer elit tellus, egestas id ultrices in, sollicitudin
-                    nec urna. Aenean in arcu gravida, tristique orci sit amet,
-                    scelerisque ex. Aliquam fringilla pellentesque augue. Aenean
-                    eleifend lacus non risus efficitur maximus. Sed elementum
-                    sapien odio, a porttitor metus maximus sagittis.
-                </p>
+                {children}
             </div>
 
             <div className='job-query' id='job-query'>
-                <input
-                    aria-label='search'
-                    placeholder='Search jobs...'
-                    onChange={e => handleSearch(e.target.value)}
-                    className='job-search'
-                />
                 <div className='advanced-search'>
                     {filters.map(filter => (
                         <div key={filter.label}>
@@ -313,7 +339,13 @@ const CareerContent = () => {
                         </div>
                     ))}
                 </div>
-                {jobsResult.length > 0 ? (
+                <input
+                    aria-label='search'
+                    placeholder='Search jobs...'
+                    onChange={e => handleSearch(e.target.value)}
+                    className='job-search'
+                />
+                {jobsResult.length && !isLoading > 0 ? (
                     <div className='results'>
                         <b>{jobsResult.length}</b>{' '}
                         {`result${jobsResult.length === 1 ? '' : 's'}`}
@@ -324,7 +356,9 @@ const CareerContent = () => {
             </div>
 
             {isLoading ? (
-                <Loading />
+                <div className='career-loading'>
+                    <Loading />
+                </div>
             ) : jobsResult.length > 0 ? (
                 jobsResult.map((job, i) => {
                     return (
@@ -339,19 +373,7 @@ const CareerContent = () => {
                             aboutJob={job.aboutJob}
                             lookingFor={job.lookingFor}
                             aboutCompany={job.aboutCompany}
-                            tags={[].concat.apply(
-                                [],
-                                filters
-                                    .filter(filter => filter.tag)
-                                    .map(filter =>
-                                        job[filter.category].map(el => {
-                                            return {
-                                                label: el,
-                                                category: filter.category,
-                                            }
-                                        })
-                                    )
-                            )}
+                            tags={getJobTags(job)}
                             activeTags={activeTags}
                             accordions={accordions}
                             setAccordion={accordion =>
@@ -372,6 +394,10 @@ const CareerContent = () => {
             )}
         </div>
     )
+}
+
+CareerContent.propTypes = {
+    children: PropTypes.element,
 }
 
 export default CareerContent

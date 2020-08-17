@@ -1,6 +1,6 @@
 ---
 slug: /partners
-title: Become a Partner
+title: Partners
 layout: Partners
 description: Page
 menuPage: true

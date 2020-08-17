@@ -4,6 +4,7 @@ import './index.scss'
 
 import axios from 'axios'
 import Loading from '../Loading'
+import { Link } from 'gatsby'
 
 const PartnersGallery = ({ mainOnly }) => {
     const [isLoading, setIsLoading] = useState(true)
@@ -72,6 +73,11 @@ const PartnersGallery = ({ mainOnly }) => {
             {renderPartnersTable(
                 partners.filter(partner => partner.is_main_partner)
             )}
+            { mainOnly && <p>
+                Want to see your company here? Click{' '}
+                <Link to='/partners'>here</Link> for information about becoming
+                a partner!
+            </p> }
             {!mainOnly && (
                 <>
                     <hr />
@@ -88,7 +94,7 @@ const PartnersGallery = ({ mainOnly }) => {
 }
 
 PartnersGallery.propTypes = {
-    mainOnly: PropTypes.bool
+    mainOnly: PropTypes.bool,
 }
 
 export default PartnersGallery

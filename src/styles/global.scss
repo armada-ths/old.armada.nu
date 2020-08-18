@@ -1,10 +1,10 @@
-@import "variables";
-@import "fonts";
+@import 'variables';
+@import 'fonts';
 
-html{
+html {
     position: relative;
-    width:100%;
-    padding:0px;
+    width: 100%;
+    padding: 0px;
     height: 100%;
     min-height: 100%;
     overflow-x: hidden;
@@ -13,71 +13,69 @@ html{
 }
 
 li {
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .helmet {
-	padding-top: 1.5em;
+    padding-top: 1.5em;
 }
 .bold {
-	font-weight: bold;
+    font-weight: bold;
 }
 
-.dark-theme{
+.dark-theme {
     background-color: $licorice;
     .title {
-      color: $melon;
+        color: $melon;
     }
 
     .sub-heading {
-      color: $melon;
+        color: $melon;
     }
 
     .light {
-      color: $text-color-light;
+        color: $text-color-light;
     }
 
     p {
-      color: $text-color-light;
+        color: $text-color-light;
     }
-
 }
 
 body {
-  position: relative;
-  color: $licorice;
-  font-family: $font-regular;
-  font-size: $body-font-size;
-  overflow-x: hidden;
-  margin: 0px;
-  position: relative;
-  height: auto;
+    position: relative;
+    color: $licorice;
+    font-family: $font-regular;
+    font-size: $body-font-size;
+    overflow-x: hidden;
+    margin: 0px;
+    position: relative;
+    height: auto;
 
-  
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #diversity-color {
-  color: $diversity;
+    color: $diversity;
 }
 
 #diversity-day {
-  color: $diversity;
+    color: $diversity;
 }
 
 #diversity-room {
-  color: $diversity;
+    color: $diversity;
 }
 
 #diversity {
-  color: $diversity;
+    color: $diversity;
 }
 
 #sustainability-color {
-  color: $melon;
+    color: $melon;
 }
 
 .title {
@@ -95,104 +93,111 @@ body {
 }
 
 p {
-  color: $licorice;
-  font-family: $body-font-family;
-  line-height: $body-font-line-multiplier;
-  font-weight: 300;
-  text-align: justify;
+    color: $licorice;
+    font-family: $body-font-family;
+    line-height: $body-font-line-multiplier;
+    font-weight: 300;
+    text-align: justify;
 }
 
 a {
-  color: $primary-color;
-  text-decoration: none;
+    color: $primary-color;
+    text-decoration: none;
 }
 
 a:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-
-
-h1, h2, h3, h4, h5, h6 {
-        text-align: center;
-        margin: 0;
-        font-family: $font-title;
-        color: $melon;
-        letter-spacing: 1.1px;
-        text-transform: uppercase;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+    margin: 0;
+    font-family: $font-title;
+    color: $melon;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
 }
 
 time {
-  line-height: 1.25em;
-  margin: 5em 0em;
+    line-height: 1.25em;
+    margin: 5em 0em;
 }
 
 h1 {
-  font-size: 2.8em;
-  line-height: 1.25em;
+    font-size: 2.8em;
+    line-height: 1.25em;
 }
 
 h2 {
-  font-size: 2.0em;
-  line-height: 1.25em;
+    font-size: 2em;
+    line-height: 1.25em;
 }
 
 h3 {
-  font-size: 1.75em;
-  line-height: 1.25em;
+    font-size: 1.75em;
+    line-height: 1.25em;
 }
 
-
 .justified {
-  text-align: center;
+    text-align: center;
 }
 
 @supports (text-align-last: center) {
-
-.justified {
-  text-align: justify;
-  text-justify: inter-word;
-  -moz-text-align-last: center;
-  text-align-last: center;
-}
-
+    .justified {
+        text-align: justify;
+        text-justify: inter-word;
+        -moz-text-align-last: center;
+        text-align-last: center;
+    }
 }
 
 button {
-  -webkit-appearance: none;
-  font-family: $font-regular;
-  font-size: 17px;
-  height: 50px;
-  border-radius: 25px;
-  padding-left: 25px;
-  padding-right: 25px;
-  min-width: 120px;
-  cursor: pointer;
-  font-weight: bold;
-  border: none;
-  background-color: $melon;
-  color: white;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-  outline:none;
+    -webkit-appearance: none;
+    font-family: $font-regular;
+    font-size: 17px;
+    height: 50px;
+    border-radius: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    min-width: 120px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    background-color: $melon;
+    color: white;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    outline: none;
 
-  a {
-  color: $text-color-light;
-  font-family: $font-regular;
-  }
-
+    a {
+        color: $text-color-light;
+        font-family: $font-regular;
+    }
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 li {
-  font-family: $font-regular !important;
-  font-weight: 300;
+    font-family: $font-regular !important;
+    font-weight: 300;
 }
 
-
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
 
 /*
 
@@ -218,61 +223,58 @@ li {
 */
 
 @media screen and (max-width: $breakpoint-mobile) {
-  //  SET BODY FOINT-SIZE
-  body {
-    font-size: 14pt;
-  }
-  h2{
-    font-size: 1.8em;
-  }
-  h1{
-    font-size: 2.0em;
-  }
-  .armada-news{
-      h1{
-        font-size: 3.0em;
-      }
-  }
-
+    //  SET BODY FOINT-SIZE
+    body {
+        font-size: 14pt;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .armada-news {
+        h1 {
+            font-size: 3em;
+        }
+    }
 }
 
-
 @media screen and (max-width: 350px) {
-  // SET BODY FONT-SEIZE
+    // SET BODY FONT-SEIZE
 
-  h2{
-    font-size: 1.4em;
-  }
-  h1{
-    font-size: 1.8em;
-  }
-  .armada-news{
-      h1{
-        font-size: 2.0em;
-      }
-  }
-
+    h2 {
+        font-size: 1.4em;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .armada-news {
+        h1 {
+            font-size: 2em;
+        }
+    }
 }
 
 img {
-  border: none;
+    border: none;
 }
 
 #___gatsby {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-around;
 }
 
 #gatsby-focus-wrapper {
-  outline: none;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-around;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-around;
 }
 
-.layout { 
-  margin: auto;
+.layout {
+    margin: auto;
 }

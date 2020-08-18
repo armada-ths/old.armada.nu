@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+.partners-gallery {
+    text-align: center;
+    padding: 1em 0;
+
+    h1,
+    h2 {
+        padding-bottom: 1rem;
+    }
+
+    p {
+        text-align: center;
+        padding: 0 1em;
+
+        span {
+            display: inline-block;
+        }
+    }
+
+    .partners-table {
+        width: 100%;
+        text-align: center;
+
+        img {
+            max-width: 33%;
+            margin: 20px;
+            max-height: 60px;
+
+            &.main-partner {
+                max-height: 80px;
+            }
+        }
+    }
+}

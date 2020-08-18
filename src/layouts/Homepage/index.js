@@ -1,5 +1,5 @@
 import React from 'react'
-import Partners from '../../components/Partners';
+import PartnersGallery from '../../components/PartnersGallery';
 import './index.scss'
 import Page from '../../templates/page';
 import Loading from '../../components/Loading';
@@ -15,7 +15,7 @@ const Homepage = (props) => {
       <div className='homepage'>
         <Newsfeed/>
           <PhotoGallery photoCount={6}/>
-          <Partners/>
+          <PartnersGallery mainOnly/>
       </div>
     </Page>
   )

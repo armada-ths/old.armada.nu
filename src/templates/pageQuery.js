@@ -21,6 +21,7 @@ import PlainPage from '../layouts/PlainPage'
 import Matching from '../layouts/Matching'
 import Events from '../layouts/Events'
 import Coffee from '../layouts/Coffee'
+import Partners from '../layouts/Partners'
 
 const components = {
   RecruitmentPage: RecruitmentPage,
@@ -38,7 +39,8 @@ const components = {
   PlainPage: PlainPage,
   Matching: Matching,
   Events: Events,
-  Coffee: Coffee
+  Coffee: Coffee,
+  Partners: Partners
 };
 
 export default function Template({

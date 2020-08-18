@@ -11,38 +11,17 @@ const PartnersGallery = ({ mainOnly }) => {
     const [partners, setPartners] = useState([])
 
     useEffect(() => {
-        /*
         axios
             .get('https://ais.armada.nu/api/partners')
             .then(res => {
                 setPartners(res.data)
             })
             .finally(() => setIsLoading(false))
-        */
-
-        //TODO Remove test code and uncomment the block above
-        axios
-            .get('https://ais.armada.nu/api/exhibitors?year=2019')
-            .then(res => {
-                setPartners(
-                    res.data.splice(37, 25).map((partner, i) => {
-                        return {
-                            id: partner.id,
-                            name: partner.name,
-                            logo_url:
-                                'https://ais.armada.nu' +
-                                    partner.logo_squared ??
-                                partner.logo_freesize,
-                            link_url: partner.company_website,
-                            is_main_partner: i < 5,
-                        }
-                    })
-                )
-            })
-            .finally(() => setIsLoading(false))
     }, [])
 
-    const renderPartnersTable = p => {
+    const isMain = partner => partner.is_main_partner
+
+    const renderPartners = p => {
         return (
             <div className='partners-table'>
                 {p.map((partner, i) => (
@@ -68,26 +47,30 @@ const PartnersGallery = ({ mainOnly }) => {
     return isLoading ? (
         <Loading />
     ) : partners.length > 0 ? (
-        <div className='partners-gallery'>
-            <h1>Main partners</h1>
-            {renderPartnersTable(
-                partners.filter(partner => partner.is_main_partner)
-            )}
-            { mainOnly && <p>
-                Want to see your company here? Click{' '}
-                <Link to='/partners'>here</Link> for information about becoming
-                a partner!
-            </p> }
-            {!mainOnly && (
-                <>
-                    <hr />
-                    <h2>Partners</h2>
-                    {renderPartnersTable(
-                        partners.filter(partner => !partner.is_main_partner)
-                    )}
-                </>
-            )}
-        </div>
+        (mainOnly && partners.filter(isMain).length > 0) || !mainOnly ? (
+            <div className='partners-gallery'>
+                <h1>Partners</h1>
+                {renderPartners(partners.filter(isMain))}
+                {mainOnly ? (
+                    <p>
+                        <span>Want to see your company here? </span>{' '}
+                        <span>
+                            Click <Link to='/partners'>here</Link> for
+                            information about becoming a partner!
+                        </span>
+                    </p>
+                ) : (
+                    <>
+                        <hr />
+                        {renderPartners(
+                            partners.filter(partner => !isMain(partner))
+                        )}
+                    </>
+                )}
+            </div>
+        ) : (
+            <></>
+        )
     ) : (
         <></>
     )

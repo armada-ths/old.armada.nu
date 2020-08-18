@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .partners-gallery {
     text-align: center;
     padding: 1em 0;
@@ -9,6 +11,11 @@
 
     p {
         text-align: center;
+        padding: 0 1em;
+
+        span {
+            display: inline-block;
+        }
     }
 
     .partners-table {

@@ -22,7 +22,11 @@ noJumbotron: true
 
 ## **Diversity Room**
 
-One way THS Armada is accentuating the importance of diversity is through the Diversity Room, a special area at the career fair. As the fair is going digital this year, the diversity room will feature how Armada works with Diversity and also present information regarding the most progressive companies when it comes to inclusion and diversity in the workplace. These companies have been carefully selected with the Diversity Team, using a set of meaningful criteria developed by the team, called the Armada Diversity Index (ADI).
+One way THS Armada is accentuating the importance of diversity is through the Diversity Room, a special area at the career fair. As the fair is going digital this year, the diversity room will feature how Armada works with Diversity and also present information regarding the most progressive companies when it comes to inclusion and diversity in the workplace. These companies have been carefully selected with the Diversity Team, using a set of meaningful criteria developed by the team, called the Armada Diversity Index (ADI), for more information click the button below.
+
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/Focus_rooms_selection.pdf">
+   <button type="submit">Download ADI</button>
+</form>
 
 Visiting Diversity Room is a must if you’re interested in how some of the industry leaders work with diversity, what their culture is and which changes are happening right now in the working environment in regard to workers welfare. Stay tuned for upcoming information on some of the fun things the team is planning for the room, as well as a complete list of the exhibitors to be featured in the Diversity Room for THS Armada 2020.
 
@@ -33,8 +37,6 @@ Visiting Diversity Room is a must if you’re interested in how some of the indu
 </div>
 
 Diversity Day is another way to keep the discussion about equality issues going. The day takes place during the Event Week and consists of several events, where companies and students get a platform to talk about, discuss and engage in diversity practices. Stay tuned for the exact date of Diversity Day 2020!
-
-
 
 ## International Recruitment Indicator
 

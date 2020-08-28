@@ -46,8 +46,8 @@ const components = {
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter } = markdownRemark
+  const { mdx } = data // data.markdownRemark holds your post data
+  const { frontmatter } = mdx
   const { layout } = frontmatter
   return (<>
     <Helmet
@@ -59,15 +59,15 @@ export default function Template({
       ]}
     >
     </Helmet><Layout jumbotron={!frontmatter.noJumbotron} location={frontmatter.slug} header={frontmatter.header}>
-    {components[layout] ? React.createElement(components[layout], markdownRemark) : null}
+    {components[layout] ? React.createElement(components[layout], mdx) : null}
   </Layout>
   </>)
 }
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         date
         slug

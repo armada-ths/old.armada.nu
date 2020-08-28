@@ -17,7 +17,7 @@ const Layout = ({ header, location, children, jumbotron }) => (
   <StaticQuery
     query={graphql`
       query MyQuery {
-        allMarkdownRemark {
+        allMdx {
           edges {
             node {
               frontmatter {
@@ -37,7 +37,7 @@ const Layout = ({ header, location, children, jumbotron }) => (
     `}
     render={data => (<>
       <div className='layout'>
-        <Navbar jumbotron={jumbotron} location={location} pages={data.allMarkdownRemark.edges.map(edge => edge.node.frontmatter)} />
+        <Navbar jumbotron={jumbotron} location={location} pages={data.allMdx.edges.map(edge => edge.node.frontmatter)} />
         {jumbotron ? <Jumbotron location={location} image={header} /> : <></> }
         <div>
           {children}

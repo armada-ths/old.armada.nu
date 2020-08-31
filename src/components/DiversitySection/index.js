@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import './index.scss';
 
 import Fade from 'react-reveal/Fade'
@@ -11,6 +12,10 @@ const DiversitySection = props => {
             </Fade>
         </div>
     )
+}
+
+DiversitySection.propTypes = {
+    right: PropTypes.bool
 }
 
 export default DiversitySection

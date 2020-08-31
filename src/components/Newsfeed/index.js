@@ -13,7 +13,7 @@ const Newsfeed = ({ current }) => (
         edges {
           node {
             id
-            rawBody
+            body
             frontmatter {
               title
               slug

@@ -26,9 +26,9 @@ const Sustainability = () => {
         </form>
       </div>
       <div>
-        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background2.jpeg' height='200em' width='260em'/>
-        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background4.jpeg' height='200em' width='260em'/>
-        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background7.jpeg' height='200em' width='260em'/>
+        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background2-min.jpeg' height='200em' width='260em'/>
+        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background4-min.jpeg' height='200em' width='260em'/>
+        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background7-min.jpeg' height='200em' width='260em'/>
       </div>
       <div className='newSection'>
         <h2>Green Room</h2>
@@ -45,7 +45,17 @@ const Sustainability = () => {
            <button type='submit'>See Exhibitors in the Green Room</button>
         </form>
       </div>
-      <img alt='' className='background_Images' src='/assets/sustainability/sustainability_background1.jpeg'/>
+      <div className='newSection'>
+        <h2>Armada Sustainability Index</h2>
+        <p className='text'>
+          Want to check out how we decide which exhibitors gets a spot in Green Room? Click the button below.
+        </p>
+        <img alt='' className='background_Images middle' src='/assets/ASI_criteria.png' height='200em' width='260em'/>
+        <form id='submitForm' method='get' action='/assets/ASI_criteria.png'>
+           <button type='submit'>Our Selection Strategy</button>
+        </form>
+      </div>
+      <img alt='' className='background_Images' src='/assets/sustainability/sustainability_background1-min.jpeg'/>
       <div className='newSection'>
         <h2>Climate Compensation</h2>
         <p className='text'>
@@ -61,9 +71,9 @@ const Sustainability = () => {
         </form>
       </div>
       <div>
-        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background8.jpeg' height='200em' width='260em'/>
-        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background9.jpeg' height='200em' width='260em'/>
-        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background10.jpeg' height='200em' width='260em'/>
+        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background8-min.jpeg' height='200em' width='260em'/>
+        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background9-min.jpeg' height='200em' width='260em'/>
+        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background10-min.jpeg' height='200em' width='260em'/>
       </div>
       <div className='newSection'>
         <h2>Sustainability Certification</h2>
@@ -84,7 +94,7 @@ const Sustainability = () => {
       <div className='newSection'>
       <SustainabilityInterviews/>
       </div>
-      <img alt='' className='background_Images' src='/assets/sustainability/sustainability_background3.jpeg'/>
+      <img alt='' className='background_Images' src='/assets/sustainability/sustainability_background3-min.jpeg'/>
       <div className='newSection'>
         <h2>Help us become more sustainable</h2>
         <p id='text'>Do you have any ideas or suggestions to help us work more sustainable?  We would love to hear them!​</p>

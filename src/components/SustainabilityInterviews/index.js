@@ -22,12 +22,8 @@ const SustainabilityInterviews = () => {
 
     return (<div>
       <h2>What does sustainability mean to you?</h2>
-      <div>
-        <img alt='' className='card_Image' src={InterviewAnswers[0].imageUrl} height='200em' width='260em'/>
-        <img alt='' className='card_Image' src={InterviewAnswers[1].imageUrl} height='200em' width='260em'/>
-        <img alt='' className='card_Image' src={InterviewAnswers[2].imageUrl} height='200em' width='260em'/>
-      </div>
       <div className='question'>
+        <img alt='' className='card_Image' src={InterviewAnswers[0].imageUrl} height='200em' width='260em'/>
         <p className='text name'>{InterviewAnswers[0].name}</p>
         <p className='text name'>{InterviewAnswers[0].title}</p>
         <p className='text Question'>{InterviewQuetions[0].text}</p>
@@ -38,6 +34,7 @@ const SustainabilityInterviews = () => {
         <p className='text'>{InterviewAnswers[0].answer3}</p>
       </div>
       <div className='question'>
+        <img alt='' className='card_Image' src={InterviewAnswers[1].imageUrl} height='200em' width='260em'/>
         <p className='text name'>{InterviewAnswers[1].name}</p>
         <p className='text name'>{InterviewAnswers[1].title}</p>
         <p className='text Question'>{InterviewQuetions[0].text}</p>
@@ -48,6 +45,7 @@ const SustainabilityInterviews = () => {
         <p className='text'>{InterviewAnswers[1].answer3}</p>
       </div>
       <div className='question'>
+        <img alt='' className='card_Image' src={InterviewAnswers[2].imageUrl} height='200em' width='260em'/>
         <p className='text name'>{InterviewAnswers[2].name}</p>
         <p className='text name'>{InterviewAnswers[2].title}</p>
         <p className='text Question'>{InterviewQuetions[0].text}</p>
@@ -57,6 +55,7 @@ const SustainabilityInterviews = () => {
         <p className='text Question'>{InterviewQuetions[2].text}</p>
         <p className='text'>{InterviewAnswers[2].answer3}</p>
       </div>
+
     </div>
 
     );

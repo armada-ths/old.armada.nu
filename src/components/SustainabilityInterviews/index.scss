@@ -32,3 +32,27 @@
 	color: $melon;
 	font-weight: bold;
 }
+
+.text:before {
+  content:" ";
+  margin:0 -15px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  height: 100%;
+  background: #000;
+  display: block;
+}
+
+.seperator {
+  height: 100%;
+  width: 1px;
+  background: black;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  display: inline-block;
+  // float: right;
+  left: 50%;
+}

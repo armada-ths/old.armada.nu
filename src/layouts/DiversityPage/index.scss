@@ -1,15 +1,49 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
+.diversity {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    a {
+        color: $diversity;
+    }
+
+
+}
+
 .diversitypage-container {
-	padding-top: 3em;
-  max-width: $page-width;
+    padding-top: 2em;
+    max-width: $page-width;
 	margin: auto;
+
+}
+
+.diversity-day {
+    background-image: url('/assets/diversity-blur.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3em;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+        color: #fff;
+    }
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-	.diversitypage-container {
-		padding: 3em 1em 0em 1em;
-	}
+    .diversitypage-container {
+        padding: 3em 1em 0em 1em;
+    }
 
+    .diversity-day {
+        padding: 2em 1em;
+    }
 }

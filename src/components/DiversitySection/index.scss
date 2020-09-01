@@ -1,0 +1,28 @@
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
+
+.diversity-section {
+    h2,
+    p {
+        text-align: left;
+    }
+
+    &.right {
+        h2,
+        p {
+            text-align: right;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+        &.right,
+        & {
+            h2 {
+                text-align: center;
+            }
+            p {
+                text-align: initial;
+            }
+        }
+    }
+}

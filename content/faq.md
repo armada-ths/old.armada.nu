@@ -4,7 +4,7 @@ title: Student FAQ
 layout: FAQPage
 description: Page
 menuPage: true
-priority: 8
+priority: 9
 header: /assets/53image.JPG
 noJumbotron: true
 ---

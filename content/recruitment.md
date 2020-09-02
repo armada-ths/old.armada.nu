@@ -6,6 +6,7 @@ description: Recruitment 2020
 menuPage: true
 priority: 3
 header: /assets/TheFair_small.jpg
+noJumbotron: false
 ---
 # Shape THS Armada
 
@@ -17,4 +18,4 @@ The Armada Team consist of KTH students and the THS Armada project continues unt
 
 ## Information
 
-The application for hosts will open this fall! If you have any questions about THS Armada and upcoming recruitment, contact Project Manager, Daniel with your questions at a@armada.nu.
+The application for hosts will not open this fall! Next recruitment period is in January for the Project Group. If you have any questions about THS Armada and upcoming recruitment, contact Project Manager, Daniel with your questions at a@armada.nu.

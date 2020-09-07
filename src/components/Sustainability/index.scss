@@ -2,29 +2,24 @@
 @import '../../styles/_variables';
 
 .background_Images {
-  padding: 1em;
   width: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   align: center;
+  padding-top: 5px;
 }
 .background_Images:hover {
   transform: scale(0.98);
 }
 .background_Images.Small {
-  width: 32.5%;
+  max-width: 33%;
 	display: inline-block;
-  // position: absolute;
-  padding: 0.1em;
   padding-bottom: 1em;
 }
 .background_Images.middle {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 32.5%;
-  padding: 0.1em;
+  width: 33%;
   padding-bottom: 1em;
   align: center;
 }
@@ -56,4 +51,21 @@
 .newSection {
   padding-bottom: 1em;
   padding-top: 1em;
+}
+
+//not used
+.newSection2_inner {
+  padding-bottom: 1em;
+  padding-top: 1em;
+  opacity: 100;
+  margin-left: 22%;
+  margin-right: 22%;
+  filter: none;
+}
+.newSection2 {
+  padding-bottom: 5em;
+  padding-top: 1em;
+  background-image: url('/assets/sustainability/download.png');
+  margin-left: -35%;
+  margin-right: -35%;
 }

@@ -45,6 +45,16 @@ const Sustainability = () => {
            <button type='submit'>See Exhibitors in the Green Room</button>
         </form>
       </div>
+      <div className='newSection'>
+        <h2>Armada Sustainability Index</h2>
+        <p className='text'>
+          Want to check out how we decide which exhibitors gets a spot in Green Room? Click the button below.
+        </p>
+        <img alt='' className='background_Images middle' src='/assets/sustainability/ASI_criteria.png' height='200em' width='260em'/>
+        <form id='submitForm' method='get' action='/assets/sustainability/ASI_criteria.png'>
+           <button type='submit'>Our Selection Strategy</button>
+        </form>
+      </div>
       <img alt='' className='background_Images' src='/assets/sustainability/sustainability_background1.jpeg'/>
       <div className='newSection'>
         <h2>Climate Compensation</h2>
@@ -76,10 +86,8 @@ const Sustainability = () => {
       </div>
       <img alt='' className='background_Images' src='/assets/sustainability/sustainability_background5.jpeg'/>
       <div className='newSection'>
-        <h2>Sustainability Day</h2>
-        <p className='text'>
-          We will have a Sustainability Day during the event weeks. This year it will be combined with Innovation Night. <b>More info will be available soon!</b>
-        </p>
+          <h2>Sustainability Day</h2>
+          <p className='text'>We will have a Sustainability Day during the event weeks. This year it will be combined with Innovation Night. <b>More info will be available soon!</b></p>
       </div>
       <div className='newSection'>
       <SustainabilityInterviews/>
@@ -87,7 +95,7 @@ const Sustainability = () => {
       <img alt='' className='background_Images' src='/assets/sustainability/sustainability_background3.jpeg'/>
       <div className='newSection'>
         <h2>Help us become more sustainable</h2>
-        <p id='text'>Do you have any ideas or suggestions to help us work more sustainable?  We would love to hear them!​</p>
+        <p className='text'>Do you have any ideas or suggestions to help us work more sustainable?  We would love to hear them!</p>
         <form id='submitForm' method='get' action='/contact/'>
            <button type='submit'>Contact us</button>
         </form>

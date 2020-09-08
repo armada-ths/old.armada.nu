@@ -1,9 +1,9 @@
-@import '../../styles/global';
-@import '../../styles/_variables';
+@import "../../styles/global";
+@import "../../styles/_variables";
 
 .aboutpage-container {
 	padding-top: 3em;
-	max-width: $page-width;
+  max-width: $page-width;
 	margin: auto;
 }
 

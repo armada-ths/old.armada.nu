@@ -2,7 +2,7 @@ import React from "react"
 import Timeline from "../../components/Timeline"
 import PropTypes from "prop-types"
 
-import Page from "../Page"
+import Page from "../../templates/Page"
 // import Partners from "../../components/Partners"
 
 import "./index.scss"

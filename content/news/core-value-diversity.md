@@ -6,6 +6,7 @@ category: 'GENERAL'
 date: 2017-11-06T15:37:01.231Z
 cover_wide: /assets/new_div2.jpg
 description: In a diverse work environment, it is essential to respect and appreciate differences in ethnicity, gender, age, physical abilities, sexual orientation, education and religion amongst individuals of the organisation.
+archived: true
 ---
 **Our perspective on diversity**
 

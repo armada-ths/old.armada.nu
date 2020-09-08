@@ -35,17 +35,18 @@ const Newsfeed = ({ current }) => (
       }
     }        
     `}
-    render={data => (
-      <div className='newsfeed'>
+    render={data => {
+      const edges = data.allMdx.edges;
+      return edges.length > 0 ? <div className='newsfeed'>
         <div className='armada-news'>
           <h1 id='newstitle'>Armada News</h1>
         </div>
         <Carousel 
-          items={data.allMdx.edges.filter(edge => edge.node.frontmatter.slug !== current).map(edge => 
+          items={edges.filter(edge => edge.node.frontmatter.slug !== current).map(edge => 
             <PagePreview key={edge.node.id} {...edge.node.frontmatter}/>
           )} />
-      </div>
-    )}
+      </div> : <br/>
+    }}
   />
 )
 

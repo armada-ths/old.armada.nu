@@ -61,7 +61,7 @@ const Timeline = ()=>{
   <div className="containerleft leftleft">
     <div className="contentt">
       <h4>August</h4>
-      <p id="p_text">Complete registration.</p>
+      <p id="p_text">Company registration closes.</p>
       <div id="images"><img id="timeline_pic" src={images[0].completeImage}/></div>
       </div>
   </div>

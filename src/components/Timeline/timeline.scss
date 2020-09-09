@@ -10,18 +10,6 @@
     //background-color: rgb(0, 0, 0);
 }
 
-#repeat-timelinepic {
-    margin-top: 108px;
-    margin-bottom: 100px;
-    width: 24.5px;
-    height: 1765px;
-    padding: 0px;
-    background-image: url('/assets/timeline.png');
-    margin-left: auto;
-    margin-right: auto;
-    //flex-grow: 1;
-  }
-
 #text_right{
     //width: 370px;
     //float: left;
@@ -46,9 +34,6 @@
 //background-color: black;
 }
 
-#div_right{
-
-}
 
 * {
     box-sizing: border-box;
@@ -69,7 +54,7 @@
     content: '';
     position: absolute;
     width: 6px;
-    background-color: black;
+    background-color: #2d2d2c;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -141,9 +126,9 @@
     width: 0;
     z-index: 1;
     right: 30px;
-    border: medium solid black;
+    border: medium solid #2d2d2c;
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent black;
+    border-color: transparent transparent transparent #2d2d2c;
   }
   
   /* Add arrows to the right container (pointing left) */
@@ -155,9 +140,9 @@
     width: 0;
     z-index: 1;
     left: 30px;
-    border: medium solid black;
+    border: medium solid #2d2d2c;
     border-width: 10px 10px 10px 0;
-    border-color: transparent black transparent transparent;
+    border-color: transparent #2d2d2c transparent transparent;
   }
   
   /* Fix the circle for containers on the right side */
@@ -168,7 +153,7 @@
   /* The actual content */
   .contentt {
     padding: 10px 40px;
-    background-color: black;
+    background-color: #2d2d2c;
     position: relative;
     border-radius: 12px;
   }
@@ -180,13 +165,13 @@
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    object-fit: cover;
     
   }
   #images{
       width: 100px;
-      
       margin: auto;
-      margin-top: 7px;
+      margin-top: 5px;
   }
   
   /* Media queries - Responsive timeline on screens less than 600px wide */

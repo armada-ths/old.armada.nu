@@ -4,7 +4,7 @@ import "./timeline.scss"
 
 const images=[
     {pmImage:"/assets/images/PG20/danieldrake.jpg", fairImage:"/assets/thefair.jpg", banquetImage: "/assets/images/armada-banquet.jpg",
-  pgImage:"/assets/images/projectgroup-armada.jpg", summerImage: "/assets/images/summer.jpg", arunImage: "/assets/images/armada-run.jpg", 
+  pgImage:"/assets/images/projectgroup-armada.jpg", summerImage: "/assets/images/summer.jpg", arunImage: "/assets/images/armada_run.jpg", 
   writeImage: "/assets/images/write.jpg", kickOutImage: "/assets/images/kickOut.jpg", salesOpenImage: "/assets/images/salesOpen.jpg", 
   hostImage: "/assets/images/host.jpg", completeImage: "/assets/images/complete.jpg", kickOffImage: "/assets/images/kickOff.jpg", 
   salesEndImage: "/assets/images/salesEnd.jpg", otImage: "/assets/images/ot.jpg"}

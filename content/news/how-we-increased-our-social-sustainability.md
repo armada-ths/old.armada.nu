@@ -6,8 +6,8 @@ category: 'GENERAL'
 cover_wide: /assets/03102017-DSC_0009n2.png
 date: 2017-10-19T13:18:44.096Z
 display_date: true
-archived: false
 ingress: '"An interview is a chance for honest dialogue - not interrogation"'
+archived: true
 ---
 
 *Karolina Lind, Charlotte Hedlund, Tobias Porserud*

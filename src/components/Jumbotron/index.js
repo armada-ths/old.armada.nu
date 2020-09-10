@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './index.scss';
 import Countdown from '../Countdown'
-import Video from '../../../static/assets/video/virtual_fair.webm'
+import Video from '../../../static/assets/video/virtual_fair.mp4'
 import Logo from '../../../static/assets/images/header-images/logo.png'
 import useWindowSize from '../../hooks/useWindowSize'
 
@@ -18,7 +18,7 @@ const Jumbotron = (props) => {
     useEffect(() => {
         setVideo((props.location === '/' && !onMobile) ? (
             <video autoPlay loop muted>
-                <source src={Video} type='video/webm'/> 
+                <source src={Video} type='video/mp4'/> 
             </video>) : null)
     }, [props.location, onMobile])
 

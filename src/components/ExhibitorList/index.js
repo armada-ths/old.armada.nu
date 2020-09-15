@@ -808,13 +808,11 @@ const ExhibitorList = props => {
     )
 }
 
-let toExport
-if (global.window !== undefined) {
-    toExport = addUrlProps({ urlPropsQueryConfig })(ExhibitorList)
-} else {
-    toExport = ExhibitorList
+ExhibitorList.propTypes = {
+    exhibitorName: PropTypes.string,
+    onChangeExhibitorName: PropTypes.func,
+    lastYear: PropTypes.bool,
 }
-export default toExport
 
 const ExhibitorItem = props => {
     return (
@@ -849,3 +847,11 @@ const ExhibitorItem = props => {
         </div>
     )
 }
+
+let toExport
+if (global.window !== undefined) {
+    toExport = addUrlProps({ urlPropsQueryConfig })(ExhibitorList)
+} else {
+    toExport = ExhibitorList
+}
+export default toExport

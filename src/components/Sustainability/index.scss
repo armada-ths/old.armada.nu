@@ -69,3 +69,20 @@
   margin-left: -35%;
   margin-right: -35%;
 }
+
+.sustainability-day {
+    background-image: url('/assets/sustainability_background5.jpeg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3em;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+        color: #fff;
+    }
+}

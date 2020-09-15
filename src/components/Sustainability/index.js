@@ -26,8 +26,8 @@ const Sustainability = () => {
         </form>
       </div>
       <div>
-        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background2.jpeg' height='200em' width='260em'/>
-        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background4.jpeg' height='200em' width='260em'/>
+        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background2.jpg' height='200em' width='260em'/>
+        <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background4.jpg' height='200em' width='260em'/>
         <img alt='' className='background_Images Small' src='/assets/sustainability/sustainability_background7.jpeg' height='200em' width='260em'/>
       </div>
       <div className='newSection'>
@@ -50,8 +50,8 @@ const Sustainability = () => {
         <p className='text'>
           Want to check out how we decide which exhibitors gets a spot in Green Room? Click the button below.
         </p>
-        <img alt='' className='background_Images middle' src='/assets/sustainability/ASI_criteria.png' height='200em' width='260em'/>
-        <form id='submitForm' method='get' action='/assets/sustainability/ASI_criteria.png'>
+        <img alt='' className='background_Images middle' src='/assets/sustainability/ASI_criteria.jpg' height='200em' width='260em'/>
+        <form id='submitForm' method='get' action='/assets/sustainability/ASI_criteria.jpg'>
            <button type='submit'>Our Selection Strategy</button>
         </form>
       </div>
@@ -84,11 +84,13 @@ const Sustainability = () => {
            <button type='submit'>Check out their website</button>
         </form>
       </div>
-      <img alt='' className='background_Images' src='/assets/sustainability/sustainability_background5.jpeg'/>
+      <img alt='' className='background_Images' src='/assets/sustainability/sustainability_background5.jpeg' height='100em'/>
+
       <div className='newSection'>
           <h2>Sustainability Day</h2>
           <p className='text'>We will have a Sustainability Day during the event weeks. This year it will be combined with Innovation Night. <b>More info will be available soon!</b></p>
       </div>
+
       <div className='newSection'>
       <SustainabilityInterviews/>
       </div>

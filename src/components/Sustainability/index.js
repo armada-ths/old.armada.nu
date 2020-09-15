@@ -50,7 +50,7 @@ const Sustainability = () => {
         <p className='text'>
           Want to check out how we decide which exhibitors gets a spot in Green Room? Click the button below.
         </p>
-        <img alt='' className='background_Images middle' src='/assets/sustainability/ASI_criteria.jpg' height='200em' width='260em'/>
+        <img alt='' className='background_Images middle' src='/assets/sustainability/ASI_criteria_small.jpg' height='200em' width='260em'/>
         <form id='submitForm' method='get' action='/assets/sustainability/ASI_criteria.jpg'>
            <button type='submit'>Our Selection Strategy</button>
         </form>

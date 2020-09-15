@@ -6,6 +6,7 @@ import Modal from '../Modal'
 import Loading from '../Loading'
 import Cat from '../Cat'
 import Select from 'react-select'
+import cls from 'classnames'
 
 const urlPropsQueryConfig = {
     exhibitorName: {
@@ -17,14 +18,270 @@ const urlPropsQueryConfig = {
 //base of server adress
 const ais = 'https://ais.armada.nu/'
 
+const sectors = [
+    { value: 'Retail', label: 'Retail' },
+    { value: 'Recruitment', label: 'Recruitment' },
+    { value: 'Architecture', label: 'Architecture' },
+    { value: 'Automotive', label: 'Automotive' },
+    {
+        value: 'Environmental Sector',
+        label: 'Environmental Sector',
+    },
+    { value: 'Pedagogy', label: 'Pedagogy' },
+    { value: 'Web Development', label: 'Web Development' },
+    { value: 'Solid Mechanics', label: 'Solid Mechanics' },
+    {
+        value: 'Simulation Technology',
+        label: 'Simulation Technology',
+    },
+    { value: 'Pharmaceutical', label: 'Pharmaceutical' },
+    { value: 'Biotechnology', label: 'Biotechnology' },
+    { value: 'Acoustics', label: 'Acoustics' },
+    { value: 'Nuclear Power', label: 'Nuclear Power' },
+    { value: 'Fluid Mechanics', label: 'Fluid Mechanics' },
+    {
+        value: 'Wood-Processing Industry',
+        label: 'Wood-Processing Industry',
+    },
+    { value: 'Steel Industry', label: 'Steel Industry' },
+    { value: 'Medical Technology', label: 'Medical Technology' },
+    { value: 'Media Technology', label: 'Media Technology' },
+    { value: 'Marine Systems', label: 'Marine Systems' },
+    {
+        value: 'Manufacturing Industry',
+        label: 'Manufacturing Industry',
+    },
+    {
+        value: 'Management Consulting',
+        label: 'Management Consulting',
+    },
+    { value: 'Insurance', label: 'Insurance' },
+    { value: 'Finance', label: 'Finance' },
+    { value: 'Construction', label: 'Construction' },
+    { value: 'Aerospace', label: 'Aerospace' },
+    {
+        value: 'Logistics & Supply Chain',
+        label: 'Logistics & Supply Chain',
+    },
+    { value: 'Telecommunication', label: 'Telecommunication' },
+    { value: 'Mechatronics', label: 'Mechatronics' },
+    { value: 'Electronics', label: 'Electronics' },
+    {
+        value: 'Material Development',
+        label: 'Material Development',
+    },
+    { value: 'Energy Technology', label: 'Energy Technology' },
+    { value: 'Nanotechnology', label: 'Nanotechnology' },
+    { value: 'Research', label: 'Research' },
+    {
+        value: 'Property & Infrastructure',
+        label: 'Property & Infrastructure',
+    },
+    { value: 'IT Infrastructure', label: 'IT Infrastructure' },
+    {
+        value: 'Technical Consulting',
+        label: 'Technical Consulting',
+    },
+    { value: 'IT Consulting', label: 'IT Consulting' },
+    {
+        value: 'Software Development',
+        label: 'Software Development',
+    },
+    { value: 'Railway', label: 'Railway' },
+    { value: 'Product Development', label: 'Product Development' },
+    { value: 'Interaction Design', label: 'Interaction Design' },
+    { value: 'Industry Design', label: 'Industry Design' },
+]
+
+const locations = [
+    { value: 'Sweden', label: 'Sweden' },
+    { value: 'Europe', label: 'Europe' },
+    { value: 'Asia', label: 'Asia' },
+    { value: 'Oceania', label: 'Oceania' },
+    { value: 'North America', label: 'North America' },
+    { value: 'South America', label: 'South America' },
+    { value: 'Africa', label: 'Africa' },
+]
+
+const jobtype = [
+    { value: 'Full time job', label: 'Full Time Job' },
+    { value: 'Part time job', label: 'Part Time Job' },
+    { value: 'Summer job', label: 'Summer Job' },
+    { value: 'Internship', label: 'Internship' },
+    { value: 'Trainee', label: 'Trainee' },
+    { value: 'Master thesis', label: 'Master Thesis' },
+    { value: 'Bachelor thesis', label: 'Bachelor Thesis' },
+]
+
+const competences = [
+    {
+        value: 'Architecture',
+        label: 'Architecture',
+    },
+    {
+        value: 'Civil Engineering',
+        label: 'Civil Engineering',
+    },
+    {
+        value: 'Construction Engineering',
+        label: 'Construction Engineering',
+    },
+    {
+        value: 'Real Estate & Construction Management',
+        label: 'Real Estate & Construction Management',
+    },
+    {
+        value: 'Biotechnology',
+        label: 'Biotechnology',
+    },
+    {
+        value: 'Medical Engineering',
+        label: 'Medical Engineering',
+    },
+    {
+        value: 'Electrical Engineering',
+        label: 'Electrical Engineering',
+    },
+    {
+        value: 'Mechatronics',
+        label: 'Mechatronics',
+    },
+    {
+        value: 'Electric Power Engineering',
+        label: 'Electric Power Engineering',
+    },
+    {
+        value: 'Energy Engineering',
+        label: 'Energy Engineering',
+    },
+    {
+        value: 'Nuclear Energy Engineering',
+        label: 'Nuclear Energy Engineering',
+    },
+    {
+        value: 'Sustainable Technology',
+        label: 'Sustainable Technology',
+    },
+    {
+        value: 'Back End Development',
+        label: 'Back End Development',
+    },
+    {
+        value: 'Data Science & Machine Learning',
+        label: 'Data Science & Machine Learning',
+    },
+    {
+        value: 'Front End Development',
+        label: 'Front End Development',
+    },
+    {
+        value: 'User Experience Design',
+        label: 'User Experience Design',
+    },
+    {
+        value: 'Web Development',
+        label: 'Web Development',
+    },
+    {
+        value: 'Business Development',
+        label: 'Business Development',
+    },
+    {
+        value: 'Finance',
+        label: 'Finance',
+    },
+    {
+        value: 'Logistics & Supply Chain Management',
+        label: 'Logistics & Supply Chain Management',
+    },
+    {
+        value: 'Project Management',
+        label: 'Project Management',
+    },
+    {
+        value: 'Chemical Engineering',
+        label: 'Chemical Engineering',
+    },
+    {
+        value: 'Materials Engineering',
+        label: 'Materials Engineering',
+    },
+    {
+        value: 'Molecular Engineering',
+        label: 'Molecular Engineering',
+    },
+    {
+        value: 'Nanotechnology',
+        label: 'Nanotechnology',
+    },
+    {
+        value: 'Engineering Mechanics',
+        label: 'Engineering Mechanics',
+    },
+    {
+        value: 'Industrial Design',
+        label: 'Industrial Design',
+    },
+    {
+        value: 'Production Engineering',
+        label: 'Production Engineering',
+    },
+    {
+        value: 'Applied Mathematics',
+        label: 'Applied Mathematics',
+    },
+    {
+        value: 'Engineering Physics',
+        label: 'Engineering Physics',
+    },
+    {
+        value: 'Scientific Computing',
+        label: 'Scientific Computing',
+    },
+    {
+        value: 'Aerospace Engineering',
+        label: 'Aerospace Engineering',
+    },
+    {
+        value: 'Human Resources',
+        label: 'Human Resources',
+    },
+    {
+        value: 'Maritime Engineering',
+        label: 'Maritime Engineering',
+    },
+    {
+        value: 'Marketing',
+        label: 'Marketing',
+    },
+    {
+        value: 'Railway Engineering',
+        label: 'Railway Engineering',
+    },
+    {
+        value: 'Sales',
+        label: 'Sales',
+    },
+    {
+        value: 'Teaching',
+        label: 'Teaching',
+    },
+    {
+        value: 'Vehicle Engineering',
+        label: 'Vehicle Engineering',
+    },
+]
+
+const diversitySvg = '/assets/diversity_a.svg'
+const diversitySelectedSvg = '/assets/diversity_selected.svg'
+
+const sustainabilitySelectedSvg = '/assets/sustainability_selected.svg'
+const sustainabilitySvg = '/assets/sustainability.svg'
+
+const previousYear = (new Date().getFullYear() - 1).toString()
+
 const ExhibitorList = props => {
-    const [previousYear, setPreviousYear] = useState(
-        new Date(new Date().setFullYear(new Date().getFullYear() - 1))
-            .getFullYear()
-            .toString()
-    )
     const [exhibitors, setExhibitors] = useState([])
-    const [exhibitorList, setExhibitorList] = useState([])
     const [showModal, setShowModal] = useState(false)
     const [exhibitorName, setExhibitorName] = useState(undefined)
     const [isLoading, setIsLoading] = useState(true)
@@ -33,307 +290,8 @@ const ExhibitorList = props => {
     const [sectorfilters, setSectorfilters] = useState({})
     const [competencefilters, setCompetencefilters] = useState({})
     const [locationfilters, setLocationfilters] = useState({})
-    const [shine, setShine] = useState('')
     const [diversityfilter, setDiversityfilter] = useState(false)
     const [sustainabilityfilter, setSustainabilityfilter] = useState(false)
-    const [startupfilter, setStartupfilter] = useState(false)
-    const [diversitysrc, setDiversitysrc] = useState('/assets/diversity_a.svg')
-    const [sustainabilitysrc, setSustainabilitysrc] = useState(
-        '/assets/sustainability.svg'
-    )
-    const [location, setLocation] = useState('All')
-    const [sector, setSector] = useState('All')
-    const [locations, setLocations] = useState([
-        { value: 'Sweden', label: 'Sweden' },
-        { value: 'Europe', label: 'Europe' },
-        { value: 'Asia', label: 'Asia' },
-        { value: 'Oceania', label: 'Oceania' },
-        { value: 'North America', label: 'North America' },
-        { value: 'South America', label: 'South America' },
-        { value: 'Africa', label: 'Africa' },
-    ])
-    const [sectors, setSectors] = useState(
-        [
-            { value: 'Retail', label: 'Retail' },
-            { value: 'Recruitment', label: 'Recruitment' },
-            { value: 'Architecture', label: 'Architecture' },
-            { value: 'Automotive', label: 'Automotive' },
-            {
-                value: 'Environmental Sector',
-                label: 'Environmental Sector',
-            },
-            { value: 'Pedagogy', label: 'Pedagogy' },
-            { value: 'Web Development', label: 'Web Development' },
-            { value: 'Solid Mechanics', label: 'Solid Mechanics' },
-            {
-                value: 'Simulation Technology',
-                label: 'Simulation Technology',
-            },
-            { value: 'Pharmaceutical', label: 'Pharmaceutical' },
-            { value: 'Biotechnology', label: 'Biotechnology' },
-            { value: 'Acoustics', label: 'Acoustics' },
-            { value: 'Nuclear Power', label: 'Nuclear Power' },
-            { value: 'Fluid Mechanics', label: 'Fluid Mechanics' },
-            {
-                value: 'Wood-Processing Industry',
-                label: 'Wood-Processing Industry',
-            },
-            { value: 'Steel Industry', label: 'Steel Industry' },
-            { value: 'Medical Technology', label: 'Medical Technology' },
-            { value: 'Media Technology', label: 'Media Technology' },
-            { value: 'Marine Systems', label: 'Marine Systems' },
-            {
-                value: 'Manufacturing Industry',
-                label: 'Manufacturing Industry',
-            },
-            {
-                value: 'Management Consulting',
-                label: 'Management Consulting',
-            },
-            { value: 'Insurance', label: 'Insurance' },
-            { value: 'Finance', label: 'Finance' },
-            { value: 'Construction', label: 'Construction' },
-            { value: 'Aerospace', label: 'Aerospace' },
-            {
-                value: 'Logistics & Supply Chain',
-                label: 'Logistics & Supply Chain',
-            },
-            { value: 'Telecommunication', label: 'Telecommunication' },
-            { value: 'Mechatronics', label: 'Mechatronics' },
-            { value: 'Electronics', label: 'Electronics' },
-            {
-                value: 'Material Development',
-                label: 'Material Development',
-            },
-            { value: 'Energy Technology', label: 'Energy Technology' },
-            { value: 'Nanotechnology', label: 'Nanotechnology' },
-            { value: 'Research', label: 'Research' },
-            {
-                value: 'Property & Infrastructure',
-                label: 'Property & Infrastructure',
-            },
-            { value: 'IT Infrastructure', label: 'IT Infrastructure' },
-            {
-                value: 'Technical Consulting',
-                label: 'Technical Consulting',
-            },
-            { value: 'IT Consulting', label: 'IT Consulting' },
-            {
-                value: 'Software Development',
-                label: 'Software Development',
-            },
-            { value: 'Railway', label: 'Railway' },
-            { value: 'Product Development', label: 'Product Development' },
-            { value: 'Interaction Design', label: 'Interaction Design' },
-            { value: 'Industry Design', label: 'Industry Design' },
-        ].sort((a, b) => a.label.localeCompare(b.label))
-    )
-    const [jobs, setJobs] = useState([
-        { value: 'Full time job', label: 'Full Time Job' },
-        { value: 'Part time job', label: 'Part Time Job' },
-        { value: 'Summer job', label: 'Summer Job' },
-        { value: 'Internship', label: 'Internship' },
-        { value: 'Trainee', label: 'Trainee' },
-        { value: 'Master thesis', label: 'Master Thesis' },
-        { value: 'Bachelor thesis', label: 'Bachelor Thesis' },
-    ])
-    const [competences, setCompetences] = useState([
-        {
-            value: 'Architecture',
-            label: 'Architecture',
-            id: 28,
-        },
-        {
-            value: 'Civil Engineering',
-            label: 'Civil Engineering',
-            id: 30,
-        },
-        {
-            value: 'Construction Engineering',
-            label: 'Construction Engineering',
-            id: 29,
-        },
-        {
-            value: 'Real Estate & Construction Management',
-            label: 'Real Estate & Construction Management',
-            id: 31,
-        },
-        {
-            value: 'Biotechnology',
-            label: 'Biotechnology',
-            id: 22,
-        },
-        {
-            value: 'Medical Engineering',
-            label: 'Medical Engineering',
-            id: 23,
-        },
-        {
-            value: 'Electrical Engineering',
-            label: 'Electrical Engineering',
-            id: 6,
-        },
-        {
-            value: 'Mechatronics',
-            label: 'Mechatronics',
-            id: 7,
-        },
-        {
-            value: 'Electric Power Engineering',
-            label: 'Electric Power Engineering',
-            id: 24,
-        },
-        {
-            value: 'Energy Engineering',
-            label: 'Energy Engineering',
-            id: 25,
-        },
-        {
-            value: 'Nuclear Energy Engineering',
-            label: 'Nuclear Energy Engineering',
-            id: 27,
-        },
-        {
-            value: 'Sustainable Technology',
-            label: 'Sustainable Technology',
-            id: 26,
-        },
-        {
-            value: 'Back End Development',
-            label: 'Back End Development',
-            id: 2,
-        },
-        {
-            value: 'Data Science & Machine Learning',
-            label: 'Data Science & Machine Learning',
-            id: 4,
-        },
-        {
-            value: 'Front End Development',
-            label: 'Front End Development',
-            id: 1,
-        },
-        {
-            value: 'User Experience Design',
-            label: 'User Experience Design',
-            id: 5,
-        },
-        {
-            value: 'Web Development',
-            label: 'Web Development',
-            id: 3,
-        },
-        {
-            value: 'Business Development',
-            label: 'Business Development',
-            id: 10,
-        },
-        {
-            value: 'Finance',
-            label: 'Finance',
-            id: 9,
-        },
-        {
-            value: 'Logistics & Supply Chain Management',
-            label: 'Logistics & Supply Chain Management',
-            id: 11,
-        },
-        {
-            value: 'Project Management',
-            label: 'Project Management',
-            id: 8,
-        },
-        {
-            value: 'Chemical Engineering',
-            label: 'Chemical Engineering',
-            id: 20,
-        },
-        {
-            value: 'Materials Engineering',
-            label: 'Materials Engineering',
-            id: 18,
-        },
-        {
-            value: 'Molecular Engineering',
-            label: 'Molecular Engineering',
-            id: 19,
-        },
-        {
-            value: 'Nanotechnology',
-            label: 'Nanotechnology',
-            id: 21,
-        },
-        {
-            value: 'Engineering Mechanics',
-            label: 'Engineering Mechanics',
-            id: 12,
-        },
-        {
-            value: 'Industrial Design',
-            label: 'Industrial Design',
-            id: 14,
-        },
-        {
-            value: 'Production Engineering',
-            label: 'Production Engineering',
-            id: 13,
-        },
-        {
-            value: 'Applied Mathematics',
-            label: 'Applied Mathematics',
-            id: 16,
-        },
-        {
-            value: 'Engineering Physics',
-            label: 'Engineering Physics',
-            id: 15,
-        },
-        {
-            value: 'Scientific Computing',
-            label: 'Scientific Computing',
-            id: 17,
-        },
-        {
-            value: 'Aerospace Engineering',
-            label: 'Aerospace Engineering',
-            id: 34,
-        },
-        {
-            value: 'Human Resources',
-            label: 'Human Resources',
-            id: 36,
-        },
-        {
-            value: 'Maritime Engineering',
-            label: 'Maritime Engineering',
-            id: 35,
-        },
-        {
-            value: 'Marketing',
-            label: 'Marketing',
-            id: 39,
-        },
-        {
-            value: 'Railway Engineering',
-            label: 'Railway Engineering',
-            id: 33,
-        },
-        {
-            value: 'Sales',
-            label: 'Sales',
-            id: 38,
-        },
-        {
-            value: 'Teaching',
-            label: 'Teaching',
-            id: 37,
-        },
-        {
-            value: 'Vehicle Engineering',
-            label: 'Vehicle Engineering',
-            id: 32,
-        },
-    ])
     const [showamount, setShowamount] = useState(20)
 
     useEffect(() => {
@@ -345,17 +303,9 @@ const ExhibitorList = props => {
             )
             .then(res => {
                 const exhibitors = res.data // create variable and store result within parameter data
-                exhibitors.sort((a, b) => a.name.localeCompare(b.name))
-                const exhibitorList = exhibitors.map(exhibitor => (
-                    <ExhibitorItem
-                        key={exhibitor.id}
-                        name={exhibitor.name}
-                        exhibitor={exhibitor}
-                        updateExhibitorName={updateExhibitorName}
-                    />
-                ))
-                setExhibitors(exhibitors)
-                setExhibitorList(exhibitorList)
+                setExhibitors(
+                    exhibitors.sort((a, b) => a.name.localeCompare(b.name))
+                )
                 setIsLoading(false)
                 // Get from url path the GET params ?id=number, to know what event to display
                 if (props.exhibitorName !== undefined) {
@@ -608,29 +558,14 @@ const ExhibitorList = props => {
         setShowamount(20)
     }
 
-    const startupFilter = () => {
-        setdefault()
-        setStartupfilter(!startupFilter)
-    }
-
-    const diversityFilter = () => {
+    const toggleDiversityFilter = () => {
         setdefault()
         setDiversityfilter(!diversityfilter)
-        if (diversityfilter) {
-            setDiversitysrc('/assets/diversity_selected.svg')
-        } else {
-            setDiversitysrc('/assets/diversity_a.svg')
-        }
     }
 
-    const sustainabilityFilter = () => {
+    const toggleSustainabilityFilter = () => {
         setdefault()
         setSustainabilityfilter(!sustainabilityfilter)
-        if (sustainabilityfilter) {
-            setSustainabilitysrc('/assets/sustainability_selected.svg')
-        } else {
-            setSustainabilitysrc('/assets/sustainability.svg')
-        }
     }
 
     //build options for dropdown filters
@@ -645,33 +580,26 @@ const ExhibitorList = props => {
     // Here you decide if list of exhibitors should be displayed or not
     let showExhibitors = true
     const exhibitorToDisplay = exhibitors.find(e => e.name === exhibitorName)
-    let filteredCompanies = exhibitorList.filter(e =>
-        e.props.name.toLowerCase().startsWith(search.toLowerCase())
+    let filteredCompanies = exhibitors.filter(e =>
+        e.name.toLowerCase().startsWith(search.toLowerCase())
     )
     if (filteredCompanies.length < 1) {
-        filteredCompanies = exhibitorList.filter(e =>
-            e.props.name.toLowerCase().includes(search.toLowerCase())
+        filteredCompanies = exhibitors.filter(e =>
+            e.name.toLowerCase().includes(search.toLowerCase())
         )
     }
 
     //Diversity filter
     if (diversityfilter) {
         filteredCompanies = filteredCompanies.filter(
-            e => e.props.exhibitor.location_special === 'Diversity Room'
+            e => e.location_special === 'Diversity Room'
         )
     }
 
     //Sustainability filter
     if (sustainabilityfilter) {
         filteredCompanies = filteredCompanies.filter(
-            e => e.props.exhibitor.location_special === 'Green Room'
-        )
-    }
-
-    // Startup filter
-    if (startupfilter) {
-        filteredCompanies = filteredCompanies.filter(
-            e => e.props.exhibitor.groups.name === 'startup'
+            e => e.location_special === 'Green Room'
         )
     }
 
@@ -679,7 +607,7 @@ const ExhibitorList = props => {
     for (const [key, filter] in Object.entries(jobfilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
-            return e.props.exhibitor.employments.reduce(
+            return e.employments.reduce(
                 (prev, cur) => prev || cur.name === filter.value,
                 false
             )
@@ -690,7 +618,7 @@ const ExhibitorList = props => {
     for (const [key, filter] in Object.entries(sectorfilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
-            return e.props.exhibitor.industries.reduce(
+            return e.industries.reduce(
                 (prev, cur) => prev || cur.name === filter.value,
                 false
             )
@@ -701,7 +629,7 @@ const ExhibitorList = props => {
     for (const [key, filter] in Object.entries(competencefilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
-            return e.props.exhibitor.competences.reduce(
+            return e.competences.reduce(
                 (prev, cur) => prev || cur.name === filter.value,
                 false
             )
@@ -712,14 +640,12 @@ const ExhibitorList = props => {
     for (const [key, filter] in Object.entries(locationfilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
-            return e.props.exhibitor.locations.reduce(
+            return e.locations.reduce(
                 (prev, cur) => prev || cur.name === filter.value,
                 false
             )
         })
     }
-
-    let showall = filteredCompanies.length > showamount
 
     return !showExhibitors ? (
         <div>Exhibitors will be released after summer.</div>
@@ -755,15 +681,19 @@ const ExhibitorList = props => {
                     id='diversity'
                     type='image'
                     alt='diversity filter'
-                    src={diversitysrc}
-                    onClick={() => diversityFilter()}
+                    src={diversityfilter ? diversitySelectedSvg : diversitySvg}
+                    onClick={() => toggleDiversityFilter()}
                 />
                 <input
                     id='sustainability'
                     type='image'
                     alt='sustainability filter'
-                    src={sustainabilitysrc}
-                    onClick={() => sustainabilityFilter()}
+                    src={
+                        sustainabilityfilter
+                            ? sustainabilitySelectedSvg
+                            : sustainabilitySvg
+                    }
+                    onClick={() => toggleSustainabilityFilter()}
                 />
             </div>
 
@@ -785,7 +715,7 @@ const ExhibitorList = props => {
                         isSearchable
                         name='Job filter'
                         placeholder='All Jobs'
-                        options={jobs}
+                        options={jobtype}
                         onChange={event => jobFilter(event)}
                         className='basic-multi-select'
                         classNamePrefix='select'
@@ -839,7 +769,16 @@ const ExhibitorList = props => {
             <div className='loading'>{isLoading && <Loading />}</div>
             <div className='exhibitor-feed'>
                 {filteredCompanies.length && !isLoading ? (
-                    filteredCompanies.splice(0, showamount)
+                    filteredCompanies
+                        .splice(0, showamount)
+                        .map(exhibitor => (
+                            <ExhibitorItem
+                                key={exhibitor.id}
+                                name={exhibitor.name}
+                                exhibitor={exhibitor}
+                                updateExhibitorName={updateExhibitorName}
+                            />
+                        ))
                 ) : (
                     <div className='Noresultsfound'>
                         {!isLoading && (
@@ -855,7 +794,7 @@ const ExhibitorList = props => {
                     </div>
                 )}
             </div>
-            {showall && (
+            {filteredCompanies.length > showamount && (
                 <div className='showmore-container'>
                     <button
                         className='showmorebutton'
@@ -878,14 +817,15 @@ if (global.window !== undefined) {
 export default toExport
 
 const ExhibitorItem = props => {
-    let classname = props.exhibitor.sustainability ? ' green' : ''
-    classname += props.exhibitor.diversity ? ' purple' : ''
-
     return (
         <div
             id={props.name}
             role='presentation'
-            className={'exhibitor-box ' + classname}
+            className={cls({
+                'exhibitor-box': true,
+                green: props.exhibitor.sustainability,
+                purple: props.exhibitor.diversity,
+            })}
             onClick={() => props.updateExhibitorName(props.exhibitor.name)}
         >
             <div className='image-container'>

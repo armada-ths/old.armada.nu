@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { addUrlProps, UrlQueryParamTypes } from 'react-url-query'
+import PropTypes from 'prop-types'
 import './index.scss'
 import Modal from '../Modal'
 import Loading from '../Loading'
@@ -506,28 +507,6 @@ const ExhibitorList = props => {
         )
     }
 
-    //diversity and sustainability filters special effects {cssshine, cssShineOff}
-    const cssShine = value => {
-        if (global.document !== undefined) {
-            let shineItems = global.document.getElementsByClassName(value)
-            for (let i = 0; i < shineItems.length; i++) {
-                shineItems[i].className += ' shine-loop'
-            }
-        }
-    }
-
-    const cssShineOff = () => {
-        if (global.document !== undefined) {
-            let shineItems = global.document.getElementsByClassName(
-                'shine-loop'
-            )
-            while (shineItems.length > 0) {
-                let className = shineItems[0].className
-                shineItems[0].className = className.replace('shine-loop', '')
-            }
-        }
-    }
-
     //filter functions to be called onChange
     const jobFilter = value => {
         setdefault()
@@ -568,15 +547,6 @@ const ExhibitorList = props => {
         setSustainabilityfilter(!sustainabilityfilter)
     }
 
-    //build options for dropdown filters
-    const buildOptions = array => {
-        return array.map(e => (
-            <option key={e} value={e}>
-                {e}
-            </option>
-        ))
-    }
-
     // Here you decide if list of exhibitors should be displayed or not
     let showExhibitors = true
     const exhibitorToDisplay = exhibitors.find(e => e.name === exhibitorName)
@@ -604,7 +574,7 @@ const ExhibitorList = props => {
     }
 
     //Job type filter
-    for (const [key, filter] in Object.entries(jobfilters)) {
+    for (const [, filter] in Object.entries(jobfilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
             return e.employments.reduce(
@@ -615,7 +585,7 @@ const ExhibitorList = props => {
     }
 
     //Sector type filter
-    for (const [key, filter] in Object.entries(sectorfilters)) {
+    for (const [, filter] in Object.entries(sectorfilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
             return e.industries.reduce(
@@ -626,7 +596,7 @@ const ExhibitorList = props => {
     }
 
     //Competence type filter
-    for (const [key, filter] in Object.entries(competencefilters)) {
+    for (const [, filter] in Object.entries(competencefilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
             return e.competences.reduce(
@@ -637,7 +607,7 @@ const ExhibitorList = props => {
     }
 
     //Location type filter
-    for (const [key, filter] in Object.entries(locationfilters)) {
+    for (const [, filter] in Object.entries(locationfilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
             return e.locations.reduce(

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
+import PropTypes from 'prop-types'
 import { addUrlProps, UrlQueryParamTypes } from 'react-url-query'
 import './index.scss'
 import Modal from '../Modal'

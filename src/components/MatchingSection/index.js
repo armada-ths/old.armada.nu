@@ -51,8 +51,8 @@ const MatchingSection = () => {
                     },
                 }
             )
-            .then(json => {
-                setMatchResult(json)
+            .then(res => {
+                setMatchResult(res.data)
             })
             .catch(function () {
                 alert('Matching failed! Please try again later')

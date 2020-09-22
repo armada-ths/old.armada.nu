@@ -1,360 +1,419 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import Loading from '../Loading'
-import axios from 'axios';
-import MatchingQuestion from './MatchingQuestion'; 
+import axios from 'axios'
+import MatchingQuestion from './MatchingQuestion'
 import MatchingWelcomeScreen from './MatchingWelcomeScreen'
 import LoadingText from '../LoadingText'
 
-import './index.scss';
+import './index.scss'
 
-const ais = 'https://ais.armada.nu/';
+const ais = 'https://ais.armada.nu/'
 
-class MatchingSection extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            match_result: null,
-            show_more: false,
-            options : [],
-            industries: [],
-            values: [],
-            competences: [],
-            employments: [],
-            locations: [],
-            benefits: [],
-            selectOptions : null,
-            hide: false,
-            isLoading: false,
-            started: false,
-            optionIndex: 0,
-            currentOption: {},
-            weights: [5,5,5,5,5]
-        };
+const MatchingSection = () => {
+    const [matchResult, setMatchResult] = useState(null)
+    const [showMore, setShowMore] = useState(false)
+    const [options, setOptions] = useState([])
+    const [industries, setIndustries] = useState([])
+    const [values, setValues] = useState([])
+    const [competences, setCompetences] = useState([])
+    const [employments, setEmployments] = useState([])
+    const [locations, setLocations] = useState([])
+    const [benefits, setBenefits] = useState([])
+    const [selectOptions, setSelectOptions] = useState(null)
+    const [isHiding, setIsHiding] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    const [started, setStarted] = useState(false)
+    const [optionIndex, setOptionIndex] = useState(0)
+    const [currentOption, setCurrentOption] = useState({})
+    const [weights, setWeights] = useState([5, 5, 5, 5, 5])
+
+    useEffect(() => {
+        axios
+            .get('https://ais.armada.nu/api/matching/choices') // fetch data witt promise (then) and res(ult)
+            .then(res => {
+                setOptions(res.data.options) // create variable and store result within parameter data
+                setCurrentOption(res.data.options[0])
+            })
+            .catch(() => {
+                alert('Failed to get data. Try again later.')
+            })
+    }, [])
+
+    const postData = (url, data) => {
+        axios
+            .post(
+                `https://cors-anywhere.herokuapp.com/${url}`,
+                JSON.stringify(data),
+                {
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                }
+            )
+            .then(res => {
+                setMatchResult(res.data)
+            })
+            .catch(function () {
+                alert('Matching failed! Please try again later')
+                matchagain()
+            })
     }
 
-    componentDidMount() {
-        axios.get('https://ais.armada.nu/api/matching/choices')  // fetch data witt promise (then) and res(ult)
-        .then((res)  => {
-          const optionsRes = res.data.options;  // create variable and store result within parameter data
-          this.setState({ 
-            options: optionsRes,
-            currentOption: optionsRes[0] 
-          });  // component saves its own data
-        }).catch(() => {
-          alert('Failed to get data. Try again later.');
-        });
-    }
-
-    postData (url, data) {
-        var bindedthis = this;
-        fetch('https://cors-anywhere.herokuapp.com/' + url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        }).then(function (a) {
-            return a.json()
-        }).then(function (json) {
-            bindedthis.setState({match_result: json})
-        }).catch(function() {
-            alert('Matching failed! Please try again later');
-            bindedthis.matchagain();
-        });
-    }
-
-    submit() {
-        if (this.state.industries.length === 0 && this.state.values.length === 0 && this.state.employments.length === 0 && this.state.locations.length === 0 && this.state.competences.length === 0) {
-            alert('You have to select at least one option for at least one question!')
+    const submit = () => {
+        if (
+            industries.length === 0 &&
+            values.length === 0 &&
+            employments.length === 0 &&
+            locations.length === 0 &&
+            competences.length === 0
+        ) {
+            alert(
+                'You have to select at least one option for at least one question!'
+            )
+        } else {
+            postData('https://ais.armada.nu/api/matching/', {
+                industries: {
+                    answer: industries.map(i => i.id),
+                    weight: weights[1],
+                },
+                values: { answer: values.map(i => i.id), weight: weights[0] },
+                employments: {
+                    answer: employments.map(i => i.id),
+                    weight: weights[3],
+                },
+                locations: {
+                    answer: locations.map(i => i.id),
+                    weight: weights[4],
+                },
+                competences: {
+                    answer: competences.map(i => i.id),
+                    weight: weights[2],
+                },
+                cities: { answer: 'Stockholm', weight: 0 },
+                response_size: 4,
+            })
+            setIsHiding(true)
         }
-        else {
-          this.postData('https://ais.armada.nu/api/matching/', {
-            'industries': {'answer': this.state.industries.map(i => i.id), 'weight': this.state.weights[1]},
-            'values': {'answer': this.state.values.map(i => i.id), 'weight': this.state.weights[0]},
-            'employments': {'answer': this.state.employments.map(i => i.id), 'weight': this.state.weights[3]},
-            'locations': {'answer': this.state.locations.map(i => i.id), 'weight': this.state.weights[4]},
-            'competences': {'answer': this.state.competences.map(i => i.id), 'weight': this.state.weights[2]},
-            'cities': {'answer': 'Stockholm', 'weight': 0},
-            'response_size': 4
-          })
-          this.setState({hide: true})
-        }
     }
 
-    matchagain() {
-        this.setState({hide: false, show_more: false})
-        this.setState({industries: []})
-        this.setState({values: []})
-        this.setState({employments: []})
-        this.setState({locations: []})
-        this.setState({competences: []})
-        this.setState({match_result: null})
-        this.setState({
-          optionIndex:0,
-          weights: [5, 5, 5, 5, 5],
-          currentOption: this.state.options[0],
-        })
+    const matchagain = () => {
+        setIsHiding(false)
+        setShowMore(false)
+        setIndustries([])
+        setValues([])
+        setEmployments([])
+        setLocations([])
+        setCompetences([])
+        setMatchResult(null)
+        setOptionIndex(0)
+        setWeights([5, 5, 5, 5, 5])
+        setCurrentOption(options[0])
     }
 
-      createStars(similarity){
-        var rating = similarity * 100;
-
-        return(
-          <div className='star-ratings-css'>
-            <div className='star-ratings-css-top' style={{width:rating+'%'}}>
-              <i className='fa-star-icon'></i>
-              <i className='fa-star-icon'></i>
-              <i className='fa-star-icon'></i>
-              <i className='fa-star-icon'></i>
-              <i className='fa-star-icon'></i>
+    const createStars = similarity => {
+        return (
+            <div className='star-ratings-css'>
+                <div
+                    className='star-ratings-css-top'
+                    style={{ width: `${similarity * 100}%` }}
+                >
+                    <i className='fa-star-icon'></i>
+                    <i className='fa-star-icon'></i>
+                    <i className='fa-star-icon'></i>
+                    <i className='fa-star-icon'></i>
+                    <i className='fa-star-icon'></i>
+                </div>
+                <div className='star-ratings-css-bottom'>
+                    <i className='fa-star-icon'></i>
+                    <i className='fa-star-icon'></i>
+                    <i className='fa-star-icon'></i>
+                    <i className='fa-star-icon'></i>
+                    <i className='fa-star-icon'></i>
+                </div>
             </div>
-            <div className='star-ratings-css-bottom'>
-              <i className='fa-star-icon'></i>
-              <i className='fa-star-icon'></i>
-              <i className='fa-star-icon'></i>
-              <i className='fa-star-icon'></i>
-              <i className='fa-star-icon'></i>
-            </div>
-          </div>
-        )
-      }
-
-    carousel(option){
-      return (
-        <div >
-          <div className='wrapper'>
-          <div className='matching-question-card' >
-            <MatchingQuestion onSubmit={() => this.submit()} question={option.question} nextDisabled={this.state.optionIndex === this.state.options.length - 1} prevDisabled={this.state.optionIndex === 0} prevClick={this.prevOption} nextClick={this.nextOption} answers={option.answers} handleChange={this.handleChange(this.state.optionIndex)} preSelected={this.getResult(this.state.optionIndex)} onWeightChange={this.onWeightChange} index={this.state.optionIndex} weight={this.state.weights[this.state.optionIndex]} />
-          </div>
-          </div>
-        </div>
         )
     }
 
-        
-      createJobs(exhibitor_id) {
-        let exhibitor = this.state.match_result.exhibitors[exhibitor_id];
+    const carousel = option => {
+        return (
+            <div>
+                <div className='wrapper'>
+                    <div className='matching-question-card'>
+                        <MatchingQuestion
+                            onSubmit={() => submit()}
+                            question={option.question}
+                            nextDisabled={optionIndex === options.length - 1}
+                            prevDisabled={optionIndex === 0}
+                            prevClick={prevOption}
+                            nextClick={nextOption}
+                            answers={option.answers}
+                            handleChange={handleChange(optionIndex)}
+                            preSelected={getResult(optionIndex)}
+                            onWeightChange={onWeightChange}
+                            index={optionIndex}
+                            weight={weights[optionIndex]}
+                        />
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    const createJobs = exhibitor_id => {
+        let exhibitor = match_result.exhibitors[exhibitor_id]
         let array = exhibitor.employments.map(item => item.name)
         return array.join(', ')
-      }
+    }
 
-      createCard(result, best){
-        let exhibitor_id = result.exhibitor_id;
-        let exhibitor = this.state.match_result.exhibitors[exhibitor_id];
+    const createCard = (result, best) => {
+        let exhibitor_id = result.exhibitor_id
+        let exhibitor = match_result.exhibitors[exhibitor_id]
         //var textrating = Math.round(best[i].similarity*100);
         var background = {
-            backgroundImage: 'url('+ ais + exhibitor.logo_squared + ')'
+            backgroundImage: `url('${ais}${exhibitor.logo_squared})`,
         }
 
         if (best) {
-          var dynamicclass = 'corner gold'
-          var match = 'Best'
-        }
-        else {
-          dynamicclass = 'corner'
-          match = 'Match'
+            var dynamicclass = 'corner gold'
+            var match = 'Best'
+        } else {
+            dynamicclass = 'corner'
+            match = 'Match'
         }
 
         return (
-          <div className='row'>
-            <div className='example-1 card card-hover-disabled'>
-              <div className='wrapper' style={background}>
-                <div className={dynamicclass}>
-                  <span className='corner-title'>{match}</span>
+            <div className='row'>
+                <div className='example-1 card card-hover-disabled'>
+                    <div className='wrapper' style={background}>
+                        <div className={dynamicclass}>
+                            <span className='corner-title'>{match}</span>
 
-                  <span className='stars'>{this.createStars(result.similarity)}</span>
-                  {/* <span >{textrating + '% match'}</span> */}
+                            <span className='stars'>
+                                {createStars(result.similarity)}
+                            </span>
+                            {/* <span >{textrating + '% match'}</span> */}
+                        </div>
+                    </div>
+                    <div className='data'>
+                        <div className='content'>
+                            <div className='matching-details'>
+                                {presentMatchDetails(exhibitor_id)}
+                            </div>
+                            <h1 className='title'>{exhibitor.name}</h1>
+                            <p className='textcard'>{exhibitor.about}</p>
+                            <p className='text jobs'>
+                                <br />
+                                {createJobs(exhibitor_id)}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div className='data'>
-                <div className='content'>
-                  <div className='matching-details'>
-                    {this.presentMatchDetails(exhibitor_id)}
-                  </div>
-                  <h1 className='title'>{exhibitor.name}</h1>
-                  <p className='textcard'>{exhibitor.about}</p>
-                  <p className='text jobs'><br />{this.createJobs(exhibitor_id)}</p>
-                </div>
-              </div>
             </div>
-          </div>
-        );
-      }
+        )
+    }
 
-      presentMatchDetails(exhibitor_id) {
+    const presentMatchDetails = exhibitor_id => {
         var categories = [
-          'competences', 'industries', 'employments', 'values', 'locations' //, 'cities'
-        ];
+            'competences',
+            'industries',
+            'employments',
+            'values',
+            'locations', //, 'cities'
+        ]
 
-        var similarities = this.state.match_result.similarities;
-        var mapped = {};
+        var similarities = match_result.similarities
+        var mapped = {}
 
         // convert similatiries object to mapped structure
         // { 'category': { exhibitor_id: similarity_score, ... } }
         categories.forEach(cat => {
-          mapped[cat] = {}
-          similarities[cat].forEach(result => {
-            mapped[cat][result.exhibitor_id] = result.similarity;
-          });
-        });
+            mapped[cat] = {}
+            similarities[cat].forEach(result => {
+                mapped[cat][result.exhibitor_id] = result.similarity
+            })
+        })
 
-        var toUpper = lower => lower.charAt(0).toUpperCase() + lower.substring(1);
+        var toUpper = lower =>
+            lower.charAt(0).toUpperCase() + lower.substring(1)
 
-        var matchingCat= categories
-          .filter(cat => mapped[cat][exhibitor_id]) // find similarity categories where exhibitor_id exists
+        var matchingCat = categories.filter(cat => mapped[cat][exhibitor_id]) // find similarity categories where exhibitor_id exists
 
         return [
-          <div key={1}>
-            {matchingCat.map((cat, i) => <div key={i}>{toUpper(cat)}</div>)}
-          </div>,
-          <div className='score-bar-container' key={2}>
-            {matchingCat.map((cat, i) => {
-              var style = {
-                background: '#00d790',
-                width: (mapped[cat][exhibitor_id] * 100) + '%'
-              }
-              return (<div key={i} style={style}>match</div>)
-            })}
-          </div>
-        ];
-      }
+            <div key={1}>
+                {matchingCat.map((cat, i) => (
+                    <div key={i}>{toUpper(cat)}</div>
+                ))}
+            </div>,
+            <div className='score-bar-container' key={2}>
+                {matchingCat.map((cat, i) => {
+                    var style = {
+                        background: '#00d790',
+                        width: mapped[cat][exhibitor_id] * 100 + '%',
+                    }
+                    return (
+                        <div key={i} style={style}>
+                            match
+                        </div>
+                    )
+                })}
+            </div>,
+        ]
+    }
 
-
-      presentMatches() {
+    const presentMatches = () => {
         var listitems = []
-        if (this.state.match_result) {
-            for (let i = 0; i < this.state.match_result.similarities.total.length; i++) {
+        if (match_result) {
+            for (let i = 0; i < match_result.similarities.total.length; i++) {
                 listitems.push(
-                    this.createCard(this.state.match_result.similarities.total[i], i === 0)
+                    createCard(match_result.similarities.total[i], i === 0)
                 )
             }
-            return listitems;
+            return listitems
+        } else {
+            return <LoadingText />
         }
-        else {return <LoadingText/>}
-      }
-
-    
-    prevOption = () => {
-      const prevIndex = this.state.optionIndex-1;
-      this.setState({
-        currentOption: this.state.options[prevIndex],
-        optionIndex: prevIndex
-      })
     }
 
-    nextOption = () => {
-      this.setState({hide: true})
-      const nextIndex = this.state.optionIndex+1;
-      this.setState({
-        currentOption: this.state.options[nextIndex],
-        optionIndex: nextIndex,
-        hide: false
-      })
+    const prevOption = () => {
+        const prevIndex = optionIndex - 1
+        setCurrentOption(options[prevIndex])
+        setOptionIndex(prevIndex)
     }
 
-    onWeightChange = (index, value) => {
-      let temp = this.state.weights;
-      temp[index] = value-0; // Make sure it's a number
-      this.setState({weights: temp})
+    const nextOption = () => {
+        setIsHiding(true)
+        const nextIndex = optionIndex + 1
+        setCurrentOption(options[nextIndex])
+        setOptionIndex(nextIndex)
+        setIsHiding(false)
     }
 
-      presentMoreMatches() {
-        var listitems = [];
-        if (!this.state.match_result) return null;
+    const onWeightChange = (index, value) => {
+        const newWeights = weights
+        newWeights[index] = Number(value) // Make sure it's a number
+        setWeights(newWeights)
+    }
 
-        var similarities = this.state.match_result.similarities;
+    const presentMoreMatches = () => {
+        var listitems = []
+        if (!match_result) return null
+
+        var similarities = match_result.similarities
         // skip exbihitor in total category, they are already shown
-        var skip = similarities.total.map(result => result.exhibitor_id);
+        var skip = similarities.total.map(result => result.exhibitor_id)
 
         for (var cat in similarities) {
-          if (cat === 'cities') {
-            continue;
-          }
+            if (cat === 'cities') {
+                continue
+            }
 
-          similarities[cat].forEach(result => {
-            if (skip.indexOf(result.exhibitor_id) >= 0) return;
+            similarities[cat].forEach(result => {
+                if (skip.indexOf(result.exhibitor_id) >= 0) return
 
-            skip.push(result.exhibitor_id);
-            listitems.push(
-              this.createCard(result, false)
-            )
-          });
+                skip.push(result.exhibitor_id)
+                listitems.push(createCard(result, false))
+            })
         }
 
-        return listitems;
-      }
+        return listitems
+    }
 
-      handleChange = (index) => {
-        var bindedthis = this;
-        return function(value) {
-            if (index === 0) {bindedthis.setState({values: value})}
-            if (index === 1) {bindedthis.setState({industries: value})}
-            if (index === 2) {bindedthis.setState({competences: value})}
-            if (index === 3) {bindedthis.setState({employments: value})}
-            if (index === 4) {bindedthis.setState({locations: value})}
+    const handleChange = index => {
+        return function (value) {
+            if (index === 0) {
+                setValues(value)
+            }
+            if (index === 1) {
+                setIndustries(value)
+            }
+            if (index === 2) {
+                setCompetences(value)
+            }
+            if (index === 3) {
+                setEmployments(value)
+            }
+            if (index === 4) {
+                setLocations(value)
+            }
         }
-      }
+    }
 
-      handleClick = () => {
-        this.setState({started: !this.state.started})
-      }
+    const handleClick = () => {
+        setStarted(!started)
+    }
 
-      getResult = (index) => {
-        let res = [];
+    const getResult = index => {
+        let res = []
         switch (index) {
-          case 0:
-            res = this.state.values;
-            break;
-          case 1:
-            res = this.state.industries;
-            break;
-          case 2:
-            res = this.state.competences;
-            break;
-          case 3:
-            res = this.state.employments;
-            break;
-          case 4:
-            res = this.state.locations;
-            break;
-          default:
-            break;
+            case 0:
+                res = values
+                break
+            case 1:
+                res = industries
+                break
+            case 2:
+                res = competences
+                break
+            case 3:
+                res = employments
+                break
+            case 4:
+                res = locations
+                break
         }
-        return res;
-      }
-
-    renderQuestions() {
-      return this.state.started === true && this.state.isLoading === false ? this.carousel(this.state.currentOption) : 
-        <MatchingWelcomeScreen handleClick={this.handleClick}/>;
+        return res
     }
 
-    render() {
-        return (
-					<div>
-            
+    const renderQuestions = () => {
+        return started === true && isLoading === false ? (
+            carousel(currentOption)
+        ) : (
+            <MatchingWelcomeScreen handleClick={handleClick} />
+        )
+    }
+
+    return (
+        <div>
             <div className='questions'>
-            {this.state.hide ? this.presentMatches() : this.renderQuestions()}
-            {this.state.isLoading ? <Loading/> : null}
-            {this.state.match_result ? <div className='trycontainer'><button className='match' onClick={() => this.matchagain()}>Try matching again!</button></div> : null}
-            <br />
-            <br />
-            <br />
-            <br />
-            {!this.state.match_result ? null :
-              this.state.show_more ? 
-                <div>
-                  {this.presentMoreMatches()}
-                  <div className='trycontainer'><button className='match' onClick={() => this.matchagain()}>Try matching again!</button></div>
-                </div> : 
-                <div className='trycontainer'><button className='match' onClick={() => this.setState({ show_more:true })}>Show more companies</button></div>}
-
+                {isHiding ? presentMatches() : renderQuestions()}
+                {isLoading && <Loading />}
+                {match_result && (
+                    <div className='trycontainer'>
+                        <button className='match' onClick={() => matchagain()}>
+                            Try matching again!
+                        </button>
+                    </div>
+                )}
+                <br />
+                <br />
+                <br />
+                <br />
+                {match_result && show_more ? (
+                    <div>
+                        {presentMoreMatches()}
+                        <div className='trycontainer'>
+                            <button
+                                className='match'
+                                onClick={() => matchagain()}
+                            >
+                                Try matching again!
+                            </button>
+                        </div>
+                    </div>
+                ) : (
+                    <div className='trycontainer'>
+                        <button
+                            className='match'
+                            onClick={() => setShowMore(true)}
+                        >
+                            Show more companies
+                        </button>
+                    </div>
+                )}
             </div>
-            
-					</div>
-        );
-    }
-
+        </div>
+    )
 }
 
-export default MatchingSection;
+export default MatchingSection

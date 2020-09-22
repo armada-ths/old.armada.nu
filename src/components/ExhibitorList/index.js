@@ -314,7 +314,7 @@ const ExhibitorList = props => {
                     setShowModal(true)
                 }
             })
-    }, [])
+    }, [props.exhibitorName, props.lastYear])
 
     const updateSearch = event => {
         setdefault()

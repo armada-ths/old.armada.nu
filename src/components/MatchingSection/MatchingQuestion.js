@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 import PropTypes from 'prop-types'
 import MatchingLogo from '../../../static/assets/MatchingLogo.png'
 
 const MatchingQuestion = props => {
-    const [isHiding, setIsHiding] = useState(false)
-    const [selected, setSelected] = useState([])
     const [value, setValue] = useState(5)
 
     useEffect(() => {
         // Typical usage (don't forget to compare props):
         setValue(props.weight)
-    }, [props.question])
+    }, [props])
 
     const handleSelect = selectedOptions => {
         props.handleChange(selectedOptions)

@@ -18,8 +18,6 @@ const MatchingSection = () => {
     const [competences, setCompetences] = useState([])
     const [employments, setEmployments] = useState([])
     const [locations, setLocations] = useState([])
-    const [benefits, setBenefits] = useState([])
-    const [selectOptions, setSelectOptions] = useState(null)
     const [isHiding, setIsHiding] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const [started, setStarted] = useState(false)
@@ -28,11 +26,13 @@ const MatchingSection = () => {
     const [weights, setWeights] = useState([5, 5, 5, 5, 5])
 
     useEffect(() => {
+        setIsLoading(true)
         axios
             .get('https://ais.armada.nu/api/matching/choices') // fetch data witt promise (then) and res(ult)
             .then(res => {
                 setOptions(res.data.options) // create variable and store result within parameter data
                 setCurrentOption(res.data.options[0])
+                setIsLoading(false)
             })
             .catch(() => {
                 alert('Failed to get data. Try again later.')
@@ -161,14 +161,14 @@ const MatchingSection = () => {
     }
 
     const createJobs = exhibitor_id => {
-        let exhibitor = match_result.exhibitors[exhibitor_id]
+        let exhibitor = matchResult.exhibitors[exhibitor_id]
         let array = exhibitor.employments.map(item => item.name)
         return array.join(', ')
     }
 
     const createCard = (result, best) => {
         let exhibitor_id = result.exhibitor_id
-        let exhibitor = match_result.exhibitors[exhibitor_id]
+        let exhibitor = matchResult.exhibitors[exhibitor_id]
         //var textrating = Math.round(best[i].similarity*100);
         var background = {
             backgroundImage: `url('${ais}${exhibitor.logo_squared})`,
@@ -222,7 +222,7 @@ const MatchingSection = () => {
             'locations', //, 'cities'
         ]
 
-        var similarities = match_result.similarities
+        var similarities = matchResult.similarities
         var mapped = {}
 
         // convert similatiries object to mapped structure
@@ -263,10 +263,10 @@ const MatchingSection = () => {
 
     const presentMatches = () => {
         var listitems = []
-        if (match_result) {
-            for (let i = 0; i < match_result.similarities.total.length; i++) {
+        if (matchResult) {
+            for (let i = 0; i < matchResult.similarities.total.length; i++) {
                 listitems.push(
-                    createCard(match_result.similarities.total[i], i === 0)
+                    createCard(matchResult.similarities.total[i], i === 0)
                 )
             }
             return listitems
@@ -297,9 +297,9 @@ const MatchingSection = () => {
 
     const presentMoreMatches = () => {
         var listitems = []
-        if (!match_result) return null
+        if (!matchResult) return null
 
-        var similarities = match_result.similarities
+        var similarities = matchResult.similarities
         // skip exbihitor in total category, they are already shown
         var skip = similarities.total.map(result => result.exhibitor_id)
 
@@ -361,6 +361,7 @@ const MatchingSection = () => {
             case 4:
                 res = locations
                 break
+            default:
         }
         return res
     }
@@ -378,7 +379,7 @@ const MatchingSection = () => {
             <div className='questions'>
                 {isHiding ? presentMatches() : renderQuestions()}
                 {isLoading && <Loading />}
-                {match_result && (
+                {matchResult && (
                     <div className='trycontainer'>
                         <button className='match' onClick={() => matchagain()}>
                             Try matching again!
@@ -389,7 +390,7 @@ const MatchingSection = () => {
                 <br />
                 <br />
                 <br />
-                {match_result && show_more ? (
+                {matchResult && showMore ? (
                     <div>
                         {presentMoreMatches()}
                         <div className='trycontainer'>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
-import Modal from '../Modal'
 import { addUrlProps, UrlQueryParamTypes } from 'react-url-query'
 import { isSafari } from 'react-device-detect'
 
@@ -9,7 +8,7 @@ const urlPropsQueryConfig = {
     mapId: { type: UrlQueryParamTypes.number, queryParam: 'mapId' },
 }
 
-const Maps = props => {
+const Maps = () => {
     const [isMobile, setIsMobile] = useState(true)
 
     useEffect(() => {
@@ -18,7 +17,7 @@ const Maps = props => {
         } else {
             setIsMobile(false)
         }
-    })
+    }, [])
 
     const divScroll = () => {
         document.body.style.overflow = 'hidden'

@@ -45,22 +45,34 @@ const PhotoGallery = props => {
     const [photos, setPhotos] = useState([])
     const [startFrom, setStartFrom] = useState()
 
-    let interval
-
     useEffect(() => {
-        axios
-            .get(generateFlickrApiURL())
-            .then(res => {
-                setLoaded(true)
-                setPhotos(res.data.photoset.photo)
-                interval = setInterval(() => cyclePhotos(), 10000)
-            })
-            .catch(err => console.error(err))
-    }, [])
-
-    const generateFlickrApiURL = () => {
-        return `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${FLICKR_API_KEY}&photoset_id=${FLICKR_PHOTOSET_ID}&user_id=${FLICKR_USER_ID}&format=json&nojsoncallback=1`
-    }
+        const effect = async () => {
+            const res = await axios.get(
+                'https://api.flickr.com/services/rest/',
+                {
+                    params: {
+                        method: 'flickr.photosets.getPhotos',
+                        api_key: FLICKR_API_KEY,
+                        photoset_id: FLICKR_PHOTOSET_ID,
+                        user_id: FLICKR_USER_ID,
+                        format: 'json',
+                        nojsoncallback: '1',
+                    },
+                }
+            )
+            setLoaded(true)
+            setPhotos(res.data.photoset.photo)
+            const interval = setInterval(
+                () =>
+                    setStartFrom(
+                        (startFrom + props.photoCount) % photos.length
+                    ),
+                10000
+            )
+            return () => clearInterval(interval)
+        }
+        effect()
+    }, [props, photos, startFrom])
 
     const generateFlickrPhotoFileURL = (farmId, serverId, photoId, secret) => {
         return `https://farm${farmId}.staticflickr.com/${serverId}/${photoId}_${secret}_n.jpg`
@@ -68,10 +80,6 @@ const PhotoGallery = props => {
 
     const generateFlickrPhotoPageURL = photoId => {
         return `https://www.flickr.com/photos/armadakth/${photoId}/in/album-${FLICKR_PHOTOSET_ID}/`
-    }
-
-    const cyclePhotos = () => {
-        setStartFrom((startFrom + props.photoCount) % photos.length)
     }
 
     const photoCount = props.photoCount

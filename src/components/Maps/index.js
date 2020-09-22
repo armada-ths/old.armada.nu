@@ -1,29 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import './index.scss'
-import { addUrlProps, UrlQueryParamTypes } from 'react-url-query'
-import { isSafari } from 'react-device-detect'
-
-const urlPropsQueryConfig = {
-    mapId: { type: UrlQueryParamTypes.number, queryParam: 'mapId' },
-}
+import { isSafari, isMobile } from 'react-device-detect'
 
 const Maps = () => {
-    const [isMobile, setIsMobile] = useState(true)
-
-    useEffect(() => {
-        if (window.innerWidth < 850) {
-            setIsMobile(true)
-        } else {
-            setIsMobile(false)
-        }
-    }, [])
-
     const divScroll = () => {
         document.body.style.overflow = 'hidden'
     }
-
-    //let specialrooms = <div><h4 className='space'>Green room</h4><p>Gamla matsalen, Nymble </p><h4 className='diversity space'>Diversity room</h4><p>Puben, Nymble</p></div>;
 
     return (
         <div>
@@ -42,7 +24,7 @@ const Maps = () => {
                         </h4>
                     </div>
                 )}
-                {isMobile && !isSafari && (
+                {!isMobile && !isSafari && (
                     <div className='map-grid'>
                         <iframe
                             role='presentation'
@@ -54,23 +36,22 @@ const Maps = () => {
                         />
                     </div>
                 )}
-                {isMobile ||
-                    (isSafari && (
-                        <div className='map-icon-container'>
-                            <a
-                                aria-label='map'
-                                href='https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj'
-                                target='_blank'
-                                rel='noreferrer'
-                            >
-                                <img
-                                    alt=''
-                                    className='mobile-map-icon'
-                                    src='/assets/mapicon.png'
-                                />
-                            </a>
-                        </div>
-                    ))}
+                {(isMobile || isSafari) && (
+                    <div className='map-icon-container'>
+                        <a
+                            aria-label='map'
+                            href='https://app.vyer.com/site/siAHJfkxortC8DtAftEkfeNa?story=syLyAScxudoXAnsGW12XTuLj'
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            <img
+                                alt=''
+                                className='mobile-map-icon'
+                                src='/assets/mapicon.png'
+                            />
+                        </a>
+                    </div>
+                )}
                 {!isMobile && !isSafari && (
                     <h3 className='vyer-link'>
                         <a
@@ -97,15 +78,4 @@ const Maps = () => {
     )
 }
 
-Maps.propTypes = {
-    mapId: PropTypes.number,
-    onChangeMapId: PropTypes.func,
-}
-
-let toExport
-if (global.window !== undefined) {
-    toExport = addUrlProps({ urlPropsQueryConfig })(Maps)
-} else {
-    toExport = Maps
-}
-export default toExport
+export default Maps

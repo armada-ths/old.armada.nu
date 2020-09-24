@@ -42,7 +42,7 @@ import Fade from 'react-reveal/Fade'; import DiversitySection from '../src/compo
 
 <div className='diversitypage-container'>
 
-   <DiversitySection right>
+   <DiversitySection>
 
 ## Harassment policy
 
@@ -50,7 +50,7 @@ import Fade from 'react-reveal/Fade'; import DiversitySection from '../src/compo
 
    </DiversitySection>
 
-   <DiversitySection>
+   <DiversitySection right>
 
 ## Help us improve!
 

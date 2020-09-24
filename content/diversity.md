@@ -8,7 +8,8 @@ priority: 8
 header: /assets/images/header-images/diversity.jpg
 noJumbotron: false
 ---
-import Fade from 'react-reveal/Fade'; import DiversitySection from '../src/components/DiversitySection';
+import Fade from 'react-reveal/Fade';
+import DiversitySection from '../src/components/DiversitySection';
 
 <div className='diversitypage-container'>
 

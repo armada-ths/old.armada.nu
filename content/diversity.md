@@ -34,7 +34,7 @@ import Fade from 'react-reveal/Fade'; import DiversitySection from '../src/compo
 
 ## **Diversity Day**
 
-   Diversity Day is another way to keep the discussion about equality issues going. The day takes place during the Event Week and consists of several events, where companies and students get a platform to talk about, discuss and engage in diversity practices. Stay tuned for the exact date of Diversity Day 2020!
+   Diversity Day is another way to keep the discussion about equality issues going. The day takes place during the Event Week and consists of several events, where companies and students get a platform to talk about, discuss and engage in diversity practices. This year, Diversity Day will take place on Monday November 9th!
 
    </DiversitySection>
    </div>

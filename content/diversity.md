@@ -8,9 +8,7 @@ priority: 8
 header: /assets/images/header-images/diversity.jpg
 noJumbotron: false
 ---
-
-import Fade from 'react-reveal/Fade';
-import DiversitySection from '../src/components/DiversitySection';
+import Fade from 'react-reveal/Fade'; import DiversitySection from '../src/components/DiversitySection';
 
 <div className='diversitypage-container'>
 
@@ -20,7 +18,7 @@ import DiversitySection from '../src/components/DiversitySection';
 
    <DiversitySection left>
 
-   ## **Diversity Room**
+## **Diversity Room**
 
    One way THS Armada is accentuating the importance of diversity is through the Diversity Room, a special area at the career fair. As the fair is going digital this year, the diversity room will feature how Armada works with Diversity and also present information regarding the most progressive companies when it comes to inclusion and diversity in the workplace. These companies have been carefully selected with the Diversity Team, using a set of meaningful criteria developed by the team, called the Armada Diversity Index (ADI), found [here](/assets/Focus_rooms_selection.pdf).
 
@@ -34,9 +32,9 @@ import DiversitySection from '../src/components/DiversitySection';
 
    <DiversitySection right>
 
-   ## **Diversity Day**
+## **Diversity Day**
 
-   Diversity Day is another way to keep the discussion about equality issues going. The day takes place during the Event Week and consists of several events, where companies and students get a platform to talk about, discuss and engage in diversity practices. Stay tuned for the exact date of Diversity Day 2020!
+   Diversity Day is another way to keep the discussion about equality issues going. The day takes place during the Event Week and consists of several events, where companies and students get a platform to talk about, discuss and engage in diversity practices. This year, Diversity Day will take place on Monday November 9th!
 
    </DiversitySection>
    </div>
@@ -46,23 +44,15 @@ import DiversitySection from '../src/components/DiversitySection';
 
    <DiversitySection>
 
-   ## International Recruitment Indicator
-
-   This year THS Armada wants to make sure every student gets the most out of the fair. As KTH is deeply invested in internationalization, it is important that international students have a good experience at the fair. This is why we are introducing the International Recruitment Indicator, which allows companies who do recruit people who are not necessarily citizens or don’t speak Swedish to be easily identified by attendees.
-
-   </DiversitySection>
-
-   <DiversitySection right>
-
-   ## Harassment policy
+## Harassment policy
 
    It is important for us at THS Armada that everyone taking part in the career fair or events feel safe and enjoy their time. This is why we have developed guidelines to follow to make sure everyone’s boundaries are respected and all events go smoothly for everyone involved, within the THS Armada team as well as exhibitors, representatives, partners and attendees.
 
    </DiversitySection>
 
-   <DiversitySection>
+   <DiversitySection right>
 
-   ## Help us improve!
+## Help us improve!
 
    It is important for us at THS Armada to keep improving and implementing the latest measures to make it as diverse and equal as possible. Do you have any suggestions? We would love to have your input! Feel free to contact Head of Diversity at [elise.brouillette@armada.nu](mailto:elise.brouillette@armada.nu).
 

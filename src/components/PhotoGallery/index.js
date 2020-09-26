@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
 import Zoom from 'react-reveal/Zoom'
@@ -7,6 +7,7 @@ import axios from 'axios'
 const FLICKR_API_KEY = '381c0c551c89c0f23e326456eae0c6a8'
 const FLICKR_PHOTOSET_ID = '72157708626862634'
 const FLICKR_USER_ID = '51450332@N02'
+const FLICKR_ARMADA_URL = 'https://www.flickr.com/photos/armadakth/'
 
 const Photo = props => {
     const fileURL = props.fileURL
@@ -43,7 +44,10 @@ Photo.propTypes = {
 const PhotoGallery = props => {
     const [loaded, setLoaded] = useState(false)
     const [photos, setPhotos] = useState([])
-    const [startFrom, setStartFrom] = useState()
+    const [startFrom, next] = useReducer(
+        state => (state + props.photoCount) % photos.length,
+        0
+    )
 
     useEffect(() => {
         const effect = async () => {
@@ -62,35 +66,23 @@ const PhotoGallery = props => {
             )
             setLoaded(true)
             setPhotos(res.data.photoset.photo)
-            const interval = setInterval(
-                () =>
-                    setStartFrom(
-                        (startFrom + props.photoCount) % photos.length
-                    ),
-                10000
-            )
+            const interval = setInterval(() => next(), 10000)
             return () => clearInterval(interval)
         }
         effect()
-    }, [props, photos, startFrom])
+    }, [])
 
     const generateFlickrPhotoFileURL = (farmId, serverId, photoId, secret) => {
         return `https://farm${farmId}.staticflickr.com/${serverId}/${photoId}_${secret}_n.jpg`
     }
 
-    const generateFlickrPhotoPageURL = photoId => {
-        return `https://www.flickr.com/photos/armadakth/${photoId}/in/album-${FLICKR_PHOTOSET_ID}/`
-    }
-
-    const photoCount = props.photoCount
-
     let _photos = []
     if (loaded) {
-        _photos = photos.slice(startFrom, startFrom + photoCount)
-        if (_photos.length < photoCount) {
+        _photos = photos.slice(startFrom, startFrom + props.photoCount)
+        if (_photos.length < props.photoCount) {
             _photos = [
                 ..._photos,
-                ...photos.slice(0, photoCount - _photos.length),
+                ...photos.slice(0, props.photoCount - _photos.length),
             ]
         }
     }
@@ -109,7 +101,7 @@ const PhotoGallery = props => {
                                 p.id,
                                 p.secret
                             )}
-                            pageURL={generateFlickrPhotoPageURL(p.id)}
+                            pageURL={`${FLICKR_ARMADA_URL}${p.id}/in/album-${FLICKR_PHOTOSET_ID}/`}
                             title={p.title}
                         />
                     ))}

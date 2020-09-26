@@ -104,7 +104,7 @@ const locations = [
     { value: 'Africa', label: 'Africa' },
 ]
 
-const jobtype = [
+const jobType = [
     { value: 'Full time job', label: 'Full Time Job' },
     { value: 'Part time job', label: 'Part Time Job' },
     { value: 'Summer job', label: 'Summer Job' },
@@ -287,13 +287,13 @@ const ExhibitorList = props => {
     const [exhibitorName, setExhibitorName] = useState(undefined)
     const [isLoading, setIsLoading] = useState(true)
     const [search, setSearch] = useState('')
-    const [jobfilters, setJobfilters] = useState({})
-    const [sectorfilters, setSectorfilters] = useState({})
-    const [competencefilters, setCompetencefilters] = useState({})
-    const [locationfilters, setLocationfilters] = useState({})
-    const [diversityfilter, setDiversityfilter] = useState(false)
-    const [sustainabilityfilter, setSustainabilityfilter] = useState(false)
-    const [showamount, setShowamount] = useState(20)
+    const [jobFilters, setJobFilters] = useState({})
+    const [sectorFilters, setSectorFilters] = useState({})
+    const [competenceFilters, setCompetenceFilters] = useState({})
+    const [locationFilters, setLocationFilters] = useState({})
+    const [diversityFilter, setDiversityFilter] = useState(false)
+    const [sustainabilityFilter, setSustainabilityFilter] = useState(false)
+    const [showMore, setShowMore] = useState(false)
 
     useEffect(() => {
         axios
@@ -317,7 +317,7 @@ const ExhibitorList = props => {
     }, [props.exhibitorName, props.lastYear])
 
     const updateSearch = event => {
-        setdefault()
+        setShowMore(false)
         setSearch(event.target.value.substr(0, 100))
     }
 
@@ -327,9 +327,9 @@ const ExhibitorList = props => {
             <div className='job-container'>
                 <h3 className='modal-subheaders'>Job Opportunities</h3>
                 <ul>
-                    {exhibitor.employments.map((jobtype, index) => (
+                    {exhibitor.employments.map((jobType, index) => (
                         <li key={index} className='job-section'>
-                            {jobtype.name}
+                            {jobType.name}
                         </li>
                     ))}
                 </ul>
@@ -508,43 +508,35 @@ const ExhibitorList = props => {
     }
 
     //filter functions to be called onChange
-    const jobFilter = value => {
-        setdefault()
-        setJobfilters(value)
+    const onChangeJobFilter = value => {
+        setShowMore(false)
+        setJobFilters(value ? value : {})
     }
 
     //filter functions to be called onChange
-    const sectorFilter = value => {
-        setdefault()
-        setSectorfilters(value)
+    const onChangeSectorFilter = value => {
+        setShowMore(false)
+        setSectorFilters(value ? value : {})
     }
 
-    const competenceFilter = value => {
-        setdefault()
-        setCompetencefilters(value)
+    const onChangeCompetenceFilter = value => {
+        setShowMore(false)
+        setCompetenceFilters(value ? value : {})
     }
 
-    const locationFilter = value => {
-        setdefault()
-        setLocationfilters(value)
-    }
-
-    const showMore = () => {
-        setShowamount(183)
-    }
-
-    const setdefault = () => {
-        setShowamount(20)
+    const onChangeLocationFilter = value => {
+        setShowMore(false)
+        setLocationFilters(value ? value : {})
     }
 
     const toggleDiversityFilter = () => {
-        setdefault()
-        setDiversityfilter(!diversityfilter)
+        setShowMore(false)
+        setDiversityFilter(!diversityFilter)
     }
 
     const toggleSustainabilityFilter = () => {
-        setdefault()
-        setSustainabilityfilter(!sustainabilityfilter)
+        setShowModal()
+        setSustainabilityFilter(!sustainabilityFilter)
     }
 
     // Here you decide if list of exhibitors should be displayed or not
@@ -560,21 +552,21 @@ const ExhibitorList = props => {
     }
 
     //Diversity filter
-    if (diversityfilter) {
+    if (diversityFilter) {
         filteredCompanies = filteredCompanies.filter(
             e => e.location_special === 'Diversity Room'
         )
     }
 
     //Sustainability filter
-    if (sustainabilityfilter) {
+    if (sustainabilityFilter) {
         filteredCompanies = filteredCompanies.filter(
             e => e.location_special === 'Green Room'
         )
     }
 
     //Job type filter
-    for (const [, filter] in Object.entries(jobfilters)) {
+    for (const [, filter] in Object.entries(jobFilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
             return e.employments.reduce(
@@ -585,7 +577,7 @@ const ExhibitorList = props => {
     }
 
     //Sector type filter
-    for (const [, filter] in Object.entries(sectorfilters)) {
+    for (const [, filter] in Object.entries(sectorFilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
             return e.industries.reduce(
@@ -596,7 +588,7 @@ const ExhibitorList = props => {
     }
 
     //Competence type filter
-    for (const [, filter] in Object.entries(competencefilters)) {
+    for (const [, filter] in Object.entries(competenceFilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
             return e.competences.reduce(
@@ -607,7 +599,7 @@ const ExhibitorList = props => {
     }
 
     //Location type filter
-    for (const [, filter] in Object.entries(locationfilters)) {
+    for (const [, filter] in Object.entries(locationFilters)) {
         filteredCompanies = filteredCompanies.filter(e => {
             // Returnera true om något employment type matchar filter
             return e.locations.reduce(
@@ -651,7 +643,7 @@ const ExhibitorList = props => {
                     id='diversity'
                     type='image'
                     alt='diversity filter'
-                    src={diversityfilter ? diversitySelectedSvg : diversitySvg}
+                    src={diversityFilter ? diversitySelectedSvg : diversitySvg}
                     onClick={() => toggleDiversityFilter()}
                 />
                 <input
@@ -659,7 +651,7 @@ const ExhibitorList = props => {
                     type='image'
                     alt='sustainability filter'
                     src={
-                        sustainabilityfilter
+                        sustainabilityFilter
                             ? sustainabilitySelectedSvg
                             : sustainabilitySvg
                     }
@@ -685,8 +677,8 @@ const ExhibitorList = props => {
                         isSearchable
                         name='Job filter'
                         placeholder='All Jobs'
-                        options={jobtype}
-                        onChange={event => jobFilter(event)}
+                        options={jobType}
+                        onChange={onChangeJobFilter}
                         className='basic-multi-select'
                         classNamePrefix='select'
                     />
@@ -699,7 +691,7 @@ const ExhibitorList = props => {
                         name='Sector filter'
                         placeholder='All Industries'
                         options={sectors}
-                        onChange={event => sectorFilter(event)}
+                        onChange={onChangeSectorFilter}
                         className='basic-multi-select'
                         classNamePrefix='select'
                     />
@@ -712,7 +704,7 @@ const ExhibitorList = props => {
                         name='Competence filter'
                         placeholder='All Competences'
                         options={competences}
-                        onChange={event => competenceFilter(event)}
+                        onChange={onChangeCompetenceFilter}
                         className='basic-multi-select'
                         classNamePrefix='select'
                     />
@@ -725,22 +717,18 @@ const ExhibitorList = props => {
                         name='Location filter'
                         placeholder='All Locations'
                         options={locations}
-                        onChange={event => locationFilter(event)}
+                        onChange={onChangeLocationFilter}
                         className='basic-multi-select'
                         classNamePrefix='select'
                     />
                 </div>
             </div>
 
-            {/* <div className="supercontainer">
-                  <p className="matching_link">Pssst! Find your perfect company by using Armada's new <Link className="matching_link_style" to="/matching">matching functionality!</Link></p>
-                </div> */}
-
             <div className='loading'>{isLoading && <Loading />}</div>
             <div className='exhibitor-feed'>
                 {filteredCompanies.length && !isLoading ? (
                     filteredCompanies
-                        .splice(0, showamount)
+                        .splice(0, showMore ? 183 : 20)
                         .map(exhibitor => (
                             <ExhibitorItem
                                 key={exhibitor.id}
@@ -764,11 +752,11 @@ const ExhibitorList = props => {
                     </div>
                 )}
             </div>
-            {filteredCompanies.length > showamount && (
+            {filteredCompanies.length > 20 && (
                 <div className='showmore-container'>
                     <button
                         className='showmorebutton'
-                        onClick={() => showMore()}
+                        onClick={() => setShowMore(true)}
                     >
                         Show All
                     </button>

@@ -31,10 +31,18 @@
 	text-align: center;
 	color: $melon;
 	font-weight: bold;
+  font-size: 1.3em;
+}
+.text.test {
+	text-align: center;
+	color: $melon;
+	font-weight: bold;
+  font-size: 0.9em;
 }
 
 .border-left {
     border-left: 1px solid black;
     padding-right: 10px;
     border-left-color: #A9A9A9;
+    top: 2em; 
 }

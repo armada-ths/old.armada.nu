@@ -26,7 +26,7 @@ const SustainabilityInterviews = () => {
         <img alt='' className='card_Image' src={InterviewAnswers[0].imageUrl} height='200em' width='260em'/>
         <div class="col-md-6 border-left">
           <p className='text name'>{InterviewAnswers[0].name}</p>
-          <p className='text name'>{InterviewAnswers[0].title}</p>
+          <p className='text test'>{InterviewAnswers[0].title}</p>
           <p className='text Question'>{InterviewQuetions[0].text}</p>
           <p className='text'>{InterviewAnswers[0].answer1}</p>
           <p className='text Question'>{InterviewQuetions[1].text}</p>
@@ -39,7 +39,7 @@ const SustainabilityInterviews = () => {
         <img alt='' className='card_Image' src={InterviewAnswers[1].imageUrl} height='200em' width='260em'/>
         <div class="col-md-6 border-left">
           <p className='text name'>{InterviewAnswers[1].name}</p>
-          <p className='text name'>{InterviewAnswers[1].title}</p>
+          <p className='text test'>{InterviewAnswers[1].title}</p>
           <p className='text Question'>{InterviewQuetions[0].text}</p>
           <p className='text'>{InterviewAnswers[1].answer1}</p>
           <p className='text Question'>{InterviewQuetions[1].text}</p>
@@ -52,7 +52,7 @@ const SustainabilityInterviews = () => {
         <img alt='' className='card_Image' src={InterviewAnswers[2].imageUrl} height='200em' width='260em'/>
         <div class="col-md-6 border-left">
           <p className='text name'>{InterviewAnswers[2].name}</p>
-          <p className='text name'>{InterviewAnswers[2].title}</p>
+          <p className='text test'>{InterviewAnswers[2].title}</p>
           <p className='text Question'>{InterviewQuetions[0].text}</p>
           <p className='text'>{InterviewAnswers[2].answer1}</p>
           <p className='text Question'>{InterviewQuetions[1].text}</p>

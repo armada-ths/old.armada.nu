@@ -1,17 +1,17 @@
 import React from 'react'
 import './index.scss'
-import Sustainability from '../../components/Sustainability'
+import Page from '../../templates/page'
 
-const SustainabilityPage = () => {
+const SustainabilityPage = props => {
 
   return (
       <div className='content'>
         <div className='sustainability-container'>
-          <Sustainability/>
+          <Page {...props} />
         </div>
       </div>
   )
-  
+
 }
 
 export default SustainabilityPage

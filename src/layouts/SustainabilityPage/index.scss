@@ -2,15 +2,50 @@
 @import '../../styles/_variables';
 
 .sustainability-container {
-	padding-top: 3em;
-  max-width: $page-width;
-	margin: auto;
+    padding-top: 3em;
+    max-width: $page-width;
+    margin: auto;
+
+    .background_Images {
+        width: 100%;
+        display: block;
+        padding-top: 5px;
+
+        &:hover {
+            transform: scale(0.98);
+        }
+
+        &.Small {
+            max-width: 33%;
+            display: inline-block;
+            padding-bottom: 1em;
+        }
+
+        &.middle {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 33%;
+            padding-bottom: 1em;
+        }
+    }
+
+    #logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 5.5em;
+        padding: 1em;
+    }
+
+    #submitForm {
+        text-align: center;
+        padding: 1em;
+    }
 }
 
-
 @media screen and (max-width: $breakpoint-mobile) {
-	.sustainability-container {
-		padding: 3em 1em 0em 1em;
-	}
-
+    .sustainability-container {
+        padding: 3em 1em 0em 1em;
+    }
 }

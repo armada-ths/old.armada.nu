@@ -1,5 +1,4 @@
 import React from "react"
-//import PropTypes from "prop-types";
 import "./timeline.scss"
 
 const images=[
@@ -13,13 +12,15 @@ const images=[
 const Timeline = ()=>{
    
   return(
-            
+  <div>  
+    <h2>A year with Armada</h2>  
   <div className="timeline">
+    
   <div className="containerleft leftleft">
     <div className="contentt">
       <h4>November</h4>
       <p id="p_text">New project manager is chosen.</p>
-      <div id="images"><img id="timeline_pic" src={images[0].pmImage}/></div>
+      <div id="images_PM"><img id="timeline_pic_PM" src={images[0].pmImage}/></div>
     </div>
   </div>
   <div className="containerright rightright">
@@ -27,7 +28,6 @@ const Timeline = ()=>{
       <h4>January</h4>
       <p id="p_text">The Project Group is recruited.</p>
       <div id="images"><img id="timeline_pic" src={images[0].pgImage}/></div>
-      {/* <div id="images"><img id="timeline_pic" src={images[0].fairImage}/></div> */}
       </div>
   </div>
   <div className="containerleft leftleft">
@@ -115,6 +115,7 @@ const Timeline = ()=>{
       </div>
   </div>
 </div>
+</div> 
 );
     
 }

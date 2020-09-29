@@ -56,8 +56,7 @@ import SustainabilityInterviews from '../src/components/SustainabilityInterviews
   The climate compensation is done by either investing in sustainable projects in developing
   countries, or by planting trees. The emission calculations are based on transportation of
   participants and various flows associated with goods, waste, food use and energy usage during
-  events as well as the career fair. The companies that climate compensate their visit through
-  THS Armada will receive a climate compensation symbol during the fair on the Armada website. We are climate compensating through Klimatkompensera.nu.
+  events as well as the career fair. The companies that climate compensate their visit through THS Armada will receive a climate compensation symbol during the fair on the Armada website. We are climate compensating through Klimatkompensera.nu.
 
   <form id='submitForm' target='blank' method='get' action='https://klimatkompensera.se/'>
      <button type='submit'>Check out their website</button>

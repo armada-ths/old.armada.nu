@@ -1,48 +1,51 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
-.card_Image {
-  border-radius: 25px;
-  height: "200em";
-  width: "250em";
-  margin: 0.5em;
-	display: inline-block;
-  margin-top: 1em;
-}
-.card_Image:hover {
-  transform: scale(0.98);
-}
-.question {
-	float: left;
-	display: inline-block;
-	width: 15em;
-}
+.sustainability-question {
+    float: left;
+    width: 15em;
 
-.text {
-	margin: 2px 0 0 20px !important;
-	word-break: break-word;
-	text-align: left;
-	padding-bottom: 5px;
-}
-.text.Question {
-	font-weight: bold;
-}
-.text.name {
-	text-align: center;
-	color: $melon;
-	font-weight: bold;
-  font-size: 1.3em;
-}
-.text.test {
-	text-align: center;
-	color: $melon;
-	font-weight: bold;
-  font-size: 0.9em;
-}
+    img {
+        border-radius: 25px;
+        height: '200em';
+        width: '250em';
+        margin: 0.5em;
+        display: inline-block;
+        margin-top: 1em;
 
-.border-left {
-    border-left: 1px solid black;
-    padding-right: 10px;
-    border-left-color: #A9A9A9;
-    top: 2em; 
+        &:hover {
+            transform: scale(0.98);
+        }
+    }
+
+    .text {
+        margin: 2px 0 0 20px !important;
+        word-break: break-word;
+        text-align: left;
+        padding-bottom: 5px;
+    }
+
+    .text.Question {
+        font-weight: bold;
+    }
+
+    .text.name {
+        text-align: center;
+        color: $melon;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    .text.test {
+        text-align: center;
+        color: $melon;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+
+    .border-left {
+        border-left: 1px solid black;
+        padding-right: 10px;
+        border-left-color: #a9a9a9;
+        top: 2em;
+    }
 }

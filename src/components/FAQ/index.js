@@ -32,8 +32,8 @@ const questions = [
     ]},
     */
     {title: 'THE BANQUET', body: [
-        {question: 'Can I attend the banquet?', answer: 'The whole Armada Team is invited to The Grand Banquet together with the companies that purchased Banquet tickets. The afterparty is open for everyone to join, you just need to purchase a ticket!'},
-        {question: 'Is it possible to attend the banquet even though I’m not working for Armada?', answer: 'Only if you were a part of the winning team of the annual Armada Run! But you can go to the After Party at Münchenbryggeriet, buy your ticket now!'},
+        {question: 'Can I attend the banquet?', answer: 'The whole Armada Team is invited to The Grand Banquet of Armada. You will recieve your invitation by email.'},
+        {question: 'Is it possible to attend the banquet even though I’m not working for Armada?', answer: 'This years banquet will be exclusive for Armada 2020 only. Due to Covid-19 you wont be able to purchase tickets to the after party. We hope to see you next year!'},
     ]},
     {title: 'RECRUITMENT', body: [
         {question: 'How do I become a part of the Armada team?', answer: 'You apply for any of the roles you are interested in during one of the recruitment periods Armada has during the year. See the question about “When do THS Armada recruit people?”'},

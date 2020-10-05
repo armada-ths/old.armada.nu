@@ -11,13 +11,14 @@ const Homepage = (props) => {
   const PhotoGallery = Loadable({ loader: () => import('../../components/PhotoGallery'), loading() { return <Loading/> }});
 
   return (
-    <Page { ...props }>
+
       <div className='homepage'>
+        <Page { ...props }/>
         <Newsfeed/>
           <PhotoGallery photoCount={6}/>
           <PartnersGallery mainOnly/>
       </div>
-    </Page>
+
   )
 }
 

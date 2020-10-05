@@ -1,6 +1,18 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
+.sustainability {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    a {
+        color: $melon;
+    }
+
+
+}
 .sustainability-container {
 	padding-top: 3em;
   max-width: $page-width;
@@ -8,6 +20,7 @@
 
 	.background_Images {
 	  width: 100%;
+		height: 80%;
 	  display: block;
 	  align: center;
 	  padding-top: 5px;
@@ -43,10 +56,31 @@
 	}
 }
 
+.sustainability-day {
+    background-image: url('/assets/Sustainability/sustainability_background1_2.jpeg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3em;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+        color: #fff;
+    }
+}
+
+
 
 @media screen and (max-width: $breakpoint-mobile) {
 	.sustainability-container {
 		padding: 3em 1em 0em 1em;
 	}
+  .sustainability-day {
+      padding: 2em 1em;
+  }
 
 }

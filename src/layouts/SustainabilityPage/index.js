@@ -6,7 +6,7 @@ const SustainabilityPage = props => {
 
   return (
       <div className='content'>
-        <div className='sustainability-container'>
+        <div className='sustainability'>
           <Page {...props} />
         </div>
       </div>

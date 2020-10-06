@@ -1,46 +1,60 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
+.sustainability {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    a {
+        color: $melon;
+    }
+
+
+}
 .sustainability-container {
-    padding-top: 3em;
-    max-width: $page-width;
-    margin: auto;
+	padding-top: 2em;
+  max-width: $page-width;
+	margin: auto;
 
-    .background_Images {
-        width: 100%;
-        display: block;
-        padding-top: 5px;
+	.background_Images.middle {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 33%;
+	  padding-bottom: 1em;
+	  align: center;
+	}
+	#logo {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 5.5em;
+	  padding: 1em;
+	}
 
-        &:hover {
-            transform: scale(0.98);
-        }
 
-        &.Small {
-            max-width: 33%;
-            display: inline-block;
-            padding-bottom: 1em;
-        }
+	#submitForm {
+		text-align: center;
+		padding: 1em;
+	}
+}
 
-        &.middle {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 33%;
-            padding-bottom: 1em;
-        }
-    }
+.sustainability-day {
+    background-image: url('/assets/Sustainability/sustainability_background5.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3em;
 
-    #logo {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 5.5em;
-        padding: 1em;
-    }
-
-    #submitForm {
-        text-align: center;
-        padding: 1em;
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+        color: #fff;
     }
 }
 

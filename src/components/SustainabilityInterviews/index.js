@@ -1,10 +1,8 @@
-import React from 'react';
-
-import './index.scss';
+import React from 'react'
+import './index.scss'
 
 //TODO remove 'hårdkodning' and add 'show more' to show more people
 
-// class Sustainability extends React.Component {
 const SustainabilityInterviews = () => {
 
   const InterviewQuetions = [
@@ -20,51 +18,37 @@ const SustainabilityInterviews = () => {
     {name: 'Ann-Catrin Lindkvist', title:'', imageUrl:'/assets/images/PG20/acalphabet.jpg', answer1:'As head of web development I mainly focus on sustainable code that can be reused by the developers upcoming years. It is also really important that my team have a reasonable amount of workload. As for the environment we use the website as a digital alternative instead of handing out flyers. We do not buy unnecessary stuff and we do not use disposables either.', answer2:'The biggest challenge is to have just enough information on the website that is also relevant to the message we want the user to know. But my team is the best, so nothing feels impossible with them!', answer3:'Sustainability is important for the future. I will become a teacher (and also an engineer) when I am done with my studies. Sustainability is important for my future pupils. To take a sustainable action is an active choice we all can make. It motivates me.'}
   ]
 
-    return (<div>
-      <h2>What does sustainability mean to you?</h2>
-      <div className='question'>
-        <img alt='' className='card_Image' src={InterviewAnswers[0].imageUrl} height='200em' width='260em'/>
-        <div class="col-md-6 border-left">
-          <p className='text name'>{InterviewAnswers[0].name}</p>
-          <p className='text test'>{InterviewAnswers[0].title}</p>
-          <p className='text Question'>{InterviewQuetions[0].text}</p>
-          <p className='text'>{InterviewAnswers[0].answer1}</p>
-          <p className='text Question'>{InterviewQuetions[1].text}</p>
-          <p className='text'>{InterviewAnswers[0].answer2}</p>
-          <p className='text Question'>{InterviewQuetions[2].text}</p>
-          <p className='text'>{InterviewAnswers[0].answer3}</p>
+    return (
+        <div>
+            <h2>What does sustainability mean to you?</h2>
+            {InterviewAnswers.slice(0,3).map(answer => (
+                <div key={answer.name} className='sustainability-question'>
+                    <img
+                        alt=''
+                        src={answer.imageUrl}
+                        height='200em'
+                        width='260em'
+                    />
+                    <div className='border-left'>
+                        <p className='text name'>{answer.name}</p>
+                        <p className='text test'>{answer.title}</p>
+                        <p className='text Question'>
+                            {InterviewQuetions[0].text}
+                        </p>
+                        <p className='text'>{answer.answer1}</p>
+                        <p className='text Question'>
+                            {InterviewQuetions[1].text}
+                        </p>
+                        <p className='text'>{answer.answer2}</p>
+                        <p className='text Question'>
+                            {InterviewQuetions[2].text}
+                        </p>
+                        <p className='text'>{answer.answer3}</p>
+                    </div>
+                </div>
+            ))}
         </div>
-      </div>
-      <div className='question'>
-        <img alt='' className='card_Image' src={InterviewAnswers[1].imageUrl} height='200em' width='260em'/>
-        <div class="col-md-6 border-left">
-          <p className='text name'>{InterviewAnswers[1].name}</p>
-          <p className='text test'>{InterviewAnswers[1].title}</p>
-          <p className='text Question'>{InterviewQuetions[0].text}</p>
-          <p className='text'>{InterviewAnswers[1].answer1}</p>
-          <p className='text Question'>{InterviewQuetions[1].text}</p>
-          <p className='text'>{InterviewAnswers[1].answer2}</p>
-          <p className='text Question'>{InterviewQuetions[2].text}</p>
-          <p className='text'>{InterviewAnswers[1].answer3}</p>
-        </div>
-      </div>
-      <div className='question'>
-        <img alt='' className='card_Image' src={InterviewAnswers[2].imageUrl} height='200em' width='260em'/>
-        <div class="col-md-6 border-left">
-          <p className='text name'>{InterviewAnswers[2].name}</p>
-          <p className='text test'>{InterviewAnswers[2].title}</p>
-          <p className='text Question'>{InterviewQuetions[0].text}</p>
-          <p className='text'>{InterviewAnswers[2].answer1}</p>
-          <p className='text Question'>{InterviewQuetions[1].text}</p>
-          <p className='text'>{InterviewAnswers[2].answer2}</p>
-          <p className='text Question'>{InterviewQuetions[2].text}</p>
-          <p className='text'>{InterviewAnswers[2].answer3}</p>
-        </div>
-      </div>
-
-    </div>
-
-    );
+    )
 }
 
-export default SustainabilityInterviews;
+export default SustainabilityInterviews

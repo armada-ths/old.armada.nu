@@ -8,7 +8,7 @@ display_date: false
 cover_wide: /assets/for_exhibitors.jpg
 ingress: The definitive guide for exhibitors!
 header: /assets/news-header.jpg
-archived: false
+archived: true
 ---
 
 <br/>

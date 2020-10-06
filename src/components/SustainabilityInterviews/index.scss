@@ -1,8 +1,6 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
-
-
 .card_Image {
   border-radius: 25px;
   height: "200em";
@@ -20,27 +18,29 @@
 	width: 15em;
 }
 
-.text {
-	margin: 2px 0 0 20px !important;
-	word-break: break-word;
-	text-align: left;
-	padding-bottom: 5px;
-}
-.text.Question {
-	font-weight: bold;
-}
-.text.name {
-	text-align: center;
-	color: $melon;
-	font-weight: bold;
-  font-size: 1.3em;
-}
-.text.test {
-	text-align: center;
-	color: $melon;
-	font-weight: bold;
-  font-size: 0.9em;
-}
+    .text {
+        margin: 2px 0 0 20px !important;
+        word-break: break-word;
+        text-align: left;
+        padding-bottom: 5px;
+    }
+
+    .text.Question {
+        font-weight: bold;
+    }
+
+    .text.name {
+        text-align: center;
+        color: $melon;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    .text.test {
+        text-align: center;
+        color: $melon;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
 
 .border-left {
     border-left: 1px solid black;

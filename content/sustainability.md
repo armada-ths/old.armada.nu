@@ -61,12 +61,18 @@ import SustainabilitySection from '../src/components/DiversitySection';
 </div>
 
 <div className='sustainability-container'>
-  <SustainabilitySection left>
-  <SustainabilityInterviews/>
-  </SustainabilitySection>
-</div>
+<SustainabilitySection left>
 
-<div className='sustainability-container'>
+  ## Climate Compensation
+
+  This year, THS Armada offers the participating companies to climate compensate for their visit.
+  The climate compensation is done by either investing in sustainable projects in developing
+  countries, or by planting trees. The emission calculations are based on transportation of
+  participants and various flows associated with goods, waste, food use and energy usage during
+  events as well as the career fair. The companies that climate compensate their visit through THS Armada will receive a climate compensation symbol during the fair on the Armada website. We are climate compensating through [Klimatkompensera.nu](https://klimatkompensera.se/).
+
+  </SustainabilitySection>
+
   <SustainabilitySection right>
 
   ## Armada Sustainability Index
@@ -83,6 +89,13 @@ import SustainabilitySection from '../src/components/DiversitySection';
 
 <div className='sustainability-container'>
   <SustainabilitySection left>
+  <SustainabilityInterviews/>
+  </SustainabilitySection>
+</div>
+
+<div className='sustainability-container'>
+
+  <SustainabilitySection right>
 
    ## Help us become more sustainable
 

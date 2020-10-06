@@ -19,35 +19,37 @@ const SustainabilityInterviews = () => {
   ]
 
     return (
-        <div>
+        <>
             <h2>What does sustainability mean to you?</h2>
             {InterviewAnswers.slice(0,3).map(answer => (
                 <div key={answer.name} className='sustainability-question'>
-                    <img
-                        alt=''
-                        src={answer.imageUrl}
-                        height='200em'
-                        width='260em'
-                    />
-                    <div className='border-left'>
-                        <p className='text name'>{answer.name}</p>
-                        <p className='text test'>{answer.title}</p>
-                        <p className='text Question'>
-                            {InterviewQuetions[0].text}
-                        </p>
-                        <p className='text'>{answer.answer1}</p>
-                        <p className='text Question'>
-                            {InterviewQuetions[1].text}
-                        </p>
-                        <p className='text'>{answer.answer2}</p>
-                        <p className='text Question'>
-                            {InterviewQuetions[2].text}
-                        </p>
-                        <p className='text'>{answer.answer3}</p>
+                    <div className='interviewee'>
+                        <img
+                            alt=''
+                            src={answer.imageUrl}
+                            height='200em'
+                            width='260em'
+                        />
+                        <div>
+                            <p className='text name'>{answer.name}</p>
+                            <p className='text interviewTitle'>{answer.title}</p>
+                            <p className='text Question'>
+                                {InterviewQuetions[0].text}
+                            </p>
+                            <p className='text'>{answer.answer1}</p>
+                            <p className='text Question'>
+                                {InterviewQuetions[1].text}
+                            </p>
+                            <p className='text'>{answer.answer2}</p>
+                            <p className='text Question'>
+                                {InterviewQuetions[2].text}
+                            </p>
+                            <p className='text'>{answer.answer3}</p>
+                        </div>
                     </div>
                 </div>
             ))}
-        </div>
+        </>
     )
 }
 

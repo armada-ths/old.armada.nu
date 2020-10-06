@@ -1,50 +1,61 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
-.card_Image {
-  border-radius: 25px;
-  height: "200em";
-  width: "250em";
-  margin: 0.5em;
-	display: inline-block;
-  margin-top: 1em;
-}
-.card_Image:hover {
-  transform: scale(0.98);
-}
-.question {
-	float: left;
-	display: inline-block;
-	width: 15em;
-}
+.interviewee {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.5em 0;
 
-    .text {
-        margin: 2px 0 0 20px !important;
-        word-break: break-word;
-        text-align: left;
-        padding-bottom: 5px;
+    @media screen and (max-width: $breakpoint-mobile-flipped) {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .text.Question {
-        font-weight: bold;
+    .card_Image {
+        border-radius: 25px;
+        height: '200em';
+        width: '250em';
+        margin: 0.5em;
+        display: inline-block;
+        margin-top: 1em;
+
+        &:hover {
+            transform: scale(0.98);
+        }
     }
 
-    .text.name {
-        text-align: center;
-        color: $melon;
-        font-weight: bold;
-        font-size: 1.3em;
-    }
-    .text.test {
-        text-align: center;
-        color: $melon;
-        font-weight: bold;
-        font-size: 0.9em;
+    .question {
+        display: inline-block;
+        width: 15em;
     }
 
-.border-left {
-    border-left: 1px solid black;
-    padding-right: 10px;
-    border-left-color: #A9A9A9;
-    top: 2em;
+    > div {
+        margin-left: 1em;
+
+        .text {
+            margin: 0;
+            word-break: break-word;
+            text-align: left;
+            padding-bottom: 5px;
+
+            &.Question,
+            &.name,
+            &.interviewTitle {
+                font-weight: bold;
+            }
+
+            &.name,
+            &.interviewTitle {
+                color: $melon;
+            }
+
+            &.name {
+                font-size: 1.3em;
+            }
+
+            &.interviewTitle {
+                font-size: 0.9em;
+            }
+        }
+    }
 }

@@ -8,8 +8,7 @@ priority: 8
 header: /assets/images/header-images/diversity.jpg
 noJumbotron: false
 ---
-import Fade from 'react-reveal/Fade';
-import DiversitySection from '../src/components/DiversitySection';
+import Fade from 'react-reveal/Fade'; import DiversitySection from '../src/components/DiversitySection';
 
 <div className='diversitypage-container'>
 
@@ -47,7 +46,7 @@ import DiversitySection from '../src/components/DiversitySection';
 
 ## Harassment policy
 
-   It is important for us at THS Armada that everyone taking part in the career fair or events feel safe and enjoy their time. This is why we have developed guidelines to follow to make sure everyone’s boundaries are respected and all events go smoothly for everyone involved, within the THS Armada team as well as exhibitors, representatives, partners and attendees.
+   It is important for us at THS Armada that everyone taking part in the career fair or events feel safe and enjoy their time. This is why we have developed guidelines to follow to make sure everyone’s boundaries are respected and all events go smoothly for everyone involved, within the THS Armada team as well as exhibitors, representatives, partners and attendees.  We suggest everyone participating in any way in THS Armada read the policy <a href="/assets/THS_Armada_Harassment_and_Safety_Policy.pdf">here</a>!</p>
 
    </DiversitySection>
 

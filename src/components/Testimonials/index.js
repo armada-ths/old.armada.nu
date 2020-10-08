@@ -8,8 +8,8 @@ const Testimonials = () => {
     useEffect(() => {
 
       const people = [
-        {name: 'Daniel Aston', role: 'Project Manager', statement: 'I\'ve met so many fun people', image: '/assets/images/PG20/danieldrake.jpg'},
-        {name: 'Lucas Wallhager', role: 'Head of Career Fair', statement: 'Armada is a great opportunity to develop skills for the future in a fun environment, where everyone is working for a common goal', image: '/assets/images/PG20/lucasliqour.jpg'},
+        {name: 'Daniel Aston', role: 'Project Manager', statement: 'I\'ve met so many fun people!', image: '/assets/images/PG20/danieldrake.jpg'},
+        {name: 'Lucas Wallhager', role: 'Head of Career Fair', statement: 'Armada is a great opportunity to develop skills for the future in a fun environment, where everyone is working for a common goal.', image: '/assets/images/PG20/lucasliqour.jpg'},
         {name: 'Elias Ljunggren', role: 'Head of Service and Sponsorship', statement: 'Armada is freakin\' amaaazing!!', image: '/assets/images/PG20/eliaseagle.jpg'},
         {name: 'Pavel Askari', role: 'Head of Sales', statement: 'It’s a experience you will never forget!', image: '/assets/images/PG20/pavelpeach.jpg'},
         {name: 'Leonard Hökby', role: 'Head of Logistics and Career Fair', statement: 'You get the chance to do something meaningful and fun at the same time.', image: '/assets/images/PG20/leolionposter.jpg'},
@@ -19,6 +19,10 @@ const Testimonials = () => {
         {name: 'Malavika Balakumar', role: 'Diversity Coordinator', statement: 'Armada is a great platform to meet and make friends from all over the world.', image: '/assets/images/testimonials/malavika_balakumar.jpg'},
         {name: 'Aditya Pratap Singh', role: 'Operations Team - Events', statement: 'Great platform to connect with new people and companies!', image: '/assets/images/testimonials/aditya_pratap_singh.jpg'},
         {name: 'Maria Kessing', role: 'Marketing Coordinator', statement: 'Armada gives the oppportunity to combine your theoretical studies with real working life experiences!', image: '/assets/images/testimonials/maria_kessing.jpg'},
+        {name: 'Sateesh Nataraj', role: 'Diversity Coordinator', statement: 'ARMADA - For students, by students.', image: '/assets/images/testimonials/sateesh_nataraj.jpg'}, 
+        {name: 'Nachiketh Acharya', role: 'Team Leader - Events', statement: 'Professionalism and fun on a single platform.', image: '/assets/images/testimonials/nachiketh_acharya.jpg'}, 
+        {name: 'Saurav Dasgupta', role: 'Sustainability Coordinator', statement: 'The best part about working in this organization is to fuse different perspectives and implement decisions with a common objective.', image: '/assets/images/testimonials/saurav_dasgupta.jpg'},
+        {name: 'Clara Myhrman', role: 'Sustainability Coordinator', statement: 'Working with Armada is the first time implementing my sustainability knowledge!', image: '/assets/images/testimonials/clara_myhrman.jpg'},
       ];
 
       setTestimonials(people.sort(() => 0.5 - Math.random()).slice(0, 2))

@@ -1,15 +1,24 @@
-import React from 'react'
-import './index.scss'
-import Page from '../../templates/page'
+import React from "react"
+import Timeline from "../../components/Timeline"
+import PropTypes from "prop-types"
 
-const AboutPage = (props) => {
+import Page from "../../templates/Page"
+
+import "./index.scss"
+
+const Aboutpage = (props) => {
   return (
-      <div className='content'>
-        <div className='aboutpage-container'>
+      <div className="content">
+        <div className="aboutpage-container">
           <Page { ...props } />
+          <Timeline/>
         </div>
       </div>
   )
 }
 
-export default AboutPage
+Aboutpage.propTypes = {
+  head: PropTypes.object.isRequired,
+}
+
+export default Aboutpage

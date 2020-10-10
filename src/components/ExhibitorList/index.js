@@ -296,24 +296,25 @@ const ExhibitorList = props => {
     const [showMore, setShowMore] = useState(false)
 
     useEffect(() => {
-        axios
-            .get(
-                `${ais}api/exhibitors?img alt=''_placeholder=true${
-                    props.lastYear && '&year=' + previousYear
-                }`
-            )
-            .then(res => {
-                const exhibitors = res.data // create variable and store result within parameter data
-                setExhibitors(
-                    exhibitors.sort((a, b) => a.name.localeCompare(b.name))
-                )
-                setIsLoading(false)
-                // Get from url path the GET params ?id=number, to know what event to display
-                if (props.exhibitorName !== undefined) {
-                    setExhibitorName(props.exhibitorName)
-                    setShowModal(true)
-                }
+        ;(async () => {
+            const res = await axios.get(ais + 'api/exhibitors', {
+                params: {
+                    img_placeholder: true,
+                    year: props.lastYear ? previousYear : undefined,
+                },
             })
+
+            const exhibitors = res.data // create variable and store result within parameter data
+            setExhibitors(
+                exhibitors.sort((a, b) => a.name.localeCompare(b.name))
+            )
+            setIsLoading(false)
+            // Get from url path the GET params ?id=number, to know what event to display
+            if (props.exhibitorName !== undefined) {
+                setExhibitorName(props.exhibitorName)
+                setShowModal(true)
+            }
+        })()
     }, [props.exhibitorName, props.lastYear])
 
     const updateSearch = event => {
@@ -793,8 +794,7 @@ const ExhibitorItem = props => {
                     <img alt='' src='/assets/diversity-black-nolabel.png' />
                 </div>
             )}
-            {(props.exhibitor.location_special === 'Green Room') &
-            (
+            {props.exhibitor.location_special === 'Green Room' && (
                 <div className='corner-special'>
                     <img
                         alt=''

@@ -31,19 +31,18 @@ const EventList = props => {
     const [eventId, setEventId] = useState(undefined)
 
     useEffect(() => {
-        axios
-            .get('https://ais.armada.nu/api/events') // fetch data witt promise (then) and res(ult)
-            .then(res => {
-                let events = res.data // create variable and store result within parameter data
-                events.sort((a, b) => a.event_start - b.event_start)
+        ;(async () => {
+            const res = await axios.get('https://ais.armada.nu/api/events') // fetch data witt promise (then) and res(ult)
+            const events = res.data // create variable and store result within parameter data
+            events.sort((a, b) => a.event_start - b.event_start)
 
-                setEvents(events) // component saves its own data
-                // Get from url path the GET params ?id=number, to know what event to display
-                if (props.eventId !== undefined) {
-                    setEventId(props.eventId)
-                    setShowModal(true)
-                }
-            })
+            setEvents(events) // component saves its own data
+            // Get from url path the GET params ?id=number, to know what event to display
+            if (props.eventId !== undefined) {
+                setEventId(props.eventId)
+                setShowModal(true)
+            }
+        })()
     })
 
     const updateEventId = eventId => {
@@ -66,7 +65,6 @@ const EventList = props => {
     const displayEvent = event => {
         let today = new Date()
         let eventdate = new Date(event.event_start * 1000)
-        // let registration_end = new Date (event.registration_end * 1000);
         let minutes = '0' + eventdate.getMinutes()
         let hours = eventdate.getHours()
         let eventdate_end = new Date(event.event_end * 1000)
@@ -89,7 +87,6 @@ const EventList = props => {
                             {eventdate > today ? (
                                 <a href={event.signup_link}>
                                     <button className='rsvpbutton'>
-                                        {/* <span>SIGN UP BEFORE {getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span> */}
                                         <span>SIGN UP HERE</span>
                                     </button>
                                 </a>
@@ -195,7 +192,7 @@ const EventList = props => {
 
         let today = new Date()
         let eventdate = new Date(event.event_start * 1000)
-        // let registration_end = new Date (event.registration_end * 1000);
+
         return (
             <div>
                 <div

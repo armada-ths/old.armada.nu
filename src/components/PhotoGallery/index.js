@@ -42,7 +42,7 @@ Photo.propTypes = {
 }
 
 const PhotoGallery = props => {
-    const [loaded, setLoaded] = useState(false)
+    const [loading, setLoading] = useState(false)
     const [photos, setPhotos] = useState([])
     const [startFrom, next] = useReducer(
         state => (state + props.photoCount) % photos.length,
@@ -50,7 +50,8 @@ const PhotoGallery = props => {
     )
 
     useEffect(() => {
-        const effect = async () => {
+        ;(async () => {
+            setLoading(true)
             const res = await axios.get(
                 'https://api.flickr.com/services/rest/',
                 {
@@ -64,12 +65,14 @@ const PhotoGallery = props => {
                     },
                 }
             )
-            setLoaded(true)
+            setLoading(false)
             setPhotos(res.data.photoset.photo)
-            const interval = setInterval(() => next(), 10000)
-            return () => clearInterval(interval)
-        }
-        effect()
+        })()
+    }, [])
+
+    useEffect(() => {
+        const interval = setInterval(() => next(), 10000)
+        return () => clearInterval(interval)
     }, [])
 
     const generateFlickrPhotoFileURL = (farmId, serverId, photoId, secret) => {
@@ -77,7 +80,7 @@ const PhotoGallery = props => {
     }
 
     let _photos = []
-    if (loaded) {
+    if (!loading) {
         _photos = photos.slice(startFrom, startFrom + props.photoCount)
         if (_photos.length < props.photoCount) {
             _photos = [
@@ -91,7 +94,7 @@ const PhotoGallery = props => {
         <div>
             <h1 className='gallery-title'>Armada in pictures</h1>
             <div className='photo-gallery'>
-                {loaded &&
+                {!loading &&
                     _photos.map(p => (
                         <Photo
                             key={p.id}

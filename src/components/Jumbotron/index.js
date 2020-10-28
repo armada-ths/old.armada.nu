@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './index.scss';
 import Countdown from '../Countdown'
 import Video from '../../../static/assets/video/virtual_fair.mp4'
-import Logo from '../../../static/assets/images/header-images/logo.png'
+import Logo from '../../../static/assets/images/header-images/virtual_logo.png'
 import useWindowSize from '../../hooks/useWindowSize'
 
 const Jumbotron = (props) => {

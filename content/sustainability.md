@@ -18,9 +18,7 @@ import SustainabilitySection from '../src/components/DiversitySection';
   <img alt='' id='logo' src='/assets/sustainability-melon-nolabel.png'/>
 
 
-   <p> <b id='sustainability-color'>Sustainability</b> is one of the key elements required in making the world a better place, a place where humanity and nature can live together in harmony without depleting nature’s resources. It
-   is because of this that Sustainability is in the core of our operations. THS Armada’s
-   Sustainability policy can be found here: </p>
+   <p> <b id='sustainability-color'>Sustainability</b> is one of the key elements required in making the world a better place, a place where humanity and nature can live together in harmony without depleting the resources of nature. At THS Armada sustainability is a fundamental of all operations as it is one of our core values, together with Diversity. We reach out to a large scale of people and believe that with this comes a responsibility to encourage a more sustainable living. The THS Armada’s Sustainability policy can be found here: </p>
 
    <form id='submitForm' method='get' action='/assets/Sustainability_Diversity-Policy.pdf'>
       <button type='submit'>Download Sustainability Policy</button>
@@ -31,13 +29,11 @@ import SustainabilitySection from '../src/components/DiversitySection';
 
    ## Green Room
 
-   THS Armada has dedicated an area of the fair to companies that we deem to be the
-   frontrunners in our vision for a sustainable future. This area is known as the Green Room. The
-   exhibitors in Green Room are eager to share their work in regards to minimising their
-   environmental impact. Visiting Green Room is a must if you’re interested in sustainability, the
-   environment or if you just want to know how different companies can work with sustainability.
+   THS Armada has dedicated an area at the career fair to bring attention to the core value sustainability. The special area is known as the Green Room. As the fair is going digital this year, the Green Room will be a place to get more familiar with the concept of sustainability and how THS Armada works for becoming more sustainable, as well as acquainting with companies that we deem to be the frontrunners in our vision for a sustainable future. These companies have been carefully selected by the Sustainability Team, using a set of meaningful criteria developed by the team, called the Armada Sustainability Index (ASI). More information about the ASI can be found further below.
 
-   Exhibitors in Green Room 2019 and the reasoning for having them in the room can be found here:
+  Visiting the Green Room is a must if you are interested in sustainability, the environment or if you just want to know how the selected companies work with sustainability. For this year there will also be some fun games in the Green Room! If you want to visit the virtual booths or get in touch with the companies remember to visit the digital fair at Graduateland.
+
+  For this year the selected Green Room companies are AFRY, Electrolux, Ericsson, SCA and Vattenfall. Stay tuned for upcoming information about the exhibitors. In the meantime, you can check out the Green Room companies from 2019:
 
    <form id='submitForm' method='get' action='/assets/green-room.pdf'>
       <button type='submit'>See Exhibitors in the Green Room</button>
@@ -53,8 +49,7 @@ import SustainabilitySection from '../src/components/DiversitySection';
 
    ## Sustainability Day
 
-   Sustainability Day is an entire day dedicated to sustainability. The day takes place during the Event Week This year it will be combined with Innovation Night. Stay tuned for the exact date of Sustainability Day 2020!
-
+  THS Armada believes that it is important to talk, inform and discuss sustainability to get a better understanding of the concept and what it means in practise. To fulfill this THS Armada will dedicate a whole day to events related to sustainability. The day takes place during the Event Week and the date is Thursday November 12th. More information about the Sustainability Day will be shared here and on our social media accounts closer to the fair.
 
    </SustainabilitySection>
    </div>
@@ -63,13 +58,13 @@ import SustainabilitySection from '../src/components/DiversitySection';
 <div className='sustainability-container'>
 <SustainabilitySection left>
 
-  ## Climate Compensation
+  ## Armada 2020 will be climate neutral
 
-  This year, THS Armada offers the participating companies to climate compensate for their visit.
-  The climate compensation is done by either investing in sustainable projects in developing
-  countries, or by planting trees. The emission calculations are based on transportation of
-  participants and various flows associated with goods, waste, food use and energy usage during
-  events as well as the career fair. The companies that climate compensate their visit through THS Armada will receive a climate compensation symbol during the fair on the Armada website. We are climate compensating through [Klimatkompensera.nu](https://klimatkompensera.se/).
+  This year, THS Armada is climate compensating for all caused carbon dioxide emissions. It means that all carbon dioxide emissions are calculated and compensated for by investments in projects that contribute to reduced and avoided emissions. In parallel with this, THS Armada is working hard with reducing the use of resources and taking environmental impacts into account when making decisions. For example, all carpets at the physical fair are reused and all food served is vegetarian.
+
+  The climate compensation will be done through [Klimatkompensera.nu](https://klimatkompensera.se/) that manages three projects, of which two are in India and one in Panama. The emission calculations are based on various flows associated with transportation, goods, waste, food, energy usage and more during the events as well as the career fair.
+
+  One of the indian projects is located in Sri Balaji and contributes to biomass production, whereas the other indian project is located in Bhilwara and involves development of sunpower. The third project is in Panama and involves planting of trees and restoration of habitats for endangered animals. In addition to reduced environmental impacts the projects contribute to the Sustainable Development Goals (SDGs), including social, environmental and economical sustainability. Together they have contributed to more than 300 safe employments, more than 50 children have secured education in the area, more than 7.5 millions of trees are planted and 15 red-listed endangered animal species have been given a new home. Furthermore, the annual energy supply generated is enough for more than 143 000 indian households.
 
   </SustainabilitySection>
 
@@ -77,7 +72,7 @@ import SustainabilitySection from '../src/components/DiversitySection';
 
   ## Armada Sustainability Index
 
-  Want to check out how we decide which exhibitors gets a spot in Green Room? Click the button below.
+  The Green Room companies are selected together with the ASI, of which the SDGs are one of the main aspects. You can find more information about the ASI via the button below: 
 
   <img alt='' className='background_Images middle' src='/assets/sustainability/ASI_criteria_small.jpg' height='200em' width='260em'/>
   <form id='submitForm' method='get' action='/assets/sustainability/ASI_criteria.jpg'>

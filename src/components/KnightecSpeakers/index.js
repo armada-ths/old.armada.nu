@@ -51,7 +51,7 @@ const KnightecSpeakers = () =>{
             16:00 – 16:15 Principal of KTH, Sigbritt Karlsson, summarizes the event</p>
         <div className='image-speakers2'>
         <img draggable='false' alt={name} src={speakers2[0].profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
-        <img draggable='false' alt={name} src={speakers2[1xs].profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
+        <img draggable='false' alt={name} src={speakers2[1].profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
         </div>
         </div>
     </div>

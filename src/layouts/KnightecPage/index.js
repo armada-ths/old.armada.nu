@@ -2,6 +2,7 @@ import React from 'react'
 import './index.scss'
 import Page from '../../templates/page'
 import KnightecCard from '../../components/KnightecCard'
+import KnightecSpeakers from '../../components/KnightecSpeakers'
 
 const KnightecPage = props => {
 
@@ -9,7 +10,7 @@ const KnightecPage = props => {
         <div className='content'>
             <div className='knightecpage-container'>
                 <Page {...props} />
-                <KnightecCard/>
+                <KnightecSpeakers/>
             </div>
         </div>
     )

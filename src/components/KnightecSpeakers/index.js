@@ -6,7 +6,7 @@ const KnightecSpeakers = () =>{
 
     const speakers = [
         {name: 'Cecilia Borg', workTitle:'Engineering Director, Spotify', education:'MSc Computer Science, KTH', linkedInUrl: 'https://www.linkedin.com/in/cecilia-borg-3a53b5/', profileImageUrl:'', zoomUrl:'', description:'Cecilia started her career as a software engineer and has since then had roles like product owner, engineering manager, CTO, and CEO. Today she works as Engineering Director at Spotify.'},
-        {name:'Izabelle Back', workTitle:'Manager, Engineering Program Management at Plenty', education:'MEng Sustainable Energy Technology, KTH', linkedInUrl:'https://www.linkedin.com/in/izabelleback/', profileImageUrl, zoomUrl, description:'If you are interested in an international career, Izabelle is the one to listen to! After graduating, she started her career as a trainee at Tesla, where she quickly advanced within the organization and became Sr Engineering Program Manager.'},
+        {name:'Izabelle Back', workTitle:'Manager, Engineering Program Management at Plenty', education:'MEng Sustainable Energy Technology, KTH', linkedInUrl:'https://www.linkedin.com/in/izabelleback/', profileImageUrl:'', zoomUrl:'', description:'If you are interested in an international career, Izabelle is the one to listen to! After graduating, she started her career as a trainee at Tesla, where she quickly advanced within the organization and became Sr Engineering Program Manager.'},
         {name:'Helena Börjesson', workTitle:'CTO, Boule Diagnostics', education:'MSc Engineering Physics', linkedInUrl:'https://www.linkedin.com/in/helena-b%C3%B6rjesson-1b72163/', profileImageUrl:'', zoomUrl:'', description:'Helena has an impressive resume with several senior management positions in her backpack. After several years in senior roles at Ericsson, Helena has worked within the Medtech industry in the later years, and today she works as CTO at Boule Diagnostics.'},
         {name:'Sara Lindstrand', workTitle:'Sr Manager Sustainability, AFRY', education:'MSc Design and Product Realisation, specialisation Mechatronics', linkedInUrl:'https://www.linkedin.com/in/sara-lindstrand-9a27401a/', profileImageUrl:'', zoomUrl:'', description:'For Sara it is important to make a change and contribute to something bigger. She started her career as an embedded developer, but since a few years back, she works with a question close to her heart, sustainability.'},
         {name:'Catharina Modahl Nilsson', workTitle:'Executive Vice President R&D Permobil', education:'MSc Vehicle Engineering, KTH', linkedInUrl:'https://www.linkedin.com/in/catharina-modahl-nilsson-b394a51/', profileImageUrl:'', zoomUrl:'', description:'Catharina is an experienced leader with several senior management positions from primarily Scania, on her resume. Since a little more than a year back, she is the EVP R&D at Permobil. Apart from this, she is also an experienced board member.'},
@@ -50,8 +50,8 @@ const KnightecSpeakers = () =>{
 
             16:00 – 16:15 Principal of KTH, Sigbritt Karlsson, summarizes the event</p>
         <div className='image-speakers2'>
-        <img draggable='false' alt={name} src={speakers2[0].profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
-        <img draggable='false' alt={name} src={speakers2[1].profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
+        <img draggable='false' alt={speakers2[0].name} src={speakers2[0].profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
+        <img draggable='false' alt={speakers2[1].name} src={speakers2[1].profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
         </div>
         </div>
     </div>

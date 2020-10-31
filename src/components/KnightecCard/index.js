@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types';
 import "./index.scss"
 
 
@@ -13,7 +14,7 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
         <p className='card-name'>{name}</p>
         <p className='title'>{workTitle} </p>
         <p className='title'>{education}</p>
-        <a className='title' href={'mailto:' + email}>{email}</a>
+        
         <a className='linkedin' href={linkedInUrl} target='-blank' rel='noreferrer'>
           <img className='linkedin-logo' alt='linkedin-logo' draggable='false' src='/assets/linkedin.png' />
         </a>
@@ -29,7 +30,7 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
 
 KnightecCard.propTypes = {
   name: PropTypes.string,
-  workTitle: propTypes.string,
+  workTitle: PropTypes.string,
   education: PropTypes.string,
   linkedInUrl: PropTypes.string,
   profileImageUrl: PropTypes.string,

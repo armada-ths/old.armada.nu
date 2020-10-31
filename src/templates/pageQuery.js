@@ -22,6 +22,7 @@ import Matching from '../layouts/Matching'
 import Events from '../layouts/Events'
 import Coffee from '../layouts/Coffee'
 import Partners from '../layouts/Partners'
+import KnightecPage from '../layouts/KnightecPage'
 
 const components = {
   RecruitmentPage: RecruitmentPage,
@@ -40,7 +41,8 @@ const components = {
   Matching: Matching,
   Events: Events,
   Coffee: Coffee,
-  Partners: Partners
+  Partners: Partners,
+  KnightecPage: KnightecPage
 };
 
 export default function Template({

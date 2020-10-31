@@ -5,7 +5,7 @@ layout: KnightecPage
 description: Page
 menuPage: false
 priority: 0
-header: /assets/knightec-20eventbild.jpg
+header: /assets/knightec-header.png
 noJumbotron: false
 ---
 # FROM NEWLY GRAD TO ROLE MODEL

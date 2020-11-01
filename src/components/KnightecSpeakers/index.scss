@@ -1,0 +1,57 @@
+
+@import '../../styles/_variables';
+@import '../../styles/global';
+
+
+.knightec{
+.speakers {
+
+  .speaker-list {
+    z-index: 0;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .line {
+      width: 80%;
+      height: 1px;
+      background-color: $melon;
+    }
+  
+  }
+
+}
+.event-text{
+    padding-top: 3em;
+    max-width: $page-width;
+    margin: auto;
+
+.schedule{
+    display: flex;
+
+.schedule-text{
+    width: 70%;
+}
+
+.image-speakers2{
+    width: 30%;
+    
+    
+
+    .images2{
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        display: block;
+        margin: auto;
+        padding: 5px;
+        margin-top: 10px;
+    }
+}
+}
+
+}
+}

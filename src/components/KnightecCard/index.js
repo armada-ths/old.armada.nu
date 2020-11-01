@@ -5,7 +5,10 @@ import "./index.scss"
 
 const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, zoomUrl, description}) =>{
 
-    return (<div className='contact-card'>
+    return (
+    <div className='speaker-card'>
+    <div className='flip-card-inner'>
+    <div className='card-front'>
     <div className='card-image'>
       <img draggable='false' alt={name} src={profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
     </div>
@@ -15,14 +18,21 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
         <p className='title'>{workTitle} </p>
         <p className='title'>{education}</p>
         
-        <a className='linkedin' href={linkedInUrl} target='-blank' rel='noreferrer'>
+        
+        
+      </div>
+    </div>
+    </div>
+    <div className='card-back'>
+    <p className='card-back-name'>{name}</p>
+    <p className='description'>{description}</p>
+    <a className='linkedin' href={linkedInUrl} target='-blank' rel='noreferrer'>
           <img className='linkedin-logo' alt='linkedin-logo' draggable='false' src='/assets/linkedin.png' />
         </a>
         <a className='linkedin' href={zoomUrl} target='-blank' rel='noreferrer'>
           <img className='linkedin-logo' alt='zoom-logo' draggable='false' src='/assets/linkedin.png' />
         </a>
-        <p className='description'>{description}</p>
-      </div>
+    </div>
     </div>
   </div>)
   

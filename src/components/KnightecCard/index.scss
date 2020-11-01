@@ -94,6 +94,7 @@
         color: $melon;
         font-weight: 100;
         font-size: 20px;
+        padding-top: 10px;
     }
     
     .description{
@@ -101,7 +102,7 @@
         height: 70%;
         color: white;
         padding-top: 20px;
-        padding: 10px;
+        padding: 15px;
         font-size: 16px;
         text-align: left;
         
@@ -137,4 +138,35 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+  
+    .speaker-card {
+        box-shadow: none;
+        margin: auto;
+        
+      }
+      .speaker-card:hover .flip-card-inner {
+        transform: rotateY(0deg);
+    }
+    .linkedin-logo{
+        position: absolute;
+        margin: 4px 10px 1px 10px;
+        text-align: right;
+        width: 25px;
+        height: 25px;
+        opacity: 0.9;
+       
+    }
+    .mobile-description{
+        padding-bottom: 35px;
+    }
+    .m-description{
+        text-align: center;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+
+   
   }

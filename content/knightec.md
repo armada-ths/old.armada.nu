@@ -1,6 +1,6 @@
 ---
 slug: /event-with-knightec
-title: Knightec
+title: Event with Knightec
 layout: KnightecPage
 description: Page
 menuPage: false

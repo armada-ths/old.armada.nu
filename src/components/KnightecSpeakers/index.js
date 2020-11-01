@@ -13,7 +13,7 @@ const KnightecSpeakers = () =>{
         {name:'Sara Mazur', workTitle:'Chairwomen and Director of the Board', education:'MSc Electrical Engineering, KTH', linkedInUrl:'https://www.linkedin.com/in/sara-mazur-479535187/', profileImageUrl:'/assets/images/knightec/cecilia-borg.png', zoomUrl:'', description:'Since 2007, Sara is a member of the Royal Swedish Academy of Engineering Sciences. She also has several board assignments, for example, Chairwomen in Wallenberg Artificial Intelligence, Director of the board at Saab, and Combitech.'}
     ]
     //MSc Design and Product Realisation, specialisation Mechatronics
-    
+
     const speakers2 = [
         {name: 'Kit Gullbrandsson', profileImageUrl: '/assets/images/knightec/kit-gullbrandsson.png', description: ''},
         {name: 'Sigbritt Karlsson', profileImageUrl: '/assets/images/knightec/kit-gullbrandsson.png', description: ''}
@@ -40,7 +40,12 @@ const KnightecSpeakers = () =>{
     You will get the chance to pick who you want to listen to, but all speakers will be recorded so that you can listen to as many as you want afterward. 
     Our guests will share their stories and best tips for the future. There will also be time for you to ask questions, so take the opportunity to learn from and connect with some of the best KTH alumni! </p>
 
-    <p>To finish up, Sigbritt Karlsson, principal of KTH will share some words of inspiration for the future.</p>
+    <p className='event-description'>To finish up, Sigbritt Karlsson, principal of KTH will share some words of inspiration for the future.</p>
+
+    <form id='submitForm' method='get' action='https://knightec.se/armada_event/' target='_blank'>
+   <button type='submit'>Sign up here</button>
+    </form>
+
     <div className='agenda'>
         <h2>Agenda</h2>
         <div className='schedule'>

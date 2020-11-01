@@ -6,6 +6,7 @@ import "./index.scss"
 const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, zoomUrl, description}) =>{
 
     return (
+        <div>
     <div className='speaker-card'>
     <div className='flip-card-inner'>
     <div className='card-front'>
@@ -34,6 +35,19 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
         </a>
     </div>
     </div>
+  </div>
+  <div className='mobile-description'>
+    <p className='m-description'>{description}</p>
+    <form id='submitForm' method='get' action={zoomUrl} target='_blank'>
+   <button type='submit'>Join me on zoom</button>
+    </form>
+    {/* <a className='linkedin' href={zoomUrl} target='-blank' rel='noreferrer'>
+          <img className='linkedin-logo' alt='linkedin-logo' draggable='false' src='/assets/linkedin.png' />
+        </a>
+        <a className='linkedin' href={zoomUrl} target='-blank' rel='noreferrer'>
+          <img className='linkedin-logo' alt='zoom-logo' draggable='false' src='/assets/linkedin.png' />
+        </a> */}
+  </div>
   </div>)
   
 }

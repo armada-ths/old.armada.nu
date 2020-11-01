@@ -4,6 +4,7 @@
 
 
 .knightec{
+    
 .speakers {
 
   .speaker-list {
@@ -25,8 +26,16 @@
 }
 .event-text{
     padding-top: 3em;
+    padding-bottom: 70px;
     max-width: $page-width;
     margin: auto;
+
+.event-description{
+    text-align: center;
+}
+.agenda{
+    padding-top: 30px
+}
 
 .schedule{
     display: flex;
@@ -54,4 +63,29 @@
 }
 
 }
+
 }
+@media screen and (max-width: $breakpoint-mobile) {
+    .sustainability-container {
+        padding: 3em 1em 0em 1em;
+    }
+    .line {
+        width: 80%;
+        height: 0px;
+        background-color: white;
+      }
+    .event-description {
+        margin-left: 15px;
+        margin-right: 15px
+    }
+    .schedule-text{
+        margin-left: 15px;
+        margin-right: 15px;
+        text-align: center;
+    }
+   
+    .image-speakers2{
+        display:none;
+    }
+}
+

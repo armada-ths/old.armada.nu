@@ -16,8 +16,9 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
     <div className='card-title'>
       <div className='card-text'>
         <p className='card-name'>{name}</p>
+        <p className='edu-title'>{education}</p>
         <p className='title'>{workTitle} </p>
-        <p className='title'>{education}</p>
+        
         
         
         
@@ -44,7 +45,7 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
     {/* <form id='submitForm' method='get' action='https://knightec.se/armada_event/' target='_blank'>
    <button type='submit'>Sign up here</button>
     </form> */}
-    
+
     {/* <a className='linkedin' href={zoomUrl} target='-blank' rel='noreferrer'>
           <img className='linkedin-logo' alt='linkedin-logo' draggable='false' src='/assets/linkedin.png' />
         </a>

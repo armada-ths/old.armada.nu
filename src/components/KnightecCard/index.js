@@ -11,7 +11,7 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
     <div className='flip-card-inner'>
     <div className='card-front'>
     <div className='card-image'>
-      <img draggable='false' alt={name} src={profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
+      <img draggable='false' alt='' src={profileImageUrl}/>
     </div>
     <div className='card-title'>
       <div className='card-text'>

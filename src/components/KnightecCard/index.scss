@@ -1,0 +1,187 @@
+@import "../../styles/_variables";
+@import "../../styles/_fonts";
+@import "../../styles/global";
+
+.speaker-card {
+    position: relative;
+    margin: 30px auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 280px;
+    height: 280px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    // transition: 0.4s;
+    //perspective: 1000px;
+  
+    /* &:hover {
+      transform: scale(1.01, 1.01);
+      box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+        -5px -5px 30px 15px rgba(0,0,0,0.22);
+    } */
+    
+    p {
+      margin: 0;
+    }
+  .flip-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0s;
+    transform-style: preserve-3d;
+    
+
+  .card-front{
+    .card-image {
+      width: inherit;
+      height: inherit;
+      border-radius: 40px;
+      background-color: white;
+      background-image: url('/assets/armada_round_logo_green.png');
+      background-size: 280px 280px;
+      
+      
+  
+      img {
+        width: inherit;
+        height: inherit;
+        border-radius: 40px;
+        object-fit: cover;
+        object-position: top;
+        // filter: gray; /* IE5+ */
+         //   -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+          //  -webkit-transition: all .8s ease-in-out;  
+  
+        /* &:hover {
+          filter: none;
+          -webkit-filter: grayscale(0); //svart filter med opacitet?
+        } */
+  
+      }
+    }
+    .card-title {
+      top: 210px;
+      position: absolute;
+      text-align: right;
+      width: 100%;
+      height: 70px;
+      background-color: rgba(0,0,0, 0.6);
+      border-radius: 0 0 40px 40px;
+  
+      .card-text {
+        margin: 2px 0 0 20px !important;
+        text-align: left;
+  
+        .card-name {
+          color: $melon;
+          font-weight: 100;
+          font-size: 20px;
+        }
+      
+        .title {
+          color: white;
+          font-size: 14px;
+        }
+        }
+      }
+    }
+
+.card-back{
+    transform: rotateY(180deg);
+    background-color: #2d2d2c;
+    border-radius: 40px;
+      
+    .card-back-name{
+        color: white;
+        text-align: center;
+        color: $melon;
+        font-weight: 100;
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    
+    .description{
+        width: 100%;
+        height: 55%;
+        color: white;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 15px;
+        text-align: left;
+        
+    }
+    .linkedin-logo{
+        position: absolute;
+        margin: 4px 10px 1px 10px;
+        text-align: right;
+        width: 25px;
+        height: 25px;
+        opacity: 0.9;
+        /* filter: gray;
+        -webkit-filter: grayscale(1);
+        -webkit-transition: all .3s ease-in-out; 
+
+        &:hover {
+          filter: none;
+          -webkit-filter: grayscale(0);
+        } */
+      
+    }
+    }
+    }
+    
+  }
+  .mobile-description{
+    display: none;
+}
+  .m-description{
+    display: none;
+}
+
+  .speaker-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .card-front, .card-back, .card-title {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+  
+    .speaker-card {
+        box-shadow: none;
+        margin: auto;
+        
+      }
+      .speaker-card:hover .flip-card-inner {
+        transform: rotateY(0deg);
+    }
+    .linkedin-logo{
+        position: absolute;
+        margin: 4px 10px 1px 10px;
+        text-align: right;
+        width: 25px;
+        height: 25px;
+        opacity: 0.9;
+       
+    }
+    .mobile-description{
+        padding-bottom: 35px;
+        display: block;
+    }
+    .m-description{
+        text-align: center;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        display: block;
+    }
+
+   
+  }

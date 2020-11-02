@@ -12,7 +12,6 @@ const KnightecSpeakers = () =>{
         {name:'Catharina Modahl Nilsson', workTitle:'Executive Vice President R&D Permobil', education:'MSc Vehicle Engineering, KTH', linkedInUrl:'https://www.linkedin.com/in/catharina-modahl-nilsson-b394a51/', profileImageUrl:'/assets/images/knightec/catharina-modahl.png', zoomUrl:'', description:'Catharina is an experienced leader with several senior management positions from primarily Scania, on her resume. Since a little more than a year back, she is the EVP R&D at Permobil. Apart from this, she is also an experienced board member.'},
         {name:'Sara Mazur', workTitle:'Chairwomen and Director of the Board', education:'MSc Electrical Engineering, KTH', linkedInUrl:'https://www.linkedin.com/in/sara-mazur-479535187/', profileImageUrl:'/assets/images/knightec/sara-mazur.png', zoomUrl:'', description:'Since 2007, Sara is a member of the Royal Swedish Academy of Engineering Sciences. She also has several board assignments, for example, Chairwomen in Wallenberg Artificial Intelligence, Director of the board at Saab, and Combitech.'}
     ]
-    //MSc Design and Product Realisation, specialisation Mechatronics
 
     const speakers2 = [
         {name: 'Kit Gullbrandsson', profileImageUrl: '/assets/images/knightec/kit-gullbrandsson.png', description: ''},

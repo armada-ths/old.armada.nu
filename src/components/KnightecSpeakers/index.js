@@ -16,7 +16,7 @@ const KnightecSpeakers = () =>{
 
     const speakers2 = [
         {name: 'Kit Gullbrandsson', profileImageUrl: '/assets/images/knightec/kit-gullbrandsson.png', description: ''},
-        {name: 'Sigbritt Karlsson', profileImageUrl: '/assets/images/knightec/kit-gullbrandsson.png', description: ''}
+        {name: 'Sigbritt Karlsson', profileImageUrl: '/assets/images/knightec/sigbritt.png', description: ''}
     ]
 
     const createCards = (start, end) => {

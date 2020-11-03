@@ -22,6 +22,7 @@ import Matching from '../layouts/Matching'
 import Events from '../layouts/Events'
 import Coffee from '../layouts/Coffee'
 import Partners from '../layouts/Partners'
+import forStudentsPage from '../layouts/forStudentsPage'
 import KnightecPage from '../layouts/KnightecPage'
 
 const components = {
@@ -42,6 +43,7 @@ const components = {
   Events: Events,
   Coffee: Coffee,
   Partners: Partners,
+  forStudentsPage: forStudentsPage,
   KnightecPage: KnightecPage
 };
 

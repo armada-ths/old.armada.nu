@@ -9,7 +9,7 @@ const Newsfeed = ({ current }) => (
   <StaticQuery
     query={graphql`
     query NewsQuery {
-      allMdx(filter: {children: {elemMatch: {}}, frontmatter: {layout: {eq: "News"}, archived: {ne: true}}}, sort: {fields: frontmatter___date, order: DESC}) {
+      allMdx(filter: {children: {elemMatch: {}}, frontmatter: {layout: {eq: "News"}, archived: {eq: false}}}, sort: {fields: frontmatter___date, order: DESC}) {
         edges {
           node {
             id
@@ -36,13 +36,13 @@ const Newsfeed = ({ current }) => (
     }        
     `}
     render={data => {
-      const edges = data.allMdx.edges;
+      const edges = data.allMdx.edges.filter(edge => edge.node.frontmatter.slug !== current);
       return edges.length > 0 ? <div className='newsfeed'>
         <div className='armada-news'>
           <h1 id='newstitle'>Armada News</h1>
         </div>
         <Carousel 
-          items={edges.filter(edge => edge.node.frontmatter.slug !== current).map(edge => 
+          items={edges.map(edge => 
             <PagePreview key={edge.node.id} {...edge.node.frontmatter}/>
           )} />
       </div> : <br/>

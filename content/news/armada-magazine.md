@@ -1,21 +1,20 @@
 ---
 slug: /news/magazine
 layout: News
-title: 'THS ARMADA MAGAZINE '
+title: 'THS ARMADA MAGAZINE 2020'
 category: NEWS
-date: 2019-11-09T14:15:01.231Z
-cover_wide: /assets/magazine.jpg
-cover_square: /assets/magazine.jpg
+date: 2020-11-03T14:15:01.231Z
+cover_wide: /assets/magazine/THS_magasize_2020_preview.png
+cover_square: /assets/magazine/THS_magasize_2020_preview.png
 featured: true
-ingress: Armada has a new official magazine!
+ingress: Armada's 2020 magazine is here!
 header: /assets/news-header.jpg
 display_date: true
-archived: true
+archived: false
 ---
-<br/>
 "Armada" is the official magazine for KTH's carrer fair THS Armada. The magazine will be included in the newest edition of Ny Teknik, and will reach the majority of all engineers in Sweden!
 
-Read more about some of our participating companies and other exciting articles! (In collaboration with Borg &Owilli (Available in Swedish only)
+Read more about some of our participating companies and other exciting articles! (In collaboration with Borg &Owilli, available in Swedish only)
 
-[Access the magazine here!](https://armada.businesstories.se/tidningsarkiv/)
+[**Access the magazine here!**](/assets/magazine/Armada_Magazine_2020.pdf)
 

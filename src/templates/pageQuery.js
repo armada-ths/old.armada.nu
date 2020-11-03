@@ -23,6 +23,7 @@ import Events from '../layouts/Events'
 import Coffee from '../layouts/Coffee'
 import Partners from '../layouts/Partners'
 import forStudentsPage from '../layouts/forStudentsPage'
+import KnightecPage from '../layouts/KnightecPage'
 
 const components = {
   RecruitmentPage: RecruitmentPage,
@@ -42,7 +43,8 @@ const components = {
   Events: Events,
   Coffee: Coffee,
   Partners: Partners,
-  forStudentsPage: forStudentsPage
+  forStudentsPage: forStudentsPage,
+  KnightecPage: KnightecPage
 };
 
 export default function Template({

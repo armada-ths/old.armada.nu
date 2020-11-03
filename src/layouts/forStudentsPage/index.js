@@ -6,9 +6,11 @@ import Page from '../../templates/page'
 const forStudentsPage = props => {
 
   return (
-    <div className='forStudents-container'>
-        <Page {...props}/>
-    </div>
+      <div className='content'>
+        <div className='forStudents-container'>
+          <Page {...props} />
+        </div>
+      </div>
   )
 
 }

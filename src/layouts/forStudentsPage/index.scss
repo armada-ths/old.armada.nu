@@ -7,6 +7,26 @@
   max-width: $page-width;
   margin: auto;
 }
+.text {
+    margin: 0;
+    padding-bottom: 5px;
+
+
+    &.head{
+      font-weight: bold;
+      font-size: 1.5em;
+      color: $melon;
+
+    }
+    &.name{
+      font-size: 1em;
+      font-weight: bold;
+    }
+    &.last{
+      padding-bottom: 150px;
+    }
+
+}
 
 @media screen and (max-width: $breakpoint-mobile-flipped){
   .forStudents-container {

@@ -7,6 +7,9 @@ menuPage: true
 priority: 4
 header: /assets/images/header-images/forStudents.jpg
 ---
+
+import CompetitionContact from '../src/components/CompetitionContact';
+
 # Virtual THS Armada 2020
 
 Warm welcome to our new concept – virtual THS Armada 2020! We are happy to once again give you the opportunity to shape your future.
@@ -26,16 +29,9 @@ This year, not only your future and your career is in the prizepool. You also ha
 
 So will you go around trying to get as good a chance as possible to win? Or will you be confident in your luck?
 
-<img alt='' src='/assets/images/PG20/leolionposter.jpg' height='200em' width='260em'/>
 
-Questions? Contact me!
-Leonard Hökby
-Head of Logistics and Career Fair
-leonard.hokby@armada.nu
+<CompetitionContact/>
 
-
-### Prize Sponsors
-[Include Volvo, Electrolux and Voi logo on the page, with headline “Prize sponsors”]
 
 ## What has happened to the event weeks?
 Events, in this year’s Armada, will also be held to a large extent digitally. As much as possible will be as before with registration for events and information. So, start networking, get inspired over a lunch lecture, visit the virtual fair itself, and much more. Take a look at all the events presented by THS Armada by looking at the [events tab](https://armada.nu/events).

@@ -14,7 +14,7 @@ noJumbotron: false
 
 ## Background
 
-The Armada Competition is a gamification feature of the virtual fair with the impact goals of (1) attracting more students to the fair and (2) nudging the students to interact with the fair in a more constructive way. There will be incitements (prizes) to attract students to the concept and tasks (points) that measure the students activity. The students will earn points for interacting with the fair and then the prizes will be raffled out in a lottery where students have one lottery ticket for each point earned. There will be between 40 and 50 prizes, ranging in market value from 500 up to 5000kr.
+<p>The Armada Competition is a gamification feature of the virtual fair with the impact goals of (1) attracting more students to the fair and (2) nudging the students to interact with the fair in a more constructive way. There will be incitements (prizes) to attract students to the concept and tasks (points) that measure the students activity. The students will earn points for interacting with the fair and then the prizes will be raffled out in a lottery where students have one lottery ticket for each point earned. There will be between 40 and 50 prizes, ranging in market value from 500 up to 5000kr.</p>
 
 ## Purpose of the information
 

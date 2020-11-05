@@ -5,7 +5,7 @@ layout: Page
 description: Page
 menuPage: false
 priority: 4
-header: /assets/armada-competition-header.jpg
+header: /assets/armadacompetitionheader.jpg
 noJumbotron: false
 ---
 <img alt='' id='logo' src='/assets/Armada_competition_filled.png'/> 

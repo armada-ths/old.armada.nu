@@ -1,5 +1,5 @@
 ---
-slug: /armadacompetiton
+slug: /armadacompetition
 title: Armada competition
 layout: Page
 description: Page
@@ -8,7 +8,7 @@ priority: 4
 header: /assets/armada-competition-header.jpg
 noJumbotron: false
 ---
- <img alt='' id='logo' src='/assets/Armada_competition_filled.png'/>
+<img alt='' id='logo' src='/assets/Armada_competition_filled.png'/> 
 
 # Summary
 

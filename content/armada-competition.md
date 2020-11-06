@@ -1,16 +1,18 @@
 ---
 slug: /armadacompetition
 title: Armada competition
-layout: Page
+layout: CompetitionPage
 description: Page
 menuPage: false
 priority: 4
-header: /assets/armadacompetitionheader.jpg
+header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
-<img alt='' id='logo' src='/assets/Armada_competition_filled.png'/> 
+<div class='competition-logo'>
+    <img alt='' id='logo' src='/assets/Armada_competition_filled.png'/>
+</div>
 
-# Summary
+# Armada Competition
 
 ## Background
 

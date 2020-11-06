@@ -1,0 +1,33 @@
+@import "../../styles/global";
+@import "../../styles/_variables";
+
+.competition-container {
+	padding-top: 3em;
+  	max-width: $page-width;
+	margin: auto;
+
+	h1, h2, h3, h4, a {
+		color: $grape;
+	}
+
+	h2 {
+		font-weight: 200;
+		text-align: left;
+	}
+
+	.competition-logo {
+		display: flex;
+		justify-content: center;
+
+		img {
+			width: 150px;
+		}
+	}
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+	.competition-container {
+		padding: 1em 1em 0em 1em;
+	}
+
+}

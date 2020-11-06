@@ -23,7 +23,7 @@ As long as you have a profile on the site, you have the chance to be headhunted 
 
 This year, not only your future and your career is in the prizepool. You also have the chance to win a weekend with a brand new Volvo! Armada, together with our prize sponsors,  will in total hand out 50 prizes to students who are active at the fair! All you have to do to be in the running is [register](https://event.armada.nu/sv/event/3994) at the fair.
 
-<p><b id='sustainability-color'>So how does it work?</b> When you register at the fair you will get one lottery ticket. Collect more tickets by filling out your personal profile to 90% or more, interacting with the companies through chatting with them, looking at booths and attending webinars. After the fair we will draw the winners. One ticket will be awarded the Grand Prize, and in total, 50 tickets will be winners!</p>
+<p><b id='sustainability-color'>So how does it work?</b> When you register at the fair you will get one lottery ticket. Collect more tickets by filling out your personal profile to 90% or more, interacting with the companies through chatting with them, looking at booths and attending webinars. After the fair we will draw the winners. One ticket will be awarded the Grand Prize, and in total, 50 tickets will be winners! For more information click <a href='/armadacompetition'>here</a>.</p>
 
 So will you go around trying to get as good a chance as possible to win? Or will you be confident in your luck?
 

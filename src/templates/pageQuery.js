@@ -24,6 +24,7 @@ import Coffee from '../layouts/Coffee'
 import Partners from '../layouts/Partners'
 import forStudentsPage from '../layouts/forStudentsPage'
 import KnightecPage from '../layouts/KnightecPage'
+import CompetitionPage from '../layouts/CompetitionPage'
 
 const components = {
   RecruitmentPage: RecruitmentPage,
@@ -44,7 +45,8 @@ const components = {
   Coffee: Coffee,
   Partners: Partners,
   forStudentsPage: forStudentsPage,
-  KnightecPage: KnightecPage
+  KnightecPage: KnightecPage,
+  CompetitionPage: CompetitionPage
 };
 
 export default function Template({

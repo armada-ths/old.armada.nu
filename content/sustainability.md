@@ -5,7 +5,7 @@ layout: SustainabilityPage
 description: Armada Sustainability
 menuPage: true
 priority: 7
-header: /assets/sustainability_header.jpg
+header: /assets/images/header-images/sustainability.jpg
 ---
 
 import SustainabilityInterviews from '../src/components/SustainabilityInterviews';

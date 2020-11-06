@@ -20,7 +20,6 @@ const tableOfContents = [
             { title: 'How we are going to attract students to the platform', anchor: 'attract-students' },
             { title: 'A talent pool created after the fair', anchor: 'talent-pool' },
             { title: 'Insights after the fair', anchor: 'insights' },
-            { title: 'Not only a virtual fair', anchor: 'not-only-a-virtual-fair' },
             { title: 'Creating your virtual booth', anchor: 'create-booth' },
         ]
     },  

@@ -7,7 +7,7 @@ import FAQBackground from '../../../static/assets/faqbanner.png'
 const questions = [
     {title: 'ABOUT ARMADA', body: [
         {question: 'What is THS Armada?', answer: 'The largest student-led career fair in Scandinavia bringing together great minds from KTH and other universities and companies from around the globe. Every year since 1981 THS Armada has created a platform where students and companies can shape their future, together.'},
-        {question: 'Where is THS Armada?', answer: 'This year THS Armada is taking place digitally! Students will also be welcome to our lounge in Nymble where we\'ll have lots of fun activities and goodies.'},
+        {question: 'Where is THS Armada?', answer: 'This year THS Armada is taking place digitally!'},
         //{question: 'Where is THS Armada?', answer: 'THS Armada is taking place in Nymble, KTH Entré, and KTH Library. All located on KTH Campus Valhallavägen.'},
         //{question: 'What is the Start-up Arena by KTH Innovation?', answer: 'It is a collaboration between THS Armada and KTH Innovation to showcase start-ups that have come from KTH and are looking for more students that want to join them. So take the chance to #joinastartup at KTH Entré.'},
         //{question: 'How can I find all the events that Armada arranges?', answer: 'Head to armada.nu/events/ and sign up now! THS Armada arranges lunch lectures approximately two week prior to the fair. During the fair, THS Armada arranges Individual meetings with companies and internship pitch lectures.', displayAnswer: <span>Head to <a href='/events/'>armada.nu/events</a> and sign up now! THS Armada arranges lunch lectures approximately two week prior to the fair. During the fair, THS Armada arranges Individual meetings with companies and internship pitch lectures.</span>},
@@ -25,14 +25,11 @@ const questions = [
     ]},
     {title: 'THE FAIR', body: [
         {question: 'When is the Armada fair taking place?', answer: 'The Armada Career Fair takes place each year in November for 2 days. This year we will host the fair November 17-18.'},
-        {question: 'Where is the Armada fair taking place?', answer: 'The exhibitors will all be gathered at event.armada.nu, but you will be able to visit us in the Grand Lounge which is going to be located on the 2nd floor of Nymble. There you will find fika, an arcade hall, a zen room, the focus rooms and more.', displayAnswer: <span>The exhibitors will all be gathered at <a href='https://www.event.armada.nu'>event.armada.nu</a>, but you will be able to visit us in the Grand Lounge which is going to be located on the 2nd floor of Nymble. There you will find fika, an arcade hall, a zen room, the focus rooms and more.</span>},
+        {question: 'Where is the Armada fair taking place?', answer: 'The exhibitors will all be gathered at event.armada.nu', displayAnswer: <span>The exhibitors will all be gathered at <a href='https://www.event.armada.nu'>event.armada.nu</a></span>},
         {question: 'What are the opening hours?', answer: '10:00-16:00 on both the 17th and 18th of November.'},
         {question: 'Does the Armada fair cost money to attend?', answer: 'No, it is completely free for everyone to visit! It will be even easier this year since you can attend from wherever you are in the world.'},
         //{question: 'I do not study at KTH, can I still attend?', answer: 'Yes of course! Everybody is welcome.'},
         {question: 'How many exhibitors are coming to the Armada fair?', answer: 'The exhibitors are still joining the platform, but the entire exhibitors list can be found here.', displayAnswer: <span>The exhibitors are still joining the platform, but the entire exhibitors list can be found <a href='https://event.armada.nu/sv/virtual-event/3994'>here</a>.</span>},
-        {question: 'What is the Zen Room?', answer: 'The place where you will be able to sit down and use your computer or phone to visit the platform, have individual meetings and follow live presentations.'},
-        {question: 'What is the Arcade Room?', answer: 'The Arcade Room is a place where we will place games etc. to have a break from using the platform.'},
-        {question: 'Will there be fika?', answer: 'YES! Loads of it. And who knows? There might be a surprise pop up as well...'},
         //{question: 'What is the Green Room?', answer: 'A place at the fair where companies that actively work with sustainability-related questions get to stand.'},
         //{question: 'What is the Diversity Room?', answer: 'A place at the fair where companies that actively work with diversity-related questions get to stand.'},
         {question: 'What is the Focus Room?', answer: 'The focus room will be found in Nya Matsalen in Nymble on the days of the fair. Here you will be able to workshop on Sustainability and Diversity as well as see which exhibitors are outstanding in the field.'},

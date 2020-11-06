@@ -15,7 +15,6 @@ const KnightecSpeakers = () =>{
 
     const speakers2 = [
         {name: 'Kit Gullbrandsson', profileImageUrl: '/assets/images/knightec/kit-gullbrandsson.png', description: ''},
-        {name: 'Cecilia Sjöstedt', profileImageUrl: '/assets/images/knightec/cecilia.png', description: ''},
         {name: 'Sigbritt Karlsson', profileImageUrl: '/assets/images/knightec/sigbritt.png', description: ''}
     ]
 
@@ -54,14 +53,13 @@ const KnightecSpeakers = () =>{
 
             <p>15:15 – 15:45 30 minutes inspirational talks in parallel </p>
 
-            <p>15:45 – 16:00 Video greeting from Cecilia Sjöstedt, Site Manager &amp; Managing Director at Cytiva</p>
+            <p>15:45 – 16:00 Video greeting – being a leader during a pandemic</p>
 
             <p>16:00 – 16:15 Principal of KTH, Sigbritt Karlsson, summarizes the event</p>
             </div>
         <div className='image-speakers2'>
         <img className='images2' draggable='false' alt={speakers2[0].name} src={speakers2[0].profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
         <img className='images2' draggable='false' alt={speakers2[1].name} src={speakers2[1].profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
-        <img className='images2' draggable='false' alt={speakers2[2].name} src={speakers2[2].profileImageUrl ?? '/assets/armadalogogreen.jpg'}/>
         </div>
         </div>
     </div>

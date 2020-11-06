@@ -25,14 +25,14 @@ const questions = [
     ]},
     {title: 'THE FAIR', body: [
         {question: 'When is the Armada fair taking place?', answer: 'The Armada Career Fair takes place each year in November for 2 days. This year we will host the fair November 17-18.'},
-        {question: 'Where is the Armada fair taking place?', answer: 'The exhibitors will all be gathered at event.armada.nu', displayAnswer: <span>The exhibitors will all be gathered at <a href='https://www.event.armada.nu'>event.armada.nu</a></span>},
+        {question: 'Where is the Armada fair taking place?', answer: 'The exhibitors will all be gathered at event.armada.nu', displayAnswer: <span>The exhibitors will all be gathered at <a href='https://event.armada.nu'>event.armada.nu</a>.</span>},
         {question: 'What are the opening hours?', answer: '10:00-16:00 on both the 17th and 18th of November.'},
         {question: 'Does the Armada fair cost money to attend?', answer: 'No, it is completely free for everyone to visit! It will be even easier this year since you can attend from wherever you are in the world.'},
         //{question: 'I do not study at KTH, can I still attend?', answer: 'Yes of course! Everybody is welcome.'},
         {question: 'How many exhibitors are coming to the Armada fair?', answer: 'The exhibitors are still joining the platform, but the entire exhibitors list can be found here.', displayAnswer: <span>The exhibitors are still joining the platform, but the entire exhibitors list can be found <a href='https://event.armada.nu/sv/virtual-event/3994'>here</a>.</span>},
         //{question: 'What is the Green Room?', answer: 'A place at the fair where companies that actively work with sustainability-related questions get to stand.'},
         //{question: 'What is the Diversity Room?', answer: 'A place at the fair where companies that actively work with diversity-related questions get to stand.'},
-        {question: 'What is the Focus Room?', answer: 'The focus room will be found in Nya Matsalen in Nymble on the days of the fair. Here you will be able to workshop on Sustainability and Diversity as well as see which exhibitors are outstanding in the field.'},
+        //{question: 'What is the Focus Room?', answer: 'The focus room will be found in Nya Matsalen in Nymble on the days of the fair. Here you will be able to workshop on Sustainability and Diversity as well as see which exhibitors are outstanding in the field.'},
         {question: 'Where can I find last year\'s exhibitors?', answer: 'Head to armada.nu/previous to find last year\'s exhibitors.', displayAnswer: <span>Head to <a href='/previous/'>armada.nu/previous</a> to find last year's exhibitors.</span>},
     ]},
     /*
@@ -45,7 +45,7 @@ const questions = [
     */
     {title: 'THE BANQUET', body: [
         {question: 'Can I attend the banquet?', answer: 'The whole Armada Team is invited to The Grand Banquet of Armada. You will recieve your invitation by email.'},
-        {question: 'Is it possible to attend the banquet even though I’m not working for Armada?', answer: 'This years banquet will be exclusive for Armada 2020 only. Due to Covid-19 you wont be able to purchase tickets to the after party. We hope to see you next year!'},
+        {question: 'Is it possible to attend the banquet even though I’m not working for Armada?', answer: 'This years banquet will be exclusive for Armada 2020 only. We hope to see you next year!'},
     ]},
     {title: 'RECRUITMENT', body: [
         {question: 'How do I become a part of the Armada team?', answer: 'You apply for any of the roles you are interested in during one of the recruitment periods Armada has during the year. See the question about “When do THS Armada recruit people?”'},

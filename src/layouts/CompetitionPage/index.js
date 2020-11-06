@@ -1,6 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
 import Page from '../../templates/page'
 
 import './index.scss'
@@ -14,9 +12,4 @@ const CompetitionPage = props => {
         </div>
     )
 }
-
-CompetitionPage.propTypes = {
-    head: PropTypes.object.isRequired,
-}
-
 export default CompetitionPage

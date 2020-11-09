@@ -51,6 +51,7 @@ The following different activities will generate Armada Competition score:
 * Chats received from companies
 * Booths viewed
 * Live presentations viewed
+* Completion of D&I quiz
 
 **Registering at the fair**
 
@@ -82,7 +83,10 @@ High completeness of profile
 * Students who attend 5 live presentations will be awarded an additional 5 points
 * Students who attend 10 live presentations will be awarded an additional 10 points
 
-The maximum points possible to earn is 88 points.
+**Completion of D&I Quiz**
+Students who complete the D&I Quiz available at the virtual platform will receive 2 points in the Armada Competition. 
+
+The maximum points possible to earn is 90 points.
 
 # Lottery principles
 

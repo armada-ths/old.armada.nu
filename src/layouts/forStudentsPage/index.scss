@@ -28,8 +28,38 @@
 
 }
 
+.sponsorcontainer{
+  margin-left: auto;
+  margin-right: auto;
+}
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+#logo-prize {
+  display: block;
+  margin: 3em;
+  margin-top: 1em;
+  margin-left: 3.5em;
+  width: 160px;
+  height: auto;
+  padding: 1em;
+  display: inline-block;
+}
+
 @media screen and (max-width: $breakpoint-mobile-flipped){
   .forStudents-container {
     padding: 3em 1em;
+  }
+}
+@media screen and (max-width: $breakpoint-mobile){
+  #logo-prize {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

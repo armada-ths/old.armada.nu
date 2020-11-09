@@ -18,11 +18,9 @@ import DiversitySection from '../src/components/DiversitySection';
 
    <DiversitySection left>
 
-## **Diversity Room**
+## **Diversity Corner**
 
-   One way THS Armada is accentuating the importance of diversity is through the Diversity Room, a special area at the career fair. As the fair is going digital this year, the diversity room will feature how Armada works with Diversity and also present information regarding the most progressive companies when it comes to inclusion and diversity in the workplace. These companies have been carefully selected with the Diversity Team, using a set of meaningful criteria developed by the team, called the Armada Diversity Index (ADI), found [here](/assets/Focus_rooms_selection.pdf).
-
-   Visiting Diversity Room is a must if you’re interested in how some of the industry leaders work with diversity, what their culture is and which changes are happening right now in the working environment in regard to workers welfare. Stay tuned for upcoming information on some of the fun things the team is planning for the room, as well as a complete list of the exhibitors to be featured in the Diversity Room for THS Armada 2020.
+  One way THS Armada is accentuating the importance of diversity is through the Diversity Corner, a livestreaming studio that will share information about the most progressive companies when it comes to inclusion and diversity in the workplace. These companies have been carefully selected with the Diversity Team, using a set of meaningful criteria developed by the team, called the Armada Diversity Index (ADI), found [here](/assets/Focus_rooms_selection.pdf).
 
    </DiversitySection>
 
@@ -34,7 +32,7 @@ import DiversitySection from '../src/components/DiversitySection';
 
 ## **Diversity Day**
 
-   Diversity Day is another way to keep the discussion about equality issues going. The day takes place during the Event Week and consists of several events, where companies and students get a platform to talk about, discuss and engage in diversity practices. This year, Diversity Day will take place on Monday November 9th!
+Diversity Day is another way to keep the discussion about equality issues going. The day takes place during the Event Week and consists of several events, where companies and students get a platform to talk about, discuss and engage in diversity practices. This year, Diversity Day is happening on November 9th, on our social media platforms. The team will hold interviews with THS Student groups working with diversity, share insights from the selected companies using the ADI. Finally, Accenture will hold a [digital lunch lecture](https://www.facebook.com/events/661548751224597) and Knightec will present a [webinar](https://www.facebook.com/events/1335175583489773) featuring inspiring women alumni at 15:00! Make sure to check out [@thsarmada](https://www.instagram.com/thsarmada/) on Instagram and the [facebook event](https://www.facebook.com/events/3373777216050973)!
 
    </DiversitySection>
    </div>

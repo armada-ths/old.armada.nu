@@ -28,8 +28,8 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
     <div className='card-back'>
     <p className='card-back-name'>{name}</p>
     <p className='description'>{description}</p>
-    <form id='submitForm' method='get' action='https://knightec.se/armada_event/' target='_blank'>
-   <button type='submit'>Sign up here</button>
+    <form id='submitForm' method='get' action={zoomUrl} target='_blank'>
+    <button type='submit'>Join {name}'s talk</button>
     </form>
     {/* <a className='linkedin' href={linkedInUrl} target='-blank' rel='noreferrer'>
           <img className='linkedin-logo' alt='linkedin-logo' draggable='false' src='/assets/linkedin.png' />
@@ -42,9 +42,9 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
   </div>
   <div className='mobile-description'>
     <p className='m-description'>{description}</p>
-    {/* <form id='submitForm' method='get' action='https://knightec.se/armada_event/' target='_blank'>
-   <button type='submit'>Sign up here</button>
-    </form> */}
+    <form id='submitForm' method='get' action={zoomUrl} target='_blank'>
+   <button type='submit'>Join {name}'s talk</button>
+    </form> 
 
     {/* <a className='linkedin' href={zoomUrl} target='-blank' rel='noreferrer'>
           <img className='linkedin-logo' alt='linkedin-logo' draggable='false' src='/assets/linkedin.png' />

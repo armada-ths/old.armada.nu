@@ -31,7 +31,7 @@
     margin: auto;
 
 .event-description{
-    text-align: center;
+    text-align: left;
 }
 .agenda{
     padding-top: 30px
@@ -50,13 +50,13 @@
 
     .images2{
         border-radius: 50%;
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         object-fit: cover;
         display: block;
         margin: auto;
         padding: 5px;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
     }
 }
 }

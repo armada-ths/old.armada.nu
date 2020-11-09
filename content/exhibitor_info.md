@@ -76,12 +76,6 @@ Computers are great at compiling information and gathering data. After the fair 
 
 This data can be used to further improve your marketing towards students when segmenting target groups and analyzing if your current strategy is working as intended.
 
-<a class="anchor" id="not-only-a-virtual-fair"></a>
-
-#### Not only a virtual fair
-
-We are creating a hybrid of physical and virtual events. You can read more about our events in the product catalogue which can be found on the top of this page. Physical events will be created in a way that follows the restrictions. We do not want you to travel to KTH to respect the spread of the disease, meaning that we are more than happy if you choose to ask us to create a virtual event for you.
-
 <a class="anchor" id="create-booth"></a>
 
 #### Creating your virtual booth
@@ -130,7 +124,6 @@ Many opportunities are available for you as a company to go the extra mile befor
 
 * Increased exposure on Graduateland
 * Your logo presented on Armada website
-* Have your products at Nymble in our lounge
 * Be a part of one of our short films
 
 Otherwise we can always create a customized offer that suits your company’s vision.

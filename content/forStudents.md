@@ -7,7 +7,6 @@ menuPage: true
 priority: 4
 header: /assets/images/header-images/forStudents.jpg
 ---
-
 import CompetitionContact from '../src/components/CompetitionContact';
 
 # Virtual THS Armada 2020
@@ -26,7 +25,7 @@ This year, not only your future and your career is in the prizepool. You also ha
 
 <img alt='' id='logo' src='/assets/competition/Armada_competition_lines.png' height='260px'/>
 
-<p><b id='sustainability-color'>So how does it work?</b> When you register at the fair you will get one lottery ticket. Collect more tickets by filling out your personal profile to 90% or more, interacting with the companies through chatting with them, looking at booths and attending webinars. After the fair we will draw the winners. One ticket will be awarded the Grand Prize, and in total, 50 tickets will be winners!</p>
+<p><b id='sustainability-color'>So how does it work?</b> When you register at the fair you will get one lottery ticket. Collect more tickets by filling out your personal profile to 90% or more, interacting with the companies through chatting with them, looking at booths and attending webinars. After the fair we will draw the winners. One ticket will be awarded the Grand Prize, and in total, 50 tickets will be winners! For more information click <a href='/armadacompetition'>here</a>.</p>
 
 So will you go around trying to get as good a chance as possible to win? Or will you be confident in your luck?
 
@@ -39,6 +38,6 @@ So will you go around trying to get as good a chance as possible to win? Or will
   <img alt='' id='logo-prize' src='/assets/competition/volvo_logo.png' height='260px'/>
 </div>
 
-
 ## What has happened to the event weeks?
+
 Events, in this year’s Armada, will also be held to a large extent digitally. As much as possible will be as before with registration for events and information. So, start networking, get inspired over a lunch lecture, visit the virtual fair itself, and much more. Take a look at all the events presented by THS Armada by looking at the [events tab](https://armada.nu/events).

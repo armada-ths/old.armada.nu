@@ -5,12 +5,12 @@ import ContactCard from '../KnightecCard'
 const KnightecSpeakers = () =>{
 
     const speakers = [
-        {name: 'Cecilia Borg', workTitle:'Engineering Director, Spotify', education:'MSc Computer Science, KTH', linkedInUrl: 'https://www.linkedin.com/in/cecilia-borg-3a53b5/', profileImageUrl:'/assets/images/knightec/cecilia-borg.png', zoomUrl:'', description:'Cecilia started her career as a software engineer and has since then had roles like product owner, engineering manager, CTO, and CEO. Today she works as Engineering Director at Spotify.'},
-        {name:'Izabelle Back', workTitle:'Manager, Engineering Program Mngmt at Plenty', education:'MEng Sustainable Energy Technology, KTH', linkedInUrl:'https://www.linkedin.com/in/izabelleback/', profileImageUrl:'/assets/images/knightec/izabelleback.png', zoomUrl:'', description:'If you are interested in an international career, Izabelle is the one to listen to! After graduating, she started her career as a trainee at Tesla, where she quickly advanced within the organization and became Sr Engineering Program Manager.'},
-        {name:'Helena Börjesson', workTitle:'CTO, Boule Diagnostics', education:'MSc Engineering Physics, KTH', linkedInUrl:'https://www.linkedin.com/in/helena-b%C3%B6rjesson-1b72163/', profileImageUrl:'/assets/images/knightec/helena-borjesson.png', zoomUrl:'', description:'Helena has an impressive resume with several senior management positions in her backpack. After several years in senior roles at Ericsson, Helena has worked within the Medtech industry in the later years, and today she works as CTO at Boule Diagnostics.'},
-        {name:'Sara Lindstrand', workTitle:'Sr Manager Sustainability, AFRY', education:'MSc Design and Product Realisation, KTH', linkedInUrl:'https://www.linkedin.com/in/sara-lindstrand-9a27401a/', profileImageUrl:'/assets/images/knightec/sara-lindstrand.png', zoomUrl:'', description:'For Sara it is important to make a change and contribute to something bigger. She started her career as an embedded developer, but since a few years back, she works with a question close to her heart, sustainability.'},
-        {name:'Catharina Modahl Nilsson', workTitle:'Executive Vice President R&D Permobil', education:'MSc Vehicle Engineering, KTH', linkedInUrl:'https://www.linkedin.com/in/catharina-modahl-nilsson-b394a51/', profileImageUrl:'/assets/images/knightec/catharina-modahl.png', zoomUrl:'', description:'Catharina is an experienced leader with several senior management positions from primarily Scania, on her resume. Since a little more than a year back, she is the EVP R&D at Permobil. Apart from this, she is also an experienced board member.'},
-        {name:'Sara Mazur', workTitle:'Chairwomen and Director of the Board', education:'MSc Electrical Engineering, KTH', linkedInUrl:'https://www.linkedin.com/in/sara-mazur-479535187/', profileImageUrl:'/assets/images/knightec/sara-mazur.png', zoomUrl:'', description:'Since 2007, Sara is a member of the Royal Swedish Academy of Engineering Sciences. She also has several board assignments, for example, Chairwomen in Wallenberg Artificial Intelligence, Director of the board at Saab, and Combitech.'}
+        {name: 'Cecilia Borg', workTitle:'Engineering Director, Spotify', education:'MSc Computer Science, KTH', linkedInUrl: 'https://www.linkedin.com/in/cecilia-borg-3a53b5/', profileImageUrl:'/assets/images/knightec/cecilia-borg.png', zoomUrl:'https://zoom.us/j/95540438169', description:'Cecilia started her career as a software engineer and has since then had roles like product owner, engineering manager, CTO, and CEO. Today she works as Engineering Director at Spotify.'},
+        {name:'Izabelle Back', workTitle:'Manager, Engineering Program Mngmt at Plenty', education:'MEng Sustainable Energy Technology, KTH', linkedInUrl:'https://www.linkedin.com/in/izabelleback/', profileImageUrl:'/assets/images/knightec/izabelleback.png', zoomUrl:'https://zoom.us/j/95482712066', description:'If you are interested in an international career, Izabelle is the one to listen to! After graduating, she started her career as a trainee at Tesla, where she quickly advanced within the organization and became Sr Engineering Program Manager.'},
+        {name:'Helena Börjesson', workTitle:'CTO, Boule Diagnostics', education:'MSc Engineering Physics, KTH', linkedInUrl:'https://www.linkedin.com/in/helena-b%C3%B6rjesson-1b72163/', profileImageUrl:'/assets/images/knightec/helena-borjesson.png', zoomUrl:'https://zoom.us/j/91645884244', description:'Helena has an impressive resume with several senior management positions in her backpack. After several years in senior roles at Ericsson, Helena has worked within the Medtech industry in the later years, and today she works as CTO at Boule Diagnostics.'},
+        {name:'Sara Lindstrand', workTitle:'Sr Manager Sustainability, AFRY', education:'MSc Design and Product Realisation, KTH', linkedInUrl:'https://www.linkedin.com/in/sara-lindstrand-9a27401a/', profileImageUrl:'/assets/images/knightec/sara-lindstrand.png', zoomUrl:'https://zoom.us/j/98339444967', description:'For Sara it is important to make a change and contribute to something bigger. She started her career as an embedded developer, but since a few years back, she works with a question close to her heart, sustainability.'},
+        {name:'Catharina Modahl Nilsson', workTitle:'Executive Vice President R&D Permobil', education:'MSc Vehicle Engineering, KTH', linkedInUrl:'https://www.linkedin.com/in/catharina-modahl-nilsson-b394a51/', profileImageUrl:'/assets/images/knightec/catharina-modahl.png', zoomUrl:'https://zoom.us/j/93635993672', description:'Catharina is an experienced leader with several senior management positions from primarily Scania, on her resume. Since a little more than a year back, she is the EVP R&D at Permobil. Apart from this, she is also an experienced board member.'},
+        {name:'Sara Mazur', workTitle:'Chairwomen and Director of the Board', education:'MSc Electrical Engineering, KTH', linkedInUrl:'https://www.linkedin.com/in/sara-mazur-479535187/', profileImageUrl:'/assets/images/knightec/sara-mazur.png', zoomUrl:'https://zoom.us/j/95212877780', description:'Since 2007, Sara is a member of the Royal Swedish Academy of Engineering Sciences. She also has several board assignments, for example, Chairwomen in Wallenberg Artificial Intelligence, Director of the board at Saab, and Combitech.'}
     ]
 
     const speakers2 = [
@@ -24,6 +24,9 @@ const KnightecSpeakers = () =>{
       }
 
       return (<div className='knightec'>
+        <form id='submitForm' method='get' action='https://zoom.us/j/93743369483' target='_blank'>
+   <button type='submit'>Join webinar here</button>
+    </form>
       <div className='speakers'>
       <div className='speaker-list'>
         {createCards(0, 3)}
@@ -41,10 +44,6 @@ const KnightecSpeakers = () =>{
     Our guests will share their stories and best tips for the future. There will also be time for you to ask questions, so take the opportunity to learn from and connect with some of the best KTH alumni! </p>
 
     <p className='event-description'>To finish up, Sigbritt Karlsson, principal of KTH will share some words of inspiration for the future.</p>
-
-    <form id='submitForm' method='get' action='https://knightec.se/armada_event/' target='_blank'>
-   <button type='submit'>Sign up here</button>
-    </form>
 
     <div className='agenda'>
         <h2>Agenda</h2>

@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.virtualbutton {
+    width: 220px;
+    height: 60px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none !important;
+    transition: transform .2s cubic-bezier(.175,.885,.32,1.275);
+    &:hover {
+        transform: scale(1.3);
+    }
+}
+
+#submitForm{
+  float: left;
+
+}

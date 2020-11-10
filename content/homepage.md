@@ -12,9 +12,4 @@ header: /assets/images/header-images/home.jpg
 
 This year the fair will take place virtually. Browse through all our exhibitors, chat with their representatives or book a video call with your dream employer. All from wherever you are in the world!
 
-You can already start scheduling individual meetings, so register for Virtual THS Armada today!
-
-
-<form id='submitForm' method='get' action='https://event.armada.nu/sv/event/3994' target='_blank'>
-   <button type='submit'>Register here</button>
-</form>
+You can already start scheduling individual meetings, [so register for Virtual THS Armada today!](https://event.armada.nu/sv/event/3994')

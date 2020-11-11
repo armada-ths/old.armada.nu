@@ -16,11 +16,11 @@ noJumbotron: false
 
 ## Background
 
-The Armada Competition is a gamification feature of the virtual fair with the impact goals of (1) attracting more students to the fair and (2) nudging the students to interact with the fair in a more constructive way. There will be incitements (prizes) to attract students to the concept and tasks (points) that measure the students activity. The students will earn points for interacting with the fair and then the prizes will be raffled out in a lottery where students have one lottery ticket for each point earned. There will be between 40 and 50 prizes, ranging in market value from 500 up to 5000kr.
+The Armada Competition is a gamification feature of the virtual fair with the impact goals of (1) attracting more students to the fair and (2) nudging the students to interact with the fair in a more constructive way. There will be incitements (prizes) to attract students to the concept and tasks (points) that measure the students activity. The students will earn points for interacting with the fair and then the prizes will be raffled out in a lottery where students have one lottery ticket for each point earned. There will be 50 prizes, ranging in market value from 700 up to 4000kr. Among those prizes are Ipads, noise cancelling Bluetooth headphones and a weekend with a Volvo.
 
 ## Purpose of the information
 
-This information is a full disclosure of all terms and conditions that is included in the Armada Competition. THS Armada believes in transparency in everything we do and the aim is that all participating students can see how everything relating to Armada Competition is done.
+This information is a full disclosure of all terms and conditions that is included in the Armada Competition. THS Armada believes in transparency in everything we do and the aim is that all participating students can see how everything relating to Armada Competition is done. This is taken to the extent that the lottery algorithm used is also disclosed in this document.
 
 ## Contact and responsibilities
 
@@ -96,7 +96,7 @@ After the closing of the fair, Armada will calculate for each participant how ma
 
 ## Raffling tickets
 
-When the number of tickets is determined the winners will be raffled out. This will be done digitally with an randomize algorithm. Each participant can only win one time. Therefore, after winning one prize, the rest of the students' tickets will be consumed. The prizes will be raffled in order of monetary value as determined by Armada. So the prize with highest monetary value will be awarded to the first winner, the second highest value prize to the second winner and so on.
+When the number of tickets is determined the winners will be raffled out. This will be done digitally with the Mersenne Twister Pseudorandom number generator. Each participant can only win one time. Therefore, after winning one prize, the rest of the students' tickets will be consumed. The prizes will be raffled in order of monetary value as determined by Armada so the prize with highest monetary value will be awarded to the first winner, the second highest value prize to the second winner and so on. A detailed description of the algorithm used can be found in the first appendix.
 
 ## Announcement
 
@@ -128,22 +128,72 @@ Elektrolux sponsor the Armada Competition with a powered blender.
 
 VOI sponsor the Armada Competition with 1000kr in VOI Credits. The credits will be handed out through a gift certificate
 
-**Others**
-
-Armada may add prize sponsors if the opportunity arises
-
 ## Armada funded prizes
 
 In order to increase the number of prizes, Armada will fund prizes at two levels, one high level with fewer items with a higher market value and one low level with more items of lower market value. Armada aims at providing 50 prizes, but will not provide less than 40 prizes.
 
-**High level**
+**IPads**
+Armada supplies 3 IPads to the competition. These will be the 32 gb memory base model from Apple. 
 
-The high level prize will be a technical device or gadget, like for example, but not limited to, a tablet or a bluetooth speaker. It will have a market value of 1000kr to 5000kr. There will be around 3 to 5 prizes of the high level
+**Headphones**
+Armada will provide 11 bluetooth noise cancelling headphones from JBL, the JBL TUNE 750BTNC model. 
 
-Armada might change this prize, including removing it, if more prize sponsors come in and fill its intended role.
+**ICA gift certificate**
+Armada will provide 33 gift certificates loaded with 700kr each. These can be used at any ICA store.
 
-**Low level**
+# Appendix 1 - A lottery algorithm for the Armada competition
 
-The low level prizes will be a gift certificate to a store, most probably a grocery store. The gift certificate will be worth between 500kr and 1000kr. There will be between 35 and 50 low level prizes.
+## Overview
 
-Armada might change this prize, including removing it, if more prize sponsors come in and fill its intended role.
+**Input**
+An excel with one column with a unique identifier, one with names and one column with number of lottery tickets.
+
+**Algorithm**
+A lottery algorithm that gives each ticket an equal chance of winning. There will be drawn several winners, but once one person has won his or her remaining tickets should not be part of the next draw.
+
+**Output**
+A list with name and unique identifier for the winners, in the same order they were drawn by the algorithm
+
+The input will be provided to you on 19/11 and I want the output asap after that. The code needs to be done and tested before the final input is given to you so we can run the lottery one time only.
+I also want to know which randomizer or lottery function will be used for full disclosure to the student, and preferably the whole code should be disclosed before the fair.
+
+## Details
+
+**Chance of winning**
+number of personal tickets/total sum of tickets
+
+**Reliability**
+The numpy.random uses the Mersenne Twister Pseudorandom number generator. The sequence is predetermined by the PRNG´s seed, which could include truly random values. 
+
+The algorithm will only be run once, and should thus be deemed reliable enough.
+
+## Pseudocode in text
+The algorithm will generate a shuffled file/list by first creating a row for each ticket that a person holds and then shuffle that file/list. After the file/list has been shuffled then i - amount of winners will be picked randomly. This is done by selecting a row using the numpy.random.randint(0, sum of tickets). If the row or the unique ID is already in the WinnerList then a new winner is selected instead of that one. Starting from row 0 to row i is the order that the winners were picked. 
+
+**Pseudocode**
+
+function ArmadaLottery(file)
+	TicketFile/List GenerateTicket(file)
+	ShuffledFile/List ShuffleTickets(/file/list)
+WinnerList[]
+PickWinners(ShuffledFile/List, WinnerList)
+print(WinnerList)	
+
+function GenerateTicket(file)
+	"Creates a row for each ticket that a person holds"
+	return file/list
+	
+function ShuffleTickets(file/list)
+	ShuffledFile/List numpy.random.shuffle(file/list)
+	"Or similar shuffle function"
+	return ShuffledFile/List
+
+function PickWinners(ShuffledFile/List, WinnerList)
+	for(0<i) (i =amount of winners)
+		x numpy.random.randint(0,NumberOfRows(ShuffledFile/List)
+		if(ShuffledFile/List(Row(x) && uniqueID) not in WinnerList
+		"Might just need to check if the uniqueID is in WinnerList"
+			add(row(x) to WinnerList) to row(i)
+		else
+			i=i-1
+	return WinnerList

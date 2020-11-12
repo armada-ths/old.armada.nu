@@ -172,28 +172,46 @@ The algorithm will generate a shuffled file/list by first creating a row for eac
 
 **Pseudocode**
 
-function ArmadaLottery(file)
-	TicketFile/List GenerateTicket(file)
-	ShuffledFile/List ShuffleTickets(/file/list)
-WinnerList[]
-PickWinners(ShuffledFile/List, WinnerList)
-print(WinnerList)	
+`function ArmadaLottery(file)`
+    
+	    TicketFile/List GenerateTicket(file)
 
-function GenerateTicket(file)
-	"Creates a row for each ticket that a person holds"
-	return file/list
+	    ShuffledFile/List ShuffleTickets(/file/list)
+
+`WinnerList[]`
+
+`PickWinners(ShuffledFile/List, WinnerList)`
+
+`print(WinnerList)`	
+
+`function GenerateTicket(file)`
+
+	    "Creates a row for each ticket that a person holds"
+
+	    return file/list
 	
-function ShuffleTickets(file/list)
-	ShuffledFile/List numpy.random.shuffle(file/list)
-	"Or similar shuffle function"
-	return ShuffledFile/List
+`function ShuffleTickets(file/list)`
 
-function PickWinners(ShuffledFile/List, WinnerList)
-	for(0<i) (i =amount of winners)
-		x numpy.random.randint(0,NumberOfRows(ShuffledFile/List)
-		if(ShuffledFile/List(Row(x) && uniqueID) not in WinnerList
-		"Might just need to check if the uniqueID is in WinnerList"
-			add(row(x) to WinnerList) to row(i)
-		else
-			i=i-1
+	    ShuffledFile/List numpy.random.shuffle(file/list)
+
+	    "Or similar shuffle function"
+
+	    return ShuffledFile/List
+
+`function PickWinners(ShuffledFile/List, WinnerList)`
+
+	    for(0<i) (i =amount of winners)
+
+		     x numpy.random.randint(0,NumberOfRows(ShuffledFile/List)
+
+		     if(ShuffledFile/List(Row(x) && uniqueID) not in WinnerList
+
+		     "Might just need to check if the uniqueID is in WinnerList"
+
+			    add(row(x) to WinnerList) to row(i)
+
+		    else
+
+			    i=i-1
+
 	return WinnerList

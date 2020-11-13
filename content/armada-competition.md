@@ -172,6 +172,9 @@ The algorithm will generate a shuffled file/list by first creating a row for eac
 
 **Pseudocode**
 
+
+<div class="armada-competition-code">
+
 `function ArmadaLottery(file)`
     
 	    TicketFile/List GenerateTicket(file)
@@ -215,3 +218,5 @@ The algorithm will generate a shuffled file/list by first creating a row for eac
 			    i=i-1
 
 	return WinnerList
+
+</div>

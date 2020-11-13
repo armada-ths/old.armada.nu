@@ -27,11 +27,21 @@
 			width: 150px;
 		}
 	}
+
+	.armada-competition-code {
+		font-size: 10pt;
+	}
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
 	.competition-container {
 		padding: 1em 1em 0em 1em;
+	}
+
+	.armada-competition-code {
+		max-width: 300px;
+		max-width: calc(100vw - 4em);
+		overflow: auto;
 	}
 
 }

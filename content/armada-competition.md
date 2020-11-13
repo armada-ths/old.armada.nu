@@ -120,9 +120,9 @@ Additional conditions apply and Volvo Cars says the following:
 
 *“The winner is asked to contact Volvo Studio minimum one week prior to the desired rental date - this in order to make sure that your car is ready and available on your desired weekend. In order to make use of this offer, you need to have a driver’s license valid in Sweden. You will also be asked to sign a rental agreement with Volvo Studio when you pick up the car. The car is covered by insurance and you as a driver is responsible for driving it in a careful way. Any potential damage to the car caused by the user will be covered by the driver.”*
 
-**Elektrolux**
+**Electrolux**
 
-Elektrolux sponsor the Armada Competition with a powered blender.
+Electrolux sponsor the Armada Competition with a powered blender.
 
 **VOI**
 

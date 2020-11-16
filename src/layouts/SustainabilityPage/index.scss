@@ -22,10 +22,13 @@
 	  display: block;
 	  margin-left: auto;
 	  margin-right: auto;
-	  width: 33%;
+	  width: 40%;
 	  padding-bottom: 1em;
 	  align: center;
 	}
+  .background_Images.middle:hover {
+    width: 70%;
+  }
 	#logo {
 	  display: block;
 	  margin-left: auto;
@@ -38,7 +41,7 @@
 	#submitForm {
 		text-align: center;
 		padding: 1em;
-	}
+  }
 }
 
 .sustainability-day {

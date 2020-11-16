@@ -24,6 +24,7 @@ import SustainabilitySection from '../src/components/DiversitySection';
       <button type='submit'>Download Sustainability Policy</button>
    </form>
 
+<img alt='' className='background_Images middle' src='/assets/sustainability/circular_economy.jpg'/>
 
 <SustainabilitySection left>
 
@@ -33,11 +34,15 @@ import SustainabilitySection from '../src/components/DiversitySection';
 
   Visiting the Green Room is a must if you are interested in sustainability, the environment or if you just want to know how the selected companies work with sustainability. For this year there will also be some fun games in the Green Room! If you want to visit the virtual booths or get in touch with the companies remember to visit the digital fair at Graduateland.
 
-  For this year the selected Green Room companies are AFRY, Electrolux, Ericsson, SCA and Vattenfall. Stay tuned for upcoming information about the exhibitors. In the meantime, you can check out the Green Room companies from 2019:
+  For this year the selected Green Room companies are AFRY, Electrolux, Ericsson, SCA and Vattenfall.
 
-   <form id='submitForm' method='get' action='/assets/green-room.pdf'>
-      <button type='submit'>See Exhibitors in the Green Room</button>
-   </form>
+<img alt='' className='background_Images middle' src='/assets/sustainability/wall_of_sustainability.jpg'/>
+
+If you want to get to know Electrolux from a sustainability perspective, see the Q&A video with them:
+
+  <form id='submitForm' method='get' action="/assets/sustainability/ElectroluxQ&A.mp4" target='_blank'>
+     <button type='submit'>Click to see video</button>
+  </form>
 
 </SustainabilitySection>
 </div>
@@ -49,7 +54,7 @@ import SustainabilitySection from '../src/components/DiversitySection';
 
    ## Sustainability Day
 
-  THS Armada believes that it is important to talk, inform and discuss sustainability to get a better understanding of the concept and what it means in practise. To fulfill this THS Armada will dedicate a whole day to events related to sustainability. The day takes place during the Event Week and the date is Thursday November 12th. More information about the Sustainability Day will be shared here and on our social media accounts closer to the fair.
+  THS Armada believes that it is important to talk, inform and discuss sustainability to get a better understanding of the concept and what it means in practise. To fulfill this THS Armada will dedicate a whole day to events related to sustainability. The day takes place during the Event Week and the date is Thursday November 12th.
 
    </SustainabilitySection>
    </div>
@@ -72,7 +77,7 @@ import SustainabilitySection from '../src/components/DiversitySection';
 
   ## Armada Sustainability Index
 
-  The Green Room companies are selected together with the ASI, of which the SDGs are one of the main aspects. You can find more information about the ASI via the button below: 
+  The Green Room companies are selected together with the ASI, of which the SDGs are one of the main aspects. You can find more information about the ASI via the button below:
 
   <img alt='' className='background_Images middle' src='/assets/sustainability/ASI_criteria_small.jpg' height='200em' width='260em'/>
   <form id='submitForm' method='get' action='/assets/sustainability/ASI_criteria.jpg'>

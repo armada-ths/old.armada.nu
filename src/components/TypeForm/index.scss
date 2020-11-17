@@ -1,0 +1,14 @@
+@import "../../styles/global";
+@import "../../styles/_variables";
+
+.typeform button {
+    z-index: 99999;
+    background-color: $diversity;
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+	.typeform {
+        display: flex;
+        justify-content: center;
+    }
+}

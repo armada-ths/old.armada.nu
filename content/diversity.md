@@ -10,6 +10,8 @@ noJumbotron: false
 ---
 import DiversitySection from '../src/components/DiversitySection';
 
+import TypeForm from '../src/components/TypeForm';
+
 <div className='diversitypage-container'>
 
 # Diversity
@@ -21,6 +23,10 @@ import DiversitySection from '../src/components/DiversitySection';
 ## **Diversity Corner**
 
   One way THS Armada is accentuating the importance of diversity is through the Diversity Corner, a livestreaming studio that will share information about the most progressive companies when it comes to inclusion and diversity in the workplace. These companies have been carefully selected with the Diversity Team, using a set of meaningful criteria developed by the team, called the Armada Diversity Index (ADI), found [here](/assets/Focus_rooms_selection.pdf).
+
+  If you want to test your knowledge on Diversity and Inclusion, take this quiz! It is also part of Armada Competition and will give you more chance to win the amazing prizes!
+  <TypeForm url="https://thsarmada1.typeform.com/to/QZOFyCi8">Click here to take the quiz!</TypeForm>
+  <br/>
 
    </DiversitySection>
 

@@ -1,18 +1,23 @@
 import React from 'react'
-import './index.scss';
+import './index.scss'
 
-const Jumbotron = (props) => {
-
-  return(
-    <div>
-      <form  id='submitForm1' method='get' action='https://event.armada.nu/sv/event/3994' target='blank'>
-        <button className='virtualbutton'>Register for the fair</button>
-      </form>
-      <form id='submitForm1' method='get' action='https://armada.nu/forStudents'>
-        <button className='virtualbutton'>More Info</button>
-      </form>
-    </div>
-  )
+const FrontButtons = () => {
+    return (
+        <div className='front-buttons'>
+            <a
+                href='https://event.armada.nu/sv/event/3994'
+                target='_blank'
+                rel='noreferrer'
+            >
+                <button className='virtual-button'>
+                    Register for the fair
+                </button>
+            </a>
+            <a href='/forStudents'>
+                <button className='virtual-button'>More Info</button>
+            </a>
+        </div>
+    )
 }
 
-export default Jumbotron;
+export default FrontButtons

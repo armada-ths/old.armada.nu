@@ -33,7 +33,7 @@ const CountdownComponent = () => {
 
     return (<div className='countdown-container'>
         {isHappening ? 
-            <h3 className='happening'>Welcome to the Armada Fair!</h3> : 
+            <h3 className='happening'>The Armada Fair is open!</h3> : 
             <div className='countdown-width-container'>
                 <Countdown date={DATE_OF_CAREER_FAIR} renderer={countDownRenderer} />
             </div>

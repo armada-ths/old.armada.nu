@@ -37,6 +37,7 @@
     "react-select": "^3.1.0",
     "react-sticky": "^6.0.3",
     "react-topbar-progress-indicator": "^4.1.0",
+    "react-typeform-embed": "^0.2.1",
     "react-url-query": "^1.5.0"
   },
   "devDependencies": {

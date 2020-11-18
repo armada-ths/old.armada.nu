@@ -154,9 +154,6 @@ A lottery algorithm that gives each ticket an equal chance of winning. There wil
 **Output**
 A list with name and unique identifier for the winners, in the same order they were drawn by the algorithm
 
-The input will be provided to you on 19/11 and I want the output asap after that. The code needs to be done and tested before the final input is given to you so we can run the lottery one time only.
-I also want to know which randomizer or lottery function will be used for full disclosure to the student, and preferably the whole code should be disclosed before the fair.
-
 ## Details
 
 **Chance of winning**

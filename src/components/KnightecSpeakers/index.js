@@ -24,9 +24,7 @@ const KnightecSpeakers = () =>{
       }
 
       return (<div className='knightec'>
-        <form id='submitForm' method='get' action='https://zoom.us/j/93743369483' target='_blank'>
-   <button type='submit'>Join webinar here</button>
-    </form>
+        
       <div className='speakers'>
       <div className='speaker-list'>
         {createCards(0, 3)}

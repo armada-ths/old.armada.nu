@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import "./index.scss"
 
 
-const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, zoomUrl, description}) =>{
+const KnightecCard= ({name, workTitle, education, videoUrl, linkedInUrl, profileImageUrl, zoomUrl, description}) =>{
 
     return (
         <div>
@@ -28,8 +28,8 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
     <div className='card-back'>
     <p className='card-back-name'>{name}</p>
     <p className='description'>{description}</p>
-    <form id='submitForm' method='get' action={zoomUrl} target='_blank'>
-    <button type='submit'>Join {name}'s talk</button>
+    <form id='submitForm' method='get' action={videoUrl} target='_blank'>
+    <button type='submit'>Watch {name}'s talk</button>
     </form>
     {/* <a className='linkedin' href={linkedInUrl} target='-blank' rel='noreferrer'>
           <img className='linkedin-logo' alt='linkedin-logo' draggable='false' src='/assets/linkedin.png' />
@@ -42,8 +42,8 @@ const KnightecCard= ({name, workTitle, education, linkedInUrl, profileImageUrl, 
   </div>
   <div className='mobile-description'>
     <p className='m-description'>{description}</p>
-    <form id='submitForm' method='get' action={zoomUrl} target='_blank'>
-   <button type='submit'>Join {name}'s talk</button>
+    <form id='submitForm' method='get' action={videoUrl} target='_blank'>
+   <button type='submit'>Watch {name}'s talk</button>
     </form> 
 
     {/* <a className='linkedin' href={zoomUrl} target='-blank' rel='noreferrer'>

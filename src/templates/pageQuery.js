@@ -25,6 +25,7 @@ import Partners from '../layouts/Partners'
 import forStudentsPage from '../layouts/forStudentsPage'
 import KnightecPage from '../layouts/KnightecPage'
 import CompetitionPage from '../layouts/CompetitionPage'
+import Banquet from '../layouts/Banquet'
 
 const components = {
   RecruitmentPage: RecruitmentPage,
@@ -46,7 +47,8 @@ const components = {
   Partners: Partners,
   forStudentsPage: forStudentsPage,
   KnightecPage: KnightecPage,
-  CompetitionPage: CompetitionPage
+  CompetitionPage: CompetitionPage,
+  Banquet: Banquet,
 };
 
 export default function Template({

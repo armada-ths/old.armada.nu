@@ -5,7 +5,6 @@ import Page from '../../templates/page'
 
 import './index.scss'
 
-
 import WAP from '../../../static/assets/images/banquet/WAP.mp4'
 import Beer from '../../../static/assets/images/banquet/beer.jpg'
 import Bruises from '../../../static/assets/images/banquet/bruises.jpg'
@@ -32,8 +31,9 @@ const Banquet = props => {
         <div className='content'>
             <div className='banquet-container'>
                 <Page {...props} />
-                <video width="320" height="240" controls>
-                    <source src={WAP} type="video/mp4"/>
+                {/*eslint-disable-next-line jsx-a11y/media-has-caption*/}
+                <video width="320" height="240" controls> 
+                    <source src={WAP} type="video/mp4"/> 
                     </video>
                 { images.map(image => <img src={image} alt=''/>)}
             </div>

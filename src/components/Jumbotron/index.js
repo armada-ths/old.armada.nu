@@ -4,7 +4,6 @@ import Countdown from '../Countdown'
 import Video from '../../../static/assets/video/virtual_fair.mp4'
 import Logo from '../../../static/assets/images/header-images/virtual_logo.png'
 import useWindowSize from '../../hooks/useWindowSize'
-import FrontButtons from '../FrontButtons'
 
 const Jumbotron = (props) => {
 

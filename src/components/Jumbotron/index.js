@@ -27,8 +27,7 @@ const Jumbotron = (props) => {
     return (<div id='header'>
         <div className={`logo-container ${video ? 'fixed' : ''}`}>
                 <img alt='' src={Logo} />
-                <p className='logo-date'>THE VIRTUAL FAIR <wbr/> 17&#8209;18 NOV 2020</p>
-                {video ? <FrontButtons/> : <></>}
+                <p className='logo-date'>THE FAIR <wbr/> 23&#8209;24 NOV 2021</p>
                 {video ? <Countdown/> : <></>}
         </div>
         <div className={video ? 'header-home' : 'header-image'}>

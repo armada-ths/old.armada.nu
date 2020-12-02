@@ -58,7 +58,7 @@ Diversity Day is another way to keep the discussion about equality issues going.
 
 ## Help us improve!
 
-   It is important for us at THS Armada to keep improving and implementing the latest measures to make it as diverse and equal as possible. Do you have any suggestions? We would love to have your input! Feel free to contact Head of Diversity at [elise.brouillette@armada.nu](mailto:elise.brouillette@armada.nu).
+   It is important for us at THS Armada to keep improving and implementing the latest measures to make it as diverse and equal as possible. Do you have any suggestions? We would love to have your input! Feel free to contact us at [a@armada.nu](mailto:a@armada.nu).
 
    </DiversitySection>
 

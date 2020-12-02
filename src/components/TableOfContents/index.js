@@ -4,13 +4,13 @@ import Arrow from '../../../static/assets/pil_melon.png'
 
 const tableOfContents = [
     {
-        title: 'Register here',
+        title: 'THS ARMADA 2021',
         anchor: 'register-here',
         sections: [
         ]
     },    
     {
-        title: 'Virtual Career Fair',
+        title: 'Virtual Career Fair 2020',
         anchor: 'virtual-career-fair',
         sections: [
             { title: 'Things taken into consideration when choosing the platform', anchor: 'consideration' },

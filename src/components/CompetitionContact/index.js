@@ -12,7 +12,7 @@ const CompetitionContact = () => {
           <p className='text head'>Questions? Contact me!</p>
           <p className='text name'>Leonard Hökby</p>
           <p className='text'>Head of Logistics & Fair</p>
-          <a href="mailto:leonard.hokby@armada.nu">leonard.hokby@armada.nu</a>
+          <a href="mailto:a@armada.nu">a@armada.nu</a>
           <p className='text last'/>
         </div>
       </div>

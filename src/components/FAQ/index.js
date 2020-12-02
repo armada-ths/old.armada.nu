@@ -33,7 +33,7 @@ const questions = [
         //{question: 'What is the Green Room?', answer: 'A place at the fair where companies that actively work with sustainability-related questions get to stand.'},
         //{question: 'What is the Diversity Room?', answer: 'A place at the fair where companies that actively work with diversity-related questions get to stand.'},
         //{question: 'What is the Focus Room?', answer: 'The focus room will be found in Nya Matsalen in Nymble on the days of the fair. Here you will be able to workshop on Sustainability and Diversity as well as see which exhibitors are outstanding in the field.'},
-        {question: 'Where can I find last year\'s exhibitors?', answer: 'Head to armada.nu/previous to find last year\'s exhibitors.', displayAnswer: <span>Head to <a href='/previous/'>armada.nu/previous</a> to find last year's exhibitors.</span>},
+        {question: 'Where can I find last year\'s exhibitors?', answer: 'Head here to find last year\'s exhibitors.', displayAnswer: <span>Head <a href='https://event.armada.nu/sv/virtual-event/3994'>here</a> to find last year's exhibitors.</span>},
     ]},
     /*
     {title: 'MAPS AND LOCATIONS', body: [

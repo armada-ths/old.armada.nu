@@ -21,7 +21,11 @@ As long as you have a profile on the site, you have the chance to be headhunted 
 
 ## Armada Competition - the game
 
-This year, not only your future and your career is in the prizepool. You also have the chance to win a weekend with a brand new Volvo, all expenses paid for by Volvo Cars! Armada, together with our prize sponsors,  will in total hand out 50 prizes to students who are active at the fair! All you have to do to be in the running is [register](https://event.armada.nu/sv/event/3994) at the fair.
+<p class="info-border-box">
+The information below applies to Armada 2020, but stay tuned for another edition in 2021. The winners have been contacted through email. Hope you all enjoyed the fair. See you next year!
+</p>
+
+This year, not only your future and your career is in the prizepool. You also have the chance to win a weekend with a brand new Volvo, all expenses paid for by Volvo Cars! Armada, together with our prize sponsors,  will in total hand out 50 prizes to students who are active at the fair! All you have to do to be in the running is register at the fair.
 
 <img alt='' id='logo' src='/assets/competition/Armada_competition_lines.png' height='260px'/>
 

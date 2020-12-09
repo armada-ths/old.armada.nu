@@ -32,6 +32,10 @@
 	.armada-competition-code {
 		font-size: 10pt;
 	}
+
+	.info-border-box {
+		border: 2px solid $grape;
+	}
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {

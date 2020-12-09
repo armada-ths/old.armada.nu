@@ -11,22 +11,21 @@ header: /assets/for_exhibitors.jpg
 <br />
 <a class="anchor" id="register-here"></a>
 
-## Register here
+## THS ARMADA 2021
 
-We are happy to, for the 40th time, invite you to THS Armada - only this time virtually. We have a brand new offering this year and are looking forward to creating the most frictionless fair ever. More information about what is a part of the offering is found in the **[product catalogue](/assets/Product_catalogue_virtual.pdf)**.
+Interested in exhibiting at Armada 2021?
+Fill out this [form](https://forms.gle/93NWLPJF3kuSTNBV8) and we'll contact you when registration opens!
+Questions? Send us an email at [a@armada.nu](mailto:a@armada.nu)!
 
-The registration for the fair is open between **August 3rd** and **September 13th**. If you have already completed the initial registration you will be able to register by entering [register.armada.nu](https://register.armada.nu). If not, you just need to send us an email to [kevin.stojanovski@armada.nu](mailto:kevin.stojanovski@armada.nu) and we will enable you to sign up swiftly.
+<form style="display: flex; justify-content:center; margin-bottom: 1em;" method="get" action="https://forms.gle/93NWLPJF3kuSTNBV8">
 
-Take your chance to get in touch with students this year by using the registration link below:
-<form style="display: flex; justify-content:center; margin-bottom: 1em;" method="get" action="https://register.armada.nu">
-
-<button type="submit">Register</button>
+<button type="submit">Interest form</button>
 
 </form>
 
 <a class="anchor" id="virtual-career-fair"></a>
 
-## Virtual Career Fair
+## Virtual Career Fair 2020
 
 <a class="anchor" id="consideration"></a>
 

@@ -56,6 +56,9 @@ All in all, Armada consists of around 250 people all working together towards on
   - Join us for a cruise in December
   - Merch & tons of fun
 
+## Join the next project group
+Interested in joining the project group for Armada 2021? 
+Register [here](https://forms.gle/vwqUSnEDvvEV7vvv8) for a reminder when the application opens!
 
 ## Questions?
 Don’t hesitate to contact us at a@armada.nu!

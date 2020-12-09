@@ -13,7 +13,6 @@ Do you want your brand or products to be seen by thousands of future engineers? 
 
 * Your logo and/ or message presented on the Armada website or on campus
 * Be a part of one of our short films
-* Increased exposure on Graduateland (for exhibitors)
 
 A partnership with THS Armada will help you reach engineering, technology and architecture students at KTH, which is the highest ranked technical university in Sweden and among the top 100 in the world. 
 

@@ -12,7 +12,11 @@ noJumbotron: false
     <img alt='' id='logo' src='/assets/Armada_competition_filled.png'/>
 </div>
 
-# Armada Competition
+# Armada Competition 2020
+
+<p class="info-border-box">
+The information below applies to Armada 2020, but stay tuned for another edition in 2021. The winners have been contacted through email. We hope you all enjoyed the fair. See you next year!
+</p>
 
 ## Background
 
@@ -24,7 +28,7 @@ This information is a full disclosure of all terms and conditions that is includ
 
 ## Contact and responsibilities
 
-Leonard Hökby, Head of Logistics and Fair is the inventor and responsible for the Armada Competition. Leonard can be reached at [leonard.hokby@armada.nu](mailto:leonard.hokby@armada.nu). Responsible for THS Armada 2020 is Project Manager Daniel Aston, reachable at [a@armada.nu](mailto:a@armada.nu).
+Leonard Hökby, Head of Logistics and Fair is the inventor and responsible for the Armada Competition. Responsible for THS Armada 2020 is Project Manager Daniel Aston, reachable at [a@armada.nu](mailto:a@armada.nu).
 
 # Points collecting
 

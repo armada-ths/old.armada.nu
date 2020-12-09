@@ -34,7 +34,7 @@
             transition: opacity 300ms ease;
             margin: 0.5em;
         }
-        
+
         &.prev span {
             -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -44,22 +44,28 @@
             -webkit-transform: rotate(-135deg);
             transform: rotate(-135deg);
         }
-        
     }
 
     .carousel-items {
         display: grid;
         column-gap: 1em;
-
-        @media screen and (max-width: $breakpoint-mobile) {
-            grid-template-columns: 1fr;
-        }
-        
     }
 
+    @media screen and (max-width: $breakpoint-mobile) {
+        max-width: 90vw;
 
+        .carousel-control {
+            span {
+                width: 0.8em;
+                height: 0.8em;
+            }
+        }
+
+        .carousel-items {
+            grid-template-columns: 1fr;
+        }
+    }
 }
-
 
 .carousel-history {
     display: flex;
@@ -85,5 +91,4 @@
             background-color: $melon;
         }
     }
-    
 }

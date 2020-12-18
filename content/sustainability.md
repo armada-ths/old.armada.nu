@@ -7,16 +7,14 @@ menuPage: true
 priority: 7
 header: /assets/images/header-images/sustainability.jpg
 ---
-
-import SustainabilityInterviews from '../src/components/SustainabilityInterviews';
-import Fade from 'react-reveal/Fade';
+import SustainabilityInterviews from '../src/components/SustainabilityInterviews'; import Fade from 'react-reveal/Fade';
 import SustainabilitySection from '../src/components/DiversitySection';
 
 <div className='sustainability-container'>
 
 # Sustainability
-  <img alt='' id='logo' src='/assets/sustainability-melon-nolabel.png'/>
 
+  <img alt='' id='logo' src='/assets/sustainability-melon-nolabel.png'/>
 
    <p> <b id='sustainability-color'>Sustainability</b> is one of the key elements required in making the world a better place, a place where humanity and nature can live together in harmony without depleting the resources of nature. At THS Armada sustainability is a fundamental of all operations as it is one of our core values, together with Diversity. We reach out to a large scale of people and believe that with this comes a responsibility to encourage a more sustainable living. The THS Armada’s Sustainability policy can be found here: </p>
 
@@ -28,7 +26,7 @@ import SustainabilitySection from '../src/components/DiversitySection';
 
 <SustainabilitySection left>
 
-   ## Green Room
+## Green Room
 
    THS Armada has dedicated an area at the career fair to bring attention to the core value sustainability. The special area is known as the Green Room. As the fair is going digital this year, the Green Room will be a place to get more familiar with the concept of sustainability and how THS Armada works for becoming more sustainable, as well as acquainting with companies that we deem to be the frontrunners in our vision for a sustainable future. These companies have been carefully selected by the Sustainability Team, using a set of meaningful criteria developed by the team, called the Armada Sustainability Index (ASI). More information about the ASI can be found further below.
 
@@ -52,7 +50,7 @@ If you want to get to know Electrolux from a sustainability perspective, see the
 
    <SustainabilitySection right>
 
-   ## Sustainability Day
+## Sustainability Day
 
   THS Armada believes that it is important to talk, inform and discuss sustainability to get a better understanding of the concept and what it means in practise. To fulfill this THS Armada will dedicate a whole day to events related to sustainability. The day takes place during the Event Week and the date is Thursday November 12th.
 
@@ -63,9 +61,13 @@ If you want to get to know Electrolux from a sustainability perspective, see the
 <div className='sustainability-container'>
 <SustainabilitySection left>
 
-  ## Armada 2020 will be climate neutral
+## Armada 2020 are climate neutral
 
-  This year, THS Armada is climate compensating for all caused carbon dioxide emissions. It means that all carbon dioxide emissions are calculated and compensated for by investments in projects that contribute to reduced and avoided emissions. In parallel with this, THS Armada is working hard with reducing the use of resources and taking environmental impacts into account when making decisions. For example, all carpets at the physical fair are reused and all food served is vegetarian.
+ Armada 2020 is now certified and has climate-compensated 10.50 tonnes of carbon dioxide.
+
+<img alt='' className='background_Images middle' src='/assets/klimatkompensation2020.jpg'/>
+
+  This year, 2020 THS Armada is climate compensating for all caused carbon dioxide emissions. It means that all carbon dioxide emissions are calculated and compensated for by investments in projects that contribute to reduced and avoided emissions. In parallel with this, THS Armada is working hard with reducing the use of resources and taking environmental impacts into account when making decisions. For example, all carpets at the physical fair are reused and all food served is vegetarian.
 
   The climate compensation will be done through [Klimatkompensera.nu](https://klimatkompensera.se/) that manages three projects, of which two are in India and one in Panama. The emission calculations are based on various flows associated with transportation, goods, waste, food, energy usage and more during the events as well as the career fair.
 
@@ -75,7 +77,7 @@ If you want to get to know Electrolux from a sustainability perspective, see the
 
   <SustainabilitySection right>
 
-  ## Armada Sustainability Index
+## Armada Sustainability Index
 
   The Green Room companies are selected together with the ASI, of which the SDGs are one of the main aspects. You can find more information about the ASI via the button below:
 
@@ -97,7 +99,7 @@ If you want to get to know Electrolux from a sustainability perspective, see the
 
   <SustainabilitySection right>
 
-   ## Help us become more sustainable
+## Help us become more sustainable
 
    Do you have any ideas or suggestions to help us work more sustainable?  We would love to hear them!
 

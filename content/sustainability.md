@@ -7,8 +7,7 @@ menuPage: true
 priority: 7
 header: /assets/images/header-images/sustainability.jpg
 ---
-import SustainabilityInterviews from '../src/components/SustainabilityInterviews'; import Fade from 'react-reveal/Fade';
-import SustainabilitySection from '../src/components/DiversitySection';
+import SustainabilityInterviews from '../src/components/SustainabilityInterviews'; import Fade from 'react-reveal/Fade'; import SustainabilitySection from '../src/components/DiversitySection';
 
 <div className='sustainability-container'>
 
@@ -61,17 +60,17 @@ If you want to get to know Electrolux from a sustainability perspective, see the
 <div className='sustainability-container'>
 <SustainabilitySection left>
 
-## Armada 2020 are climate neutral
-
- Armada 2020 is now certified and has climate-compensated 10.50 tonnes of carbon dioxide.
-
-<img alt='' className='background_Images middle' src='/assets/klimatkompensation2020.jpg'/>
+## Armada 2020 is climate neutral
 
   This year, 2020 THS Armada is climate compensating for all caused carbon dioxide emissions. It means that all carbon dioxide emissions are calculated and compensated for by investments in projects that contribute to reduced and avoided emissions. In parallel with this, THS Armada is working hard with reducing the use of resources and taking environmental impacts into account when making decisions. For example, all carpets at the physical fair are reused and all food served is vegetarian.
 
   The climate compensation will be done through [Klimatkompensera.nu](https://klimatkompensera.se/) that manages three projects, of which two are in India and one in Panama. The emission calculations are based on various flows associated with transportation, goods, waste, food, energy usage and more during the events as well as the career fair.
 
   One of the indian projects is located in Sri Balaji and contributes to biomass production, whereas the other indian project is located in Bhilwara and involves development of sunpower. The third project is in Panama and involves planting of trees and restoration of habitats for endangered animals. In addition to reduced environmental impacts the projects contribute to the Sustainable Development Goals (SDGs), including social, environmental and economical sustainability. Together they have contributed to more than 300 safe employments, more than 50 children have secured education in the area, more than 7.5 millions of trees are planted and 15 red-listed endangered animal species have been given a new home. Furthermore, the annual energy supply generated is enough for more than 143 000 indian households.
+
+THS Armada 2020 emitted 6.2 tonnes of CO2-emissions and will compensate for that and even more. We have compensated for 10.5 tonnes of CO2-emissions, which means that we are climate positive! A certification for the climate compensation can be seen below:
+
+<img alt='' className='background_Images middle' src='/assets/klimatkompensation2020.jpg'/>
 
   </SustainabilitySection>
 

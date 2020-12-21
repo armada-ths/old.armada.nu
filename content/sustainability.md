@@ -7,7 +7,8 @@ menuPage: true
 priority: 7
 header: /assets/images/header-images/sustainability.jpg
 ---
-import SustainabilityInterviews from '../src/components/SustainabilityInterviews'; import Fade from 'react-reveal/Fade'; import SustainabilitySection from '../src/components/DiversitySection';
+import SustainabilityInterviews from '../src/components/SustainabilityInterviews'; 
+import SustainabilitySection from '../src/components/DiversitySection';
 
 <div className='sustainability-container'>
 

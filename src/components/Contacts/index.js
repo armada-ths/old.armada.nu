@@ -5,8 +5,9 @@ import ContactCard from '../ContactCard'
 const Contacts = () => {
   
   const projectGroup = [
-    { name: 'Daniel Aston', title: 'Project Manager', email: 'a@armada.nu', emoji: '👨‍✈️', imageUrl: '/assets/images/PG20/danieldrake.jpg', linkedInUrl: 'https://www.linkedin.com/in/danielaston/' },
-    { name: 'Saga Zheng', title: 'Head of HR', email: 'saga.zheng@armada.nu', emoji: '💞', imageUrl: '/assets/images/PG20/saga.jpg', linkedInUrl: 'https://www.linkedin.com/in/saga-zheng-22a590113/' },
+    { name: 'Daniel Aston', title: 'Project Manager 2020', email: 'a@armada.nu', emoji: '👨‍✈️', imageUrl: '/assets/images/PG20/danieldrake.jpg', linkedInUrl: 'https://www.linkedin.com/in/danielaston/' },
+    { name: 'Josefine Havdelin', title: 'Project Manager 2021', email: 'a@armada.nu', emoji: '👩‍💼', imageUrl: '/assets/images/PG20/josefinejogging.jpg', linkedInUrl: 'https://www.linkedin.com/in/josefine-havdelin-9298a4b3/' },
+    /*{ name: 'Saga Zheng', title: 'Head of HR', email: 'saga.zheng@armada.nu', emoji: '💞', imageUrl: '/assets/images/PG20/saga.jpg', linkedInUrl: 'https://www.linkedin.com/in/saga-zheng-22a590113/' },
     { name: 'Moa Lilja', title: 'Art Director', email: 'moa.lilja@armada.nu', emoji: '👨‍🎨', imageUrl: '/assets/images/PG20/moa_.jpg', linkedInUrl: 'https://www.linkedin.com/in/moa-kajsa-lilja-48b162115/' },
     { name: 'Sandra Ransed', title: 'Head of Media & Marketing', email: 'sandra.ransed@armada.nu', emoji: '🎬', imageUrl: '/assets/images/PG20/sandrasavage.jpg', linkedInUrl: 'https://www.linkedin.com/in/sandraransed/' },
     { name: 'Kevin Stojanovski', title: 'Head of Business Relations and Events', email: 'kevin.stojanovski@armada.nu', emoji: '🤝', imageUrl: '/assets/images/PG20/kevinkelvin.jpg', linkedInUrl: 'https://www.linkedin.com/in/kevinstojanovski/' },
@@ -23,7 +24,7 @@ const Contacts = () => {
     { name: 'Elise Brouillette', title: 'Head of Diversity', email: 'elise.brouillette@armada.nu', emoji: '❤️', imageUrl: '/assets/images/PG20/elise_.jpg', linkedInUrl: 'https://www.linkedin.com/in/elise-brouillette/' },
     { name: 'Oscar Rohde Dahlberg', title: 'Head of IT', email: 'oscar.dahlberg@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG20/oscarocean.jpg', linkedInUrl: 'https://www.linkedin.com/in/oscarrohdedahlberg/' },
     { name: 'Ann-Catrin Lindkvist', title: 'Head of Web Development', email: 'anncatrin.lindkvist@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG20/acalphabet.jpg', linkedInUrl: 'https://www.linkedin.com/in/ann-catrin-lindkvist/' },
-    { name: 'Louise Zetterlund', title: 'Head of Internal Systems', email: 'louise.zetterlund@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG20/louise_.jpg', linkedInUrl: 'https://www.linkedin.com/in/louise-zetterlund/' },
+    { name: 'Louise Zetterlund', title: 'Head of Internal Systems', email: 'louise.zetterlund@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG20/louise_.jpg', linkedInUrl: 'https://www.linkedin.com/in/louise-zetterlund/' },*/
   ]
 
   const createCards = (start, end) => {

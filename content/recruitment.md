@@ -22,7 +22,8 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
   <p><b id='sustainability-color'>IT</b>: Web, internal systems, you name it. These folks know IT all!</p>
 
-******************
+- - -
+
 So, how is all this organised?
 
 Think of the Armada team as a big circle.
@@ -37,28 +38,31 @@ Think of the Armada team as a big circle.
 
 All in all, Armada consists of around 250 people all working together towards one goal, making Scandinavia's largest career fair greater than ever.
 
+- - -
 
-******************
 <b id='sustainability-color'>Perks of joining the Armada team:</b>
 
-  - Real life experience impossible to get in school
-  - Boost your CV
-  - Pre access to all events on Armada in November and throughout the year
-  - Learn how to interview
-  - Connections and friends for life
-  - Experience work in a real IT team developing a real product using agile methods
-  - The chance to lead a team of 5-10 people with the help from us
-  - Create campaigns towards companies with few boundaries
-  - Create the biggest student banquet in Stockholm at the exquisite München Bryggeriet, for all members of Armada and company representatives
-  - Graphic design in Adobe programs
-  - Creating film content lasting forever
-  - Get inside connection with employers
-  - Join us for a cruise in December
-  - Merch & tons of fun
+* Real life experience impossible to get in school
+* Boost your CV
+* Pre access to all events on Armada in November and throughout the year
+* Learn how to interview
+* Connections and friends for life
+* Experience work in a real IT team developing a real product using agile methods
+* The chance to lead a team of 5-10 people with the help from us
+* Create campaigns towards companies with few boundaries
+* Create the biggest student banquet in Stockholm at the exquisite München Bryggeriet, for all members of Armada and company representatives
+* Graphic design in Adobe programs
+* Creating film content lasting forever
+* Get inside connection with employers
+* Join us for a cruise in December
+* Merch & tons of fun
 
 ## Join the next project group
-Interested in joining the project group for Armada 2021? 
-Register [here](https://forms.gle/vwqUSnEDvvEV7vvv8) for a reminder when the application opens!
+
+Apply at the link **and** send your CV and personal letter **before January 11th** to a@armada.nu. Having questions about positions or can’t decide which role to apply to? Contact Josefine Havdelin with your questions or book a fika free from expectations! a@armada.nu or 070-790 98 44 
+
+Interviews will be held between 4-21th of January. The application is open between December 21th and January 11th
 
 ## Questions?
+
 Don’t hesitate to contact us at a@armada.nu!

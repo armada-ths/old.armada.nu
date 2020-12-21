@@ -59,7 +59,7 @@ All in all, Armada consists of around 250 people all working together towards on
 
 ## Join the next project group
 
-Apply at the link and send your CV and personal letter before January 11th to a@armada.nu. Having questions about positions or can’t decide which role to apply to? Contact Josefine Havdelin with your questions or book a fika free from expectations! a@armada.nu or 070-790 98 44 
+Apply at the link **and** send your CV and personal letter **before January 11th** to a@armada.nu. Having questions about positions or can’t decide which role to apply to? Contact Josefine Havdelin with your questions or book a fika free from expectations! a@armada.nu or 070-790 98 44 
 
 Interviews will be held between 4-21th of January. The application is open between December 21th and January 11th
 

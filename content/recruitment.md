@@ -26,13 +26,6 @@ The Armada team consists of around 250 people and is divided into four subgroups
   <p><b id='sustainability-color'>IT</b>: In a digital era, the digitisation process is one of the core pillars of THS Armada. Turning creative ideas from all groups into reality enhances the Armada Experience for all members, visitors and exhibitors. The AIS is one of the fundamental pillars Armada leans on today, and it started as an idea from the IT team back in 2015. The IT team is the key to make the world a better place.</p>
 
 
-<!-- ## Join the next project group
-
-Apply at the link **and** send your CV and personal letter **before January 11th** to a@armada.nu. Having questions about positions or can’t decide which role to apply to? Contact Josefine Havdelin with your questions or book a fika free from expectations! a@armada.nu or 070-790 98 44 
-
-Interviews will be held between 4-21th of January. The application is open between December 21th and January 11th -->
-
-
 - - -
 
 So, how is all this organised?

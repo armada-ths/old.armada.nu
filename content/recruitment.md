@@ -9,7 +9,7 @@ header: /assets/TheFair_small.jpg
 noJumbotron: false
 ---
 import Recruitment from '../src/components/Recruitment';
-
+import Testimonials from '../src/components/Testimonials';
 
 # Shape THS Armada
 
@@ -26,13 +26,12 @@ The Armada team consists of around 250 people and is divided into four subgroups
   <p><b id='sustainability-color'>IT</b>: In a digital era, the digitisation process is one of the core pillars of THS Armada. Turning creative ideas from all groups into reality enhances the Armada Experience for all members, visitors and exhibitors. The AIS is one of the fundamental pillars Armada leans on today, and it started as an idea from the IT team back in 2015. The IT team is the key to make the world a better place.</p>
 
 
-## Join the next project group
+<!-- ## Join the next project group
 
 Apply at the link **and** send your CV and personal letter **before January 11th** to a@armada.nu. Having questions about positions or can’t decide which role to apply to? Contact Josefine Havdelin with your questions or book a fika free from expectations! a@armada.nu or 070-790 98 44 
 
-Interviews will be held between 4-21th of January. The application is open between December 21th and January 11th
+Interviews will be held between 4-21th of January. The application is open between December 21th and January 11th -->
 
-<Recruitment/>
 
 - - -
 
@@ -49,6 +48,9 @@ Think of the Armada team as a big circle.
 <p><b id='sustainability-color'>Hosts: </b>Last but not least, surrounding everyone in the Armada circle we have the hosts. The hosts are the very backbone of Armada. As a host you can have different responsibilities ranging from being a company contact person to a photographer to being responsible for one of the many lounges during the fair. Hosts are recruited in the beginning of september.</p>
 
 All in all, Armada consists of around 250 people all working together towards one goal, making Scandinavia's largest career fair greater than ever.
+
+<Testimonials/>
+
 
 - - -
 

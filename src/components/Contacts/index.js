@@ -5,7 +5,6 @@ import ContactCard from '../ContactCard'
 const Contacts = () => {
   
   const projectGroup = [
-    { name: 'Daniel Aston', title: 'Project Manager 2020', email: 'a@armada.nu', emoji: '👨‍✈️', imageUrl: '/assets/images/PG20/danieldrake.jpg', linkedInUrl: 'https://www.linkedin.com/in/danielaston/' },
     { name: 'Josefine Havdelin', title: 'Project Manager 2021', email: 'a@armada.nu', emoji: '👩‍💼', imageUrl: '/assets/images/PG20/josefinejogging.jpg', linkedInUrl: 'https://www.linkedin.com/in/josefine-havdelin-9298a4b3/' },
     /*{ name: 'Saga Zheng', title: 'Head of HR', email: 'saga.zheng@armada.nu', emoji: '💞', imageUrl: '/assets/images/PG20/saga.jpg', linkedInUrl: 'https://www.linkedin.com/in/saga-zheng-22a590113/' },
     { name: 'Moa Lilja', title: 'Art Director', email: 'moa.lilja@armada.nu', emoji: '👨‍🎨', imageUrl: '/assets/images/PG20/moa_.jpg', linkedInUrl: 'https://www.linkedin.com/in/moa-kajsa-lilja-48b162115/' },

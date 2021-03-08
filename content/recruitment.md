@@ -42,13 +42,6 @@ The Armada team consists of around 250 people and is divided into four subgroups
   Applications are considered on a rolling basis so don’t wait to apply.
   </p>
   <p>
-  <b id='sustainability-color'>Head of Sales </b>
-
-  Building strong relationships with exhibitors and partners is one of the cornerstones of THS Armada, and as one of the Head of Sales, your task is to manage and improve these. You are in charge of the sales process and collaboration with exhibitors and partners  in order to create customized event and marketing plans to suit their needs. As Head of Sales, you will have the opportunity to build professional relationships with various exhibitors and partners ranging over multiple industries. In addition to this, you will work closely with the Head of Business Relations and Events to create the official THS Armada 2020 invitation and also coordinate the work of the sponsorship coordinators. You are one of the main income drivers for the organisation.
-
-  You will coordinate the work of 2-3 sponsorship coordinators. 
-  </p>
-  <p>
    <b id='sustainability-color'> Head of Events</b>
 
   As Head of Events, you are responsible for shaping, planning and implementing the non Fair-events throughout the whole year. You are also responsible for the sales process of the events. You will put emphasis on high quality events where our partners meet their exact target group of students, as well as exceed the student’s expectations. You are expected to work closely with the Head of Business Relations and the Sales team to close event-sales leads as well as planning and implementing the events together with your Team Leaders. Collaboration with the Head of Media & Marketing is necessary to guarantee a successful marketing of the events.
@@ -79,19 +72,12 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
   You will coordinate the work of 1-2 University Relations Team Leaders and 1 Talent Team Leader.
 </p>
-  <p>
+<p>
    <b id='sustainability-color'>Head of Internal Systems</b>
 
   As Head of Internal Systems, you will work as a team leader of the internal systems developers (backend developers) of the IT team. The AIS is built in Django, thus experience in Python is a requirement.  It is expected that you work tightly with the Head of IT and your group of developers. You will work as the link between the Head of IT and the developers, by translating the broader goals developed by Head of IT into concrete tasks for the developers to work with. Goals for 2021 is to start the development of a new internal system and CRM platform for Armada. This role will best fit someone with an interest in IT project management, e.g. a computer science/media technology student with interest in project management or an industrial engineering student, majoring in computer science or equivalent. Coding is not part of your formal responsibilities from the point where the developers enter your team.
 
   You will coordinate the work of 4-5 Systems developers.
-</p>
-  <p>
-   <b id='sustainability-color'>Head of Logistics</b>
-
-  As Head of Logistics you are responsible for the logistics of all transports of exhibitor goods and materials before, during and after the career fair. You are ultimately responsible for the logistical operations during the weeks leading up to the career fair,  and solve all problems that could arise during the fair. The role requires a lot of planning, structure and a tight cooperation with all members of the Project Group to grasp the full extent of the logistical and technical challenges. You will also help with the security surrounding the fair. 
-
-  You will coordinate the work of 2 Task Force Team Leaders and 2 Transport Coordinators.
 </p>
 
 <Testimonials/>

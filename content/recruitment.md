@@ -49,13 +49,6 @@ The Armada team consists of around 250 people and is divided into four subgroups
   You will coordinate the work of 4-5 Event Team Leaders.
   </p>
   <p>
-   <b id='sustainability-color'>Head of Media and Communications</b>
-
-  As Head of Media and Communications you have the overall responsibility for the media and communications strategy, arranging the weekly meetings for your supgroup and coordinate their work. You will work closely with the Project Manager and the other subgroup leaders in the Project Group.  You will also work closely with the Head of Business relations and Events to focus on the communications out to companies via email and LinkedIn.  Furthermore, you will have the responsibility over the information on the THS Armadas website. 
-
-  You have the overall responsibility for your team’s budget.
-  </p>
-  <p>
    <b id='sustainability-color'>Head of Media & Marketing</b>
 
   As Head of Media & Marketing, you are responsible for the coordination and strategy of all media related activities the project undertakes. You will be in charge of growing and advertising the THS Armada brand on social media, come up and create new content and also create content that has been tasked by the THS Armada organisation.  The role is very fluid and will give you the opportunity to come up with your own creative ideas and contributions to the project. You will handle a large budget. 
@@ -73,7 +66,7 @@ The Armada team consists of around 250 people and is divided into four subgroups
   You will coordinate the work of 1-2 University Relations Team Leaders and 1 Talent Team Leader.
 </p>
 <p>
-   <b id='sustainability-color'>Head of Internal Systems</b>
+    <b id='sustainability-color'>Head of Internal Systems</b>
 
   As Head of Internal Systems, you will work as a team leader of the internal systems developers (backend developers) of the IT team. The AIS is built in Django, thus experience in Python is a requirement.  It is expected that you work tightly with the Head of IT and your group of developers. You will work as the link between the Head of IT and the developers, by translating the broader goals developed by Head of IT into concrete tasks for the developers to work with. Goals for 2021 is to start the development of a new internal system and CRM platform for Armada. This role will best fit someone with an interest in IT project management, e.g. a computer science/media technology student with interest in project management or an industrial engineering student, majoring in computer science or equivalent. Coding is not part of your formal responsibilities from the point where the developers enter your team.
 

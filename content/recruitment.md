@@ -25,9 +25,7 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
   <p><b id='sustainability-color'>IT</b>: In a digital era, the digitisation process is one of the core pillars of THS Armada. Turning creative ideas from all groups into reality enhances the Armada Experience for all members, visitors and exhibitors. The AIS is one of the fundamental pillars Armada leans on today, and it started as an idea from the IT team back in 2015. The IT team is the key to make the world a better place.</p>
 
-
-  - - -
-
+- - -
 
 ## Become a part of Armada 2021!
 
@@ -40,6 +38,7 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
   Having questions about positions or can’t decide which role to apply to? Reach out to Josefine Havdelin at a@armada.nu with your questions or book a fika free from expectations!
   Applications are considered on a rolling basis so don’t wait to apply.
+
   </p>
   <p>
    <b id='sustainability-color'> Head of Events</b>
@@ -47,13 +46,7 @@ The Armada team consists of around 250 people and is divided into four subgroups
   As Head of Events, you are responsible for shaping, planning and implementing the non Fair-events throughout the whole year. You are also responsible for the sales process of the events. You will put emphasis on high quality events where our partners meet their exact target group of students, as well as exceed the student’s expectations. You are expected to work closely with the Head of Business Relations and the Sales team to close event-sales leads as well as planning and implementing the events together with your Team Leaders. Collaboration with the Head of Media & Marketing is necessary to guarantee a successful marketing of the events.
 
   You will coordinate the work of 4-5 Event Team Leaders.
-  </p>
-  <p>
-   <b id='sustainability-color'>Head of Media and Communications</b>
 
-  As Head of Media and Communications you have the overall responsibility for the media and communications strategy, arranging the weekly meetings for your supgroup and coordinate their work. You will work closely with the Project Manager and the other subgroup leaders in the Project Group.  You will also work closely with the Head of Business relations and Events to focus on the communications out to companies via email and LinkedIn.  Furthermore, you will have the responsibility over the information on the THS Armadas website. 
-
-  You have the overall responsibility for your team’s budget.
   </p>
   <p>
    <b id='sustainability-color'>Head of Media & Marketing</b>
@@ -63,6 +56,7 @@ The Armada team consists of around 250 people and is divided into four subgroups
   You will coordinate the work of three individual groups. Therefore, the role requires  that  you have great leadership, communication and organizational  skills. When your operation team members are appointed in the spring, the role will change slightly since you will be coordinating the work among your team leaders. 
 
   You will coordinate  the work of 1 Photo Team Coordinator, The Film crew (4), 1 Film crew coordinator, 1 Copywriter and 1-2 Marketing Coordinators. 
+
 </p>
   <p>
    <b id='sustainability-color'>Head of Human Resources</b>
@@ -71,6 +65,7 @@ The Armada team consists of around 250 people and is divided into four subgroups
   During the fall, you will plan and book the final event that includes all team members in THS Armada. During the fair, you are responsible for the reception of visiting university representatives and their banquet together with your Team Leaders and their Hosts.
 
   You will coordinate the work of 1-2 University Relations Team Leaders and 1 Talent Team Leader.
+
 </p>
 <p>
    <b id='sustainability-color'>Head of Internal Systems</b>
@@ -78,11 +73,11 @@ The Armada team consists of around 250 people and is divided into four subgroups
   As Head of Internal Systems, you will work as a team leader of the internal systems developers (backend developers) of the IT team. The AIS is built in Django, thus experience in Python is a requirement.  It is expected that you work tightly with the Head of IT and your group of developers. You will work as the link between the Head of IT and the developers, by translating the broader goals developed by Head of IT into concrete tasks for the developers to work with. Goals for 2021 is to start the development of a new internal system and CRM platform for Armada. This role will best fit someone with an interest in IT project management, e.g. a computer science/media technology student with interest in project management or an industrial engineering student, majoring in computer science or equivalent. Coding is not part of your formal responsibilities from the point where the developers enter your team.
 
   You will coordinate the work of 4-5 Systems developers.
+
 </p>
 
 <Testimonials/>
 </span>
-
 
 So, how is all this organised?
 
@@ -97,7 +92,6 @@ Think of the Armada team as a big circle.
 <p><b id='sustainability-color'>Hosts: </b>Last but not least, surrounding everyone in the Armada circle we have the hosts. The hosts are the very backbone of Armada. As a host you can have different responsibilities ranging from being a company contact person to a photographer to being responsible for one of the many lounges during the fair. Hosts are recruited in the beginning of september.</p>
 
 All in all, Armada consists of around 250 people all working together towards one goal, making Scandinavia's largest career fair greater than ever.
-
 
 - - -
 
@@ -117,7 +111,6 @@ All in all, Armada consists of around 250 people all working together towards on
 * Get inside connection with employers
 * Join us for a cruise in December
 * Merch & tons of fun
-
 
 ## Questions?
 

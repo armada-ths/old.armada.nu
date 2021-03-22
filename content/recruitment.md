@@ -58,15 +58,6 @@ The Armada team consists of around 250 people and is divided into four subgroups
   You will coordinate  the work of 1 Photo Team Coordinator, The Film crew (4), 1 Film crew coordinator, 1 Copywriter and 1-2 Marketing Coordinators. 
 
 </p>
-  <p>
-   <b id='sustainability-color'>Head of Human Resources</b>
-
-  As Head of Human Resources, you are responsible for setting up a recruitment strategy as well as planning and implementing it over two different recruitment periods. In the first recruitment period, you are responsible for planning the campaign together with the Head of Media & Marketing.  You are also responsible for planning the kick-offs with Team Leaders and Hosts after their respective recruitment period. In addition, you handle the continuous stream of  all internal information in the organisation. 
-  During the fall, you will plan and book the final event that includes all team members in THS Armada. During the fair, you are responsible for the reception of visiting university representatives and their banquet together with your Team Leaders and their Hosts.
-
-  You will coordinate the work of 1-2 University Relations Team Leaders and 1 Talent Team Leader.
-
-</p>
 <p>
    <b id='sustainability-color'>Head of Internal Systems</b>
 

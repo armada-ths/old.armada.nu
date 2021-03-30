@@ -66,9 +66,18 @@ The Armada team consists of around 250 people and is divided into four subgroups
   You will coordinate the work of 4-5 Systems developers.
 
 </p>
+<p>
+   <b id='sustainability-color'>Head of Banquet</b>
 
-<Testimonials/>
+  As Head of Banquet, you are responsible for the planning and execution of the Grand Banquet of THS Armada. The evening is for members of THS Armada together with companies and it aims to extend the mingle of the fair in a more relaxed environment. Together with your Team Leaders, you are fully responsible for all arrangements tied to this such as finding and booking facilities, entertainment, decorations and food. You are responsible for a large budget.
+  
+You will coordinate the work of 4-5 Banquet Team Leaders
+
+</p>
+
 </span>
+
+- - -
 
 So, how is all this organised?
 
@@ -84,6 +93,7 @@ Think of the Armada team as a big circle.
 
 All in all, Armada consists of around 250 people all working together towards one goal, making Scandinavia's largest career fair greater than ever.
 
+<Recruitment/>
 - - -
 
 <b id='sustainability-color'>Perks of joining the Armada team:</b>

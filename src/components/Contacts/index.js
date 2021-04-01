@@ -6,7 +6,7 @@ const Contacts = () => {
   
   const projectGroup = [
     { name: 'Josefine Havdelin', title: 'Project Manager', email: 'a@armada.nu', emoji: '👩‍💼', imageUrl: '/assets/images/PG21/Josefine.jpg', linkedInUrl: 'https://www.linkedin.com/in/josefine-havdelin-9298a4b3/' },
-    { name: 'Sara Damne', title: 'Head of Media & Communication', email: 'sara.damne@armada.nu', emoji: '👩‍💻', imageUrl: '/assets/images/PG21/Sara.jpg', linkedInUrl: 'https://www.linkedin.com/in/josefine-havdelin-9298a4b3/' },
+    { name: 'Sara Damne', title: 'Head of Marketing & Communication', email: 'sara.damne@armada.nu', emoji: '👩‍💻', imageUrl: '/assets/images/PG21/Sara.jpg', linkedInUrl: 'https://www.linkedin.com/in/josefine-havdelin-9298a4b3/' },
     { name: 'Barath Kumar', title: 'Head of HR', email: 'barath.kumar@armada.nu', emoji: '💞', imageUrl: '/assets/images/PG21/Barath.jpg', linkedInUrl: 'http://linkedin.com/in/barath-kumar-sathish-kumar-7a2b70124/' },
     { name: 'Louise Hellberg', title: 'Art Director', email: 'louise.hellberg@armada.nu', emoji: '👨‍🎨', imageUrl: '/assets/images/PG21/Louise.jpg', linkedInUrl: 'https://www.linkedin.com/in/louise-hellberg/' },
     /* { name: 'Sandra Ransed', title: 'Head of Media & Marketing', email: 'sandra.ransed@armada.nu', emoji: '🎬', imageUrl: '/assets/images/PG20/sandrasavage.jpg', linkedInUrl: 'https://www.linkedin.com/in/sandraransed/' }, */
@@ -23,7 +23,7 @@ const Contacts = () => {
     { name: 'Saga Stugholm', title: 'Head of Sustainability', email: 'saga.stugholm@armada.nu', emoji: '♻️', imageUrl: '/assets/images/PG21/Saga.jpg', linkedInUrl: 'https://www.linkedin.com/in/saga-stugholm/' },
     { name: 'Anastasia Angeli', title: 'Head of Diversity', email: 'anastasia.angeli@armada.nu', emoji: '❤️', imageUrl: '/assets/images/PG21/Anastasia.jpeg', linkedInUrl: 'https://uk.linkedin.com/in/anastasia-angeli-5235a493/' },
   /*   { name: 'Moa Engquist', title: 'Head of IT', email: 'moa.enquist@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG21/Moa.jpg', linkedInUrl: 'https://www.linkedin.com/in/moa-engquist/' }, */
-    { name: 'Linnea Bonnevier', title: 'Head of Web Development', email: 'linnea.bonnevier@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG21/Linnea.jpg', linkedInUrl: 'https://www.linkedin.com/in/linnea-bonnevier/' },
+    /* { name: 'Linnea Bonnevier', title: 'Head of Web Development', email: 'linnea.bonnevier@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG21/Linnea.jpg', linkedInUrl: 'https://www.linkedin.com/in/linnea-bonnevier/' }, */
     /* { name: 'Louise Zetterlund', title: 'Head of Internal Systems', email: 'louise.zetterlund@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG20/louise_.jpg', linkedInUrl: 'https://www.linkedin.com/in/louise-zetterlund/' }, */
   ]
 

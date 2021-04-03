@@ -6,7 +6,7 @@ const CompetitionContact = () => {
     return (
       <div>
         <div className='tmp2'>
-        <img alt='' src='/assets/images/PG20/josefinejogging.jpg' height='150em' width='260em'/>
+        <img alt='' src='/assets/images/PG21/Josefine.jpg' height='150em' width='260em'/>
         </div>
         <div classname='tmp'>
           <p className='text head'>Questions? Contact me!</p>

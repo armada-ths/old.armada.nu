@@ -21,7 +21,7 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
   <p><b id='sustainability-color'>Business, Relations & Events</b>: Builds long lasting relationships with businesses, arranges spectacular high quality events and a grand banquet for 600 people This team is the core to all our contact with exhibitors and partners.</p>
 
-  <p><b id='sustainability-color'>Media & Communication</b>: The key to a successful project is great communication, both internally and externally. People need to know of our values, activities and the benefits they will have by participating. A successful Media & Communication team is key to a successful THS Armada.</p>
+  <p><b id='sustainability-color'>Marketing & Communication</b>: The key to a successful project is great communication, both internally and externally. People need to know of our values, activities and the benefits they will have by participating. A successful Media & Communication team is key to a successful THS Armada.</p>
 
   <p><b id='sustainability-color'>IT</b>: In a digital era, the digitisation process is one of the core pillars of THS Armada. Turning creative ideas from all groups into reality enhances the Armada Experience for all members, visitors and exhibitors. The AIS is one of the fundamental pillars Armada leans on today, and it started as an idea from the IT team back in 2015. The IT team is the key to make the world a better place.</p>
 
@@ -49,9 +49,9 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
   </p>
   <p>
-   <b id='sustainability-color'>Head of Media & Marketing</b>
+   <b id='sustainability-color'>Head of Media Marketing</b>
 
-  As Head of Media & Marketing, you are responsible for the coordination and strategy of all media related activities the project undertakes. You will be in charge of growing and advertising the THS Armada brand on social media, come up and create new content and also create content that has been tasked by the THS Armada organisation.  The role is very fluid and will give you the opportunity to come up with your own creative ideas and contributions to the project. You will handle a large budget. 
+  As Head of Media Marketing, you are responsible for the coordination and strategy of all media related activities the project undertakes. You will be in charge of growing and advertising the THS Armada brand on social media, come up and create new content and also create content that has been tasked by the THS Armada organisation.  The role is very fluid and will give you the opportunity to come up with your own creative ideas and contributions to the project. You will handle a large budget. 
 
   You will coordinate the work of three individual groups. Therefore, the role requires  that  you have great leadership, communication and organizational  skills. When your operation team members are appointed in the spring, the role will change slightly since you will be coordinating the work among your team leaders. 
 
@@ -94,6 +94,7 @@ Think of the Armada team as a big circle.
 All in all, Armada consists of around 250 people all working together towards one goal, making Scandinavia's largest career fair greater than ever.
 
 <Recruitment/>
+
 - - -
 
 <b id='sustainability-color'>Perks of joining the Armada team:</b>

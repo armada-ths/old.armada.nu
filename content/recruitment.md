@@ -25,7 +25,25 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
   <p><b id='sustainability-color'>IT</b>: In a digital era, the digitisation process is one of the core pillars of THS Armada. Turning creative ideas from all groups into reality enhances the Armada Experience for all members, visitors and exhibitors. The AIS is one of the fundamental pillars Armada leans on today, and it started as an idea from the IT team back in 2015. The IT team is the key to make the world a better place.</p>
 
+<Recruitment/>
+
 - - -
+
+So, how is all this organised?
+
+Think of the Armada team as a big circle.
+
+<p><b id='sustainability-color'>Project Manager: </b>In the center we have the one and only Project Manager, PM. The PM is in charge and therefore also has the main responsibility for everything! The Project Manager position is recruited at the KårStyrelse election in October/November.</p>
+
+<p><b id='sustainability-color'>Project Group: </b>Surrounding the Project Manager in the Armada circle we have the Project Group. The Project Group is the core team of up to 20 students working with managing different parts of THS Armada from February to December. It is the single best opportunity for personal development, new friendships and experiences. Things that you simply cannot learn in class! The Project Group is divided into four subgroups. Each subgroup works within separate areas, but all subgroups need to cooperate to create the Armada Experience.</p>
+
+<p><b id='sustainability-color'>Operation Team: </b>Further out in the circle we have the Operation Team, OT. All the different divisions within Armada have their own OT members working in teams to simply get everything done.  The Operation Team is recruited in april/may.</p>
+
+<p><b id='sustainability-color'>Hosts: </b>Last but not least, surrounding everyone in the Armada circle we have the hosts. The hosts are the very backbone of Armada. As a host you can have different responsibilities ranging from being a company contact person to a photographer to being responsible for one of the many lounges during the fair. Hosts are recruited in the beginning of september.</p>
+
+All in all, Armada consists of around 250 people all working together towards one goal, making Scandinavia's largest career fair greater than ever.
+
+- - - 
 
 ## Become a part of Armada 2021!
 
@@ -38,6 +56,8 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
   Having questions about positions or can’t decide which role to apply to? Reach out to Josefine Havdelin at a@armada.nu with your questions or book a fika free from expectations!
   Applications are considered on a rolling basis so don’t wait to apply.
+
+   **Please note**: This application process is different from the OT recruitment.
 
   </p>
   <p>
@@ -71,29 +91,11 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
   As Head of Banquet, you are responsible for the planning and execution of the Grand Banquet of THS Armada. The evening is for members of THS Armada together with companies and it aims to extend the mingle of the fair in a more relaxed environment. Together with your Team Leaders, you are fully responsible for all arrangements tied to this such as finding and booking facilities, entertainment, decorations and food. You are responsible for a large budget.
   
-You will coordinate the work of 4-5 Banquet Team Leaders
+  You will coordinate the work of 4-5 Banquet Team Leaders. 
 
 </p>
 
 </span>
-
-- - -
-
-So, how is all this organised?
-
-Think of the Armada team as a big circle.
-
-<p><b id='sustainability-color'>Project Manager: </b>In the center we have the one and only Project Manager, PM. The PM is in charge and therefore also has the main responsibility for everything! The Project Manager position is recruited at the KårStyrelse election in October/November.</p>
-
-<p><b id='sustainability-color'>Project Group: </b>Surrounding the Project Manager in the Armada circle we have the Project Group. The Project Group is the core team of up to 20 students working with managing different parts of THS Armada from February to December. It is the single best opportunity for personal development, new friendships and experiences. Things that you simply cannot learn in class! The Project Group is divided into four subgroups. Each subgroup works within separate areas, but all subgroups need to cooperate to create the Armada Experience.</p>
-
-<p><b id='sustainability-color'>Operation Team: </b>Further out in the circle we have the Operation Team, OT. All the different divisions within Armada have their own OT members working in teams to simply get everything done.  The Operation Team is recruited in april/may.</p>
-
-<p><b id='sustainability-color'>Hosts: </b>Last but not least, surrounding everyone in the Armada circle we have the hosts. The hosts are the very backbone of Armada. As a host you can have different responsibilities ranging from being a company contact person to a photographer to being responsible for one of the many lounges during the fair. Hosts are recruited in the beginning of september.</p>
-
-All in all, Armada consists of around 250 people all working together towards one goal, making Scandinavia's largest career fair greater than ever.
-
-<Recruitment/>
 
 - - -
 

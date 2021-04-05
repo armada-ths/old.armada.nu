@@ -72,8 +72,8 @@ const RoleSection = ({role}) => {
         <div className={'role-description' + (collapsed ? ' collapsed': ' expanded')}>
             {!collapsed ? <p>{role.description}</p> : null }
         </div>
-    </div>);
-
+    </div>
+    );
 }
 
 RoleSection.propTypes = {

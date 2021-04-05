@@ -57,7 +57,7 @@ All in all, Armada consists of around 250 people all working together towards on
   Having questions about positions or can’t decide which role to apply to? Reach out to Josefine Havdelin at a@armada.nu with your questions or book a fika free from expectations!
   Applications are considered on a rolling basis so don’t wait to apply.
 
-   **Note**: This application is different from the OT recruitment.
+   **Please note**: This application process is different from the OT recruitment.
 
   </p>
   <p>
@@ -91,7 +91,7 @@ All in all, Armada consists of around 250 people all working together towards on
 
   As Head of Banquet, you are responsible for the planning and execution of the Grand Banquet of THS Armada. The evening is for members of THS Armada together with companies and it aims to extend the mingle of the fair in a more relaxed environment. Together with your Team Leaders, you are fully responsible for all arrangements tied to this such as finding and booking facilities, entertainment, decorations and food. You are responsible for a large budget.
   
-You will coordinate the work of 4-5 Banquet Team Leaders
+  You will coordinate the work of 4-5 Banquet Team Leaders. 
 
 </p>
 

@@ -1,13 +1,13 @@
 ---
-slug: /partners
-title: Partners
+slug: /sponsor
+title: Sponsor
 layout: Partners
 description: Page
-menuPage: true
-priority: 6
+menuPage: false
+priority: 0
 header: /assets/images/header-images/teamwork.jpg
 ---
-# Become a Partner
+# Become a Sponsor
 
 Do you want your brand or products to be seen by thousands of future engineers? Do you want to help students find their future career path and be associated with Scandinavia's largest student driven career fair? The Armada sponsorship team will help you find the perfect branding opportunity for your company. Some of the possibilities include:
 

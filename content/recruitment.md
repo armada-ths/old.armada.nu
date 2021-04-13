@@ -25,8 +25,9 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
   <p><b id='sustainability-color'>IT</b>: In a digital era, the digitisation process is one of the core pillars of THS Armada. Turning creative ideas from all groups into reality enhances the Armada Experience for all members, visitors and exhibitors. The AIS is one of the fundamental pillars Armada leans on today, and it started as an idea from the IT team back in 2015. The IT team is the key to make the world a better place.</p>
 
-<Testimonials/>
 <Recruitment/>
+
+<Testimonials/>
 
 - - -
 

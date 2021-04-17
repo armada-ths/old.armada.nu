@@ -4,33 +4,44 @@ import Arrow from '../../../static/assets/pil_melon.png'
 
 const tableOfContents = [
     {
-        title: 'THS ARMADA 2021',
+        title: 'THS ARMADA',
         anchor: 'register-here',
         sections: [
+            { title: 'What is THS Armada?', anchor: 'armada2021' },
+            { title: 'Why THS Armada?', anchor: 'why-armada' },
+            { title: 'Armadas Core Values', anchor: 'core-values' },
+            { title: 'Registration', anchor: 'registration' },
         ]
-    },    
+    },
     {
-        title: 'Virtual Career Fair 2020',
-        anchor: 'virtual-career-fair',
+        title: 'Important Dates',
+        anchor: 'important-dates',
         sections: [
-            { title: 'Things taken into consideration when choosing the platform', anchor: 'consideration' },
-            { title: 'How the platform works', anchor: 'how-the-platform-works' },
-            { title: 'How do students find exhibitors on the platform', anchor: 'students-find-exhibitors' },
-            { title: 'How you find students on the platform', anchor: 'you-find-students' },
-            { title: 'How we are going to attract students to the platform', anchor: 'attract-students' },
-            { title: 'A talent pool created after the fair', anchor: 'talent-pool' },
-            { title: 'Insights after the fair', anchor: 'insights' },
-            { title: 'Creating your virtual booth', anchor: 'create-booth' },
         ]
-    },  
+    },   
+    {
+        title: 'Events',
+        anchor: 'events',
+        sections: [
+            { title: 'Banquet', anchor: 'banquet' },
+        ]
+    }, 
+    {
+        title: 'Marketing',
+        anchor: 'marketing',
+        sections: [
+            { title: 'Custommade Lounge', anchor: 'custommade-lounge' },
+            { title: 'Armada Competition', anchor: 'armada-competition' },
+        ]
+    }, 
     {
         title: 'FAQ',
         anchor: 'faq',
         sections: [
-            { title: 'Schedule', anchor: 'faq-schedule' },
-            { title: 'Registration', anchor: 'faq-registration' },
-            { title: 'Cancellation', anchor: 'faq-cancellation' },
-            { title: 'Virtual Platform (Graduateland) ', anchor: 'faq-virtual-platform' },
+            { title: 'General', anchor: 'faq-general' },
+            { title: 'Virtual Fair', anchor: 'faq-virtualfair' },
+            { title: 'Marketing', anchor: 'faq-marketing' },
+            { title: 'Events', anchor: 'faq-events' },
         ]
     }
 ]

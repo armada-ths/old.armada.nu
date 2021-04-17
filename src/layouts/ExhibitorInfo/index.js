@@ -7,7 +7,7 @@ const ExhibitorInfo = props => {
   return (
     <div>
       <div className='info-container'>
-        <h1 id='information-for-exhibitors'>Information for Exhibitors</h1>
+        <h1 id='information-for-exhibitors'>For Exhibitors</h1>
         <TableOfContents />
         <div className='page-container'>
           <Page {...props} />

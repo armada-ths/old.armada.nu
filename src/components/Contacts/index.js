@@ -12,7 +12,7 @@ const Contacts = () => {
     /* { name: 'Sandra Ransed', title: 'Head of Media & Marketing', email: 'sandra.ransed@armada.nu', emoji: '🎬', imageUrl: '/assets/images/PG20/sandrasavage.jpg', linkedInUrl: 'https://www.linkedin.com/in/sandraransed/' }, */
     { name: 'Anna Moustakas', title: 'Head of Business Relations and Events', email: 'anna.moustakas@armada.nu', emoji: '🤝', imageUrl: '/assets/images/PG21/Anna.jpg', linkedInUrl: 'https://www.linkedin.com/in/anna-natalia-moustakas/' },
     { name: 'Leonard Hökby', title: 'Head of Sales', email: 'leonard.hokby@armada.nu', emoji: '📈', imageUrl: '/assets/images/PG21/Leo.jpg', linkedInUrl: 'https://www.linkedin.com/in/leonard-hökby/' },
-    { name: 'Katarina Liang', title: 'Head of Sales', email: 'katrina.liang@armada.nu', emoji: '📈', imageUrl: '/assets/images/PG21/Katarina.jpg', linkedInUrl: 'https://www.linkedin.com/in/katrina-liang/' },
+    { name: 'Katrina Liang', title: 'Head of Sales', email: 'katrina.liang@armada.nu', emoji: '📈', imageUrl: '/assets/images/PG21/Katarina.jpg', linkedInUrl: 'https://www.linkedin.com/in/katrina-liang/' },
     { name: 'Erik Römpötti', title: 'Head of Sales', email: 'erik.rompotti@armada.nu', emoji: '📈', imageUrl: '/assets/images/PG21/Erik.jpg', linkedInUrl: 'www.linkedin.com/in/erik-rompotti/' },
 /*     { name: 'Jakob Huber', title: 'Head of Events', email: 'jakob.huber@armada.nu', emoji: '🎉', imageUrl: '/assets/images/PG20/jakobjazz.jpg', linkedInUrl: 'https://www.linkedin.com/in/jakob-k-huber/' },
     { name: 'Josefine Havdelin', title: 'Head of Banquet', email: 'josefine.havdelin@armada.nu', emoji: '💃', imageUrl: '/assets/images/PG20/josefinejogging.jpg', linkedInUrl: 'https://www.linkedin.com/in/josefine-havdelin-9298a4b3/' }, */ 

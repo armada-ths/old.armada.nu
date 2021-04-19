@@ -94,7 +94,7 @@ Armada Competition is an incentive introduced during last year's fair to increas
 
 <a class="anchor" id="faq-general"></a>
 
-### General
+<!-- ### General
 
 #### How do I register for the fair?
 You can register at register.armada.nu
@@ -152,4 +152,4 @@ Contact our sales team at [sales@aramda.nu](mailto:sales@aramda.nu) to find what
 ### Events
 
 #### What kind of events can our company host together with Armada?
-Armada offers lectures, case events and participation at the panel at our Innovation night. You can also choose to participate in Armada Run or in Armada Competition. If you want a customized event, contact our sales team at [sales@aramda.nu](mailto:sales@aramda.nu) to work out an event that is perfect for you.
+Armada offers lectures, case events and participation at the panel at our Innovation night. You can also choose to participate in Armada Run or in Armada Competition. If you want a customized event, contact our sales team at [sales@aramda.nu](mailto:sales@aramda.nu) to work out an event that is perfect for you. -->

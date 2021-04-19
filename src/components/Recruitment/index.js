@@ -60,7 +60,8 @@ const RoleSection = ({role}) => {
 
     const [collapsed, setCollapsed] = useState(true);
 
-    return (<div className='role-container'>
+    return (
+    <div className='role-container'>
         <div role='presentation' className='role-header' onClick={() => setCollapsed(!collapsed)} >
             <div className='role-header-left' >
                 <h4>{role.name}</h4>

@@ -2,8 +2,6 @@ import './index.scss';
 import React, { useState, useEffect } from 'react';
 
 const FAQExhibitors = () => {
-
-    const [collapsed, setCollapsed] = useState(true);
     const [faq, setFaq] = useState([]);
 
     useEffect(() => {
@@ -58,25 +56,32 @@ const FAQExhibitors = () => {
             <div key={section.subsection}>
                 <h3>{section.subsection}</h3>
                 {section.questions.map(question => (
-                    <div key={question.question}>
-                    <div role='presentation' className='role-header' onClick={() => setCollapsed(!collapsed)} >
-                    <div className='role-header-left' >
-                        <h4>{question.question}</h4>
-                    </div>
-                    <div className='role-header-right' >
-                        <p className={'arrow-icon' + (collapsed ? ' collapsed-arrow': ' expanded-arrow')}> › </p>
-                    </div>
-                    </div>
-                    <div className={'role-description' + (collapsed ? ' collapsed': ' expanded')}>
-                        {!collapsed ? <p>{question.answer}</p> : null }
-                    </div>
-                    </div>
+                    <FAQQuestions question={question}/>
                 ))}
                 
             </div>
         ) )}
     </div>
     );
+}
+
+const FAQQuestions = ({question}) => {
+    const [collapsed, setCollapsed] = useState(true);
+    return(
+        <div key={question.question}>
+            <div role='presentation' className='role-header' onClick={() => setCollapsed(!collapsed)} >
+            <div className='role-header-left' >
+                <h4>{question.question}</h4>
+            </div>
+            <div className='role-header-right' >
+                <p className={'arrow-icon' + (collapsed ? ' collapsed-arrow': ' expanded-arrow')}> › </p>
+            </div>
+            </div>
+            <div className={'role-description' + (collapsed ? ' collapsed': ' expanded')}>
+                {!collapsed ? <p>{question.answer}</p> : null }
+            </div>
+        </div>
+    )
 }
 
 export default FAQExhibitors

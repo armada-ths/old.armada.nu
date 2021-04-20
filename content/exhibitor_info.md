@@ -33,8 +33,6 @@ Armada is an established event and this year will be the 40th Armada in a row. S
 
 The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at [register.armada.nu](https://register.armada.nu).
 
-If you want to see full invitation click on the button below!
-
 <a class="anchor" id="offical-invitation"></a>
 <a href="/assets/invitation/InvitationArmada2021.pdf">
     <img src='/assets/Invitation/Offical-invitation2021.png' alt="Offical Invitation" width="70%" style="margin-left:15%"/>

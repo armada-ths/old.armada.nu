@@ -11,6 +11,7 @@ const tableOfContents = [
             { title: 'Why THS Armada?', anchor: 'why-armada' },
             { title: 'Armadas Core Values', anchor: 'core-values' },
             { title: 'Registration', anchor: 'registration' },
+            { title: 'Offical Invitation', anchor: 'offical-invitation' },
         ]
     },
     {

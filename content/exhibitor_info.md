@@ -33,6 +33,8 @@ Armada is an established event and this year will be the 40th Armada in a row. S
 
 The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at [register.armada.nu](https://register.armada.nu).
 
+On the **7th of May** Armada will hold a webinar **“Digital Framgång: så lyckas du på en digital mässa”** about how to be successful at a digital fair drawing on experiences from last years fair. To learn more about the event visit the [LinkedIn event](https://www.linkedin.com/events/digitalframg-ng-s-lyckasdup-end6792747689730723840/) or check out our [news page](https://armada.nu/news/digital-success).
+
 <a class="anchor" id="offical-invitation"></a>
 <a href="/assets/invitation/InvitationArmada2021.pdf">
     <img src='/assets/Invitation/Offical-invitation2021.png' alt="Offical Invitation" width="70%" style="margin-left:15%"/>

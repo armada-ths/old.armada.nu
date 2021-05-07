@@ -76,7 +76,7 @@ During the fair we will highlight companies that we believe share our core value
 
 ## Events
 
-Armada is more than a two day fair. If your company wants to host an event for KTH students, we are here to help. Why not present your company during a lecture, meet ambitious students during a case evening or mingle with your future employees at a relaxed AW? Contact our sales team at [sales@aramda.nu](mailto:sales@aramda.nu) to find out more and create the event best suited for your company. 
+Armada is more than a two day fair. If your company wants to host an event for KTH students, we are here to help. Why not present your company during a lecture, meet ambitious students during a case evening or mingle with your future employees at a relaxed AW? Contact our sales team at [sales@armada.nu](mailto:sales@armada.nu) to find out more and create the event best suited for your company. 
 
 <a class="anchor" id="banquet"></a>
 
@@ -86,7 +86,7 @@ Armada aspires to welcome your company to our Grand Banquet to celebrate the fai
 <a class="anchor" id="marketing"></a>
 
 ## Marketing
-Let Armada help your company stand out and boost your employer brand. We offer many services for your company to reach the KTH students through our different social media. Market events or job offers through a post or share what a day at your office is like through an Instagram takeover. Reach out to our sales team to hear more about how your company can get seen by future employees, [sales@aramda.nu](mailto:sales@aramda.nu). 
+Let Armada help your company stand out and boost your employer brand. We offer many services for your company to reach the KTH students through our different social media. Market events or job offers through a post or share what a day at your office is like through an Instagram takeover. Reach out to our sales team to hear more about how your company can get seen by future employees, [sales@armada.nu](mailto:sales@armada.nu). 
 
 <a class="anchor" id="custommade-lounge"></a>
 
@@ -96,6 +96,6 @@ During the fair Armada will host lounges where students can hang out and enjoy t
 <a class="anchor" id="armada-competition"></a>
 
 ### Armada Competition
-Armada Competition is an incentive introduced during last year's fair to increase connections between students and companies. It was a big success and is therefore back this year. In short, students have the chance to win exclusive prizes by interacting with companies during the fair. Your company can participate with prizes to reach out in yet another way to the KTH  students. Learn more from our sales team, [sales@aramda.nu](mailto:sales@aramda.nu). 
+Armada Competition is an incentive introduced during last year's fair to increase connections between students and companies. It was a big success and is therefore back this year. In short, students have the chance to win exclusive prizes by interacting with companies during the fair. Your company can participate with prizes to reach out in yet another way to the KTH  students. Learn more from our sales team, [sales@armada.nu](mailto:sales@armada.nu). 
 
 <a class="anchor" id="faq"></a>

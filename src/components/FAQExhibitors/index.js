@@ -19,9 +19,9 @@ const FAQExhibitors = () => {
                     <br/>
                     An individual event could also be of interest. Armada offers lectures, case evenings or a customized event of your choice. 
                     <br/>
-                    Contact our sales team at <a href='mailto:sales@aramda.nu'>sales@aramda.nu</a> to work out what suits your company best. </span>},
+                    Contact our sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to work out what suits your company best. </span>},
                     {question: 'How do we become a partner?', answer: <span>To become a partner you register your interest in the partner kit on the registration page. As a partner you will not only stand out from the crowd but also boost your employer branding through a variety of marketing towards our students. Note that there is a limited amount of companies that can sign up for the partner kit.
-                    <br/> To learn more, contact our sales team at <a href='mailto:sales@aramda.nu'>sales@aramda.nu</a>.</span>},
+                    <br/> To learn more, contact our sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a>.</span>},
                     {question: 'We would like more information, where do we turn?', answer: <span>Head over to our <a href='https://armada.nu/contact'>contact page</a>.</span>},
                 ]
             },
@@ -39,16 +39,16 @@ const FAQExhibitors = () => {
                 subsection: 'Marketing',
                 linkFAQ: 'faq-marketing',
                 questions: [
-                    {question: 'Is it possible to add more marketing for our company?', answer: <span>Yes, we offer Instagram and Facebook posts as well as Instagram takeovers. Contact our sales team to learn more, <a href='mailto:sales@aramda.nu'>sales@aramda.nu</a>.</span>},
+                    {question: 'Is it possible to add more marketing for our company?', answer: <span>Yes, we offer Instagram and Facebook posts as well as Instagram takeovers. Contact our sales team to learn more, <a href='mailto:sales@armada.nu'>sales@armada.nu</a>.</span>},
                     {question: 'Can our company market job offers etc through Armada?', answer: <span>Yes! For starters, you can market your job offers during the fair. Add unlimited job offers if you have many interesting positions. You can also choose to market your job offers through Armada’s social media. Either via a post or via an Instagram takeover. Or why not have an event where you present your job offers and get the chance to meet KTH students at the same time?
-                    <br/> Contact our sales team at <a href='mailto:sales@aramda.nu'>sales@aramda.nu</a> to find what suits your needs.</span>},
+                    <br/> Contact our sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to find what suits your needs.</span>},
                 ]
             },
             {
                 subsection: 'Events',
                 linkFAQ: 'faq-events',
                 questions: [
-                    {question: 'What kind of events can our company host together with Armada?', answer: <span>Armada offers lectures, case events and participation at the panel at our Innovation night. You can also choose to participate in Armada Run or in Armada Competition. If you want a customized event, contact our sales team at <a href='mailto:sales@aramda.nu'>sales@aramda.nu</a> to work out an event that is perfect for you.</span>},
+                    {question: 'What kind of events can our company host together with Armada?', answer: <span>Armada offers lectures, case events and participation at the panel at our Innovation night. You can also choose to participate in Armada Run or in Armada Competition. If you want a customized event, contact our sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to work out an event that is perfect for you.</span>},
                 ]
             },
         ]

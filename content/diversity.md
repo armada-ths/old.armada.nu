@@ -16,7 +16,9 @@ import TypeForm from '../src/components/TypeForm';
 
 # Diversity
 
-<p><b id="diversity-color">Diversity</b> is one of THS Armada's core values. THS Armada truly believes that the best teams are created on the basis of equality, diversity and most importantly inclusion. It makes sense that equal value and opportunities are fundamental to our work. By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Diversity is promotes and featured in different kinds of events and concepts, which you can explore below. THS Armada’s Diversity policy can be found <a href="/assets/Diversity_policy_.pdf">here</a>!</p>
+<p><b id="diversity-color">Diversity</b> is one of THS Armada's core values. THS Armada truly believes that the best teams are created on the basis of equality, diversity and most importantly inclusion. It makes sense that equal value and opportunities are fundamental to our work. By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Diversity is promotes and featured in different kinds of events and concepts, which you can explore below. THS Armada’s Diversity policy can be found</p>
+
+[here](/assets/Diversity_Policy_2021.pdf)!
 
    <DiversitySection left>
 

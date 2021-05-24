@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.scss';
+import todaysDate from "../../templates/todaysDate"
 
 const Footer = () => {
 
@@ -11,8 +12,7 @@ const Footer = () => {
 
     const DATE_PRIDE_WEEK_START = new Date('June 1, 2021 00:00:01');
     const DATE_PRIDE_WEEK_END = new Date('June 30, 2021 00:00:01');
-    var DATE_NOW = new Date();
-    const prideWeek = DATE_PRIDE_WEEK_START < DATE_NOW && DATE_PRIDE_WEEK_END > DATE_NOW; 
+    const prideWeek = DATE_PRIDE_WEEK_START < todaysDate && DATE_PRIDE_WEEK_END > todaysDate; 
 
 
     const links = {

@@ -169,7 +169,7 @@ const FAQExhibitors = () => {
                                 <a href='https://youtu.be/Oggx_BPA7Fs'>
                                     webinar
                                 </a>{' '}
-                                Armada held 7th of june
+                                Armada held 7th of May
                             </span>
                         ),
                     },

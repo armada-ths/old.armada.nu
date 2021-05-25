@@ -46,7 +46,7 @@ The registration is open! If you and your company want to be a part of Armada Vi
 
 </form>
 
-### How do you succed at the virtual fair?
+### How do you succed at a virtual fair?
 
 <br/>
 

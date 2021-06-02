@@ -226,3 +226,32 @@
      50% {transform: rotate(180deg); margin-left: 10px;}
      100% {transform: rotate(0deg); margin-left: -5px;}
     }
+
+
+  //pride theme colors
+    .orange {
+      background-color: #ff8c00;
+      height: 5px;
+      width: 3rem;
+      background-image: linear-gradient(to right, #e40303, #ff8c00, #ffed00);
+    }
+  
+    .green {
+      background-color: #00CC99;
+      height: 5px;
+      width: 3rem;
+      background-image: linear-gradient(to right, #ffed00, #00CC99, #004dff);
+    }  
+    .blue {
+      background-color: #004dff;
+      height: 5px;
+      width: 3rem;
+      background-image: linear-gradient(to right, #00CC99,#004dff, #750787);
+    }
+  
+    .lilac {
+      background-color: #750787;
+      background-image: linear-gradient(to right, #004dff, #750787, pink);
+      height: 5px;
+      width: 3rem;  
+    }

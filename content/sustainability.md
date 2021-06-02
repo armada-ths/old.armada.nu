@@ -14,15 +14,11 @@ import SustainabilitySection from '../src/components/DiversitySection';
 
 # Sustainability
 
-  <img alt='' id='logo' src='/assets/sustainability/sustainability-melon-nolabel.png'/>
-
    <p> <b id='sustainability-color'>Sustainability</b> is one of the key elements required in making the world a better place, a place where humanity and nature can live together in harmony without depleting the resources of nature. At THS Armada sustainability is a fundamental of all operations as it is one of our core values, together with Diversity. We reach out to a large scale of people and believe that with this comes a responsibility to encourage a more sustainable living. The THS Armada’s Sustainability policy can be found here: </p>
 
-   <form id='submitForm' method='get' action='/assets/Sustainability_Diversity-Policy.pdf'>
+   <form id='submitForm' method='get' action='/assets/sustainability/Sustainability_Diversity-Policy.pdf'>
       <button type='submit'>Download Sustainability Policy</button>
    </form>
-
-<img alt='' className='background_Images middle' src='/assets/sustainability/circular_economy.jpg'/>
 
 <SustainabilitySection left>
 
@@ -31,16 +27,6 @@ import SustainabilitySection from '../src/components/DiversitySection';
    THS Armada has dedicated an area at the career fair to bring attention to the core value sustainability. The special area is known as the Green Room. As the fair is going digital this year, the Green Room will be a place to get more familiar with the concept of sustainability and how THS Armada works for becoming more sustainable, as well as acquainting with companies that we deem to be the frontrunners in our vision for a sustainable future. These companies have been carefully selected by the Sustainability Team, using a set of meaningful criteria developed by the team, called the Armada Sustainability Index (ASI). More information about the ASI can be found further below.
 
   Visiting the Green Room is a must if you are interested in sustainability, the environment or if you just want to know how the selected companies work with sustainability. For this year there will also be some fun games in the Green Room! If you want to visit the virtual booths or get in touch with the companies remember to visit the digital fair at Graduateland.
-
-  For this year the selected Green Room companies are AFRY, Electrolux, Ericsson, SCA and Vattenfall.
-
-<img alt='' className='background_Images middle' src='/assets/sustainability/wall_of_sustainability.jpg'/>
-
-If you want to get to know Electrolux from a sustainability perspective, see the Q&A video with them:
-
-  <form id='submitForm' method='get' action="/assets/sustainability/ElectroluxQ&A.mp4" target='_blank'>
-     <button type='submit'>Click to see video</button>
-  </form>
 
 </SustainabilitySection>
 </div>
@@ -61,9 +47,22 @@ If you want to get to know Electrolux from a sustainability perspective, see the
 <div className='sustainability-container'>
 <SustainabilitySection left>
 
-## Armada 2020 is climate neutral
+## Armada Sustainability Index
 
-  This year, 2020 THS Armada is climate compensating for all caused carbon dioxide emissions. It means that all carbon dioxide emissions are calculated and compensated for by investments in projects that contribute to reduced and avoided emissions. In parallel with this, THS Armada is working hard with reducing the use of resources and taking environmental impacts into account when making decisions. For example, all carpets at the physical fair are reused and all food served is vegetarian.
+The Green Room companies are selected together with the ASI, of which the SDGs are one of the main aspects. You can find more information about the ASI via the button below:
+
+  <img alt='' className='background_Images middle' src='/assets/sustainability/ASI_criteria_small.jpg' height='200em' width='260em'/>
+  <form id='submitForm' method='get' action='/assets/sustainability/ASI_criteria.jpg'>
+     <button type='submit'>Our Selection Strategy</button>
+  </form>
+
+  </SustainabilitySection>
+
+  <SustainabilitySection left>
+
+  ## Armada 2020 was climate neutral
+
+  Last year, THS Armada 2020 climate compensated for all caused carbon dioxide emissions. Which meant that all carbon dioxide emissions were calculated and compensated for by investments in projects that contribute to reduced and avoided emissions. In parallel with this, THS Armada is working hard with reducing the use of resources and taking environmental impacts into account when making decisions. For example, all carpets at the physical fair are reused and all food served is vegetarian.
 
   The climate compensation will be done through [Klimatkompensera.nu](https://klimatkompensera.se/) that manages three projects, of which two are in India and one in Panama. The emission calculations are based on various flows associated with transportation, goods, waste, food, energy usage and more during the events as well as the career fair.
 
@@ -71,20 +70,7 @@ If you want to get to know Electrolux from a sustainability perspective, see the
 
 THS Armada 2020 emitted 6.2 tonnes of CO2-emissions and will compensate for that and even more. We have compensated for 10.5 tonnes of CO2-emissions, which means that we are climate positive! A certification for the climate compensation can be seen below:
 
-<img alt='' className='background_Images middle' src='/assets/klimatkompensation2020.jpg'/>
-
-  </SustainabilitySection>
-
-  <SustainabilitySection right>
-
-## Armada Sustainability Index
-
-  The Green Room companies are selected together with the ASI, of which the SDGs are one of the main aspects. You can find more information about the ASI via the button below:
-
-  <img alt='' className='background_Images middle' src='/assets/sustainability/ASI_criteria_small.jpg' height='200em' width='260em'/>
-  <form id='submitForm' method='get' action='/assets/sustainability/ASI_criteria.jpg'>
-     <button type='submit'>Our Selection Strategy</button>
-  </form>
+<img alt='' className='background_Images middle' src='/assets/klimatkompensation2020.jpg'/>  
 
   </SustainabilitySection>
 </div>

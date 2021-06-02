@@ -16,15 +16,21 @@ import TypeForm from '../src/components/TypeForm';
 
 # Diversity
 
-   <DiversitySection left>
-   <p><b id="diversity-color">Diversity</b> is one of THS Armada's core values. THS Armada truly believes that the best teams are created on the basis of equality, diversity and most importantly inclusion. It makes sense that equal value and opportunities are fundamental to our work. By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Diversity is promotes and featured in different kinds of events and concepts, which you can explore below. THS Armada’s Diversity policy can be found <a href="/assets/Diversity_Policy_2021.pdf">here</a>!</p>
+   <p><b id="diversity-color">Diversity</b> is one of Armada’s core values and we work actively both internally and externally towards becoming an organisation where everyone feels welcome. Armada has zero tolerance for discrimination based on ethnicity, religion, gender, language, sexual orientation, physical ability, thinking style, societal status, age and appearance.</p>
+
+<DiversitySection left>
+
+   <p>THS Armada truly believes that the best teams are created on the basis of equality, diversity and most importantly inclusion. It makes sense that equal value and opportunities are fundamental to our work. By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Diversity is promotes and featured in different kinds of events and concepts, which you can explore below. Here you can find <a alt="Diversity Policy 2021" href="/assets/Diversity_Policy_2021.pdf">THS Armada’s Diversity policy</a>!</p>
+
+   If you want to test your knowledge on Diversity and Inclusion, take our quiz!
+  <TypeForm url="https://thsarmada1.typeform.com/to/QZOFyCi8" style="">Click here to take the quiz!</TypeForm>
+  <br/>
 
 ## **Diversity Corner**
 
-  One way THS Armada is accentuating the importance of diversity is through the Diversity Corner, a livestreaming studio that will share information about the most progressive companies when it comes to inclusion and diversity in the workplace. These companies have been carefully selected with the Diversity Team, using a set of meaningful criteria developed by the team, called the Armada Diversity Index (ADI), found [here](/assets/Focus_rooms_selection.pdf).
+  One way THS Armada is accentuating the importance of diversity is through the Diversity Corner, a livestreaming studio that will share information about the most progressive companies when it comes to inclusion and diversity in the workplace. These companies have been carefully selected by the Diversity Team, using a set of meaningful criteria developed by the team, called the Armada Diversity Index (ADI), see <a href="/assets/diversity/Selection criteria.pdf">last years selection criteria</a>.
 
-  If you want to test your knowledge on Diversity and Inclusion, take this quiz! It is also part of Armada Competition and will give you more chance to win the amazing prizes!
-  <TypeForm url="https://thsarmada1.typeform.com/to/QZOFyCi8">Click here to take the quiz!</TypeForm>
+   <a href="/assets/diversity/Focus_rooms_selection_diversity.pdf"><img alt="Focus rooms selection diversity" src="/assets/diversity/Focus_rooms_selection_diversity.png"/></a>
   <br/>
 
    </DiversitySection>
@@ -37,7 +43,7 @@ import TypeForm from '../src/components/TypeForm';
 
 ## **Diversity Day**
 
-Diversity Day is another way to keep the discussion about equality issues going. The day takes place during the Event Week and consists of several events, where companies and students get a platform to talk about, discuss and engage in diversity practices. This year, Diversity Day is happening on November 9th, on our social media platforms. The team will hold interviews with THS Student groups working with diversity, share insights from the selected companies using the ADI. Make sure to check out [@thsarmada](https://www.instagram.com/thsarmada/) on Instagram and the [facebook event](https://www.facebook.com/events/3373777216050973)!
+Diversity Day is another way to keep the discussion about equality going. The day takes place during the Event Week and consists of  events, where companies and students get a platform to talk about, discuss and engage in diversity practices. This year Diversity Day is happening on November 16th. We will keep you updated on the details of the day — check out [@thsarmada](https://www.instagram.com/thsarmada/) on Instagram and [Facebook](https://www.facebook.com/thsarmada) in the meanwhile!
 
    </DiversitySection>
    </div>
@@ -49,15 +55,15 @@ Diversity Day is another way to keep the discussion about equality issues going.
 
 ## Harassment policy
 
-   It is important for us at THS Armada that everyone taking part in the career fair or events feel safe and enjoy their time. This is why we have developed guidelines to follow to make sure everyone’s boundaries are respected and all events go smoothly for everyone involved, within the THS Armada team as well as exhibitors, representatives, partners and attendees.  We suggest everyone participating in any way in THS Armada read the policy <a href="/assets/THS_Armada_Harassment_and_Safety_Policy.pdf">here</a>!
+   It is important for us at THS Armada that everyone taking part in the career fair or events feels safe and enjoys their time. This is why we have developed guidelines to make sure everyone’s boundaries are respected and all events go smoothly for everyone involved, the THS Armada team as well as exhibitors, representatives, partners and attendees. We suggest everyone participating in any way in THS Armada read the <a alt="Harassment and Safety Policy" href="/assets/diversity/THS Armada Harassment and Safety Policy 2021.pdf"> Harassment and Safety Policy</a>!
 
    </DiversitySection>
 
    <DiversitySection right>
 
-## Help us improve!
+## HELP US BECOME MORE DIVERSE
 
-   It is important for us at THS Armada to keep improving and implementing the latest measures to make it as diverse and equal as possible. Do you have any suggestions? We would love to have your input! Feel free to contact us at [a@armada.nu](mailto:a@armada.nu).
+   Do you have any ideas or suggestions to help us work more inclusive? We would love to hear them! - Contact our Head of Diversity, Anastasia at [anastasia.angeli@armada.nu](mailto:anastasia.angeli@armada.nu)
 
    </DiversitySection>
 

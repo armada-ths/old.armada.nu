@@ -11,7 +11,8 @@ const FAQExhibitors = () => {
                 linkFAQ: 'faq-general',
                 questions: [
                     {question: 'How do I register for the fair?', answer: <span>You can register at <a href='https://ais.armada.nu/register/'>register.armada.nu</a></span>},
-                    {question: 'When is the last day to register for the fair?', answer: '28th of May'},
+                    {question: 'When is the last day to register for the fair?', answer: <span>The last day to complete your registration is on the <b>17th of September</b>.
+                    If you did not complete the Initial Registration, with deadline on the 28th of May, you need to contact <a href="mailto:sales@armada.nu">sales@armada.nu</a> to be able to complete your registration.</span>},
                     {question: 'Can our company get more exposure?', answer: <span>Yes, there are lots of ways to get more exposure for your company. For example, you can register for the partner kit which includes additional features during the fair, individual marketing and unlimited job adverts during the fair.
                     Another way to stand out is through a Custommade Lounge. During the fair Armada will build lounges where students can hang out and attend the fair. The lounges will bring the visitors the atmosphere of a physical fair even in these challenging times. You will be able to send us merch, roll-ups etc to create a physical booth to compliment your digital one. 
                     <br/>

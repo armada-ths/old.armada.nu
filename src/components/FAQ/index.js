@@ -10,14 +10,14 @@ const questions = [
         This year we will repeat the success from last year with a virtual fair to make sure our exhibitors and visitors can connect in a safe way. In addition, we will build lounges at KTH where students can enjoy the virtual fair and still get the feel of a physical fair. <br/> <br/>
         Leading up to the fair Armada arranges event weeks where you have the chance to attend lunch lectures, case evenings and much more. Make sure to follow us on social media to not miss out</span>},
         {question: 'When is this year\'s Armada fair?', answer: '23rd & 24th of November'},
-        {question: 'Where is THS Armada?', answer: <span>This year THS Armada will take place both virtually at <a href="https://event.armada.nu/sv/events">graduateland</a> and in Nymble, Drottning Kristinas väg 15-19 in Stockholm. <br/><br/>
+        {question: 'Where is THS Armada?', answer: <span>This year THS Armada will take place both virtually at <a href="https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64">graduateland</a> and in Nymble, Drottning Kristinas väg 15-19 in Stockholm. <br/><br/>
         Follow us on <a href="https://www.instagram.com/thsarmada/">Instagram</a> to keep up on what we have in store. 
         </span>},
         {question: 'How can I find all the events that Armada arranges?', answer: <span>Follow us on <a href="https://www.facebook.com/thsarmada">Facebook</a> to not miss out on any events. To register for an event, check out the <a href='/events/'>event tab</a></span>},
     ]},    
     {title: 'THE FAIR', body: [
         {question: 'When is the Armada fair taking place?', answer: 'The Armada Career Fair takes place each year in November for 2 days. This year the fair will take place November 23rd-24th.'},
-        {question: 'Where is the Armada fair taking place?', answer: <span>The fair will be held at a platform called Graduateland. You can register for the fair and create a profile at on <a href="https://event.armada.nu/sv">Graduateland</a>.</span>},
+        {question: 'Where is the Armada fair taking place?', answer: <span>The fair will be held at a platform called Graduateland. You can register for the fair and create a profile at on <a href="https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64">Graduateland</a>.</span>},
         {question: 'What are the opening hours?', answer: '10:00-16:00 on both the 23rd and the 24th of November.'},
         {question: 'Does the Armada fair cost money to attend?', answer: 'No, it is completely free for everyone to visit! It will be even easier this year since you can attend from anywhere in the world.'},
         //{question: 'I do not study at KTH, can I still attend?', answer: 'Yes of course! Everybody is welcome.'},
@@ -25,7 +25,7 @@ const questions = [
         //{question: 'What is the Green Room?', answer: 'A place at the fair where companies that actively work with sustainability-related questions get to stand.'},
         //{question: 'What is the Diversity Room?', answer: 'A place at the fair where companies that actively work with diversity-related questions get to stand.'},
         //{question: 'What is the Focus Room?', answer: 'The focus room will be found in Nya Matsalen in Nymble on the days of the fair. Here you will be able to workshop on Sustainability and Diversity as well as see which exhibitors are outstanding in the field.'},
-        {question: 'Where can I find last year\'s exhibitors?', answer: <span>You can find previous exhibitors <a href='https://event.armada.nu/sv/virtual-event/3994'>here</a></span>},
+        {question: 'Where can I find last year\'s exhibitors?', answer: <span>You can find previous exhibitors <a href='https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64'>here</a></span>},
     ]},
     {title: 'Virtual Fair - Graduateland', body: [
         {question: 'What is Graduateland?', answer: <span>Graduateland is the platform on which this year's fair will be held. On this platform you will be able to chat with company representatives, watch live lectures, check out exhibitors booths, participate in competitions and so much more. <br/> We suggest that you head over to <a href="https://event.armada.nu/sv">Graduateland</a> asap to create a profile and explore the platform. </span>},

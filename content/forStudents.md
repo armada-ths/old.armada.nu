@@ -9,39 +9,37 @@ header: /assets/images/header-images/forStudents.jpg
 ---
 import CompetitionContact from '../src/components/CompetitionContact';
 
-# Virtual THS Armada 2020
+# Virtual THS Armada 2021
 
-Warm welcome to our new concept – virtual THS Armada 2020! We are happy to once again give you the opportunity to shape your future.
+Welcome to THS Armada 2021 - a virtual fair mixed with physical lounges. 
+The fair will take place at the virtual platform [Graduateland](https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64) and in addition we will build student lounges in Nymble where you can hangout and attend the fair. In our lounges we will offer spaces for you to sit down at and attend the virtual platform as well as getting company merch, fika and all the other great stuff that we all miss from a physical fair.
 
-We have gathered the best exhibitors on our [platform](https://event.armada.nu/sv/event/3994). You can create your profile as we speak! The platform will enhance your Armada experience by making information such as requested education, skills, level of degree clear. When doing so you will be able to get a better overview of the opportunities and find the fits you had not before thought of.
+In short, THS Armada 2021 will be the best of both worlds!
 
-You will be able to interact with the exhibitors by text, audio and video depending on your preference. If you want, you can start booking individual meetings. If you prefer, you can watch live presentations and get a deeper understanding of topics ranging from company specific to future challenges.
+## How to attend the virtual fair
 
-As long as you have a profile on the site, you have the chance to be headhunted for applying for jobs at what could be your dream workplace – all at the same place – [event.armada.nu](https://event.armada.nu/sv/event/3994).
+The fair will be hosted on a platform called [Graduateland](https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64). Here you log in and create an account listing your experience, education and interests. After that you are ready to network. Visit all the exhibitors booths where you can learn more about the company, check out job opportunities or connect with the company representatives. We are all different and therefore you can choose to connect via chat or video call, whatever suits you the best. 
 
-## Armada Competition - the game
+Based on your profile our exhibitors can also choose to reach out to you directly. So make sure your profile highlights all your goals and interests.
 
-<p class="info-border-box">
-The information below applies to Armada 2020, but stay tuned for another edition in 2021. The winners have been contacted through email. Hope you all enjoyed the fair. See you next year!
-</p>
+During the fair there will also be live presentations and other happenings on the platform. The best way to make sure not to miss anything is to follow us on [social media](https://www.instagram.com/thsarmada/), where we will post the schedule and make sure to remind you of all the fun. 
 
-This year, not only your future and your career is in the prizepool. You also have the chance to win a weekend with a brand new Volvo, all expenses paid for by Volvo Cars! Armada, together with our prize sponsors,  will in total hand out 50 prizes to students who are active at the fair! All you have to do to be in the running is register at the fair.
+<p>For more info on how to set up an account and attend the fair, see <a href='/faq'>FAQ</a>.
+And don’t forget to visit Armada in Nymble!</p>
 
-<img alt='' id='logo' src='/assets/competition/Armada_competition_lines.png' height='260px'/>
+## Events
 
-<p><b id='sustainability-color'>So how does it work?</b> When you register at the fair you will get one lottery ticket. Collect more tickets by filling out your personal profile to 90% or more, interacting with the companies through chatting with them, looking at booths and attending webinars. After the fair we will draw the winners. One ticket will be awarded the Grand Prize, and in total, 50 tickets will be winners! For more information click <a href='/armadacompetition'>here</a>.</p>
+THS Armada is more than a fair. In the weeks leading up to the fair we invite you to a wide range of events held by some of our exhibitors. We will invite you to lunch lectures, case evenings and more. To keep updated, follow us on [social media](https://www.instagram.com/thsarmada/). To register at an event, visit our [events tab](https://armada.nu/events).
 
-So will you go around trying to get as good a chance as possible to win? Or will you be confident in your luck?
-
-<CompetitionContact/>
-
-## Prize Sponsors
-<div className='sponsorcontainer'>
-  <img alt='' id='logo-prize' src='/assets/competition/voi_logo.svg' height='260px'/>
-  <img alt='' id='logo-prize' src='/assets/competition/electrolux_logo.jpg' height='260px'/>
-  <img alt='' id='logo-prize' src='/assets/competition/volvo_logo.png' height='260px'/>
+<div class='competition-logo'>
+    <img alt='' id='logo' src='/assets/Armada_competition_filled.png'/>
 </div>
 
-## What has happened to the event weeks?
+## Armada Competition
 
-Events, in this year’s Armada, will also be held to a large extent digitally. As much as possible will be as before with registration for events and information. So, start networking, get inspired over a lunch lecture, visit the virtual fair itself, and much more. Take a look at all the events presented by THS Armada by looking at the [events tab](https://armada.nu/events).
+Ready, set, NETWORK! 
+Shape your future and win prizes as you go in the Armada Competition.
+
+Your hard work should be rewarded. Therefore we give you Armada Competition. Throughout the fair and the event weeks leading up to the fair you will have the chance to earn tickets. At the end of the fair there will be a draw where the lucky winners walk away with incredible prizes from some of our exhibitors. You will be able to earn tickets through various things such as attending events, follow us on social media and stay active during the fair. The more tickets you earn, the bigger your chance will be to win!
+
+Stay tuned for how to earn tickets and what prizes you will have the chance to get your hands on.

@@ -14,4 +14,4 @@ This year we will repeat the success from last year with a virtual fair. In addi
 
 So no matter if you are in happy and healthy and back to normal in Stockholm, exploring the world or still going strong with corona restrictions you are more than welcome at THS Armada. 
 
-We look forward to seeing you at the fair the 23-24 of august. 
+We look forward to seeing you at the fair the 23-24 of August. 

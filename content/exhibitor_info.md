@@ -35,6 +35,9 @@ Armada is an established event and this year will be the 40th Armada in a row. S
 
 The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at [register.armada.nu](https://register.armada.nu).
 
+If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 17th of September.
+If you did not register your company during the Initial Registration, 19th of April - 28th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
+
 <a class="anchor" id="offical-invitation"></a>
 <a href="/assets/invitation/InvitationArmada2021.pdf">
 <img src='/assets/Invitation/Offical-invitation2021.png' alt="Offical Invitation" width="70%" style="margin-left:15%"/>

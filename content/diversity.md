@@ -21,9 +21,6 @@ import TypeForm from '../src/components/TypeForm';
 <DiversitySection left>
 
    <p>THS Armada truly believes that the best teams are created on the basis of equality, diversity and most importantly inclusion. It makes sense that equal value and opportunities are fundamental to our work. By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Diversity is promotes and featured in different kinds of events and concepts, which you can explore below. Here you can find <a alt="Diversity Policy 2021" href="/assets/Diversity_Policy_2021.pdf">THS Armada’s Diversity policy</a>!</p>
-
-   If you want to test your knowledge on Diversity and Inclusion, take our quiz!
-  <TypeForm url="https://thsarmada1.typeform.com/to/QZOFyCi8" style="">Click here to take the quiz!</TypeForm>
   <br/>
 
 ## **Diversity Corner**

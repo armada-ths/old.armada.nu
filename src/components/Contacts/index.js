@@ -23,7 +23,7 @@ const Contacts = () => {
     { name: 'Ellen Engquist', title: 'Head of Service', email: 'ellen.engquist@armada.nu', emoji: '👨‍🔧', imageUrl: '/assets/images/PG21/Ellen.jpg', linkedInUrl: 'https://www.linkedin.com/in/ellen-engquist-a46589196/' },
     { name: 'Saga Stugholm', title: 'Head of Sustainability', email: 'saga.stugholm@armada.nu', emoji: '♻️', imageUrl: '/assets/images/PG21/Saga.jpg', linkedInUrl: 'https://www.linkedin.com/in/saga-stugholm/' },
     { name: 'Anastasia Angeli', title: 'Head of Diversity', email: 'anastasia.angeli@armada.nu', emoji: '❤️', imageUrl: '/assets/images/PG21/Anastasia.jpeg', linkedInUrl: 'https://uk.linkedin.com/in/anastasia-angeli-5235a493/' },
-    { name: 'Moa Engquist', title: 'Head of IT', email: 'moa.enquist@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG21/Moa.jpg', linkedInUrl: 'https://www.linkedin.com/in/moa-engquist/' },
+    { name: 'Moa Engquist', title: 'Head of IT', email: 'moa.engquist@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG21/Moa.jpg', linkedInUrl: 'https://www.linkedin.com/in/moa-engquist/' },
     { name: 'Linnea Bonnevier', title: 'Head of Web Development', email: 'linnea.bonnevier@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG21/Linnea.jpg', linkedInUrl: 'https://www.linkedin.com/in/linnea-bonnevier/' },
     { name: 'Rasmus Rudling', title: 'Head of Internal Systems', email: 'rasmus.rudling@armada.nu', emoji: '💻', imageUrl: '/assets/images/PG21/Rasmus.jpg', linkedInUrl: 'https://se.linkedin.com/in/rrudling/' }, 
   ]

@@ -28,7 +28,7 @@ const Recruitment = () => {
                     {
                         ({style}) => {
                             return (
-                                <div style={{...style, top: `${navbarOffset + style.top}px`}}>
+                                <div style={{...style, top: `0px`}}>
                                     <div className={'apply-section'}>
                                         <a href={'https://ais.armada.nu/' + recruitmentLink}>
                                             <button>APPLY HERE</button>

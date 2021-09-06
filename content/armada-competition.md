@@ -20,7 +20,7 @@ The information below applies to Armada 2020, but stay tuned for another edition
 
 ## Background
 
-The Armada Competition is a gamification feature of the virtual fair with the impact goals of (1) attracting more students to the fair and (2) nudging the students to interact with the fair in a more constructive way. There will be incitements (prizes) to attract students to the concept and tasks (points) that measure the students activity. The students will earn points for interacting with the fair and then the prizes will be raffled out in a lottery where students have one lottery ticket for each point earned. There will be 50 prizes, ranging in market value from 700 up to 4000kr. Among those prizes are Ipads, noise cancelling Bluetooth headphones and a weekend with a Volvo.
+The Armada Competition is a gamification feature of the virtual fair with the impact goals of (1) attracting more students to the fair and (2) nudging the students to interact with the fair in a more constructive way. There will be incitements (prizes) to attract students to the concept and tasks (points) that measure the students activity. The students will earn points for interacting with the fair and then the prizes will be raffled out in a lottery where students have one lottery ticket for each point earned. There will be 50 prizes, ranging in market value from 700 up to 4000kr. Among those prizes are Ipads, noise cancelling Bluetooth headphones and a weekend with a Volvo.     
 
 ## Purpose of the information
 
@@ -169,18 +169,20 @@ The numpy.random uses the Mersenne Twister Pseudorandom number generator. The se
 The algorithm will only be run once, and should thus be deemed reliable enough.
 
 ## Pseudocode in text
+
 The algorithm will generate a shuffled file/list by first creating a row for each ticket that a person holds and then shuffle that file/list. After the file/list has been shuffled then i - amount of winners will be picked randomly. This is done by selecting a row using the numpy.random.randint(0, sum of tickets). If the row or the unique ID is already in the WinnerList then a new winner is selected instead of that one. Starting from row 0 to row i is the order that the winners were picked. 
 
 **Pseudocode**
 
-
 <div class="armada-competition-code">
 
 `function ArmadaLottery(file)`
-    
-	    TicketFile/List GenerateTicket(file)
 
-	    ShuffledFile/List ShuffleTickets(/file/list)
+```
+    TicketFile/List GenerateTicket(file)
+
+    ShuffledFile/List ShuffleTickets(/file/list)
+```
 
 `WinnerList[]`
 
@@ -190,34 +192,40 @@ The algorithm will generate a shuffled file/list by first creating a row for eac
 
 `function GenerateTicket(file)`
 
-	    "Creates a row for each ticket that a person holds"
+```
+    "Creates a row for each ticket that a person holds"
 
-	    return file/list
-	
+    return file/list
+```
+
 `function ShuffleTickets(file/list)`
 
-	    ShuffledFile/List numpy.random.shuffle(file/list)
+```
+    ShuffledFile/List numpy.random.shuffle(file/list)
 
-	    "Or similar shuffle function"
+    "Or similar shuffle function"
 
-	    return ShuffledFile/List
+    return ShuffledFile/List
+```
 
 `function PickWinners(ShuffledFile/List, WinnerList)`
 
-	    for(0<i) (i =amount of winners)
+```
+    for(0<i) (i =amount of winners)
 
-		     x numpy.random.randint(0,NumberOfRows(ShuffledFile/List)
+	     x numpy.random.randint(0,NumberOfRows(ShuffledFile/List)
 
-		     if(ShuffledFile/List(Row(x) && uniqueID) not in WinnerList
+	     if(ShuffledFile/List(Row(x) && uniqueID) not in WinnerList
 
-		     "Might just need to check if the uniqueID is in WinnerList"
+	     "Might just need to check if the uniqueID is in WinnerList"
 
-			    add(row(x) to WinnerList) to row(i)
+		    add(row(x) to WinnerList) to row(i)
 
-		    else
+	    else
 
-			    i=i-1
+		    i=i-1
 
-	return WinnerList
+return WinnerList
+```
 
 </div>

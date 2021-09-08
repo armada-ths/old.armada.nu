@@ -57,7 +57,6 @@ const FAQExhibitors = () => {
     }, [])
 
     return (<div className='role-container'> 
-        <h3>FAQ</h3>
         {faq.map(section => ( 
             <div key={section.subsection} id={section.linkFAQ} className={'section-header anchor'}>
                 <h3 className='subsection-title'>{section.subsection}</h3>

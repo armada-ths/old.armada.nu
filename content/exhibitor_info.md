@@ -113,5 +113,3 @@ During the fair Armada will host lounges where students can hang out and enjoy t
 ### Armada Competition
 
 Armada Competition is an incentive introduced during last year's fair to increase connections between students and companies. It was a big success and is therefore back this year. In short, students have the chance to win exclusive prizes by interacting with companies during the fair. Your company can participate with prizes to reach out in yet another way to the KTH students. Learn more from our sales team, [sales@armada.nu](mailto:sales@armada.nu).
-
-<a class="anchor" id="faq"></a>

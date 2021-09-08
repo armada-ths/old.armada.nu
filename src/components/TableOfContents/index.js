@@ -34,16 +34,6 @@ const tableOfContents = [
             { title: 'Custommade Lounge', anchor: 'custommade-lounge' },
             { title: 'Armada Competition', anchor: 'armada-competition' },
         ]
-    }, 
-    {
-        title: 'FAQ',
-        anchor: 'faq',
-        sections: [
-            { title: 'General', anchor: 'faq-general' },
-            { title: 'Virtual Fair', anchor: 'faq-virtualfair' },
-            { title: 'Marketing', anchor: 'faq-marketing' },
-            { title: 'Events', anchor: 'faq-events' },
-        ]
     }
 ]
 

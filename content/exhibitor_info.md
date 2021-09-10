@@ -90,6 +90,19 @@ During the fair we will highlight companies that we believe share our core value
 
 Armada is more than a two day fair. If your company wants to host an event for KTH students, we are here to help. Why not present your company during a lecture, meet ambitious students during a case evening or mingle with your future employees at a relaxed AW? Contact our sales team at [sales@armada.nu](mailto:sales@armada.nu) to find out more and create the event best suited for your company.
 
+<a class="anchor" id="eventweek"></a>
+
+### Event Weeks 2021
+THS Armada offers you a wide range of events to profile your organisation towards students who have a genuine interest in your company. You also have the opportunity to host your events on our themed days and focus days to engage and excite our students on those topics even more. The goal of Armada is to provide you with suitable talents for your organisation and to conduct events that give you and participants an unforgettable experience. The Event Weeks take place between the 1st of November 2021 and the 19th November 2021. 
+
+<a href="/assets/invitation/ArmadaEvents2021.pdf">
+<img src='/assets/Invitation/eventweeks2021.png' alt="Event Catalog 2021" width="50%" style="margin-left:25%"/>
+</a>
+
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/invitation/ArmadaEvents2021.pdf">
+<button type="submit">Download Event Catalog 2021</button>
+</form>
+
 <a class="anchor" id="banquet"></a>
 
 ### Banquet

@@ -24,6 +24,7 @@ const tableOfContents = [
         title: 'Events',
         anchor: 'events',
         sections: [
+            { title: 'Event Weeks', anchor: 'eventweek' },
             { title: 'Banquet', anchor: 'banquet' },
         ]
     }, 

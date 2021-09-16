@@ -61,6 +61,8 @@ const Recruitment = () => {
 
 const RoleSection = ({role}) => {
     const [collapsed, setCollapsed] = useState(true)
+    const newText = role.description.split('\n').map(str => <p>{str}</p>)
+
     return (
     <div className='role-container'>
         <div role='presentation' className='role-header' onClick={() => setCollapsed(!collapsed)} >
@@ -72,7 +74,8 @@ const RoleSection = ({role}) => {
             </div>
         </div>
         <div className={'role-description' + (collapsed ? ' collapsed': ' expanded')}>
-            {!collapsed ? <p>{role.description}</p> : null }
+            {!collapsed ? newText : null }
+
         </div>
     </div>
     );

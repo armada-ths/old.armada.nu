@@ -40,7 +40,7 @@ const Recruitment = () => {
                     }
                 </Sticky>
                 <div className='description-header'>
-                    <h2>Role Descriptions</h2>
+                    <h2>Available Roles</h2>
                 </div>
 
                 { Object.keys(groups).map((groupKey, i)=>

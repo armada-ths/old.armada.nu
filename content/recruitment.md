@@ -30,7 +30,7 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
 - - -
 
-So, how is all this organised?
+## So, how is all this organised?
 
 Think of the Armada team as a big circle.
 
@@ -46,7 +46,7 @@ The different layers in the circle have different levels of responsibility. All 
 
 - - -
 
-<b id='sustainability-color'>Perks of joining the Armada team:</b>
+## Perks of joining the Armada team:
 
 * Real work-life experience
 * Boost your CV

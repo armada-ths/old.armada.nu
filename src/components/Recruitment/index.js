@@ -39,9 +39,12 @@ const Recruitment = () => {
                         }
                     }
                 </Sticky>
+                <div className='description-header'>
+                    <h2>Available Roles</h2>
+                </div>
+
                 { Object.keys(groups).map((groupKey, i)=>
                     <div className='groups' key={i}>
-                        <h3 className='group-header'>{groupKey}</h3>
                         {groups[groupKey].map((role, j) => {
                             return( <RoleSection role={role} key={`${j}`}/>);
                         })}
@@ -57,21 +60,22 @@ const Recruitment = () => {
 }
 
 const RoleSection = ({role}) => {
-
-    const [collapsed, setCollapsed] = useState(true);
+    const [collapsed, setCollapsed] = useState(true)
+    const newText = role.description.split('\n').map(str => <p>{str}</p>)
 
     return (
     <div className='role-container'>
         <div role='presentation' className='role-header' onClick={() => setCollapsed(!collapsed)} >
-            <div className='role-header-left' >
-                <h4>{role.name}</h4>
+            <div className='role-name' >
+                {role.name}
             </div>
-            <div className='role-header-right' >
+            <div className='role-arrow-container' >
                 <p className={'arrow-icon' + (collapsed ? ' collapsed-arrow': ' expanded-arrow')}> › </p>
             </div>
         </div>
         <div className={'role-description' + (collapsed ? ' collapsed': ' expanded')}>
-            {!collapsed ? <p>{role.description}</p> : null }
+            {!collapsed ? newText : null }
+
         </div>
     </div>
     );

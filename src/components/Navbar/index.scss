@@ -2,13 +2,15 @@
 @import '../../styles/_fonts';
 
 #navbar {
-  overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
-  text-align: center;
+  // TODO: I personally think it feels better 'centered' from an UX perspective // Anna
+  // TODO: Ask Siddh what he thinks
+  //text-align: center;
+  text-align: right;
   font-family: $font-title;
   font-size: 95%;
   letter-spacing: 1.4px;
@@ -24,6 +26,8 @@
     display: inline-block;
     padding-top: 10px;
     padding-bottom: 10px;
+    // TODO: this has to match the size of the dropdown content. Need to fit content in about dropdown if right oriented
+    padding-right: 30px; 
 
     .menu-hamburger {
         display:none;
@@ -42,7 +46,6 @@
 
         &:hover {
           color: $melon !important;
-          border-right: 1px solid #fff !important;
         }
 
         &.active {
@@ -55,6 +58,27 @@
 
       }
 
+      // TODO: repeating codeblock, improve this
+        .dropdownParent {
+        display: inline-block;
+        border-right: 1px #fff solid;
+        text-decoration: none;
+        transition: color 0.4s;
+        color: $text-color-light;
+        padding: 5px 20px;
+
+        &:hover {
+          color: $melon !important;
+        }
+
+        &.active {
+          color: $melon;
+        }
+
+        &:last-child {
+          border-right: 0 !important;
+        }
+      } 
     }
 
   }
@@ -139,3 +163,26 @@
     }
 
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(45, 45, 44, 0.8);
+  padding: 15px 0px 10px 0px;
+  left: 0;
+  text-align: left;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  border: none;
+}
+
+
+

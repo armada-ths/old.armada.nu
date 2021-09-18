@@ -3,7 +3,7 @@ slug: /forStudents
 title: For Students
 layout: forStudentsPage
 description: Page
-menuPage: true
+menuPage: false
 priority: 4
 header: /assets/images/header-images/forStudents.jpg
 ---

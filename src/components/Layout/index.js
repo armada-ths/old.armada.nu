@@ -27,6 +27,9 @@ const Layout = ({ header, location, children, jumbotron }) => (
                 layout
                 description
                 menuPage
+                studentSubpage
+                companySubpage
+                aboutSubpage
                 priority
                 header
               }
@@ -38,12 +41,12 @@ const Layout = ({ header, location, children, jumbotron }) => (
     render={data => (<>
       <div className='layout'>
         <Navbar jumbotron={jumbotron} location={location} pages={data.allMdx.edges.map(edge => edge.node.frontmatter)} />
-        {jumbotron ? <Jumbotron location={location} image={header} /> : <></> }
+        {jumbotron ? <Jumbotron location={location} image={header} /> : <></>}
         <div>
           {children}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>)}
   />
 )

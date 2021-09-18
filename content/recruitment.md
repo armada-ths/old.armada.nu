@@ -3,8 +3,9 @@ slug: /recruitment
 title: Recruitment
 layout: RecruitmentPage
 description: Recruitment 2020
-menuPage: true
-priority: 3
+menuPage: false 
+studentSubpage: true
+priority: 1
 header: /assets/TheFair_small.jpg
 noJumbotron: false
 ---

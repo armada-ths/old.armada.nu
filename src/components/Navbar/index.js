@@ -7,19 +7,6 @@ import RegistrationBanner from '../RegistrationBanner'
 import useWindowSize from '../../hooks/useWindowSize'
 import HamburgerButton from '../HamburgerButton'
 
-// ✅ TODO: stylea <Link> tag, ska ej ha | till höger på dropdown children
-// ✅ TODO: content i dropdown ska vara till vänster
-// ✅ TODO: map method direkt i studentmenu
-// ✅ TODO: place menu content to the right
-// ✅ TODO: use something else than <link> for dropdown menu parents since it requires prop 'to'
-// TODO: add logo to the left
-// TODO: style span - capital letters for menu links student, about, company
-// TODO: make right border not covered by the dropdown meny
-// TODO: make text fit on 1 line in dropdown menu
-// ✅TODO: Add STUDENT dropdown
-// ✅TODO: Add COMPANY dropdown
-// ✅TODO: Add ABOUT dropdown
-// TODO: implement navbar solution for mobile - Remove/add classes with Js
 
 const Navbar = props => {
   const windowSize = useWindowSize()
@@ -32,7 +19,7 @@ const Navbar = props => {
   const studentSubpages = props.pages.filter(page => page.studentSubpage)
   const companySubpages = props.pages.filter(page => page.companySubpage)
   const aboutSubpages = props.pages.filter(page => page.aboutSubpage)
-  const dropdownParent = !onMobile ? ['dropdownParent', 'dropdown', 'hoverWeb'].join(" ") 
+  const dropdownParent = !onMobile ? ['dropdownParent', 'dropdown', 'hoverWeb'].join(" ")
     : ['dropdownParent', 'dropdown'].join(" ")
 
   menuPages.sort((a, b) => {
@@ -79,16 +66,15 @@ const Navbar = props => {
   ))
 
   var studentMenu = (
-    // <Link to={"/"} className={'dropdown'} >
     <div className={dropdownParent}>
-      <span 
+      <span
         onClick={() => (toggleSubpages(), setShowStudent(!showStudent))}
-        >
-          {showStudent ? <div className='pageTitleMobile'>STUDENT</div> : 'STUDENT'}
+      >
+        {showStudent ? <div className='pageTitleMobile'>STUDENT</div> : 'STUDENT'}
       </span>
-    <div className={(!onMobile ? 'dropdown-content' : showStudent ? 'visible' : 'hidden')}>
+      <div className={(!onMobile ? 'dropdown-content' : showStudent ? 'visible' : 'hidden')}>
         {studentSubpages.map((page, index) => (
-          <Link style={{ border: 'none'}}
+          <Link style={{ border: 'none' }}
             activeClassName='active'
             onClick={toggleExpanded}
             to={page.slug}
@@ -102,7 +88,6 @@ const Navbar = props => {
 
   var companyMenu = (
     <div className={dropdownParent}>
-      {/* <Link to={"/"} className={'dropdown'} > */}
       <span onClick={() => (toggleSubpages(), setShowCompany(!showCompany))}>
         {showCompany ? <div className='pageTitleMobile'>COMPANY</div> : 'COMPANY'}
       </span>
@@ -122,12 +107,11 @@ const Navbar = props => {
 
 
   var aboutMenu = (
-    // <Link to={"/"} className={'dropdown'} >
     <div className={dropdownParent}>
       <span onClick={() => (toggleSubpages(), setShowAbout(!showAbout))}>
         {showAbout ? <div className='pageTitleMobile'>ABOUT</div> : 'ABOUT'}
       </span>
-      <div className={!onMobile ? 'dropdown-content' : showAbout ? 'visible': 'hidden'}>
+      <div className={!onMobile ? 'dropdown-content' : showAbout ? 'visible' : 'hidden'}>
         {aboutSubpages.map((page, index) => (
           <Link style={{ border: 'none' }}
             activeClassName='active'

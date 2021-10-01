@@ -16,6 +16,8 @@
   letter-spacing: 1.4px;
   text-transform: uppercase;
 
+
+
   >.hidden {
       display: none;
   }
@@ -27,7 +29,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     // TODO: this has to match the size of the dropdown content. Need to fit content in about dropdown if right oriented
-    padding-right: 30px; 
+    // padding-right: 30px; 
 
     .menu-hamburger {
         display:none;
@@ -95,13 +97,24 @@
 				overflow: hidden;
         position: absolute;
 
+        .topNav {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3em;
+          background-color: $licorice;
+        }
+
         .menu-wrapper {
             width: 100%;
             padding-top: 0;
-            
+            // padding-right: 30px;
+
             &.visible {
               .menu-hamburger {
                 position: absolute;
+                // right: 1em;
                 right: 0;
               }
             }
@@ -120,24 +133,40 @@
                 text-align: center;
                 justify-content: space-evenly;
                 width: 100%;
-                
+
+                margin-top: 3em;
+
+                -webkit-backdrop-filter: blur(10px);
+	              backdrop-filter: blur(10px);
+
                 @media screen and (max-width: $breakpoint-mobile) {
                   height: 100vh;
                   height: calc(100vh - 60px);
                 }
 
+                span {
+                  font-size: 1.4em;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+
                 a {
                   color: #fff !important;
                   border-right: none !important;
-                  font-size: 1.2em;
+                  font-size: 1em;
                   -webkit-tap-highlight-color: transparent;
+
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
 
                   &:hover {
                     color: #fff !important;
-                    text-decoration: underline !important;
+                    text-decoration: underline;
                     border-right: none !important;
                   }
-
                 }
 
                 a:last-child {
@@ -148,17 +177,17 @@
             .hidden {
                 display: none;
             }
-
         }
 
         .menu-wrapper.hidden {
-            background-color: transparent;
+            background-color: $licorice;
+
             text-align: center;
             display: inline-block;
         }
 
         .menu-wrapper.visible {
-            background-color: $melon;
+            background-color: rgba(45, 45, 44, 0.8);
         }
     }
 
@@ -182,7 +211,6 @@
 .dropdown:hover .dropdown-content {
   display: block;
   border: none;
+
+  text-decoration: underline;
 }
-
-
-

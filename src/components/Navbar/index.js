@@ -24,19 +24,16 @@ import HamburgerButton from '../HamburgerButton'
 const Navbar = props => {
   const windowSize = useWindowSize()
   const [expanded, setExpanded] = useState(false)
-  
-  const [showSubpages, setShowPages] = useState(false)
   const [showStudent, setShowStudent] = useState(false)
   const [showCompany, setShowCompany] = useState(false)
   const [showAbout, setShowAbout] = useState(false)
-  const [content, setContent] = useState('');
-
   const [onMobile, setOnMobile] = useState(windowSize.width < 850)
   const menuPages = props.pages.filter(page => page.menuPage)
   const studentSubpages = props.pages.filter(page => page.studentSubpage)
   const companySubpages = props.pages.filter(page => page.companySubpage)
   const aboutSubpages = props.pages.filter(page => page.aboutSubpage)
-  const dropdownParent = ['dropdownParent', 'dropdown'].join(" ")
+  const dropdownParent = !onMobile ? ['dropdownParent', 'dropdown', 'hoverWeb'].join(" ") 
+    : ['dropdownParent', 'dropdown'].join(" ")
 
   menuPages.sort((a, b) => {
     return a.priority - b.priority
@@ -65,7 +62,6 @@ const Navbar = props => {
 
   const toggleSubpages = () => {
     console.log("toggleSubpages")
-    // setShowPages(!showSubpages)
     setShowStudent(false)
     setShowCompany(false)
     setShowAbout(false)
@@ -78,24 +74,19 @@ const Navbar = props => {
       to={page.slug}
       key={index}
     >
-      {page.title}
+      {onMobile ? <span>{page.title}</span> : page.title}
     </Link>
   ))
 
   var studentMenu = (
     // <Link to={"/"} className={'dropdown'} >
     <div className={dropdownParent}>
-      <span
-        // isActive={showSubpages} 
-        // onClick={() => toggleSubpages('student')}
-        // style={{ textDecoration: 'underline'}}
+      <span 
         onClick={() => (toggleSubpages(), setShowStudent(!showStudent))}
-        >STUDENT</span>
-      <div className={(!onMobile ? 'dropdown-content' : 
-      // showSubpage
-      showStudent 
-     
-      ? 'visible' : 'hidden')}>
+        >
+          {showStudent ? <div className='pageTitleMobile'>STUDENT</div> : 'STUDENT'}
+      </span>
+    <div className={(!onMobile ? 'dropdown-content' : showStudent ? 'visible' : 'hidden')}>
         {studentSubpages.map((page, index) => (
           <Link style={{ border: 'none'}}
             activeClassName='active'
@@ -112,13 +103,10 @@ const Navbar = props => {
   var companyMenu = (
     <div className={dropdownParent}>
       {/* <Link to={"/"} className={'dropdown'} > */}
-      <span 
-     onClick={() => (toggleSubpages(), setShowCompany(!showCompany))}
-      
-      >COMPANY</span>
-      <div className={(!onMobile ? 'dropdown-content' : 
-      showCompany ? 'visible' : 'hidden'
-      )}>
+      <span onClick={() => (toggleSubpages(), setShowCompany(!showCompany))}>
+        {showCompany ? <div className='pageTitleMobile'>COMPANY</div> : 'COMPANY'}
+      </span>
+      <div className={(!onMobile ? 'dropdown-content' : showCompany ? 'visible' : 'hidden')}>
         {companySubpages.map((page, index) => (
           <Link style={{ border: 'none' }}
             activeClassName='active'
@@ -130,14 +118,15 @@ const Navbar = props => {
           </Link >
         ))}
       </div>
-    {/* } */}
     </div>)
 
 
   var aboutMenu = (
     // <Link to={"/"} className={'dropdown'} >
     <div className={dropdownParent}>
-      <span onClick={() => (toggleSubpages(), setShowAbout(!showAbout))}>ABOUT</span>
+      <span onClick={() => (toggleSubpages(), setShowAbout(!showAbout))}>
+        {showAbout ? <div className='pageTitleMobile'>ABOUT</div> : 'ABOUT'}
+      </span>
       <div className={!onMobile ? 'dropdown-content' : showAbout ? 'visible': 'hidden'}>
         {aboutSubpages.map((page, index) => (
           <Link style={{ border: 'none' }}
@@ -171,8 +160,8 @@ const Navbar = props => {
             />
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
-            <Link onClick={toggleExpanded} activeClassName='active' to='/'>
-              HOME
+            <Link onClick={toggleExpanded} activeClassName='active' to='/' >
+              {onMobile ? <span>HOME</span> : 'HOME'}
             </Link>
             {studentMenu}
             {companyMenu}

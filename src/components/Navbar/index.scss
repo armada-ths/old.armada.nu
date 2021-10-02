@@ -16,8 +16,6 @@
   letter-spacing: 1.4px;
   text-transform: uppercase;
 
-
-
   >.hidden {
       display: none;
   }
@@ -57,7 +55,6 @@
         &:last-child {
           border-right: 0 !important;
         }
-
       }
 
       // TODO: repeating codeblock, improve this
@@ -69,10 +66,6 @@
         color: $text-color-light;
         padding: 5px 20px;
 
-        &:hover {
-          color: $melon !important;
-        }
-
         &.active {
           color: $melon;
         }
@@ -81,14 +74,19 @@
           border-right: 0 !important;
         }
       } 
-    }
 
+      .hoverWeb {
+        &:hover {
+        color: $melon !important;
+        cursor: pointer;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 1200px) {
     font-size: 1.2em;
   }
-
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
@@ -109,12 +107,10 @@
         .menu-wrapper {
             width: 100%;
             padding-top: 0;
-            // padding-right: 30px;
 
             &.visible {
               .menu-hamburger {
                 position: absolute;
-                // right: 1em;
                 right: 0;
               }
             }
@@ -133,9 +129,7 @@
                 text-align: center;
                 justify-content: space-evenly;
                 width: 100%;
-
                 margin-top: 3em;
-
                 -webkit-backdrop-filter: blur(10px);
 	              backdrop-filter: blur(10px);
 
@@ -146,10 +140,6 @@
 
                 span {
                   font-size: 1.4em;
-
-                  &:hover {
-                    text-decoration: underline;
-                  }
                 }
 
                 a {
@@ -157,14 +147,12 @@
                   border-right: none !important;
                   font-size: 1em;
                   -webkit-tap-highlight-color: transparent;
-
                   display: flex;
                   flex-direction: row;
                   justify-content: center;
 
                   &:hover {
                     color: #fff !important;
-                    text-decoration: underline;
                     border-right: none !important;
                   }
                 }
@@ -181,7 +169,6 @@
 
         .menu-wrapper.hidden {
             background-color: $licorice;
-
             text-align: center;
             display: inline-block;
         }
@@ -190,7 +177,6 @@
             background-color: rgba(45, 45, 44, 0.8);
         }
     }
-
 }
 
 .dropdown {
@@ -213,4 +199,9 @@
   border: none;
 
   text-decoration: underline;
+}
+
+.pageTitleMobile {
+  text-decoration: underline;
+  color: $melon;
 }

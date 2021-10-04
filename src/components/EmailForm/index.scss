@@ -1,0 +1,48 @@
+@import "../../styles/_fonts";
+
+.container {
+    justify-content: center;
+}
+
+.formContainer {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 2em;
+    font-family: $font-regular;
+    font-size: $body-font-size;
+}
+
+textarea {
+    padding: 12px 20px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 2em;
+    resize: none;
+    font-family: $font-regular;
+    font-size: $body-font-size;
+}
+
+.sendButton {
+    justify-content: center;
+    margin-top: 1em;
+    font-size: $body-font-size;
+}
+
+.contactTitle {
+    display: block;
+    justify-content: center;
+    margin-top: 2em;
+}

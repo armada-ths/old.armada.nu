@@ -11,6 +11,7 @@ noJumbotron: false
 import DiversitySection from '../src/components/DiversitySection';
 
 import TypeForm from '../src/components/TypeForm';
+import FunFact from '../src/components/FunFact';
 
 <div className='diversitypage-container'>
 
@@ -19,6 +20,12 @@ import TypeForm from '../src/components/TypeForm';
    <p><b id="diversity-color">Diversity</b> is one of Armada’s core values and we work actively both internally and externally towards becoming an organisation where everyone feels welcome. Armada has zero tolerance for discrimination based on ethnicity, religion, gender, language, sexual orientation, physical ability, thinking style, societal status, age and appearance.</p>
 
 <DiversitySection left>
+
+<FunFact facts={[
+        {title: '10 nationalities', statement: 'Armada 2021 team currently includes 10 nationalities' , link: ''},
+        {title: 'female to male ratio', statement: 'Armada 2021 Project Group team has 4:3 female to male ratio', link: ''},
+        {title: 'ASI', statement: 'Armada Diversity team went around campus asking students LGBTQ+ related questions', link: 'https://www.instagram.com/tv/CQstQ5ClHSF/?utm_medium=copy_link'},
+      ]} page={'diversityFunFact'}/>
 
    <p>THS Armada truly believes that the best teams are created on the basis of equality, diversity and most importantly inclusion. It makes sense that equal value and opportunities are fundamental to our work. By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Diversity is promotes and featured in different kinds of events and concepts, which you can explore below. Here you can find <a alt="Diversity Policy 2021" href="/assets/Diversity_Policy_2021.pdf">THS Armada’s Diversity policy</a>!</p>
   <br/>

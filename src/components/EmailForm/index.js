@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import "./index.scss"
 
 const EmailForm = (props) => {
-
+    const { emailTo } = props
+    
     const [formData, setFormData] = useState({
         subject: "",
         message: ""
@@ -22,7 +23,7 @@ const EmailForm = (props) => {
                         placeholder="Type your message here"
                     />
                     <div className="formContainer">
-                       <a className="sendButton" href={`mailto:${props.emailTo}?subject=${formData.subject}&body=${formData.message}`}>Send</a>
+                       <a className="sendButton" href={`mailto:${emailTo}?subject=${formData.subject}&body=${formData.message}`}>Send</a>
                     </div>
                 </form>
             </div>

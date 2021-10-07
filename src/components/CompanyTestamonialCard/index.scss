@@ -1,0 +1,53 @@
+
+@import '../../styles/_variables';
+@import '../../styles/global';
+
+.company-testamonial-card {
+  position: relative;
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  padding: 1em;
+
+    img {
+        border-radius: 50%;
+    }
+
+    .card-image {
+        width: inherit;
+        height: inherit;
+        max-width: 100px;
+        max-height: 100px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card-text {
+        display: flex;
+        flex-direction: column;
+        color: gray;
+        text-align: center;
+    }
+    
+    .card-personName {
+        color: $melon;
+        font-weight: bold;
+        font-size: 1.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.1em;
+    }
+    
+    .card-companyName {
+        padding-top: 0.1em;
+        padding-bottom: 0.5em;
+    }
+    
+    .card-testamonial {
+        font-style: italic;
+        font-size: 0.9em;
+        padding-top: 2em;
+        padding-bottom: 1em;
+    }
+}

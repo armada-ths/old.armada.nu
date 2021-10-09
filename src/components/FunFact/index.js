@@ -22,15 +22,13 @@ const FunFact = (props) => {
                           <div key={fact.title+"0"} className='fact-box'>
                               <div key={fact.title+"1"} className='fact-info'>
                                   <div key={fact.title+"2"} className='fact-break'>
-                                      ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+                                      ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
                                   </div>
                                   <div key={fact.title +"3"} className='fact-text'>
                                  {fact.statement}
                                       <br/>
                                       { fact.link.length > 0 &&
                                       <a href={fact.link}>Video</a>}
-                                      
-                                      
                                   </div>
                               </div>
                           </div>

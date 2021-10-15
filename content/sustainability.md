@@ -9,6 +9,7 @@ header: /assets/images/header-images/sustainability.jpg
 ---
 import SustainabilityInterviews from '../src/components/SustainabilityInterviews'; 
 import SustainabilitySection from '../src/components/DiversitySection';
+import FunFact from '../src/components/FunFact';
 
 <div className='sustainability-container'>
 
@@ -21,6 +22,12 @@ import SustainabilitySection from '../src/components/DiversitySection';
    </form>
 
 <SustainabilitySection left>
+
+<FunFact facts={[
+        {title: 'Climate Posititve', statement: 'Armada 2021 is climate positive', link: ''},
+        {title: 'Policy', statement: 'Armada has a sustainability policy', link: ''},
+        {title: 'ASI', statement: 'By evaluating companies according to the ASI, Armada shows companies that sustainability is importat to students!', link: ''},
+      ]} page={'sustainabilityFunFact'}/>
 
 ## Green Room
 

@@ -70,7 +70,7 @@ const Navbar = props => {
       <span
         onClick={() => (toggleSubpages(), setShowStudent(!showStudent))}
       >
-        {showStudent ? <div className='pageTitleMobile'>STUDENT</div> : 'STUDENT'}
+        {showStudent ? <div className='pageTitleMobile'>For Students</div> : 'For Students'}
       </span>
       <div className={(!onMobile ? 'dropdown-content' : showStudent ? 'visible' : 'hidden')}>
         {studentSubpages.map((page, index) => (
@@ -89,7 +89,7 @@ const Navbar = props => {
   var companyMenu = (
     <div className={dropdownParent}>
       <span onClick={() => (toggleSubpages(), setShowCompany(!showCompany))}>
-        {showCompany ? <div className='pageTitleMobile'>COMPANY</div> : 'COMPANY'}
+        {showCompany ? <div className='pageTitleMobile'>Company</div> : 'Company'}
       </span>
       <div className={(!onMobile ? 'dropdown-content' : showCompany ? 'visible' : 'hidden')}>
         {companySubpages.map((page, index) => (
@@ -109,7 +109,7 @@ const Navbar = props => {
   var aboutMenu = (
     <div className={dropdownParent}>
       <span onClick={() => (toggleSubpages(), setShowAbout(!showAbout))}>
-        {showAbout ? <div className='pageTitleMobile'>ABOUT</div> : 'ABOUT'}
+        {showAbout ? <div className='pageTitleMobile'>About Armada</div> : 'About Armada'}
       </span>
       <div className={!onMobile ? 'dropdown-content' : showAbout ? 'visible' : 'hidden'}>
         {aboutSubpages.map((page, index) => (
@@ -145,7 +145,7 @@ const Navbar = props => {
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
             <Link onClick={toggleExpanded} activeClassName='active' to='/' >
-              {onMobile ? <span>HOME</span> : 'HOME'}
+              {onMobile ? <span>Home</span> : 'Home'}
             </Link>
             {studentMenu}
             {companyMenu}

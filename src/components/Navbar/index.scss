@@ -7,14 +7,10 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  // TODO: I personally think it feels better 'centered' from an UX perspective // Anna
-  // TODO: Ask Siddh what he thinks
-  //text-align: center;
   text-align: right;
   font-family: $font-title;
   font-size: 95%;
   letter-spacing: 1.4px;
-  //text-transform: uppercase;
 
   >.hidden {
       display: none;
@@ -24,10 +20,7 @@
     background-color: $licorice;
     width : 100%;
     display: inline-block;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    // TODO: this has to match the size of the dropdown content. Need to fit content in about dropdown if right oriented
-    // padding-right: 30px; 
+    padding: 10px 15px 10px 0px;
 
     .menu-hamburger {
         display:none;
@@ -56,7 +49,6 @@
         }
       }
 
-      // TODO: repeating codeblock, improve this
         .dropdownParent {
         display: inline-block;
         text-decoration: none;
@@ -182,6 +174,7 @@
   display: inline-block;
 }
 
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -190,9 +183,10 @@
   left: 0;
   text-align: left;
   z-index: 1;
+  width: 140%;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content{
   display: block;
   border: none;
 

@@ -89,7 +89,7 @@ const Navbar = props => {
   var companyMenu = (
     <div className={dropdownParent}>
       <span onClick={() => (toggleSubpages(), setShowCompany(!showCompany))}>
-        {showCompany ? <div className='pageTitleMobile'>Company</div> : 'Company'}
+        {showCompany ? <div className='pageTitleMobile'>For Companies</div> : 'For Companies'}
       </span>
       <div className={(!onMobile ? 'dropdown-content' : showCompany ? 'visible' : 'hidden')}>
         {companySubpages.map((page, index) => (
@@ -147,8 +147,8 @@ const Navbar = props => {
             <Link onClick={toggleExpanded} activeClassName='active' to='/' >
               {onMobile ? <span>Home</span> : 'Home'}
             </Link>
-            {studentMenu}
             {companyMenu}
+            {studentMenu}
             {links}
             {aboutMenu}
           </div>

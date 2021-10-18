@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import FAQHeader from './FAQHeader'
-import FAQContent from './FAQContent'
 import FAQBackground from '../../../static/assets/faqbanner.png'
+import FAQQuestion from './FAQQuestion'
 
 //FAQ questions and answers. Only question and answer are used in search. Define displayAnswer to use elements such as link-tags in the answer.
 const questions = [
@@ -60,25 +60,30 @@ const questions = [
 ];
 
 const FAQContainer = () => {
-    const [searchResult, setSearchResult] = useState(questions);
-
-    const updateSearchResult = (e) => {
-        const input = e.target.value.toLowerCase()
-        setSearchResult(
-            questions.map(a => Object.assign({}, a)).map(group => {
-            group.body = group.body.filter(question => question.question.toLowerCase().includes(input) || question.answer.toLowerCase().includes(input))
-            return group
-            }).filter(group => group.body.length > 0)
-        )
-    }
+    const [faq, setFaq] = useState()
 
     return(
         <div>
-            <div className='faq-search-form'>
                 <img alt='' className='terre' src={FAQBackground}/>
-                <FAQHeader onQuestionUpdate={updateSearchResult} />
-            </div>
-            <FAQContent questions={searchResult}/>
+                <FAQHeader />
+                <p className='browse-header'>Browse by key topics:</p>
+                <div className='topics-container'>
+                    {questions.map((topic, i) => (
+                        <div key={i} className='topic-container' onClick={() => setFaq(topic)}>
+                            <p className='topic'>{topic.title}</p>
+                        </div>
+                    ))
+                    }
+                </div>
+                {faq && (
+                    <div className='accordion-homepage'>
+                        {faq.body.map((faq, i) => {
+                            return(
+                                <FAQQuestion key={i} question={faq.question} answer={faq.displayAnswer ? faq.displayAnswer : faq.answer}/>
+                            );
+                        })}
+                    </div>
+                )}
         </div>
     )
 }

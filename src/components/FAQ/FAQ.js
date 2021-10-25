@@ -1,11 +1,3 @@
-import React, { useState, useEffect } from 'react'
-import FAQHeader from './FAQHeader'
-import FAQBackground from '../../../static/assets/faqbanner.png'
-import FAQQuestion from './FAQQuestion'
-import PropTypes from 'prop-types'
-//import { studentQuestions, exhibitorQuestions } from './FAQ'
-
-//FAQ questions and answers. Only question and answer are used in search. Define displayAnswer to use elements such as link-tags in the answer.
 const studentQuestions = [
     {
         title: 'ABOUT ARMADA', 
@@ -282,48 +274,6 @@ const exhibitorQuestions = [
             },
         ]
     },
-];
+]
 
-const FAQContainer = (props) => {
-    const [faq, setFaq] = useState()
-     const [questions, setQuestions] = useState(studentQuestions)
-
-
-    useEffect(() => {
-        if (props.type === 'student') {
-            setQuestions(studentQuestions)
-        } else if (props.type === 'exhibitor') { 
-            setQuestions(exhibitorQuestions) 
-        }
-    }, [])
-
-    return(
-        <div>
-                <img alt='' className='terre' src={FAQBackground}/>
-                <FAQHeader />
-                <p className='browse-header'>Browse by key topics:</p>
-                <div className='topics-container'>
-                    {questions.map((topic, i) => (
-                        <div key={i} className='topic-container' onClick={() => setFaq(topic)}>
-                            <p className='topic'>{topic.title}</p>
-                        </div>
-                    ))}
-                </div>
-                {faq && (
-                    <div className='accordion-homepage'>
-                        {faq.body.map((faq, i) => {
-                            return(
-                                <FAQQuestion key={i} question={faq.question} answer={faq.displayAnswer ? faq.displayAnswer : faq.answer}/>
-                            );
-                        })}
-                    </div>
-                )}
-        </div>
-    )
-}
-
-FAQContainer.propTypes = {
-    type: PropTypes.string
-}
-
-export default FAQContainer
+export {studentQuestions, exhibitorQuestions}

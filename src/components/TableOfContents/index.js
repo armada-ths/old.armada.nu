@@ -32,7 +32,6 @@ const tableOfContents = [
         title: 'Marketing',
         anchor: 'marketing',
         sections: [
-            { title: 'Custommade Lounge', anchor: 'custommade-lounge' },
             { title: 'Armada Competition', anchor: 'armada-competition' },
         ]
     }, 

@@ -43,16 +43,30 @@ const Navbar = props => {
   }, [windowSize])
 
   const toggleExpanded = () => {
-    console.log("toggleExpanded")
     setExpanded(!expanded)
   }
 
   const toggleSubpages = () => {
-    console.log("toggleSubpages")
     setShowStudent(false)
     setShowCompany(false)
     setShowAbout(false)
   }
+
+  const toggleStudent = () => {
+    toggleSubpages()
+    setShowStudent(!showStudent)
+  }
+
+  const toggleCompany = () => {
+    toggleSubpages()
+    setShowCompany(!showCompany)
+  }
+
+  const toggleAbout = () => {
+    toggleSubpages()
+    setShowAbout(!showAbout)
+  }
+
 
   const links = menuPages.map((page, index) => (
     <Link
@@ -68,7 +82,7 @@ const Navbar = props => {
   const studentMenu = (
     <div className={dropdownParent}>
       <span
-        onClick={() => (toggleSubpages(), setShowStudent(!showStudent))}
+        onClick={toggleStudent}
       >
         {showStudent ? <div className='pageTitleMobile'>For Students</div> : 'For Students'}
       </span>
@@ -88,7 +102,7 @@ const Navbar = props => {
 
   const companyMenu = (
     <div className={dropdownParent}>
-      <span onClick={() => (toggleSubpages(), setShowCompany(!showCompany))}>
+      <span onClick={toggleCompany}>
         {showCompany ? <div className='pageTitleMobile'>For Companies</div> : 'For Companies'}
       </span>
       <div className={(!onMobile ? 'dropdown-content' : showCompany ? 'visible' : 'hidden')}>
@@ -108,7 +122,7 @@ const Navbar = props => {
 
   const aboutMenu = (
     <div className={dropdownParent}>
-      <span onClick={() => (toggleSubpages(), setShowAbout(!showAbout))}>
+      <span onClick={toggleAbout}>
         {showAbout ? <div className='pageTitleMobile'>About Armada</div> : 'About Armada'}
       </span>
       <div className={!onMobile ? 'dropdown-content' : showAbout ? 'visible' : 'hidden'}>

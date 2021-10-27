@@ -81,7 +81,7 @@ const Navbar = props => {
 
   const studentMenu = (
     <div className={dropdownParent}>
-      <span
+      <span tabIndex="0" role="button"
         onClick={toggleStudent}
       >
         {showStudent ? <div className='pageTitleMobile'>For Students</div> : 'For Students'}
@@ -102,7 +102,7 @@ const Navbar = props => {
 
   const companyMenu = (
     <div className={dropdownParent}>
-      <span onClick={toggleCompany}>
+      <span tabIndex="0" role="button">
         {showCompany ? <div className='pageTitleMobile'>For Companies</div> : 'For Companies'}
       </span>
       <div className={(!onMobile ? 'dropdown-content' : showCompany ? 'visible' : 'hidden')}>
@@ -122,7 +122,7 @@ const Navbar = props => {
 
   const aboutMenu = (
     <div className={dropdownParent}>
-      <span onClick={toggleAbout}>
+      <span tabIndex="0" role="button" onClick={toggleAbout}>
         {showAbout ? <div className='pageTitleMobile'>About Armada</div> : 'About Armada'}
       </span>
       <div className={!onMobile ? 'dropdown-content' : showAbout ? 'visible' : 'hidden'}>

@@ -189,8 +189,20 @@
 .dropdown:hover .dropdown-content{
   display: block;
   border: none;
-
   text-decoration: underline;
+}
+
+ .dropdown-content-on-keyboard-nav{
+  display: block;
+  border: none;
+  text-decoration: underline;
+  position: absolute;
+  background-color: rgba(45, 45, 44, 0.8);
+  padding: 15px 0px 10px 0px;
+  left: 0;
+  text-align: left;
+  z-index: 1;
+  width: 140%;
 }
 
 .pageTitleMobile {

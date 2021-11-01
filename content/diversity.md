@@ -9,6 +9,7 @@ header: /assets/images/header-images/diversity.jpg
 noJumbotron: false
 ---
 import DiversitySection from '../src/components/DiversitySection';
+import EmbeddedVideo from '../src/components/EmbeddedVideo';
 
 import TypeForm from '../src/components/TypeForm';
 import FunFact from '../src/components/FunFact';
@@ -66,10 +67,18 @@ Diversity Day is another way to keep the discussion about equality going. The da
 
    <DiversitySection right>
 
+   - - - 
+
+   <EmbeddedVideo videoLink="https://youtu.be/YtXkquepCIU"/>
+
+   - - - 
+
 ## HELP US BECOME MORE DIVERSE
 
    Do you have any ideas or suggestions to help us work more inclusive? We would love to hear them! - Contact our Head of Diversity, Anastasia at [anastasia.angeli@armada.nu](mailto:anastasia.angeli@armada.nu)
 
    </DiversitySection>
+
+   
 
 </div>

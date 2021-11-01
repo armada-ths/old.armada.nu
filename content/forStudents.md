@@ -8,6 +8,9 @@ priority: 4
 header: /assets/images/header-images/forStudents.jpg
 ---
 import CompetitionContact from '../src/components/CompetitionContact';
+import EmbeddedVideo from '../src/components/EmbeddedVideo';
+
+
 
 # Virtual THS Armada 2021
 
@@ -27,6 +30,11 @@ During the fair there will also be live presentations and other happenings on th
 <p>For more info on how to set up an account and attend the fair, see <a href='/faq'>FAQ</a>.
 And don’t forget to visit Armada in Nymble!</p>
 
+- - - 
+<EmbeddedVideo videoLink="https://www.youtube.com/watch?v=LdTymm-bHmE"/>
+
+- - - 
+
 ## Events
 
 THS Armada is more than a fair. In the weeks leading up to the fair we invite you to a wide range of events held by some of our exhibitors. We will invite you to lunch lectures, case evenings and more. To keep updated, follow us on [social media](https://www.instagram.com/thsarmada/). To register at an event, visit our [events tab](https://armada.nu/events).
@@ -34,6 +42,8 @@ THS Armada is more than a fair. In the weeks leading up to the fair we invite yo
 <div class='competition-logo'>
     <img alt='' id='logo' src='/assets/Armada_competition_filled.png'/>
 </div>
+
+
 
 ## Armada Competition
 

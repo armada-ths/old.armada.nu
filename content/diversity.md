@@ -9,8 +9,10 @@ header: /assets/images/header-images/diversity.jpg
 noJumbotron: false
 ---
 import DiversitySection from '../src/components/DiversitySection';
+import EmbeddedVideo from '../src/components/EmbeddedVideo';
 
 import TypeForm from '../src/components/TypeForm';
+import FunFact from '../src/components/FunFact';
 
 <div className='diversitypage-container'>
 
@@ -23,6 +25,13 @@ import TypeForm from '../src/components/TypeForm';
    <p>THS Armada truly believes that the best teams are created on the basis of equality, diversity and most importantly inclusion. It makes sense that equal value and opportunities are fundamental to our work. By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Diversity is promotes and featured in different kinds of events and concepts, which you can explore below. Here you can find <a alt="Diversity Policy 2021" href="/assets/Diversity_Policy_2021.pdf">THS Armada’s Diversity policy</a>!</p>
   <br/>
 
+<FunFact facts={[
+        {title: '10 nationalities', statement: 'Armada 2021 team currently includes 10 nationalities' , link: ''},
+        {title: 'female to male ratio', statement: 'Armada 2021 Project Group team has 4:3 female to male ratio', link: ''},
+        {title: 'ASI', statement: 'Armada Diversity team went around campus asking students LGBTQ+ related questions', link: 'https://www.instagram.com/tv/CQstQ5ClHSF/?utm_medium=copy_link'},
+      ]} page={'diversityFunFact'}/>
+
+      
 ## **Diversity Corner**
 
   One way THS Armada is accentuating the importance of diversity is through the Diversity Corner, a livestreaming studio that will share information about the most progressive companies when it comes to inclusion and diversity in the workplace. These companies have been carefully selected by the Diversity Team, using a set of meaningful criteria developed by the team, called the Armada Diversity Index (ADI), see <a href="/assets/diversity/Selection criteria.pdf">last years selection criteria</a>.
@@ -58,10 +67,18 @@ Diversity Day is another way to keep the discussion about equality going. The da
 
    <DiversitySection right>
 
+   - - - 
+
+   <EmbeddedVideo videoLink="https://youtu.be/YtXkquepCIU"/>
+
+   - - - 
+
 ## HELP US BECOME MORE DIVERSE
 
    Do you have any ideas or suggestions to help us work more inclusive? We would love to hear them! - Contact our Head of Diversity, Anastasia at [anastasia.angeli@armada.nu](mailto:anastasia.angeli@armada.nu)
 
    </DiversitySection>
+
+   
 
 </div>

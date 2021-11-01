@@ -7,6 +7,10 @@ import Page from '../../templates/page'
 import './index.scss'
 
 const Aboutpage = props => {
+
+    console.log("props", props)
+
+    console.log("props header", props.frontmatter.header)
     return (
         <div className='content'>
             <div className='aboutpage-container'>
@@ -17,8 +21,16 @@ const Aboutpage = props => {
     )
 }
 
+
+
+
 Aboutpage.propTypes = {
-    head: PropTypes.object.isRequired,
+
+    body: PropTypes.string,
+    frontmatter: PropTypes.shape({
+        header: PropTypes.string.isRequired
+
+    })
 }
 
 export default Aboutpage

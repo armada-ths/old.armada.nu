@@ -8,9 +8,6 @@ import './index.scss'
 
 const Aboutpage = props => {
 
-    console.log("props", props)
-
-    console.log("props header", props.frontmatter.header)
     return (
         <div className='content'>
             <div className='aboutpage-container'>

@@ -25,6 +25,9 @@ const Navbar = props => {
   const [studentStyle, setStudentStyle] = useState('dropdown-content')
   const [companyStyle, setCompanyStyle] = useState('dropdown-content')
   const [aboutStyle, setAboutStyle] = useState('dropdown-content')
+  const [hasStudentTag, setHasStudentTag] = useState(false)
+  const [hasCompanytag, setHasCompanyTag] = useState(false)
+  const [hasAboutTag, setHasAboutTag] = useState(false)
 
   menuPages.sort((a, b) => {
     return a.priority - b.priority
@@ -45,6 +48,13 @@ const Navbar = props => {
   useEffect(() => {
     setOnMobile(windowSize.width < 850)
   }, [windowSize])
+
+
+  useEffect(() => {
+    setHasStudentTag(document.getElementById("student") != null);
+    setHasCompanyTag(document.getElementById("company") != null);
+    setHasAboutTag(document.getElementById("about") != null);
+  }, [])
 
   const toggleExpanded = () => {
     setExpanded(!expanded)
@@ -111,26 +121,32 @@ const Navbar = props => {
 
   // TODO: dropdowncontent should closed if pressing ESC while having the 
 
-  const studentParent = document.getElementById("student")
-  studentParent && studentParent.addEventListener('keydown', function (event) {
-    if (event.key === "Escape") {
-      handleMouseOut('student')
-    }
-  });
+  if (hasStudentTag) {
+    const studentParent = document.getElementById("student")
+    studentParent && studentParent.addEventListener('keydown', function (event) {
+      if (event.key === "Escape") {
+        handleMouseOut('student')
+      }
+    });
+  }
 
-  const companyParent = document.getElementById("about")
-  companyParent && companyParent.addEventListener('keydown', function (event) {
-    if (event.key === "Escape") {
-      handleMouseOut('company')
-    }
-  });
+  if (hasCompanytag) {
+    const companyParent = document.getElementById("company")
+    companyParent && companyParent.addEventListener('keydown', function (event) {
+      if (event.key === "Escape") {
+        handleMouseOut('company')
+      }
+    });
+  }
 
-  const aboutParent = document.getElementById("about")
-  aboutParent && aboutParent.addEventListener('keydown', function (event) {
-    if (event.key === "Escape") {
-      handleMouseOut('about')
-    }
-  });
+  if (hasAboutTag) {
+    const aboutParent = document.getElementById("about")
+    aboutParent && aboutParent.addEventListener('keydown', function (event) {
+      if (event.key === "Escape") {
+        handleMouseOut('about')
+      }
+    });
+  }
 
   const studentMenu = (
     <div className={dropdownParent}>

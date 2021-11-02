@@ -3,8 +3,9 @@ slug: /exhibitor_info
 title: For Exhibitors
 layout: ExhibitorInfo
 description: Information for exhibitors
-menuPage: true
-priority: 5
+menuPage: false
+companySubpage: true
+priority: 1
 header: /assets/for_exhibitors.jpg
 ---
 

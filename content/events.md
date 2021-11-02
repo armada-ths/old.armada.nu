@@ -3,8 +3,9 @@ slug: /events
 title: Events
 layout: Events
 description: Description
-menuPage: true
-priority: 3
+menuPage: false
+studentSubpage: true
+priority: 2
 header: /assets/images/header-images/recruitment.jpg
 ---
 # Events

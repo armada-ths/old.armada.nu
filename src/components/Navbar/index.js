@@ -7,14 +7,38 @@ import RegistrationBanner from '../RegistrationBanner'
 import useWindowSize from '../../hooks/useWindowSize'
 import HamburgerButton from '../HamburgerButton'
 
+
 const Navbar = props => {
   const windowSize = useWindowSize()
-
   const [expanded, setExpanded] = useState(false)
+  const [showStudent, setShowStudent] = useState(false)
+  const [showCompany, setShowCompany] = useState(false)
+  const [showAbout, setShowAbout] = useState(false)
   const [onMobile, setOnMobile] = useState(windowSize.width < 850)
   const menuPages = props.pages.filter(page => page.menuPage)
+  const studentSubpages = props.pages.filter(page => page.studentSubpage)
+  const companySubpages = props.pages.filter(page => page.companySubpage)
+  const aboutSubpages = props.pages.filter(page => page.aboutSubpage)
+  const dropdownParent = !onMobile ? ['dropdownParent', 'dropdown', 'hoverWeb'].join(" ")
+    : ['dropdownParent', 'dropdown'].join(" ")
+
+  const [studentStyle, setStudentStyle] = useState('dropdown-content')
+  const [companyStyle, setCompanyStyle] = useState('dropdown-content')
+  const [aboutStyle, setAboutStyle] = useState('dropdown-content')
 
   menuPages.sort((a, b) => {
+    return a.priority - b.priority
+  })
+
+  studentSubpages.sort((a, b) => {
+    return a.priority - b.priority
+  })
+
+  companySubpages.sort((a, b) => {
+    return a.priority - b.priority
+  })
+
+  aboutSubpages.sort((a, b) => {
     return a.priority - b.priority
   })
 
@@ -26,22 +50,154 @@ const Navbar = props => {
     setExpanded(!expanded)
   }
 
-  var links = menuPages.map((page, index) => (
+  const toggleSubpages = () => {
+    setShowStudent(false)
+    setShowCompany(false)
+    setShowAbout(false)
+  }
+
+  const toggleStudent = () => {
+    toggleSubpages()
+    setShowStudent(!showStudent)
+  }
+
+  const toggleCompany = () => {
+    toggleSubpages()
+    setShowCompany(!showCompany)
+  }
+
+  const toggleAbout = () => {
+    toggleSubpages()
+    setShowAbout(!showAbout)
+  }
+
+  const handleMouseIn = (itemToBeChanged) => {
+    const styles = ['dropdown-content', 'dropdown-content-on-keyboard-nav'].join(" ")
+    if (itemToBeChanged === 'student') {
+      setStudentStyle(styles)
+    }
+    if (itemToBeChanged === 'company') {
+      setCompanyStyle(styles)
+    }
+    if (itemToBeChanged === 'about') {
+      setAboutStyle(styles)
+    }
+  }
+
+  const handleMouseOut = (itemToBeChanged) => {
+    const style = 'dropdown-content'
+
+    if (itemToBeChanged === 'student') {
+      setStudentStyle(style)
+    }
+    if (itemToBeChanged === 'company') {
+      setCompanyStyle(style)
+    }
+    if (itemToBeChanged === 'about') {
+      setAboutStyle(style)
+    }
+  }
+
+  const links = menuPages.map((page, index) => (
     <Link
       activeClassName='active'
       onClick={toggleExpanded}
       to={page.slug}
       key={index}
     >
-      {page.title}
+      {onMobile ? <span>{page.title}</span> : page.title}
     </Link>
   ))
+
+  // TODO: dropdowncontent should closed if pressing ESC while having the 
+
+  const studentParent = document.getElementById("student")
+  studentParent && studentParent.addEventListener('keydown', function (event) {
+    if (event.key === "Escape") {
+      handleMouseOut('student')
+    }
+  });
+
+  const companyParent = document.getElementById("about")
+  companyParent && companyParent.addEventListener('keydown', function (event) {
+    if (event.key === "Escape") {
+      handleMouseOut('company')
+    }
+  });
+
+  const aboutParent = document.getElementById("about")
+  aboutParent && aboutParent.addEventListener('keydown', function (event) {
+    if (event.key === "Escape") {
+      handleMouseOut('about')
+    }
+  });
+
+  const studentMenu = (
+    <div className={dropdownParent}>
+      <span tabIndex="0" role="link" id="student"
+        onClick={toggleStudent} onKeyPress={() => handleMouseIn('student')}
+      >
+        {showStudent ? <div className='pageTitleMobile'>For Students</div> : 'For Students'}
+      </span>
+      <div className={(!onMobile ? studentStyle : showStudent ? 'visible' : 'hidden')}>
+        {studentSubpages.map((page, index) => (
+          <Link style={{ border: 'none' }}
+            activeClassName='active'
+            onClick={toggleExpanded}
+            to={page.slug}
+            key={index}
+          >
+            {page.title}
+          </Link >
+        ))}
+      </div>
+    </div >)
+
+  const companyMenu = (
+    <div className={dropdownParent} >
+      <span onClick={toggleCompany} tabIndex="0" role="link" id="company" onKeyPress={() => handleMouseIn('company')} >
+        {showCompany ? <div className='pageTitleMobile'>For Companies</div> : 'For Companies'}
+      </span>
+      <div className={(!onMobile ? companyStyle : showCompany ? 'visible' : 'hidden')}>
+        {companySubpages.map((page, index) => (
+          <Link style={{ border: 'none' }}
+            activeClassName='active'
+            onClick={toggleExpanded}
+            to={page.slug}
+            key={index}
+          >
+            { page.title}
+          </Link >
+        ))}
+      </div>
+    </div>)
+
+
+  const aboutMenu = (
+    <div className={dropdownParent}>
+      <span tabIndex="0" role="link" id="about" onClick={toggleAbout} onKeyPress={() => handleMouseIn('about')}>
+        {showAbout ? <div className='pageTitleMobile'>About Armada</div> : 'About Armada'}
+      </span>
+      <div className={!onMobile ? aboutStyle : showAbout ? 'visible' : 'hidden'}>
+        {aboutSubpages.map((page, index) => (
+          <Link style={{ border: 'none' }}
+            activeClassName='active'
+            onClick={toggleExpanded}
+            to={page.slug}
+            key={index}
+          >
+            { page.title}
+          </Link >
+        ))}
+      </div>
+    </div>)
 
   return (
     <>
       <div id='navbar'>
         {onMobile && (
           <>
+            <div className='topNav'></div>
             <RegistrationBanner location={props.location} />
             <RecruitmentBanner location={props.location} />
           </>
@@ -55,10 +211,13 @@ const Navbar = props => {
             />
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
-            <Link onClick={toggleExpanded} activeClassName='active' to='/'>
-              HOME
+            <Link onClick={toggleExpanded} activeClassName='active' to='/' >
+              {onMobile ? <span>Home</span> : 'Home'}
             </Link>
+            {companyMenu}
+            {studentMenu}
             {links}
+            {aboutMenu}
           </div>
         </nav>
         {!onMobile && (

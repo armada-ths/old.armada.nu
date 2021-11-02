@@ -2,17 +2,15 @@
 @import '../../styles/_fonts';
 
 #navbar {
-  overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
-  text-align: center;
+  text-align: right;
   font-family: $font-title;
   font-size: 95%;
   letter-spacing: 1.4px;
-  text-transform: uppercase;
 
   >.hidden {
       display: none;
@@ -22,8 +20,7 @@
     background-color: $licorice;
     width : 100%;
     display: inline-block;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 15px 10px 0px;
 
     .menu-hamburger {
         display:none;
@@ -34,7 +31,6 @@
 
       a {
         display: inline-block;
-        border-right: 1px #fff solid;
         text-decoration: none;
         transition: color 0.4s;
         color: $text-color-light;
@@ -42,7 +38,6 @@
 
         &:hover {
           color: $melon !important;
-          border-right: 1px solid #fff !important;
         }
 
         &.active {
@@ -52,17 +47,36 @@
         &:last-child {
           border-right: 0 !important;
         }
-
       }
 
-    }
+        .dropdownParent {
+        display: inline-block;
+        text-decoration: none;
+        transition: color 0.4s;
+        color: $text-color-light;
+        padding: 5px 20px;
 
+        &.active {
+          color: $melon;
+        }
+
+        &:last-child {
+          border-right: 0 !important;
+        }
+      } 
+
+      .hoverWeb {
+        &:hover {
+        color: $melon !important;
+        cursor: pointer;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 1200px) {
     font-size: 1.2em;
   }
-
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
@@ -71,10 +85,19 @@
 				overflow: hidden;
         position: absolute;
 
+        .topNav {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3em;
+          background-color: $licorice;
+        }
+
         .menu-wrapper {
             width: 100%;
             padding-top: 0;
-            
+
             &.visible {
               .menu-hamburger {
                 position: absolute;
@@ -96,24 +119,32 @@
                 text-align: center;
                 justify-content: space-evenly;
                 width: 100%;
-                
+                margin-top: 3em;
+                -webkit-backdrop-filter: blur(10px);
+	              backdrop-filter: blur(10px);
+
                 @media screen and (max-width: $breakpoint-mobile) {
                   height: 100vh;
                   height: calc(100vh - 60px);
                 }
 
+                span {
+                  font-size: 1.4em;
+                }
+
                 a {
                   color: #fff !important;
                   border-right: none !important;
-                  font-size: 1.2em;
+                  font-size: 1em;
                   -webkit-tap-highlight-color: transparent;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
 
                   &:hover {
                     color: #fff !important;
-                    text-decoration: underline !important;
                     border-right: none !important;
                   }
-
                 }
 
                 a:last-child {
@@ -124,18 +155,57 @@
             .hidden {
                 display: none;
             }
-
         }
 
         .menu-wrapper.hidden {
-            background-color: transparent;
+            background-color: $licorice;
             text-align: center;
             display: inline-block;
         }
 
         .menu-wrapper.visible {
-            background-color: $melon;
+            background-color: rgba(45, 45, 44, 0.8);
         }
     }
+}
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(45, 45, 44, 0.8);
+  padding: 15px 0px 10px 0px;
+  left: 0;
+  text-align: left;
+  z-index: 1;
+  width: 140%;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+  border: none;
+  text-decoration: underline;
+}
+
+ .dropdown-content-on-keyboard-nav{
+  display: block;
+  border: none;
+  text-decoration: underline;
+  position: absolute;
+  background-color: rgba(45, 45, 44, 0.8);
+  padding: 15px 0px 10px 0px;
+  left: 0;
+  text-align: left;
+  z-index: 1;
+  width: 140%;
+}
+
+.pageTitleMobile {
+  text-decoration: underline;
+  color: $melon;
 }

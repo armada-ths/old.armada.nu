@@ -26,9 +26,11 @@ import forStudentsPage from '../layouts/forStudentsPage'
 import KnightecPage from '../layouts/KnightecPage'
 import CompetitionPage from '../layouts/CompetitionPage'
 import Banquet from '../layouts/Banquet'
+import VirtualFairSuccess from '../layouts/VirtualFairSuccess'
 
 const components = {
   RecruitmentPage: RecruitmentPage,
+  VirtualFairSuccess: VirtualFairSuccess,
   SustainabilityPage: SustainabilityPage,
   DiversityPage: DiversityPage,
   FAQPage: FAQPage,

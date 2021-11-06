@@ -3,18 +3,16 @@
 
 .Events-container {
   padding: 3em 0em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   max-width: $page-width;
-  //position: static;
   margin: auto;
-  //padding: 1em 0em;
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped){
   .Events-container {
     padding: 3em 1em;
-    //position: static;
-    //max-width: 850px;
-    //margin: auto;
-    //padding: 1em 0em;
   }
 }

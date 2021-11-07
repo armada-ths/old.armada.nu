@@ -29,7 +29,7 @@ Filip Ryden, Head of Logistics & Fair is the inventor and responsible for the Ar
 
 ## What gives tickets?
 
-There are a lot of different ways to earn tickets to Armada Competition. The bulk of the tickets are earned by being active at the fair. For a full breakdown of how the tickets are earned look at this [document](https://docs.google.com/document/d/1Tu8pPfYCF6yLcITiDLOhsrUd9LsgPvS03u3CFLcUmw4/edit#). On Graduateland a participant will earn points by:
+There are a lot of different ways to earn tickets to Armada Competition. The bulk of the tickets are earned by being active at the fair. For a full breakdown of how the tickets are earned look at this [document](/static/assets/tickets.pdf). On Graduateland a participant will earn points by:
 
 * Filling out their profile
 * Chatting with exhibitors

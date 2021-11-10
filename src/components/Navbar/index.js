@@ -233,7 +233,6 @@ const Navbar = props => {
             <a className='left' alt="Virtual Fair 2021" href="https://event.armada.nu/">Virtual Fair</a>
             </span>
             <div>
-            {/* <> */}
               <Link onClick={toggleExpanded} activeClassName='active' to='/' >
                 {onMobile ? <span>Home</span> : 'Home'}
               </Link>
@@ -241,7 +240,6 @@ const Navbar = props => {
               {studentMenu}
               {links}
               {aboutMenu}
-              {/* </> */}
             </div>
           </div>
         </nav>

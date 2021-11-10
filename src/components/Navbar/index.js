@@ -19,8 +19,10 @@ const Navbar = props => {
   const studentSubpages = props.pages.filter(page => page.studentSubpage)
   const companySubpages = props.pages.filter(page => page.companySubpage)
   const aboutSubpages = props.pages.filter(page => page.aboutSubpage)
-  const dropdownParent = !onMobile ? ['dropdownParent', 'dropdown', 'hoverWeb'].join(" ")
-    : ['dropdownParent', 'dropdown'].join(" ")
+  // const dropdownParent = !onMobile ? ['dropdownParent', 'dropdown', 'hoverWeb'].join(" ")
+  const dropdownParent = !onMobile ? ['dropdownParent', 'hoverWeb'].join(" ")
+
+  : ['dropdownParent', 'dropdown'].join(" ")
 
   const [studentStyle, setStudentStyle] = useState('dropdown-content')
   const [companyStyle, setCompanyStyle] = useState('dropdown-content')
@@ -227,8 +229,11 @@ const Navbar = props => {
             />
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
+            <span>
             <a className='left' alt="Virtual Fair 2021" href="https://event.armada.nu/">Virtual Fair</a>
+            </span>
             <div>
+            {/* <> */}
               <Link onClick={toggleExpanded} activeClassName='active' to='/' >
                 {onMobile ? <span>Home</span> : 'Home'}
               </Link>
@@ -236,6 +241,7 @@ const Navbar = props => {
               {studentMenu}
               {links}
               {aboutMenu}
+              {/* </> */}
             </div>
           </div>
         </nav>

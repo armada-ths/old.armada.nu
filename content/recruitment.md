@@ -3,12 +3,14 @@ slug: /recruitment
 title: Recruitment
 layout: RecruitmentPage
 description: Recruitment 2020
-menuPage: true
-priority: 3
+menuPage: false 
+studentSubpage: true
+priority: 1
 header: /assets/TheFair_small.jpg
 noJumbotron: false
 ---
 import Recruitment from '../src/components/Recruitment';
+import EmbeddedVideo from '../src/components/EmbeddedVideo';
 
 # Shape THS Armada
 
@@ -25,6 +27,7 @@ The Armada team consists of around 250 people and is divided into four subgroups
 <p><b id='sustainability-color'>Marketing & Communication</b>: The key to a successful project is great communication, both internally and externally. People need to know about Armada, our events and activities as well as the benefits of attending the fair. A successful Marketing & Communication team is key to a successful THS Armada.</p>
 
 <p><b id='sustainability-color'>IT</b>: In a digital era, the digitisation process is one of the core pillars of THS Armada. Turning creative ideas from all groups into reality enhances the Armada experience for all members, visitors and exhibitors. Our very own AIS lets companies and students sign up for Armada and our website is the home for all important information about Armada. The IT team makes all this possible. </p>
+
 
 <Recruitment/>
 
@@ -60,6 +63,10 @@ The different layers in the circle have different levels of responsibility. All 
 * A cruise together with all of Armada at the end of the year
 * Merch & tons of fun
 
+- - -
+<EmbeddedVideo videoLink="https://youtu.be/n6yuGUyYAzg"/>
+
+- - - 
 
 ## Questions?
 

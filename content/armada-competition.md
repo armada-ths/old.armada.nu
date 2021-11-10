@@ -4,7 +4,10 @@ title: Armada competition
 layout: CompetitionPage
 description: Page
 menuPage: false
-priority: 4
+studentSubpage: true
+companySubpage: false
+aboutSubpage: false
+priority: 2
 header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
@@ -12,212 +15,78 @@ noJumbotron: false
     <img alt='' id='logo' src='/assets/Armada_competition_filled.png'/>
 </div>
 
-# Armada Competition 2020
+# Armada Competition 2021
 
-<p class="info-border-box">
-The information below applies to Armada 2020, but stay tuned for another edition in 2021. The winners have been contacted through email. We hope you all enjoyed the fair. See you next year!
-</p>
+## Short overview
 
-## Background
-
-The Armada Competition is a gamification feature of the virtual fair with the impact goals of (1) attracting more students to the fair and (2) nudging the students to interact with the fair in a more constructive way. There will be incitements (prizes) to attract students to the concept and tasks (points) that measure the students activity. The students will earn points for interacting with the fair and then the prizes will be raffled out in a lottery where students have one lottery ticket for each point earned. There will be 50 prizes, ranging in market value from 700 up to 4000kr. Among those prizes are Ipads, noise cancelling Bluetooth headphones and a weekend with a Volvo.
-
-## Purpose of the information
-
-This information is a full disclosure of all terms and conditions that is included in the Armada Competition. THS Armada believes in transparency in everything we do and the aim is that all participating students can see how everything relating to Armada Competition is done. This is taken to the extent that the lottery algorithm used is also disclosed in this document.
+Armada Competition is a gamification of the THS Armada career fair. The goal of the competition is to attract more students to sign up to the fair, encourage students at the fair to be more active, and to get students to participate in other Armada related events. By being interactive at the fair and signing up for events etc. a student earns tickets. These tickets are then raffled out at the end of the fair where the winners get prizes from companies and Armada. The more tickets a student has accumulated the greater their odds are at winning a prize. After a student has won a prize they are no longer in the running for the other prizes. A participant is automatically in the running to win a prize when they have earned a minimum of 25 tickets.
 
 ## Contact and responsibilities
 
-Leonard Hökby, Head of Logistics and Fair is the inventor and responsible for the Armada Competition. Responsible for THS Armada 2020 is Project Manager Daniel Aston, reachable at [a@armada.nu](mailto:a@armada.nu).
+Filip Ryden, Head of Logistics & Fair is the inventor and responsible for the Armada Competition can be contacted via email [filip.ryden@armada.nu](mailto:filip.ryden@armada.nu). Responsible for THS Armada 2021 is Project Manager Josefine Havdelin, reachable at [a@armada.nu](mailto:a@armada.nu).
 
-# Points collecting
+# Tickets
 
-## Partners
+## What gives tickets?
 
-Our digital fair partner GraduateLand collects the data used in the competition and is responsible for all personal data.
+There are a lot of different ways to earn tickets to Armada Competition. The bulk of the tickets are earned by being active at the fair. For a full breakdown of how the tickets are earned look at this [document](/assets/tickets.pdf). On Graduateland a participant will earn points by:
 
-## Tracking and collecting of personal data on the virtual fair
+* Filling out their profile
+* Chatting with exhibitors
+* Looking at Live Presentations
+* Visiting exhibitor stalls
+* Viewing available jobs
 
-The action on the fair is traced by GraduateLand for evaluation purposes and this information will be used for armada competition. For information of exactly what is stored and not, we refer to GraduateLand. The information used for the Armada competition is the following:
+The fair also has a physical part hosted in Nymble. Inside Nymble participants of the fair can earn tickets by competing in the multitude of games available. 
 
-* Profile completeness
-* Chats received
-* Booths viewed
-* Live presentations attended
-* Name and email address
+Outside of the fair days a participant can also earn tickets by attending events hosted by Armada. A participant signs up to an event by going to armada.nu and registering. Tickets are only awarded to a participant if they show up at the event. Different events award different amounts of tickets. During the event weeks there are also going to be days dedicated to Armada’s core values, Sustainability and Diversity. During these special days there will be multiple opportunities for a participant to earn tickets.
 
-## Point scoring system
+## Personal data
 
-The following different activities will generate Armada Competition score:
+Our digital partner is [Graduateland](https://event.armada.nu/sv/events), they are responsible for collecting and handling all data on their platform. For more information about what information is collected, and how, we refer to Graduateland. Armada gets information about:
 
-* Register at the fair
-* High completeness of profile
-* Chats received from companies
-* Booths viewed
-* Live presentations viewed
-* Completion of D&I quiz
+* Name
+* Email
+* Profile Completeness
+* Amount of Live Presentations viewed
+* Total chats
+* Exhibitors Stalls Visited
+* Viewed Job Posts
+* Job Applications
 
-**Registering at the fair**
+Information given in google forms and applications are handled by THS Armada and follows GDPR. 
 
-Every student registered at the fair will get 1 point, so they are in the running for the prizes
+## Raffle
 
-High completeness of profile
-
-* Students with a 90% complete profile at the closing of the fair will be awarded with 10 points.
-* Students with a 100% complete profile at the closing of the fair will be awarded with an additional 20 points.
-
-**Chats received from companies**
-
-* Students who receives 5 chats from a company representative before the 18/11 16:00 will be awarded 1 point
-* Students who receive 20 chats from a company representative before the 18/11 16:00 will be awarded with an additional 3 points.
-* Students who receive 50 chats from a company representative before the 18/11 16:00 will be awarded with an additional 5 points.
-* Students who receive 100 chats from a company representative before the 18/11 16:00 will be awarded with an additional 10 points.
-
-**Booths viewed**
-
-* Students who view 5 booths on fair will be awarded 1 point
-* Students who view 10 booths on the fair will be awarded an additional 3 points
-* Students who view 20 booths on the fair will be awarded an additional 5 points
-* Students who view all booths on the fair will be awarded an additional 10 points
-
-**Live presentations viewed**
-
-* Students who attend 1 live presentation will be awarded 1 point
-* Students who attend 3 live presentations will be awarded an additional 3 points
-* Students who attend 5 live presentations will be awarded an additional 5 points
-* Students who attend 10 live presentations will be awarded an additional 10 points
-
-**Completion of D&I Quiz**
-Students who complete the D&I Quiz available at the virtual platform will receive 2 points in the Armada Competition. 
-
-The maximum points possible to earn is 90 points.
-
-# Lottery principles
-
-## Tickets awarded
-
-After the closing of the fair, Armada will calculate for each participant how many points he or she has earned. Each point will equal 1 ticket in the competition.
-
-## Raffling tickets
-
-When the number of tickets is determined the winners will be raffled out. This will be done digitally with the Mersenne Twister Pseudorandom number generator. Each participant can only win one time. Therefore, after winning one prize, the rest of the students' tickets will be consumed. The prizes will be raffled in order of monetary value as determined by Armada so the prize with highest monetary value will be awarded to the first winner, the second highest value prize to the second winner and so on. A detailed description of the algorithm used can be found in the first appendix.
+After the fair is over all tickets from all the different activities are calculated and combined with the information given by Graduateland. The raffle is done digitally with the Mersenne Twister Pseudorandom number generator. Code can be found [here](#). A participant can only win one time. After a participant has won, their tickets are removed from the raffle meaning they can’t win again. The prizes are raffled out starting from the highest monetary values going down to the lowest monetary values as determined by THS Armada. The first winner gets the first prize, the second winner gets the second prize and so on until no more prizes remain. 
 
 ## Announcement
 
-The winners will be contacted by email or by phone. After being contacted, the winner has 7 days to collect the prize per Armadas instructions if nothing else is agreed upon. If the winner fail to respond within 7 days from receiving an email from Armada, Armada has the right to draw another winner.
+Winners will be drawn live on Armada’s facebook the 5th of December. All winners will be contacted by email and have 7 days to claim their prize per Armada’s instructions if nothing else is decided. If a winner fails to respond within 7 days Armada has the right to draw another winner. 
+How to prizes are given out depends in the prize and will be decided together with the winner over email. 
 
-How the prizes are given to the winners depend on the prize and will be determined by the winner and Armada when contact is established.
+# Prices
 
-# Prizes
+## Sponsored Prizes
 
-## Ranking
+Lantmännen are sponsoring with one semester worth of pasta from Kungsörnen.
 
-The prizes will be ranked by Armada according to market value where prize number 1 is the prize with highest market value.
+## Armada Provided Prizes with Sponsorship Money from Companies
 
-## Sponsored prizes
-
-**Volvo Cars**
-
-Volvo cars sponsor the Armada competition with one weekend with a rented Volvo car from Volvo Studio Stockholm, of a value between 1800 and 4000kr depending on which car the student chooses. This prize comes with the added requirement that the winner must have a driver's license. If the winner does not have a driver's license, he or she will be awarded the prize that is directly below it in the ranking. Then the prize will be offered to the next winner.
-
-Additional conditions apply and Volvo Cars says the following:
-
-*“The winner is asked to contact Volvo Studio minimum one week prior to the desired rental date - this in order to make sure that your car is ready and available on your desired weekend. In order to make use of this offer, you need to have a driver’s license valid in Sweden. You will also be asked to sign a rental agreement with Volvo Studio when you pick up the car. The car is covered by insurance and you as a driver is responsible for driving it in a careful way. Any potential damage to the car caused by the user will be covered by the driver.”*
-
-**Electrolux**
-
-Electrolux sponsor the Armada Competition with a powered blender.
-
-**VOI**
-
-VOI sponsor the Armada Competition with 1000kr in VOI Credits. The credits will be handed out through a gift certificate
-
-## Armada funded prizes
-
-In order to increase the number of prizes, Armada will fund prizes at two levels, one high level with fewer items with a higher market value and one low level with more items of lower market value. Armada aims at providing 50 prizes, but will not provide less than 40 prizes.
-
-**IPads**
-Armada supplies 3 IPads to the competition. These will be the 32 gb memory base model from Apple. 
-
-**Headphones**
-Armada will provide 11 bluetooth noise cancelling headphones from JBL, the JBL TUNE 750BTNC model. 
-
-**ICA gift certificate**
-Armada will provide 33 gift certificates loaded with 700kr each. These can be used at any ICA store.
-
-# Appendix 1 - A lottery algorithm for the Armada competition
-
-## Overview
-
-**Input**
-An excel with one column with a unique identifier, one with names and one column with number of lottery tickets.
-
-**Algorithm**
-A lottery algorithm that gives each ticket an equal chance of winning. There will be drawn several winners, but once one person has won his or her remaining tickets should not be part of the next draw.
-
-**Output**
-A list with name and unique identifier for the winners, in the same order they were drawn by the algorithm
-
-## Details
-
-**Chance of winning**
-number of personal tickets/total sum of tickets
-
-**Reliability**
-The numpy.random uses the Mersenne Twister Pseudorandom number generator. The sequence is predetermined by the PRNG´s seed, which could include truly random values. 
-
-The algorithm will only be run once, and should thus be deemed reliable enough.
-
-## Pseudocode in text
-The algorithm will generate a shuffled file/list by first creating a row for each ticket that a person holds and then shuffle that file/list. After the file/list has been shuffled then i - amount of winners will be picked randomly. This is done by selecting a row using the numpy.random.randint(0, sum of tickets). If the row or the unique ID is already in the WinnerList then a new winner is selected instead of that one. Starting from row 0 to row i is the order that the winners were picked. 
-
-**Pseudocode**
+* 4 iPad 64GB worth 3995kr each
+* 5 Giftcards at Yasuragi worth 3000kr each 
+* 10 Aukey PW-WL02 powerbank worth 846kr each
+* 20 Giftcard at Adlibris worth 400kr each
 
 
-<div class="armada-competition-code">
 
-`function ArmadaLottery(file)`
-    
-	    TicketFile/List GenerateTicket(file)
 
-	    ShuffledFile/List ShuffleTickets(/file/list)
 
-`WinnerList[]`
 
-`PickWinners(ShuffledFile/List, WinnerList)`
 
-`print(WinnerList)`	
 
-`function GenerateTicket(file)`
 
-	    "Creates a row for each ticket that a person holds"
 
-	    return file/list
-	
-`function ShuffleTickets(file/list)`
 
-	    ShuffledFile/List numpy.random.shuffle(file/list)
 
-	    "Or similar shuffle function"
 
-	    return ShuffledFile/List
-
-`function PickWinners(ShuffledFile/List, WinnerList)`
-
-	    for(0<i) (i =amount of winners)
-
-		     x numpy.random.randint(0,NumberOfRows(ShuffledFile/List)
-
-		     if(ShuffledFile/List(Row(x) && uniqueID) not in WinnerList
-
-		     "Might just need to check if the uniqueID is in WinnerList"
-
-			    add(row(x) to WinnerList) to row(i)
-
-		    else
-
-			    i=i-1
-
-	return WinnerList
-
-</div>

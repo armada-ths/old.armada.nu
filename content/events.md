@@ -4,7 +4,8 @@ title: Events
 layout: Events
 description: Description
 menuPage: false
-priority: 3
+studentSubpage: true
+priority: 2
 header: /assets/images/header-images/recruitment.jpg
 ---
 # Events

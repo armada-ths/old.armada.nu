@@ -3,7 +3,8 @@ slug: /contact
 title: Contact
 layout: ContactPage
 description: ' '
-menuPage: true
+menuPage: false
+aboutSubpage: true
 priority: 10
 header: /assets/thefair.jpg
 ---

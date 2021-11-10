@@ -7,6 +7,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
+    "flag": "^4.4.0",
     "gatsby": "^2.22.15",
     "gatsby-image": "^2.4.5",
     "gatsby-plugin-feed-mdx": "^1.0.1",
@@ -23,6 +24,7 @@
     "gatsby-transformer-sharp": "^2.5.3",
     "joi": "^17.4.2",
     "leaflet": "^1.6.0",
+    "link-react": "^3.0.0",
     "netlify-cms-app": "^2.14.26",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",

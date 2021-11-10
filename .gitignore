@@ -63,7 +63,11 @@ public
 
 # Yarn
 yarn-error.log
+yarn.lock
 .pnp/
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# package-lock file
+package-lock.json

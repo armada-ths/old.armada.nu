@@ -5,7 +5,7 @@ import './index.scss'
 
 const FAQPage = () => {
 
-  return <FAQContainer />
+  return <FAQContainer type='students' />
 
 }
 

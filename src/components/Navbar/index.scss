@@ -28,6 +28,13 @@
     }
 
     .menu {
+      display: flex;
+      justify-content: space-between;
+
+      .left {
+        text-align: left;
+        text-transform: uppercase;
+      }
 
       a {
         display: inline-block;

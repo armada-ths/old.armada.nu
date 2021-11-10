@@ -4,6 +4,7 @@ import FAQBackground from '../../../static/assets/faqbanner.png'
 import FAQQuestion from './FAQQuestion'
 import PropTypes from 'prop-types'
 //import { studentQuestions, exhibitorQuestions } from './FAQ'
+import EmailForm from '../EmailForm'
 
 //FAQ questions and answers. Only question and answer are used in search. Define displayAnswer to use elements such as link-tags in the answer.
 const studentQuestions = [
@@ -287,7 +288,9 @@ const exhibitorQuestions = [
 const FAQContainer = (props) => {
     const [faq, setFaq] = useState()
      const [questions, setQuestions] = useState(studentQuestions)
-
+     const [visible, setVisability] = useState()
+     const visibilityContactFrom = visible === true ? "block" : "none" 
+     const visibilityContactBtn = visible === true ? "none" : "block" 
 
     useEffect(() => {
         if (props.type === 'student') {
@@ -318,6 +321,10 @@ const FAQContainer = (props) => {
                     })}
                 </div>
             )}
+            <button style={{display: `${visibilityContactBtn}`}} className='contactBtn' onClick={() => setVisability(!visible)}>Contact us!</button>
+            <div style={{display: `${visibilityContactFrom}`, marginBottom: '2em'}}>
+                <EmailForm emailTo='a@armada.nu'/>
+            </div>
         </div>
     )
 }

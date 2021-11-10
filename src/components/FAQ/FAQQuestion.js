@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
 import chevronDown from '../../../static/assets/pil_melon.png'
@@ -10,6 +10,10 @@ const FAQQuestion = (props) => {
     const questionOnClicked = () => {
         setDrawerOpen(!drawerOpen)
     }
+
+    useEffect(() => {
+        setDrawerOpen(false)
+    }, [props])
 
     return (
         <section role='presentation' className='parent' onClick={questionOnClicked}>

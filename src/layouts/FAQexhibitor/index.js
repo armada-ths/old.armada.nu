@@ -3,10 +3,10 @@ import FAQContainer from '../../components/FAQ'
 
 import './index.scss'
 
-const FAQPage = () => {
+const FAQExhibitor = () => {
 
-  return <FAQContainer type='students' />
+  return <FAQContainer type='exhibitor' />
 
 }
 
-export default FAQPage
+export default FAQExhibitor

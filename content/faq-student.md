@@ -1,7 +1,7 @@
 ---
-slug: /faq
+slug: /faq-student
 title: Student FAQ
-layout: FAQPage
+layout: FAQStudent
 description: Page
 menuPage: false
 studentSubpage: true

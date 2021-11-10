@@ -27,7 +27,7 @@ Based on your profile our exhibitors can also choose to reach out to you directl
 
 During the fair there will also be live presentations and other happenings on the platform. The best way to make sure not to miss anything is to follow us on [social media](https://www.instagram.com/thsarmada/), where we will post the schedule and make sure to remind you of all the fun. 
 
-<p>For more info on how to set up an account and attend the fair, see <a href='/faq'>FAQ</a>.
+<p>For more info on how to set up an account and attend the fair, see <a href='/faq-student'>FAQ</a>.
 And don’t forget to visit Armada in Nymble!</p>
 
 - - - 

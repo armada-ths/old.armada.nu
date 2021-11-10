@@ -295,29 +295,29 @@ const FAQContainer = (props) => {
         } else if (props.type === 'exhibitor') { 
             setQuestions(exhibitorQuestions) 
         }
-    }, [])
+    }, [questions, props.type])
 
     return(
         <div>
-                <img alt='' className='terre' src={FAQBackground}/>
-                <FAQHeader />
-                <p className='browse-header'>Browse by key topics:</p>
-                <div className='topics-container'>
-                    {questions.map((topic, i) => (
-                        <div key={i} className='topic-container' onClick={() => setFaq(topic)}>
-                            <p className='topic'>{topic.title}</p>
-                        </div>
-                    ))}
-                </div>
-                {faq && (
-                    <div className='accordion-homepage'>
-                        {faq.body.map((faq, i) => {
-                            return(
-                                <FAQQuestion key={i} question={faq.question} answer={faq.displayAnswer ? faq.displayAnswer : faq.answer}/>
-                            );
-                        })}
+            <img alt='' className='terre' src={FAQBackground}/>
+            <FAQHeader />
+            <p className='browse-header'>Browse by key topics:</p>
+            <div className='topics-container'>
+                {questions && questions.map((topic, i) => (
+                    <div key={i} className='topic-container' onClick={() => setFaq(topic)} onKeyDown={() => setFaq(topic)} role='none'>
+                        <p className='topic'>{topic.title}</p>
                     </div>
-                )}
+                ))}
+            </div>
+            {faq && (
+                <div className='accordion-homepage'>
+                    {faq.body.map((faq, i) => {
+                        return(
+                            <FAQQuestion key={i} question={faq.question} answer={faq.displayAnswer ? faq.displayAnswer : faq.answer}/>
+                        );
+                    })}
+                </div>
+            )}
         </div>
     )
 }

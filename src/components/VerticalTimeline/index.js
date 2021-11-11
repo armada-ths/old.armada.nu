@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './index.scss'
 import { Timeline, TimelineEvent } from '@mailtop/horizontal-timeline'
-import { FaBug, FaRegCalendarCheck, FaRegFileAlt, FaFlagCheckered } from 'react-icons/fa'
+import { FaRegCalendarCheck, FaRegFileAlt, FaFlagCheckered } from 'react-icons/fa'
 import ReactMarkdown from 'react-markdown'
 
 
@@ -11,8 +11,8 @@ const VerticalTimeline = () => {
     const before = `* Create your account at event.armada.nu
     \n* Choose not all of your work experience, take the latest one and then the best ones. Maximum 4 employments.
     \n* Have a profile pic where you look like you. Newly taken, dressed as how you would be at an interview.\n\n
-    \n* Take the time and write an introduction.Tips on what to include:
-    * work related interest, in which areas you see yourself working in, why you chose to study what you do.\n\n
+    \n* Take the time and write an introduction. Tips on what to include:
+    * Work related interest, in which areas you see yourself working in, why you chose to study what you do.\n\n
     * Add tags. The tags are key to the mapping. Both mapping for companies and jobs. Remember, add similar tags, the companies can have added a different, similar tag, to their interest and jobs.\n\n 
     \n* Browse for companies. On the 9th of November you will be able to start browsing the companies.\n Do your research beforehand. What companies would you like to talk to? Make sure to follow them. 
     \n* Add to your day-planner
@@ -52,39 +52,45 @@ const VerticalTimeline = () => {
     * What were you impressed by? 
     * Any interesting companies to keep track of? 
     * Should I make any changes in my studies? Recommended courses etc`
- 
+  const [beforeColor,bCol]=useState("#00d790")
+  const [duringColor,dCol]=useState("gray")
+  const [afterColor,aCol]=useState("gray")
+
     return (
         <div className="containerTime">
         <div className="VerticalTimeline">
     
   <Timeline className="VerTime" minEvents={3} placeholder variant="">
-  <TimelineEvent
+  <TimelineEvent className="before"
+    color={beforeColor}
     icon={FaRegFileAlt}
     title='Before'
     subtitle=''
     action={{
         label: 'Before',
-        onClick: () => setShowText("before")
+        onClick: () => {setShowText("before");bCol("#00d790");dCol("gray");aCol("gray"); }
       }}
   />
   <TimelineEvent
-    color='#00d790'
+  className="during"
+  color={duringColor}
     icon={FaRegCalendarCheck}
     title='During'
     subtitle=''
     action={{
         label: 'During',
-        onClick: () => setShowText("during")
+        onClick: () => {setShowText("during");bCol("gray");dCol("#00d790");aCol("gray");}
       }}
   />
   <TimelineEvent 
-    color='#2d2d2c'
+className="after"
+color={afterColor}
     icon={FaFlagCheckered}
     title='After'
     subtitle=''
     action={{
       label: 'After',
-      onClick: () => setShowText("after")
+      onClick: () => {setShowText("after");bCol("gray");dCol("gray");aCol("#00d790");}
     }}
   />
 </Timeline>

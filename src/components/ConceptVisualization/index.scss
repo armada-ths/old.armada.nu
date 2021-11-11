@@ -14,12 +14,27 @@
     font-weight: 300;
 
  }
+
+ .card-text{
+    text-align: center;
+ }
+
  .containerButtons{
     padding-top: 3em;
     padding-bottom: 1em;
+    button{
+         margin-left: 2%;
+         margin-right: 2%;
+         margin-top: 2%;
+
+    }
  }
-
-
+ .containerButtons button{
+    background-color: gray;
+ }
+ .containerButtons button:focus{
+    background-color: $melon;
+ }
 @media screen and (max-width: $breakpoint-mobile-flipped) {
       
              

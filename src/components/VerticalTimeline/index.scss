@@ -14,24 +14,30 @@
  }
  .VerticalTimeline{
     text-align: center;
-    
+    color:gray;
  
  }
  .mobileVersion{
     display: none;
      }
      
-.BAD{
-    
-    }
+.VerticalTimeline button:focus{background-color:$melon!important;}
+
+
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-        .VerticalTimeline {
+   .mobileVersion button{background-color:gray!important;}
+   .mobileVersion button:focus{background-color:$melon!important;}
+   
+   .VerticalTimeline {
             display: none;
         }
         .mobileVersion{
             display: block;
             text-align: center;
             padding-bottom: 5%;
+            button{
+            margin-left: 2%;
+            margin-right: 2%; }
           
              }
              .containerTime {

@@ -1,0 +1,14 @@
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
+
+.registration-container {
+  padding: 3em 0em;
+  max-width: $page-width;
+  margin: auto;
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped){
+  .registration-container {
+    padding: 3em 1em;
+  }
+}

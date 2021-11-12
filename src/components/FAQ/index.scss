@@ -143,13 +143,26 @@
     justify-content: center;
 }
 
+@media screen and (max-width: $breakpoint-mobile) {
+	.topics-container {
+        flex-direction: column;
+        align-items: center;
+	}
+    .topic-container {
+        margin-bottom: 1em;
+        margin-left: 2em;
+    }
+    .topic-container:nth-child(5) {
+        margin-left: 0%;
+    }
+} 
+
 .topic-container {
     width: 200px;
     height: 150px;
     border: 1px solid #C7C7C7;
     box-sizing: border-box;
     border-radius: 2px;
-
     display: flex;
     justify-content: center;
     margin-right: 2em;

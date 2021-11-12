@@ -301,7 +301,7 @@ const FAQContainer = (props) => {
     }, [questions, props.type])
 
     return(
-        <div>
+        <>
             <img alt='' className='terre' src={FAQBackground}/>
             <FAQHeader />
             <p className='browse-header'>Browse by key topics:</p>
@@ -325,7 +325,7 @@ const FAQContainer = (props) => {
             <div style={{display: `${visibilityContactFrom}`, marginBottom: '2em'}}>
                 <EmailForm emailTo='a@armada.nu'/>
             </div>
-        </div>
+        </>
     )
 }
 

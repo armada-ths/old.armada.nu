@@ -12,3 +12,9 @@
 		padding: 3em 1em 0em 1em;
 	}
 }
+
+@media screen and (max-width: $breakpoint-pad) {
+	.faqpage-container {
+		padding: 3em 1em 0em 1em;
+	}
+}

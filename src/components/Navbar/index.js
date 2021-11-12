@@ -19,7 +19,7 @@ const Navbar = props => {
   const studentSubpages = props.pages.filter(page => page.studentSubpage)
   const companySubpages = props.pages.filter(page => page.companySubpage)
   const aboutSubpages = props.pages.filter(page => page.aboutSubpage)
-  const dropdownParent = !onMobile ? ['dropdownParent', 'hoverWeb'].join(" ")
+  const dropdownParent = !onMobile ? ['dropdownParent', 'dropdown', 'hoverWeb'].join(" ")
     : ['dropdownParent', 'dropdown'].join(" ")
 
   const [studentStyle, setStudentStyle] = useState('dropdown-content')

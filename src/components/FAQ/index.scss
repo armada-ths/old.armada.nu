@@ -157,6 +157,16 @@
     }
 } 
 
+@media screen and (max-width: $breakpoint-pad) {
+	.topics-container {
+        flex-wrap: wrap;
+        align-items: center;
+	}
+    .topic-container {
+        margin-bottom: 1em;
+    }
+}
+
 .topic-container {
     width: 200px;
     height: 150px;

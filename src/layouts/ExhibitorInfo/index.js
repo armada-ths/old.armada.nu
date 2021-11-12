@@ -2,7 +2,6 @@ import React from 'react'
 import TableOfContents from '../../components/TableOfContents'
 import './index.scss'
 import Page from '../../templates/page'
-import FAQExhibitors from '../../components/FAQExhibitors'
 
 const ExhibitorInfo = props => {
   return (
@@ -13,7 +12,6 @@ const ExhibitorInfo = props => {
         <div className='page-container'>
           <Page {...props} />
         </div>
-        <FAQExhibitors />
       </div>
     </div>
   )

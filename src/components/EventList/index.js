@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
 import './index.scss';
 import Modal from '../Modal';
+import ModalWindow from "../ModalWindow";
 
 const urlPropsQueryConfig = {
   eventId: { type: UrlQueryParamTypes.number, queryParam: 'eventId' },
@@ -12,6 +13,9 @@ const urlPropsQueryConfig = {
 const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
   'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
+
+// TODO: gör en ny komponent som är modalen, men att det blir events/companyname
+// dvs - skapa en ny gatbsy-sida (md-fil) som renderar <modal></modal> (fast som sida) och har  url/blabal
 
 class EventList extends React.Component {
   constructor(props) {
@@ -57,7 +61,7 @@ class EventList extends React.Component {
     let endhours = eventdate_end.getHours();
 
     return (
-      <Modal onClose={() => this.showModal(null)}>
+      <ModalWindow onClose={() => this.showModal(null)}>
         <div>
           <div className='modalimage-event'>
             <img alt='' className='event-picture' src={event.image_url} />
@@ -67,9 +71,9 @@ class EventList extends React.Component {
             <div className='modalbutton'>
               {eventdate > today ? (
                 <a href={event.signup_link}>
-                  <button className='rsvpbutton'>
+                  <button tabIndex="0" className='rsvpbutton'>
                     {/* <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span> */}
-                    <span>Sign up!</span>
+                    <span>Sign up! 1</span>
                   </button>
                 </a>) : (
                   <a href={event.signup_link}>
@@ -102,7 +106,7 @@ class EventList extends React.Component {
               <a href={event.signup_link}>
                 <button className='rsvpbutton'>
                   {/* <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span> */}
-                  <span>Sign up!</span>
+                  <span>Sign up! 2 </span>
                 </button>
               </a>) : (
                 <a href={event.signup_link}>
@@ -111,7 +115,7 @@ class EventList extends React.Component {
                   </button></a>)}
           </div>
         </div>
-      </Modal>
+      </ModalWindow>
     );
   }
 
@@ -144,12 +148,13 @@ class EventList extends React.Component {
               <img alt='time' className='icon' src='/assets/time.png' />
               <p className='time' > {hours + ':' + minutes.substr(-2)}</p>
             </div>
-            <div className='modalbutton'>
+            <div tabIndex="0" className='modalbutton'>
               {eventdate > today ? (
                 <button className='rsvpbutton'>
                   {/* <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span> */}
-                  <span>Sign up!</span>
+                  <span>Sign up! 3</span>
                 </button>
+
               ) : (
                   <button className='rsvpclosed'>
                     VIEW TICKET - SIGNUP CLOSED
@@ -162,7 +167,6 @@ class EventList extends React.Component {
     );
   }
 
-
   render() {
     let today = new Date();
     let comingEvents = this.state.events.filter(event => event.event_start * 1000 > today);
@@ -170,11 +174,12 @@ class EventList extends React.Component {
     // get the event to display. Don't know behaviour when this.state.eventId = undefined
     let eventToDisplay = this.state.events.filter(event => event.id === this.state.eventId)[0];
 
-    return (
 
+    // TODO aria-hidden="true" when showmodal is true
+    return (
       <div className='events'>
         {this.state.showModal ? (this.displayEvent(eventToDisplay)) : null}
-        <div className='events-feed'>
+        <div aria-hidden={this.state.showModal ? true : false} className='events-feed'>
           <div className='comingEvents'>
             <h2> Upcoming Events </h2>
             {comingEvents.length > 0 ? (comingEvents.map(this.getEventItem)) : (<p>Stay tuned!</p>)}
@@ -187,9 +192,7 @@ class EventList extends React.Component {
             </div>
           </div>
           <div className='thickline'><hr /></div>
-
         </div>
-
       </div>
     )
   }

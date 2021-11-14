@@ -47,17 +47,17 @@ If you need further help we recommend looking at these documents from Graduatela
 <div class="info-border-box">
 <h2>Important Dates</h2>
 
-**Initial registration** - 19th of April - 28th of May
+**Initial Registration** - 19th of April - 28th of May
 
-**Final registration** - 23rd of August - 17th of September
+**Final Registration** - 23rd of August - 17th of September
 
-**Event weeks** - 1-19th of November
+**Event Weeks** - 1-19th of November
 
-**Finalized your Graduateland booth** - 9th of november
+**Finalized your Graduateland booth** - 9th of November
 
-**The fair** - 23rd-24th of November
+**The Fair** - 23rd-24th of November
 
-**Grand banquet** - 23rd of November
+**Grand Banquet** - 23rd of November
 
 </div>
 

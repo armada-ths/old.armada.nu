@@ -8,7 +8,8 @@ import './page.scss'
 import Homepage from '../layouts/Homepage'
 import RecruitmentPage from '../layouts/RecruitmentPage'
 import SustainabilityPage from '../layouts/SustainabilityPage'
-import FAQPage from '../layouts/FAQpage'
+import FAQStudent from '../layouts/FAQstudent'
+import FAQExhibitor from '../layouts/FAQexhibitor'
 import ContactPage from '../layouts/ContactPage'
 import AboutPage from '../layouts/AboutPage'
 import DiversityPage from '../layouts/DiversityPage'
@@ -33,7 +34,8 @@ const components = {
   VirtualFairSuccess: VirtualFairSuccess,
   SustainabilityPage: SustainabilityPage,
   DiversityPage: DiversityPage,
-  FAQPage: FAQPage,
+  FAQStudent: FAQStudent,
+  FAQExhibitor: FAQExhibitor,
   Homepage: Homepage,
   ExhibitorInfo: ExhibitorInfo,
   AboutPage: AboutPage,

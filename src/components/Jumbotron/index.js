@@ -33,6 +33,7 @@ const Jumbotron = (props) => {
         <div className={`logo-container ${video ? 'fixed' : ''}`}>
                 <img alt='' src={prideWeek? prideLogo : Logo} />
                 <p className='logo-date'>THE FAIR <wbr/> 23&#8209;24 NOV 2021</p>
+                <p><a alt="Virtual Fair 2021" href="https://event.armada.nu/">{onMobile? 'VIRTUAL FAIR' : 'VISIT THE VIRTUAL FAIR'}</a></p>
                 {video ? <Countdown/> : <></>}
         </div>
         <div className={video ? 'header-home' : 'header-image'}>

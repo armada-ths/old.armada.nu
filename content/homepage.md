@@ -16,7 +16,13 @@ So no matter if you are happy and healthy and back to normal in Stockholm, explo
 
 We look forward to seeing you at the fair the 23-24 of November. 
 
-**Opening hours Graduate Land:**
+<div style="text-align:center; margin-bottom: 1em;">
+<button>
+    <a href='https://event.armada.nu/'>Go to Virtual Fair</a>
+</button>
+</div>
+
+**Opening hours Graduateland:**
 
 **23rd of November** 10:00-16:00
 

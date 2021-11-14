@@ -3,11 +3,11 @@ import './index.scss'
 import { Timeline, TimelineEvent } from '@mailtop/horizontal-timeline'
 import { FaRegCalendarCheck, FaRegFileAlt, FaFlagCheckered } from 'react-icons/fa'
 import ReactMarkdown from 'react-markdown'
-
+import MyCssBaseline from "./MyCssBaseline";
 
 const VerticalTimeline = () => {
 
-    const [showText, setShowText] = useState("before")
+ 
     const before = `* Create your account at event.armada.nu
     \n* Choose not all of your work experience, take the latest one and then the best ones. Maximum 4 employments.
     \n* Have a profile pic where you look like you. Newly taken, dressed as how you would be at an interview.\n\n
@@ -52,15 +52,18 @@ const VerticalTimeline = () => {
     * What were you impressed by? 
     * Any interesting companies to keep track of? 
     * Should I make any changes in my studies? Recommended courses etc`
+  const [showText, setShowText] = useState("before")
   const [beforeColor,bCol]=useState("#00d790")
   const [duringColor,dCol]=useState("gray")
   const [afterColor,aCol]=useState("gray")
-
+  const [befBut,setBefBut] = useState("active")
+  const [durBut,setDurBut] = useState("nactive")
+  const [aftBut,setAftBut] = useState("nactive")
     return (
         <div className="containerTime">
         <div className="VerticalTimeline">
-    
-  <Timeline className="VerTime" minEvents={3} placeholder variant="">
+  <MyCssBaseline/>
+  <Timeline className="VerTime" minEvents={3} variant="">
   <TimelineEvent className="before"
     color={beforeColor}
     icon={FaRegFileAlt}
@@ -98,18 +101,33 @@ color={afterColor}
 
         </div>
 <div className="mobileVersion">
-    <button onClick={() => setShowText("before")}>Before</button>
-    <button onClick={() => setShowText("during")}>During</button>
-    <button onClick={() => setShowText("after")}>After</button>
+    <button className={befBut} onClick={() =>{
+      setShowText("before");
+      setBefBut("active");
+      setDurBut("nactive");
+      setAftBut("nactive");
+  } }>Before</button>
+    <button className={durBut} onClick={() => {
+      setShowText("during");
+      setBefBut("nactive");
+      setDurBut("active");
+      setAftBut("nactive");
+  }}>During</button>
+    <button className={aftBut} onClick={() => {
+      setShowText("after");
+      setBefBut("nactive");
+      setDurBut("nactive");
+      setAftBut("active");
+  }}>After</button>
 </div>
 {showText==="before" && 
-<ReactMarkdown  className="BAD" children={before} ></ReactMarkdown>
+<ReactMarkdown  className="butBef" children={before} ></ReactMarkdown>
 }
 {showText==="during" && 
-<ReactMarkdown  className="BAD" children={during} ></ReactMarkdown>
+<ReactMarkdown  className="butDur" children={during} ></ReactMarkdown>
 }
 {showText==="after" && 
-<ReactMarkdown  className="BAD" children={after} ></ReactMarkdown>
+<ReactMarkdown  className="butAft" children={after} ></ReactMarkdown>
 }
         </div>
     )

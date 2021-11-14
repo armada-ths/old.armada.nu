@@ -12,6 +12,7 @@
     font-family: "Lato", sans-serif; 
     line-height: 1.5;
     font-weight: 300;
+    
 
  }
 
@@ -29,12 +30,12 @@
 
     }
  }
- .containerButtons button{
-    background-color: gray;
- }
- .containerButtons button:focus{
-    background-color: $melon;
- }
+.active{
+   background-color: $melon;
+}
+.nactive{
+   background-color: gray;
+}
 @media screen and (max-width: $breakpoint-mobile-flipped) {
       
              

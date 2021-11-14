@@ -4,7 +4,12 @@ import ReactMarkdown from 'react-markdown'
 
 
 const Conceptvisualization = () => {
-  const [showText, setShowText]=useState("none")
+  const [showText, setShowText]=useState("Live")
+  const [livBut, setLive] = useState("active")
+  const [vidBut, setVid] = useState("nactive")
+  const [broBut, setBro] = useState("nactive")
+  const [chatBut, setChat] = useState("nactive")
+  const [dayBut, setDay] = useState("nactive")
   const live = `Some companies will have live presentations during the fair. They will be hosted at graduateland and the companies will be streamed online.`
   const video = `You need to apply and then get it confirmed. You can also be referred to another time in case a lot of other students applied for the same time but the company is still very interested in talking to you. Can be found in the company booth. The function are meant for shorter conversations `
   const broken = `The virtual way of eavesdropping. Companies have decided in advance how long and what their breakout rooms will consist of. Join in a more passive way, The virtual call will consist of several students at the same time. You will al be able to listen to what everyone says, students including company representatives. `
@@ -16,12 +21,52 @@ const Conceptvisualization = () => {
 
    <div className="containerButtons">
  
-  <button onClick={()=>setShowText("Live")}>Live Presentation</button>
-  <button onClick={()=>setShowText("Video")}>Video Conversation</button>
-  <button onClick={()=>setShowText("Break")}>Break out rooms</button>
+  <button className={livBut} onClick={()=>{
+    setShowText("Live");
+    setLive("active");
+    setVid("nactive");
+    setBro("nactive");
+    setChat("nactive");
+    setDay("nactive")
 
-  <button onClick={()=>setShowText("Day-planner")}>Day-planner</button>
-  <button onClick={()=>setShowText("Chat")}>Chat</button>
+}}>Live Presentation</button>
+  <button className={vidBut} onClick={()=>{
+    setShowText("Video");
+    setLive("nactive");
+    setVid("active");
+    setBro("nactive");
+    setChat("nactive");
+    setDay("nactive")
+
+}}>Video Conversation</button>
+  <button className={broBut} onClick={()=>{
+    setShowText("Break");
+    setLive("nactive");
+    setVid("nactive");
+    setBro("active");
+    setChat("nactive");
+    setDay("nactive")
+
+}}>Break out rooms</button>
+
+  <button className={chatBut}  onClick={()=>{
+    setShowText("Day-planner");
+    setLive("nactive");
+    setVid("nactive");
+    setBro("nactive");
+    setChat("active");
+    setDay("nactive")
+
+}}>Day-planner</button>
+  <button className={dayBut} onClick={()=>{
+    setShowText("Chat");
+    setLive("nactive");
+    setVid("nactive");
+    setBro("nactive");
+    setChat("nactive");
+    setDay("active")
+
+}}>Chat</button>
   </div> 
   <div className="containerText">
   {showText==="Live" && 

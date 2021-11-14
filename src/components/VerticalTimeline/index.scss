@@ -12,6 +12,10 @@
     line-height: 1.5;
     font-weight: 300;
  }
+.VerTime{
+   font-size: 200px;
+   color: green;
+}
  .VerticalTimeline{
     text-align: center;
     color:gray;
@@ -20,14 +24,16 @@
  .mobileVersion{
     display: none;
      }
-     
-.VerticalTimeline button:focus{background-color:$melon!important;}
 
+.active{
+   background-color: $melon!important;
+}  
+.nactive{
+   background-color: gray!important;
+}  
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-   .mobileVersion button{background-color:gray!important;}
-   .mobileVersion button:focus{background-color:$melon!important;}
-   
+  
    .VerticalTimeline {
             display: none;
         }

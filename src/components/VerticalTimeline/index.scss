@@ -25,11 +25,11 @@
     display: none;
      }
 
-.active{
-   background-color: $melon!important;
+.act{
+   background-color: $melon;
 }  
-.nactive{
-   background-color: gray!important;
+.nact{
+   background-color: gray;
 }  
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {

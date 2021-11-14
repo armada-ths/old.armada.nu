@@ -56,9 +56,9 @@ const VerticalTimeline = () => {
   const [beforeColor,bCol]=useState("#00d790")
   const [duringColor,dCol]=useState("gray")
   const [afterColor,aCol]=useState("gray")
-  const [befBut,setBefBut] = useState("active")
-  const [durBut,setDurBut] = useState("nactive")
-  const [aftBut,setAftBut] = useState("nactive")
+  const [befBut,setBefBut] = useState("act")
+  const [durBut,setDurBut] = useState("nact")
+  const [aftBut,setAftBut] = useState("nact")
     return (
         <div className="containerTime">
         <div className="VerticalTimeline">
@@ -103,21 +103,21 @@ color={afterColor}
 <div className="mobileVersion">
     <button className={befBut} onClick={() =>{
       setShowText("before");
-      setBefBut("active");
-      setDurBut("nactive");
-      setAftBut("nactive");
+      setBefBut("acct");
+      setDurBut("nact");
+      setAftBut("nact");
   } }>Before</button>
     <button className={durBut} onClick={() => {
       setShowText("during");
-      setBefBut("nactive");
-      setDurBut("active");
-      setAftBut("nactive");
+      setBefBut("nact");
+      setDurBut("act");
+      setAftBut("nact");
   }}>During</button>
     <button className={aftBut} onClick={() => {
       setShowText("after");
-      setBefBut("nactive");
-      setDurBut("nactive");
-      setAftBut("active");
+      setBefBut("nact");
+      setDurBut("nact");
+      setAftBut("act");
   }}>After</button>
 </div>
 {showText==="before" && 

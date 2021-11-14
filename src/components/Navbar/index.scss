@@ -28,6 +28,13 @@
     }
 
     .menu {
+      display: flex;
+      justify-content: space-between;
+
+      .left {
+        text-align: left;
+        text-transform: uppercase;
+      }
 
       a {
         display: inline-block;
@@ -50,7 +57,6 @@
       }
 
         .dropdownParent {
-        display: inline-block;
         text-decoration: none;
         transition: color 0.4s;
         color: $text-color-light;
@@ -66,6 +72,9 @@
       } 
 
       .hoverWeb {
+        position: relative;
+        display: inline-block;
+
         &:hover {
         color: $melon !important;
         cursor: pointer;
@@ -171,9 +180,8 @@
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
 }
-
 
 .dropdown-content {
   display: none;

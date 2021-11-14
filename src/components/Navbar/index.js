@@ -227,13 +227,18 @@ const Navbar = props => {
             />
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
-            <Link onClick={toggleExpanded} activeClassName='active' to='/' >
-              {onMobile ? <span>Home</span> : 'Home'}
-            </Link>
-            {companyMenu}
-            {studentMenu}
-            {links}
-            {aboutMenu}
+            <span>
+            <a className='left' alt="Virtual Fair 2021" href="https://event.armada.nu/">Virtual Fair</a>
+            </span>
+            <div>
+              <Link onClick={toggleExpanded} activeClassName='active' to='/' >
+                {onMobile ? <span>Home</span> : 'Home'}
+              </Link>
+              {companyMenu}
+              {studentMenu}
+              {links}
+              {aboutMenu}
+            </div>
           </div>
         </nav>
         {!onMobile && (

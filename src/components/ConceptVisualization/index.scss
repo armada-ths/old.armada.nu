@@ -1,0 +1,46 @@
+@import "../../styles/global";
+@import "../../styles/_variables";
+
+.containerConcept {
+    padding-top: 3em;
+    max-width: $page-width;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 5%;
+    color: #2d2d2c;
+    font-size:$body-font-size ;
+    font-family: "Lato", sans-serif; 
+    line-height: 1.5;
+    font-weight: 300;
+    
+
+ }
+
+ .card-text{
+    text-align: center;
+ }
+
+ .containerButtons{
+    padding-top: 3em;
+    padding-bottom: 1em;
+    button{
+         margin-left: 2%;
+         margin-right: 2%;
+         margin-top: 2%;
+
+    }
+ }
+.act{
+   background-color: $melon;
+}
+.nact{
+   background-color: gray;
+}
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+      
+             
+             .containerConcept {
+                padding: 3em 1em 0em 1em;
+             }
+    }
+    

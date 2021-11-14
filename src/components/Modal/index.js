@@ -11,7 +11,7 @@ const Modal = ({ onClose, ...rest }) => (
       </div>
     </div>
     <ReactPageClick notify={() => { return }}>
-      <div className='popup' style={{ border: "5px solid purple" }}>
+      <div className='popup'>
         <div className='modalcontent' {...rest} />
       </div>
     </ReactPageClick>

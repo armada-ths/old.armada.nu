@@ -119,9 +119,26 @@
     font-size: 15px;
     width: 100%;
     transition: all 0.5s;
+    cursor: pointer;
+
+  }
+
+.rsvpbutton-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: $melon;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    width: 100%;
+    transition: all 0.5s;
     max-height: 2rem;
     cursor: pointer;
-    }
+  }
+
     .rsvpbutton span{
       cursor: pointer;
       display: inline-block;

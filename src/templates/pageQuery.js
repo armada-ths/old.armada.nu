@@ -28,6 +28,7 @@ import KnightecPage from '../layouts/KnightecPage'
 import CompetitionPage from '../layouts/CompetitionPage'
 import Banquet from '../layouts/Banquet'
 import VirtualFairSuccess from '../layouts/VirtualFairSuccess'
+import RegistrationPage from '../layouts/RegistrationPage'
 
 const components = {
   RecruitmentPage: RecruitmentPage,
@@ -53,6 +54,7 @@ const components = {
   KnightecPage: KnightecPage,
   CompetitionPage: CompetitionPage,
   Banquet: Banquet,
+  RegistrationPage: RegistrationPage,
 };
 
 export default function Template({

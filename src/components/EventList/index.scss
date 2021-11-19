@@ -20,8 +20,8 @@
     padding: 2em;
     cursor: pointer;
     cursor: hand;
-    background-color: #2d2d2d;
-    color: #00d790;
+    background-color: $licorice;
+    color: $melon;
     border-radius: 10px;
     padding: 20px 20px;
     margin-top: 20px;
@@ -114,7 +114,7 @@
     border-radius: 4px;
     background-color: $melon;
     border: none;
-    color: #FFFFFF;
+    color: white;
     text-align: center;
     font-size: 15px;
     width: 100%;
@@ -130,7 +130,7 @@
     border-radius: 4px;
     background-color: $melon;
     border: none;
-    color: #FFFFFF;
+    color: white;
     text-align: center;
     font-size: 15px;
     width: 100%;

@@ -139,7 +139,7 @@ class EventList extends React.Component {
               <img alt='time' className='icon' src='/assets/time.png' />
               <p className='time' > {hours + ':' + minutes.substr(-2)}</p>
             </div>
-            <div tabIndex="0" className='modalbutton'>
+            <div className='modalbutton'>
               {eventdate > today ? (
                 <button className='rsvpbutton-small'>
                   {/* <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span> */}

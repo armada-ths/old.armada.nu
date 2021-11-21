@@ -1,52 +1,40 @@
 @import "../../styles/global";
 @import "../../styles/_variables";
 
-.competition-container {
-	padding-top: 3em;
-  	max-width: $page-width;
+.competition-container{
+	padding: 3em 0em;
+	max-width: $page-width;
 	margin: auto;
+  
+	.competition-page-container {
+	  h3, h4 {
+		text-align: left;
+		font-weight: 500;
+		color: $grape;
+	  }
+	  h1, a {
+		color: $grape;
+	  }
 
-	h1, h2, h3, h4, a {
+	}
+	#information-for-exhibitors{
 		color: $grape;
 	}
+  }
 
-	h1 {
-		margin-bottom: 0.2em;
-	}
+  .competition-logo {
+	display: flex;
+	justify-content: center;
 
-	h2 {
-		font-weight: 200;
-		text-align: left;
-	}
-
-	.competition-logo {
-		display: flex;
-		justify-content: center;
-
-		img {
-			width: 150px;
-			max-height: 200px;
-		}
-	}
-
-	.armada-competition-code {
-		font-size: 10pt;
-	}
-
-	.info-border-box {
-		border: 2px solid $grape;
+	img {
+		width: 150px;
+		max-height: 200px;
 	}
 }
-
-@media screen and (max-width: $breakpoint-mobile-flipped) {
-	.competition-container {
-		padding: 1em 1em 0em 1em;
+  
+  @media screen and (max-width: $breakpoint-mobile-flipped) {
+	.info-container {
+	  padding: 3em 1em;
 	}
+  }
 
-	.armada-competition-code {
-		max-width: 300px;
-		max-width: calc(100vw - 4em);
-		overflow: auto;
-	}
-
-}

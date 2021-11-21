@@ -5,9 +5,17 @@
   padding: 3em 0em;
   max-width: $page-width;
   margin: auto;
+
+  .registration-page-container {
+    h3,
+    h4 {
+      text-align: left;
+      font-weight: 500;
+    }
+  }
 }
 
-@media screen and (max-width: $breakpoint-mobile-flipped){
+@media screen and (max-width: $breakpoint-mobile-flipped) {
   .registration-container {
     padding: 3em 1em;
   }

@@ -26,7 +26,7 @@ Filip Ryden, Head of Logistics & Fair is the inventor and responsible for the Ar
 
 <br />
 
-# Tickets
+## Tickets
 
 <br />
 
@@ -76,7 +76,7 @@ How to prizes are given out depends in the prize and will be decided together wi
 
 <br />
 
-# Prices
+## Prices
 
 <br />
 

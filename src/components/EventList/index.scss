@@ -7,29 +7,36 @@
   margin: auto;
 }
 .events-feed {
-  max-width: 100%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2em;
+  padding: 0.5em;
 }
 .event-item {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     padding: 2em;
     cursor: pointer;
     cursor: hand;
+    background-color: $licorice;
+    color: $melon;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin-top: 20px;
   }
 .event-item .image-section{
-  width: 40%;
+  width: 50%;
+  padding-right: 1rem;
   }
 .event-item .details-section{
-   width: 60%;
-   padding-left: 1em;
+   width: 50%;
+   color: white;
   }
 .event-item .details-section .event-name{
     text-align: left;
-    padding: 0.1em 0em 0.1em 0em;
+    padding: 0.2em 0em 0.2em 0em;
   }
 .event-item .details-section .description {
   text-align: left;
@@ -50,16 +57,16 @@
     text-align: left;
     align-self: center;
     line-height: 1em;
-    font-weight: bold;
+    color: white;
   }
 .event-item:hover {
   cursor: pointer;
   cursor: hand;
   .event-name {
     text-decoration: underline;
-
   }
 }
+
 .comingEvents{
   cursor: pointer;
   h2{
@@ -73,7 +80,7 @@
 .comingEvents p{
   text-align: center;
   padding: 1em;
-  opacity: .5;
+  //opacity: .5;
   filter: alpha(opacity=50);
 }
 .thickline{
@@ -100,22 +107,38 @@
   }
 }
 .modalbutton{
-  text-align: center;
-  padding-bottom: 1em;
   .rsvpbutton{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 4px;
     background-color: $melon;
     border: none;
-    color: #FFFFFF;
+    color: white;
     text-align: center;
     font-size: 15px;
-    padding: 20px;
-    width: 250px;
+    width: 100%;
     transition: all 0.5s;
-    margin: 5px;
     cursor: pointer;
-    }
+
+  }
+
+.rsvpbutton-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: $melon;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    width: 100%;
+    transition: all 0.5s;
+    max-height: 2rem;
+    cursor: pointer;
+  }
+
     .rsvpbutton span{
       cursor: pointer;
       display: inline-block;
@@ -190,7 +213,8 @@
     margin: auto;
   }
   .modalbutton .rsvpbutton{
-    padding: 1em;
     width: 15em;
   }
 }
+
+

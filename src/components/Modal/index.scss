@@ -111,7 +111,7 @@
   }
 
   .modalinfo{
-    padding: 1em 10px;
+    padding: 2em 0em 2em 0em;
   }
   .modal-property{
     display: flex;
@@ -157,9 +157,10 @@
 
   .modal-property-event{
     display: flex;
-    flex-direction: column;
-    padding: 1em 0em 1em 10em;
+    // flex-direction: column;
+    padding: 1em 0em 2em 0em;
     align-self: center;
+    justify-content: center;
   }
   .modal-property-event .icon{
     width: 25px;
@@ -170,6 +171,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+    padding-right: 10px;
     //margin: 0.15em 0em;
   }
   .modal-property-event p{
@@ -268,10 +270,11 @@ a:hover {
     }
   }
   .modalcontent {
-  
+    
     .modal-container {
       display: block;
       height: auto;
+      
     }
     .modal-flex-1 {
       position: relative;

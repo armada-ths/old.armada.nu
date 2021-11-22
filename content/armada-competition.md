@@ -29,7 +29,7 @@ Filip Ryden, Head of Logistics & Fair is the inventor and responsible for the Ar
 
 ## What gives tickets?
 
-There are a lot of different ways to earn tickets to Armada Competition. The bulk of the tickets are earned by being active at the fair. For a full breakdown of how the tickets are earned look at this [document](/assets/tickets.pdf). On Graduateland a participant will earn points by:
+There are a lot of different ways to earn tickets to Armada Competition. The bulk of the tickets are earned by being active at the fair. For a full breakdown of how the tickets are earned look at this [document](/assets/competition/tickets.pdf). On Graduateland a participant will earn points by:
 
 * Filling out their profile
 * Chatting with exhibitors
@@ -39,7 +39,7 @@ There are a lot of different ways to earn tickets to Armada Competition. The bul
 
 The fair also has a physical part hosted in Nymble. Inside Nymble participants of the fair can earn tickets by competing in the multitude of games available. 
 
-Outside of the fair days a participant can also earn tickets by attending events hosted by Armada. A participant signs up to an event by going to armada.nu and registering. Tickets are only awarded to a participant if they show up at the event. Different events award different amounts of tickets. During the event weeks there are also going to be days dedicated to Armada’s core values, Sustainability and Diversity. During these special days there will be multiple opportunities for a participant to earn tickets.
+Outside of the fair days a participant can also earn tickets by attending events hosted by Armada. A participant signs up to an event by going to armada.nu and registering. Tickets are only awarded to a participant if they show up at the event. During the event weeks there are also going to be days dedicated to Armada’s core values, Sustainability and Diversity. During these special days there will be multiple opportunities for a participant to earn tickets.
 
 ## Personal data
 
@@ -58,11 +58,11 @@ Information given in google forms and applications are handled by THS Armada and
 
 ## Raffle
 
-After the fair is over all tickets from all the different activities are calculated and combined with the information given by Graduateland. The raffle is done digitally with the Mersenne Twister Pseudorandom number generator. Code can be found [here](#). A participant can only win one time. After a participant has won, their tickets are removed from the raffle meaning they can’t win again. The prizes are raffled out starting from the highest monetary values going down to the lowest monetary values as determined by THS Armada. The first winner gets the first prize, the second winner gets the second prize and so on until no more prizes remain. 
+After the fair is over all tickets from all the different activities are calculated and combined with the information given by Graduateland. The raffle is done digitally with the Mersenne Twister Pseudorandom number generator. Pseudocode can be found [here](/assets/competition/Pseudocode_Armada_Competition.pdf). A participant can only win one time. After a participant has won, their tickets are removed from the raffle meaning they can’t win again. The prizes are raffled out starting from the highest monetary values going down to the lowest monetary values as determined by THS Armada. The first winner gets the first prize, the second winner gets the second prize and so on until no more prizes remain. 
 
 ## Announcement
 
-Winners will be drawn live on Armada’s facebook the 5th of December. All winners will be contacted by email and have 7 days to claim their prize per Armada’s instructions if nothing else is decided. If a winner fails to respond within 7 days Armada has the right to draw another winner. 
+Winners will be drawn live on Armada’s facebook in the middle of December (date to be announced). All winners will be contacted by email and have 7 days to claim their prize per Armada’s instructions if nothing else is decided. If a winner fails to respond within 7 days Armada has the right to draw another winner. 
 How to prizes are given out depends in the prize and will be decided together with the winner over email. 
 
 # Prices

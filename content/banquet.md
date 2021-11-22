@@ -1,5 +1,5 @@
 ---
-slug: /banquet
+slug: /banquet2020
 title: Banquet
 layout: Banquet
 description: Page

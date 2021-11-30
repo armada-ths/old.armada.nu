@@ -42,10 +42,10 @@ const studentQuestions = [
                 question: 'Does the Armada fair cost money to attend?', 
                 answer: 'No, it is completely free for everyone to visit! It will be even easier this year since you can attend from anywhere in the world.'},
             
-                //{question: 'I do not study at KTH, can I still attend?', answer: 'Yes of course! Everybody is welcome.'},
+            {question: 'I do not study at KTH, can I still attend?', answer: 'Yes of course! Everybody is welcome.'},
             //{question: 'How many exhibitors are coming to the Armada fair?', answer: 'The exhibitors are still joining the platform, but the entire exhibitors list can be found here.', displayAnswer: <span>The exhibitors are still joining the platform, but the entire exhibitors list can be found <a href='https://event.armada.nu/sv/virtual-event/3994'>here</a>.</span>},
-            //{question: 'What is the Green Room?', answer: 'A place at the fair where companies that actively work with sustainability-related questions get to stand.'},
-            //{question: 'What is the Diversity Room?', answer: 'A place at the fair where companies that actively work with diversity-related questions get to stand.'},
+            {question: 'What is the Green Room?', answer: 'A place at the fair where companies that actively work with sustainability-related questions get to stand.'},
+            {question: 'What is the Diversity Room?', answer: 'A place at the fair where companies that actively work with diversity-related questions get to stand.'},
             //{question: 'What is the Focus Room?', answer: 'The focus room will be found in Nya Matsalen in Nymble on the days of the fair. Here you will be able to workshop on Sustainability and Diversity as well as see which exhibitors are outstanding in the field.'},
            
             {
@@ -204,7 +204,7 @@ const exhibitorQuestions = [
                         Leading up to the fair Armada arranges event weeks where you have the chance to attend lunch lectures, case evenings and much more. Make sure to follow us on <a href="https://www.instagram.com/thsarmada/">social media</a> to not miss out</span>},
             {
                 question: 'When is this year\'s Armada fair?', 
-                answer: '23rd & 24th of November'
+                answer: '22rd & 23th of November'
             },
             {
                 question: 'Where is THS Armada?', 

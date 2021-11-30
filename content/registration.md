@@ -12,17 +12,12 @@ header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
 
-<div class="info-border-box">
-<h2>THS Armada 2021</h2>
-The fair 2021 is now full and we can therefor not accept new registations. Please contact the Project Manager at <a mailto="a@armada.nu">a@armada.nu</a> if you have further questions and fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCoX6eUL-6xfSmb0J-yTvh_eN28_rNDAnno_zK2XkS45-9Qg/viewform">this form</a> to make sure you will be contacted for the fair in 2022. </div>
+<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at [register.armada.nu](https://register.armada.nu).
+
+<a class="anchor" id="armada2021"></a> -->
+The fair 2021 is now full and we can therefor not accept new registations. Please contact the Project Manager at <a mailto="a@armada.nu">a@armada.nu</a> if you have further questions and fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCoX6eUL-6xfSmb0J-yTvh_eN28_rNDAnno_zK2XkS45-9Qg/viewform">this form</a> to make sure you will be contacted for the fair in 2022.
 
 <br />
-
-## Virtual THS Armada 2021
-
-The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at [register.armada.nu](https://register.armada.nu).
-
-<a class="anchor" id="armada2021"></a>
 
 ### What is THS Armada?
 
@@ -32,11 +27,15 @@ This year we will repeat the success from last year with a virtual fair to make 
 
 <a class="anchor" id="why-armada"></a>
 
+<br />
+
 ### Why THS Armada?
 
 THS Armada is a unique opportunity for exhibitors to market themselves to students at the biggest technical university in Sweden. First and foremost through our fair but Armada is so much more. We create opportunities outside of the fair for our exhibitors to engage with and recruit students through interactive events, customized events and a banquet dinner amongst other activities. Our vision is to allow every student to meet their dream employer and give companies the possibility to find their next star.
 
 Armada is an established event and this year will be the 40th Armada in a row. Students at KTH are constantly gazing into the future and we want to lead to bring them and your company together.
+
+<br />
 
 ## Registration
 
@@ -49,10 +48,13 @@ If you did not register your company during the Initial Registration, 19th of Ap
 </a>
 
 <form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2021.pdf">
+<br />
+<br />
 
 <button type="submit">Download Invitation</button>
 
 </form>
+<br />
 
 ## Core Values
 
@@ -60,11 +62,15 @@ We at THS Armada believe that our core values Sustainability and Diversity are c
 
 During the fair we will highlight companies that we believe share our core values. To learn more contact our [Head of Sustainability](mailto:saga.stugholm@armada.nu) or [Head of Diversity](mailto:anastasia.angeli@armada.nu).
 
+<br />
+
 ## Events
 
 Armada is more than a two day fair. If your company wants to host an event for KTH students, we are here to help. Why not present your company during a lecture, meet ambitious students during a case evening or mingle with your future employees at a relaxed AW?
 
 If you are interested in doing an event with us in 2022, fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSfCoX6eUL-6xfSmb0J-yTvh_eN28_rNDAnno_zK2XkS45-9Qg/viewform) and leave a comment about that you are interested in hosting an event. 
+
+<br />
 
 ### Event Weeks 2021
 THS Armada offers you a wide range of events to profile your organisation towards students who have a genuine interest in your company. You also have the opportunity to host your events on our themed days and focus days to engage and excite our students on those topics even more. The goal of Armada is to provide you with suitable talents for your organisation and to conduct events that give you and participants an unforgettable experience. The Event Weeks take place between the 1st of November 2021 and the 19th November 2021. 
@@ -74,6 +80,7 @@ THS Armada offers you a wide range of events to profile your organisation toward
 </a>
 
 <form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/invitation/ArmadaEvents2021.pdf">
+<br />
 <button type="submit">Download Event Catalog 2021</button>
 </form>
 
@@ -83,9 +90,13 @@ THS Armada offers you a wide range of events to profile your organisation toward
 
 Armada aspires to welcome your company to our Grand Banquet to celebrate the fair and to create a more relaxed environment to meet future employees. However, due to the current situation, it is yet undecided which form the banquet will take. The health and safety of our exhibitors and students is our main priority. We will be in touch with more information regarding the event and how you can proceed to purchase tickets for your company.
 
+<br />
+
 ## Marketing
 
 Let Armada help your company stand out and boost your employer brand. We offer many services for your company to reach the KTH students through our different social media. Market events or job offers through a post or share what a day at your office is like through an Instagram takeover. Reach out to our sales team to hear more about how your company can get seen by future employees.
+
+<br />
 
 ### Armada Competition
 

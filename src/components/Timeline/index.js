@@ -2,7 +2,7 @@ import React from "react"
 import "./timeline.scss"
 
 const images=[
-    {pmImage:"/assets/images/PG21/Josefine.jpg", fairImage:"/assets/thefair.jpg", banquetImage: "/assets/images/armada-banquet.jpg",
+    {pmImage:"/assets/images/PG21/Filip.jpg", fairImage:"/assets/thefair.jpg", banquetImage: "/assets/images/armada-banquet.jpg",
   pgImage:"/assets/images/projectgroup-armada.jpg", summerImage: "/assets/images/summer.jpg", arunImage: "/assets/images/armada_run.jpg", 
   writeImage: "/assets/images/write.jpg", kickOutImage: "/assets/images/kickOut.jpg", salesOpenImage: "/assets/images/salesOpen.jpg", 
   hostImage: "/assets/images/host.jpg", completeImage: "/assets/images/complete.jpg", kickOffImage: "/assets/images/kickOff.jpg", 

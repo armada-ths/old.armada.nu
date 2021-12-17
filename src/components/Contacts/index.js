@@ -5,7 +5,8 @@ import ContactCard from '../ContactCard'
 const Contacts = () => {
   
   const projectGroup = [
-    { name: 'Filip Rydén', title: 'Project Manager', email: 'a@armada.nu', emoji: '👨‍💼', imageUrl: '/assets/images/PG21/Filip.jpg', linkedInUrl: 'https://www.linkedin.com/in/filip-ryd%C3%A9n-a32b3717a/' },
+    { name: 'Filip Rydén', title: 'Project Manager 2022', email: 'a@armada.nu', emoji: '👨‍💼', imageUrl: '/assets/images/PG21/Filip.jpg', linkedInUrl: 'https://www.linkedin.com/in/filip-ryd%C3%A9n-a32b3717a/' },
+    { name: 'Josefine Havdelin', title: 'Project Manager 2021', email: 'a@armada.nu', emoji: '👩‍💼', imageUrl: '/assets/images/PG21/Josefine.jpg', linkedInUrl: 'https://www.linkedin.com/in/josefine-havdelin-9298a4b3/' }
     // { name: 'Sara Damne', title: 'Head of Marketing & Communication', email: 'sara.damne@armada.nu', emoji: '👩‍💻', imageUrl: '/assets/images/PG21/Sara.jpg', linkedInUrl: 'https://se.linkedin.com/in/sara-damne' },
     // { name: 'Barath Kumar', title: 'Head of HR', email: 'barath.kumar@armada.nu', emoji: '💞', imageUrl: '/assets/images/PG21/Barath.jpg', linkedInUrl: 'http://linkedin.com/in/barath-kumar-sathish-kumar-7a2b70124/' },
     // { name: 'Louise Hellberg', title: 'Art Director', email: 'louise.hellberg@armada.nu', emoji: '👨‍🎨', imageUrl: '/assets/images/PG21/Louise.jpg', linkedInUrl: 'https://www.linkedin.com/in/louise-hellberg/' },

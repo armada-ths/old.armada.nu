@@ -17,6 +17,13 @@ noJumbotron: false
 
 # Armada Competition 2021
 
+<div class="info-border-box">
+The information below applies to Armada 2021, but stay tuned for another edition in 2022. 
+
+The winners have been drawn and are contacted through email. To see the list of winners checkout our social medias <a href="https://www.instagram.com/thsarmada/">Instagram</a> and <a href="https://www.facebook.com/thsarmada">Facebook</a>. We hope you all enjoyed the fair. See you next year!
+</div>
+
+
 ## Short overview
 
 Armada Competition is a gamification of the THS Armada career fair. The goal of the competition is to attract more students to sign up to the fair, encourage students at the fair to be more active, and to get students to participate in other Armada related events. By being interactive at the fair and signing up for events etc. a student earns tickets. These tickets are then raffled out at the end of the fair where the winners get prizes from companies and Armada. The more tickets a student has accumulated the greater their odds are at winning a prize. After a student has won a prize they are no longer in the running for the other prizes. A participant is automatically in the running to win a prize when they have earned a minimum of 25 tickets.

@@ -12,7 +12,11 @@ header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
 
+<div class="info-border-box">
+The information below applies to Armada 2021, but stay tuned for another edition in 2022. 
 
+The winners have been drawn and are contacted through email. To see the list of winners checkout our social medias <a href="https://www.instagram.com/thsarmada/">Instagram</a> and <a href="https://www.facebook.com/thsarmada">Facebook</a>. We hope you all enjoyed the fair. See you next year!
+</div>
 
 ### Short overview
 

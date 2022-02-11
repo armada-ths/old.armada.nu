@@ -28,7 +28,7 @@
     "leaflet": "^1.6.0",
     "link-react": "^3.0.0",
     "netlify-cms-app": "^2.14.26",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-bootstrap": "^2.0.2",

@@ -30,7 +30,7 @@ const Recruitment = () => {
                             return (
                                 <div style={{...style, top: `0px`}}>
                                     <div className={'apply-section'}>
-                                        <a href={'https://ais.armada.nu/' + recruitmentLink}>
+                                        <a href={'https://ais.armada.nu' + recruitmentLink}>
                                             <button>APPLY HERE</button>
                                         </a>
                                     </div>

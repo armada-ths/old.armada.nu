@@ -43,11 +43,11 @@ If you registered your company during the Initial Registration you can now go to
 If you did not register your company during the Initial Registration, 19th of April - 28th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
 
 <a class="anchor" id="offical-invitation"></a>
-<a href="/assets/invitation/InvitationArmada2021.pdf">
-<img src='/assets/Invitation/Offical-invitation2021.png' alt="Offical Invitation" width="70%" style="margin-left:15%"/>
+<a href="/assets/invitation/InvitationArmada2022.pdf">
+<img src='/assets/Invitation/ProductCatalogue2022Png.png' alt="Offical Invitation" width="70%" style="margin-left:15%"/>
 </a>
 
-<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2021.pdf">
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2022.pdf">
 <br />
 <br />
 

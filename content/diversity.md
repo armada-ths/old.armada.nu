@@ -23,9 +23,6 @@ import FunFact from '../src/components/FunFact';
 <DiversitySection left>
 
    <p>THS Armada truly believes that the best teams are created on the basis of equality, diversity and most importantly inclusion. It makes sense that equal value and opportunities are fundamental to our work. By actively working with this core value, THS Armada aspires to encourage students and companies to make their workplace inclusive. Diversity is promotes and featured in different kinds of events and concepts, which you can explore below. Here you can find <a alt="Diversity Policy 2021" href="/assets/Diversity_Policy_2021.pdf">THS Armada’s Diversity policy</a>!</p>
-
-   If you want to test your knowledge on Diversity and Inclusion, take this quiz! It is also part of Armada Competition and will give you more chance to win the amazing prizes!
-   <TypeForm url="https://thsarmada1.typeform.com/to/wgE4pd7y">Diversity and Inclusion Quiz</TypeForm>
    
   <br/>
 
@@ -79,7 +76,7 @@ Diversity Day is another way to keep the discussion about equality going. The da
 
 ## HELP US BECOME MORE DIVERSE
 
-   Do you have any ideas or suggestions to help us work more inclusive? We would love to hear them! - Contact our Head of Diversity, Anastasia at [anastasia.angeli@armada.nu](mailto:anastasia.angeli@armada.nu)
+   Do you have any ideas or suggestions to help us work more inclusive? We would love to hear them! - Contact our Head of Diversity, Tor at [tor.shimamura.fagle@armada.nu](mailto:tor.shimamura.fagle@armada.nu)
 
    </DiversitySection>
 

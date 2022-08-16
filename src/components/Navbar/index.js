@@ -228,7 +228,7 @@ const Navbar = props => {
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
             <span>
-            <a className='left' alt="Virtual Fair 2021" href="https://event.armada.nu/">Virtual Fair</a>
+            {/*<a className='left' alt="Virtual Fair 2021" href="https://event.armada.nu/">Virtual Fair</a>*/}
             </span>
             <div>
               <Link onClick={toggleExpanded} activeClassName='active' to='/' >

@@ -11,11 +11,11 @@ priority: 2
 header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
-
-<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at [register.armada.nu](https://register.armada.nu).
+<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\[register.armada.nu](https://register.armada.nu).
 
 <a class="anchor" id="armada2021"></a> -->
-The fair 2021 is now full and we can therefor not accept new registations. Please contact the Project Manager at <a mailto="a@armada.nu">a@armada.nu</a> if you have further questions and fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCoX6eUL-6xfSmb0J-yTvh_eN28_rNDAnno_zK2XkS45-9Qg/viewform">this form</a> to make sure you will be contacted for the fair in 2022.
+
+The fair 2021 is now full and we can therefor not accept new registrations. Please contact the Project Manager at <a mailto="a@armada.nu">a@armada.nu</a> if you have further questions and fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCoX6eUL-6xfSmb0J-yTvh_eN28_rNDAnno_zK2XkS45-9Qg/viewform">this form</a> to make sure you will be contacted for the fair in 2022.
 
 <br />
 
@@ -39,8 +39,8 @@ Armada is an established event and this year will be the 40th Armada in a row. S
 
 ## Registration
 
-If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 17th of September.
-If you did not register your company during the Initial Registration, 19th of April - 28th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
+If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 23rd of September.
+If you did not register your company during the Initial Registration, 11th of April - 20th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
 
 <a class="anchor" id="offical-invitation"></a>
 <a href="/assets/invitation/InvitationArmada2022.pdf">
@@ -58,9 +58,9 @@ If you did not register your company during the Initial Registration, 19th of Ap
 
 ## Core Values
 
-We at THS Armada believe that our core values Sustainability and Diversity are crucial for the workings of any organization. Therefore, we value that our exhibitors share our views and choose to highlight exhibitors that do. During our event weeks leading up to the fair, we have what we call Focus Days, one for each core value. During these days we invite companies that lead by example to host events such as lunch lectures, case events etc.
+We at THS Armada believe that our core values Sustainability and Diversity are crucial for the workings of any organisation. Therefore, we value that our exhibitors share our views and choose to highlight exhibitors that do. During our event weeks leading up to the fair, we have what we call Focus Days, one for each core value. During these days we invite companies that lead by example to host events such as lunch lectures, case events etc.
 
-During the fair we will highlight companies that we believe share our core values. To learn more contact our [Head of Sustainability](mailto:saga.stugholm@armada.nu) or [Head of Diversity](mailto:anastasia.angeli@armada.nu).
+During the fair we will highlight companies that we believe share our core values. To learn more contact our [Head of Sustainability](mailto:ajay.surya.gnaneswaran@armada.nu) or [Head of Diversity](mailto:tor.shimamura.fagle@armada.nu).
 
 <br />
 
@@ -68,12 +68,15 @@ During the fair we will highlight companies that we believe share our core value
 
 Armada is more than a two day fair. If your company wants to host an event for KTH students, we are here to help. Why not present your company during a lecture, meet ambitious students during a case evening or mingle with your future employees at a relaxed AW?
 
-If you are interested in doing an event with us in 2022, fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSfCoX6eUL-6xfSmb0J-yTvh_eN28_rNDAnno_zK2XkS45-9Qg/viewform) and leave a comment about that you are interested in hosting an event. 
-
 <br />
 
-### Event Weeks 2021
-THS Armada offers you a wide range of events to profile your organisation towards students who have a genuine interest in your company. You also have the opportunity to host your events on our themed days and focus days to engage and excite our students on those topics even more. The goal of Armada is to provide you with suitable talents for your organisation and to conduct events that give you and participants an unforgettable experience. The Event Weeks take place between the 1st of November 2021 and the 19th November 2021. 
+### Event Weeks 2022
+
+THS Armada offers you a wide range of events to profile your organisation towards students who have a genuine interest in your company. During our event weeks, 31st Oct - 18th Nov, you will have the opportunity to show students what your company is like with a lecture or see them in action at a case evening. Maybe you’d like to join the Armada Run: race against students and show them that your organisation is the best! Or perhaps you’ll get the opportunity to present an event during our Focus Days, with the topics of interest being our Core Values: Sustainability and Diversity. To see all of the events we offer this year, make sure to look at the Event pages in our product catalogue and additional services catalogue.
+
+
+Is something missing in our options? We also offer Custom Events designed in collaboration with your organisation and THS Armada to create an event tailored to your needs and wishes. Reach out to your sales representative to discuss! The possibilities are endless…
+ 
 
 <a href="/assets/invitation/ArmadaEvents2021.pdf">
 <img src='/assets/Invitation/eventweeks2021.png' alt="Event Catalog 2021" width="50%" style="margin-left:25%"/>
@@ -100,4 +103,4 @@ Let Armada help your company stand out and boost your employer brand. We offer m
 
 ### Armada Competition
 
-Armada Competition is an incentive introduced during last year's fair to increase connections between students and companies. It was a big success and is therefore back this year. In short, students have the chance to win exclusive prizes by interacting with companies during the fair. Your company can participate with prizes to reach out in yet another way to the KTH students. 
+Armada Competition is an incentive introduced during last year's fair to increase connections between students and companies. It was a big success and is therefore back this year. In short, students have the chance to win exclusive prizes by interacting with companies during the fair. Your company can participate with prizes to reach out in yet another way to the KTH students.

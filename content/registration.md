@@ -77,7 +77,7 @@ THS Armada offers you a wide range of events to profile your organisation toward
 
 Is something missing in our options? We also offer Custom Events designed in collaboration with your organisation and THS Armada to create an event tailored to your needs and wishes. Reach out to your sales representative to discuss! The possibilities are endless…
  
-
+<!-- 
 <a href="/assets/invitation/ArmadaEvents2021.pdf">
 <img src='/assets/Invitation/eventweeks2021.png' alt="Event Catalog 2021" width="50%" style="margin-left:25%"/>
 </a>
@@ -86,6 +86,7 @@ Is something missing in our options? We also offer Custom Events designed in col
 <br />
 <button type="submit">Download Event Catalog 2021</button>
 </form>
+-->
 
 <br />
 

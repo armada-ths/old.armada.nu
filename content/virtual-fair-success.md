@@ -4,7 +4,7 @@ title: Virtual Fair Success
 layout: VirtualFairSuccess
 description: How to be successful on an virtual fair
 menuPage: false
-studentSubpage: true
+studentSubpage: false
 priority: 2
 header: /assets/images/header-images/forStudents.jpg
 ---

@@ -13,12 +13,13 @@ import EmbeddedVideo from '../src/components/EmbeddedVideo';
 
 <br />
 
-### Graduateland 
+### WE ARE BACK!
 
-The virtual fair this year is hosted on the Graduateland platform. If you need help constructing your booth or want to know about all the features available we recommend checking out our guide done by our [Head of Career Fair, Vedashubham Pandiyan](mailto:vedashubham.pandiyan@armada.nu).
+After two years of virtual  fairs, KTH students are eager to meet company representatives on campus again. The excitement and zeal for this year's Armada Career Fair among students can only be experienced at the Fair. Do not miss out on this annual opportunity to acquit yourselves with your future taskforce!
 
-<EmbeddedVideo videoLink= "https://www.youtube.com/watch?v=9e3sPr6rELQ"></EmbeddedVideo>
+<!-- <EmbeddedVideo videoLink= "https://www.youtube.com/watch?v=9e3sPr6rELQ"></EmbeddedVideo> -->
 
+<!--
 If you need further help we recommend looking at these documents from Graduateland or contacting your host. 
 
 <a href="/assets/invitation/CompanyGuide.pdf">
@@ -40,6 +41,9 @@ If you need further help we recommend looking at these documents from Graduatela
 
 </form>
 
+-->
+<br/>
+
 ---
 
 <a class="anchor" id="important-dates"></a>
@@ -47,30 +51,38 @@ If you need further help we recommend looking at these documents from Graduatela
 <div class="info-border-box">
 <h2>Important Dates</h2>
 
-**Initial Registration** - 19th of April - 28th of May
+**Initial Registration** - 11th of April - 20th of May
 
-**Final Registration** - 23rd of August - 17th of September
+**Final Registration** - 22nd of August - 23rd of September
 
-**Event Weeks** - 1-19th of November
+**Event Weeks** - 31st of October - 18th of November
 
-**Finalized your Graduateland booth** - 9th of November
+<!-- **Finalized your Graduateland booth** - 9th of November -->
 
-**The Fair** - 23rd-24th of November
+**The Fair** - 22nd-23rd of November
 
-**Grand Banquet** - 23rd of November
+**Grand Banquet** - 22nd of November
 
 </div>
 
----
-
-### How do you succed at a virtual fair?
-
-<br/>
-
-On the **7th of May** Armada held a webinar **“Digital Framgång: så lyckas du på en digital mässa”** about how to be successful at a digital fair drawing on experiences from last years fair. To see the full webinar check out the video bellow.
-
-<EmbeddedVideo videoLink= "https://youtu.be/Oggx_BPA7Fs"></EmbeddedVideo>
 <br/>
 
 ---
 
+### How do you succed at a physical fair?
+
+<br/>
+
+We know that it can sometimes be overwhelming at a physical fair with a lot of people attending . Below are some tips from the Career Fair team on how you can increase your success at a physical Fair.
+
+**Outstanding Booth:** The first thing the visitors see is your booth. See to it that it has all you want to convey in a subtle way. Luckily we are collaborating with Sture who are experts in exhibitions, they can bring all your booth ideas to life. Sture will initially reach out to all the exhibitors after the final registration. We encourage you to keep the correspondence in good flow to avoid last minute rush and changes to your booth.
+
+<!-- <EmbeddedVideo videoLink= "https://youtu.be/Oggx_BPA7Fs"></EmbeddedVideo> -->
+
+**Timely logistical communication:** Armada has adapted a horizontal logistical solution to minimize its climate impact. This solution is called the Armada Transport. Our collaborator, DHL will take care of the transport of all our exhibitors to and from the fair . The booking of Armada transport will open after the final registration. To avoid any logistical missharps, reach out to our contact at DHL in good time during the booking period.
+
+**Visitor interaction:** Visitors are often shy to take the first step  but a joyful  smile  from a company representative works wonders. Apart from that, you can prepare some tasks/ games  at your booth that can work as icebreakers. These tasks also reduce anxiety among participants and make conversations easy. For the first time this year, we will be having an Armada Competition at a physical fair. The competition is designed to attract more students to your booth in search of the great price. Read more about the competition in the Additional Services Catalogue.
+
+<br/>
+
+---

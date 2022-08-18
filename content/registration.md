@@ -11,7 +11,7 @@ priority: 2
 header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
-<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\[register.armada.nu](https://register.armada.nu).
+<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\\[register.armada.nu](https://register.armada.nu).
 
 <a class="anchor" id="armada2021"></a> -->
 
@@ -74,9 +74,8 @@ Armada is more than a two day fair. If your company wants to host an event for K
 
 THS Armada offers you a wide range of events to profile your organisation towards students who have a genuine interest in your company. During our event weeks, 31st Oct - 18th Nov, you will have the opportunity to show students what your company is like with a lecture or see them in action at a case evening. Maybe you’d like to join the Armada Run: race against students and show them that your organisation is the best! Or perhaps you’ll get the opportunity to present an event during our Focus Days, with the topics of interest being our Core Values: Sustainability and Diversity. To see all of the events we offer this year, make sure to look at the Event pages in our product catalogue and additional services catalogue.
 
-
 Is something missing in our options? We also offer Custom Events designed in collaboration with your organisation and THS Armada to create an event tailored to your needs and wishes. Reach out to your sales representative to discuss! The possibilities are endless…
- 
+
 <!-- 
 <a href="/assets/invitation/ArmadaEvents2021.pdf">
 <img src='/assets/Invitation/eventweeks2021.png' alt="Event Catalog 2021" width="50%" style="margin-left:25%"/>
@@ -92,7 +91,7 @@ Is something missing in our options? We also offer Custom Events designed in col
 
 ### Banquet
 
-Armada aspires to welcome your company to our Grand Banquet to celebrate the fair and to create a more relaxed environment to meet future employees. However, due to the current situation, it is yet undecided which form the banquet will take. The health and safety of our exhibitors and students is our main priority. We will be in touch with more information regarding the event and how you can proceed to purchase tickets for your company.
+Armada would like to welcome you and your company to this year’s Grand Armada Banquet! The Grand Armada Banquet is an excellent opportunity for you to meet and mingle with students in a more relaxing environment. During the banquet you will enjoy a tasty three course meal and energising entertainment! The banquet will be held on the 22nd of November after the fair in Victoriahallen, Stockholmsmässan. Be sure to put on your high heels and tie your tie because this year’s theme is Las Vegas!
 
 <br />
 

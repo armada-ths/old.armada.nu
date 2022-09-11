@@ -14,16 +14,16 @@ const studentQuestions = [
             {
                 question: 'What is THS Armada?', 
                 answer: <span>THS Armada is a student-driven project at KTH that arranges the largest career fair in Scandinavia. Every year, Armada creates a platform for you to meet some of the most popular employers for engineers. The grand THS Armada fair is a two-day event with companies from all over the world. <br/> <br/>
-                        This year we will repeat the success from last year with a virtual fair to make sure our exhibitors and visitors can connect in a safe way. In addition, we will build lounges at KTH where students can enjoy the virtual fair and still get the feel of a physical fair. <br/> <br/>
-                        Leading up to the fair Armada arranges event weeks where you have the chance to attend lunch lectures, case evenings and much more. Make sure to follow us on <a href="https://www.instagram.com/thsarmada/">social media</a> to not miss out</span>
+                        This year we will repeat the success from previous years with a career fair at Nymble, the building of the student union at the Royal Institute of Technology. In addition, we will have a coffee campaign where we will introduce Armada to all of you and answer any questions that you may have about us. <br/> <br/>
+                        Leading up to the fair Armada arranges event weeks where you have the chance to attend lunch lectures, case evenings, and much more. Make sure to follow us on <a href="https://www.instagram.com/thsarmada/">social media</a> to not miss out</span>
             },
             {
                 question: 'When is this year\'s Armada fair?', 
-                answer: '23rd & 24th of November'
+                answer: '22nd & 23rd of November'
             },
             {
                 question: 'Where is THS Armada?', 
-                answer: <span>This year THS Armada will take place both virtually at <a href="https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64">graduateland</a> and in Nymble, Drottning Kristinas väg 15-19 in Stockholm. <br/><br/>
+                answer: <span>This year THS Armada will take place in Nymble, Drottning Kristinas väg 15-19 in Stockholm. <br/><br/>
                         Follow us on <a href="https://www.instagram.com/thsarmada/">Instagram</a> to keep up on what we have in store. </span>
             },
             {
@@ -37,19 +37,19 @@ const studentQuestions = [
         body: [
             {
                 question: 'When is the Armada fair taking place?', 
-                answer: 'The Armada Career Fair takes place each year in November for 2 days. This year the fair will take place November 23rd-24th.'
+                answer: 'The Armada Career Fair takes place each year in November for 2 days. This year the fair will take place November 22nd-23rd.'
             },
             {
                 question: 'Where is the Armada fair taking place?', 
-                answer: <span>The fair will be held at a platform called Graduateland. You can register for the fair and create a profile at on <a href="https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64">Graduateland</a>.</span>
+                answer: <span>The fair will be held in Nymble, which is the Student Union building at the Royal Institute of technology. The adress for the fair is Drottning Kristinas väg 15-19 Stockholm.</span>
             },
             {
                 question: 'What are the opening hours?', 
-                answer: '10:00-16:00 on both the 23rd and the 24th of November.'
+                answer: '10:00-16:00 on both the 22nd and the 23rd of November.'
             },
             {
                 question: 'Does the Armada fair cost money to attend?', 
-                answer: 'No, it is completely free for everyone to visit! It will be even easier this year since you can attend from anywhere in the world.'},
+                answer: 'No, it is completely free for everyone to visit! You are allowed to attend during any of the opening hours even if you are not a KTH Student.'},
             
                 //{question: 'I do not study at KTH, can I still attend?', answer: 'Yes of course! Everybody is welcome.'},
             //{question: 'How many exhibitors are coming to the Armada fair?', answer: 'The exhibitors are still joining the platform, but the entire exhibitors list can be found here.', displayAnswer: <span>The exhibitors are still joining the platform, but the entire exhibitors list can be found <a href='https://event.armada.nu/sv/virtual-event/3994'>here</a>.</span>},
@@ -63,6 +63,7 @@ const studentQuestions = [
             },
         ]
     },
+    /* removing virtual fair from the page, possibly create a new one for the in person fair instead?
     {
         title: 'VIRTUAL FAIR - GRADUATELAND',
         body: [
@@ -107,7 +108,7 @@ const studentQuestions = [
                 answer: 'No, you can create a profile directly on the platform. However, you will have the option to upload a CV, something we really encourage you to do. It will help you since the exhibitors can look through it before individual meetings etc.'
             },
         ]
-    },
+    },*/
 
     /*
     {title: 'MAPS AND LOCATIONS', body: [
@@ -140,10 +141,11 @@ const studentQuestions = [
         body: [
         {
             question: 'How do I become a part of the Armada team?', 
-            answer: <span>You apply! Armada recruits three times a year. The next recruitment will be in september. 
+            answer: <span>You apply! Armada recruits three times a year. Applications for hosts are now open, make sure apply before it's too late. 
                 Follow us on <a href="https://www.instagram.com/thsarmada/">Instagram</a> to not miss any important dates. 
                 <br/>Do you want to know more about the Armada organisation? Check out the <a href="https://armada.nu/recruitment">Recruitment tab</a> to see what role suits you the best.</span>
         },
+        //make sure to update this when recuritment for hosts ends
         {
             question: 'When do THS Armada recruit people?', 
             answer: <span>Armada recruits for different roles and responsibilities during three periods throughout the year. 

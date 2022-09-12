@@ -15,7 +15,7 @@ const studentQuestions = [
                 question: 'What is THS Armada?', 
                 answer: <span>THS Armada is a student-driven project at KTH that arranges the largest career fair in Scandinavia. Every year, Armada creates a platform for you to meet some of the most popular employers for engineers. The grand THS Armada fair is a two-day event with companies from all over the world. <br/> <br/>
                         This year we will repeat the success from previous years with a career fair at Nymble, the building of the student union at the Royal Institute of Technology. In addition, we will have a coffee campaign where we will introduce Armada to all of you and answer any questions that you may have about us. <br/> <br/>
-                        Leading up to the fair Armada arranges event weeks where you have the chance to attend lunch lectures, case evenings, and much more. Make sure to follow us on <a href="https://www.instagram.com/thsarmada/">social media</a> to not miss out</span>
+                        Leading up to the fair Armada will arrange event weeks between the 31st of October to the 18th of November where you have the chance to attend lunch lectures, case evenings, and much more. Make sure to follow us on <a href="https://www.instagram.com/thsarmada/">social media</a> and check out the <a href='https://armada.nu/events'>events page</a> to not miss out on any of the upcoming events.</span>
             },
             {
                 question: 'When is this year\'s Armada fair?', 

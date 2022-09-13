@@ -14,16 +14,16 @@ const studentQuestions = [
             {
                 question: 'What is THS Armada?', 
                 answer: <span>THS Armada is a student-driven project at KTH that arranges the largest career fair in Scandinavia. Every year, Armada creates a platform for you to meet some of the most popular employers for engineers. The grand THS Armada fair is a two-day event with companies from all over the world. <br/> <br/>
-                        This year we will repeat the success from previous years with a career fair at Nymble, the building of the student union at the Royal Institute of Technology. In addition, we will have a coffee campaign where we will introduce Armada to all of you and answer any questions that you may have about us. <br/> <br/>
+                        This year we will repeat the success from previous years with a career fair at Nymble, the building of the student union at the Royal Institute of Technology. In addition, we are currently having a coffee campaign by <a href="https://www.google.com/maps/dir//kth+entre/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x465f9d402a3b8871:0xcc80b8bee19d7ff8?sa=X&ved=2ahUKEwi_w7P7s5H6AhUQiIsKHeMjCqgQ9Rd6BAheEAQ">KTH Entre</a> between 11:30 and 13:30 where we will introduce Armada to all of you and answer any questions that you may have about us. <br/> <br/>
                         Leading up to the fair Armada will arrange event weeks between the 31st of October to the 18th of November where you have the chance to attend lunch lectures, case evenings, and much more. Make sure to follow us on <a href="https://www.instagram.com/thsarmada/">social media</a> and check out the <a href='https://armada.nu/events'>events page</a> to not miss out on any of the upcoming events.</span>
             },
             {
                 question: 'When is this year\'s Armada fair?', 
-                answer: '22nd & 23rd of November'
+                answer: 'This years\'s Armada fair will be on the 22nd & 23rd of November'
             },
             {
                 question: 'Where is THS Armada?', 
-                answer: <span>This year THS Armada will take place in Nymble, Drottning Kristinas väg 15-19 in Stockholm. <br/><br/>
+                answer: <span>This year THS Armada Career Fair will take place in Nymble, Drottning Kristinas väg 15-19 in Stockholm. <br/><br/>
                         Follow us on <a href="https://www.instagram.com/thsarmada/">Instagram</a> to keep up on what we have in store. </span>
             },
             {
@@ -124,15 +124,16 @@ const studentQuestions = [
         body: [
         {
             question: 'What is The Grand Armada Banquet?', 
-            answer: 'Every year THS Armada arranges a grand banquet to celebrate the fair and to let exhibitors and students network in a casual setting. However, due to the current circumstances it is yet decided which form the banquet will take. The health and safety of the students and our exhibitors is our main priority. Stay tuned on the plans here on the website.'
+            answer: <span>Armada is a very large project which engages 300 working students and 150 market driving employers which interacts with over 20 000 visitors both through the fair and through the various events that Armada arranges. Every year THS Armada hosts a grand banquet to celebrate the fair and to let exhibitors and students network in a casual setting.<br></br> <br></br>
+            This years banquet will hosted after the first fair day at Victoriahallen in Stockholmsmässan, Älvsjö. The theme for this years banquet will be Las Vegas Red Carpet and there will be a three course dinner and lots of entertainment throughout the night.</span>
         },
         {
             question: 'Can I attend the banquet?', 
-            answer: 'The whole Armada Team is invited to The Grand Banquet of Armada, as well as our exhibitors. If you are a part of the Armada team 2021 you will receive your invitation by email. Depending on the restriction the after party will be open to KTH students as well. Time will tell.'
+            answer: 'The whole Armada Team is invited to The Grand Banquet of Armada, as well as our exhibitors. If you are a part of the Armada team 2022 you will receive your invitation by email. After the main sitting, the afterparty will open up for everyone to attend and have a good time.'
         },
         {
             question: 'Is it possible to attend the banquet even though I’m not working for Armada?', 
-            answer: <span>Due to the current situation the form of the banquet is still in progress. Follow us on <a href="https://www.instagram.com/thsarmada/">Instagram</a> to keep updated.</span>
+            answer: <span>The Banquet consists of 2 parts: the sitting and the afterparty. The sitting is mainly meant for Armada workers and the participating companies. However, the afterparty can be attended by anyone even outside of Armada. </span>
         },
     ]
 },
@@ -143,15 +144,14 @@ const studentQuestions = [
             question: 'How do I become a part of the Armada team?', 
             answer: <span>You apply! Armada recruits three times a year. Applications for hosts are now open, make sure apply before it's too late. 
                 Follow us on <a href="https://www.instagram.com/thsarmada/">Instagram</a> to not miss any important dates. 
-                <br/>Do you want to know more about the Armada organisation? Check out the <a href="https://armada.nu/recruitment">Recruitment tab</a> to see what role suits you the best.</span>
+                <br/> <br></br>Do you want to know more about the Armada organisation? Check out the <a href="https://armada.nu/recruitment">Recruitment tab</a> to see what role suits you the best.</span>
         },
         //make sure to update this when recuritment for hosts ends
         {
             question: 'When do THS Armada recruit people?', 
             answer: <span>Armada recruits for different roles and responsibilities during three periods throughout the year. 
                     The project group is recruited in December-February and works for almost a year in Armada. Then the Operations team is recruited in April-May and last but not least the Hosts are recruited in August-September. 
-                    If you have any questions about what it is like to be in THS Armada you can contact the Project Manager at 
-                    <a href="mailto:a@armada.nu">a@armada.nu</a> or follow us on <a href="https://www.instagram.com/thsarmada/">social media</a>.</span>
+                    If you have any questions about what it is like to be in THS Armada you can contact the Project Manager at <a href="mailto:a@armada.nu">a@armada.nu</a> or follow us on <a href="https://www.instagram.com/thsarmada/">social media</a>.</span>
         },
         {
             question: 'Why should I engage in THS Armada?', 

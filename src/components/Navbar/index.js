@@ -211,13 +211,6 @@ const Navbar = props => {
   return (
     <>
       <div id='navbar'>
-        {onMobile && (
-          <>
-            <div className='topNav'></div>
-            <RegistrationBanner location={props.location} />
-            <RecruitmentBanner location={props.location} />
-          </>
-        )}
         <nav className={'menu-wrapper ' + (expanded ? 'visible' : 'hidden')}>
           <div className={'menu-hamburger'}>
             <HamburgerButton
@@ -241,6 +234,13 @@ const Navbar = props => {
             </div>
           </div>
         </nav>
+        {onMobile && (
+          <>
+            <div className='topNav'></div>
+            <RegistrationBanner location={props.location} />
+            <RecruitmentBanner location={props.location} />
+          </>
+        )}
         {!onMobile && (
           <>
             <RegistrationBanner location={props.location} />

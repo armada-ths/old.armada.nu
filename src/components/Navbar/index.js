@@ -211,6 +211,7 @@ const Navbar = props => {
   return (
     <>
       <div id='navbar'>
+        <div className='banner-container'>
         <nav className={'menu-wrapper ' + (expanded ? 'visible' : 'hidden')}>
           <div className={'menu-hamburger'}>
             <HamburgerButton
@@ -238,7 +239,7 @@ const Navbar = props => {
             <RegistrationBanner location={props.location} />
             <RecruitmentBanner location={props.location}/>
           </>
-        
+        </div>
       </div>
     </>
   )

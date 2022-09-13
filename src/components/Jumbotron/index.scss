@@ -29,8 +29,6 @@
     position: relative;
     min-height: $header-min-height;
     background-color: $licorice;
-    margin-top: 3em;
-
     .header-image{
 
         background-color: $licorice;
@@ -90,7 +88,7 @@
     z-index: 2;
     text-align: center;
     height: 65%;
-    margin-top: 0px;
+    margin-top: 10%;
 
     img {
         max-height:90%;
@@ -130,9 +128,11 @@
 @media screen and (max-width: $breakpoint-mobile) {
 
     .logo-container{
+        margin-top: 15%;
         p{
             margin-top: 0px;
             margin-bottom: 0px;
+            font-size:1em;
         }
     }
 }
@@ -143,6 +143,7 @@
         p{
             margin-top: 0px;
             margin-bottom: 0px;
+            font-size:1em;
         }
     }
 }

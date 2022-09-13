@@ -234,19 +234,11 @@ const Navbar = props => {
             </div>
           </div>
         </nav>
-        {onMobile && (
-          <>
-            <div className='topNav'></div>
-            <RegistrationBanner location={props.location} />
-            <RecruitmentBanner location={props.location} />
-          </>
-        )}
-        {!onMobile && (
           <>
             <RegistrationBanner location={props.location} />
-            <RecruitmentBanner location={props.location} />
+            <RecruitmentBanner location={props.location}/>
           </>
-        )}
+        
       </div>
     </>
   )

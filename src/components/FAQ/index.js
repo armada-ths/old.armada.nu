@@ -14,16 +14,16 @@ const studentQuestions = [
             {
                 question: 'What is THS Armada?', 
                 answer: <span>THS Armada is a student-driven project at KTH that arranges the largest career fair in Scandinavia. Every year, Armada creates a platform for you to meet some of the most popular employers for engineers. The grand THS Armada fair is a two-day event with companies from all over the world. <br/> <br/>
-                        This year we will repeat the success from last year with a virtual fair to make sure our exhibitors and visitors can connect in a safe way. In addition, we will build lounges at KTH where students can enjoy the virtual fair and still get the feel of a physical fair. <br/> <br/>
-                        Leading up to the fair Armada arranges event weeks where you have the chance to attend lunch lectures, case evenings and much more. Make sure to follow us on <a href="https://www.instagram.com/thsarmada/">social media</a> to not miss out</span>
+                        This year we will repeat the success from previous years with a career fair at Nymble, the building of the student union at the Royal Institute of Technology. In addition, we are currently having a coffee campaign by <a href="https://www.google.com/maps/dir//kth+entre/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x465f9d402a3b8871:0xcc80b8bee19d7ff8?sa=X&ved=2ahUKEwi_w7P7s5H6AhUQiIsKHeMjCqgQ9Rd6BAheEAQ">KTH Entre</a> between 11:30 and 13:30 where we will introduce Armada to all of you and answer any questions that you may have about us. <br/> <br/>
+                        Leading up to the fair Armada will arrange event weeks between the 31st of October to the 18th of November where you have the chance to attend lunch lectures, case evenings, and much more. Make sure to follow us on <a href="https://www.instagram.com/thsarmada/">social media</a> and check out the <a href='https://armada.nu/events'>events page</a> to not miss out on any of the upcoming events.</span>
             },
             {
                 question: 'When is this year\'s Armada fair?', 
-                answer: '23rd & 24th of November'
+                answer: 'This years\'s Armada fair will be on the 22nd & 23rd of November'
             },
             {
                 question: 'Where is THS Armada?', 
-                answer: <span>This year THS Armada will take place both virtually at <a href="https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64">graduateland</a> and in Nymble, Drottning Kristinas väg 15-19 in Stockholm. <br/><br/>
+                answer: <span>This year THS Armada Career Fair will take place in Nymble, Drottning Kristinas väg 15-19 in Stockholm. <br/><br/>
                         Follow us on <a href="https://www.instagram.com/thsarmada/">Instagram</a> to keep up on what we have in store. </span>
             },
             {
@@ -37,19 +37,19 @@ const studentQuestions = [
         body: [
             {
                 question: 'When is the Armada fair taking place?', 
-                answer: 'The Armada Career Fair takes place each year in November for 2 days. This year the fair will take place November 23rd-24th.'
+                answer: 'The Armada Career Fair takes place each year in November for 2 days. This year the fair will take place November 22nd-23rd.'
             },
             {
                 question: 'Where is the Armada fair taking place?', 
-                answer: <span>The fair will be held at a platform called Graduateland. You can register for the fair and create a profile at on <a href="https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64">Graduateland</a>.</span>
+                answer: <span>The fair will be held in Nymble, which is the Student Union building at the Royal Institute of technology. The adress for the fair is Drottning Kristinas väg 15-19 Stockholm.</span>
             },
             {
                 question: 'What are the opening hours?', 
-                answer: '10:00-16:00 on both the 23rd and the 24th of November.'
+                answer: '10:00-16:00 on both the 22nd and the 23rd of November.'
             },
             {
                 question: 'Does the Armada fair cost money to attend?', 
-                answer: 'No, it is completely free for everyone to visit! It will be even easier this year since you can attend from anywhere in the world.'},
+                answer: 'No, it is completely free for everyone to visit! You are allowed to attend during any of the opening hours even if you are not a KTH Student.'},
             
                 //{question: 'I do not study at KTH, can I still attend?', answer: 'Yes of course! Everybody is welcome.'},
             //{question: 'How many exhibitors are coming to the Armada fair?', answer: 'The exhibitors are still joining the platform, but the entire exhibitors list can be found here.', displayAnswer: <span>The exhibitors are still joining the platform, but the entire exhibitors list can be found <a href='https://event.armada.nu/sv/virtual-event/3994'>here</a>.</span>},
@@ -63,6 +63,7 @@ const studentQuestions = [
             },
         ]
     },
+    /* removing virtual fair from the page, possibly create a new one for the in person fair instead?
     {
         title: 'VIRTUAL FAIR - GRADUATELAND',
         body: [
@@ -107,7 +108,7 @@ const studentQuestions = [
                 answer: 'No, you can create a profile directly on the platform. However, you will have the option to upload a CV, something we really encourage you to do. It will help you since the exhibitors can look through it before individual meetings etc.'
             },
         ]
-    },
+    },*/
 
     /*
     {title: 'MAPS AND LOCATIONS', body: [
@@ -123,15 +124,16 @@ const studentQuestions = [
         body: [
         {
             question: 'What is The Grand Armada Banquet?', 
-            answer: 'Every year THS Armada arranges a grand banquet to celebrate the fair and to let exhibitors and students network in a casual setting. However, due to the current circumstances it is yet decided which form the banquet will take. The health and safety of the students and our exhibitors is our main priority. Stay tuned on the plans here on the website.'
+            answer: <span>Armada is a very large project which engages 300 working students and 150 market driving employers which interacts with over 20 000 visitors both through the fair and through the various events that Armada arranges. Every year THS Armada hosts a grand banquet to celebrate the fair and to let exhibitors and students network in a casual setting.<br></br> <br></br>
+            This years banquet will hosted after the first fair day at Victoriahallen in Stockholmsmässan, Älvsjö. The theme for this years banquet will be Las Vegas Red Carpet and there will be a three course dinner and lots of entertainment throughout the night.</span>
         },
         {
             question: 'Can I attend the banquet?', 
-            answer: 'The whole Armada Team is invited to The Grand Banquet of Armada, as well as our exhibitors. If you are a part of the Armada team 2021 you will receive your invitation by email. Depending on the restriction the after party will be open to KTH students as well. Time will tell.'
+            answer: 'The whole Armada Team is invited to The Grand Banquet of Armada, as well as our exhibitors. If you are a part of the Armada team 2022 you will receive your invitation by email. After the main sitting, the afterparty will open up for everyone to attend and have a good time.'
         },
         {
             question: 'Is it possible to attend the banquet even though I’m not working for Armada?', 
-            answer: <span>Due to the current situation the form of the banquet is still in progress. Follow us on <a href="https://www.instagram.com/thsarmada/">Instagram</a> to keep updated.</span>
+            answer: <span>The Banquet consists of 2 parts: the sitting and the afterparty. The sitting is mainly meant for Armada workers and the participating companies. However, the afterparty can be attended by anyone even outside of Armada. </span>
         },
     ]
 },
@@ -140,16 +142,16 @@ const studentQuestions = [
         body: [
         {
             question: 'How do I become a part of the Armada team?', 
-            answer: <span>You apply! Armada recruits three times a year. The next recruitment will be in september. 
+            answer: <span>You apply! Armada recruits three times a year. Applications for hosts are now open, make sure apply before it's too late. 
                 Follow us on <a href="https://www.instagram.com/thsarmada/">Instagram</a> to not miss any important dates. 
-                <br/>Do you want to know more about the Armada organisation? Check out the <a href="https://armada.nu/recruitment">Recruitment tab</a> to see what role suits you the best.</span>
+                <br/> <br></br>Do you want to know more about the Armada organisation? Check out the <a href="https://armada.nu/recruitment">Recruitment tab</a> to see what role suits you the best.</span>
         },
+        //make sure to update this when recuritment for hosts ends
         {
             question: 'When do THS Armada recruit people?', 
             answer: <span>Armada recruits for different roles and responsibilities during three periods throughout the year. 
                     The project group is recruited in December-February and works for almost a year in Armada. Then the Operations team is recruited in April-May and last but not least the Hosts are recruited in August-September. 
-                    If you have any questions about what it is like to be in THS Armada you can contact the Project Manager at 
-                    <a href="mailto:a@armada.nu">a@armada.nu</a> or follow us on <a href="https://www.instagram.com/thsarmada/">social media</a>.</span>
+                    If you have any questions about what it is like to be in THS Armada you can contact the Project Manager at <a href="mailto:a@armada.nu">a@armada.nu</a> or follow us on <a href="https://www.instagram.com/thsarmada/">social media</a>.</span>
         },
         {
             question: 'Why should I engage in THS Armada?', 

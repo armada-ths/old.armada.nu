@@ -21,7 +21,7 @@ const FAQQuestion = (props) => {
                 {props.question}
             <img alt='' src={drawerOpen ? chevronUp : chevronDown} className='chevron' draggable='false'/>
             </h2>
-            <div className='children' style={{marginTop: 0, maxHeight: drawerOpen ? '500px' : 0}} >
+            <div className='children' style={{marginTop: 0, textAlign: 'justify', maxHeight: drawerOpen ? '1000px' : 0}} >
                 <p className='answer'>{props.answer}</p>
             </div>
         </section>

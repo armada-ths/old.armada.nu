@@ -169,32 +169,32 @@ const exhibitorQuestions = [
         body: [
             {
                 question: 'How do I register for the fair?', 
-                answer: <span>You can register at <a href='https://ais.armada.nu/register/'>register.armada.nu</a></span>
+                answer: <span>You can register at <a href='https://ais.armada.nu/register/'>register.armada.nu</a> or contact our Sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a> </span>
             },
             {
                 question: 'When is the last day to register for the fair?', 
-                answer: <span>The last day to complete your registration is on the <b>17th of September</b>.
-                        If you did not complete the Initial Registration, with deadline on the 28th of May, you need to contact 
-                        <a href="mailto:sales@armada.nu">sales@armada.nu</a> to be able to complete your registration.</span>
+                answer: <span>The last day to complete your registration is on the <b>23rd of September</b>.
+                        If you did not complete the Initial Registration, with deadline on the 28th of May, you need to contact <a href="mailto:sales@armada.nu">sales@armada.nu</a> to
+                        be able to complete your registration.</span>
             },
             {
                 question: 'Can our company get more exposure?', 
-                answer: <span>Yes, there are lots of ways to get more exposure for your company. For example, you can register for the partner kit which includes additional features during the fair, 
+                /*oldanswer: <span>Yes, there are lots of ways to get more exposure for your company. For example, you can register for the partner kit which includes additional features during the fair, 
                         individual marketing and unlimited job adverts during the fair.
                         Another way to stand out is through a Custommade Lounge. During the fair Armada will build lounges where students can hang out and attend the fair. 
                         The lounges will bring the visitors the atmosphere of a physical fair even in these challenging times. 
                         You will be able to send us merch, roll-ups etc to create a physical booth to compliment your digital one. 
                         <br/>
                         You can also market your company through Armada’s different social media channels and even have an Instagram Takeover. 
-                         <br/>
-                        An individual event could also be of interest. Armada offers lectures, case evenings or a customized event of your choice. 
-                        <br/>
-                         Contact our sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to work out what suits your company best. </span>
+                         <br/> <br/>
+                        An individual event could also be of interest. Armada offers lectures, case evenings or a customized event of your choice. Contact our sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to work out what suits your company best. </span>,*/
+                answer: <span> You can market your company through Armada’s different social media channels and even have an Instagram Takeover. 
+                        <br/> <br/>
+                        An individual event could also be of interest. Armada offers lectures, case evenings or a customized event of your choice. Contact our sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to work out what suits your company best. </span>
             },
             {
                 question: 'How do we become a partner?', 
-                answer: <span>To become a partner you register your interest in the partner kit on the registration page. 
-                        As a partner you will not only stand out from the crowd but also boost your employer branding through a variety of marketing towards our students. 
+                answer: <span>As a partner you will not only stand out from the crowd but also boost your employer branding through a variety of marketing towards our students. 
                         Note that there is a limited amount of companies that can sign up for the partner kit.
                         <br/> To learn more, contact our sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a>.</span>
             },
@@ -211,15 +211,15 @@ const exhibitorQuestions = [
             {
                 question: 'What is THS Armada?', 
                 answer: <span>THS Armada is a student-driven project at KTH that arranges the largest career fair in Scandinavia. Every year, Armada creates a platform for you to meet some of the most popular employers for engineers. The grand THS Armada fair is a two-day event with companies from all over the world. <br/> <br/>
-                        This year we will repeat the success from last year with a virtual fair to make sure our exhibitors and visitors can connect in a safe way. In addition, we will build lounges at KTH where students can enjoy the virtual fair and still get the feel of a physical fair. <br/> <br/>
+                        This year we will repeat the success from previous years with a career fair at Nymble, the building of the student union at the Royal Institute of Technology. <br/> <br/>
                         Leading up to the fair Armada arranges event weeks where you have the chance to attend lunch lectures, case evenings and much more. Make sure to follow us on <a href="https://www.instagram.com/thsarmada/">social media</a> to not miss out</span>},
             {
                 question: 'When is this year\'s Armada fair?', 
-                answer: '23rd & 24th of November'
+                answer: '22nd & 23rd of November'
             },
             {
                 question: 'Where is THS Armada?', 
-                answer: <span>This year THS Armada will take place both virtually at <a href="https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64">graduateland</a> and in Nymble, Drottning Kristinas väg 15-19 in Stockholm. <br/><br/>
+                answer: <span>The fair will be held in Nymble, which is the Student Union building at the Royal Institute of technology. The adress for the fair is Drottning Kristinas väg 15-19 Stockholm and the opening hours will be between 10-16 on both days. <br/><br/>
                         Follow us on <a href="https://www.instagram.com/thsarmada/">Instagram</a> to keep up on what we have in store. 
                         </span>
             },
@@ -230,7 +230,7 @@ const exhibitorQuestions = [
             },
         ]
     }, 
-    {
+   /* { removing the virtual fair tab from the page since its not relevant anymore
         title: 'VIRTUAL FAIR',
         linkFAQ: 'faq-virtualfair',
         body: [
@@ -258,7 +258,7 @@ const exhibitorQuestions = [
                         This is a great way to get more company branding during the fair.</span>
             },
         ]
-    },
+    },*/
     {
         title: 'MARKETING',
         linkFAQ: 'faq-marketing',

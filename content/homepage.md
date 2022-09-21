@@ -13,9 +13,10 @@ header: /assets/images/header-images/home.jpg
 
 <div class="info-border-box">
 
-Welcome to THS Armada 2021 - a virtual fair mixed with physical lounges. 
-This year we will repeat the success from last year with a [virtual fair](https://event.armada.nu/). In addition, we will add lounges in Nymble to give KTH students the feel of a physical fair. 
+Hello and welcome to THS Armada 2022! This year, the THS Armada fair returns as a physical fair to bring exhibitors and students closer together. Come by to see our all-new exhibitions, booths and presentations. We are bringing back the fair in style, with a new colourful array of exhibitors in Nymble over two days. Make sure not to miss anything! 
 
-So no matter if you are happy and healthy and back to normal in Stockholm, exploring the world or still going strong with corona restrictions you are more than welcome at THS Armada 2021. 
+A new edition of the Armada Competition will be returning this year! The popular competition will be available throughout the fair days. To take part, gather tickets by completing tasks at our exhibitors’ booths to win prizes in our live Facebook raffle! Find out more on the competition page (https://armada.nu/armadacompetition).
+
+See you in November!
 
 </div>

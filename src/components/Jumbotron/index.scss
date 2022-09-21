@@ -29,8 +29,7 @@
     position: relative;
     min-height: $header-min-height;
     background-color: $licorice;
-    margin-top: 3em;
-
+    overflow: hidden;
     .header-image{
 
         background-color: $licorice;
@@ -89,17 +88,23 @@
     @include centerer;
     z-index: 2;
     text-align: center;
-    height: 65%;
-    margin-top: 0px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 50%;
+    top: 60%;
 
     img {
         max-height:90%;
-        max-width: 100%;
+        max-width: 50%;
+        align-self: center;
         user-select: none;
         -moz-user-select: none;
         -webkit-user-drag: none;
         -webkit-user-select: none;
         -ms-user-select: none;
+        
     }
 
     p{
@@ -114,8 +119,10 @@
 }
 
 .logo-container.fixed{
-    height: 45%;
+    height: 50%;
+    width: unset;
     margin-top: -3em;
+
 }
 
 
@@ -127,26 +134,25 @@
     }
 }
 
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+
+    .logo-container{
+        p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size:1em;
+        }
+    }
+}
+
 @media screen and (max-width: $breakpoint-mobile) {
 
     .logo-container{
         p{
             margin-top: 0px;
             margin-bottom: 0px;
-        }
-    }
-}
-
-@media screen and (max-width: $breakpoint-mobile-flipped) {
-
-    #header {
-        margin-top: 0;
-    }
-
-    .logo-container{
-        p{
-            margin-top: 0px;
-            margin-bottom: 0px;
+            font-size:1em;
         }
     }
 }

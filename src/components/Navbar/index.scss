@@ -94,31 +94,30 @@
 				overflow: hidden;
         position: absolute;
 
-        .topNav {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 3em;
-          background-color: $licorice;
+        .banner-container {
+          display: flex;
+          flex-direction: column;
         }
 
         .menu-wrapper {
             width: 100%;
             padding-top: 0;
+            -webkit-backdrop-filter: blur(10px);
+	          backdrop-filter: blur(10px);
+            padding-bottom: 1em;
+
 
             &.visible {
               .menu-hamburger {
                 position: absolute;
                 right: 0;
+                height: 0;
               }
             }
 
             .menu-hamburger {
                 pointer-events: all;
                 display: block;
-                height: 1em;
-                padding-top: 0.5em;
             }
 
             .menu {
@@ -129,8 +128,7 @@
                 justify-content: space-evenly;
                 width: 100%;
                 margin-top: 3em;
-                -webkit-backdrop-filter: blur(10px);
-	              backdrop-filter: blur(10px);
+                
 
                 @media screen and (max-width: $breakpoint-mobile) {
                   height: 100vh;
@@ -167,6 +165,7 @@
         }
 
         .menu-wrapper.hidden {
+          padding: 1em;
             background-color: $licorice;
             text-align: center;
             display: inline-block;

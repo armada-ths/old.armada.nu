@@ -33,7 +33,7 @@ const Jumbotron = (props) => {
         <div className={`logo-container ${video ? 'fixed' : ''}`}>
                 <img alt='' src={prideWeek? prideLogo : Logo} />
                 <p className='logo-date'>THE FAIR <wbr/> 22&#8209;23 NOV 2022</p>
-                {video ? <Countdown/> : <></>}
+               {video ? <Countdown/> : <></>}
         </div>
         <div className={video ? 'header-home' : 'header-image'}>
             {video ?? <img alt='' src={props.image}/>}

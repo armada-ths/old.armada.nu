@@ -15,7 +15,7 @@ noJumbotron: false
 
 <a class="anchor" id="armada2021"></a> -->
 
-The fair 2021 is now full and we can therefor not accept new registrations. Please contact the Project Manager at <a mailto="a@armada.nu">a@armada.nu</a> if you have further questions and fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCoX6eUL-6xfSmb0J-yTvh_eN28_rNDAnno_zK2XkS45-9Qg/viewform">this form</a> to make sure you will be contacted for the fair in 2022.
+The fair 2022 is still open. Please contact the Project Manager at <a mailto="a@armada.nu">a@armada.nu</a> if you have further questions.
 
 <br />
 

@@ -14,8 +14,7 @@ noJumbotron: false
 <!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\\[register.armada.nu](https://register.armada.nu).
 
 <a class="anchor" id="armada2021"></a> -->
-
-The fair 2022 is still open. Please contact the Project Manager at <a mailto="a@armada.nu">a@armada.nu</a> if you have further questions.
+The registration for the 2022 fair is now closed. If you want to participate, contact <a mailto="sales@armada.nu">sales@armada.nu</a> and check if there is still availability. 
 
 <br />
 

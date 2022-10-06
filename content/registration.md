@@ -22,7 +22,7 @@ The registration for the 2022 fair is now closed. If you want to participate, co
 
 THS Armada is a student-driven project at KTH Royal Institute of Technology that arranges the largest career fair in Scandinavia. Every year, more than 12,000 of Sweden's top engineering and architectural students flock to visit the fair to meet their future employers. The Fair is a two-day event with companies from all over the world.
 
-This year we will repeat the success from last year with a virtual fair to make sure our exhibitors and vistors can connect in a safe way. In addition, we will build lounges at KTH where students can enjoy the virtual fair and still get the feel of a physical fair.
+This year we will repeat the success from previous years with a fair back on campus after the last two virtual fairs.
 
 <a class="anchor" id="why-armada"></a>
 

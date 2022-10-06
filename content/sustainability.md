@@ -33,7 +33,7 @@ import FunFact from '../src/components/FunFact';
 
    THS Armada has dedicated an area at the career fair to bring attention to the core value sustainability. The special area is known as the Green Room. As the fair is going digital this year, the Green Room will be a place to get more familiar with the concept of sustainability and how THS Armada works for becoming more sustainable, as well as acquainting with companies that we deem to be the frontrunners in our vision for a sustainable future. These companies have been carefully selected by the Sustainability Team, using a set of meaningful criteria developed by the team, called the Armada Sustainability Index (ASI). More information about the ASI can be found further below.
 
-  Visiting the Green Room is a must if you are interested in sustainability, the environment or if you just want to know how the selected companies work with sustainability. For this year there will also be some fun games in the Green Room! If you want to visit the virtual booths or get in touch with the companies remember to visit the digital fair at Graduateland.
+  Visiting the Green Room is a must if you are interested in sustainability, the environment or if you just want to know how the selected companies work with sustainability. <!--For this year there will also be some fun games in the Green Room! If you want to visit the virtual booths or get in touch with the companies remember to visit the digital fair at Graduateland.-->
 
 </SustainabilitySection>
 </div>

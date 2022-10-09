@@ -7,7 +7,6 @@ import RegistrationBanner from '../RegistrationBanner'
 import useWindowSize from '../../hooks/useWindowSize'
 import HamburgerButton from '../HamburgerButton'
 
-
 const Navbar = props => {
   const windowSize = useWindowSize()
   const [expanded, setExpanded] = useState(false)
@@ -213,6 +212,8 @@ const Navbar = props => {
       <div id='navbar'>
         <div className='banner-container'>
         <nav className={'menu-wrapper ' + (expanded ? 'visible' : 'hidden')}>
+                    
+
           <div className={'menu-hamburger'}>
             <HamburgerButton
               melon={!props.jumbotron}
@@ -222,9 +223,11 @@ const Navbar = props => {
           </div>
           <div className={'menu ' + (expanded ? 'visible' : 'hidden')}>
             <span>
-            {/*<a className='left' alt="Virtual Fair 2021" href="https://event.armada.nu/">Virtual Fair</a>*/}
+            <img alt='' className={'menu ' + (expanded ? 'visible' : 'hidden')} style={{textAlign:'left', maxWidth: "12.5rem", maxHeight:"9.375rem", marginTop:"-2.1rem", marginBottom:"-1.5rem", fill:'white'}} src='/assets/ArmadaLogo.svg' />
+            {/* <a className='left' alt="Virtual Fair 2021" href="https://event.armada.nu/">Virtual Fair</a> */}
             </span>
             <div>
+              
               <Link onClick={toggleExpanded} activeClassName='active' to='/' >
                 {onMobile ? <span>Home</span> : 'Home'}
               </Link>

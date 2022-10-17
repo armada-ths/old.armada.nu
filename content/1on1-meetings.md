@@ -1,12 +1,12 @@
 ---
-slug: /individual-meetings
+slug: /individualmeetings
 title: Individual Meetings
 layout: IndividualMeetings
 description: Individual Meetings
 menuPage: false
 studentSubpage: true
 priority: 3
-header: /assets/images/header-images/individual-meeting.jpg
+header: /assets/images/header-images/recruitment.jpg
 noJumbotron: false
 ---
 
@@ -59,7 +59,7 @@ Jeffrey Chang,  Head of Career Fair KTHB will be coordinating the Individual mee
 
 **13 Nov:**  The selection period ends. <br />
 
-**18 Nov:** All applicants will receive a confirmation email by this date. The successful candidates will also receive information about the companies they are meeting with, the schedule and the room in Nymble where the meeting will be taking place.  <br /> 
+**18 Nov:** All applicants will receive a confirmation email by this date. The successful candidates will also receive information about the companies they are meeting with, the schedule and the room in KTH Library where the meeting will be taking place.  <br /> 
 
 **22-23 Nov:**  The Individual Meetings take place.
 

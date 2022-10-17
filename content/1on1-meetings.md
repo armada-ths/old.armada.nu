@@ -1,5 +1,5 @@
 ---
-slug: /individualmeetings
+slug: /forstudents/individualmeetings
 title: Individual Meetings
 layout: IndividualMeetings
 description: Individual Meetings

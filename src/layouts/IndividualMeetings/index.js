@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.scss'
 import Page from '../../templates/page'
+import CompanySummary from '../../components/CompanySummary'
 
 const IndividualMeetings = props => {
   
@@ -10,6 +11,7 @@ const IndividualMeetings = props => {
         <div className='page-container'>
           <Page {...props} />
         </div>
+        <CompanySummary />
       </div>
   )
 }

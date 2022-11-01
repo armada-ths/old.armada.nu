@@ -54,6 +54,7 @@ class EventList extends React.Component {
     let eventdate_end = new Date(event.event_end * 1000);
     let endminutes = '0' + eventdate_end.getMinutes();
     let endhours = eventdate_end.getHours();
+    let open_for_signup = event.open_for_signup;
 
     return (
       <Modal onClose={() => this.showModal(null)}>
@@ -93,13 +94,16 @@ class EventList extends React.Component {
             </div>
           </div>
           <div className='modalbutton'>
-            {eventdate > today ? (
+            {eventdate > today ? ( open_for_signup ? (
               <a href={event.signup_link}>
                 <button className='rsvpbutton'>
                   {/* <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span> */}
                   <span>Sign up! </span>
                 </button>
               </a>) : (
+                  <button className='rsvpclosed'>
+                    Full
+                  </button>)) : (
                 <a href={event.signup_link}>
                   <button className='rsvpclosed'>
                     VIEW TICKET - SIGNUP CLOSED
@@ -118,6 +122,7 @@ class EventList extends React.Component {
     let today = new Date();
     let eventdate = new Date(event.event_start * 1000);
     // let registration_end = new Date (event.registration_end * 1000);
+    let open_for_signup = event.open_for_signup;
     return (
       <div>
         <div role='presentation' className='event-item' onClick={() => this.showModal(event.id)}>
@@ -140,12 +145,14 @@ class EventList extends React.Component {
               <p className='time' > {hours + ':' + minutes.substr(-2)}</p>
             </div>
             <div className='modalbutton'>
-              {eventdate > today ? (
+              {eventdate > today ? (open_for_signup ? (
                 <button className='rsvpbutton-small'>
                   {/* <span>SIGN UP BEFORE {this.getOrdinalNum(registration_end.getDate())} {monthNames[registration_end.getMonth()]}</span> */}
                   <span>Sign up!</span>
-                </button>
-
+                </button>) : (
+                  <button className='rsvpclosed'>
+                    Full
+                  </button>)
               ) : (
                   <button className='rsvpclosed'>
                     VIEW TICKET - SIGNUP CLOSED

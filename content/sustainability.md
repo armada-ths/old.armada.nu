@@ -73,7 +73,7 @@ The Green Room companies are selected together with the ASI, of which the SDGs a
    THS Armada 2021 emitted 43 tonnes of CO2-emissions and will compensate for that and even more. We have compensated for 50 tonnes of CO2-emissions. A certification for the climate compensation can be seen below:
 
 
-   <form id='submitForm' method='get' action='/assets/sustainability/THS Armada 2021 Certifikat - THS Armada 2021 Certifikat Klimatkompensation.pdf'>
+   <form id='submitForm' method='get' action='/assets/sustainability/THS-Armada-2021-Certifikat-THS-Armada-2021-Certifikat-Klimatkompensation.pdf'>
      <button type='submit'>Certificate</button>
    </form>
 

@@ -38,7 +38,7 @@ const index = () => {
     return <div className='main-container'>
         {Summaries.map((summary, index) => (
             <div key={index} className='information-container'>
-                <img src={summary.img} alt={summary.name} className={summary.name == 'CGI' ? 'cgi-image' : summary.name == 'Handelsbanken' ? 'handelsbank-image' : 'company-image'}/>
+                <img src={summary.img} alt={summary.name} className={summary.name === 'CGI' ? 'cgi-image' : summary.name === 'Handelsbanken' ? 'handelsbank-image' : 'company-image'}/>
                 <div className='right-container'>
                     <h1>{summary.name}</h1>
                     <p>{summary.summary}</p>

@@ -6,6 +6,9 @@ const Contacts = () => {
   
   const projectGroup = [
     { name: 'Filip Rydén', title: 'Project Manager 2022', email: 'a@armada.nu', emoji: '👨‍💼', imageUrl: '/assets/images/PG21/Filip.jpg', linkedInUrl: 'https://www.linkedin.com/in/filip-ryd%C3%A9n-a32b3717a/' },
+    { name: 'Porsev Aslan', title: 'Head of IT', email: 'porsev.aslan@armada.nu', emoji: '💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/porsev-aslan/' },
+    { name: 'Dana Ismail', title: 'Head of Web Development', email: 'dana.ismail@armada.nu', emoji: '💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/dana-ismail-5339151b8/' },
+    { name: 'Anton Danker', title: 'Head of Internal Systems', email: 'anton.danker@armada.nu', emoji: '💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/antondanker/' },
     //{ name: 'Josefine Havdelin', title: 'Project Manager 2021', email: 'a@armada.nu', emoji: '👩‍💼', imageUrl: '/assets/images/PG21/Josefine.jpg', linkedInUrl: 'https://www.linkedin.com/in/josefine-havdelin-9298a4b3/' },
     { name: 'Melvin Jobe', title: 'Head of Marketing & Communication', email: 'melvin.jobe@armada.nu', emoji: '👩‍💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/melvinjobe/' },
     // { name: 'Barath Kumar', title: 'Head of HR', email: 'barath.kumar@armada.nu', emoji: '💞', imageUrl: '/assets/images/PG21/Barath.jpg', linkedInUrl: 'http://linkedin.com/in/barath-kumar-sathish-kumar-7a2b70124/' },
@@ -25,10 +28,7 @@ const Contacts = () => {
     { name: 'Jeffrey Chang', title: 'Head of Career Fair', email: 'jeffrey.chang@armada.nu', emoji: '👷‍♀️', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/jeffrey-chang-914a571b5/' },     
     { name: 'Cecilia Zambelli', title: 'Head of Service', email: 'cecilia.zambelli@armada.nu', emoji: '👨‍🔧', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/cecilia-zambelli-2a074a193/' },
     { name: 'Ajay Surya Gnaneswaran', title: 'Head of Sustainability', email: 'ajay.surya.gnaneswaran@armada.nu', emoji: '♻️', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/ajaysurya97/' },
-    { name: 'Tor Shimamura Fagle', title: 'Head of Diversity', email: 'tor.shimamura.fagle@armada.nu', emoji: '❤️', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/tor-shimamura-fagle-7b6571204/' },
-    { name: 'Porsev Aslan', title: 'Head of IT', email: 'porsev.aslan@armada.nu', emoji: '💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/porsev-aslan/' },
-    { name: 'Dana Ismail', title: 'Head of Web Development', email: 'dana.ismail@armada.nu', emoji: '💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/dana-ismail-5339151b8/' },
-    { name: 'Anton Danker', title: 'Head of Internal Systems', email: 'anton.danker@armada.nu', emoji: '💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/antondanker/' }, 
+    { name: 'Tor Shimamura Fagle', title: 'Head of Diversity', email: 'tor.shimamura.fagle@armada.nu', emoji: '❤️', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/tor-shimamura-fagle-7b6571204/' }, 
   ]
 
   const createCards = (start, end) => {

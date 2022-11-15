@@ -21,6 +21,12 @@ The winners have been drawn and are contacted through email. To see the list of 
 
 <br/>-->
 
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="https://armadacompetition2022.web.app/">
+    <button style="background-color: #E73953;" type="submit">Join The Competition</button>
+</form>
+
+<br /> <br />
+
 ## Competition Description
 
 <br /> <br />
@@ -29,7 +35,7 @@ The winners have been drawn and are contacted through email. To see the list of 
 
 Armada Competition is a gamification of the THS Armada career fair.  The 2022 edition of the Armada competition seeks to be bigger and more interactive for both the exhibitors and the visitors, being a physical fair. The goal of the competition is to encourage students at the fair to be more active, and to get students to participate in other Armada-related events. By being interactive at the fair a student earns tickets. These tickets are then raffled out at the end of the fair where the winners get prizes from companies and Armada. The more tickets a student has accumulated the greater their odds are of winning a prize. After a student has won a prize they are no longer in the running for the other prizes. A participant is automatically in the running to win a prize when they have earned a minimum of 30 tickets  during the fair. New for this year is that the companies will also be battling it out in 3 categories of which two are voted in by the students.
 
-Our own IT team has developed a new web solution just for Armada Competition. Students and participating exhibitors will have to register on the platform for them to take part in the Competition. [ **Stay tuned for the Launch of the Competition latest one week before the Fair!**]
+Our own IT team has developed a new web solution just for Armada Competition. Students and participating exhibitors will have to register on the platform for them to take part in the Competition. [**Stay tuned for the Launch of the Competition latest one week before the Fair!**]
 
 <br />
 
@@ -50,6 +56,12 @@ For you to take part in the competition you have to be a KTH student and registe
 Playing is easy, you only need to check where the participating exhibitor is in the map. Do their challenge at the booth and scan the validation code they show you when you are done. You will be able to see your points on the dashboard! Note that you will be prompted to answer two simple questions about your experience at each exhibitor booth. This will then be used for the company awards!
 
 <br />
+
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="https://armadacompetition2022.web.app/">
+    <button style="background-color: #E73953;" type="submit">Join The Competition</button>
+</form>
+
+<br /> <br />
 
 ## Tickets
 

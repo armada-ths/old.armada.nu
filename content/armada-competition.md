@@ -21,12 +21,6 @@ The winners have been drawn and are contacted through email. To see the list of 
 
 <br/>-->
 
-<form style="text-align:center; margin-bottom: 1em;" method="get" action="https://armadacompetition2022.web.app/">
-    <button style="background-color: #E73953;" type="submit">Join The Competition</button>
-</form>
-
-<br /> <br />
-
 ## Competition Description
 
 <br /> <br />
@@ -38,6 +32,7 @@ Armada Competition is a gamification of the THS Armada career fair.  The 2022 ed
 Our IT team has developed a new web solution for Armada Competition. Students and participating exhibitors will have to register on the platform for them to take part in the Competition. 
 
 Registration for the competition opens **Thursday  16th November 00:00. If you register before the start of the fair (Before Tuesday 22nd November) you will receive an early bird boost of 10 points. So hurry up and register… You will however not be able to see all functionality of the web application until latest Monday 21st November.**
+
 
 <br />
 
@@ -60,12 +55,6 @@ Playing is easy, you only need to check where the participating exhibitor is on 
 For easy distinction, the exhibitors taking part in the competition are highlighted with a red color for you to easily identify them.
 
 <br />
-
-<form style="text-align:center; margin-bottom: 1em;" method="get" action="https://armadacompetition2022.web.app/">
-    <button style="background-color: #E73953;" type="submit">Join The Competition</button>
-</form>
-
-<br /> <br />
 
 ## Tickets
 

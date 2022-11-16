@@ -124,7 +124,13 @@ For Companies in the 3 winning categories, we will present winners  in week 49 (
 
 <br />
 
-## (To be announced)
+* Samsung Galaxy Tab S6 Lite 4/128GB Wifi - Oxford Grey. **Value:** 4,190.00 kr. **Quantity:** 2.
+
+* Sony headphones All-around WH-1000XM4 (Black). **Value:** 2,988.00 kr. **Quantity:** 2
+* Yasuragi Giftcard. **Value:** 1,500.00 kr. **Quantity:** 4
+* Fit Bit Inspire 2 Smartwatch. **Value:** 699.00 kr. **Quantity:** 3
+* Gift Card at Galleria. **Value:** 600.00 kr. **Quantity:** 5
+* Gift Card at Adlibris. **Value:** 400.00 kr. **Quantity:** 11
 
 <br /> <br /> <br />
 

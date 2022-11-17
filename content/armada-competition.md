@@ -37,7 +37,7 @@ Armada Competition is a gamification of the THS Armada career fair.  The 2022 ed
 
 Our IT team has developed a new web solution for Armada Competition. Students and participating exhibitors will have to register on the platform for them to take part in the Competition. 
 
-Registration for the competition opens **Thursday  16th November 00:00. If you register before the start of the fair (Before Tuesday 22nd November) you will receive an early bird boost of 10 points. So hurry up and register… You will however not be able to see all functionality of the web application until latest Monday 21st November.**
+Registration for the competition opens **Thursday  16th November 11:00. If you register before the start of the fair (Before Tuesday 22nd November) you will receive an early bird boost of 10 points. So hurry up and register… You will however not be able to see all functionality of the web application until latest Monday 21st November.**
 
 
 <br />

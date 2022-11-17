@@ -21,6 +21,12 @@ The winners have been drawn and are contacted through email. To see the list of 
 
 <br/>-->
 
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="https://armadacompetition2022.web.app/">
+    <button style="background-color: #E73953;" type="submit">Join The Competition</button>
+</form>
+
+<br /> <br />
+
 ## Competition Description
 
 <br /> <br />
@@ -55,6 +61,12 @@ Playing is easy, you only need to check where the participating exhibitor is on 
 For easy distinction, the exhibitors taking part in the competition are highlighted with a red color for you to easily identify them.
 
 <br />
+
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="https://armadacompetition2022.web.app/">
+    <button style="background-color: #E73953;" type="submit">Join The Competition</button>
+</form>
+
+<br /> <br />
 
 ## Tickets
 

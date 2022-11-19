@@ -20,3 +20,11 @@ A new edition of the Armada Competition will be returning this year! The popular
 See you in November!
 
 </div>
+
+<br /> <br /> <br />
+
+## Opening hours
+* **Tuesday 22nd November:** 10:00 - 16:00
+* **Wednesday 23rd November:** 10:00 - 16:00
+
+<br />

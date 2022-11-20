@@ -30,7 +30,7 @@ import Banquet from '../layouts/Banquet'
 import VirtualFairSuccess from '../layouts/VirtualFairSuccess'
 import RegistrationPage from '../layouts/RegistrationPage'
 import IndividualMeetings from '../layouts/IndividualMeetings'
-import ExhibitorCatalogue from '../layouts/ExhibitorCatalogue'
+import AtTheFairPageTab from '../layouts/AtTheFairPageTab'
 
 const components = {
   RecruitmentPage: RecruitmentPage,
@@ -58,7 +58,7 @@ const components = {
   Banquet: Banquet,
   RegistrationPage: RegistrationPage,
   IndividualMeetings: IndividualMeetings,
-  ExhibitorCatalogue: ExhibitorCatalogue,
+  AtTheFairPageTab: AtTheFairPageTab,
 };
 
 export default function Template({

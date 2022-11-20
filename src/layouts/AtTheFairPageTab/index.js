@@ -1,18 +1,18 @@
 import React from 'react'
 import Page from '../../templates/page'
 import './index.scss'
-import ExhibitorCatalgueInfo from '../../components/ExhibitorCatalogueInfo'
+import AtTheFairTab from '../../components/AtTheFairTab'
 
 
-const ExhibitorCatalogue = props => {
+const AtTheFairPageTab = props => {
     return (
         <div className='exhibitor-catalogue-container'>
-            <h1 id='information-for-exhibitors'>Armada Exhibitor Catalogue 2022</h1>
+            <h1 id='information-for-exhibitors'>At The Fair</h1>
             <div className='page-container'>
                 <Page {...props} />
             </div>
-            <ExhibitorCatalgueInfo />
+            <AtTheFairTab />
         </div>   
     )
 }
-export default ExhibitorCatalogue
+export default AtTheFairPageTab

@@ -1,0 +1,32 @@
+@import "../../styles/_variables";
+@import "../../styles/_fonts";
+
+.exhibitor-catalogue-container {
+  padding: 3em 0em;
+  max-width: $page-width;
+  margin: auto;
+
+  .page-container {
+    h3,
+    h4 {
+      text-align: left;
+      font-weight: 500;
+    }
+  }
+}
+
+#information-for-exhibitors {
+    margin-bottom: 0.5em;
+}
+
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .meetings-container {
+      padding: 3em 1em;
+    }
+
+    .individual-meetings{
+      font-size: 2em;
+    }
+
+  }

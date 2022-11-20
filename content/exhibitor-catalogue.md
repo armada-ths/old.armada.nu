@@ -48,7 +48,12 @@ header: /assets/for_exhibitors.jpg
 </form>
 
 <br />
+<p style="text-align: center;"><b>Maps of the fair can be found at the bottom of this page.</b></p>
+
 <br />
+<br />
+<br />
+
 
 # Career Fair Concepts
 <br />

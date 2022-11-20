@@ -96,8 +96,17 @@ header: /assets/for_exhibitors.jpg
 
 <p style="text-align: center;">Visit some of the most popular student organisations at KTH. They will share with you what they are currently up to, and what opportunities there are in their organisations. They’re all on the second floor of KTH entré. The organisations exhibiting this year are: <b>Malvina</b>, <b>KTH Hyperloop</b>, <b>KTH Formula Student</b>.</p>
 
+<div >
+    <img src="/assets/ExhibitorCatalogue/Malvina-logo.jpeg"/>
+    <img src="/assets/ExhibitorCatalogue/Hyperloop.png" width="50%"/>
+    <img src="/assets/ExhibitorCatalogue/Formula-student.jpeg"/>
+</div>
+
 <br />
 <br />
+<br />
+<br />
+
 
 <h3 style="text-align: center;">CV Factory 2022</h3>
 <p style="text-align: center;">The fair favourite CV factory is back! Take a professional photo in a professional setting for your resumé and cover letter. Get inspiration from sample CVs and content from companies explaining their recruitment process and what they look for in young professionals.</p>
@@ -108,3 +117,13 @@ header: /assets/for_exhibitors.jpg
 ## Partner 2022
 <br />
 <img src="/assets/PartnerLogos/Alstom_Logo_Screen.png" alt="Alstom" style="display: block; width: 50%; margin-left: auto; margin-right: auto;"/>
+
+<br />
+<br />
+<br />
+<br />
+
+# Fair Maps
+<img src="/assets/ExhibitorCatalogue/kth-nymble.png"/>
+<img src="/assets/ExhibitorCatalogue/kth-b.png"/>
+<img src="/assets/ExhibitorCatalogue/kth-entre.png"/>

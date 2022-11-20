@@ -6,7 +6,7 @@ category: NEWS
 date: 2021-04-27T19:02:09.549Z
 cover_wide: /assets/digital-success.jpg
 cover_square: /assets/digital-success.jpg
-archived: false
+archived: true
 ingress: "Webinar 7th of May: Digital success - how to succeed on a virtual fair"
 header: /assets/news-header.jpg
 display_date: true

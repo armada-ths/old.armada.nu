@@ -6,7 +6,7 @@ category: NEWS
 date: 2020-12-09T12:15:01.231Z
 cover_wide: /assets/competition/armada_competition_winners.jpg
 cover_square: /assets/competition/armada_competition_winners.jpg
-archived: false
+archived: true
 ingress: We have our winners!
 header: /assets/news-header.jpg
 display_date: true

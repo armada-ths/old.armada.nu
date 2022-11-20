@@ -13,20 +13,20 @@ header: /assets/for_exhibitors.jpg
 <br />
 
 
-## Hello Exhibitors!
+# At the fair!
 
 
 <br />
 <br />
 
-<a href="/assets/ExhibitorCatalogue/exhibitor-catalogue-2022.pdf">
+<a href="/assets/ExhibitorCatalogue/EC-22-final.pdf">
     <img src='/assets/ExhibitorCatalogue/exhibitor-cat-image.png' alt="Offical Exhibitor Catalogue 2022" width="70%" style="margin-left:15%"/>
 </a>
 
 <br />
 <br />
 
-<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/ExhibitorCatalogue/exhibitor-catalogue-2022.pdf">
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/ExhibitorCatalogue/EC-22-final.pdf">
     <button type="submit">Download Exhibitor Catalogue 2022</button>
 </form>
 

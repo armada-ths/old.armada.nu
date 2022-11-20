@@ -36,14 +36,14 @@ header: /assets/for_exhibitors.jpg
 <br />
 <br />
 
-<a href="/assets/ExhibitorCatalogue/EC-22-final.pdf">
+<a href="/assets/ExhibitorCatalogue/EC-22-finalversion.pdf">
     <img src='/assets/ExhibitorCatalogue/exhibitor-cat-image.png' alt="Offical Exhibitor Catalogue 2022" width="70%" style="margin-left:15%"/>
 </a>
 
 <br />
 <br />
 
-<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/ExhibitorCatalogue/EC-22-final.pdf">
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/ExhibitorCatalogue/EC-22-finalversion.pdf">
     <button type="submit">Download Exhibitor Catalogue 2022</button>
 </form>
 
@@ -94,13 +94,7 @@ header: /assets/for_exhibitors.jpg
 
 <h4 style="text-align: center;">KTH Student organisations</h4>
 
-<p style="text-align: center;">Visit some of the most popular student organisations at KTH. They will share with you what they are currently up to, and what opportunities there are in their organisations. They’re all on the second floor of KTH entré. The organisations exhibiting this year are:</p>
-
-<ul>
-    <li>Malvina</li>
-    <li>KTH Hyperloop</li>
-    <li>KTH Formula Student</li>
-</ul>
+<p style="text-align: center;">Visit some of the most popular student organisations at KTH. They will share with you what they are currently up to, and what opportunities there are in their organisations. They’re all on the second floor of KTH entré. The organisations exhibiting this year are: <b>Malvina</b>, <b>KTH Hyperloop</b>, <b>KTH Formula Student</b>.</p>
 
 <br />
 <br />

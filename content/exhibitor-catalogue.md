@@ -10,11 +10,24 @@ header: /assets/for_exhibitors.jpg
 
 <br/>
 <br/>
+<br />
 
 
-### About Individual Meetings
-Get the opportunity to meet your dream company and have an individual meeting with company representatives! Maybe you are looking for an internship, bachelor/master thesis, trainee programs or just want to get to know the company better and have a rewarding conversation? Then an individual meeting is the perfect opportunity for you!
+## Hello Exhibitors!
 
-During the days of the fair, we offer you to meet participating companies individually for an individual meeting. Apply for individual meetings by uploading your CV and selecting the companies you want to meet here. All registrations will be reviewed by the company you want to meet and you will be informed if you have been selected! The Individual meetings are  available for all students from all academic years and Faculties at KTH. 
 
-Apply no later than the 6th of November!
+<br />
+<br />
+
+<a href="/assets/ExhibitorCatalogue/exhibitor-catalogue-2022.pdf">
+    <img src='/assets/ExhibitorCatalogue/exhibitor-cat-image.png' alt="Offical Exhibitor Catalogue 2022" width="70%" style="margin-left:15%"/>
+</a>
+
+<br />
+<br />
+
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/ExhibitorCatalogue/exhibitor-catalogue-2022.pdf">
+    <button type="submit">Download Exhibitor Catalogue 2022</button>
+</form>
+
+<br />

@@ -1,6 +1,27 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
+
+#a{
+//visibility: visible;
+display: unset;
+}
+#b{
+ //   visibility: hidden;
+ display: none;
+}
+#c{
+ //   visibility: hidden;
+ display: none;
+}
+#d{
+ //   visibility: hidden;
+ display: none;
+}
+#e{
+  //  visibility: hidden;
+  display: none;
+}
 .interviewee {
     display: flex;
     align-items: flex-start;

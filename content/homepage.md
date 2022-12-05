@@ -21,10 +21,4 @@ See you in November!
 
 </div>
 
-<br /> <br /> <br />
-
-## Opening hours
-* **Tuesday 22nd November:** 10:00 - 16:00
-* **Wednesday 23rd November:** 10:00 - 16:00
-
-<br />
+<br/>

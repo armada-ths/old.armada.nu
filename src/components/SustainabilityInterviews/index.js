@@ -23,6 +23,7 @@ const SustainabilityInterviews = () => {
     return (
         <>
             <h2>What does sustainability mean to you?</h2>
+            <div className='sustainability-interview-flex'>
             {InterviewAnswers.slice(0,5).map(answer => (
                 <div key={answer.name} className='sustainability-question'>
                     <div className='interviewee 'id={answer.id}>
@@ -51,6 +52,7 @@ const SustainabilityInterviews = () => {
                     </div>
                 </div>
             ))}
+            </div>
         </>
     )
 }

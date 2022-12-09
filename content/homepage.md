@@ -9,7 +9,7 @@ header: /assets/images/header-images/home.jpg
 ---
 
 # THS ARMADA 2022
-** Thank you for attending THS Armada 2021, we look forward to see you again in 2022. **
+** Thank you for attending THS Armada 2022, we look forward to see you again in 2023. **
 
 <div class="info-border-box">
 

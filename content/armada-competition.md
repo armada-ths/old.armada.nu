@@ -12,18 +12,23 @@ header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
 
-<!--
-<div class="info-border-box">
-The information below applies to Armada 2021, but stay tuned for another edition in 2022. 
+import Infront from '../static/assets/competition-company-winners2022/infront.png'
+import SopraSteria from '../static/assets/competition-company-winners2022/sopra-steria.jpeg'
+import Siemens from '../static/assets/competition-company-winners2022/siemens-energy.png'
 
-The winners have been drawn and are contacted through email. To see the list of winners checkout our social medias <a href="https://www.instagram.com/thsarmada/">Instagram</a> and <a href="https://www.facebook.com/thsarmada">Facebook</a>. We hope you all enjoyed the fair. See you next year!
+
+<div class="info-border-box">
+The information below applies to Armada 2022, but stay tuned for another edition in 2023. 
+
+The winners have been drawn and are contacted through email. We hope you all enjoyed the fair. See you next year!
 </div>
 
-<br/>-->
+<br/>
 
+<!--
 <form style="text-align:center; margin-bottom: 1em;" method="get" action="https://armadacompetition2022.web.app/">
     <button style="background-color: #E73953;" type="submit">Join The Competition</button>
-</form>
+</form>-->
 
 <br /> <br />
 
@@ -37,7 +42,8 @@ Armada Competition is a gamification of the THS Armada career fair.  The 2022 ed
 
 Our IT team has developed a new web solution for Armada Competition. Students and participating exhibitors will have to register on the platform for them to take part in the Competition. 
 
-Registration for the competition opens **Thursday  16th November 11:00. If you register before the start of the fair (Before Tuesday 22nd November) you will receive an early bird boost of 10 points. So hurry up and register… You will however not be able to see all functionality of the web application until latest Monday 21st November.**
+<!--
+Registration for the competition opens **Thursday  16th November 11:00. If you register before the start of the fair (Before Tuesday 22nd November) you will receive an early bird boost of 10 points. So hurry up and register… You will however not be able to see all functionality of the web application until latest Monday 21st November.**-->
 
 
 <br />
@@ -60,11 +66,12 @@ Playing is easy, you only need to check where the participating exhibitor is on 
 
 For easy distinction, the exhibitors taking part in the competition are highlighted with a red color for you to easily identify them.
 
-<br />
 
+
+<!--
 <form style="text-align:center; margin-bottom: 1em;" method="get" action="https://armadacompetition2022.web.app/">
     <button style="background-color: #E73953;" type="submit">Join The Competition</button>
-</form>
+</form>-->
 
 <br /> <br />
 
@@ -163,10 +170,31 @@ For Companies in the 3 winning categories, we will present winners  in week 49 (
 <br />
 
 
+## Armada Competition Exhibitor Awards
+<br />
 
+### Most Outstanding Booth
+<br />
+    <div style="display:flex;align-items: center;flex-direction:column">
+        <img src={Siemens} style="width:100%; max-width:500px"/>
+    </div>
+<br />
+<br />
 
+### Exhibitor With Highest Satisfaction
+<div style="display:flex;align-items: center;flex-direction:column">
+<img src={SopraSteria} style="max-height:400px"/>
+<img src={Siemens} style="width: 100%; max-width:500px"/>
+</div>
+<br />
+<br />
 
-
+### Most Visited Exhibitor 
+<br />
+<br />
+    <div style="display:flex;align-items: center;flex-direction:column">
+        <img src={Infront} style="width: 100%; max-width:500px"/>
+    </div>
 
 
 

@@ -181,7 +181,7 @@ For Companies in the 3 winning categories, we will present winners  in week 49 (
 <br />
 <br />
 
-### Exhibitor With Highest Satisfaction
+### Exhibitor With Highest Visitor Satisfaction
 <div style="display:flex;align-items: center;flex-direction:column">
 <img src={SopraSteria} style="max-height:400px"/>
 <img src={Siemens} style="width: 100%; max-width:500px"/>
@@ -195,12 +195,3 @@ For Companies in the 3 winning categories, we will present winners  in week 49 (
     <div style="display:flex;align-items: center;flex-direction:column">
         <img src={Infront} style="width: 100%; max-width:500px"/>
     </div>
-
-
-
-
-
-
-
-
-

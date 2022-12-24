@@ -9,7 +9,14 @@ header: /assets/images/header-images/home.jpg
 ---
 
 # THS ARMADA 2022
-** Thank you for attending THS Armada 2022, we look forward to see you again in 2023. **
+<div style="display:flex;align-items: center;flex-direction:column">
+    <p>
+        <b>Thank you for attending THS Armada 2022, we look forward to see you again in 2023.</b>
+    </p>
+    <p>
+        <b>Do you want to create the next fair?</b>
+    </p>
+</div>
 
 <div class="info-border-box">
 

@@ -5,7 +5,7 @@ import './index.scss'
 
 const SustainabilityInterviews = () => {
 
-  const InterviewQuetions = [
+  const InterviewQuestions = [
     {text: 'How do you work with sustainability?'},
     {text: 'Where do you see the struggle and potential?'},
     {text: 'What are some sustainability choices you make in your personal life?'}
@@ -23,6 +23,7 @@ const SustainabilityInterviews = () => {
     return (
         <>
             <h2>What does sustainability mean to you?</h2>
+            <div className='sustainability-interview-flex'>
             {InterviewAnswers.slice(0,5).map(answer => (
                 <div key={answer.name} className='sustainability-question'>
                     <div className='interviewee'>
@@ -36,21 +37,22 @@ const SustainabilityInterviews = () => {
                             <p className='text name'>{answer.name}</p>
                             <p className='text interviewTitle'>{answer.title}</p>
                             <p className='text Question'>
-                                {InterviewQuetions[0].text}
+                                {InterviewQuestions[0].text}
                             </p>
                             <p className='text'>{answer.answer1}</p>
                             <p className='text Question'>
-                                {InterviewQuetions[1].text}
+                                {InterviewQuestions[1].text}
                             </p>
                             <p className='text'>{answer.answer2}</p>
                             <p className='text Question'>
-                                {InterviewQuetions[2].text}
+                                {InterviewQuestions[2].text}
                             </p>
                             <p className='text'>{answer.answer3}</p>
                         </div>
                     </div>
                 </div>
             ))}
+            </div>
         </>
     )
 }

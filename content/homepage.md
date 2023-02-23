@@ -11,7 +11,7 @@ header: /assets/images/header-images/home.jpg
 # THS ARMADA 2023
 <div style="display:flex;align-items: center;flex-direction:column">
     <p>
-        <b>The largest career fair in Scandinavia is back for 2023</b><!-- Update the home page - N -->
+        <b>The largest career fair in Scandinavia is back for 2023</b>
     </p>
 </div>
 

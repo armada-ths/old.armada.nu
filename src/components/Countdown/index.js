@@ -4,7 +4,7 @@ import Countdown, { zeroPad } from 'react-countdown-now';
 
 const CountdownComponent = () => {
 
-    const DATE_OF_CAREER_FAIR = new Date('November 22, 2022 10:00:00');
+    const DATE_OF_CAREER_FAIR = new Date('November 22, 2023 10:00:00'); //Update the career fair date - N
     var DATE_NOW = new Date();
     const isHappening = DATE_OF_CAREER_FAIR < DATE_NOW;
 

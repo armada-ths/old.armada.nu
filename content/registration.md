@@ -11,11 +11,12 @@ priority: 2
 header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
-<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\\[register.armada.nu](https://register.armada.nu).
+<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\\\[register.armada.nu](https://register.armada.nu).
 
 <a class="anchor" id="armada2021"></a> -->
 
 <!-- The registration for the 2022 fair is now closed. If you want to participate, contact <a mailto="sales@armada.nu">sales@armada.nu</a> and check if there is still availability. -->
+
 Thank you to everyone who made the 2022 fair great, if you want to be part of the 2023 fair, announce your interest to Project Manager Leonard Hökby at <a mailto="a@armada.nu">a@armada.nu</a>.
 
 <br />
@@ -34,7 +35,7 @@ This year we will repeat the success from previous years with a fair back on cam
 
 THS Armada is a unique opportunity for exhibitors to market themselves to students at the biggest technical university in Sweden. First and foremost through our fair but Armada is so much more. We create opportunities outside of the fair for our exhibitors to engage with and recruit students through interactive events, customized events and a banquet dinner amongst other activities. Our vision is to allow every student to meet their dream employer and give companies the possibility to find their next star.
 
-Armada is an established event and this year will be the 40th Armada in a row. Students at KTH are constantly gazing into the future and we want to lead to bring them and your company together.
+Armada is an established event and this year will be the 40th Armada in a row. Students at KTH are constantly gazing into the future and we want to lead to bring them and your company together. Welcome to THS Armada
 
 <br />
 

@@ -11,7 +11,7 @@ priority: 2
 header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
-<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\\\[register.armada.nu](https://register.armada.nu).
+<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\\\\[register.armada.nu](https://register.armada.nu).
 
 <a class="anchor" id="armada2021"></a> -->
 

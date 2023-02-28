@@ -32,15 +32,19 @@ nvm use <version>
 ***Mac/Linux (through Node Verison Manager)***
 
 ```sh
-npm install -g n
-sudo n 14
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
 ```
-
+Updated 2022-02-28 (Nima), please use nvm instead
 **Updating npm:**
-
+~~
 ```sh
 npm install -g npm
 ```
+~~
+
+Use the local npm version instead. Should be version ~ 6.
+This might change package.json or package-lock.json
 
 ### 2. Install dependencies
 
@@ -52,9 +56,15 @@ npm i
 
 ### 3. Install Gatsby CLI
 
+~~
 ```
 npm install -g gatsby-cli
 ```
+~~
+```
+npm install -g gatsby-cli@2.19.3
+```
+See #710
 
 ### 4. Run development server
 
@@ -64,6 +74,11 @@ gatsby develop
 
 The site will be running att localhost:8000  
 You can find the Netlify CMS admin panel at localhost:60650/admin/
+node-sass is a module which gives issues and varies depending on which Node you use.
+Make sure that you have python installed and if gatsby develop doesn't work use
+```
+npm rebuild node-sass
+```
 
 ## Build for production
 

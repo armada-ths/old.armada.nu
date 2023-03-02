@@ -1,12 +1,12 @@
 import React from 'react'
-import './index.scss';
-import Countdown, { zeroPad } from 'react-countdown-now';
+import './index.scss'
+import Countdown, { zeroPad } from 'react-countdown-now'
+//import Countdown, { zeroPad } from 'react-countdown'; need to change above to this
 
 const CountdownComponent = () => {
-
-    const DATE_OF_CAREER_FAIR = new Date('November 22, 2023 10:00:00'); //Update the career fair date - N
-    var DATE_NOW = new Date();
-    const isHappening = DATE_OF_CAREER_FAIR < DATE_NOW;
+    const DATE_OF_CAREER_FAIR = new Date('November 22, 2023 10:00:00') //Update the career fair date - N
+    var DATE_NOW = new Date()
+    const isHappening = DATE_OF_CAREER_FAIR < DATE_NOW
 
     const countDownRenderer = ({ days, hours, minutes, seconds }) => {
         return (
@@ -28,18 +28,23 @@ const CountdownComponent = () => {
                     <p className='time-unit'>SECONDS</p>
                 </div>
             </div>
-        );
-    };
+        )
+    }
 
-    return (<div className='countdown-container'>
-        {isHappening ? 
-            <h3 className='happening'>The Armada Fair is open!</h3> : 
-            <div className='countdown-width-container'>
-                <Countdown date={DATE_OF_CAREER_FAIR} renderer={countDownRenderer} />
-            </div>
-        }
-    </div>);
-
+    return (
+        <div className='countdown-container'>
+            {isHappening ? (
+                <h3 className='happening'>The Armada Fair is open!</h3>
+            ) : (
+                <div className='countdown-width-container'>
+                    <Countdown
+                        date={DATE_OF_CAREER_FAIR}
+                        renderer={countDownRenderer}
+                    />
+                </div>
+            )}
+        </div>
+    )
 }
 
-export default CountdownComponent;
+export default CountdownComponent

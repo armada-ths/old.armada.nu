@@ -27,75 +27,84 @@ import forStudentsPage from '../layouts/forStudentsPage'
 import KnightecPage from '../layouts/KnightecPage'
 import CompetitionPage from '../layouts/CompetitionPage'
 import Banquet from '../layouts/Banquet'
-import VirtualFairSuccess from '../layouts/VirtualFairSuccess'
 import RegistrationPage from '../layouts/RegistrationPage'
 import IndividualMeetings from '../layouts/IndividualMeetings'
 import AtTheFairPageTab from '../layouts/AtTheFairPageTab'
 
 const components = {
-  RecruitmentPage: RecruitmentPage,
-  VirtualFairSuccess: VirtualFairSuccess,
-  SustainabilityPage: SustainabilityPage,
-  DiversityPage: DiversityPage,
-  FAQStudent: FAQStudent,
-  FAQExhibitor: FAQExhibitor,
-  Homepage: Homepage,
-  ExhibitorInfo: ExhibitorInfo,
-  AboutPage: AboutPage,
-  ContactPage: ContactPage,
-  News: News,
-  Exhibitors: Exhibitors,
-  Previous: Previous,
-  MapsPage: MapsPage,
-  PlainPage: PlainPage,
-  Matching: Matching,
-  Events: Events,
-  Coffee: Coffee,
-  Partners: Partners,
-  forStudentsPage: forStudentsPage,
-  KnightecPage: KnightecPage,
-  CompetitionPage: CompetitionPage,
-  Banquet: Banquet,
-  RegistrationPage: RegistrationPage,
-  IndividualMeetings: IndividualMeetings,
-  AtTheFairPageTab: AtTheFairPageTab,
-};
+    RecruitmentPage: RecruitmentPage,
+    SustainabilityPage: SustainabilityPage,
+    DiversityPage: DiversityPage,
+    FAQStudent: FAQStudent,
+    FAQExhibitor: FAQExhibitor,
+    Homepage: Homepage,
+    ExhibitorInfo: ExhibitorInfo,
+    AboutPage: AboutPage,
+    ContactPage: ContactPage,
+    News: News,
+    Exhibitors: Exhibitors,
+    Previous: Previous,
+    MapsPage: MapsPage,
+    PlainPage: PlainPage,
+    Matching: Matching,
+    Events: Events,
+    Coffee: Coffee,
+    Partners: Partners,
+    forStudentsPage: forStudentsPage,
+    KnightecPage: KnightecPage,
+    CompetitionPage: CompetitionPage,
+    Banquet: Banquet,
+    RegistrationPage: RegistrationPage,
+    IndividualMeetings: IndividualMeetings,
+    AtTheFairPageTab: AtTheFairPageTab,
+}
 
 export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
+    data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { mdx } = data // data.markdownRemark holds your post data
-  const { frontmatter } = mdx
-  const { layout } = frontmatter
-  return (<>
-    <Helmet
-      title={frontmatter.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      ]}
-    >
-    </Helmet><Layout jumbotron={!frontmatter.noJumbotron} location={frontmatter.slug} header={frontmatter.header}>
-    {components[layout] ? React.createElement(components[layout], mdx) : null}
-  </Layout>
-  </>)
+    const { mdx } = data // data.markdownRemark holds your post data
+    const { frontmatter } = mdx
+    const { layout } = frontmatter
+    return (
+        <>
+            <Helmet
+                title={frontmatter.title}
+                meta={[
+                    { name: 'description', content: 'Sample' },
+                    { name: 'keywords', content: 'sample, something' },
+                    {
+                        name: 'viewport',
+                        content: 'width=device-width, initial-scale=1',
+                    },
+                ]}
+            ></Helmet>
+            <Layout
+                jumbotron={!frontmatter.noJumbotron}
+                location={frontmatter.slug}
+                header={frontmatter.header}
+            >
+                {components[layout]
+                    ? React.createElement(components[layout], mdx)
+                    : null}
+            </Layout>
+        </>
+    )
 }
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    mdx(frontmatter: { slug: { eq: $slug } }) {
-      body
-      frontmatter {
-        date
-        slug
-        title
-        header
-        layout
-        cover_wide
-        ingress
-        noJumbotron
-      }
+    query($slug: String!) {
+        mdx(frontmatter: { slug: { eq: $slug } }) {
+            body
+            frontmatter {
+                date
+                slug
+                title
+                header
+                layout
+                cover_wide
+                ingress
+                noJumbotron
+            }
+        }
     }
-  }
 `

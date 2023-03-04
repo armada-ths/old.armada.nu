@@ -1,20 +1,21 @@
 import React from 'react'
 import axios from 'axios'
 import PropTypes from 'prop-types'
-import { addUrlProps, UrlQueryParamTypes } from 'react-url-query'
 import './index.scss'
 import Modal from '../Modal'
 import Loading from '../Loading'
 import Cat from '../Cat'
 import Select from 'react-select'
-// import {Link} from "react-router"
+/* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
+
+
 //Change all Select element according to https://react-select.com/upgrade#from-v3-to-v4
-const urlPropsQueryConfig = {
+/*const urlPropsQueryConfig = {
     exhibitorName: {
         type: UrlQueryParamTypes.string,
         queryParam: 'exhibitorName',
     },
-}
+}*/
 
 //base of server adress
 const ais = 'https://ais.armada.nu/'
@@ -367,7 +368,7 @@ class ExhibitorList extends React.Component {
                         showModal={this.showModal}
                     />
                 ))
-                this.setState({ exhibitors, exhibitorList, isLoading: false }) // component saves its own data
+                this.setState({ exhibitors, exhibitorList, isLoading: false }) // component saves its own data --- What does this mean?? //Nima
                 // Get from url path the GET params ?id=number, to know what event to display
                 if (this.props.exhibitorName !== undefined) {
                     this.setState({
@@ -1006,14 +1007,15 @@ ExhibitorList.propTypes = {
     lastYear: PropTypes.bool,
 }
 
-let toExport
+/*let toExport
 if (global.window !== undefined) {
     toExport = addUrlProps({ urlPropsQueryConfig })(ExhibitorList)
 } else {
     toExport = ExhibitorList
 }
 export default toExport
-
+*/
+export default ExhibitorList
 const ExhibitorItem = props => {
     let classname = props.exhibitor.sustainability ? ' green' : ''
     classname += props.exhibitor.diversity ? ' purple' : ''

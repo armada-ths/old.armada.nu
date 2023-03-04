@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import './index.scss'
 import Page from '../../templates/page'
 import VerticalTimeline from '../../components/VerticalTimeline'
@@ -15,3 +15,4 @@ const VirtualFairSuccess = props => {
 
 export default VirtualFairSuccess
 //remove this
+*/

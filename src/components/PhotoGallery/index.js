@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
-import Zoom from 'react-reveal/Zoom'
-//import Zoom from 'react-awesome-reveal'
+//import Zoom from 'react-reveal/Zoom'
+import { Zoom } from 'react-awesome-reveal'
 
 const FLICKR_API_KEY = '381c0c551c89c0f23e326456eae0c6a8'
 const FLICKR_PHOTOSET_ID = '72157708626862634'
@@ -18,20 +18,18 @@ class Photo extends React.Component {
             backgroundPosition: 'center',
         }
         return (
-            <Zoom>
-                <div className='photo'>
-                    <div className='square' style={bgStyle}>
-                        <a
-                            className='photo-info'
-                            target='_blank'
-                            rel='noreferrer'
-                            href={pageURL}
-                        >
-                            {this.props.title}
-                        </a>
-                    </div>
+            <div className='photo'>
+                <div className='square' style={bgStyle}>
+                    <a
+                        className='photo-info'
+                        target='_blank'
+                        rel='noreferrer'
+                        href={pageURL}
+                    >
+                        {this.props.title}
+                    </a>
                 </div>
-            </Zoom>
+            </div>
         )
     }
 }

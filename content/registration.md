@@ -11,6 +11,7 @@ priority: 2
 header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
+
 <!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\\\\[register.armada.nu](https://register.armada.nu).
 
 <a class="anchor" id="armada2021"></a> -->
@@ -49,12 +50,12 @@ If you did not register your company during the Initial Registration, 11th of Ap
 <img src='/assets/Invitation/ProductCatalogue2022Png.png' alt="Offical Invitation" width="70%" style="margin-left:15%"/>
 </a>
 
-<form style="text-align:center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2022.pdf">
+<form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2022.pdf">
 <br />
 <br />
-
+<div class = "buttonStyle">
 <button type="submit">Download Invitation</button>
-
+</div>
 </form>
 <br />
 
@@ -78,7 +79,7 @@ THS Armada offers you a wide range of events to profile your organisation toward
 
 Is something missing in our options? We also offer Custom Events designed in collaboration with your organisation and THS Armada to create an event tailored to your needs and wishes. Reach out to your sales representative to discuss! The possibilities are endless…
 
-<!-- 
+<!--
 <a href="/assets/invitation/ArmadaEvents2021.pdf">
 <img src='/assets/Invitation/eventweeks2021.png' alt="Event Catalog 2021" width="50%" style="margin-left:25%"/>
 </a>

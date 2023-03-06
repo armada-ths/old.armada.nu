@@ -5,7 +5,6 @@ module.exports = {
         author: `THS Armada`,
     },
     plugins: [
-        `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -27,19 +26,19 @@ module.exports = {
                 icon: `${__dirname}/static/assets/armada-icon.png`,
             },
         },
-        `gatsby-plugin-netlify-cms`,
+        `gatsby-plugin-static-cms`,
         `gatsby-plugin-sass`,
+        {
+            resolve: `gatsby-plugin-mdx`,
+            options: {
+                extensions: ['.mdx', '.md'],
+            },
+        },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `markdown-pages`,
                 path: `${__dirname}/content`,
-            },
-        },
-        {
-            resolve: `gatsby-plugin-mdx`,
-            options: {
-                extensions: ['.mdx', '.md'],
             },
         },
         {

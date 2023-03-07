@@ -11,6 +11,8 @@ priority: 1
 header: /assets/TheFair_small.jpg
 noJumbotron: false
 ---
+import Recruitment from '../src/components/Recruitment';
+import EmbeddedVideo from '../src/components/EmbeddedVideo';
 
 # Shape THS Armada
 
@@ -28,9 +30,9 @@ The Armada team consists of around 250 people and is divided into four subgroups
 
 <p><b id='sustainability-color'>IT</b>: In a digital era, the digitisation process is one of the core pillars of THS Armada. Turning creative ideas from all groups into reality enhances the Armada experience for all members, visitors and exhibitors. Our very own AIS lets companies and students sign up for Armada and our website is the home for all important information about Armada. The IT team makes all this possible! </p>
 
-<recruitment></recruitment>
+<Recruitment/>
 
----
+- - -
 
 ## So, how is all this organised?
 
@@ -46,25 +48,27 @@ Think of the Armada team as a big circle.
 
 The different layers in the circle have different levels of responsibility. All so You can find the role that suits you and your schedule best.
 
----
+- - -
 
 ## Perks of joining the Armada team:
 
--   Real work-life experience
--   Boost your CV
--   Pre access to all events in Armada in November and throughout the year
--   Learn how to interview
--   The chance to lead a team of 5-15 people
--   Attend the Grand Banquet
--   Inside connections with employers
--   Team building activities with companies
--   Friends for life
--   A cruise together with all of Armada at the end of the year
--   Merch & tons of fun
+* Real work-life experience
+* Boost your CV
+* Pre access to all events in Armada in November and throughout the year
+* Learn how to interview
+* The chance to lead a team of 5-15 people
+* Attend the Grand Banquet
+* Inside connections with employers
+* Team building activities with companies
+* Friends for life
+* A cruise together with all of Armada at the end of the year
+* Merch & tons of fun
 
----
+- - -
 
-## <video2></video2>
+<EmbeddedVideo videoLink="https://youtu.be/n6yuGUyYAzg"/>
+
+- - -
 
 ## Questions?
 

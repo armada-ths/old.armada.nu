@@ -11,20 +11,20 @@ header: /assets/for_exhibitors.jpg
 <br/>
 <br/>
 
-<div class="info-border-box text" style="text-align: center;">
+<p class="info-border-box text" style="text-align: center;">
     <h3 style="text-align: center;">Opening hours</h3>
     <br/>
     <b>Tuesday 22nd November:</b> 10:00 - 16:00
     <br/>
     <b>Wednesday 23rd November:</b> 10:00 - 16:00
-</div>
+</p>
 
 <br />
 <br />
 <br />
+
 
 # The Exhibitor Catalogue
-
 <br />
 <div style="text-align: center;">
     <b>THE LONG AWAITED EXHIBITOR CATALOGUE IS HERE!!!</b>
@@ -54,8 +54,8 @@ header: /assets/for_exhibitors.jpg
 <br />
 <br />
 
-# Career Fair Concepts
 
+# Career Fair Concepts
 <br />
 <br />
 
@@ -81,13 +81,13 @@ header: /assets/for_exhibitors.jpg
 
 <br />
 
-<div class="info-border-box text" style="text-align: center;">
+<p class="info-border-box text" style="text-align: center;">
     <h3 style="text-align: center;">Opening hours</h3>
     <br/>
     <b>Tuesday 22nd November:</b> 10:00 - 16:00
     <br/>
     <b>Wednesday 23rd November:</b> 10:00 - 16:00
-</div>
+</p>
 
 <br />
 <br />
@@ -112,6 +112,7 @@ header: /assets/for_exhibitors.jpg
 <br />
 <br />
 
+
 <h3 style="text-align: center;">CV Factory 2022</h3>
 <p style="text-align: center;">The fair favourite CV factory is back! Take a professional photo in a professional setting for your resumé and cover letter. Get inspiration from sample CVs and content from companies explaining their recruitment process and what they look for in young professionals.</p>
 
@@ -119,7 +120,6 @@ header: /assets/for_exhibitors.jpg
 <br />
 
 ## Partner 2022
-
 <br />
 <img src="/assets/PartnerLogos/Alstom_Logo_Screen.png" alt="Alstom" style="display: block; width: 50%; margin-left: auto; margin-right: auto;"/>
 
@@ -129,7 +129,6 @@ header: /assets/for_exhibitors.jpg
 <br />
 
 # Fair Maps
-
 <img src="/assets/ExhibitorCatalogue/kth-nymble.png"/>
 <img src="/assets/ExhibitorCatalogue/kth-b.png"/>
 <img src="/assets/ExhibitorCatalogue/kth-entre.png"/>

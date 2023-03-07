@@ -1,5 +1,5 @@
 ---
-slug: /banquet2020
+slug: /Banquet2020
 title: Banquet
 layout: Banquet
 description: Page
@@ -9,9 +9,8 @@ header: /assets/images/header-images/it_team.jpg
 noJumbotron: false
 ---
 
-
 # Web Team + Moa!!! Banquet
 
-We are the web team <3 we’ve had the best year and we are the best dancers in Armada, just look at the video! 
+We are the web team \<3 we’ve had the best year and we are the best dancers in Armada, just look at the video!
 
-*Mic drop*
+_Mic drop_

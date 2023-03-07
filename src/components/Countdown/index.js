@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.scss'
-import Countdown, { zeroPad } from 'react-countdown-now'
-//import Countdown, { zeroPad } from 'react-countdown'; need to change above to this
+//import Countdown, { zeroPad } from 'react-countdown-now'
+import Countdown, { zeroPad } from 'react-countdown';
 
 const CountdownComponent = () => {
     const DATE_OF_CAREER_FAIR = new Date('November 22, 2023 10:00:00') //Update the career fair date - N

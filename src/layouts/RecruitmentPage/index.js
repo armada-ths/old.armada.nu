@@ -1,13 +1,15 @@
 import React from 'react'
 import './index.scss'
 import Page from '../../templates/page'
+import Recruitment from '../../components/Recruitment'
+import EmbeddedVideo from '../../components/EmbeddedVideo'
 
-const RecruitmentPage = (props) => {
-
-  return (<div className='recruitment-container'>
-      <Page {...props}/>
-    </div>)
-
+const RecruitmentPage = props => {
+    return (
+        <div className='recruitment-container'>
+            <Page {...props} />
+        </div>
+    )
 }
 
 export default RecruitmentPage

@@ -1,25 +1,23 @@
-import React from 'react';
-import { ReactPageClick } from 'react-page-click';
-import './index.scss';
+import React from 'react'
+// import { ReactPageClick } from 'react-page-click' Removing this
+import './index.scss'
 
 const Modal = ({ onClose, ...rest }) => (
-
-  <div className='popupcontainer'>
-    <p role='presentation' className='cross' onClick={onClose}>˟</p>
-    <div role='presentation' className='shade' onClick={onClose}>
-      <div className='shadecontent'>
-      </div>
+    <div className='popupcontainer'>
+        <p role='presentation' className='cross' onClick={onClose}>
+            ˟
+        </p>
+        <div role='presentation' className='shade' onClick={onClose}>
+            <div className='shadecontent'></div>
+        </div>
+        <div className='popup'>
+            <div className='modalcontent' {...rest} />
+        </div>
     </div>
-    <ReactPageClick notify={() => { return }}>
-      <div className='popup'>
-        <div className='modalcontent' {...rest} />
-      </div>
-    </ReactPageClick>
-  </div>
-);
+)
 
 Modal.propTypes = {
-  onClose: () => { }
-};
+    onClose: () => {},
+}
 
 export default Modal

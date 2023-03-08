@@ -1,7 +1,7 @@
-import React from 'react'
+/*import React from 'react'
 import './index.scss'
 import { ReactTypeformEmbed } from 'react-typeform-embed'
-
+//Check changes for ReactTypeformEmbed according to https://github.com/alexgarces/react-typeform-embed
 class TypeForm extends React.Component {
     constructor(props) {
         super(props)
@@ -27,10 +27,7 @@ class TypeForm extends React.Component {
                         this.typeformEmbed = tf
                     }}
                 />
-                <button
-                    onClick={this.openForm}
-                    style={{ cursor: 'pointer' }}
-                >
+                <button onClick={this.openForm} style={{ cursor: 'pointer' }}>
                     {this.props.children}
                 </button>
             </div>
@@ -38,4 +35,4 @@ class TypeForm extends React.Component {
     }
 }
 
-export default TypeForm
+export default TypeForm */

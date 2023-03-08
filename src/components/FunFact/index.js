@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './index.scss'
-import Zoom from 'react-reveal/Zoom'
-//import Zoom from 'react-awesome-reveall'
+//import Zoom from 'react-reveal/Zoom'
+import Zoom from 'react-awesome-reveal'
 
 const FunFact = props => {
     const [fact, setFact] = useState([])

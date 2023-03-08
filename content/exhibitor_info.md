@@ -9,18 +9,14 @@ priority: 2
 header: /assets/for_exhibitors.jpg
 ---
 
-import EmbeddedVideo from '../src/components/EmbeddedVideo';
+<!--### WE ARE BACK!
 
-<br />
-
-### WE ARE BACK!
-
-After two years of virtual  fairs, KTH students are eager to meet company representatives on campus again. The excitement and zeal for this year's Armada Career Fair among students can only be experienced at the Fair. Do not miss out on this annual opportunity to acquaint yourselves with your future taskforce!
+After two years of virtual fairs, KTH students are eager to meet company representatives on campus again. The excitement and zeal for this year's Armada Career Fair among students can only be experienced at the Fair. Do not miss out on this annual opportunity to acquaint yourselves with your future taskforce! -->
 
 <!-- <EmbeddedVideo videoLink= "https://www.youtube.com/watch?v=9e3sPr6rELQ"></EmbeddedVideo> -->
 
 <!--
-If you need further help we recommend looking at these documents from Graduateland or contacting your host. 
+If you need further help we recommend looking at these documents from Graduateland or contacting your host.
 
 <a href="/assets/invitation/CompanyGuide.pdf">
 <img src='/assets/invitation/companyGuide.png' alt="Guide setup Booth" width="70%" style="margin-left:15%"/>
@@ -81,7 +77,7 @@ We know that it can sometimes be overwhelming at a physical fair with a lot of p
 
 **Timely logistical communication:** Armada has adapted a horizontal logistical solution to minimize its climate impact. This solution is called the Armada Transport. Our collaborator, DHL will take care of the transport of all our exhibitors to and from the fair . The booking of Armada transport will open after the final registration. To avoid any logistical mishaps, reach out to our contact at DHL in good time during the booking period.
 
-**Visitor interaction:** Visitors are often shy to take the first step  but a joyful  smile  from a company representative works wonders. Apart from that, you can prepare some tasks/ games  at your booth that can work as icebreakers. These tasks also reduce anxiety among participants and make conversations easy. For the first time this year, we will be having an Armada Competition at a physical fair. The competition is designed to attract more students to your booth in search of the great price. Read more about the competition in the Additional Services Catalogue.
+**Visitor interaction:** Visitors are often shy to take the first step but a joyful smile from a company representative works wonders. Apart from that, you can prepare some tasks/ games at your booth that can work as icebreakers. These tasks also reduce anxiety among participants and make conversations easy. For the first time this year, we will be having an Armada Competition at a physical fair. The competition is designed to attract more students to your booth in search of the great price. Read more about the competition in the Additional Services Catalogue.
 
 <br/>
 

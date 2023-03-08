@@ -23,7 +23,7 @@ import Matching from '../layouts/Matching'
 import Events from '../layouts/Events'
 import Coffee from '../layouts/Coffee'
 import Partners from '../layouts/Partners'
-import forStudentsPage from '../layouts/forStudentsPage'
+//import forStudentsPage from '../layouts/forStudentsPage'
 import KnightecPage from '../layouts/KnightecPage'
 import CompetitionPage from '../layouts/CompetitionPage'
 import Banquet from '../layouts/Banquet'
@@ -50,7 +50,7 @@ const components = {
     Events: Events,
     Coffee: Coffee,
     Partners: Partners,
-    forStudentsPage: forStudentsPage,
+    //forStudentsPage: forStudentsPage,
     KnightecPage: KnightecPage,
     CompetitionPage: CompetitionPage,
     Banquet: Banquet,
@@ -92,7 +92,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-    query($slug: String!) {
+    query ($slug: String!) {
         mdx(frontmatter: { slug: { eq: $slug } }) {
             body
             frontmatter {

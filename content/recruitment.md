@@ -56,12 +56,10 @@ The different layers in the circle have different levels of responsibility. All 
 * Boost your CV
 * Pre access to all events in Armada in November and throughout the year
 * Learn how to interview
-* The chance to lead a team of 5-15 people
 * Attend the Grand Banquet
 * Inside connections with employers
 * Team building activities with companies
 * Friends for life
-* A cruise together with all of Armada at the end of the year
 * Merch & tons of fun
 
 - - -

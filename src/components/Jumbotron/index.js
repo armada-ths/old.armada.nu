@@ -9,8 +9,8 @@ import todaysDate from "../../templates/todaysDate"
 
 const Jumbotron = (props) => {
 
-    const DATE_PRIDE_WEEK_START = new Date('June 1, 2021 00:00:01');
-    const DATE_PRIDE_WEEK_END = new Date('June 30, 2021 00:00:01');
+    const DATE_PRIDE_WEEK_START = new Date('June 1, 2023 00:00:01');
+    const DATE_PRIDE_WEEK_END = new Date('June 30, 2023 00:00:01');
     const prideWeek = DATE_PRIDE_WEEK_START < todaysDate && DATE_PRIDE_WEEK_END > todaysDate; 
 
     const windowSize = useWindowSize();
@@ -31,7 +31,9 @@ const Jumbotron = (props) => {
     //TODO Request API endpoint from ais for fair date
     return (<div id='header'>
         <div className={`logo-container ${video ? 'fixed' : ''}`}>
-                <img alt='' src={prideWeek? prideLogo : Logo} />
+            <a href="/" style={{display: "contents", margin: 0, padding: 0, lineHeight: 0}}>
+                <img alt='' src={prideWeek? prideLogo : Logo} id="logo-container-img" />
+            </a>
                 <p className='logo-date'>THE FAIR <wbr/> 21&#8209;22 NOV 2023</p>
                {video ? <Countdown/> : <></>}
         </div>

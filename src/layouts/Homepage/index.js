@@ -6,6 +6,7 @@ import Loading from '../../components/Loading'
 import Loadable from 'react-loadable'
 import Newsfeed from '../../components/Newsfeed'
 import { Zoom } from 'react-awesome-reveal'
+import GifHoverButtons from '../../components/GifButtons'
 const Homepage = props => {
     const PhotoGallery = Loadable({
         loader: () => import('../../components/PhotoGallery'),
@@ -15,6 +16,8 @@ const Homepage = props => {
     })
 
     return (
+        <>
+        <GifHoverButtons/>
         <div className='homepage'>
             <Page {...props} />
             <Zoom cascade triggerOnce damping='0.3'>
@@ -23,6 +26,7 @@ const Homepage = props => {
                 <PartnerLogos />
             </Zoom>
         </div>
+        </>
     )
 }
 

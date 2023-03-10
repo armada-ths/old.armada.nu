@@ -1,0 +1,19 @@
+@import '../../styles/_variables';
+@import '../../styles/global';
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    padding: 2em 1em 0 1em;
+}
+
+.button-box {
+    padding: 0 5% 0 5%;
+    border: 1px solid black;
+    width: 40%;
+}
+
+.button-box p {
+    text-align: center;
+}

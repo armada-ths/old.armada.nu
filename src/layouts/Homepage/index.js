@@ -17,15 +17,17 @@ const Homepage = props => {
 
     return (
         <>
-        <GifHoverButtons/>
-        <div className='homepage'>
-            <Page {...props} />
-            <Zoom cascade triggerOnce damping='0.3'>
-                <Newsfeed />
-                <PhotoGallery photoCount={6} />
-                <PartnerLogos />
-            </Zoom>
-        </div>
+            <div className='homepage'>
+                <Page {...props} />
+            </div>
+            <GifHoverButtons />
+            <div className='homepage'>
+                <Zoom cascade triggerOnce damping='0.3'>
+                    <Newsfeed />
+                    <PhotoGallery photoCount={6} />
+                    <PartnerLogos />
+                </Zoom>
+            </div>
         </>
     )
 }

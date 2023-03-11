@@ -3,17 +3,70 @@
 
 .buttons {
     display: flex;
-    justify-content: space-around;
-    margin: auto;
-    padding: 2em 1em 0 1em;
+    justify-content: space-evenly;
+    padding: 2rem 1em 0 1rem;
 }
 
 .button-box {
     padding: 0 5% 0 5%;
-    border: 1px solid black;
-    width: 40%;
+    border: 3px solid black;
+    width: 30%;
+    transition: border 0.6s linear, font-size 0.3s linear, box-shadow 0.3s linear;
+    text-decoration: none;
+
+    #static {
+        display: inline-block;
+    }
+    #gif {
+        display: none;
+    }
+}
+
+.button-box:hover {
+    border: 3px solid #00d790;
+    font-size: 110%;
+    text-decoration: underline;
+    box-shadow: -10px 10px 10px #4ce3b1;
+
+    #static {
+        display: none;
+    }
+    #gif {
+        display: inline-block
+    }
+}
+
+.button-box:before {
+    display: block;
+    content: attr(title);
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
 }
 
 .button-box p {
     text-align: center;
+    font-family: 'Loto', sans-serif;
+    font-weight: 600;
+    font-size: 110%;
+    line-height: 100%;
+}
+
+.gif-title {
+    margin-left: 18.5%;
+    max-width: 65%;
+    text-align: left;
+    border-bottom: 1px solid $melon;
+    margin-bottom: 1em;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 850px) {
+    .button-box {
+        width: 45%;
+    }
+    .gif-title {
+        max-width: 80%;
+        margin-left: 10%;
+    }
 }

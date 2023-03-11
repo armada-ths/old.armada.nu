@@ -107,6 +107,18 @@
         
     }
 
+    img {
+        max-height:90%;
+        max-width: 50%;
+        align-self: center;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        
+    }
+
     p{
       font-family: 'Bebas Neue', 'Helvetica', 'Arial';
       font-weight: 300;

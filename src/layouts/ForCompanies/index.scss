@@ -1,0 +1,59 @@
+@import '../../styles/global';
+@import '../../styles/_mixins';
+@import '../../styles/global';
+@import '../../styles/_variables';
+
+.info-container {
+	padding: 3em 0em;
+	max-width: $page-width;
+	margin: auto;
+  
+	.page-container {
+	  h3,
+	  h4 {
+		text-align: left;
+		font-weight: 500;
+	  }
+
+	  .buttonStyle {
+		text-align: center;
+	  }
+	}
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-flipped) {
+	.info-container {
+	  padding: 3em 1em;
+	}
+
+  
+	#information-for-exhibitors {
+	  font-size: 2em;
+	}
+	
+  }
+  
+  a.anchor {
+	display: block;
+	position: relative;
+	top: -57px;
+	visibility: hidden;
+  }
+
+.faqpage-container {
+	padding-top: 3em;
+  max-width: $page-width;
+	margin: auto;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+	.faqpage-container {
+		padding: 3em 1em 0em 1em;
+	}
+}
+
+@media screen and (max-width: $breakpoint-pad) {
+	.faqpage-container {
+		padding: 3em 1em 0em 1em;
+	}
+}

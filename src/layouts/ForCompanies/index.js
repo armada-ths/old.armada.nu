@@ -3,7 +3,7 @@ import React from 'react'
 import './index.scss'
 import Page from '../../templates/page'
 import FAQContainer from '../../components/FAQ'
-import SideBarContents from '../../components/SideBarContents'
+import SideBarContents from '../../components/SideBarContents/index.tsx'
 
 const ForCompanies = props => {
     return (

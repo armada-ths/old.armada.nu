@@ -1,5 +1,5 @@
 /* Added by Nima Mehrabadi March 2023. Used the design idea in Figma */
-
+/*
 import React, { useState, useEffect, useRef } from 'react'
 import './index.scss'
 
@@ -142,5 +142,5 @@ const SideBarContents = () => {
         </nav>
     )
 }
-
-export default SideBarContents
+*/
+//export default SideBarContents

@@ -3,7 +3,7 @@ import ArmadaLogo from '../../../static/assets/virtual_logo_green.svg'
 
 const FAQHeader = () => {
     return (
-        <div style={{ marginTop: '-10%' }}>
+        <div style={{ marginTop: '-5%' }}>
             <header style={{ textAlign: 'center' }}>
                 <img
                     alt=''

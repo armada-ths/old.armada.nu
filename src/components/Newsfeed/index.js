@@ -30,6 +30,7 @@ const Newsfeed = ({ current }) => (
                                 description
                                 menuPage
                                 priority
+                                toc
                                 header
                                 date
                                 category

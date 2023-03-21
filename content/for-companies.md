@@ -5,6 +5,7 @@ layout: ForCompanies
 description: Everything that a company should know
 menuPage: true
 priority: 1
+toc: true
 header: /assets/library.png
 ---
 
@@ -31,7 +32,7 @@ header: /assets/library.png
 
 ---
 
-<h3 id="how-do-you-succeed">How do you succeed at a physical fair?</h3>
+<h3 id="how-do-you-succeed">How do you succeed at the fair?</h3>
 
 <br/>
 

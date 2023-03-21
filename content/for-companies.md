@@ -5,7 +5,6 @@ layout: ForCompanies
 description: Everything that a company should know
 menuPage: true
 priority: 1
-toc: true
 header: /assets/library.png
 ---
 

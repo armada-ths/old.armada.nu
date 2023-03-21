@@ -152,11 +152,4 @@ collections:
                 required: false,
                 default: false,
             }
-            - {
-                label: 'Table Of Contents',
-                name: 'toc',
-                widget: 'boolean',
-                required: false,
-                default: false,
-            }
           - { label: 'Body', name: 'body', widget: 'markdown', required: false }

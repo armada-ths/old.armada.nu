@@ -58,8 +58,9 @@ const SideBarContents = (props: Props) => {
                     const activeClass =
                         activeId === id ? 'active' : 'not-active'
                     const indentation = {
-                        3: ' indent-1',
-                        4: ' indent-2',
+                        2: ' indent-1',
+                        3: ' indent-2',
+                        4: ' indent-3',
                     } //We do this to assign multiple classes and to control the indentations independently
                     const level = heading.level as keyof typeof indentation
                     const paddingClass = indentation[level] ?? '' //If indentation is null then no class is added, otherwise 3 or 4 is added

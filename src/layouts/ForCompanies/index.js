@@ -7,7 +7,7 @@ import SideBarContents from '../../components/SideBarContents/index.tsx'
 
 const QueryFunc = () => {
     const headingsdata = [] // Append all the headingdata to be sent as props
-    document.querySelectorAll('h2, h3, h4').forEach(ele => {
+    document.querySelectorAll('h1, h2, h3, h4').forEach(ele => {
         if (ele.id !== 'ignore' && ele.className !== 'contactTitle') {
             ele.text = ele.innerText
             var lev = 2
@@ -17,6 +17,8 @@ const QueryFunc = () => {
                 lev = 3
             } else if (ele.nodeName === 'H4') {
                 lev = 4
+            } else if (ele.nodeName === 'H1') {
+                lev = 1
             }
             headingsdata.push({
                 level: lev,

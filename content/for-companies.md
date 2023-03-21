@@ -8,6 +8,8 @@ priority: 1
 header: /assets/library.png
 ---
 
+<h1 id='information-for-exhibitors'>Information about the Fair</h1>
+
 <a class="anchor" id="important-dates"></a>
 
 <div class="info-border-box">

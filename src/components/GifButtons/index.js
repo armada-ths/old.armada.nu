@@ -19,10 +19,7 @@ const GifHoverButtons = () => {
                     <img src={JobsIllustrationPng} alt='' id='static' />
                     <img src={JobsIllustrationGif} alt='' id='gif' />
                 </a>
-                <a
-                    class='button-box'
-                    href='http://localhost:8000/exhibitor_info/'
-                >
+                <a class='button-box' href='/for-companies'>
                     <p>For companies</p>
                     <img src={OfficeIllustrationPng} alt='' id='static' />
                     <img src={OfficeIllustrationGif} alt='' id='gif' />

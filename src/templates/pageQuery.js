@@ -37,7 +37,7 @@ const components = {
     SustainabilityPage: SustainabilityPage,
     DiversityPage: DiversityPage,
     FAQStudent: FAQStudent,
-    FAQExhibitor: FAQExhibitor,
+    //FAQExhibitor: FAQExhibitor, Archived
     Homepage: Homepage,
     ExhibitorInfo: ExhibitorInfo,
     AboutPage: AboutPage,
@@ -55,9 +55,9 @@ const components = {
     KnightecPage: KnightecPage,
     CompetitionPage: CompetitionPage,
     Banquet: Banquet,
-    RegistrationPage: RegistrationPage,
+    //RegistrationPage: RegistrationPage, Archived
     IndividualMeetings: IndividualMeetings,
-    AtTheFairPageTab: AtTheFairPageTab,
+    //AtTheFairPageTab: AtTheFairPageTab, Archived
     ForCompanies: ForCompanies,
 }
 

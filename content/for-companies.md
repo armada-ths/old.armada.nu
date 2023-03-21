@@ -8,7 +8,12 @@ priority: 1
 header: /assets/library.png
 ---
 
-<h1 id='information-for-exhibitors'>Information about the Fair</h1>
+<div className='diversity-day' id="container1">
+                    <div
+                        class='diversitypage-container reveal'>
+                        <h1 id='information-for-exhibitors1'>Information about the Fair</h1>
+                    </div>
+</div>
 
 <a class="anchor" id="important-dates"></a>
 
@@ -20,8 +25,6 @@ header: /assets/library.png
 **Final Registration** - 22nd of August - 23rd of September
 
 **Event Weeks** - 31st of October - 18th of November
-
-<!-- **Finalized your Graduateland booth** - 9th of November -->
 
 **The Fair** - 22nd-23rd of November
 
@@ -51,7 +54,13 @@ We know that it can sometimes be overwhelming at a physical fair with a lot of p
 
 ---
 
-Thank you to everyone who made the 2022 fair great, if you want to be part of the 2023 fair, announce your interest to Project Manager Leonard Hökby at <a mailto="a@armada.nu">a@armada.nu</a>.
+<div className='diversity-day' id="container2">
+                    <div
+                        class='diversitypage-container reveal'>
+                        <h1 id='information-for-exhibitors2'>THS ARMADA 2023</h1>
+                        <p>Thank you to everyone who made the 2022 fair great, if you want to be part of the 2023 fair, announce your interest to Project Manager Leonard Hökby at <a style="color: rgb(0, 215, 144)" mailto="a@armada.nu">a@armada.nu</a>.</p>
+                    </div>
+</div>
 
 <br />
 

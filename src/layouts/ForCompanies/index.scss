@@ -2,6 +2,33 @@
 @import '../../styles/_mixins';
 @import '../../styles/_variables';
 
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#container1 {
+    background-image: url('/assets/for_exhibitors.jpg');
+}
+
+#container2 {
+    background-image: url('/assets/images/header-images/competition.jpg');
+}
+
+.diversitypage-container {
+    padding: 0;
+}
+
+.reveal {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
 .info-container {
     padding: 3em 0em;
     position: unset;

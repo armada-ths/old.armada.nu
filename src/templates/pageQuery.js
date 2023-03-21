@@ -57,7 +57,7 @@ const components = {
     Banquet: Banquet,
     //RegistrationPage: RegistrationPage, Archived
     IndividualMeetings: IndividualMeetings,
-    //AtTheFairPageTab: AtTheFairPageTab, Archived
+    AtTheFairPageTab: AtTheFairPageTab,
     ForCompanies: ForCompanies,
 }
 

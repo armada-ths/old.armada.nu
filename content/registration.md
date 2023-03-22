@@ -11,15 +11,10 @@ priority: 2
 header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
-The registration is open! To be a part of Armada Fair 2023 you can now register at \\[register.armada.nu]([https://register.armada.nu](https://register.armada.nu)).
 
+The registration is open! To be a part of Armada Fair 2023 you can now register at \\[register.armada.nu](<[https://register.armada.nu](https://register.armada.nu)>).
 
-
-
-
-
-
-<!-- The registration for the 2022 fair is now closed. If you want to participate, contact <a mailto="sales@armada.nu">sales@armada.nu</a> and check if there is still availability. 
+<!-- The registration for the 2022 fair is now closed. If you want to participate, contact <a mailto="sales@armada.nu">sales@armada.nu</a> and check if there is still availability.
 
 Thank you to everyone who made the 2022 fair great, if you want to be part of the 2023 fair, announce your interest to Project Manager Leonard Hökby at [a@armada.nu](mailto:a@armada.nu).-->
 
@@ -45,8 +40,7 @@ Armada is an established event and this year will be the 40th Armada in a row. S
 
 To Register your company for Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 17th of May.
 
-The Initial Registration is your application for becoming part of the Armada fair. Once registered, we will review the application and get back to you as soon as we can after the 17th of May. 
-
+The Initial Registration is your application for becoming part of the Armada fair. Once registered, we will review the application and get back to you as soon as we can after the 17th of May.
 
 <form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2023.pdf">
 <br />
@@ -65,7 +59,7 @@ During the fair we will highlight companies that we believe share our core value
 
 <br />
 
-## <!-- Events
+## Events
 
 Armada is more than a two day fair. If your company wants to host an event for KTH students, we are here to help. Why not present your company during a lecture, meet ambitious students during a case evening or mingle with your future employees at a relaxed AW?
 

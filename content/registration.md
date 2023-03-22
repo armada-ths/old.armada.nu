@@ -48,7 +48,7 @@ To Register your company for Initial Registration you can now go to [register.ar
 The Initial Registration is your application for becoming part of the Armada fair. Once registered, we will review the application and get back to you as soon as we can after the 17th of May. 
 
 
-<form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2022.pdf">
+<form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2023.pdf">
 <br />
 <br />
 <div class = "buttonStyle">

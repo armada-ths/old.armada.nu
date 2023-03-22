@@ -11,14 +11,13 @@ priority: 2
 header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
+The registration is open! To be a part of Armada Fair 2023 you can now register at \\\\\[register.armada.nu](https://register.armada.nu).
 
-<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\\\\[register.armada.nu](https://register.armada.nu).
+<a class="anchor" id="armada2021"></a>
 
-<a class="anchor" id="armada2021"></a> -->
+<!-- The registration for the 2022 fair is now closed. If you want to participate, contact <a mailto="sales@armada.nu">sales@armada.nu</a> and check if there is still availability. 
 
-<!-- The registration for the 2022 fair is now closed. If you want to participate, contact <a mailto="sales@armada.nu">sales@armada.nu</a> and check if there is still availability. -->
-
-Thank you to everyone who made the 2022 fair great, if you want to be part of the 2023 fair, announce your interest to Project Manager Leonard Hökby at <a mailto="a@armada.nu">a@armada.nu</a>.
+Thank you to everyone who made the 2022 fair great, if you want to be part of the 2023 fair, announce your interest to Project Manager Leonard Hökby at [a@armada.nu](mailto:a@armada.nu).-->
 
 <br />
 
@@ -28,7 +27,11 @@ THS Armada is a student-driven project at KTH Royal Institute of Technology that
 
 This year we will repeat the success from previous years with a fair back on campus after the last two virtual fairs.
 
-<a class="anchor" id="why-armada"></a>
+
+
+
+
+
 
 <br />
 
@@ -45,10 +48,23 @@ Armada is an established event and this year will be the 40th Armada in a row. S
 If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 23rd of September.
 If you did not register your company during the Initial Registration, 11th of April - 20th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
 
-<a class="anchor" id="offical-invitation"></a>
-<a href="/assets/invitation/InvitationArmada2022.pdf">
-<img src='/assets/Invitation/ProductCatalogue2022Png.png' alt="Offical Invitation" width="70%" style="margin-left:15%"/>
-</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2022.pdf">
 <br />

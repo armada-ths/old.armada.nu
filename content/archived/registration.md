@@ -12,13 +12,11 @@ header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
 
-<!-- The registration is open! If you and your company want to be a part of Armada Virtual Fair 2021 you can now register at \\\\\[register.armada.nu](https://register.armada.nu).
+The registration is open! To be a part of Armada Fair 2023 you can now register at \\[register.armada.nu](<[https://register.armada.nu](https://register.armada.nu)>).
 
-<a class="anchor" id="armada2021"></a> -->
+<!-- The registration for the 2022 fair is now closed. If you want to participate, contact <a mailto="sales@armada.nu">sales@armada.nu</a> and check if there is still availability.
 
-<!-- The registration for the 2022 fair is now closed. If you want to participate, contact <a mailto="sales@armada.nu">sales@armada.nu</a> and check if there is still availability. -->
-
-Thank you to everyone who made the 2022 fair great, if you want to be part of the 2023 fair, announce your interest to Project Manager Leonard Hökby at <a mailto="a@armada.nu">a@armada.nu</a>.
+Thank you to everyone who made the 2022 fair great, if you want to be part of the 2023 fair, announce your interest to Project Manager Leonard Hökby at [a@armada.nu](mailto:a@armada.nu).-->
 
 <br />
 
@@ -27,8 +25,6 @@ Thank you to everyone who made the 2022 fair great, if you want to be part of th
 THS Armada is a student-driven project at KTH Royal Institute of Technology that arranges the largest career fair in Scandinavia. Every year, more than 12,000 of Sweden's top engineering and architectural students flock to visit the fair to meet their future employers. The Fair is a two-day event with companies from all over the world.
 
 This year we will repeat the success from previous years with a fair back on campus after the last two virtual fairs.
-
-<a class="anchor" id="why-armada"></a>
 
 <br />
 
@@ -42,15 +38,11 @@ Armada is an established event and this year will be the 40th Armada in a row. S
 
 ## Registration
 
-If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 23rd of September.
-If you did not register your company during the Initial Registration, 11th of April - 20th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
+To Register your company for Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 17th of May.
 
-<a class="anchor" id="offical-invitation"></a>
-<a href="/assets/invitation/InvitationArmada2022.pdf">
-<img src='/assets/Invitation/ProductCatalogue2022Png.png' alt="Offical Invitation" width="70%" style="margin-left:15%"/>
-</a>
+The Initial Registration is your application for becoming part of the Armada fair. Once registered, we will review the application and get back to you as soon as we can after the 17th of May.
 
-<form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2022.pdf">
+<form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2023.pdf">
 <br />
 <br />
 <div class = "buttonStyle">
@@ -90,15 +82,15 @@ Is something missing in our options? We also offer Custom Events designed in col
 </form>
 -->
 
-<br />
+<br />-->
 
-### Banquet
+### <!--Banquet
 
 Armada would like to welcome you and your company to this year’s Grand Armada Banquet! The Grand Armada Banquet is an excellent opportunity for you to meet and mingle with students in a more relaxing environment. During the banquet you will enjoy a tasty three course meal and energising entertainment! The banquet will be held on the 22nd of November after the fair in Victoriahallen, Stockholmsmässan. Be sure to put on your high heels and tie your tie because this year’s theme is Las Vegas!
 
-<br />
+<br />-->
 
-## Marketing
+## <!--Marketing
 
 Let Armada help your company stand out and boost your employer brand. We offer many services for your company to reach the KTH students through our different social media. Market events or job offers through a post or share what a day at your office is like through an Instagram takeover. Reach out to our sales team to hear more about how your company can get seen by future employees.
 
@@ -106,4 +98,4 @@ Let Armada help your company stand out and boost your employer brand. We offer m
 
 ### Armada Competition
 
-Armada Competition is an incentive introduced during last year's fair to increase connections between students and companies. It was a big success and is therefore back this year. In short, students have the chance to win exclusive prizes by interacting with companies during the fair. Your company can participate with prizes to reach out in yet another way to the KTH students.
+Armada Competition is an incentive introduced during last year's fair to increase connections between students and companies. It was a big success and is therefore back this year. In short, students have the chance to win exclusive prizes by interacting with companies during the fair. Your company can participate with prizes to reach out in yet another way to the KTH students.-->

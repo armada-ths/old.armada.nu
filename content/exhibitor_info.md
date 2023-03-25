@@ -4,14 +4,26 @@ title: The Fair
 layout: ExhibitorInfo
 description: Information for exhibitors
 menuPage: false
+studentSubpage: false
 companySubpage: true
+aboutSubpage: false
 priority: 2
 header: /assets/for_exhibitors.jpg
+noJumbotron: false
 ---
+### WE ARE BACK!
 
-<!--### WE ARE BACK!
+Welcome Exhibitor!
 
-After two years of virtual fairs, KTH students are eager to meet company representatives on campus again. The excitement and zeal for this year's Armada Career Fair among students can only be experienced at the Fair. Do not miss out on this annual opportunity to acquaint yourselves with your future taskforce! -->
+Speaking to different Armada exhibitors, I’ve noticed the difference it makes to work long term with student attraction. One exhibitor told me they’ve recruited someone who, 7 years after meeting the exhibitor at Armada, still says that the good impression they made at the fair is the main reason why he applied for the job. The impression you make on a student will be with them, and all their friends, their entire working life. 
+
+It is not easy to build such a strong brand with students. The students change completely every 5 or 3 years, the student world can look chaotic and disorganized and it can be hard to know where to look. Therefore we have created packages that give an easy way to leverage your Armada participation to maximize student connection this year. And if you want to talk more about building an effective long term strategy to reach students, I am only an email or LinkedIn connection away. 
+
+Welcome to Armada 2023!
+
+Leonard Hökby
+
+Project Manager for THS Armada 2023
 
 <!-- <EmbeddedVideo videoLink= "https://www.youtube.com/watch?v=9e3sPr6rELQ"></EmbeddedVideo> -->
 
@@ -38,26 +50,29 @@ If you need further help we recommend looking at these documents from Graduatela
 </form>
 
 -->
+
 <br/>
 
 ---
 
-<a class="anchor" id="important-dates"></a>
+
+
+
+
+
 
 <div class="info-border-box">
 <h2>Important Dates</h2>
 
-**Initial Registration** - 11th of April - 20th of May
+**Initial Registration** - 22th of Mars - 17th of May
 
-**Final Registration** - 22nd of August - 23rd of September
+**Final Registration** - 18nd of August - 28rd of September
 
-**Event Weeks** - 31st of October - 18th of November
+**Event Weeks** - 30st of October - 17th of November
 
-<!-- **Finalized your Graduateland booth** - 9th of November -->
+**The Fair** - 21nd-22rd of November
 
-**The Fair** - 22nd-23rd of November
-
-**Grand Banquet** - 22nd of November
+**Grand Banquet** - 21nd of November
 
 </div>
 
@@ -82,3 +97,7 @@ We know that it can sometimes be overwhelming at a physical fair with a lot of p
 <br/>
 
 ---
+
+
+
+

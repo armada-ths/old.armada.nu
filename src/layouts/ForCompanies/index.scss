@@ -1,0 +1,243 @@
+@import '../../styles/global';
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#container1 {
+    background-image: url('/assets/for_exhibitors.jpg');
+}
+
+#container2 {
+    background-image: url('/assets/images/header-images/competition.jpg');
+}
+
+.diversitypage-container {
+    padding: 0;
+}
+
+.reveal {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.info-container {
+    padding: 3em 0em;
+    position: unset;
+    top: unset;
+    display: block;
+    max-width: $page-width;
+    overflow-y: unset;
+    height: unset;
+    margin: auto;
+    margin-top: -95vh;
+    width: 70%;
+    .page-container {
+        h3,
+        h4 {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .buttonStyle {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .info-container {
+        padding: 3em 1em;
+    }
+
+    #information-for-exhibitors {
+        font-size: 2em;
+    }
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -57px;
+    visibility: hidden;
+}
+
+.faqpage-container {
+    padding-top: 3em;
+    max-width: $page-width;
+    margin: auto;
+}
+
+body {
+    overflow: unset;
+}
+
+.layout {
+    overflow: unset;
+}
+
+.TOC {
+    display: inline-block;
+    position: sticky;
+    height: 93vh;
+    top: 7vh;
+    width: 20%;
+    background-color: #252524;
+    padding-top: 8vh;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+}
+
+.TOC::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+.TOC::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f5f5f5;
+}
+
+.TOC::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555;
+}
+
+.TOC ul {
+    display: inline;
+    list-style-type: none;
+}
+
+.TOC h2 {
+    padding-left: 10%;
+    display: inline;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+.TOC .not-active {
+    display: inline-block;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 700;
+    padding-left: 5%;
+}
+
+.TOC li {
+    display: block;
+    color: #ffffff;
+    font-style: normal;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.2vw;
+}
+
+.TOC .indent-1 {
+    padding-left: 8%;
+}
+
+.TOC .indent-2 {
+    padding-left: 14%;
+}
+
+.TOC .indent-3 {
+    padding-left: 18%;
+}
+
+.active {
+    text-decoration: underline;
+    color: #00ff19;
+    padding-left: 5%;
+}
+
+.h1Active {
+    color: $grape;
+}
+
+.TOCMobile {
+    display: none;
+    position: sticky;
+    top: 14vh;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+    .faqpage-container {
+        padding: 3em 1em 0em 1em;
+    }
+}
+
+@media screen and (max-width: $breakpoint-pad) {
+    .faqpage-container {
+        padding: 3em 1em 0em 1em;
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .TOC {
+        width: 19vw;
+    }
+    .TOC li {
+        font-size: 1.2vw;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .TOC {
+        width: 16vw;
+    }
+    .TOC li {
+        font-size: 1.3vw;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .TOC {
+        width: 12vw;
+    }
+    .TOC h2 {
+        font-size: 1vw;
+    }
+
+    .TOC li {
+        font-size: 1.3vw;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .TOC {
+        padding-top: 16vh;
+    }
+
+    .TOC li {
+        font-size: 1.3vw;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .TOC {
+        display: none;
+    }
+    .info-container {
+        margin-top: unset;
+    }
+
+    .TOCMobile {
+        display: inline-block;
+    }
+}

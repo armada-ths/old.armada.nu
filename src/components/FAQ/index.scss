@@ -3,16 +3,17 @@
 
 .accordion-homepage {
     border: thin solid #dadce0;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     box-sizing: border-box;
     margin: auto;
     margin-bottom: 3em;
     width: 60%;
 }
 
-.accordion-homepage .parent:first-child, .accordion-homepage .parent:first-child > h2 {
-    border-top-left-radius: .625rem;
-    border-top-right-radius: .625rem;
+.accordion-homepage .parent:first-child,
+.accordion-homepage .parent:first-child > h2 {
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
 }
 
 .accordion-homepage .parent:first-child {
@@ -35,18 +36,19 @@
     position: relative;
 }
 
-.accordion-homepage .parent:last-child, .accordion-homepage .parent:last-child:not(.selected) > h2 {
-    border-bottom-left-radius: .625rem;
-    border-bottom-right-radius: .625rem;
+.accordion-homepage .parent:last-child,
+.accordion-homepage .parent:last-child:not(.selected) > h2 {
+    border-bottom-left-radius: 0.625rem;
+    border-bottom-right-radius: 0.625rem;
 }
 
 .accordion-homepage .parent:last-child .children {
-    border-bottom-left-radius: .625rem;
-    border-bottom-right-radius: .625rem;
+    border-bottom-left-radius: 0.625rem;
+    border-bottom-right-radius: 0.625rem;
 }
 
 .accordion-homepage h2 {
-    font-size: .875rem;
+    font-size: 0.875rem;
     text-align: left;
     padding: 1rem 3.25rem 1rem 4rem;
 }
@@ -58,12 +60,12 @@
     font-weight: 500;
     line-height: 1.25rem;
     margin: 0;
-    padding: .875rem 3.25rem .875rem 1.75rem;
+    padding: 0.875rem 3.25rem 0.875rem 1.75rem;
 }
 
 .terre {
-    margin-top: 100px;
-    width:50%; 
+    margin-top: 30px;
+    width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -88,10 +90,14 @@
     font-size: 1.25rem;
     font-weight: 500;
     line-height: 2rem;
-    margin: 0 0 .25rem;
+    margin: 0 0 0.25rem;
 }
 
-.hcfe h1, .hcfe h2, .hcfe h3, .hcfe h4, .hcfe h5 {
+.hcfe h1,
+.hcfe h2,
+.hcfe h3,
+.hcfe h4,
+.hcfe h5 {
     color: #202124;
     font-family: 'Bebas Neue', Helvetica, Arial;
     font-weight: 400;
@@ -101,12 +107,12 @@
     height: 0.5rem;
     position: absolute;
     right: 1.75rem;
-    top: calc(50% - .4rem);
+    top: calc(50% - 0.4rem);
     width: 1.5rem;
 }
 
 .children {
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
     position: relative;
     text-align: left;
     transition: 300ms max-height ease;
@@ -118,7 +124,7 @@
 }
 
 .answer {
-    font-size: 1.0rem;
+    font-size: 1rem;
     font-weight: 450;
     line-height: 1.2rem;
     display: inline-block;
@@ -130,11 +136,10 @@
 .browse-header {
     text-transform: uppercase;
     font-style: normal;
-    font-weight: normal;    
+    font-weight: normal;
     text-align: center;
     font-size: 20px;
     line-height: 30px;
-    margin-top: 2em;
 }
 
 .topics-container {
@@ -145,10 +150,10 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-	.topics-container {
+    .topics-container {
         flex-direction: column;
         align-items: center;
-	}
+    }
     .topic-container {
         margin-bottom: 1em;
         margin-left: 2em;
@@ -156,13 +161,13 @@
     .topic-container:nth-child(5) {
         margin-left: 0%;
     }
-} 
+}
 
 @media screen and (max-width: $breakpoint-pad) {
-	.topics-container {
+    .topics-container {
         flex-wrap: wrap;
         align-items: center;
-	}
+    }
     .topic-container {
         margin-bottom: 1em;
     }
@@ -171,7 +176,7 @@
 .topic-container {
     width: 200px;
     height: 150px;
-    border: 1px solid #C7C7C7;
+    border: 1px solid #c7c7c7;
     box-sizing: border-box;
     border-radius: 2px;
     display: flex;
@@ -198,6 +203,6 @@
 }
 
 .contactBtn {
-    margin:0 auto;
+    margin: 0 auto;
     margin-bottom: 2em;
 }

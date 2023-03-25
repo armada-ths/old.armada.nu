@@ -19,7 +19,7 @@ import Exhibitors from '../layouts/Exhibitors'
 import Previous from '../layouts/Previous'
 import MapsPage from '../layouts/MapsPage'
 import PlainPage from '../layouts/PlainPage'
-import Matching from '../layouts/Matching'
+//import Matching from '../layouts/Matching' Todo: Fix Matching and make it work with new Exhibitors page
 import Events from '../layouts/Events'
 import Coffee from '../layouts/Coffee'
 import Partners from '../layouts/Partners'
@@ -30,13 +30,14 @@ import Banquet from '../layouts/Banquet'
 import RegistrationPage from '../layouts/RegistrationPage'
 import IndividualMeetings from '../layouts/IndividualMeetings'
 import AtTheFairPageTab from '../layouts/AtTheFairPageTab'
+import ForCompanies from '../layouts/ForCompanies'
 
 const components = {
     RecruitmentPage: RecruitmentPage,
     SustainabilityPage: SustainabilityPage,
     DiversityPage: DiversityPage,
     FAQStudent: FAQStudent,
-    FAQExhibitor: FAQExhibitor,
+    //FAQExhibitor: FAQExhibitor, Archived
     Homepage: Homepage,
     ExhibitorInfo: ExhibitorInfo,
     AboutPage: AboutPage,
@@ -46,7 +47,7 @@ const components = {
     Previous: Previous,
     MapsPage: MapsPage,
     PlainPage: PlainPage,
-    Matching: Matching,
+    //Matching: Matching,
     Events: Events,
     Coffee: Coffee,
     Partners: Partners,
@@ -54,9 +55,10 @@ const components = {
     KnightecPage: KnightecPage,
     CompetitionPage: CompetitionPage,
     Banquet: Banquet,
-    RegistrationPage: RegistrationPage,
+    //RegistrationPage: RegistrationPage, Archived
     IndividualMeetings: IndividualMeetings,
     AtTheFairPageTab: AtTheFairPageTab,
+    ForCompanies: ForCompanies,
 }
 
 export default function Template({

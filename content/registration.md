@@ -82,15 +82,15 @@ Is something missing in our options? We also offer Custom Events designed in col
 </form>
 -->
 
-<br />-->
+<br />
 
-### <!--Banquet
+### Banquet
 
 Armada would like to welcome you and your company to this year’s Grand Armada Banquet! The Grand Armada Banquet is an excellent opportunity for you to meet and mingle with students in a more relaxing environment. During the banquet you will enjoy a tasty three course meal and energising entertainment! The banquet will be held on the 22nd of November after the fair in Victoriahallen, Stockholmsmässan. Be sure to put on your high heels and tie your tie because this year’s theme is Las Vegas!
 
-<br />-->
+<br />
 
-## <!--Marketing
+## Marketing
 
 Let Armada help your company stand out and boost your employer brand. We offer many services for your company to reach the KTH students through our different social media. Market events or job offers through a post or share what a day at your office is like through an Instagram takeover. Reach out to our sales team to hear more about how your company can get seen by future employees.
 

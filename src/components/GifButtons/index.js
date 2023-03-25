@@ -10,11 +10,7 @@ const GifHoverButtons = () => {
         <>
             <h1 class='gif-title'>Check out</h1>
             <div class='buttons'>
-                <a
-                    class='button-box'
-                    title='For students'
-                    href='http://localhost:8000/recruitment/'
-                >
+                <a class='button-box' title='For students' href='/recruitment/'>
                     <p>For students</p>
                     <img src={JobsIllustrationPng} alt='' id='static' />
                     <img src={JobsIllustrationGif} alt='' id='gif' />

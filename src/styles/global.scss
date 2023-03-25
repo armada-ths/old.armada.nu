@@ -228,6 +228,12 @@ hr {
     }
 }
 
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2em; //This fixes a visual bug for bigger titels still breaking
+    }
+}
+
 @media screen and (max-width: $breakpoint-mobile) {
     //  SET BODY FOINT-SIZE
     body {
@@ -235,9 +241,6 @@ hr {
     }
     h2 {
         font-size: 1.8em;
-    }
-    h1 {
-        font-size: 2em;
     }
     .armada-news {
         h1 {

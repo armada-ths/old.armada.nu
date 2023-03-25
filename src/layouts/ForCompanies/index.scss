@@ -91,7 +91,7 @@ body {
     top: 7vh;
     width: 20%;
     background-color: #252524;
-    padding-top: 6vh;
+    padding-top: 8vh;
     margin-left: 0.1rem;
     margin-right: 0.1rem;
     margin-bottom: 1rem;
@@ -166,6 +166,16 @@ body {
     padding-left: 5%;
 }
 
+.h1Active {
+    color: $grape;
+}
+
+.TOCMobile {
+    display: none;
+    position: sticky;
+    top: 14vh;
+}
+
 @media screen and (max-width: $breakpoint-mobile) {
     .faqpage-container {
         padding: 3em 1em 0em 1em;
@@ -225,5 +235,9 @@ body {
     }
     .info-container {
         margin-top: unset;
+    }
+
+    .TOCMobile {
+        display: inline-block;
     }
 }

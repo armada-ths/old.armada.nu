@@ -4,7 +4,7 @@ import './index.scss'
 import Page from '../../templates/page'
 import FAQContainer from '../../components/FAQ'
 import SideBarContents from '../../components/SideBarContents/index.tsx'
-
+import ConentsMobile from '../../components/SideBarContents/ContentsMobile'
 const QueryFunc = () => {
     const headingsdata = [] // Append all the headingdata to be sent as props
     document.querySelectorAll('h1, h2, h3, h4').forEach(ele => {
@@ -40,6 +40,9 @@ const ForCompanies = props => {
         <>
             <div class='TOC'>
                 <SideBarContents headings={headingData} />
+            </div>
+            <div class='TOCMobile'>
+                <ConentsMobile headings={headingData} />
             </div>
             <div className='info-container'>
                 <div className='page-container'>

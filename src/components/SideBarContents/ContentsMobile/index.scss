@@ -1,0 +1,32 @@
+.exitButton {
+    all: unset;
+    background-color: white;
+    text-align: right;
+}
+
+.tocClosed {
+    display: none;
+}
+
+.tocOpen {
+    display: inline;
+    position: sticky;
+}
+
+.ContentsMobile {
+    display: flex;
+    position: absolute;
+    width: 50vw;
+    z-index: 9;
+    flex-direction: column;
+    background-color: #252524;
+}
+
+.ContentsMobile ul {
+    list-style-type: none;
+    padding-left: 3vw;
+}
+
+.ContentsMobile li {
+    padding: 5px 5px 5px 5px;
+}

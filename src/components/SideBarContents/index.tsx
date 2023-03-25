@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
+/* Added by Nima Mehrabadi March 2023. Design idea is in Figma
+Table of contents on the side of the screen using IntersectionObserver on h1, h2, h3, h4 elems with ids */
 
 export type Heading = {
     text: string

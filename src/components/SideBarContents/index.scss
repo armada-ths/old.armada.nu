@@ -1,0 +1,33 @@
+@import '../../styles/_variables';
+@import "../../styles/_fonts";
+@import "../../styles/global.scss";
+.side-nav {
+    position: fixed;
+    position: -webkit-fixed; /* For Safari */
+    top: 300px; /* How far down the page you want your ToC to live */
+  
+    /* Give table of contents a scrollbar */
+    max-height: calc(100vh - 40px);
+    overflow: auto;
+
+    a {
+        color: $melon;
+        text-decoration: none;
+    }
+      
+    li.active > a {
+        color: black;
+    }
+      
+    li > a:hover {
+        color: black;
+    }
+  }
+
+
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .side-nav {
+        display: none;
+    }
+  }

@@ -191,7 +191,7 @@ const Navbar = props => {
             </div>
         </div>
     )
-
+    /* Archived. Company menu no longer has dropdowns 
     const companyMenu = (
         <div className={dropdownParent}>
             <span
@@ -229,7 +229,7 @@ const Navbar = props => {
                 ))}
             </div>
         </div>
-    )
+    ) */
 
     const aboutMenu = (
         <div className={dropdownParent}>
@@ -298,7 +298,6 @@ const Navbar = props => {
                                 >
                                     {onMobile ? <span>Home</span> : 'Home'}
                                 </Link>
-                                {companyMenu}
                                 {studentMenu}
                                 {links}
                                 {aboutMenu}

@@ -6,6 +6,7 @@ import Loading from '../../components/Loading'
 import Loadable from 'react-loadable'
 import Newsfeed from '../../components/Newsfeed'
 import { Zoom } from 'react-awesome-reveal'
+import GifHoverButtons from '../../components/GifButtons'
 const Homepage = props => {
     const PhotoGallery = Loadable({
         loader: () => import('../../components/PhotoGallery'),
@@ -15,14 +16,19 @@ const Homepage = props => {
     })
 
     return (
-        <div className='homepage'>
-            <Page {...props} />
-            <Zoom cascade triggerOnce damping='0.3'>
-                <Newsfeed />
-                <PhotoGallery photoCount={6} />
-                <PartnerLogos />
-            </Zoom>
-        </div>
+        <>
+            <div className='homepage'>
+                <Page {...props} />
+            </div>
+            <GifHoverButtons />
+            <div className='homepage'>
+                <Zoom cascade triggerOnce damping='0.3'>
+                    <Newsfeed />
+                    <PhotoGallery photoCount={6} />
+                    <PartnerLogos />
+                </Zoom>
+            </div>
+        </>
     )
 }
 

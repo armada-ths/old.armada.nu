@@ -1,6 +1,6 @@
 /* Table of contents but for mobile view. */
 import React, { useState } from 'react'
-import SideBarContents, { Heading } from '..'
+import SideBarContents, { Heading } from '../'
 import './index.scss'
 type Props = {
     headings: Heading[]

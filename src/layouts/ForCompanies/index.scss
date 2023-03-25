@@ -173,7 +173,10 @@ body {
 .TOCMobile {
     display: none;
     position: sticky;
-    top: 14vh;
+    top: 10vh;
+    height: 90vh;
+    width: 60vw;
+    z-index: 10;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
@@ -209,6 +212,7 @@ body {
 @media screen and (max-width: 1300px) {
     .TOC {
         width: 12vw;
+        padding-top: 16vh;
     }
     .TOC h2 {
         font-size: 1vw;
@@ -239,5 +243,10 @@ body {
 
     .TOCMobile {
         display: inline-block;
+    }
+
+    .info-container {
+        z-index: -10;
+        margin-top: -80vh;
     }
 }

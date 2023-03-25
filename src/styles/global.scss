@@ -222,6 +222,12 @@ hr {
 }
 */
 
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    p {
+        text-align: left;
+    }
+}
+
 @media screen and (max-width: $breakpoint-mobile) {
     //  SET BODY FOINT-SIZE
     body {

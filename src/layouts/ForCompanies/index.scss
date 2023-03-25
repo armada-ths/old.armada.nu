@@ -87,12 +87,11 @@ body {
 .TOC {
     display: inline-block;
     position: sticky;
-    height: 90vh;
+    height: 93vh;
     top: 7vh;
     width: 20%;
     background-color: #252524;
-    padding-top: 2%;
-    padding-top: 3%;
+    padding-top: 6vh;
     margin-left: 0.1rem;
     margin-right: 0.1rem;
     margin-bottom: 1rem;
@@ -184,7 +183,6 @@ body {
         width: 19vw;
     }
     .TOC li {
-        height: 15vh;
         font-size: 1.2vw;
     }
 }
@@ -194,18 +192,26 @@ body {
         width: 16vw;
     }
     .TOC li {
-        height: 15vh;
         font-size: 1.3vw;
     }
 }
 
 @media screen and (max-width: 1300px) {
     .TOC {
-        padding-top: 5%;
         width: 12vw;
     }
     .TOC h2 {
         font-size: 1vw;
+    }
+
+    .TOC li {
+        font-size: 1.3vw;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .TOC {
+        padding-top: 16vh;
     }
 
     .TOC li {

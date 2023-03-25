@@ -68,8 +68,7 @@ We know that it can sometimes be overwhelming at a physical fair with a lot of p
 
 THS Armada is a student-driven project at KTH Royal Institute of Technology that arranges the largest career fair in Scandinavia. Every year, more than 12,000 of Sweden's top engineering and architectural students flock to visit the fair to meet their future employers. The Fair is a two-day event with companies from all over the world.
 
-This year we will repeat the success from previous years with a fair back on campus after the last two virtual fairs.
-
+During 2020-2021 we had two virtual fairs. But since last year we are back with a physical fair that spans all across KTH campus.
 <a class="anchor" id="why-armada"></a>
 
 <br />
@@ -78,21 +77,19 @@ This year we will repeat the success from previous years with a fair back on cam
 
 THS Armada is a unique opportunity for exhibitors to market themselves to students at the biggest technical university in Sweden. First and foremost through our fair but Armada is so much more. We create opportunities outside of the fair for our exhibitors to engage with and recruit students through interactive events, customized events and a banquet dinner amongst other activities. Our vision is to allow every student to meet their dream employer and give companies the possibility to find their next star.
 
-Armada is an established event and this year will be the 40th Armada in a row. Students at KTH are constantly gazing into the future and we want to lead to bring them and your company together. Welcome to THS Armada
+Armada is an established event and this year will be the 41st Armada in a row. Students at KTH are constantly gazing into the future and we want to lead to bring them and your company together. Welcome to THS Armada
 
 <br />
 
 <h2 id="registration"> Registration </h2>
 
-If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 23rd of September.
+If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 23rd of September. <br />
 If you did not register your company during the Initial Registration, 11th of April - 20th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
 
-<a class="anchor" id="offical-invitation"></a>
-<a href="/assets/invitation/InvitationArmada2022.pdf">
-<img src='/assets/Invitation/ProductCatalogue2022Png.png' alt="Offical Invitation" width="70%" style="margin-left:15%"/>
-</a>
-
-<form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2022.pdf">
+<h3>Invitation</h3>
+Download our invitation catalogue to find out more more. <br />
+Welcome to Armada 2023!
+<form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2023.pdf">
 <br />
 <br />
 <div class = "buttonStyle">

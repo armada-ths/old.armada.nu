@@ -1,5 +1,12 @@
 @import '../../styles/_variables';
 @import '../../styles/global';
+/* Last edited by Nima Mehrabadi, changing FAQ to grid */
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto auto;
+}
 
 .accordion-homepage {
     border: thin solid #dadce0;
@@ -141,22 +148,16 @@
     font-size: 20px;
     line-height: 30px;
 }
-
+/* using "topics-container" and "topic-container" is super confusing. Todo: change this */
 .topics-container {
-    display: flex;
     margin: 0 auto;
     padding: 2em;
     justify-content: center;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-    .topics-container {
-        flex-direction: column;
-        align-items: center;
-    }
     .topic-container {
         margin-bottom: 1em;
-        margin-left: 2em;
     }
     .topic-container:nth-child(5) {
         margin-left: 0%;
@@ -168,20 +169,14 @@
         flex-wrap: wrap;
         align-items: center;
     }
-    .topic-container {
-        margin-bottom: 1em;
-    }
 }
-
+/* This was previously set for some reason to fixed amount of pixels. Why, I do not know */
 .topic-container {
-    width: 200px;
-    height: 150px;
     border: 1px solid #c7c7c7;
-    box-sizing: border-box;
+    box-sizing: content-box;
     border-radius: 2px;
     display: flex;
     justify-content: center;
-    margin-right: 2em;
     cursor: pointer;
 }
 
@@ -192,12 +187,11 @@
 .topic-container:nth-child(5) {
     margin-right: 0%;
 }
-
+/* Changed this from fixed size pixels. Please move away from using pixels as font-size */
 .topic {
     color: $melon;
     text-align: center;
-    font-size: 21px;
-    line-height: 44px;
+    font-size: 2.5vw;
     display: flex;
     align-items: center;
 }

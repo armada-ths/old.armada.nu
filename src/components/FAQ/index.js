@@ -529,7 +529,7 @@ const FAQContainer = props => {
             <FAQHeader />
             <img alt='' className='terre' src={FAQBackground} />
             <p className='browse-header'>Browse by key topics:</p>
-            <div className='topics-container'>
+            <div className='topics-container grid-container'>
                 {questions &&
                     questions.map((topic, i) => (
                         <div
@@ -544,7 +544,7 @@ const FAQContainer = props => {
                     ))}
             </div>
             {faq && (
-                <div className='accordion-homepage'>
+                <div className='accordion-homepage grid-container'>
                     {faq.body.map((faq, i) => {
                         return (
                             <FAQQuestion

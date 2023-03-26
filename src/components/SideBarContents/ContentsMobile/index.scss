@@ -6,17 +6,28 @@
 
 .tocClosed {
     display: none;
+    .TOCMobile {
+        width: 0;
+    }
+    .ContentsMobile {
+        width: 0;
+    }
 }
 
 .tocOpen {
     display: inline;
     position: sticky;
+    .TOCMobile {
+        width: 60vw;
+    }
+    .ContentsMobile {
+        width: 60vw;
+    }
 }
 
 .ContentsMobile {
     display: flex;
     position: absolute;
-    width: 60vw;
     z-index: 9;
     flex-direction: column;
     background-color: #252524;

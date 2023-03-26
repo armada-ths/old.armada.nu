@@ -20,13 +20,13 @@ header: /assets/library.png
 <div class="info-border-box">
 <h2 id="important-dates">Important Dates</h2>
 
-**Initial Registration** - 11th of April - 20th of May
+**Initial Registration** - 22nd of March - 17th of May
 
-**Final Registration** - 22nd of August - 23rd of September
+**Final Registration** - 18th of August - 28th of September
 
-**Event Weeks** - 31st of October - 18th of November
+**Event Weeks** - 30st of October - 17th of November
 
-**The Fair** - 22nd-23rd of November
+**The Fair** - 21st-22nd of November
 
 **Grand Banquet** - 22nd of November
 

@@ -544,7 +544,7 @@ const FAQContainer = props => {
                     ))}
             </div>
             {faq && (
-                <div className='accordion-homepage grid-container'>
+                <div className='accordion-homepage grid-container-answers'>
                     {faq.body.map((faq, i) => {
                         return (
                             <FAQQuestion

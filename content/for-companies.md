@@ -28,7 +28,7 @@ header: /assets/library.png
 
 **The Fair** - 21st-22nd of November
 
-**Grand Banquet** - 22nd of November
+**Grand Banquet** - 21st of November
 
 </div>
 
@@ -102,7 +102,7 @@ Welcome to Armada 2023!
 
 We at THS Armada believe that our core values Sustainability and Diversity are crucial for the workings of any organisation. Therefore, we value that our exhibitors share our views and choose to highlight exhibitors that do. During our event weeks leading up to the fair, we have what we call Focus Days, one for each core value. During these days we invite companies that lead by example to host events such as lunch lectures, case events etc.
 
-During the fair we will highlight companies that we believe share our core values. To learn more contact our [Head of Sustainability](mailto:ajay.surya.gnaneswaran@armada.nu) or [Head of Diversity](mailto:tor.shimamura.fagle@armada.nu).
+During the fair we will highlight companies that we believe share our core values. To learn more contact our [Head of Sustainability](mailto:cameron.kennett@armada.nu) or [Head of Diversity](mailto:niclas.mejia@armada.nu).
 
 <br />
 

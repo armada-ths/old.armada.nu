@@ -15,7 +15,7 @@ const Recruitment = () => {
         let mergedGroupsObject = {}
 
         axios.get('https://ais.armada.nu/api/recruitment').then(res => {
-            let result = res.data
+            const result = res.data
 
             result.forEach(item => {
                 const gr = item.groups

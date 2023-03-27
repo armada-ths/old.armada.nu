@@ -11,8 +11,9 @@ const Recruitment = () => {
     const navbarOffset = 60
     const [groups, setGroups] = useState()
     const [recruitmentLink, setRecruitmentLink] = useState('')
-    let mergedGroupsObject = {}
     useEffect(() => {
+        let mergedGroupsObject = {}
+
         axios.get('https://ais.armada.nu/api/recruitment').then(res => {
             let result = res.data
 
@@ -21,10 +22,10 @@ const Recruitment = () => {
                 if (result.length > 0) {
                     mergedGroupsObject = { ...mergedGroupsObject, ...gr }
                     //setGroups(result[0].groups)
-                    setRecruitmentLink(result[0].link) //this line is still fine since the link is same for all of them
                 }
             })
             setGroups(mergedGroupsObject)
+            setRecruitmentLink(result[0].link) //this line is still fine since the link is same for all of them
         })
     }, []) //happens on page load, this sideloads everything
 

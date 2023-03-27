@@ -5,20 +5,28 @@ import './index.scss'
 import Testimonials from '../Testimonials'
 import { StickyContainer, Sticky } from 'react-sticky'
 //Come up with a solution using position: sticky in css instead
+
+/* Fixed by Nima 27-03-2023. Please read axios manual... Previously it was set to setGroups(result[0].groups) so it would only get the first one... */
 const Recruitment = () => {
     const navbarOffset = 60
     const [groups, setGroups] = useState()
     const [recruitmentLink, setRecruitmentLink] = useState('')
-
+    let mergedGroupsObject = {}
     useEffect(() => {
         axios.get('https://ais.armada.nu/api/recruitment').then(res => {
             let result = res.data
-            if (result.length > 0) {
-                setGroups(result[0].groups)
-                setRecruitmentLink(result[0].link)
-            }
+
+            result.forEach(item => {
+                const gr = item.groups
+                if (result.length > 0) {
+                    mergedGroupsObject = { ...mergedGroupsObject, ...gr }
+                    //setGroups(result[0].groups)
+                    setRecruitmentLink(result[0].link) //this line is still fine since the link is same for all of them
+                }
+            })
+            setGroups(mergedGroupsObject)
         })
-    }, [])
+    }, []) //happens on page load, this sideloads everything
 
     return groups ? (
         <div className='rolelist'>
@@ -44,6 +52,20 @@ const Recruitment = () => {
                 <div className='description-header'>
                     <h2>Available Roles</h2>
                 </div>
+                <button
+                    onClick={() => {
+                        const targetClass = document.querySelectorAll('.groups')
+                        targetClass.forEach(cl => {
+                            if (cl.style.display === 'none') {
+                                cl.style.display = 'block'
+                            } else {
+                                cl.style.display = 'none'
+                            }
+                        })
+                    }}
+                >
+                    Hide/Show
+                </button>
 
                 {Object.keys(groups).map((groupKey, i) => (
                     <div className='groups' key={i}>
@@ -61,7 +83,7 @@ const Recruitment = () => {
         </div>
     )
 }
-
+//This looks like copypasted code. Todo: redo this
 const RoleSection = ({ role }) => {
     const [collapsed, setCollapsed] = useState(true)
     const newText = role.description.split('\n').map(str => <p>{str}</p>)

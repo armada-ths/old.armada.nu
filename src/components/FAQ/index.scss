@@ -1,30 +1,34 @@
 @import '../../styles/_variables';
 @import '../../styles/global';
+/* Last edited by Nima Mehrabadi, changing FAQ to grid */
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto auto;
+    gap: 0.5rem;
+}
+
+.grid-container-answers {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto;
+}
 
 .accordion-homepage {
-    border: thin solid #dadce0;
     border-radius: 0.5rem;
     box-sizing: border-box;
     margin: auto;
     margin-bottom: 3em;
-    width: 60%;
-}
-
-.accordion-homepage .parent:first-child,
-.accordion-homepage .parent:first-child > h2 {
-    border-top-left-radius: 0.625rem;
-    border-top-right-radius: 0.625rem;
-}
-
-.accordion-homepage .parent:first-child {
-    border-top: none;
 }
 
 .accordion-homepage .parent {
     position: relative;
-    border-top: thin solid #dadce0;
     padding: 0;
     -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    text-align: center;
+    border: thin solid #dadce0;
 }
 
 .accordion-homepage .parent:not(.selected) h2 {
@@ -141,22 +145,16 @@
     font-size: 20px;
     line-height: 30px;
 }
-
+/* using "topics-container" and "topic-container" is super confusing. Todo: change this */
 .topics-container {
-    display: flex;
     margin: 0 auto;
-    padding: 2em;
+    padding: 2rem;
     justify-content: center;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-    .topics-container {
-        flex-direction: column;
-        align-items: center;
-    }
     .topic-container {
         margin-bottom: 1em;
-        margin-left: 2em;
     }
     .topic-container:nth-child(5) {
         margin-left: 0%;
@@ -166,23 +164,18 @@
 @media screen and (max-width: $breakpoint-pad) {
     .topics-container {
         flex-wrap: wrap;
-        align-items: center;
-    }
-    .topic-container {
-        margin-bottom: 1em;
     }
 }
-
 .topic-container {
-    width: 200px;
-    height: 150px;
     border: 1px solid #c7c7c7;
     box-sizing: border-box;
     border-radius: 2px;
     display: flex;
     justify-content: center;
-    margin-right: 2em;
     cursor: pointer;
+    text-align: center;
+    width: 150px;
+    height: 150px;
 }
 
 .topic-container:hover {
@@ -192,14 +185,14 @@
 .topic-container:nth-child(5) {
     margin-right: 0%;
 }
-
+/* Changed this from fixed size pixels. Please move away from using pixels as font-size */
 .topic {
     color: $melon;
     text-align: center;
-    font-size: 21px;
-    line-height: 44px;
     display: flex;
     align-items: center;
+    font-size: min(2vw, 1);
+    padding: 0.5rem;
 }
 
 .contactBtn {

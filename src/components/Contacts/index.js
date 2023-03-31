@@ -28,7 +28,6 @@ function getInfoByName(name, firstName) {
 }
 
 const Contacts = () => {
-    //const path = '/assets/images/PG23/' The image path for all the images
     const [allPg, setAllPg] = useState([])
     useEffect(() => {
         const pgProfiles = []

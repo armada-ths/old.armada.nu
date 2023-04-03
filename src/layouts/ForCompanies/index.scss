@@ -16,14 +16,16 @@
 .tierlistInfo {
     width: 23%;
     background-color: #302c2c;
-    height: 308px;
+    height: 718.5px;
     align-self: self-end;
     p {
         all: unset;
-        display: block;
+        display: flex;
         font-weight: 900;
         color: $melon;
-        font-size: larger;
+        height: 100px;
+        justify-content: center;
+        flex-direction: column;
         padding: 0.5em 0 0.5em 0;
         text-align: center;
     }
@@ -37,10 +39,16 @@
         all: unset;
         text-decoration: none;
         list-style-type: none;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 100%;
+        height: 58px;
         text-align: center;
-        border: 1px dashed $melon;
+        border-top: 1px dashed $melon;
+        border-bottom: 1px dashed $melon;
+        font-size: 1vw;
+        padding: 0;
         color: $melon;
     }
 }
@@ -229,6 +237,14 @@ body {
     }
 }
 
+@media screen and (min-width: 2330px) {
+    .tierlistInfo {
+        li {
+            font-size: 0.8vw; //fixes test overlapping bug on very big screens
+        }
+    }
+}
+
 @media screen and (max-width: 1550px) {
     .TOC {
         width: 19vw;
@@ -261,6 +277,14 @@ body {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .tierlistInfo {
+        li {
+            font-size: 1.5vw;
+        }
+    }
+}
+
 @media screen and (max-width: 1050px) {
     .TOC {
         padding-top: 16vh;
@@ -286,5 +310,19 @@ body {
     .info-container {
         z-index: -10;
         margin-top: -80vh;
+    }
+
+    .tierlistInfo {
+        li {
+            font-size: 1.8vw;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .tierlistInfo {
+        li {
+            font-size: 2.3vw;
+        }
     }
 }

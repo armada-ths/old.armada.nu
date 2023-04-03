@@ -1,9 +1,9 @@
 import React from 'react'
 import './index.scss'
 import { StaticImage } from 'gatsby-plugin-image'
-import exh_img from '../../../static/assets/TierlistCard/armada_round_logo_green.png'
-import silver_img from '../../../static/assets/TierlistCard/armada_logo_text_silver.png'
-import gold_img from '../../../static/assets/TierlistCard/armada_logo_text_gold.png'
+import exh_img from '../../../../static/assets/TierlistCard/armada_round_logo_green.png'
+import silver_img from '../../../../static/assets/TierlistCard/armada_logo_text_silver.png'
+import gold_img from '../../../../static/assets/TierlistCard/armada_logo_text_gold.png'
 
 /* Cards for different tier lists displayed on website.
 To do: Fix everything up. Get logos for each tier */
@@ -41,6 +41,7 @@ const gold = {
     field_visit_or_panel_discussion: 'both',
     marketed_as: 'gold',
     armada_competition: true,
+    armada_run: true,
 }
 
 function Tierlistcard({ tier = 'exhibitor' }) {

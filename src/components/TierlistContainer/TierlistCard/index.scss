@@ -1,5 +1,5 @@
-@import '../../styles/_variables';
-@import '../../styles/_fonts';
+@import '../../../styles/_variables';
+@import '../../../styles/_fonts';
 
 .card {
     box-sizing: border-box;
@@ -14,15 +14,18 @@
     }
 
     li {
+        all: unset;
         text-decoration: none;
         list-style-type: none;
         width: 100%;
         text-align: center;
-        border: 1px dashed $melon;
-        height: 10vh;
+        border-top: 1px dashed $melon;
+        border-bottom: 1px dashed $melon;
+        height: 58px;
+        padding: 0;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
     }
 }
 

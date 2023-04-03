@@ -13,46 +13,6 @@
     }
 }
 
-.tierlistInfo {
-    width: 23%;
-    background-color: #302c2c;
-    height: 718.5px;
-    align-self: self-end;
-    p {
-        all: unset;
-        display: flex;
-        font-weight: 900;
-        color: $melon;
-        height: 100px;
-        justify-content: center;
-        flex-direction: column;
-        padding: 0.5em 0 0.5em 0;
-        text-align: center;
-    }
-    ul {
-        all: unset;
-        text-align: left;
-        list-style-type: none;
-        display: inline;
-    }
-    li {
-        all: unset;
-        text-decoration: none;
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        height: 58px;
-        text-align: center;
-        border-top: 1px dashed $melon;
-        border-bottom: 1px dashed $melon;
-        font-size: 1vw;
-        padding: 0;
-        color: $melon;
-    }
-}
-
 #container1 {
     background-image: url('/assets/for_exhibitors.jpg');
 }
@@ -67,12 +27,6 @@
 
 .reveal {
     animation: 1s ease-out 0s 1 slideInFromLeft;
-}
-
-.tierlistContainer {
-    display: flex;
-    width: 125%;
-    justify-content: space-evenly;
 }
 
 .info-container {
@@ -304,12 +258,11 @@ body {
     }
 
     .TOCMobile {
-        display: inline-block;
+        display: inline;
     }
 
     .info-container {
         z-index: -10;
-        margin-top: -80vh;
     }
 
     .tierlistInfo {
@@ -322,7 +275,7 @@ body {
 @media screen and (max-width: 850px) {
     .tierlistInfo {
         li {
-            font-size: 2.3vw;
+            font-size: 2vw;
         }
     }
 }

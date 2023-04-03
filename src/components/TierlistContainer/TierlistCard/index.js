@@ -44,7 +44,7 @@ const gold = {
     armada_run: true,
 }
 
-function Tierlistcard({ tier = 'exhibitor' }) {
+function Tierlistcard({ tier = 'exhibitor', handleHover, itemHovered }) {
     var usedExlusive
     var figure
     if (tier === 'exhibitor') {
@@ -60,7 +60,7 @@ function Tierlistcard({ tier = 'exhibitor' }) {
 
     return (
         <div class='card'>
-            <p class='title' id={tier}>
+            <p class='cardTitle' id={tier}>
                 {tier.toUpperCase()}
             </p>
             <img class='tierImage' src={figure} />
@@ -69,20 +69,53 @@ function Tierlistcard({ tier = 'exhibitor' }) {
                     if (typeof item === 'boolean') {
                         if (item) {
                             return (
-                                <li id='listBox' key={index}>
+                                <li
+                                    id='listBox'
+                                    key={index}
+                                    onMouseOver={() => handleHover(index)}
+                                    style={{
+                                        backgroundColor:
+                                            itemHovered === index
+                                                ? '#828080'
+                                                : '#302c2c',
+                                    }}
+                                    onMouseOut={() => handleHover(null)}
+                                >
                                     ✅
                                 </li>
                             )
                         } else {
                             return (
-                                <li id='listBox' key={index}>
+                                <li
+                                    id='listBox'
+                                    key={index}
+                                    onMouseOver={() => handleHover(index)}
+                                    style={{
+                                        backgroundColor:
+                                            itemHovered === index
+                                                ? '#828080'
+                                                : '#302c2c',
+                                    }}
+                                    onMouseOut={() => handleHover(null)}
+                                >
                                     ❌
                                 </li>
                             )
                         }
                     } else if (typeof item === 'string') {
                         return (
-                            <li id='listString' key={index}>
+                            <li
+                                id='listString'
+                                key={index}
+                                onMouseOver={() => handleHover(index)}
+                                style={{
+                                    backgroundColor:
+                                        itemHovered === index
+                                            ? '#828080'
+                                            : '#302c2c',
+                                }}
+                                onMouseOut={() => handleHover(null)}
+                            >
                                 {item}
                             </li>
                         )

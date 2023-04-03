@@ -1,4 +1,41 @@
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
+
 .card {
     box-sizing: border-box;
     background-color: #302c2c;
+    width: 25%;
+
+    ul {
+        margin: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+    }
+
+    li {
+        text-decoration: none;
+        list-style-type: none;
+        width: 100%;
+        text-align: center;
+        border: 1px dashed $melon;
+        height: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+}
+
+#listString {
+    color: $melon;
+}
+
+.tierImage {
+    padding: 1vw;
 }

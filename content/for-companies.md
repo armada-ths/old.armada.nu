@@ -86,6 +86,29 @@ Armada is an established event and this year will be the 41st Armada in a row. S
 If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 23rd of September. <br />
 If you did not register your company during the Initial Registration, 11th of April - 20th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
 
+<h2 id="what-do-you-get">What do you get?</h2>
+<br/>
+<div class="tierlistContainer">
+<div class="tierlistInfo">
+<p>Exlusives</p>
+<ul>
+<li>Booth Size:</li>
+<li>Transport & Wifi:</li>
+<li>Lunch tickets:</li>
+<li>Showcase in exhibitor catalogue:</li>
+<li>Assigned hosts:</li>
+<li>Tickets to the Banquet:</li>
+<li>Host an Armada Run competition:</li>
+<li>Field visit or Panel discussion:</li>
+<li>Marketed as (on social media & website):</li>
+<li>Be a part of armada competition</li>
+</ul>
+</div>
+<tierlistcardExhibitor></tierlistcardExhibitor>
+<tierlistcardSilver></tierlistcardSilver>
+<tierlistcardGold></tierlistcardGold>
+</div>
+<br/>
 <h3>Invitation</h3>
 Download our invitation catalogue to find out more more. <br />
 Welcome to Armada 2023!

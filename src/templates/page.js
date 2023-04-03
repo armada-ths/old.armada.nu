@@ -14,6 +14,7 @@ import SustainabilityInterviews from '../../src/components/SustainabilityIntervi
 import SustainabilitySection from '../../src/components/DiversitySection'
 import FunFact from '../../src/components/FunFact'
 import Recruitment from '../components/Recruitment'
+import Tierlistcard from '../components/TierlistCard'
 
 //ReactMarkdown allows just like MDX pass through custom components. See for example video1 that leads to registration.md
 const Page = props => {
@@ -57,6 +58,9 @@ const Page = props => {
                     video2: () => (
                         <EmbeddedVideo videoLink='https://youtu.be/n6yuGUyYAzg' />
                     ),
+                    tierlistcardexhibitor: () => <Tierlistcard />,
+                    tierlistcardsilver: () => <Tierlistcard tier='silver' />,
+                    tierlistcardgold: () => <Tierlistcard tier='gold' />,
                 }}
             />
             {props.children}

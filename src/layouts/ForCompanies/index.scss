@@ -13,6 +13,38 @@
     }
 }
 
+.tierlistInfo {
+    width: 23%;
+    background-color: #302c2c;
+    height: 308px;
+    align-self: self-end;
+    p {
+        all: unset;
+        display: block;
+        font-weight: 900;
+        color: $melon;
+        font-size: larger;
+        padding: 0.5em 0 0.5em 0;
+        text-align: center;
+    }
+    ul {
+        all: unset;
+        text-align: left;
+        list-style-type: none;
+        display: inline;
+    }
+    li {
+        all: unset;
+        text-decoration: none;
+        list-style-type: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border: 1px dashed $melon;
+        color: $melon;
+    }
+}
+
 #container1 {
     background-image: url('/assets/for_exhibitors.jpg');
 }
@@ -27,6 +59,12 @@
 
 .reveal {
     animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.tierlistContainer {
+    display: flex;
+    width: 125%;
+    justify-content: space-evenly;
 }
 
 .info-container {

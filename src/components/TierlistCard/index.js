@@ -1,5 +1,10 @@
 import React from 'react'
 import './index.scss'
+import { StaticImage } from 'gatsby-plugin-image'
+import exh_img from '../../../static/assets/TierlistCard/armada_round_logo_green.png'
+import silver_img from '../../../static/assets/TierlistCard/armada_logo_text_silver.png'
+import gold_img from '../../../static/assets/TierlistCard/armada_logo_text_gold.png'
+
 /* Cards for different tier lists displayed on website.
 To do: Fix everything up. Get logos for each tier */
 
@@ -39,34 +44,47 @@ const gold = {
 }
 
 function Tierlistcard({ tier = 'exhibitor' }) {
-    const items = new Array(10).fill(null) //Create sample empty array of 10 exclusives
-    const itemList = []
     var usedExlusive
+    var figure
     if (tier === 'exhibitor') {
         usedExlusive = exhibitor
+        figure = exh_img
     } else if (tier === 'silver') {
         usedExlusive = silver
+        figure = silver_img
     } else {
         usedExlusive = gold
+        figure = gold_img
     }
-    for (let i = 0; i < 10; i++) {
-        itemList.append()
-    }
+
     return (
         <div class='card'>
             <p class='title' id={tier}>
                 {tier.toUpperCase()}
             </p>
+            <img class='tierImage' src={figure} />
             <ul>
                 {Object.values(usedExlusive).map((item, index) => {
                     if (typeof item === 'boolean') {
                         if (item) {
-                            return <li key={index}>✅</li>
+                            return (
+                                <li id='listBox' key={index}>
+                                    ✅
+                                </li>
+                            )
                         } else {
-                            return <li key={index}>❌</li>
+                            return (
+                                <li id='listBox' key={index}>
+                                    ❌
+                                </li>
+                            )
                         }
                     } else if (typeof item === 'string') {
-                        return <li key={index}>{item}</li>
+                        return (
+                            <li id='listString' key={index}>
+                                {item}
+                            </li>
+                        )
                     }
                 })}
             </ul>

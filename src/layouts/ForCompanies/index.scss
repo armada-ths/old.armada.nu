@@ -278,3 +278,11 @@ body {
         }
     }
 }
+
+@media screen and (max-width: 680px) {
+    .tierlistInfo {
+        li {
+            font-size: 15px;
+        }
+    }
+}

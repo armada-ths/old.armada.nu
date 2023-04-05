@@ -1,7 +1,6 @@
 import React from 'react'
 import './index.scss'
 import todaysDate from '../../templates/todaysDate'
-import { StaticImage } from 'gatsby-plugin-image'
 const Footer = () => {
     let armada_img = require('/static/assets/images/footer/armada-round-white-transparent.png')
     let ths_logo = require('../../../static/assets/images/footer/ths-logo.png')

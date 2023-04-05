@@ -1,65 +1,165 @@
-import React from 'react'
-import './index.scss';
+import React, { useEffect, useState, Suspense } from 'react'
+import './index.scss'
 import ContactCard from '../ContactCard'
+import axios from 'axios'
+import data from './convertcsv.json'
+/* Last edited in March 2023 to add API call instead. To do: Add more information from the API
+make the filtering on the backend side instead of front end as well as updating images on the backend instead */
 
-const Contacts = () => {
-  
-  const projectGroup = [
-    { name: 'Leonard Hökby', title: 'Project Manager 2023', email: 'a@armada.nu', emoji: '👨‍💼', imageUrl: '/assets/images/PG23/Leonard.JPG', linkedInUrl: 'https://www.linkedin.com/in/leonard-h%C3%B6kby/' },
-    { name: 'Filip Rydén', title: 'Project Manager 2022', email: 'a@armada.nu', emoji: '👨‍💼', imageUrl: '/assets/images/PG21/Filip.jpg', linkedInUrl: 'https://www.linkedin.com/in/filip-ryd%C3%A9n-a32b3717a/' },
-    /*
-    { name: 'Porsev Aslan', title: 'Head of IT', email: 'porsev.aslan@armada.nu', emoji: '💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/porsev-aslan/' },
-    { name: 'Dana Ismail', title: 'Head of Web Development', email: 'dana.ismail@armada.nu', emoji: '💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/dana-ismail-5339151b8/' },
-    { name: 'Anton Danker', title: 'Head of Internal Systems', email: 'anton.danker@armada.nu', emoji: '💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/antondanker/' },
-    { name: 'Melvin Jobe', title: 'Head of Marketing & Communication', email: 'melvin.jobe@armada.nu', emoji: '👩‍💻', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/melvinjobe/' },
-    { name: 'Shreeya Sathe', title: 'Art Director', email: 'shreeya.sathe@armada.nu', emoji: '👨‍🎨', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/shreeya-sathe/' },
-    { name: 'Kenan Güler', title: 'Head of Media & Marketing', email: 'kenan.guler@armada.nu', emoji: '🎬', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/kenan-g%C3%BCler-1b4b00191/' },
-    { name: 'Ida Ristola', title: 'Head of Business Relations and Events', email: 'ida.ristola@armada.nu', emoji: '🤝', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/ida-ristola/' },
-    { name: 'Anushka Bhowmik', title: 'Head of Sales', email: 'anushka.bhowmik@armada.nu', emoji: '📈', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/anushka-bhowmik-7632a1219/' },
-    { name: 'Barbarella Gyi Grejalde', title: 'Head of Sales', email: 'barbarella.gyi.grejalde@armada.nu', emoji: '📈', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/barbarellagrejalde/' },
-    { name: 'Adithya Raju', title: 'Head of Sales', email: 'adithya.raju@armada.nu', emoji: '📈', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/adithyaraju/' },     
-    { name: 'Berivan Sagici', title: 'Head of Events', email: 'berivan.sagici@armada.nu', emoji: '🎉', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/berivan-sagici-06a6ba191/' },
-    { name: 'Narges Qorbanzada', title: 'Head of Banquet', email: 'narges.qorbanzada@armada.nu', emoji: '💃', imageUrl: null, linkedInUrl: 'linkedin.com/in/narges-qorbanzada-16844b205/' },
-    { name: 'Kilima Mambo', title: 'Head of Logistics & Fair', email: 'kilima.mambo@armada.nu', emoji: '👷‍♂️', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/mambo-kilima-13819a177/' },
-    { name: 'Jessica Lyrner Morén', title: 'Head of Logistics', email: 'jessica.lyrner.moren@armada.nu', emoji: '👷‍♂️', imageUrl: null, linkedInUrl: '#' }, 
-    { name: 'Vasigaran Senthilkumar', title: 'Head of Career Fair', email: 'vasigaran.senthilkumar@armada.nu', emoji: '👷‍♀️', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/vasigaran-senthilkumar/' },
-    { name: 'Jeffrey Chang', title: 'Head of Career Fair', email: 'jeffrey.chang@armada.nu', emoji: '👷‍♀️', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/jeffrey-chang-914a571b5/' },     
-    { name: 'Cecilia Zambelli', title: 'Head of Service', email: 'cecilia.zambelli@armada.nu', emoji: '👨‍🔧', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/cecilia-zambelli-2a074a193/' },
-    { name: 'Ajay Surya Gnaneswaran', title: 'Head of Sustainability', email: 'ajay.surya.gnaneswaran@armada.nu', emoji: '♻️', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/ajaysurya97/' },
-    { name: 'Tor Shimamura Fagle', title: 'Head of Diversity', email: 'tor.shimamura.fagle@armada.nu', emoji: '❤️', imageUrl: null, linkedInUrl: 'https://www.linkedin.com/in/tor-shimamura-fagle-7b6571204/' },
-    */ 
-  ]
+/* Please note the following: Currently it's way to slow to load the images. We have tried a lot. If you want to try, replace in the image field below.
+We recently transfered to Gatsby images instead to make it faster, but this doesn't work on those since gatsby renders it on build.
+The animations have been removed because of this lag */
 
-  const createCards = (start, end) => {
-    return (projectGroup.filter((i, index) => (index < end && index >= start)).map((info, index) => <ContactCard name={info.name} key={index} title={info.title} email={info.email} emoji={info.emoji} imageUrl={info.imageUrl} linkedInUrl={info.linkedInUrl} />))
-  }
-
-  return (<div className='contacts'>
-      <h1>Contact ARMADA</h1>
-      <div className='contact-list'>
-        {createCards(0, 4)}
-        <div className='line'/>
-      </div>
-      <div className='contact-list'>
-        {createCards(4, 8)}
-        <div className='line'/>
-      </div>
-      <div className='contact-list'>
-        {createCards(8, 12)}
-        <div className='line'/>
-      </div>
-      <div className='contact-list'>
-        {createCards(12, 16)}
-        <div className='line'/>
-      </div>
-      <div className='contact-list'>
-        {createCards(16, 20)}
-      </div>
-      <div className='contact-list'>
-        {createCards(20, 24)}
-      </div>
-    </div>
-    );
+function getInfoByName(name, firstName) {
+    //Check out convertcsv.json. We quickly manually generated this from taking the excel in drive, deleting columns and using: https://www.convertcsv.com/csv-to-json.htm
+    const cachedPg = data.find(item => item.Name === name)
+    if (cachedPg) {
+        console.log([cachedPg['Armada Email'], cachedPg['Group']])
+        return [cachedPg['Armada Email'], cachedPg['Group']]
+    } else {
+        const cachedPg = data.find(item => item.Name.includes(firstName)) //If we don't find it by full name try the first name.
+        //But if multiple people have the same first name unfortunately it will only return the first one.
+        if (cachedPg) {
+            return [cachedPg['Armada Email'], cachedPg['Group']]
+        } else {
+            return [null, null]
+        }
+    }
 }
 
-export default Contacts;
+const Contacts = () => {
+    const [allPg, setAllPg] = useState([])
+    useEffect(() => {
+        const pgProfiles = []
+        axios.get('https://ais.armada.nu/api/organization/').then(res => {
+            //filters out people who have not yet been recruited and are not PG
+            res.data.filter(item => {
+                if (item.people.length > 0) {
+                    const pgRole = item.role
+                    const pg = item.people.filter(person =>
+                        person.role.includes('Project Group')
+                    )
+                    if (pg.length > 0) {
+                        pg.forEach(person => {
+                            const pgObject = person
+                            const firstIndex = pgObject.name.indexOf(' ')
+                            const pgfirstName = pgObject.name.substr(
+                                0,
+                                firstIndex
+                            )
+                            const pgsurName = pgObject.name.substr(
+                                firstIndex + 1
+                            )
+                            const [pgEmail, pgGroup] = getInfoByName(
+                                pgObject.name,
+                                pgfirstName
+                            )
+                            const fixedPgObject = {
+                                ...pgObject,
+                                picture: pgObject.picture.replace(
+                                    'https://ais.armada.nu/', //remove the error with the image url
+                                    ''
+                                ),
+                                firstName: pgfirstName, //we split into first name and last name to be able to use this for matching later
+                                surName: pgsurName,
+                                email: pgEmail, //note this might return null
+                                group: pgGroup, //this also
+                            }
+                            fixedPgObject.role = pgRole.substring(16) //This adds a field "role" that was previously in the overall object (not the "people" field) back to the "people" field
+                            setAllPg(oldArray => [...oldArray, fixedPgObject]) //Each item from the API includes "people" which is a length 1 array
+                        })
+                    }
+                }
+                return null
+            })
+        })
+        setAllPg(pgProfiles)
+    }, [])
+
+    const createCards = groupName => {
+        console.log(allPg)
+        return allPg
+            .filter(item => item.group === groupName)
+            .map(armadian => (
+                <ContactCard
+                    name={armadian.name}
+                    linkedInUrl={armadian.linkedin_url}
+                    imageUrl={armadian.picture}
+                    //localImage={path + item.firstName + '.jpg'}
+                    title={armadian.role}
+                    email={armadian.email ?? ''}
+                    emoji={''}
+                />
+            ))
+        /*return allPg.slice(start, end).map(item => {
+            return (
+                <ContactCard
+                    name={item.name}
+                    linkedInUrl={item.linkedin_url}
+                    imageUrl={item.picture}
+                    //localImage={path + item.firstName + '.jpg'}
+                    title={item.role}
+                    email={item.email ?? ''}
+                    emoji={''}
+                />
+            )
+        }) */
+    }
+    return (
+        <div className='contacts'>
+            <h1>Contact ARMADA</h1>
+
+            <div className='contact-list'>
+                <h2 className='backgroundTitle'>Project Manager</h2>
+                <Suspense fallback={<div>Loading...</div>}>
+                    {createCards('Project Manager')}
+                </Suspense>
+                <div className='line' />
+            </div>
+            <div className='contact-list'>
+                <h2 className='backgroundTitle'>Business Relations</h2>
+                <Suspense fallback={<div>Loading...</div>}>
+                    {createCards('Business Relations')}
+                </Suspense>
+                <div className='line' />
+            </div>
+            <div className='contact-list'>
+                <h2 className='backgroundTitle'>Media & Communications</h2>
+                <Suspense fallback={<div>Loading...</div>}>
+                    {createCards('Media & Communications')}
+                </Suspense>
+                <div className='line' />
+            </div>
+            <div className='contact-list'>
+                <h2 className='backgroundTitle'>Logistics & Fair</h2>
+                <Suspense fallback={<div>Loading...</div>}>
+                    {createCards('Logistics & Fair')}
+                </Suspense>
+                <div className='line' />
+            </div>
+            <div className='contact-list'>
+                <h2 className='backgroundTitle'>IT</h2>
+                <Suspense fallback={<div>Loading...</div>}>
+                    {createCards('IT')}
+                </Suspense>
+                <div className='line' />
+            </div>
+            <div className='contact-list'>
+                <h2 className='backgroundTitle'>Core Values</h2>
+                <Suspense fallback={<div>Loading...</div>}>
+                    {createCards('Core Values')}
+                </Suspense>
+                <div className='line' />
+            </div>
+            <div className='contact-list'>
+                <h2 className='backgroundTitle'></h2>
+                <Suspense fallback={<div>Loading...</div>}>
+                    {createCards(null)}
+                </Suspense>
+                <div className='line' />
+            </div>
+        </div>
+    )
+}
+
+export default Contacts

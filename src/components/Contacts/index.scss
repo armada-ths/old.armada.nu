@@ -1,26 +1,29 @@
-
 @import '../../styles/_variables';
 @import '../../styles/global';
 
 .contacts {
-  
-  h1 {
-    padding-top: 1.5em;
-  }
-
-  .contact-list {
-    z-index: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
-    .line {
-      width: 80%;
-      height: 1px;
-      background-color: $melon;
+    h1 {
+        padding-top: 1.5em;
+        margin-bottom: 1rem;
     }
-  
-  }
+    text-align: center;
+    .contact-list {
+        z-index: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
+        .line {
+            width: 100%;
+            height: 3px;
+            background-color: $melon;
+        }
+    }
+}
+
+.backgroundTitle {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
 }

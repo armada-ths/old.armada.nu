@@ -117,6 +117,13 @@ const Contacts = () => {
                 <div className='line' />
             </div>
             <div className='contact-list'>
+                <h2 className='backgroundTitle'>Business Relations</h2>
+                <Suspense fallback={<div>Loading...</div>}>
+                    {createCards('Business Relations')}
+                </Suspense>
+                <div className='line' />
+            </div>
+            <div className='contact-list'>
                 <h2 className='backgroundTitle'>Media & Communications</h2>
                 <Suspense fallback={<div>Loading...</div>}>
                     {createCards('Media & Communications')}
@@ -127,13 +134,6 @@ const Contacts = () => {
                 <h2 className='backgroundTitle'>Logistics & Fair</h2>
                 <Suspense fallback={<div>Loading...</div>}>
                     {createCards('Logistics & Fair')}
-                </Suspense>
-                <div className='line' />
-            </div>
-            <div className='contact-list'>
-                <h2 className='backgroundTitle'>Business Relations</h2>
-                <Suspense fallback={<div>Loading...</div>}>
-                    {createCards('Business Relations')}
                 </Suspense>
                 <div className='line' />
             </div>

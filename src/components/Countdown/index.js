@@ -1,10 +1,10 @@
 import React from 'react'
 import './index.scss'
 //import Countdown, { zeroPad } from 'react-countdown-now'
-import Countdown, { zeroPad } from 'react-countdown';
+import Countdown, { zeroPad } from 'react-countdown'
 
 const CountdownComponent = () => {
-    const DATE_OF_CAREER_FAIR = new Date('November 22, 2023 10:00:00') //Update the career fair date - N
+    const DATE_OF_CAREER_FAIR = new Date('November 21, 2023 10:00:00') //Update the career fair date - N
     var DATE_NOW = new Date()
     const isHappening = DATE_OF_CAREER_FAIR < DATE_NOW
 

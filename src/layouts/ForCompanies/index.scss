@@ -190,6 +190,14 @@ body {
     }
 }
 
+@media screen and (min-width: 2330px) {
+    .tierlistInfo {
+        li {
+            font-size: 0.8vw; //fixes test overlapping bug on very big screens
+        }
+    }
+}
+
 @media screen and (max-width: 1550px) {
     .TOC {
         width: 19vw;
@@ -222,6 +230,14 @@ body {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .tierlistInfo {
+        li {
+            font-size: 1.5vw;
+        }
+    }
+}
+
 @media screen and (max-width: 1050px) {
     .TOC {
         padding-top: 16vh;
@@ -241,10 +257,32 @@ body {
     }
 
     .TOCMobile {
-        display: inline-block;
+        display: inline;
     }
 
     .info-container {
-        margin-top: -80vh;
+        z-index: -10;
+    }
+
+    .tierlistInfo {
+        li {
+            font-size: 1.8vw;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .tierlistInfo {
+        li {
+            font-size: 2vw;
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .tierlistInfo {
+        li {
+            font-size: 15px;
+        }
     }
 }

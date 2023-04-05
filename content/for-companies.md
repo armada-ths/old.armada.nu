@@ -20,15 +20,15 @@ header: /assets/library.png
 <div class="info-border-box">
 <h2 id="important-dates">Important Dates</h2>
 
-**Initial Registration** - 11th of April - 20th of May
+**Initial Registration** - 22nd of March - 17th of May
 
-**Final Registration** - 22nd of August - 23rd of September
+**Final Registration** - 18th of August - 28th of September
 
-**Event Weeks** - 31st of October - 18th of November
+**Event Weeks** - 30st of October - 17th of November
 
-**The Fair** - 22nd-23rd of November
+**The Fair** - 21st-22nd of November
 
-**Grand Banquet** - 22nd of November
+**Grand Banquet** - 21st of November
 
 </div>
 
@@ -86,6 +86,12 @@ Armada is an established event and this year will be the 41st Armada in a row. S
 If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 23rd of September. <br />
 If you did not register your company during the Initial Registration, 11th of April - 20th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
 
+<h2 id="what-do-you-get">What do you get?</h2>
+<br/>
+
+<tierlistcontainer></tierlistcontainer>
+
+<br/>
 <h3>Invitation</h3>
 Download our invitation catalogue to find out more more. <br />
 Welcome to Armada 2023!
@@ -102,7 +108,7 @@ Welcome to Armada 2023!
 
 We at THS Armada believe that our core values Sustainability and Diversity are crucial for the workings of any organisation. Therefore, we value that our exhibitors share our views and choose to highlight exhibitors that do. During our event weeks leading up to the fair, we have what we call Focus Days, one for each core value. During these days we invite companies that lead by example to host events such as lunch lectures, case events etc.
 
-During the fair we will highlight companies that we believe share our core values. To learn more contact our [Head of Sustainability](mailto:ajay.surya.gnaneswaran@armada.nu) or [Head of Diversity](mailto:tor.shimamura.fagle@armada.nu).
+During the fair we will highlight companies that we believe share our core values. To learn more contact our [Head of Sustainability](mailto:cameron.kennett@armada.nu) or [Head of Diversity](mailto:niclas.mejia@armada.nu).
 
 <br />
 

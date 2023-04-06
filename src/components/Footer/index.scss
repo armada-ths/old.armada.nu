@@ -1,132 +1,131 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 #footer {
-  background-color: $licorice;
-  padding-bottom: 25px;
-  padding-top: 25px;
-  width: 100%;
-  text-align: center;
-  background-size: cover;
-
-
-  .logosection{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-  }
-
-  a {
-    font-size: 16px;
-  }
-
-
-
-  .logo {
-    @include circle(48px);
-    margin: 10px;
-  }
-
-  & img{
+    background-color: $licorice;
+    padding-bottom: 25px;
+    padding-top: 25px;
     width: 100%;
-  }
-  .img:hover {
-    filter: blur(20px) grayscale(20%);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-}
-  .apps-container {
-    width: 72px;
-    margin: 10px;
-  }
+    text-align: center;
+    background-size: cover;
 
-  .divider{
-    @include verticle-line(25px, 2px, $background-color);
-    margin: 10px;
-  }
-}
+    .logosection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
 
+    a {
+        font-size: 16px;
+    }
 
-
-// Mobile
-@media screen and (max-width: $breakpoint-mobile) {
-  #footer {
     .logo {
-      @include circle(32px);
-      margin: 5px;
+        @include circle(48px);
+        margin: 10px;
+    }
+
+    & img {
+        width: 100%;
+    }
+    .img:hover {
+        filter: blur(20px) grayscale(20%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    .apps-container {
+        width: 72px;
+        margin: 10px;
     }
 
     .divider {
-      margin: 5px;
+        @include verticle-line(25px, 2px, $background-color);
+        margin: 10px;
     }
+}
 
-    .apps-container {
-      width: 64px;
-      margin: 5px;
+// Mobile
+@media screen and (max-width: $breakpoint-mobile) {
+    #footer {
+        .logo {
+            @include circle(32px);
+            margin: 5px;
+        }
+
+        .divider {
+            margin: 5px;
+        }
+
+        .apps-container {
+            width: 64px;
+            margin: 5px;
+        }
     }
-  }
 }
 
 .track {
-      background: #fff;
-      height: 160px;
-      margin: 25px 0;
-      padding: 30px 0 0;
-      position: fixed;
-      bottom: 0px;
-      z-index: 1000;
-      width: 100vw;
+    background: #fff;
+    height: 160px;
+    margin: 25px 0;
+    padding: 30px 0 0;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1000;
+    width: 100vw;
 }
-.track:before, .track:after {
+.track:before,
+.track:after {
     background: none repeat scroll 0 0 white;
-    content: "";
+    content: '';
     display: block;
     height: 145px;
     position: absolute;
     top: 20px;
     width: 20px;
 }
-.track:before {left: -10px;}
-.track:after {right: -5px;}
+.track:before {
+    left: -10px;
+}
+.track:after {
+    right: -5px;
+}
 .lights span {
-      display: inline-block;
-      width: 25px;
-      height: 25px;
-      border-radius: 100%;
-      background: $melon;
-      box-shadow: 0 0 10px 5px rgba(0,215,144, .8);
-      margin: 45px 4%;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background: $melon;
+    box-shadow: 0 0 10px 5px rgba(0, 215, 144, 0.8);
+    margin: 45px 4%;
 }
 .packman {
-     animation: eat 10s infinite linear;
-     top: 0;
-     left: 0;
-     position: absolute;
-     height: 100%;
-     width: 100%;
+    animation: eat 10s infinite linear;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 .eat {
-     position: absolute;
-     top: 30px;
-     left: -60px;
-     width:1px;
-     height:1px;
-     border-right:60px solid transparent;
-     border-top:60px solid yellow;
-     border-left:60px solid yellow;
-     border-bottom:60px solid yellow;
-     border-radius: 60px;
-     z-index: 3;
-
+    position: absolute;
+    top: 30px;
+    left: -60px;
+    width: 1px;
+    height: 1px;
+    border-right: 60px solid transparent;
+    border-top: 60px solid yellow;
+    border-left: 60px solid yellow;
+    border-bottom: 60px solid yellow;
+    border-radius: 60px;
+    z-index: 3;
 }
 .eat:after {
     background: black;
     border-radius: 50%;
-    content: "";
+    content: '';
     height: 20px;
     left: -10px;
     position: absolute;
@@ -140,15 +139,15 @@
     border-right: 60px solid transparent;
     border-style: solid;
     border-width: 60px;
-    content: "";
+    content: '';
     height: 1px;
     left: -60px;
     position: absolute;
     top: -60px;
     width: 1px;
     z-index: -1;
-    animation: mouth .95s infinite linear;
- }
+    animation: mouth 0.95s infinite linear;
+}
 
 .eat-trail {
     background: white;
@@ -158,8 +157,8 @@
     left: 0px;
     top: 40px;
     opacity: 1;
-     animation: eat-trail 10s infinite linear;
-     z-index: 2;
+    animation: eat-trail 10s infinite linear;
+    z-index: 2;
 }
 
 .ingos {
@@ -168,90 +167,151 @@
     top: -5%;
     width: 100%;
     z-index: 1;
-     animation: ingos 10s infinite linear;
+    animation: ingos 10s infinite linear;
 }
 .ingo {
     border-radius: 50% 50% 0 0;
     position: absolute;
     top: 0;
     width: 170px;
-
 }
-.ingo:before, .ingo:after {
-     content:'';
-     width:1px;
-     height:1px;
-     position: absolute;
-     bottom: 0;
+.ingo:before,
+.ingo:after {
+    content: '';
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
 }
-.ingo:before {left: 5px;}
-.ingo:after {right: 5px;}
+.ingo:before {
+    left: 5px;
+}
+.ingo:after {
+    right: 5px;
+}
 
-.one {left: 200px;}
-.two {left: 320px;}
-.three {left: 80px;}
+.one {
+    left: 200px;
+}
+.two {
+    left: 320px;
+}
+.three {
+    left: 80px;
+}
 
- /***************keyframes******************/
+/***************keyframes******************/
 @keyframes eat {
-    0% { left: -20%;}
-    50% { left: 50%;}
-    100% { left: 120%;}
-       }
+    0% {
+        left: -20%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 120%;
+    }
+}
 @keyframes ingos {
-    0% { left: -10%;}
-    50% { left: 50%;}
-    100% { left: 100%;}
-       }
+    0% {
+        left: -10%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 100%;
+    }
+}
 
 @keyframes eat-trail {
-    0% { left: -20%; width:0%;}
-    50% { left: 0%; width:50%}
-    100% { left: 0%; width:120%}
-       }
+    0% {
+        left: -20%;
+        width: 0%;
+    }
+    50% {
+        left: 0%;
+        width: 50%;
+    }
+    100% {
+        left: 0%;
+        width: 120%;
+    }
+}
 @keyframes mouth {
-    0%  { transform: rotate(0deg); }
-    10% { transform: rotate(-18deg); }
-    20% { transform: rotate(-36deg); }
-    30% { transform: rotate(-54deg); }
-    40% { transform: rotate(-72deg); }
-    50% { transform: rotate(-90deg); }
-    60% { transform: rotate(-72deg); }
-    70% { transform: rotate(-54deg); }
-    80% { transform: rotate(-36deg); }
-    90% { transform: rotate(-18deg); }
-    100% { transform: rotate(0deg); }
-       }
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-18deg);
+    }
+    20% {
+        transform: rotate(-36deg);
+    }
+    30% {
+        transform: rotate(-54deg);
+    }
+    40% {
+        transform: rotate(-72deg);
+    }
+    50% {
+        transform: rotate(-90deg);
+    }
+    60% {
+        transform: rotate(-72deg);
+    }
+    70% {
+        transform: rotate(-54deg);
+    }
+    80% {
+        transform: rotate(-36deg);
+    }
+    90% {
+        transform: rotate(-18deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
 @keyframes eyes {
-     0% { transform: rotate(0deg); margin-left: -5px;}
-     50% {transform: rotate(180deg); margin-left: 10px;}
-     100% {transform: rotate(0deg); margin-left: -5px;}
+    0% {
+        transform: rotate(0deg);
+        margin-left: -5px;
     }
+    50% {
+        transform: rotate(180deg);
+        margin-left: 10px;
+    }
+    100% {
+        transform: rotate(0deg);
+        margin-left: -5px;
+    }
+}
 
+//pride theme colors
+.orange {
+    background-color: #ff8c00;
+    height: 5px;
+    width: 3rem;
+    background-image: linear-gradient(to right, #e40303, #ff8c00, #ffed00);
+}
 
-  //pride theme colors
-    .orange {
-      background-color: #ff8c00;
-      height: 5px;
-      width: 3rem;
-      background-image: linear-gradient(to right, #e40303, #ff8c00, #ffed00);
-    }
-  
-    .green {
-      background-color: #00CC99;
-      height: 5px;
-      width: 3rem;
-      background-image: linear-gradient(to right, #ffed00, #00CC99, #004dff);
-    }  
-    .blue {
-      background-color: #004dff;
-      height: 5px;
-      width: 3rem;
-      background-image: linear-gradient(to right, #00CC99,#004dff, #750787);
-    }
-  
-    .lilac {
-      background-color: #750787;
-      background-image: linear-gradient(to right, #004dff, #750787, pink);
-      height: 5px;
-      width: 3rem;  
-    }
+.green {
+    background-color: #00cc99;
+    height: 5px;
+    width: 3rem;
+    background-image: linear-gradient(to right, #ffed00, #00cc99, #004dff);
+}
+.blue {
+    background-color: #004dff;
+    height: 5px;
+    width: 3rem;
+    background-image: linear-gradient(to right, #00cc99, #004dff, #750787);
+}
+
+.lilac {
+    background-color: #750787;
+    background-image: linear-gradient(to right, #004dff, #750787, pink);
+    height: 5px;
+    width: 3rem;
+}

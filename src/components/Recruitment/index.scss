@@ -1,7 +1,6 @@
-
 @import '../../styles/_variables';
-@import "../../styles/_fonts";
-@import "../../styles/global.scss";
+@import '../../styles/_fonts';
+@import '../../styles/global.scss';
 
 .application-section {
     text-align: center;
@@ -9,112 +8,134 @@
 }
 
 button {
-  -webkit-appearance: none;
-  font-family: $font-regular;
-  font-size: 17px;
-  height: 50px;
-  border-radius: 25px;
-  padding-left: 25px;
-  padding-right: 25px;
-  min-width: 120px;
-  cursor: pointer;
-  font-weight: bold;
-  border: none;
-  background-color: $melon;
-  color: white;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    -webkit-appearance: none;
+    font-family: $font-regular;
+    font-size: 17px;
+    height: 50px;
+    border-radius: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    min-width: 120px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    background-color: $melon;
+    color: white;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 
-  a {
-  color: $text-color-light;
-  font-family: $font-regular;
-  }
+    a {
+        color: $text-color-light;
+        font-family: $font-regular;
+    }
 }
 
 button:not([disabled]):hover {
-  -webkit-transform: scale(1.01);
-  -ms-transform: scale(1.01);
-  -o-transform: scale(1.01);
-  transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01);
 }
 
 button[disabled] {
-  background-color: $grape;
-  box-shadow: none;
-  cursor: not-allowed;
+    background-color: $grape;
+    box-shadow: none;
+    cursor: not-allowed;
 }
 
 .rolelist {
-  h1,h4,h5 {
-  text-align: left;
-  margin-bottom: 2%;
-  }
+    h1,
+    h4,
+    h5 {
+        text-align: left;
+        margin-bottom: 2%;
+    }
 }
 
 .apply-section {
-  margin:auto;
-  text-align: center;
-  background: white;
-  padding: 1em;
-  border-bottom: solid $text-color-light;
-  border-width: thin;
+    margin: auto;
+    text-align: center;
+    background: white;
+    padding: 1em;
+    border-bottom: solid $text-color-light;
+    border-width: thin;
 }
 
 .role-header {
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .role-name {
-  font-weight: bold;
-  color: $melon;
-  width: 90%;
-  margin-top: 2%;
-  margin-bottom: 2%;
+    font-weight: bold;
+    color: $melon;
+    width: 90%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .role-arrow-container {
-  width: 10%;
-  z-index: -1;
-  text-align: right;
+    width: 10%;
+    z-index: -1;
+    text-align: right;
 }
 
 .arrow-icon {
-  float: right;
-  transition: transform 0.35s ease-in-out;
-  font-size: 40px;
-  color: $melon;
-  line-height: 100%;
+    float: right;
+    transition: transform 0.35s ease-in-out;
+    font-size: 40px;
+    color: $melon;
+    line-height: 100%;
 }
 
 .collapsed-arrow {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .expanded-arrow {
-  transform: rotate(270deg);
+    transform: rotate(270deg);
 }
 
 .role-description {
-  overflow: hidden;
-  transition: max-height 0.35s ease-in-out;
-  margin-bottom: 2%;
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out;
+    margin-bottom: 2%;
 }
 
 .collapsed {
-  max-height: 0px;
+    max-height: 0px;
 }
 
 .expanded {
-  max-height: fit-content;
+    max-height: fit-content;
 }
 
 .group-header {
-  margin-top: 2em;
+    margin-top: 2em;
 }
 
-.description-header{
-  margin-top: 2em;
-  margin-bottom: 2em;
+.description-header {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.role-icon {
+    width: 4em;
+    height: 4em;
+    margin-right: 1em;
+}
+
+.role-title {
+    display: inline-block;
+    align-self: center;
+}
+
+.role-detail {
+    text-align: center;
+    display: flex;
+}
+.groups {
+    margin-top: 1em;
 }

@@ -15,7 +15,7 @@ import SustainabilitySection from '../../src/components/DiversitySection'
 import FunFact from '../../src/components/FunFact'
 import Recruitment from '../components/Recruitment'
 import TierlistContainer from '../components/TierlistContainer'
-import ScrollUpButton from '../components/ScrollUpButton'
+
 //ReactMarkdown allows just like MDX pass through custom components. See for example video1 that leads to registration.md
 const Page = props => {
     return (
@@ -59,7 +59,6 @@ const Page = props => {
                         <EmbeddedVideo videoLink='https://youtu.be/n6yuGUyYAzg' />
                     ),
                     tierlistcontainer: () => <TierlistContainer />,
-                    scrollupbutton: () => <ScrollUpButton />,
                 }}
             />
             {props.children}

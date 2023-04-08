@@ -9,13 +9,14 @@ header: /assets/for_exhibitors.jpg
 ---
 
 <br/>
+<br/>
 
 <div class="info-border-box text" style="text-align: center;">
     <h3 style="text-align: center;">Opening hours</h3>
     <br/>
-    <b>Tuesday 21st November:</b> 10:00 - 16:00
+    <b>Tuesday 22nd November:</b> 10:00 - 16:00
     <br/>
-    <b>Wednesday 22nd November:</b> 10:00 - 16:00
+    <b>Wednesday 23rd November:</b> 10:00 - 16:00
 </div>
 
 <br />
@@ -24,12 +25,27 @@ header: /assets/for_exhibitors.jpg
 
 # The Exhibitor Catalogue
 
+<br />
+<div style="text-align: center;">
+    <b>THE LONG AWAITED EXHIBITOR CATALOGUE IS HERE!!!</b>
+    <p style="text-align: center;">Next week around 150 companies will be present at Nymble, KTH Library, and KTH Entre, and they are ready for your attention!</p>
+    <p style="text-align: center;">The exhibitor catalogue is a guide, providing information about companies, fields of study, type of employment offered, office location and contact information.</p>
+    <p style="text-align: center;">Prep yourself for Armada Career Fair 2022 and find YOUR future employer! </p>
+</div>
+
+<br />
+<br />
+
 <a href="../assets/ExhibitorCatalogue/EC-22-latest-version.pdf">
     <img src='../assets/ExhibitorCatalogue/exhibitor-cat-image.png' alt="Offical Exhibitor Catalogue 2022" width="70%" style="margin-left:15%"/>
 </a>
-<p style="text-align: center;">The exhibitor catalogue will soon be published as soon as all the companies are confirmed</p>
+
 <br />
 <br />
+
+<form style="text-align:center; margin-bottom: 1em;" method="get" action="../assets/ExhibitorCatalogue/EC-22-latest-version.pdf">
+    <button type="submit">Download Exhibitor Catalogue 2022</button>
+</form>
 
 <br />
 <p style="text-align: center;"><b>Maps of the fair can be found at the bottom of this page.</b></p>
@@ -38,7 +54,7 @@ header: /assets/for_exhibitors.jpg
 <br />
 <br />
 
-# Career Fair Concepts From 2022:
+# Career Fair Concepts
 
 <br />
 <br />

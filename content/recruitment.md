@@ -12,8 +12,6 @@ header: /assets/TheFair_small.jpg
 noJumbotron: false
 ---
 
-<scrollupbutton></scrollupbutton>
-
 # Shape THS Armada
 
 Join the Armada team and help students shape their future!

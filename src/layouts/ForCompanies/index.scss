@@ -13,6 +13,13 @@
     }
 }
 
+.assign-button-right {
+    .srButton {
+        left: unset;
+        right: 1.5%;
+    }
+}
+
 #container1 {
     background-image: url('/assets/for_exhibitors.jpg');
 }

@@ -45,7 +45,7 @@ const ForCompanies = props => {
                 <ConentsMobile headings={headingData} />
             </div>
             <div className='info-container'>
-                <div className='page-container'>
+                <div className='page-container assign-button-right'>
                     <Page {...props} />
                     <div className='faqpage-container'>
                         <FAQContainer type='exhibitor' />

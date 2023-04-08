@@ -12,6 +12,8 @@ header: /assets/images/header-images/competition.jpg
 noJumbotron: false
 ---
 
+<scrollupbutton></scrollupbutton>
+
 <div class="info-border-box">
 The information below applies to Armada 2022, but stay tuned for another edition in 2023.
 

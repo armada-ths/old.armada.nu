@@ -8,6 +8,8 @@ priority: 1
 header: /assets/library.png
 ---
 
+<scrollupbutton></scrollupbutton>
+
 <div className='diversity-day' id="container1">
                     <div
                         class='diversitypage-container reveal'>

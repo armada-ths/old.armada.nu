@@ -13,9 +13,11 @@ function checkScrollPosition(): boolean {
 
 const ScrollUpButton: FC = () => {
     const [show, setShow] = useState(false)
-    window.addEventListener('scroll', () => {
-        setShow(checkScrollPosition())
-    }) //check for when user is scrolling.
+    const isBrowser = () => typeof window !== 'undefined'
+    isBrowser() &&
+        window.addEventListener('scroll', () => {
+            setShow(checkScrollPosition())
+        }) //check for when user is scrolling.
 
     return (
         <>

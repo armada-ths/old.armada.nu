@@ -9,12 +9,10 @@ import SustainabilityInterviews from '../../components/SustainabilityInterviews'
 //In this file we're moving away from sustainability.md to making it in react dividing up all the elements¨
 import SustainabilitySection from '../../../src/components/DiversitySection'
 import FunFact from '../../../src/components/FunFact'
-import ScrollUpButton from '../../components/ScrollUpButton'
 
 const SustainabilityPage = props => {
     return (
         <div className='content'>
-            <ScrollUpButton />
             <div className='sustainability'>
                 <div className='sustainability-container'>
                     <ReactMarkdown

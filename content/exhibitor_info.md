@@ -11,13 +11,14 @@ priority: 2
 header: /assets/for_exhibitors.jpg
 noJumbotron: false
 ---
+
 ### WE ARE BACK!
 
 Welcome Exhibitor!
 
-Speaking to different Armada exhibitors, I’ve noticed the difference it makes to work long term with student attraction. One exhibitor told me they’ve recruited someone who, 7 years after meeting the exhibitor at Armada, still says that the good impression they made at the fair is the main reason why he applied for the job. The impression you make on a student will be with them, and all their friends, their entire working life. 
+Speaking to different Armada exhibitors, I’ve noticed the difference it makes to work long term with student attraction. One exhibitor told me they’ve recruited someone who, 7 years after meeting the exhibitor at Armada, still says that the good impression they made at the fair is the main reason why he applied for the job. The impression you make on a student will be with them, and all their friends, their entire working life.
 
-It is not easy to build such a strong brand with students. The students change completely every 5 or 3 years, the student world can look chaotic and disorganized and it can be hard to know where to look. Therefore we have created packages that give an easy way to leverage your Armada participation to maximize student connection this year. And if you want to talk more about building an effective long term strategy to reach students, I am only an email or LinkedIn connection away. 
+It is not easy to build such a strong brand with students. The students change completely every 5 or 3 years, the student world can look chaotic and disorganized and it can be hard to know where to look. Therefore we have created packages that give an easy way to leverage your Armada participation to maximize student connection this year. And if you want to talk more about building an effective long term strategy to reach students, I am only an email or LinkedIn connection away.
 
 Welcome to Armada 2023!
 
@@ -55,12 +56,6 @@ If you need further help we recommend looking at these documents from Graduatela
 
 ---
 
-
-
-
-
-
-
 <div class="info-border-box">
 <h2>Important Dates</h2>
 
@@ -97,7 +92,3 @@ We know that it can sometimes be overwhelming at a physical fair with a lot of p
 <br/>
 
 ---
-
-
-
-

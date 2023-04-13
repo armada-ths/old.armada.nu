@@ -9,6 +9,7 @@ cover_square: /assets/eftersläpp+.jpg
 ingress: The Grand Banquet of THS Armada is proud to announce The After Party!
 archived: true
 ---
+
 Finish off the first day of Scandinavia's most anticipated career fair by attending one of the biggest parties of the year!
 
 For the purpose of this festivity, one of Stockholm's most astonishing venues, Münchenbryggeriet, is transformed into one big celebration. Dust off your dancing shoes and get ready for an extravagant and dazzling night! Take the chance to create long-lasting memories in one of the photo booths or just mingle in the lounge.

@@ -1,40 +1,37 @@
-@import "../../styles/_variables";
-@import "../../styles/_fonts";
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
 
 .info-container {
-  padding: 3em 0em;
-  max-width: $page-width;
-  margin: auto;
+    padding: 3em 0em;
+    max-width: $page-width;
+    margin: auto;
 
-  .page-container {
-    h3,
-    h4 {
-      text-align: left;
-      font-weight: 500;
+    .page-container {
+        h3,
+        h4 {
+            text-align: left;
+            font-weight: 500;
+        }
     }
-  }
 }
 
 #information-for-exhibitors {
-  margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-  .info-container {
-    padding: 3em 1em;
-  }
+    .info-container {
+        padding: 3em 1em;
+    }
 
-  #information-for-exhibitors {
-    font-size: 2em;
-  }
-  
+    #information-for-exhibitors {
+        font-size: 2em;
+    }
 }
 
 a.anchor {
-  display: block;
-  position: relative;
-  top: -57px;
-  visibility: hidden;
+    display: block;
+    position: relative;
+    top: -57px;
+    visibility: hidden;
 }
-
-

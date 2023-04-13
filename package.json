@@ -45,6 +45,8 @@
     "rehype-raw": "^6.1.1"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.4"
   },
   "keywords": [
@@ -58,7 +60,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",

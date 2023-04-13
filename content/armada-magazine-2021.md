@@ -12,6 +12,7 @@ header: /assets/news-header.jpg
 display_date: true
 featured: true
 ---
+
 "Armada" is the official magazine for KTH's career fair THS Armada. The magazine will be included in the newest edition of Ny Teknik, and will reach the majority of all engineers in Sweden!
 
 Read more about some of our participating companies and other exciting articles! (In collaboration with Borg & Owilli, available in Swedish only)

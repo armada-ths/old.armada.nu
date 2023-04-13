@@ -1,8 +1,8 @@
 @import '../../styles/variables';
 
 .front-buttons {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .virtual-button {
@@ -11,12 +11,12 @@
     display: inline-block;
     margin: 0px;
     padding: 0px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     color: #000000;
     border-radius: 5px;
     font-size: 1em;
     text-decoration: none !important;
-    transition: transform .2s cubic-bezier(.175,.885,.32,1.275);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     &:hover {
         transform: scale(1.3);
     }

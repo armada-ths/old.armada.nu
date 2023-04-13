@@ -4,9 +4,7 @@ import FAQContainer from '../../components/FAQ'
 import './index.scss'
 
 const FAQStudent = () => {
-
-  return <FAQContainer type='students' />
-
+    return <FAQContainer type='students' />
 }
 
 export default FAQStudent

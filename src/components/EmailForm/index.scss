@@ -1,5 +1,5 @@
-@import "../../styles/_fonts";
-@import "../../styles/global.scss";
+@import '../../styles/_fonts';
+@import '../../styles/global.scss';
 
 .container {
     justify-content: center;
@@ -13,7 +13,7 @@
     justify-content: center;
 }
 
-input[type=text] {
+input[type='text'] {
     width: 100%;
     padding: 12px 20px;
     display: block;

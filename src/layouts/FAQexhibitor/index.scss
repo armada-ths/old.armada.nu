@@ -2,19 +2,19 @@
 @import '../../styles/_variables';
 
 .faqpage-container {
-	padding-top: 3em;
-  max-width: $page-width;
-	margin: auto;
+    padding-top: 3em;
+    max-width: $page-width;
+    margin: auto;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-	.faqpage-container {
-		padding: 3em 1em 0em 1em;
-	}
+    .faqpage-container {
+        padding: 3em 1em 0em 1em;
+    }
 }
 
 @media screen and (max-width: $breakpoint-pad) {
-	.faqpage-container {
-		padding: 3em 1em 0em 1em;
-	}
+    .faqpage-container {
+        padding: 3em 1em 0em 1em;
+    }
 }

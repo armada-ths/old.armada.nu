@@ -2,117 +2,115 @@
 @import '../../styles/_fonts';
 
 #navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  text-align: right;
-  font-family: $font-title;
-  font-size: 95%;
-  letter-spacing: 1.4px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    text-align: right;
+    font-family: $font-title;
+    font-size: 95%;
+    letter-spacing: 1.4px;
 
-  >.hidden {
-      display: none;
-  }
-
-  .menu-wrapper {
-    background-color: $licorice;
-    width : 100%;
-    display: inline-block;
-    padding: 10px 15px 10px 0px;
-
-    .menu-hamburger {
-        display:none;
-        position: relative;
+    > .hidden {
+        display: none;
     }
 
-    .menu {
-      display: flex;
-      justify-content: space-between;
-
-      .left {
-        text-align: left;
-        text-transform: uppercase;
-      }
-
-      a {
+    .menu-wrapper {
+        background-color: $licorice;
+        width: 100%;
         display: inline-block;
-        text-decoration: none;
-        transition: color 0.4s;
-        color: $text-color-light;
-        padding: 5px 20px;
+        padding: 10px 15px 10px 0px;
 
-        &:hover {
-          color: $melon !important;
+        .menu-hamburger {
+            display: none;
+            position: relative;
         }
 
-        &.active {
-          color: $melon;
+        .menu {
+            display: flex;
+            justify-content: space-between;
+
+            .left {
+                text-align: left;
+                text-transform: uppercase;
+            }
+
+            a {
+                display: inline-block;
+                text-decoration: none;
+                transition: color 0.4s;
+                color: $text-color-light;
+                padding: 5px 20px;
+
+                &:hover {
+                    color: $melon !important;
+                }
+
+                &.active {
+                    color: $melon;
+                }
+
+                &:last-child {
+                    border-right: 0 !important;
+                }
+            }
+
+            .dropdownParent {
+                text-decoration: none;
+                transition: color 0.4s;
+                color: $text-color-light;
+                padding: 5px 20px;
+
+                &.active {
+                    color: $melon;
+                }
+
+                &:last-child {
+                    border-right: 0 !important;
+                }
+            }
+
+            .hoverWeb {
+                position: relative;
+                display: inline-block;
+
+                &:hover {
+                    color: $melon !important;
+                    cursor: pointer;
+                }
+            }
         }
-
-        &:last-child {
-          border-right: 0 !important;
-        }
-      }
-
-        .dropdownParent {
-        text-decoration: none;
-        transition: color 0.4s;
-        color: $text-color-light;
-        padding: 5px 20px;
-
-        &.active {
-          color: $melon;
-        }
-
-        &:last-child {
-          border-right: 0 !important;
-        }
-      } 
-
-      .hoverWeb {
-        position: relative;
-        display: inline-block;
-
-        &:hover {
-        color: $melon !important;
-        cursor: pointer;
-        }
-      }
     }
-  }
 
-  @media screen and (max-width: 1200px) {
-    font-size: 1.2em;
-  }
+    @media screen and (max-width: 1200px) {
+        font-size: 1.2em;
+    }
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-  
-  #navbar{
-				overflow: hidden;
+    #navbar {
+        overflow: hidden;
         position: absolute;
 
         .banner-container {
-          display: flex;
-          flex-direction: column;
+            display: flex;
+            flex-direction: column;
         }
 
         .menu-wrapper {
             width: 100%;
             padding-top: 0;
             -webkit-backdrop-filter: blur(10px);
-	          backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
             padding-bottom: 1em;
 
-
             &.visible {
-              .menu-hamburger {
-                position: absolute;
-                right: 0;
-                height: 0;
-              }
+                .menu-hamburger {
+                    position: absolute;
+                    right: 0;
+                    height: 0;
+                }
             }
 
             .menu-hamburger {
@@ -128,34 +126,33 @@
                 justify-content: space-evenly;
                 width: 100%;
                 margin-top: 3em;
-                
 
                 @media screen and (max-width: $breakpoint-mobile) {
-                  height: 100vh;
-                  height: calc(100vh - 60px);
+                    height: 100vh;
+                    height: calc(100vh - 60px);
                 }
 
                 span {
-                  font-size: 1.4em;
+                    font-size: 1.4em;
                 }
 
                 a {
-                  color: #fff !important;
-                  border-right: none !important;
-                  font-size: 1em;
-                  -webkit-tap-highlight-color: transparent;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-
-                  &:hover {
                     color: #fff !important;
                     border-right: none !important;
-                  }
+                    font-size: 1em;
+                    -webkit-tap-highlight-color: transparent;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+
+                    &:hover {
+                        color: #fff !important;
+                        border-right: none !important;
+                    }
                 }
 
                 a:last-child {
-                  border-bottom: 0 !important;
+                    border-bottom: 0 !important;
                 }
             }
 
@@ -165,7 +162,7 @@
         }
 
         .menu-wrapper.hidden {
-          padding: 1em;
+            padding: 1em;
             background-color: $licorice;
             text-align: center;
             display: inline-block;
@@ -178,41 +175,41 @@
 }
 
 .dropdown {
-  position: relative;
-  display: block;
+    position: relative;
+    display: block;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: rgba(45, 45, 44, 0.8);
-  padding: 15px 0px 10px 0px;
-  left: 0;
-  text-align: left;
-  z-index: 1;
-  width: 140%;
+    display: none;
+    position: absolute;
+    background-color: rgba(45, 45, 44, 0.8);
+    padding: 15px 0px 10px 0px;
+    left: 0;
+    text-align: left;
+    z-index: 1;
+    width: 140%;
 }
 
-.dropdown:hover .dropdown-content{
-  display: block;
-  border: none;
-  text-decoration: underline;
+.dropdown:hover .dropdown-content {
+    display: block;
+    border: none;
+    text-decoration: underline;
 }
 
- .dropdown-content-on-keyboard-nav{
-  display: block;
-  border: none;
-  text-decoration: underline;
-  position: absolute;
-  background-color: rgba(45, 45, 44, 0.8);
-  padding: 15px 0px 10px 0px;
-  left: 0;
-  text-align: left;
-  z-index: 1;
-  width: 140%;
+.dropdown-content-on-keyboard-nav {
+    display: block;
+    border: none;
+    text-decoration: underline;
+    position: absolute;
+    background-color: rgba(45, 45, 44, 0.8);
+    padding: 15px 0px 10px 0px;
+    left: 0;
+    text-align: left;
+    z-index: 1;
+    width: 140%;
 }
 
 .pageTitleMobile {
-  text-decoration: underline;
-  color: $melon;
+    text-decoration: underline;
+    color: $melon;
 }

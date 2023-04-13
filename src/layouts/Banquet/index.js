@@ -14,28 +14,20 @@ import Moa from '../../../static/assets/images/banquet/moa.jpg'
 import Run from '../../../static/assets/images/banquet/run.jpg'
 import Split from '../../../static/assets/images/banquet/split.jpg'
 
-
 const Banquet = props => {
-
-    const images = [
-        Beer,
-        Bruises,
-        Cute,
-        Escape,
-        Moa,
-        Run,
-        Split
-    ]
+    const images = [Beer, Bruises, Cute, Escape, Moa, Run, Split]
 
     return (
         <div className='content'>
             <div className='banquet-container'>
                 <Page {...props} />
                 {/*eslint-disable-next-line jsx-a11y/media-has-caption*/}
-                <video width="320" height="240" controls> 
-                    <source src={WAP} type="video/mp4"/> 
-                    </video>
-                { images.map(image => <img src={image} alt=''/>)}
+                <video width='320' height='240' controls>
+                    <source src={WAP} type='video/mp4' />
+                </video>
+                {images.map(image => (
+                    <img src={image} alt='' />
+                ))}
             </div>
         </div>
     )

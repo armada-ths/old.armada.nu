@@ -6,29 +6,27 @@
     padding-bottom: 2.5px;
     padding-top: 2.5px;
 
-    &.head{
-      font-weight: bold;
-      font-size: 1.5em;
-      color: $melon;
-
+    &.head {
+        font-weight: bold;
+        font-size: 1.5em;
+        color: $melon;
     }
-    &.name{
-      font-size: 1.3em;
-      font-weight: bold;
+    &.name {
+        font-size: 1.3em;
+        font-weight: bold;
     }
-    &.last{
-      padding-bottom: 150px;
+    &.last {
+        padding-bottom: 150px;
     }
-
 }
-.tmp{
-  float: left;
-  padding: 10px;
-  height: 260em;
+.tmp {
+    float: left;
+    padding: 10px;
+    height: 260em;
 }
-.tmp2{
-  float: left;
-  padding: 10px;
+.tmp2 {
+    float: left;
+    padding: 10px;
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {

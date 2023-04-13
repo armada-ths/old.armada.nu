@@ -1,53 +1,50 @@
-@import "../../styles/global";
-@import "../../styles/_variables";
-@import "../../styles/_fonts";
+@import '../../styles/global';
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
 
 .containerTime {
     padding-top: 3em;
     max-width: $page-width;
     margin: auto;
     color: #2d2d2c;
-    font-size:$body-font-size ;
-    font-family: "Lato", sans-serif; 
+    font-size: $body-font-size;
+    font-family: 'Lato', sans-serif;
     line-height: 1.5;
     font-weight: 400;
- }
-.VerTime{
-   font-size: 200px;
-   color: green;
 }
- .VerticalTimeline{
+.VerTime {
+    font-size: 200px;
+    color: green;
+}
+.VerticalTimeline {
     text-align: center;
-    color:gray;
- 
- }
- .mobileVersion{
+    color: gray;
+}
+.mobileVersion {
     display: none;
-     }
+}
 
-.act{
-   background-color: $melon;
-}  
-.nact{
-   background-color: gray;
-}  
+.act {
+    background-color: $melon;
+}
+.nact {
+    background-color: gray;
+}
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-  
-   .VerticalTimeline {
-            display: none;
-        }
-        .mobileVersion{
-            display: block;
-            text-align: center;
-            padding-bottom: 5%;
-            button{
-            margin-left: 2%;
-            margin-right: 2%; }
-          
-             }
-             .containerTime {
-                padding: 3em 1em 0em 1em;
-             }
+    .VerticalTimeline {
+        display: none;
     }
-    
+    .mobileVersion {
+        display: block;
+        text-align: center;
+        padding-bottom: 5%;
+        button {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+    }
+    .containerTime {
+        padding: 3em 1em 0em 1em;
+    }
+}

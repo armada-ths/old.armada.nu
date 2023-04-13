@@ -7,6 +7,7 @@ date: 2017-11-21T13:04:08.778Z
 cover_wide: /assets/applic.jpg
 archived: true
 ---
+
 THS Armada want to create more than just a fair – we want to create a complete platform where we increase the chance for students and companies to find each other. That’s why Quality is one of our core values.
 
 We proudly present our application & matchmaking function. By answering a few questions in the app, we match you with one of the companies at the fair. We have a created an algorithm using advanced machine learning, which is based on data from every exhibitor attendingthe fair - the result is completely based on your answers.

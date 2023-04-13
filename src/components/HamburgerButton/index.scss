@@ -12,7 +12,6 @@
     margin-right: 0.5em;
 
     &.melon {
-
         div {
             background-color: $melon;
         }
@@ -20,7 +19,6 @@
         &.active div {
             background-color: #fff;
         }
-
     }
 
     div {
@@ -28,14 +26,15 @@
         height: 5px;
         width: 100%;
         background-color: #fff;
-    
+
         opacity: 1;
 
         &:nth-child(1) {
             top: 0;
         }
 
-        &:nth-child(2), &:nth-child(3) {
+        &:nth-child(2),
+        &:nth-child(3) {
             top: 50%;
             transform: translateY(-50%);
         }
@@ -46,9 +45,7 @@
     }
 
     &.active {
-
         div {
-
             &:nth-child(1) {
                 top: 50%;
                 transform: scale(0);
@@ -68,7 +65,6 @@
                 transform: scale(0);
                 opacity: 0;
             }
-
         }
     }
 }

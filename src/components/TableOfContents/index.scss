@@ -2,7 +2,6 @@
 @import '../../styles/_fonts';
 
 .table-of-contents {
-
     h3 {
         font-weight: 400;
     }
@@ -22,7 +21,7 @@
         -webkit-user-select: none;
         -ms-user-select: none;
         -webkit-tap-highlight-color: transparent;
-        
+
         cursor: pointer;
 
         img {
@@ -52,5 +51,4 @@
             font-weight: 400;
         }
     }
-    
 }

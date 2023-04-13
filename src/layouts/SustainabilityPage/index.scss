@@ -10,38 +10,35 @@
     a {
         color: $melon;
     }
-
-
 }
 .sustainability-container {
-	padding-top: 2em;
-  max-width: $page-width;
-	margin: auto;
+    padding-top: 2em;
+    max-width: $page-width;
+    margin: auto;
 
-	.background_Images.middle {
-	  display: block;
-	  margin-left: auto;
-	  margin-right: auto;
-	  width: 40%;
-	  padding-bottom: 1em;
-	  align: center;
-	}
-  .background_Images.middle:hover {
-    width: 60%;
-  }
-	#logo {
-	  display: block;
-	  margin-left: auto;
-	  margin-right: auto;
-	  width: 5.5em;
-	  padding: 1em;
-	}
+    .background_Images.middle {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        padding-bottom: 1em;
+        align: center;
+    }
+    .background_Images.middle:hover {
+        width: 60%;
+    }
+    #logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 5.5em;
+        padding: 1em;
+    }
 
-
-	#submitForm {
-		text-align: center;
-		padding: 1em;
-  }
+    #submitForm {
+        text-align: center;
+        padding: 1em;
+    }
 }
 
 .sustainability-day {

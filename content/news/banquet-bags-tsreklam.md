@@ -7,7 +7,7 @@ date: 2022-11-22T19:02:09.549Z
 cover_wide: null
 cover_square: /assets/NewsImages/banquet-bags-smaller.PNG
 archived: false
-ingress: "Are you attending the Banquet? Get the chance to take home a goodiebag. The bags are filled with drinks, coupons and other flavorful items!"
+ingress: 'Are you attending the Banquet? Get the chance to take home a goodiebag. The bags are filled with drinks, coupons and other flavorful items!'
 header: /assets/Bankett.jpg
 display_date: true
 ---

@@ -12,6 +12,7 @@ header: /assets/news-header.jpg
 display_date: true
 archived: false
 ---
+
 <br/>
 "Armada" is the official magazine for KTH's carrer fair THS Armada. The magazine will be included in the newest edition of Ny Teknik, and will reach the majority of all engineers in Sweden!
 

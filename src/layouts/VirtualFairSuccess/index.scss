@@ -2,16 +2,16 @@
 @import '../../styles/_fonts';
 
 .container {
-  padding-top: 2em;
-  max-width: $page-width;
-	margin: auto;
+    padding-top: 2em;
+    max-width: $page-width;
+    margin: auto;
 }
 .VirtualFairContainer {
-  padding-top: 3em;
+    padding-top: 3em;
 }
 
-@media screen and (max-width: $breakpoint-mobile-flipped){
-  .container {
-    padding: 3em 1em;
-  }
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .container {
+        padding: 3em 1em;
+    }
 }

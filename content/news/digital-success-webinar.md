@@ -7,7 +7,7 @@ date: 2021-04-27T19:02:09.549Z
 cover_wide: /assets/digital-success.jpg
 cover_square: /assets/digital-success.jpg
 archived: true
-ingress: "Webinar 7th of May: Digital success - how to succeed on a virtual fair"
+ingress: 'Webinar 7th of May: Digital success - how to succeed on a virtual fair'
 header: /assets/news-header.jpg
 display_date: true
 ---
@@ -21,7 +21,7 @@ display_date: true
     <b>Broadcast link:</b> <a href="https://kth-se.zoom.us/j/64242373356">Zoom Link</a> <br/>
 </p>
 
-A digital fair is something entirely different from a large number of booths, commotion and crowd of a physical fair. It is effective, serene and focused. But also cold and distant. 
+A digital fair is something entirely different from a large number of booths, commotion and crowd of a physical fair. It is effective, serene and focused. But also cold and distant.
 
 Social beings as we are, we feel like we get a better connection at a physical fair, even if most of the people we talk to won’t remember our name at the end of the day. A digital fair allows us to save contact information automatically, connect in recruitment systems and talent pools, but still, we feel so much distance. What can be done about it?
 

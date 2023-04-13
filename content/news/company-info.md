@@ -15,4 +15,3 @@ archived: true
 To read up on what you need to know before the fair as an exhibiting company, follow the link below!
 
 [Access company information here!](/exhibitor_info/)
-

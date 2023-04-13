@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import './index.scss'
 import { Timeline, TimelineEvent } from '@mailtop/horizontal-timeline'
-import { FaRegCalendarCheck, FaRegFileAlt, FaFlagCheckered } from 'react-icons/fa'
+import {
+    FaRegCalendarCheck,
+    FaRegFileAlt,
+    FaFlagCheckered,
+} from 'react-icons/fa'
 import ReactMarkdown from 'react-markdown'
-import MyCssBaseline from "./MyCssBaseline";
+import MyCssBaseline from './MyCssBaseline'
 
 const VerticalTimeline = () => {
-
- 
     const before = `* Create your account at event.armada.nu
     \n* Choose not all of your work experience, take the latest one and then the best ones. Maximum 4 employments.
     \n* Have a profile pic where you look like you. Newly taken, dressed as how you would be at an interview.\n\n
@@ -52,87 +54,123 @@ const VerticalTimeline = () => {
     * What were you impressed by? 
     * Any interesting companies to keep track of? 
     * Should I make any changes in my studies? Recommended courses etc`
-  const [showText, setShowText] = useState("before")
-  const [beforeColor,bCol]=useState("#00d790")
-  const [duringColor,dCol]=useState("gray")
-  const [afterColor,aCol]=useState("gray")
-  const [befBut,setBefBut] = useState("act")
-  const [durBut,setDurBut] = useState("nact")
-  const [aftBut,setAftBut] = useState("nact")
+    const [showText, setShowText] = useState('before')
+    const [beforeColor, bCol] = useState('#00d790')
+    const [duringColor, dCol] = useState('gray')
+    const [afterColor, aCol] = useState('gray')
+    const [befBut, setBefBut] = useState('act')
+    const [durBut, setDurBut] = useState('nact')
+    const [aftBut, setAftBut] = useState('nact')
     return (
-        <div className="containerTime">
-        <div className="VerticalTimeline">
-  <MyCssBaseline/>
-  <Timeline className="VerTime" minEvents={3} variant="">
-  <TimelineEvent className="before"
-    color={beforeColor}
-    icon={FaRegFileAlt}
-    title='Before'
-    subtitle=''
-    action={{
-        label: 'Before',
-        onClick: () => {setShowText("before");bCol("#00d790");dCol("gray");aCol("gray"); }
-      }}
-  />
-  <TimelineEvent
-  className="during"
-  color={duringColor}
-    icon={FaRegCalendarCheck}
-    title='During'
-    subtitle=''
-    action={{
-        label: 'During',
-        onClick: () => {setShowText("during");bCol("gray");dCol("#00d790");aCol("gray");}
-      }}
-  />
-  <TimelineEvent 
-className="after"
-color={afterColor}
-    icon={FaFlagCheckered}
-    title='After'
-    subtitle=''
-    action={{
-      label: 'After',
-      onClick: () => {setShowText("after");bCol("gray");dCol("gray");aCol("#00d790");}
-    }}
-  />
-</Timeline>
-
-
-        </div>
-<div className="mobileVersion">
-    <button className={befBut} onClick={() =>{
-      setShowText("before");
-      setBefBut("acct");
-      setDurBut("nact");
-      setAftBut("nact");
-  } }>Before</button>
-    <button className={durBut} onClick={() => {
-      setShowText("during");
-      setBefBut("nact");
-      setDurBut("act");
-      setAftBut("nact");
-  }}>During</button>
-    <button className={aftBut} onClick={() => {
-      setShowText("after");
-      setBefBut("nact");
-      setDurBut("nact");
-      setAftBut("act");
-  }}>After</button>
-</div>
-{showText==="before" && 
-<ReactMarkdown  className="butBef" children={before} ></ReactMarkdown>
-}
-{showText==="during" && 
-<ReactMarkdown  className="butDur" children={during} ></ReactMarkdown>
-}
-{showText==="after" && 
-<ReactMarkdown  className="butAft" children={after} ></ReactMarkdown>
-}
+        <div className='containerTime'>
+            <div className='VerticalTimeline'>
+                <MyCssBaseline />
+                <Timeline className='VerTime' minEvents={3} variant=''>
+                    <TimelineEvent
+                        className='before'
+                        color={beforeColor}
+                        icon={FaRegFileAlt}
+                        title='Before'
+                        subtitle=''
+                        action={{
+                            label: 'Before',
+                            onClick: () => {
+                                setShowText('before')
+                                bCol('#00d790')
+                                dCol('gray')
+                                aCol('gray')
+                            },
+                        }}
+                    />
+                    <TimelineEvent
+                        className='during'
+                        color={duringColor}
+                        icon={FaRegCalendarCheck}
+                        title='During'
+                        subtitle=''
+                        action={{
+                            label: 'During',
+                            onClick: () => {
+                                setShowText('during')
+                                bCol('gray')
+                                dCol('#00d790')
+                                aCol('gray')
+                            },
+                        }}
+                    />
+                    <TimelineEvent
+                        className='after'
+                        color={afterColor}
+                        icon={FaFlagCheckered}
+                        title='After'
+                        subtitle=''
+                        action={{
+                            label: 'After',
+                            onClick: () => {
+                                setShowText('after')
+                                bCol('gray')
+                                dCol('gray')
+                                aCol('#00d790')
+                            },
+                        }}
+                    />
+                </Timeline>
+            </div>
+            <div className='mobileVersion'>
+                <button
+                    className={befBut}
+                    onClick={() => {
+                        setShowText('before')
+                        setBefBut('acct')
+                        setDurBut('nact')
+                        setAftBut('nact')
+                    }}
+                >
+                    Before
+                </button>
+                <button
+                    className={durBut}
+                    onClick={() => {
+                        setShowText('during')
+                        setBefBut('nact')
+                        setDurBut('act')
+                        setAftBut('nact')
+                    }}
+                >
+                    During
+                </button>
+                <button
+                    className={aftBut}
+                    onClick={() => {
+                        setShowText('after')
+                        setBefBut('nact')
+                        setDurBut('nact')
+                        setAftBut('act')
+                    }}
+                >
+                    After
+                </button>
+            </div>
+            {showText === 'before' && (
+                <ReactMarkdown
+                    className='butBef'
+                    children={before}
+                ></ReactMarkdown>
+            )}
+            {showText === 'during' && (
+                <ReactMarkdown
+                    className='butDur'
+                    children={during}
+                ></ReactMarkdown>
+            )}
+            {showText === 'after' && (
+                <ReactMarkdown
+                    className='butAft'
+                    children={after}
+                ></ReactMarkdown>
+            )}
         </div>
     )
 }
-VerticalTimeline.propTypes = {
-    
-}
+VerticalTimeline.propTypes = {}
 export default VerticalTimeline

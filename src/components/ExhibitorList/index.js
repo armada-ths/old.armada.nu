@@ -589,9 +589,8 @@ class ExhibitorList extends React.Component {
 
     cssShineOff() {
         if (global.document !== undefined) {
-            let shineItems = global.document.getElementsByClassName(
-                'shine-loop'
-            )
+            let shineItems =
+                global.document.getElementsByClassName('shine-loop')
             while (shineItems.length > 0) {
                 let className = shineItems[0].className
                 shineItems[0].className = className.replace('shine-loop', '')

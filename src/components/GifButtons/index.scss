@@ -11,7 +11,8 @@
     padding: 0 5% 0 5%;
     border: 3px solid black;
     width: 30%;
-    transition: border 0.6s linear, font-size 0.3s linear, box-shadow 0.3s linear;
+    transition: border 0.6s linear, font-size 0.3s linear,
+        box-shadow 0.3s linear;
     text-decoration: none;
 
     #static {
@@ -32,7 +33,7 @@
         display: none;
     }
     #gif {
-        display: inline-block
+        display: inline-block;
     }
 }
 

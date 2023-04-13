@@ -8,6 +8,7 @@ cover_wide: /assets/new_div2.jpg
 description: In a diverse work environment, it is essential to respect and appreciate differences in ethnicity, gender, age, physical abilities, sexual orientation, education and religion amongst individuals of the organisation.
 archived: true
 ---
+
 **Our perspective on diversity**
 
 In a diverse work environment, it is essential to respect and appreciate differences in ethnicity, gender, age, physical abilities, sexual orientation, education and religion amongst individuals of the organisation. We all contribute with diverse perspectives, experience, knowledge and culture. A fundamental precondition for diverse teams to function is that of an inclusive work environment. Inclusion is a state of being valued, respected and supported. It's about focusing on the needs of every individual and ensuring that the right conditions are in place for each person to achieve their full potential.
@@ -28,16 +29,16 @@ Diversity Room is an area at the fair where you, as students, can find inspirati
 
 Social media and marketing:
 
-* Awareness about representation, enunciation, graphic choice and design
+-   Awareness about representation, enunciation, graphic choice and design
 
 Recruitment:
 
-* Spread knowledge regarding pitfalls, unconscious bias and interview technique
+-   Spread knowledge regarding pitfalls, unconscious bias and interview technique
 
 Internal inclusion:
 
-* Internationalisation of the organisation
-* Inclusion of all students in all parts of the organisation
-* Minimize the gap between different parts of the organisation
+-   Internationalisation of the organisation
+-   Inclusion of all students in all parts of the organisation
+-   Minimize the gap between different parts of the organisation
 
 English as the primary choice in all communication

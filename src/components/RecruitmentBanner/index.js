@@ -4,23 +4,25 @@ import axios from 'axios'
 import Banner from '../Banner'
 
 const RecruitmentBanner = ({ location }) => {
-  const [showBanner, setShowBanner] = useState(false)
+    const [showBanner, setShowBanner] = useState(false)
 
-  useEffect(() => {
-    axios.get('https://ais.armada.nu/api/recruitment').then(res => {
-      setShowBanner(res.data.length > 0)
-    })
-  }, [])
+    useEffect(() => {
+        axios.get('https://ais.armada.nu/api/recruitment').then(res => {
+            setShowBanner(res.data.length > 0)
+        })
+    }, [])
 
-  return (
-    showBanner ? <Banner location={location} link={'/recruitment'}>
-      Recruitment open now! Apply here!
-    </Banner> : <></>
-  )
+    return showBanner ? (
+        <Banner location={location} link={'/recruitment'}>
+            Recruitment open now! Apply here!
+        </Banner>
+    ) : (
+        <></>
+    )
 }
 
 RecruitmentBanner.propTypes = {
-  location: PropTypes.string,
+    location: PropTypes.string,
 }
 
 export default RecruitmentBanner

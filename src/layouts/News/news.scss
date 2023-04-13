@@ -13,8 +13,8 @@
         margin: 1em 0em;
     }
 
-    .article-text{
-      padding: 0em 1em
+    .article-text {
+        padding: 0em 1em;
     }
 
     .ingress {
@@ -32,7 +32,6 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-
     .newsarticle {
         margin-top: 0.5em;
         width: 100vw;
@@ -42,5 +41,4 @@
             height: auto;
         }
     }
-
 }

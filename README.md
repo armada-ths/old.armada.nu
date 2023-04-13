@@ -33,7 +33,7 @@ nvm use 18
 ```
 
 If you already have a node version installed NVM will detect it and ask you to attach it
-**_Mac/Linux (through Node Verison Manager)_**
+**Instaling NVM on _Mac/Linux_**
 
 ```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -94,6 +94,12 @@ To build for production there is a script available through Gatsby. This can be 
 
 ```sh
 gatsby build
+```
+##Linting
+The respository requires you to have Prettier and Eslint (for prettier) installed. Please install these extensions in Visual Code (or editor of your choice). You can set up so that the client does linting and formatting _after_ save by going into the settings in Prettier. After you've finished programming run:
+```
+npm run lint
+npx prettier --write .
 ```
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->

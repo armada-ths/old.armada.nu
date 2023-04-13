@@ -3,32 +3,31 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import './index.scss'
 
-const HamburgerButton = ({onClick, isActive, melon}) => {
-
+const HamburgerButton = ({ onClick, isActive, melon }) => {
     return (
         <div className='hamburger-button-container'>
-            <div 
+            <div
                 role='presentation'
-                onClick={onClick} 
+                onClick={onClick}
                 className={classNames({
                     'hamburger-button': true,
-                    'active': isActive,
-                    'melon': melon
-                    })
-                }>
+                    active: isActive,
+                    melon: melon,
+                })}
+            >
                 <div></div>
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
         </div>
-    );
+    )
 }
 
 HamburgerButton.propTypes = {
     onClick: PropTypes.func,
     isActive: PropTypes.bool,
-    melon: PropTypes.bool
+    melon: PropTypes.bool,
 }
 
-export default HamburgerButton;
+export default HamburgerButton

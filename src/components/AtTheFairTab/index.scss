@@ -1,23 +1,23 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
-.main-container{
+.main-container {
     display: flex;
     flex-direction: column;
     gap: 70px;
 }
 
 .information-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .right-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {

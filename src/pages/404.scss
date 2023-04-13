@@ -1,29 +1,28 @@
 @import '../styles/variables';
 
 .not-found {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 50vh;
-  padding: 1rem 0;
-  
-  .oops {
-    font-size: 4rem;
-    line-height: 4rem;
-    color: #ddd;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 1rem 0;
 
-  .error-title {
-    margin: 4rem 0;
-    font-size: 2rem;
-    line-height: 3rem;
-    text-align: center;
-  }
+    .oops {
+        font-size: 4rem;
+        line-height: 4rem;
+        color: #ddd;
+    }
 
-  @media screen and (max-width: $breakpoint-mobile) {
-    text-align: center;
-    padding: 2em;
-  }
+    .error-title {
+        margin: 4rem 0;
+        font-size: 2rem;
+        line-height: 3rem;
+        text-align: center;
+    }
 
+    @media screen and (max-width: $breakpoint-mobile) {
+        text-align: center;
+        padding: 2em;
+    }
 }

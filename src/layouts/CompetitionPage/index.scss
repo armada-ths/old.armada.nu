@@ -1,40 +1,41 @@
-@import "../../styles/global";
-@import "../../styles/_variables";
+@import '../../styles/global';
+@import '../../styles/_variables';
 
-.competition-container{
-	padding: 3em 0em;
-	max-width: $page-width;
-	margin: auto;
-  
-	.competition-page-container {
-	  h3, h4 {
-		text-align: left;
-		font-weight: 500;
-		color: $grape;
-	  }
-	  h1, h2, a {
-		color: $grape;
-	  }
+.competition-container {
+    padding: 3em 0em;
+    max-width: $page-width;
+    margin: auto;
 
-	}
-	#information-for-exhibitors{
-		color: $grape;
-	}
-  }
-
-  .competition-logo {
-	display: flex;
-	justify-content: center;
-
-	img {
-		width: 150px;
-		max-height: 200px;
-	}
+    .competition-page-container {
+        h3,
+        h4 {
+            text-align: left;
+            font-weight: 500;
+            color: $grape;
+        }
+        h1,
+        h2,
+        a {
+            color: $grape;
+        }
+    }
+    #information-for-exhibitors {
+        color: $grape;
+    }
 }
-  
-  @media screen and (max-width: $breakpoint-mobile-flipped) {
-	.competition-container {
-	  padding: 3em 1em;
-	}
-  }
 
+.competition-logo {
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 150px;
+        max-height: 200px;
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .competition-container {
+        padding: 3em 1em;
+    }
+}

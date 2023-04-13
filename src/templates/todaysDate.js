@@ -1,2 +1,2 @@
-const todaysDate = new Date();
-export default todaysDate;
+const todaysDate = new Date()
+export default todaysDate

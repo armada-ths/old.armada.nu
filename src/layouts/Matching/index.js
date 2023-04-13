@@ -3,17 +3,15 @@ import MatchingSection from '../../components/MatchingSection'
 import './index.scss'
 import Page from '../../templates/page'
 
-const Matching = (props) => {
-
-  return (
-      <div className='content'>
-        <div className='matching-container'>
-          <Page { ...props } />
-          <MatchingSection/>
+const Matching = props => {
+    return (
+        <div className='content'>
+            <div className='matching-container'>
+                <Page {...props} />
+                <MatchingSection />
+            </div>
         </div>
-      </div>
-  )
-  
+    )
 }
 
 export default Matching

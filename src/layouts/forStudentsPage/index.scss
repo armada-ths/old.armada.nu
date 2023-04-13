@@ -1,65 +1,61 @@
 @import '../../styles/_variables';
 @import '../../styles/global';
 
-
 .forStudents-container {
-  padding: 3em 0em;
-  max-width: $page-width;
-  margin: auto;
+    padding: 3em 0em;
+    max-width: $page-width;
+    margin: auto;
 }
 .text {
     margin: 0;
     padding-bottom: 5px;
 
-
-    &.head{
-      font-weight: bold;
-      font-size: 1.5em;
-      color: $melon;
-
+    &.head {
+        font-weight: bold;
+        font-size: 1.5em;
+        color: $melon;
     }
-    &.name{
-      font-size: 1em;
-      font-weight: bold;
+    &.name {
+        font-size: 1em;
+        font-weight: bold;
     }
-    &.last{
-      padding-bottom: 150px;
+    &.last {
+        padding-bottom: 150px;
     }
-
 }
 
-.sponsorcontainer{
-  margin-left: auto;
-  margin-right: auto;
+.sponsorcontainer {
+    margin-left: auto;
+    margin-right: auto;
 }
 #logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10em;
-  padding: 1em;
-  margin-bottom: 2em;
-}
-#logo-prize {
-  display: block;
-  margin: 3em;
-  margin-top: 1em;
-  margin-left: 3.5em;
-  width: 160px;
-  height: auto;
-  padding: 1em;
-  display: inline-block;
-}
-
-@media screen and (max-width: $breakpoint-mobile-flipped){
-  .forStudents-container {
-    padding: 3em 1em;
-  }
-}
-@media screen and (max-width: $breakpoint-mobile){
-  #logo-prize {
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
+    width: 10em;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+#logo-prize {
+    display: block;
+    margin: 3em;
+    margin-top: 1em;
+    margin-left: 3.5em;
+    width: 160px;
+    height: auto;
+    padding: 1em;
+    display: inline-block;
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .forStudents-container {
+        padding: 3em 1em;
+    }
+}
+@media screen and (max-width: $breakpoint-mobile) {
+    #logo-prize {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

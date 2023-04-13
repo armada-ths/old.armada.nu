@@ -1,4 +1,16 @@
-.cache
+.cache/
 package.json
 package-lock.json
 public
+.prettierrc
+.eslintrc
+node_modules/
+.gitignore
+build/
+.npmrc
+gatsby-browser.js
+gatsby-config.js
+gatsby-node.js
+gatsby-ssr.js
+LICENSE
+README.md

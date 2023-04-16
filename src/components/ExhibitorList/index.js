@@ -43,8 +43,8 @@ class ExhibitorList extends React.Component {
             diversityfilter: false,
             sustainabilityfilter: false,
             startupfilter: false,
-            diversitysrc: '/assets/diversity_a.svg',
-            sustainabilitysrc: '/assets/sustainability.svg',
+            diversitysrc: '/assets/diversity/diversity_a.svg',
+            sustainabilitysrc: '/assets/sustainability/sustainability.svg',
             location: 'All',
             sector: 'All',
             locations: [
@@ -468,14 +468,14 @@ class ExhibitorList extends React.Component {
                                         <img
                                             alt=''
                                             className='special'
-                                            src='/assets/diversity_a.svg'
+                                            src='/assets/diversity/diversity_a.svg'
                                         />
                                     ) : null}
                                     {exhibitor.sustainability ? (
                                         <img
                                             alt=''
                                             className='special'
-                                            src='/assets/sustainability.svg'
+                                            src='/assets/sustainability/sustainability.svg'
                                         />
                                     ) : null}
                                 </div>
@@ -658,10 +658,10 @@ class ExhibitorList extends React.Component {
         let diversitysrc = this.state.diversitysrc
         if (diversityfilter === false) {
             diversityfilter = true
-            diversitysrc = '/assets/diversity_selected.svg'
+            diversitysrc = '/assets/diversity/diversity_selected.svg'
         } else if (diversityfilter === true) {
             diversityfilter = false
-            diversitysrc = '/assets/diversity_a.svg'
+            diversitysrc = '/assets/diversity/diversity_a.svg'
         }
         this.setState({ diversityfilter })
         this.setState({ diversitysrc })
@@ -673,10 +673,11 @@ class ExhibitorList extends React.Component {
         let sustainabilitysrc = this.state.sustainabilitysrc
         if (sustainabilityfilter === false) {
             sustainabilityfilter = true
-            sustainabilitysrc = '/assets/sustainability_selected.svg'
+            sustainabilitysrc =
+                '/assets/sustainability/sustainability_selected.svg'
         } else if (sustainabilityfilter === true) {
             sustainabilityfilter = false
-            sustainabilitysrc = '/assets/sustainability.svg'
+            sustainabilitysrc = '/assets/sustainability/sustainability.svg'
         }
         this.setState({ sustainabilityfilter })
         this.setState({ sustainabilitysrc })
@@ -1032,14 +1033,17 @@ const ExhibitorItem = props => {
             <p> {props.exhibitor.name} </p>
             {props.exhibitor.location_special === 'Diversity Room' ? (
                 <div className='corner-special'>
-                    <img alt='' src='/assets/diversity-black-nolabel.png' />
+                    <img
+                        alt=''
+                        src='/assets/diversity/diversity-black-nolabel.png'
+                    />
                 </div>
             ) : null}
             {props.exhibitor.location_special === 'Green Room' ? (
                 <div className='corner-special'>
                     <img
                         alt=''
-                        src='/assets/sustainability-black-nolabel.png'
+                        src='/assets/sustainability/sustainability-black-nolabel.png'
                     />
                 </div>
             ) : null}

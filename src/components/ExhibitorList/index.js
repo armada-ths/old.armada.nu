@@ -344,17 +344,15 @@ class ExhibitorList extends React.Component {
         )
         this.setState({ sectors: sortedSectors })
     }
-
-    //currently only deals w/ getting data from api (unsure)
-    componentDidMount() {
-        // only called when exhibitor page is created or updated.
+    apiFetcher(props, update) {
+        const yearParam = update ? '&year=' + props.year : ''
         axios
             .get(
                 ais +
                     `api/exhibitors?img alt=''_placeholder=true${
                         this.props.lastYear
                             ? '&year=' + this.state.previousYear
-                            : ''
+                            : yearParam
                     }`
             )
             .then(res => {
@@ -372,11 +370,19 @@ class ExhibitorList extends React.Component {
                 // Get from url path the GET params ?id=number, to know what event to display
                 if (this.props.exhibitorName !== undefined) {
                     this.setState({
-                        exhibitorName: this.props.exhibitorName,
+                        exhibitorName: props.exhibitorName,
                         showModal: true,
                     })
                 }
             })
+    }
+    componentDidUpdate(props) {
+        this.apiFetcher(props, true)
+    }
+    //currently only deals w/ getting data from api (unsure)
+    componentDidMount(props) {
+        // only called when exhibitor page is created or updated.
+        this.apiFetcher(props, false)
     }
 
     //search
@@ -1005,6 +1011,7 @@ ExhibitorList.propTypes = {
     exhibitorName: PropTypes.string,
     onChangeExhibitorName: PropTypes.func,
     lastYear: PropTypes.bool,
+    year: PropTypes.string,
 }
 
 /*let toExport

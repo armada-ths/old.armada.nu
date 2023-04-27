@@ -185,6 +185,15 @@ body {
     z-index: 10;
 }
 
+.flexshow {
+    display: baseline;
+}
+
+.infocard {
+    padding: 1rem;
+    max-width: 20rem;
+}
+
 @media screen and (max-width: $breakpoint-mobile) {
     .faqpage-container {
         padding: 3em 1em 0em 1em;

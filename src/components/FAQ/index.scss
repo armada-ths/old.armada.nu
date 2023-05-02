@@ -159,11 +159,17 @@
     .topic-container:nth-child(5) {
         margin-left: 0%;
     }
+    .contact-us {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
 
 @media screen and (max-width: $breakpoint-pad) {
     .topics-container {
+        display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
     }
 }
 .topic-container {
@@ -198,4 +204,11 @@
 .contactBtn {
     margin: 0 auto;
     margin-bottom: 2em;
+}
+
+.FAQ-Container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }

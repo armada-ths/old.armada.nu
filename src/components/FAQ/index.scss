@@ -2,6 +2,13 @@
 @import '../../styles/global';
 /* Last edited by Nima Mehrabadi, changing FAQ to grid */
 
+.answers-wrap {
+    width: 100%;
+    background-image: url("/assets/22068755_2890283657654250_15852127_o.png");
+    background-size: cover;
+    padding-top: 10%;
+}
+
 .grid-container {
     display: grid;
     width: 100%;
@@ -10,9 +17,10 @@
 }
 
 .grid-container-answers {
-    display: grid;
-    width: 100%;
-    grid-template-columns: auto auto;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    // grid-template-columns: auto auto;
 }
 
 .accordion-homepage {
@@ -40,6 +48,12 @@
     position: relative;
 }
 
+.accordion-homepage .parent:first-child,
+.accordion-homepage .parent:first-child:not(.selected) > h2 {
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
+}
+
 .accordion-homepage .parent:last-child,
 .accordion-homepage .parent:last-child:not(.selected) > h2 {
     border-bottom-left-radius: 0.625rem;
@@ -51,13 +65,13 @@
     border-bottom-right-radius: 0.625rem;
 }
 
-.accordion-homepage h2 {
-    font-size: 0.875rem;
-    text-align: left;
-    padding: 1rem 3.25rem 1rem 4rem;
-}
+// .accordion-homepage h2 {
+//     font-size: 0.875rem;
+//     padding: 1rem 3.25rem 1rem 4rem;
+// }
 
 .accordion-homepage h2 {
+    text-align: left;
     background-color: #ffffff;
     color: #202124;
     font-size: 1rem;

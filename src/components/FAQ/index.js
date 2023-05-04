@@ -15,6 +15,10 @@ const FAQContainer = props => {
     const visibilityContactBtn = visible === true ? 'none' : 'block'
 
     useEffect(() => {
+        setFaq(questions[0]);
+    }, []);
+
+    useEffect(() => {
         if (props.type === 'student') {
             setQuestions(studentQuestions)
         } else if (props.type === 'exhibitor') {
@@ -22,13 +26,26 @@ const FAQContainer = props => {
         }
     }, [questions, props.type])
 
+    function topicClicked(event, topic){
+        setFaq(topic);
+        const topicButtons = document.getElementsByClassName('topic-container');
+        for(const topicButton of topicButtons){
+            const topicId = topicButton.id;
+            if(topicId == topic.title){
+                topicButton.style.backgroundColor = "green";
+            }
+            else{
+                topicButton.style.backgroundColor = "white";
+            }
+        }
+    }
     return (
         <>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             <div className='FAQ-Container'>
                 <FAQHeader />
-                <img alt='' className='terre' src={FAQBackground} />
-                <p className='browse-header'>Browse by key topics:</p>
+                {/* <img alt='' className='terre' src={FAQBackground} /> */}
+                {/* <p className='browse-header'>Browse by key topics:</p> */}
                 <div className='topics-container grid-container'>
                     {questions &&
                         questions.map(topic => {
@@ -36,7 +53,8 @@ const FAQContainer = props => {
                                 <div
                                     key={topic.title}
                                     className='topic-container'
-                                    onClick={() => setFaq(topic)}
+                                    id={topic.title}
+                                    onClick={(event) => topicClicked(event,topic)}
                                     onKeyDown={() => setFaq(topic)}
                                     role='none'
                                 >
@@ -45,37 +63,39 @@ const FAQContainer = props => {
                             )
                         })}
                 </div>
-                {faq && (
-                    <div className='accordion-homepage grid-container-answers'>
-                        {faq.body.map(faq => {
-                            return (
-                                <FAQQuestion
-                                    key={faq.question}
-                                    question={faq.question}
-                                    answer={
-                                        faq.displayAnswer
-                                            ? faq.displayAnswer
-                                            : faq.answer
-                                    }
-                                />
-                            )
-                        })}
+                <div className='answers-wrap'>
+                    {faq && (
+                        <div className='accordion-homepage grid-container-answers'>
+                            {faq.body.map(faq => {
+                                return (
+                                    <FAQQuestion
+                                        key={faq.question}
+                                        question={faq.question}
+                                        answer={
+                                            faq.displayAnswer
+                                                ? faq.displayAnswer
+                                                : faq.answer
+                                        }
+                                    />
+                                )
+                            })}
+                        </div>
+                    )}
+                    <button
+                        style={{ display: `${visibilityContactBtn}` }}
+                        className='contactBtn'
+                        onClick={() => setVisability(!visible)}
+                    >
+                        Contact us!
+                    </button>
+                    <div className='contact-us'
+                        style={{
+                            display: `${visibilityContactFrom}`,
+                            marginBottom: '2em',
+                        }}
+                    >
+                        <EmailForm emailTo='a@armada.nu' />
                     </div>
-                )}
-                <button
-                    style={{ display: `${visibilityContactBtn}` }}
-                    className='contactBtn'
-                    onClick={() => setVisability(!visible)}
-                >
-                    Contact us!
-                </button>
-                <div className='contact-us'
-                    style={{
-                        display: `${visibilityContactFrom}`,
-                        marginBottom: '2em',
-                    }}
-                >
-                    <EmailForm emailTo='a@armada.nu' />
                 </div>
             </div>
         </>

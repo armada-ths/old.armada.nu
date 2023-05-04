@@ -191,11 +191,13 @@
     box-sizing: border-box;
     border-radius: 2px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     cursor: pointer;
     text-align: center;
     width: 150px;
     height: 150px;
+    align-items: center;
 }
 
 .topic-container:hover {
@@ -206,13 +208,23 @@
     margin-right: 0%;
 }
 /* Changed this from fixed size pixels. Please move away from using pixels as font-size */
-.topic {
+.topic-text {
     color: $melon;
     text-align: center;
     display: flex;
+    flex-direction: row;
     align-items: center;
     font-size: min(2vw, 1);
-    padding: 0.5rem;
+    // padding: 10%;
+    height: 50%;
+}
+
+.topic-icon {
+    width: 30%;
+    height: 30%;
+    margin-top: 10%;
+    display: block;
+    // margin-top: 10%;
 }
 
 .contactBtn {

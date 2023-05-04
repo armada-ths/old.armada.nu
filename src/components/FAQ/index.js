@@ -26,7 +26,7 @@ const FAQContainer = props => {
         }
     }, [questions, props.type])
 
-    function topicClicked(event, topic){
+    function topicClicked(topic){
         setFaq(topic);
         const topicButtons = document.getElementsByClassName('topic-container');
         for(const topicButton of topicButtons){
@@ -54,11 +54,12 @@ const FAQContainer = props => {
                                     key={topic.title}
                                     className='topic-container'
                                     id={topic.title}
-                                    onClick={(event) => topicClicked(event,topic)}
+                                    onClick={() => topicClicked(topic)}
                                     onKeyDown={() => setFaq(topic)}
                                     role='none'
                                 >
-                                    <p className='topic'>{topic.title}</p>
+                                    <img className='topic-icon' src={topic.img}></img>
+                                    <p className='topic-text'>{topic.title}</p>
                                 </div>
                             )
                         })}

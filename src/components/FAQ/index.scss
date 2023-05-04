@@ -6,6 +6,7 @@
     width: 100%;
     background-image: url("/assets/22068755_2890283657654250_15852127_o.png");
     background-size: cover;
+    // object-fit: cover;
     padding-top: 10%;
 }
 
@@ -187,7 +188,8 @@
     }
 }
 .topic-container {
-    border: 1px solid #c7c7c7;
+    border: 1px solid hsl(160, 100%, 40%);
+    background-color: hsl(133, 54%, 93%);
     box-sizing: border-box;
     border-radius: 2px;
     display: flex;
@@ -195,8 +197,8 @@
     justify-content: center;
     cursor: pointer;
     text-align: center;
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     align-items: center;
 }
 
@@ -209,7 +211,6 @@
 }
 /* Changed this from fixed size pixels. Please move away from using pixels as font-size */
 .topic-text {
-    color: $melon;
     text-align: center;
     display: flex;
     flex-direction: row;

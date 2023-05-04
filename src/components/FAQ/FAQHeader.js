@@ -5,11 +5,11 @@ const FAQHeader = () => {
     return (
         <div style={{ marginTop: '5%' }}>
             <header style={{ textAlign: 'center' }}>
-                <img
+                {/* <img
                     alt=''
                     src={ArmadaLogo}
                     style={{ width: '90px', height: '90px' }}
-                ></img>
+                ></img> */}
                 <h2 id='FAQ' style={{ marginBottom: '20px' }}>
                     FAQ
                 </h2>

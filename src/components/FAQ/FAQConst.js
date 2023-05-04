@@ -863,6 +863,7 @@ const studentQuestions = [
 const exhibitorQuestions = [
     {
         title: 'GENERAL',
+        img: '/assets/favicon.ico',
         linkFAQ: 'faq-general',
         body: [
             {
@@ -945,6 +946,7 @@ const exhibitorQuestions = [
 
     {
         title: 'ABOUT ARMADA',
+        img: '/assets/favicon.ico',
         body: [
             {
                 question: 'What is THS Armada?',
@@ -1038,6 +1040,7 @@ const exhibitorQuestions = [
     },*/
     {
         title: 'MARKETING',
+        img: '/assets/favicon.ico',
         linkFAQ: 'faq-marketing',
         body: [
             {
@@ -1074,6 +1077,7 @@ const exhibitorQuestions = [
     },
     {
         title: 'EVENTS',
+        img: '/assets/favicon.ico',
         linkFAQ: 'faq-events',
         body: [
             {

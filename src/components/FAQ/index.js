@@ -32,10 +32,10 @@ const FAQContainer = props => {
         for(const topicButton of topicButtons){
             const topicId = topicButton.id;
             if(topicId == topic.title){
-                topicButton.style.backgroundColor = "green";
+                topicButton.style.backgroundColor = "#00d790";
             }
             else{
-                topicButton.style.backgroundColor = "white";
+                topicButton.style.backgroundColor = "hsl(133, 54%, 93%)";
             }
         }
     }
@@ -49,6 +49,7 @@ const FAQContainer = props => {
                 <div className='topics-container grid-container'>
                     {questions &&
                         questions.map(topic => {
+                            // console.log(topic.img)
                             return (
                                 <div
                                     key={topic.title}

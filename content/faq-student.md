@@ -6,8 +6,8 @@ description: Page
 menuPage: false
 studentSubpage: true
 priority: 3
-header: /assets/53image.JPG
-noJumbotron: true
+header: \assets\images\header-images\forStudents.jpg
+noJumbotron: false
 ---
 
 &nbsp;

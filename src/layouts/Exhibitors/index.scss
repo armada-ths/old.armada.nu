@@ -1,7 +1,7 @@
 @import '../../styles/variables';
+@import '../../styles/global';
 
 .exhibitors-container {
-    padding: 3em 0em;
     max-width: $page-width;
     margin: auto;
 
@@ -12,9 +12,19 @@
 
 .buttonContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    button {
-        margin: 10px;
+    margin: 0;
+    div {
+        background-color: #f7f7f2;
+        padding: 3rem 4rem 3rem 4rem;
+        color: $melon;
+        text-align: center;
+        border: 1px solid $melon;
+        border-top: none;
+        font-size: larger;
+    }
+    div:hover {
+        background-color: #eeeee4;
     }
 }

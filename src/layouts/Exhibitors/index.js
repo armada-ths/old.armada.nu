@@ -13,28 +13,28 @@ const Exhibitors = props => {
 
     return (
         <>
-            <div class='buttonContainer'>
-                <button
+            <div className='buttonContainer'>
+                <div
                     onClick={() => {
                         setYear(yearList[0])
                     }}
                 >
                     {yearList[0]}
-                </button>
-                <button
+                </div>
+                <div
                     onClick={() => {
                         setYear(yearList[1])
                     }}
                 >
                     {yearList[1]}
-                </button>
-                <button
+                </div>
+                <div
                     onClick={() => {
                         setYear(yearList[2])
                     }}
                 >
                     {yearList[2]}
-                </button>
+                </div>
             </div>
             <div className='exhibitors-container'>
                 <ExhibitorList {...props} year={year} />

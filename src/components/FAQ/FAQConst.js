@@ -591,7 +591,7 @@ import React from 'react'
 const studentQuestions = [
     {
         title: 'ABOUT ARMADA',
-        img: '/assets/favicon.ico',
+        img: '/assets/ExhibitorCatalogue/about.png',
         body: [
             {
                 question: 'What is THS Armada?',
@@ -663,7 +663,7 @@ const studentQuestions = [
     },
     {
         title: 'THE FAIR',
-        img: '/assets/favicon.ico',
+        img: '/assets/TheFairlogo.png',
         body: [
             {
                 question: 'When is the Armada fair taking place?',
@@ -766,7 +766,7 @@ const studentQuestions = [
 
     {
         title: 'THE BANQUET',
-        img: '/assets/favicon.ico',
+        img: '/assets/Bankettlogo.png',
         body: [
             {
                 question: 'What is The Grand Armada Banquet?',
@@ -808,7 +808,7 @@ const studentQuestions = [
     },
     {
         title: 'RECRUITMENT',
-        img: '/assets/favicon.ico',
+        img: '/assets/recruitment.png',
         body: [
             {
                 question: 'How do I become a part of the Armada team?',

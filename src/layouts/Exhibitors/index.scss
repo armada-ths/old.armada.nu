@@ -16,15 +16,21 @@
     align-items: center;
     margin: 0;
     div {
+        margin: 1px;
         background-color: #f7f7f2;
         padding: 3rem 4rem 3rem 4rem;
         color: $melon;
         text-align: center;
-        border: 1px solid $melon;
+        border: 2px dotted $melon;
         border-top: none;
         font-size: larger;
     }
     div:hover {
         background-color: #eeeee4;
+    }
+    .active {
+        border-color: red;
+        border-style: solid;
+        border-top: none;
     }
 }

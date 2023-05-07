@@ -6,6 +6,7 @@ import Modal from '../Modal'
 import Loading from '../Loading'
 import Cat from '../Cat'
 import Select from 'react-select'
+import { Link } from 'gatsby'
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
 
@@ -367,6 +368,7 @@ class ExhibitorList extends React.Component {
                     />
                 ))
                 this.setState({ exhibitors, exhibitorList, isLoading: false }) // component saves its own data --- What does this mean?? //Nima
+
                 // Get from url path the GET params ?id=number, to know what event to display
                 if (this.props.exhibitorName !== undefined) {
                     this.setState({
@@ -707,6 +709,10 @@ class ExhibitorList extends React.Component {
     render() {
         // Here you decide if list of exhibitors should be displayed or not
         let showExhibitors = true
+        let thisYear = new Date().getFullYear().toString()
+        if (this.year === thisYear) {
+            showExhibitors = false
+        }
         let exhibitorToDisplay = this.state.exhibitors.filter(
             exhibitor => exhibitor.name === this.state.exhibitorName
         )[0]
@@ -959,9 +965,18 @@ class ExhibitorList extends React.Component {
                         </div>
                     </div>
 
-                    {/* <div className="supercontainer">
-              <p className="matching_link">Pssst! Find your perfect company by using Armada's new <Link className="matching_link_style" to="/matching">matching functionality!</Link></p>
-            </div> */}
+                    <div className='supercontainer'>
+                        <p className='matching_link'>
+                            Pssst! Find your perfect company by using Armada's
+                            new{' '}
+                            <Link
+                                className='matching_link_style'
+                                to='/matching'
+                            >
+                                matching functionality!
+                            </Link>
+                        </p>
+                    </div>
 
                     {/* TODO: everything should be dynamic instead of hard-coded */}
 

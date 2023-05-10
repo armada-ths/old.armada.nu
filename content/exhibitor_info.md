@@ -87,7 +87,7 @@ We know that it can sometimes be overwhelming at a physical fair with a lot of p
 
 **Timely logistical communication:** Armada has adapted a horizontal logistical solution to minimize its climate impact. This solution is called the Armada Transport. Our collaborator, DHL will take care of the transport of all our exhibitors to and from the fair . The booking of Armada transport will open after the final registration. To avoid any logistical mishaps, reach out to our contact at DHL in good time during the booking period.
 
-**Visitor interaction:** Visitors are often shy to take the first step but a joyful smile from a company representative works wonders. Apart from that, you can prepare some tasks/ games at your booth that can work as icebreakers. These tasks also reduce anxiety among participants and make conversations easy. For the first time this year, we will be having an Armada Competition at a physical fair. The competition is designed to attract more students to your booth in search of the great price. Read more about the competition in the Additional Services Catalogue.
+**Visitor interaction:** Visitors are often shy to take the first step but a joyful smile from a company representative works wonders. Apart from that, you can prepare some tasks/ games at your booth that can work as icebreakers. These tasks also reduce anxiety among participants and make conversations easy. 
 
 <br/>
 

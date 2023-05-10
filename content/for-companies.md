@@ -50,7 +50,7 @@ We know that it can sometimes be overwhelming at a physical fair with a lot of p
 
 **Timely logistical communication:** Armada has adapted a horizontal logistical solution to minimize its climate impact. This solution is called the Armada Transport. Our collaborator, DHL will take care of the transport of all our exhibitors to and from the fair . The booking of Armada transport will open after the final registration. To avoid any logistical mishaps, reach out to our contact at DHL in good time during the booking period.
 
-**Visitor interaction:** Visitors are often shy to take the first step but a joyful smile from a company representative works wonders. Apart from that, you can prepare some tasks/ games at your booth that can work as icebreakers. These tasks also reduce anxiety among participants and make conversations easy. For the first time this year, we will be having an Armada Competition at a physical fair. The competition is designed to attract more students to your booth in search of the great price. Read more about the competition in the Additional Services Catalogue.
+**Visitor interaction:** Visitors are often shy to take the first step but a joyful smile from a company representative works wonders. Apart from that, you can prepare some tasks/ games at your booth that can work as icebreakers. These tasks also reduce anxiety among participants and make conversations easy. 
 
 <br/>
 
@@ -151,8 +151,5 @@ Let Armada help your company stand out and boost your employer brand. We offer m
 
 <br />
 
-<h3 id="armada-competition"> Armada Competition </h3>
-
-Armada Competition is an incentive introduced during last year's fair to increase connections between students and companies. It was a big success and is therefore back this year. In short, students have the chance to win exclusive prizes by interacting with companies during the fair. Your company can participate with prizes to reach out in yet another way to the KTH students.
 
 ---

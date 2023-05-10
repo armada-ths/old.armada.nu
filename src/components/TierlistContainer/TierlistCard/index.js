@@ -19,20 +19,18 @@ const exhibitor = {
     showcase: true,
     host_aid: true,
     banquet_tickets: false,
-    armada_run: false,
+    //armada_run: false, //only commented away pending response
     field_visit_or_panel_discussion: 'neither',
     marketed_as: 'exhibitor',
-    armada_competition: false,
 }
 
 const silver = {
     ...exhibitor,
     booth_size: '2x4',
     banquet_tickets: true,
-    armada_run: false,
+    //only commented away pending response
     field_visit_or_panel_discussion: 'either',
     marketed_as: 'silver',
-    armada_competition: false,
 }
 
 const gold = {
@@ -40,8 +38,7 @@ const gold = {
     booth_size: '2x5',
     field_visit_or_panel_discussion: 'both',
     marketed_as: 'gold',
-    armada_competition: true,
-    armada_run: true,
+    //armada_run: true, //only commented away pending response
 }
 
 function Tierlistcard({ tier = 'exhibitor', handleHover, itemHovered }) {

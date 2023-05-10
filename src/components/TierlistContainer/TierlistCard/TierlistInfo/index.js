@@ -8,10 +8,9 @@ const TierlistInfo = ({ handleHover, itemHovered }) => {
         'Showcase in exhibitor catalogue:',
         'Assigned hosts:',
         'Tickets to the Banquet:',
-        'Host an Armada Run competition:',
+        //'Host an Armada Run competition:', //only commented away pending response
         'Field visit or Panel discussion:',
         'Marketed as (on social media & website):',
-        'Be a part of armada competition:',
     ]
     return (
         <div className='tierlistInfo'>

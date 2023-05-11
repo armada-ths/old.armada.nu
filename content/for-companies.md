@@ -26,7 +26,7 @@ header: /assets/library.png
 
 **Final Registration** - 18th of August - 28th of September
 
-**Event Weeks** - 30st of October - 17th of November
+**Event Weeks** - 30th of October - 17th of November
 
 **The Fair** - 21st-22nd of November
 
@@ -122,7 +122,7 @@ Armada is more than a two day fair. If your company wants to host an event for K
 
 <h3 id="event-weeks-2023"> Event Weeks 2023 </h3>
 
-THS Armada offers you a wide range of events to profile your organisation towards students who have a genuine interest in your company. During our event weeks, 30st of Oct - 17th of Nov, you will have the opportunity to show students what your company is like with a lecture or see them in action at a case evening. Maybe you’d like to join the Armada Run: race against students and show them that your organisation is the best! Or perhaps you’ll get the opportunity to present an event during our Focus Days, with the topics of interest being our Core Values: Sustainability and Diversity. To see all of the events we offer this year, make sure to look at the Event pages in our product catalogue and additional services catalogue.
+THS Armada offers you a wide range of events to profile your organisation towards students who have a genuine interest in your company. During our event weeks, 30th of Oct - 17th of Nov, you will have the opportunity to show students what your company is like with a lecture or see them in action at a case evening. Maybe you’d like to join the Armada Run: race against students and show them that your organisation is the best! Or perhaps you’ll get the opportunity to present an event during our Focus Days, with the topics of interest being our Core Values: Sustainability and Diversity. To see all of the events we offer this year, make sure to look at the Event pages in our product catalogue and additional services catalogue.
 
 Is something missing in our options? We also offer Custom Events designed in collaboration with your organisation and THS Armada to create an event tailored to your needs and wishes. Reach out to your sales representative to discuss! The possibilities are endless…
 

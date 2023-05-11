@@ -50,7 +50,7 @@ We know that it can sometimes be overwhelming at a physical fair with a lot of p
 
 **Timely logistical communication:** Armada has adapted a horizontal logistical solution to minimize its climate impact. This solution is called the Armada Transport. Our collaborator, DHL will take care of the transport of all our exhibitors to and from the fair . The booking of Armada transport will open after the final registration. To avoid any logistical mishaps, reach out to our contact at DHL in good time during the booking period.
 
-**Visitor interaction:** Visitors are often shy to take the first step but a joyful smile from a company representative works wonders. Apart from that, you can prepare some tasks/ games at your booth that can work as icebreakers. These tasks also reduce anxiety among participants and make conversations easy. 
+**Visitor interaction:** Visitors are often shy to take the first step but a joyful smile from a company representative works wonders. Apart from that, you can prepare some tasks/ games at your booth that can work as icebreakers. These tasks also reduce anxiety among participants and make conversations easy.
 
 <br/>
 
@@ -150,6 +150,5 @@ Armada would like to welcome you and your company to this year’s Grand Armada 
 Let Armada help your company stand out and boost your employer brand. We offer many services for your company to reach the KTH students through our different social media. Market events or job offers through a post or share what a day at your office is like through an Instagram takeover. Reach out to our sales team to hear more about how your company can get seen by future employees.
 
 <br />
-
 
 ---

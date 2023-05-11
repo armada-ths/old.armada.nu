@@ -26,7 +26,7 @@ header: /assets/library.png
 
 **Final Registration** - 18th of August - 28th of September
 
-**Event Weeks** - 30st of October - 17th of November
+**Event Weeks** - 30th of October - 17th of November
 
 **The Fair** - 21st-22nd of November
 
@@ -86,7 +86,7 @@ Armada is an established event and this year will be the 41st Armada in a row. S
 <h2 id="registration"> Registration </h2>
 
 If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 23rd of September. <br />
-If you did not register your company during the Initial Registration, 11th of April - 20th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
+If you did not register your company during the Initial Registration, 22nd of March - 17th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
 
 <h2 id="what-do-you-get">What do you get?</h2>
 <br/>
@@ -122,7 +122,7 @@ Armada is more than a two day fair. If your company wants to host an event for K
 
 <h3 id="event-weeks-2023"> Event Weeks 2023 </h3>
 
-THS Armada offers you a wide range of events to profile your organisation towards students who have a genuine interest in your company. During our event weeks, 31st Oct - 18th Nov, you will have the opportunity to show students what your company is like with a lecture or see them in action at a case evening. Maybe you’d like to join the Armada Run: race against students and show them that your organisation is the best! Or perhaps you’ll get the opportunity to present an event during our Focus Days, with the topics of interest being our Core Values: Sustainability and Diversity. To see all of the events we offer this year, make sure to look at the Event pages in our product catalogue and additional services catalogue.
+THS Armada offers you a wide range of events to profile your organisation towards students who have a genuine interest in your company. During our event weeks, 30th of Oct - 17th of Nov, you will have the opportunity to show students what your company is like with a lecture or see them in action at a case evening. Maybe you’d like to join the Armada Run: race against students and show them that your organisation is the best! Or perhaps you’ll get the opportunity to present an event during our Focus Days, with the topics of interest being our Core Values: Sustainability and Diversity. To see all of the events we offer this year, make sure to look at the Event pages in our product catalogue and additional services catalogue.
 
 Is something missing in our options? We also offer Custom Events designed in collaboration with your organisation and THS Armada to create an event tailored to your needs and wishes. Reach out to your sales representative to discuss! The possibilities are endless…
 
@@ -141,7 +141,7 @@ Is something missing in our options? We also offer Custom Events designed in col
 
 <h3 id="banquet"> Banquet </h3>
 
-Armada would like to welcome you and your company to this year’s Grand Armada Banquet! The Grand Armada Banquet is an excellent opportunity for you to meet and mingle with students in a more relaxing environment. During the banquet you will enjoy a tasty three course meal and energising entertainment! The banquet will be held on the 22nd of November after the fair in Victoriahallen, Stockholmsmässan. Be sure to put on your high heels and tie your tie because this year’s theme is Las Vegas!
+Armada would like to welcome you and your company to this year’s Grand Armada Banquet! The Grand Armada Banquet is an excellent opportunity for you to meet and mingle with students in a more relaxing environment. During the banquet you will enjoy a tasty three course meal and energising entertainment! The banquet will be held on the 21st of November after the fair in Victoriahallen, Stockholmsmässan. Be sure to put on your high heels and tie your tie because this year’s theme is Las Vegas!
 
 <br />
 

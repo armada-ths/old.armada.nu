@@ -38,7 +38,7 @@ const gold = {
     booth_size: '2x5',
     field_visit_or_panel_discussion: 'both',
     marketed_as: 'gold',
-    armada_competition: true,
+    armada_run: true,
 }
 
 function Tierlistcard({ tier = 'exhibitor', handleHover, itemHovered }) {

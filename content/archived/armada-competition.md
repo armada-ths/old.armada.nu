@@ -4,7 +4,7 @@ title: Armada Competition
 layout: CompetitionPage
 description: Page
 menuPage: false
-studentSubpage: true
+studentSubpage: false
 companySubpage: false
 aboutSubpage: false
 priority: 2

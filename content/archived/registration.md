@@ -95,7 +95,3 @@ Armada would like to welcome you and your company to this year’s Grand Armada 
 Let Armada help your company stand out and boost your employer brand. We offer many services for your company to reach the KTH students through our different social media. Market events or job offers through a post or share what a day at your office is like through an Instagram takeover. Reach out to our sales team to hear more about how your company can get seen by future employees.
 
 <br />
-
-### Armada Competition
-
-Armada Competition is an incentive introduced during last year's fair to increase connections between students and companies. It was a big success and is therefore back this year. In short, students have the chance to win exclusive prizes by interacting with companies during the fair. Your company can participate with prizes to reach out in yet another way to the KTH students.-->

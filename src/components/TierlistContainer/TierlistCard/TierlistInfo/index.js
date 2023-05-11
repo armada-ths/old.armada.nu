@@ -8,6 +8,7 @@ const TierlistInfo = ({ handleHover, itemHovered }) => {
         'Showcase in exhibitor catalogue:',
         'Assigned hosts:',
         'Tickets to the Banquet:',
+        'Host an Armada Run competition:',
         'Field visit or Panel discussion:',
         'Marketed as (on social media & website):',
     ]

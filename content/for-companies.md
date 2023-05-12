@@ -19,6 +19,18 @@ header: /assets/library.png
 
 <a class="anchor" id="important-dates"></a>
 
+<h3>Invitation</h3>
+Download our invitation catalogue to find out more more. <br />
+Welcome to Armada 2023!
+<form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2023.pdf">
+<br />
+<br />
+<div class = "buttonStyle">
+<button type="submit">Download Invitation</button>
+</div>
+</form>
+<br />
+
 <div class="info-border-box">
 <h2 id="important-dates">Important Dates</h2>
 
@@ -46,11 +58,13 @@ If you did not register your company during the Initial Registration, 11th of Ap
 <br/> 
 <!-- breakline needed for formating, maybe h2 should have a added margin/padding top !-->
 
-<h2 >Welcome Exhibitor!</h2>
+<h2 >WHAT IS THS ARMADA?</h2>
+THS Armada is a student-driven project at KTH Royal Institute of Technology that arranges the largest career fair in Scandinavia. Every year, more than 12,000 of Sweden's top engineering and architectural students flock to visit the fair to meet their future employers. The Fair is a two-day event with companies from all over the world.
 
-Speaking to different Armada exhibitors,I’ve noticed the difference it makes to work long term with student attraction. One exhibitor told me they’ve recruited someone who, 7 years after meeting the exhibitor at Armada, still says that the good impression they made at the fair is the main reason why he applied for the job. The impression you make on a student will be with them, and all their friends, their entire working life.
+<h2>WHY THS ARMADA?</h2>
+THS Armada is a unique opportunity for exhibitors to market themselves to students at the biggest technical university in Sweden. First and foremost through our fair but Armada is so much more. We create opportunities outside of the fair for our exhibitors to engage with and recruit students through interactive events, customized events and a banquet dinner amongst other activities. Our vision is to allow every student to meet their dream employer and give companies the possibility to find their next star.
 
-It is not easy to build such a strong brand with students. The students change completely every 5 or 3 years, the student world can look chaotic and disorganized and it can be hard to know where to look. Therefore we have created packages that give an easy way to leverage your Armada participation to maximize student connection this year. And if you want to talk more about building an effective long term strategy to reach students, I am only an email or LinkedIn connection away.
+Armada is an established event and this year will be the 41st Armada in a row. Students at KTH are constantly gazing into the future and we want to lead to bring them and your company together. Welcome to THS Armada.
 
 <h2 id="what-do-you-get">What do you get?</h2>
 <br/>
@@ -60,17 +74,5 @@ It is not easy to build such a strong brand with students. The students change c
 <tierlistcontainer></tierlistcontainer>
 
 <br/>
-
-<h3>Invitation</h3>
-Download our invitation catalogue to find out more more. <br />
-Welcome to Armada 2023!
-<form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2023.pdf">
-<br />
-<br />
-<div class = "buttonStyle">
-<button type="submit">Download Invitation</button>
-</div>
-</form>
-<br />
 
 ---

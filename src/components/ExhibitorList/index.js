@@ -422,7 +422,7 @@ class ExhibitorList extends React.Component {
                     <div className='modal-flex-1'>
                         <div className='modalimage-exhib'>
                             <img
-                                src={ais + exhibitor.logo_squared}
+                                src={exhibitor.logo_squared}
                                 alt={exhibitor.name + ' logo'}
                             />
                         </div>
@@ -965,7 +965,7 @@ class ExhibitorList extends React.Component {
                         </div>
                     </div>
 
-                    <div className='supercontainer'>
+                    {/*<div className='supercontainer'>
                         <p className='matching_link'>
                             Pssst! Find your perfect company by using Armada's
                             new{' '}
@@ -976,7 +976,7 @@ class ExhibitorList extends React.Component {
                                 matching functionality!
                             </Link>
                         </p>
-                    </div>
+                        </div>*/}
 
                     {/* TODO: everything should be dynamic instead of hard-coded */}
 
@@ -1050,7 +1050,14 @@ const ExhibitorItem = props => {
             onClick={() => props.showModal(props.exhibitor.name)}
         >
             <div className='image-container'>
-                <img alt='' src={ais + props.exhibitor.logo_squared} />
+                {props.exhibitor.logo_squared === null ? (
+                    <></>
+                ) : (
+                    <img
+                        alt={props.exhibitor.name}
+                        src={props.exhibitor.logo_squared}
+                    />
+                )}
             </div>
             <p> {props.exhibitor.name} </p>
             {props.exhibitor.location_special === 'Diversity Room' ? (

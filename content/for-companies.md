@@ -17,6 +17,16 @@ header: /assets/library.png
                     </div>
 </div>
 
+<h2 id="why-ths-armada"> Why THS Armada? </h2>
+
+THS Armada is a unique opportunity for exhibitors to market themselves to students at the biggest technical university in Sweden.
+
+We create opportunities outside of the fair for our exhibitors to engage with and recruit students through interactive events, customized events and a banquet dinner amongst other activities.
+
+Our vision is to allow every student to meet their dream employer and give companies the possibility to find their next star.
+
+[Download](/assets/invitation/InvitationArmada2023.pdf) our invitation to learn more.
+
 <a class="anchor" id="important-dates"></a>
 
 <div class="info-border-box">
@@ -74,12 +84,6 @@ During 2020-2021 we had two virtual fairs. But since last year we are back with 
 <a class="anchor" id="why-armada"></a>
 
 <br />
-
-<h3 id="why-ths-armada"> Why THS Armada? </h3>
-
-THS Armada is a unique opportunity for exhibitors to market themselves to students at the biggest technical university in Sweden. First and foremost through our fair but Armada is so much more. We create opportunities outside of the fair for our exhibitors to engage with and recruit students through interactive events, customized events and a banquet dinner amongst other activities. Our vision is to allow every student to meet their dream employer and give companies the possibility to find their next star.
-
-Armada is an established event and this year will be the 41st Armada in a row. Students at KTH are constantly gazing into the future and we want to lead to bring them and your company together. Welcome to THS Armada
 
 <br />
 

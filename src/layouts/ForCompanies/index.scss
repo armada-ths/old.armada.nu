@@ -45,7 +45,7 @@
     overflow-y: unset;
     height: unset;
     margin: auto;
-    margin-top: -95vh;
+
     width: 70%;
     .page-container {
         h3,
@@ -183,6 +183,15 @@ body {
     top: 10vh;
     height: 90vh;
     z-index: 10;
+}
+
+.flexshow {
+    display: baseline;
+}
+
+.infocard {
+    padding: 1rem;
+    max-width: 20rem;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {

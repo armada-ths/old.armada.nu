@@ -13,6 +13,14 @@
     }
 }
 
+.registration-buttons {
+    display: flex;
+    justify-content: space-evenly;
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 .assign-button-right {
     .srButton {
         left: unset;

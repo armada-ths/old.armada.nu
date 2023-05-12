@@ -28,8 +28,8 @@ Our vision is to allow every student to meet their dream employer and give compa
 [Download](/assets/invitation/InvitationArmada2023.pdf) our invitation to learn more.
 
 <div class = "registration-buttons">
-    <a href="https://register.armada.nu">Register</a>
-    <a>Contact</a>
+    <a class="button button-melon" href="https://register.armada.nu">Register</a>
+    <a class="button button-white" href="/contact">Contact</a>
 </div>
 
 <a class="anchor" id="important-dates"></a>

@@ -200,6 +200,38 @@ body {
 .infocard {
     padding: 1rem;
     max-width: 20rem;
+.button {
+    font-size: 1.4rem;
+    margin: 0.2rem;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    border-style: solid;
+    border-width: 4px;
+    border-color: $melon;
+}
+
+a.button-melon {
+    background-color: $melon;
+    color: white;
+}
+
+a.button-melon:hover {
+    background-color: white;
+    color: $melon;
+    text-decoration: none;
+}
+
+a.button-white {
+    background-color: white;
+    color: $melon;
+}
+
+a.button-white:hover {
+    background-color: $melon;
+    color: white;
+    text-decoration: none;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {

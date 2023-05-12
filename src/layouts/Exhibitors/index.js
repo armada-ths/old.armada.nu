@@ -77,6 +77,7 @@ const Exhibitors = props => {
                                 onClick={() => {
                                     setYear(yearList[1])
                                     setDisplayList(true)
+                                    setDisplayCVFilter(false)
                                 }}
                             >
                                 previous years exhibitors

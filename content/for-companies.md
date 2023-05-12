@@ -21,8 +21,7 @@ header: /assets/library.png
 
 <div class="info-border-box">
 <h2 id="invitation">Invitation</h2>
-Download our invitation catalogue to find out more more. <br />
-Welcome to Armada 2023!
+Download our invitation catalogue to find out more more. Welcome to Armada 2023!
 <form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2023.pdf">
 <br />
 <br />

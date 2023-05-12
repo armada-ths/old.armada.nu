@@ -19,7 +19,8 @@ header: /assets/library.png
 
 <a class="anchor" id="important-dates"></a>
 
-<h3>Invitation</h3>
+<div class="info-border-box">
+<h2 id="invitation">Invitation</h2>
 Download our invitation catalogue to find out more more. <br />
 Welcome to Armada 2023!
 <form style="text-align: center; margin-bottom: 1em;" method="get" action="/assets/invitation/InvitationArmada2023.pdf">
@@ -29,6 +30,8 @@ Welcome to Armada 2023!
 <button type="submit">Download Invitation</button>
 </div>
 </form>
+</div>
+
 <br />
 
 <div class="info-border-box">
@@ -56,10 +59,14 @@ If you did not register your company during the Initial Registration, 11th of Ap
 
 </div>
 <br/> 
+<br/> 
 <!-- breakline needed for formating, maybe h2 should have a added margin/padding top !-->
 
 <h2 >WHAT IS THS ARMADA?</h2>
 THS Armada is a student-driven project at KTH Royal Institute of Technology that arranges the largest career fair in Scandinavia. Every year, more than 12,000 of Sweden's top engineering and architectural students flock to visit the fair to meet their future employers. The Fair is a two-day event with companies from all over the world.
+
+<br/>
+<br/>
 
 <h2>WHY THS ARMADA?</h2>
 THS Armada is a unique opportunity for exhibitors to market themselves to students at the biggest technical university in Sweden. First and foremost through our fair but Armada is so much more. We create opportunities outside of the fair for our exhibitors to engage with and recruit students through interactive events, customized events and a banquet dinner amongst other activities. Our vision is to allow every student to meet their dream employer and give companies the possibility to find their next star.

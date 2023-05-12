@@ -16,11 +16,10 @@ const Exhibitors = props => {
         const currentDate = new Date()
         const finalRegistration = new Date(currentYear, 8, 28) //Notice! This is the Final registration date. After this date we expect the companies to be in AIS
         setAfterFinalReg(currentDate > finalRegistration)
+        console.log(currentDate > finalRegistration)
     }, [])
     const [displayList, setDisplayList] = useState(false)
-    useEffect(() => {
-        setDisplayList(year === currentYear)
-    })
+   
     return (
         <>
             <div className='buttonContainer'>
@@ -28,6 +27,7 @@ const Exhibitors = props => {
                     className={year === yearList[0] ? 'active' : ''}
                     onClick={() => {
                         setYear(yearList[0])
+                        setDisplayList(true)
                     }}
                 >
                     {yearList[0]}
@@ -36,6 +36,7 @@ const Exhibitors = props => {
                     className={year === yearList[1] ? 'active' : ''}
                     onClick={() => {
                         setYear(yearList[1])
+                        setDisplayList(false)
                     }}
                 >
                     {yearList[1]}
@@ -44,17 +45,15 @@ const Exhibitors = props => {
                     className={year === yearList[2] ? 'active' : ''}
                     onClick={() => {
                         setYear(yearList[2])
+                        setDisplayList(false)
                     }}
                 >
                     {yearList[2]}
                 </div>
             </div>
             <div className='exhibitors-container'>
-                {isAfterFinalReg && displayList ? (
-                    <ExhibitorList {...props} year={year} />
-                ) : (
-                    <p>No</p>
-                )}
+                <ExhibitorList {...props} year={year} />
+    
             </div>
         </>
     )

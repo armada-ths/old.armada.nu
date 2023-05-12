@@ -21,7 +21,7 @@ const Exhibitors = props => {
         const finalRegistration = new Date(currentYear, 8, 28) //Notice! This is the Final registration date. After this date we expect the companies to be in AIS
         setAfterFinalReg(currentDate > finalRegistration)
     }, [])
-    const [displayList, setDisplayList] = useState(true)
+    const [displayList, setDisplayList] = useState(false)
 
     return (
         <>

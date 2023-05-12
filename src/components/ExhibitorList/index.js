@@ -411,7 +411,6 @@ class ExhibitorList extends React.Component {
 
     showModal = exhibitorName => {
         this.setState({ showModal: !this.state.showModal, exhibitorName })
-        this.props.onChangeExhibitorName(exhibitorName)
     }
 
     displayExhibitor = exhibitor => {
@@ -421,10 +420,14 @@ class ExhibitorList extends React.Component {
                 <div className='modal-container'>
                     <div className='modal-flex-1'>
                         <div className='modalimage-exhib'>
-                            <img
-                                src={exhibitor.logo_squared}
-                                alt={exhibitor.name + ' logo'}
-                            />
+                            {exhibitor.logo_squared === null ? (
+                                <></>
+                            ) : (
+                                <img
+                                    src={exhibitor.logo_squared}
+                                    alt={exhibitor.name + ' logo'}
+                                />
+                            )}
                         </div>
                         <h1 className='modal-title'>{exhibitor.name}</h1>
                         <div>

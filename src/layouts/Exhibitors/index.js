@@ -22,7 +22,7 @@ const Exhibitors = props => {
         setAfterFinalReg(currentDate > finalRegistration)
     }, [])
     const [displayList, setDisplayList] = useState(false)
-
+    const [displayCVFilter, setDisplayCVFilter] = useState(true) //This allows you to display the core values filters (green room and diversity room)
     return (
         <>
             <div className='buttonContainer'>
@@ -33,6 +33,7 @@ const Exhibitors = props => {
                         if (!isAfterFinalReg) {
                             setDisplayList(false)
                         }
+                        setDisplayCVFilter(true)
                     }}
                 >
                     {yearList[0]}
@@ -42,6 +43,7 @@ const Exhibitors = props => {
                     onClick={() => {
                         setYear(yearList[1])
                         setDisplayList(true)
+                        setDisplayCVFilter(false)
                     }}
                 >
                     {yearList[1]}
@@ -51,6 +53,7 @@ const Exhibitors = props => {
                     onClick={() => {
                         setYear(yearList[2])
                         setDisplayList(true)
+                        setDisplayCVFilter(false) //If a previous year (in the future) still retains the information for gr and div room, then you can easily change this
                     }}
                 >
                     {yearList[2]}
@@ -58,7 +61,11 @@ const Exhibitors = props => {
             </div>
             <div className='exhibitors-container'>
                 {displayList ? (
-                    <ExhibitorList {...props} year={year} /> //Display the Exibitor list
+                    <ExhibitorList
+                        {...props}
+                        year={year}
+                        showCV={displayCVFilter}
+                    /> //Display the Exibitor list
                 ) : (
                     <div class='tooEarly'>
                         <h1>Exhibitors</h1>

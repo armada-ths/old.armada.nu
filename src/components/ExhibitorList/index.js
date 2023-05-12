@@ -877,27 +877,30 @@ class ExhibitorList extends React.Component {
                     {this.state.showModal
                         ? this.displayExhibitor(exhibitorToDisplay)
                         : null}
-
-                    <div
-                        className={`filter-special ${
-                            this.props.lastYear ? 'display-none' : ''
-                        }`}
-                    >
-                        <input
-                            id='diversity'
-                            type='image'
-                            alt='diversity filter'
-                            src={this.state.diversitysrc}
-                            onClick={() => this.diversityFilter()}
-                        />
-                        <input
-                            id='sustainability'
-                            type='image'
-                            alt='sustainability filter'
-                            src={this.state.sustainabilitysrc}
-                            onClick={() => this.sustainabilityFilter()}
-                        />
-                    </div>
+                    {this.props.showCV ? (
+                        <div
+                            className={`filter-special ${
+                                this.props.lastYear ? 'display-none' : ''
+                            }`}
+                        >
+                            <input
+                                id='diversity'
+                                type='image'
+                                alt='diversity filter'
+                                src={this.state.diversitysrc}
+                                onClick={() => this.diversityFilter()}
+                            />
+                            <input
+                                id='sustainability'
+                                type='image'
+                                alt='sustainability filter'
+                                src={this.state.sustainabilitysrc}
+                                onClick={() => this.sustainabilityFilter()}
+                            />
+                        </div>
+                    ) : (
+                        <></>
+                    )}
 
                     <div className='search'>
                         <div className='search-container'>
@@ -1030,6 +1033,7 @@ ExhibitorList.propTypes = {
     onChangeExhibitorName: PropTypes.func,
     lastYear: PropTypes.bool,
     year: PropTypes.string,
+    showCV: PropTypes.bool,
 }
 
 /*let toExport

@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import ExhibitorList from '../../components/ExhibitorList'
 import './index.scss'
-/* Last edited by Nima 17-04-23 to add year alternatives */
+import Cat from '../../components/Cat'
+
+/* Last edited by Nima 17-05-12 to add year alternatives */
+/* This file loads the exhibitorlist component which pulls all the exhibitors from the AIS.
+Don't display unless we've passed the final registration date if the current year is selected */
 const Exhibitors = props => {
     const now = new Date() //current date
     const currentYear = now.getFullYear()
@@ -16,10 +20,9 @@ const Exhibitors = props => {
         const currentDate = new Date()
         const finalRegistration = new Date(currentYear, 8, 28) //Notice! This is the Final registration date. After this date we expect the companies to be in AIS
         setAfterFinalReg(currentDate > finalRegistration)
-        console.log(currentDate > finalRegistration)
     }, [])
-    const [displayList, setDisplayList] = useState(false)
-   
+    const [displayList, setDisplayList] = useState(true)
+
     return (
         <>
             <div className='buttonContainer'>
@@ -27,7 +30,9 @@ const Exhibitors = props => {
                     className={year === yearList[0] ? 'active' : ''}
                     onClick={() => {
                         setYear(yearList[0])
-                        setDisplayList(true)
+                        if (!isAfterFinalReg) {
+                            setDisplayList(false)
+                        }
                     }}
                 >
                     {yearList[0]}
@@ -36,7 +41,7 @@ const Exhibitors = props => {
                     className={year === yearList[1] ? 'active' : ''}
                     onClick={() => {
                         setYear(yearList[1])
-                        setDisplayList(false)
+                        setDisplayList(true)
                     }}
                 >
                     {yearList[1]}
@@ -45,15 +50,35 @@ const Exhibitors = props => {
                     className={year === yearList[2] ? 'active' : ''}
                     onClick={() => {
                         setYear(yearList[2])
-                        setDisplayList(false)
+                        setDisplayList(true)
                     }}
                 >
                     {yearList[2]}
                 </div>
             </div>
             <div className='exhibitors-container'>
-                <ExhibitorList {...props} year={year} />
-    
+                {displayList ? (
+                    <ExhibitorList {...props} year={year} /> //Display the Exibitor list
+                ) : (
+                    <div class='tooEarly'>
+                        <h1>Exhibitors</h1>
+                        <p>
+                            The exhibitors for this year will be posted after
+                            all the companies have registered. Please check out
+                            the{' '}
+                            <a
+                                onClick={() => {
+                                    setYear(yearList[1])
+                                    setDisplayList(true)
+                                }}
+                            >
+                                previous years exhibitors
+                            </a>{' '}
+                            in the meanwhile.
+                        </p>
+                        <Cat />
+                    </div>
+                )}
             </div>
         </>
     )

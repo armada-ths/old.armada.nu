@@ -808,7 +808,7 @@ const studentQuestions = [
     },
     {
         title: 'RECRUITMENT',
-        
+        img: '/assets/recruitment.png',
         body: [
             {
                 question: 'How do I become a part of the Armada team?',

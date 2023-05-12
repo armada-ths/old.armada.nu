@@ -17,6 +17,16 @@ header: /assets/library.png
                     </div>
 </div>
 
+<h2 id="why-ths-armada"> Why THS Armada? </h2>
+
+THS Armada is a unique opportunity for exhibitors to market themselves to students at the biggest technical university in Sweden.
+
+We create opportunities outside of the fair for our exhibitors to engage with and recruit students through interactive events, customized events and a banquet dinner amongst other activities.
+
+Our vision is to allow every student to meet their dream employer and give companies the possibility to find their next star.
+
+[Download](/assets/invitation/InvitationArmada2023.pdf) our invitation to learn more.
+
 <a class="anchor" id="important-dates"></a>
 
 <div class="info-border-box">

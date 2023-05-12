@@ -40,7 +40,7 @@ Download our invitation catalogue to find out more more. Welcome to Armada 2023!
 
 **Final Registration** - 18th of August - 28th of September
 
-**Event Weeks** - 30st of October - 17th of November
+**Event Weeks** - 30th of October - 17th of November
 
 **The Fair** - 21st-22nd of November
 

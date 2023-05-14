@@ -591,7 +591,7 @@ import React from 'react'
 const studentQuestions = [
     {
         title: 'ABOUT ARMADA',
-        img: '/assets/about.png',
+        img: '/assets/info.png',
         body: [
             {
                 question: 'What is THS Armada?',
@@ -663,7 +663,7 @@ const studentQuestions = [
     },
     {
         title: 'THE FAIR',
-        img: '/assets/TheFairlogo.png',
+        img: '/assets/Fairmap.png',
         body: [
             {
                 question: 'When is the Armada fair taking place?',
@@ -766,7 +766,7 @@ const studentQuestions = [
 
     {
         title: 'THE BANQUET',
-        img: '/assets/Bankettlogo.png',
+        img: '/assets/champagne-glass.png',
         body: [
             {
                 question: 'What is The Grand Armada Banquet?',
@@ -862,19 +862,19 @@ const studentQuestions = [
 
 const exhibitorQuestions = [
     {
-        title: 'GENERAL',
-        img: '/assets/favicon.ico',
+        title: 'REGISTRATION',
+        img: '/assets/contact-form.png',
         linkFAQ: 'faq-general',
         body: [
             {
                 question: 'How do I register for the fair?',
                 answer: (
                     <span>
-                        You can register at{' '}
+                        You can make your initial registration to the fair by logging in or making an account at {' '}
                         <a href='https://ais.armada.nu/register/'>
                             register.armada.nu
                         </a>{' '}
-                        or contact our Sales team at{' '}
+                        If you need any help or have any questions, please contact {' '}
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a>{' '}
                     </span>
                 ),
@@ -883,9 +883,9 @@ const exhibitorQuestions = [
                 question: 'When is the last day to register for the fair?',
                 answer: (
                     <span>
-                        The last day to complete your registration is on the{' '}
-                        <b>23rd of September</b>. If you did not complete the
-                        Initial Registration, with deadline on the 28th of May,
+                        The last day to make the Initial Registration is the{' '}
+                        <b>17:th of May</b>. If you did not complete the
+                        Initial Registration, with deadline on the 17th of May,
                         you need to contact{' '}
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to
                         be able to complete your registration.
@@ -893,6 +893,16 @@ const exhibitorQuestions = [
                 ),
             },
             {
+                question: 'What is the Initial Registration??',
+                answer: (
+                    <span>
+                       The Initial Registration is where the exhibitors apply to participate at Armada. 
+                       After closing initial registration the 17th of May, we will let you know if you have received
+                       a spot on the fair. 
+                    </span>
+                ),
+            },
+            /*{
                 question: 'Can our company get more exposure?',
                 /*oldanswer: <span>Yes, there are lots of ways to get more exposure for your company. For example, you can register for the partner kit which includes additional features during the fair, 
                         individual marketing and unlimited job adverts during the fair.
@@ -902,7 +912,7 @@ const exhibitorQuestions = [
                         <br/>
                         You can also market your company through Armada’s different social media channels and even have an Instagram Takeover. 
                          <br/> <br/>
-                        An individual event could also be of interest. Armada offers lectures, case evenings or a customized event of your choice. Contact our sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to work out what suits your company best. </span>,*/
+                        An individual event could also be of interest. Armada offers lectures, case evenings or a customized event of your choice. Contact our sales team at <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to work out what suits your company best. </span>,
                 answer: (
                     <span>
                         {' '}
@@ -917,16 +927,27 @@ const exhibitorQuestions = [
                         work out what suits your company best.{' '}
                     </span>
                 ),
+            }, */
+            {
+                question: 'How do I know if I get a spot on the fair?',
+                answer: (
+                    <span>
+                        After the closing of the Initial Registration on the 17th of May, 
+                        we will get back to all exhibitors and let you know if you have secured 
+                        a spot. We always prioritize earlier registrations. 
+                    </span>
+                ),
             },
             {
                 question: 'How do we become a partner?',
                 answer: (
                     <span>
-                        As a partner you will not only stand out from the crowd
-                        but also boost your employer branding through a variety
-                        of marketing towards our students. Note that there is a
-                        limited amount of companies that can sign up for the
-                        partner kit.
+                        In 2023, we have a limited Gold Package which 
+                        includes mention on the website, extra marketing, 
+                        included events and a bigger booth. By selecting “interested 
+                        in gold” when doing the initial registration at register.armada.nu, 
+                        you apply to become a gold exhibitor. If you are interested in a 
+                        deeper or more specific collaboration, send an email to 
                         <br /> To learn more, contact our sales team at{' '}
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a>.
                     </span>
@@ -936,8 +957,9 @@ const exhibitorQuestions = [
                 question: 'We would like more information, where do we turn?',
                 answer: (
                     <span>
-                        Head over to our{' '}
-                        <a href='https://armada.nu/contact'>contact page</a>.
+                        Contact{' '}
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> and we will
+                        answer any question.
                     </span>
                 ),
             },
@@ -946,7 +968,7 @@ const exhibitorQuestions = [
 
     {
         title: 'ABOUT ARMADA',
-        img: '/assets/favicon.ico',
+        img: '/assets/info.png',
         body: [
             {
                 question: 'What is THS Armada?',
@@ -968,29 +990,29 @@ const exhibitorQuestions = [
                         <a href='https://www.instagram.com/thsarmada/'>
                             social media
                         </a>{' '}
-                        to not miss out
+                        to not miss out.
                     </span>
                 ),
             },
             {
                 question: "When is this year's Armada fair?",
-                answer: '22nd & 23rd of November',
+                answer: 
+                <span>
+                       The opening hours of the fair is 21:st of November 10:00 - 16:00 
+                       and 22:nd of November 10:00 - 15:00. The Grand Banquet is on the 
+                       evening of the 21:st of November. 
+
+                    </span>
             },
             {
                 question: 'Where is THS Armada?',
                 answer: (
                     <span>
-                        The fair will be held in Nymble, which is the Student
-                        Union building at the Royal Institute of technology. The
-                        adress for the fair is Drottning Kristinas väg 15-19
-                        Stockholm and the opening hours will be between 10-16 on
-                        both days. <br />
-                        <br />
-                        Follow us on{' '}
-                        <a href='https://www.instagram.com/thsarmada/'>
-                            Instagram
-                        </a>{' '}
-                        to keep up on what we have in store.
+                        The fair will be held in Nymble, the Student Union 
+                        Building at KTH and in KTH Library. The address for 
+                        Nymble is Drottning Kristinas väg 15-19, 114 28 Stockholm. 
+                        The address for KTH Library is Osquars backe 31, 114 28 
+                        Stockholm.
                     </span>
                 ),
             },
@@ -1040,7 +1062,7 @@ const exhibitorQuestions = [
     },*/
     {
         title: 'MARKETING',
-        img: '/assets/favicon.ico',
+        img: '/assets/promotion.png',
         linkFAQ: 'faq-marketing',
         body: [
             {
@@ -1048,10 +1070,11 @@ const exhibitorQuestions = [
                     'Is it possible to add more marketing for our company?',
                 answer: (
                     <span>
-                        Yes, we offer Instagram and Facebook posts as well as
-                        Instagram takeovers. Contact our sales team to learn
-                        more,{' '}
-                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a>.
+                        Yes, we offer instagram and Facebook posts as well as 
+                        instagram takeovers. This year we are adding even more 
+                        new ways to market the exhibitors, so contact us at {' '}
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> {' '}
+                        to learn more!
                     </span>
                 ),
             },
@@ -1060,22 +1083,19 @@ const exhibitorQuestions = [
                     'Can our company market job offers etc through Armada?',
                 answer: (
                     <span>
-                        Yes! For starters, you can market your job offers during
-                        the fair. Add unlimited job offers if you have many
-                        interesting positions. You can also choose to market
-                        your job offers through Armada’s social media. Either
-                        via a post or via an Instagram takeover. Or why not have
-                        an event where you present your job offers and get the
-                        chance to meet KTH students at the same time?
+                        Yes! You can market your open positions in your fair booth, 
+                        and on our social media channels. You can also have an email 
+                        sent out to students, or organize an event to talk about your openings.
                         <br /> Contact our sales team at{' '}
-                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to
-                        find what suits your needs.
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> 
+                        and we can discuss what suits you best!
+
                     </span>
                 ),
             },
         ],
     },
-    {
+   /* {
         title: 'EVENTS',
         img: '/assets/favicon.ico',
         linkFAQ: 'faq-events',
@@ -1095,7 +1115,7 @@ const exhibitorQuestions = [
                 ),
             },
         ],
-    },
+    },*/
 ]
 
 export { studentQuestions, exhibitorQuestions }

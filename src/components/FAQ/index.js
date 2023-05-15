@@ -52,7 +52,7 @@ const FAQContainer = props => {
                             // console.log(topic.img)
                             return (
                                 <div
-                                    key={topic.title}
+                                    
                                     className='topic-container'
                                     id={topic.title}
                                     onClick={() => topicClicked(topic)}

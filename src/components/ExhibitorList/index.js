@@ -420,9 +420,7 @@ class ExhibitorList extends React.Component {
                 <div className='modal-container'>
                     <div className='modal-flex-1'>
                         <div className='modalimage-exhib'>
-                            {exhibitor.logo_squared === null ? (
-                                <></>
-                            ) : (
+                            {exhibitor.logo_squared != null && (
                                 <img
                                     src={exhibitor.logo_squared}
                                     alt={exhibitor.name + ' logo'}
@@ -877,7 +875,7 @@ class ExhibitorList extends React.Component {
                     {this.state.showModal
                         ? this.displayExhibitor(exhibitorToDisplay)
                         : null}
-                    {this.props.showCV ? (
+                    {this.props.showCV && (
                         <div
                             className={`filter-special ${
                                 this.props.lastYear ? 'display-none' : ''
@@ -898,8 +896,6 @@ class ExhibitorList extends React.Component {
                                 onClick={() => this.sustainabilityFilter()}
                             />
                         </div>
-                    ) : (
-                        <></>
                     )}
 
                     <div className='search'>
@@ -1057,9 +1053,7 @@ const ExhibitorItem = props => {
             onClick={() => props.showModal(props.exhibitor.name)}
         >
             <div className='image-container'>
-                {props.exhibitor.logo_squared === null ? (
-                    <></>
-                ) : (
+                {props.exhibitor.logo_squared != null && (
                     <img
                         alt={props.exhibitor.name}
                         src={props.exhibitor.logo_squared}

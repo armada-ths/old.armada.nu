@@ -15,12 +15,7 @@ const Exhibitors = props => {
         (currentYear - 1).toString(),
         (currentYear - 2).toString(),
     ]
-    const [isAfterFinalReg, setAfterFinalReg] = useState(false)
-    useEffect(() => {
-        const currentDate = new Date()
-        const finalRegistration = new Date(currentYear, 8, 28) //Notice! This is the Final registration date. After this date we expect the companies to be in AIS
-        setAfterFinalReg(currentDate > finalRegistration)
-    }, [])
+    const isAfterFinalReg = new Date() > new Date(currentYear, 8, 28)
     const [displayList, setDisplayList] = useState(false)
     const [displayCVFilter, setDisplayCVFilter] = useState(true) //This allows you to display the core values filters (green room and diversity room)
     return (

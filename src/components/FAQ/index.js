@@ -6,7 +6,8 @@ import PropTypes from 'prop-types'
 import { studentQuestions, exhibitorQuestions } from './FAQConst'
 import EmailForm from '../EmailForm'
 import './index.scss'
-
+/* Made by Christine and Laila 2023-05-16 */
+/* Edited by Nima 2023-05-16, remove excess and fix so that the right button was lit up by default */
 const FAQContainer = props => {
     const [faq, setFaq] = useState()
     const [questions, setQuestions] = useState(studentQuestions)
@@ -15,33 +16,32 @@ const FAQContainer = props => {
     const visibilityContactBtn = visible === true ? 'none' : 'block'
 
     useEffect(() => {
-        setFaq(questions[0]);
-    }, []);
-
-    useEffect(() => {
         if (props.type === 'student') {
             setQuestions(studentQuestions)
         } else if (props.type === 'exhibitor') {
             setQuestions(exhibitorQuestions)
         }
+        topicClicked(questions[0]) //light up the default topic button
     }, [questions, props.type])
 
-    function topicClicked(topic){
-        setFaq(topic);
-        const topicButtons = document.getElementsByClassName('topic-container');
-        for(const topicButton of topicButtons){
-            const topicId = topicButton.id;
-            if(topicId == topic.title){
-                topicButton.style.backgroundColor = "#00d790";
-            }
-            else{
-                topicButton.style.backgroundColor = "hsl(133, 54%, 93%)";
+    function topicClicked(topic) {
+        setFaq(topic)
+        const topicButtons = document.getElementsByClassName('topic-container')
+        for (const topicButton of topicButtons) {
+            const topicId = topicButton.id
+            if (topicId == topic.title) {
+                topicButton.style.backgroundColor = '#00d790'
+            } else {
+                topicButton.style.backgroundColor = 'hsl(133, 54%, 93%)'
             }
         }
     }
     return (
         <>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+            <meta
+                name='viewport'
+                content='width=device-width, initial-scale=1.0'
+            ></meta>
             <div className='FAQ-Container'>
                 <FAQHeader />
                 {/* <img alt='' className='terre' src={FAQBackground} /> */}
@@ -49,17 +49,19 @@ const FAQContainer = props => {
                 <div className='topics-container grid-container'>
                     {questions &&
                         questions.map(topic => {
-                            // console.log(topic.img)
+                            //console.log(studentQuestions[0])
                             return (
                                 <div
-                                    
                                     className='topic-container'
                                     id={topic.title}
                                     onClick={() => topicClicked(topic)}
                                     onKeyDown={() => setFaq(topic)}
                                     role='none'
                                 >
-                                    <img className='topic-icon' src={topic.img}></img>
+                                    <img
+                                        className='topic-icon'
+                                        src={topic.img}
+                                    ></img>
                                     <p className='topic-text'>{topic.title}</p>
                                 </div>
                             )
@@ -90,7 +92,8 @@ const FAQContainer = props => {
                     >
                         Contact us!
                     </button>
-                    <div className='contact-us'
+                    <div
+                        className='contact-us'
                         style={{
                             display: `${visibilityContactFrom}`,
                             marginBottom: '2em',

@@ -2,6 +2,14 @@
 @import '../../styles/global';
 /* Last edited by Nima Mehrabadi, changing FAQ to grid */
 
+.answers-wrap {
+    width: 100%;
+    background-image: url("/assets/22068755_2890283657654250_15852127_o.png");
+    background-size: cover;
+    // object-fit: cover;
+    padding-top: 10%;
+}
+
 .grid-container {
     display: grid;
     width: 100%;
@@ -10,9 +18,10 @@
 }
 
 .grid-container-answers {
-    display: grid;
-    width: 100%;
-    grid-template-columns: auto auto;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    // grid-template-columns: auto auto;
 }
 
 .accordion-homepage {
@@ -40,6 +49,12 @@
     position: relative;
 }
 
+.accordion-homepage .parent:first-child,
+.accordion-homepage .parent:first-child:not(.selected) > h2 {
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
+}
+
 .accordion-homepage .parent:last-child,
 .accordion-homepage .parent:last-child:not(.selected) > h2 {
     border-bottom-left-radius: 0.625rem;
@@ -51,13 +66,13 @@
     border-bottom-right-radius: 0.625rem;
 }
 
-.accordion-homepage h2 {
-    font-size: 0.875rem;
-    text-align: left;
-    padding: 1rem 3.25rem 1rem 4rem;
-}
+// .accordion-homepage h2 {
+//     font-size: 0.875rem;
+//     padding: 1rem 3.25rem 1rem 4rem;
+// }
 
 .accordion-homepage h2 {
+    text-align: left;
     background-color: #ffffff;
     color: #202124;
     font-size: 1rem;
@@ -159,23 +174,32 @@
     .topic-container:nth-child(5) {
         margin-left: 0%;
     }
+    .contact-us {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
 
 @media screen and (max-width: $breakpoint-pad) {
     .topics-container {
+        display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
     }
 }
 .topic-container {
-    border: 1px solid #c7c7c7;
+    border: 1px solid hsl(160, 100%, 40%);
+    background-color: hsl(133, 54%, 93%);
     box-sizing: border-box;
     border-radius: 2px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     cursor: pointer;
     text-align: center;
-    width: 150px;
-    height: 150px;
+    width: 230px;
+    height: 230px;
+    align-items: center;
 }
 
 .topic-container:hover {
@@ -186,16 +210,32 @@
     margin-right: 0%;
 }
 /* Changed this from fixed size pixels. Please move away from using pixels as font-size */
-.topic {
-    color: $melon;
+.topic-text {
     text-align: center;
     display: flex;
+    flex-direction: row;
     align-items: center;
     font-size: min(2vw, 1);
-    padding: 0.5rem;
+    // padding: 10%;
+    height: 50%;
+}
+
+.topic-icon {
+    width: 20%;
+    height: 20%;
+    margin-top: 10%;
+    display: block;
+    // margin-top: 10%;
 }
 
 .contactBtn {
     margin: 0 auto;
     margin-bottom: 2em;
+}
+
+.FAQ-Container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }

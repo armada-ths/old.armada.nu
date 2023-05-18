@@ -13,8 +13,6 @@
     }
 }
 
-
-
 .registration-buttons {
     display: flex;
     justify-content: space-evenly;
@@ -250,6 +248,21 @@ a.button-white:hover {
 
 .picture-card-text {
     max-width: 80%;
+}
+
+.info-bar {
+    display: flex;
+    background-color: $melon;
+    color: white;
+    padding: 20px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.info-bar-nr {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {

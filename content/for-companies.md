@@ -17,6 +17,7 @@ header: /assets/library.png
                     </div>
 </div>
 
+<div class="info-border-box">
 <h2 id="why-ths-armada"> Why THS Armada? </h2>
 
 THS Armada is a unique opportunity for exhibitors to market themselves to students at the biggest technical university in Sweden.
@@ -30,6 +31,7 @@ Our vision is to allow every student to meet their dream employer and give compa
 <div class = "registration-buttons">
     <a class="button button-melon" href="https://register.armada.nu">Register</a>
     <a class="button button-white" href="/contact">Contact</a>
+</div>
 </div>
 
 <a class="anchor" id="important-dates"></a>

@@ -13,6 +13,8 @@
     }
 }
 
+
+
 .registration-buttons {
     display: flex;
     justify-content: space-evenly;
@@ -232,6 +234,22 @@ a.button-white:hover {
     background-color: $melon;
     color: white;
     text-decoration: none;
+}
+
+.picture-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.room-icon {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 20px;
+}
+
+.picture-card-text {
+    max-width: 80%;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {

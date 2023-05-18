@@ -34,6 +34,37 @@ Our vision is to allow every student to meet their dream employer and give compa
 </div>
 </div>
 
+<h2>FOCUS ROOMS</h2>
+At THS Armada, we believe in Sustainability and Diversity as our core values. Students at KTH feels very passionate about
+these topics and consider them essential when choosing potential employers. To showcase our commitment, we've created
+Focus Rooms for companies that share our values of sustainability and diversity. These rooms will receive extra marketing
+attention and be highlighted during the fair. Additionally, we're organizing Focus Days where these companies can hold events
+with increased marketing opportunities. We're excited to provide a platform for companies who prioritize sustainability and
+diversity and look forward to promoting these values together.
+
+<div class="picture-card">
+    <img class="room-icon" src="/assets/armada-icon.png">
+    <div>
+        <h3>GREN ROOM</h3>
+        The Green Room will stand out visually, drawing extra attention to your organization. A place in
+        the Green Room will highlight your sustainability work, a topic that becomes more and more
+        important for students when looking for their future employer. In addition to this, THS Armada
+        will make sure that the focus rooms receive extra marketing to ensure that no student will miss
+        out on the experience.
+    </div>
+</div>
+
+<div class="picture-card">
+    <img class="room-icon" src="/assets/armada-icon.png">
+    <div class = "picture-card-text">
+        <h3>DIVERSITY ROOM</h3>
+        Students at KTH prioritise companies working with Diversity, thus another one of our core
+        values is Diversity. The Diversity Room will be given a central placement of the fair and will be
+        created to stand out visually. In addition, the focus rooms will receive extra marketing in our
+        channels.
+    </div>
+</div>
+
 <a class="anchor" id="important-dates"></a>
 
 <div class="info-border-box">

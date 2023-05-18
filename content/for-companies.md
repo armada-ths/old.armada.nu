@@ -34,6 +34,29 @@ Our vision is to allow every student to meet their dream employer and give compa
 </div>
 </div>
 
+<br/>
+
+<div class="info-bar">
+
+<div>
+    <p class="info-bar-nr">41st</p>
+    This year will be the 41st Armada in a row
+</div>
+
+<div>
+    <p class="info-bar-nr">100+</p>
+    Companies registerd at Armada
+</div>
+
+<div>
+    <p class="info-bar-nr">12000+</p>
+    Sweden's top engineering and architectural students
+</div>
+
+</div>
+
+<br/>
+
 <h2>FOCUS ROOMS</h2>
 At THS Armada, we believe in Sustainability and Diversity as our core values. Students at KTH feels very passionate about
 these topics and consider them essential when choosing potential employers. To showcase our commitment, we've created

@@ -54,7 +54,7 @@ Download our invitation catalogue to find out more more. Welcome to Armada 2023!
 <h2 id="registration"> Registration </h2>
 
 If you registered your company during the Initial Registration you can now go to [register.armada.nu](https://register.armada.nu) and complete your registration. The last day to do this is on the 23rd of September. <br />
-If you did not register your company during the Initial Registration, 11th of April - 20th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
+If you did not register your company during the Initial Registration, 22nd of March - 17th of May, you must contact [sales@armada.nu](mailto:sales@armada.nu) to get further information.
 
 </div>
 <br/> 

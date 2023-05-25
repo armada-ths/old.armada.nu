@@ -1,11 +1,47 @@
 @import '../../styles/variables';
+@import '../../styles/global';
+
+.tooEarly {
+    width: 100%;
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
 
 .exhibitors-container {
-    padding: 3em 0em;
     max-width: $page-width;
     margin: auto;
 
     @media screen and (max-width: $breakpoint-mobile-flipped) {
         padding: 3em 1em;
+    }
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    div {
+        margin: 1px;
+        background-color: #f7f7f2;
+        padding: 3rem 4rem 3rem 4rem;
+        color: $melon;
+        text-align: center;
+        border: 2px dotted $melon;
+        border-top: none;
+        font-size: larger;
+    }
+    div:hover {
+        background-color: #eeeee4;
+    }
+    .active {
+        border-color: red;
+        border-style: solid;
+        border-top: none;
     }
 }

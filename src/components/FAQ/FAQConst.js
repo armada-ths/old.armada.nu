@@ -870,11 +870,13 @@ const exhibitorQuestions = [
                 question: 'How do I register for the fair?',
                 answer: (
                     <span>
-                        You can make your initial registration to the fair by logging in or making an account at {' '}
+                        You can make your initial registration to the fair by
+                        logging in or making an account at{' '}
                         <a href='https://ais.armada.nu/register/'>
                             register.armada.nu
                         </a>{' '}
-                        If you need any help or have any questions, please contact {' '}
+                        If you need any help or have any questions, please
+                        contact{' '}
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a>{' '}
                     </span>
                 ),
@@ -884,9 +886,9 @@ const exhibitorQuestions = [
                 answer: (
                     <span>
                         The last day to make the Initial Registration is the{' '}
-                        <b>17:th of May</b>. If you did not complete the
-                        Initial Registration, with deadline on the 17th of May,
-                        you need to contact{' '}
+                        <b>17:th of May</b>. If you did not complete the Initial
+                        Registration, with deadline on the 17th of May, you need
+                        to contact{' '}
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to
                         be able to complete your registration.
                     </span>
@@ -896,9 +898,10 @@ const exhibitorQuestions = [
                 question: 'What is the Initial Registration??',
                 answer: (
                     <span>
-                       The Initial Registration is where the exhibitors apply to participate at Armada. 
-                       After closing initial registration the 17th of May, we will let you know if you have received
-                       a spot on the fair. 
+                        The Initial Registration is where the exhibitors apply
+                        to participate at Armada. After closing initial
+                        registration the 17th of May, we will let you know if
+                        you have received a spot on the fair.
                     </span>
                 ),
             },
@@ -932,9 +935,10 @@ const exhibitorQuestions = [
                 question: 'How do I know if I get a spot on the fair?',
                 answer: (
                     <span>
-                        After the closing of the Initial Registration on the 17th of May, 
-                        we will get back to all exhibitors and let you know if you have secured 
-                        a spot. We always prioritize earlier registrations. 
+                        After the closing of the Initial Registration on the
+                        17th of May, we will get back to all exhibitors and let
+                        you know if you have secured a spot. We always
+                        prioritize earlier registrations.
                     </span>
                 ),
             },
@@ -942,12 +946,13 @@ const exhibitorQuestions = [
                 question: 'How do we become a partner?',
                 answer: (
                     <span>
-                        In 2023, we have a limited Gold Package which 
-                        includes mention on the website, extra marketing, 
-                        included events and a bigger booth. By selecting “interested 
-                        in gold” when doing the initial registration at register.armada.nu, 
-                        you apply to become a gold exhibitor. If you are interested in a 
-                        deeper or more specific collaboration, send an email to 
+                        In 2023, we have a limited Gold Package which includes
+                        mention on the website, extra marketing, included events
+                        and a bigger booth. By selecting “interested in gold”
+                        when doing the initial registration at
+                        register.armada.nu, you apply to become a gold
+                        exhibitor. If you are interested in a deeper or more
+                        specific collaboration, send an email to
                         <br /> To learn more, contact our sales team at{' '}
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a>.
                     </span>
@@ -958,8 +963,8 @@ const exhibitorQuestions = [
                 answer: (
                     <span>
                         Contact{' '}
-                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> and we will
-                        answer any question.
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> and
+                        we will answer any question.
                     </span>
                 ),
             },
@@ -996,23 +1001,23 @@ const exhibitorQuestions = [
             },
             {
                 question: "When is this year's Armada fair?",
-                answer: 
-                <span>
-                       The opening hours of the fair is 21:st of November 10:00 - 16:00 
-                       and 22:nd of November 10:00 - 15:00. The Grand Banquet is on the 
-                       evening of the 21:st of November. 
-
+                answer: (
+                    <span>
+                        The opening hours of the fair is 21:st of November 10:00
+                        - 16:00 and 22:nd of November 10:00 - 15:00. The Grand
+                        Banquet is on the evening of the 21:st of November.
                     </span>
+                ),
             },
             {
                 question: 'Where is THS Armada?',
                 answer: (
                     <span>
-                        The fair will be held in Nymble, the Student Union 
-                        Building at KTH and in KTH Library. The address for 
-                        Nymble is Drottning Kristinas väg 15-19, 114 28 Stockholm. 
-                        The address for KTH Library is Osquars backe 31, 114 28 
-                        Stockholm.
+                        The fair will be held in Nymble, the Student Union
+                        Building at KTH and in KTH Library. The address for
+                        Nymble is Drottning Kristinas väg 15-19, 114 28
+                        Stockholm. The address for KTH Library is Osquars backe
+                        31, 114 28 Stockholm.
                     </span>
                 ),
             },
@@ -1070,11 +1075,11 @@ const exhibitorQuestions = [
                     'Is it possible to add more marketing for our company?',
                 answer: (
                     <span>
-                        Yes, we offer instagram and Facebook posts as well as 
-                        instagram takeovers. This year we are adding even more 
-                        new ways to market the exhibitors, so contact us at {' '}
-                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> {' '}
-                        to learn more!
+                        Yes, we offer instagram and Facebook posts as well as
+                        instagram takeovers. This year we are adding even more
+                        new ways to market the exhibitors, so contact us at{' '}
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to
+                        learn more!
                     </span>
                 ),
             },
@@ -1083,19 +1088,19 @@ const exhibitorQuestions = [
                     'Can our company market job offers etc through Armada?',
                 answer: (
                     <span>
-                        Yes! You can market your open positions in your fair booth, 
-                        and on our social media channels. You can also have an email 
-                        sent out to students, or organize an event to talk about your openings.
+                        Yes! You can market your open positions in your fair
+                        booth, and on our social media channels. You can also
+                        have an email sent out to students, or organize an event
+                        to talk about your openings.
                         <br /> Contact our sales team at{' '}
-                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> 
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a>
                         and we can discuss what suits you best!
-
                     </span>
                 ),
             },
         ],
     },
-   /* {
+    /* {
         title: 'EVENTS',
         img: '/assets/favicon.ico',
         linkFAQ: 'faq-events',

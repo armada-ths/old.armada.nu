@@ -11,7 +11,6 @@ const TierlistInfo = ({ handleHover, itemHovered }) => {
         'Host an Armada Run competition:',
         'Field visit or Panel discussion:',
         'Marketed as (on social media & website):',
-        'Be a part of armada competition:',
     ]
     return (
         <div className='tierlistInfo'>

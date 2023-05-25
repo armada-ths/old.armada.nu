@@ -38,12 +38,12 @@ const ForCompanies = props => {
     console.log(headingData)
     return (
         <>
-            <div class='TOC'>
+            {/* <div class='TOC'>
                 <SideBarContents headings={headingData} />
-            </div>
-            <div class='TOCMobile'>
+            </div> */}
+            {/* <div class='TOCMobile'>
                 <ConentsMobile headings={headingData} />
-            </div>
+            </div> */}
             <div className='info-container'>
                 <div className='page-container assign-button-right'>
                     <Page {...props} />

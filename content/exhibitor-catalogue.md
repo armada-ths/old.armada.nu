@@ -43,14 +43,6 @@ header: /assets/for_exhibitors.jpg
 <br />
 <br />
 
-<h3 style="text-align: center;">Armada Competition 2022</h3>
-<p style="text-align: center;">Get rewarded while being active and having fun at the fair. All you need is to register to join the Armada Competition and visit the participating companies for the challenge.  The company will later validate you by asking you to scan a code. This code will later be your ticket. Gather tickets for a chance to win BIG prizes!</p>
-
-<p style="text-align: center;">Read more about the competition <a href="https://armada.nu/armadacompetition">here</a>.</p>
-
-<br />
-<br />
-
 <h3 style="text-align: center;">Individual meetings</h3>
 <p style="text-align: center;">All successful candidates for individual meetings should have received their schedules. Present yourself at the information desk in the library and you will be led to the meeting room. Try to come in good time for the meeting!</p>
 <p style="text-align: center;">Best of luck to you all!</p>

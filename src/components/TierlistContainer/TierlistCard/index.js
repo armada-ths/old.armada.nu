@@ -22,7 +22,6 @@ const exhibitor = {
     armada_run: false,
     field_visit_or_panel_discussion: 'neither',
     marketed_as: 'exhibitor',
-    armada_competition: false,
 }
 
 const silver = {
@@ -32,7 +31,6 @@ const silver = {
     armada_run: false,
     field_visit_or_panel_discussion: 'either',
     marketed_as: 'silver',
-    armada_competition: false,
 }
 
 const gold = {
@@ -40,7 +38,6 @@ const gold = {
     booth_size: '2x5',
     field_visit_or_panel_discussion: 'both',
     marketed_as: 'gold',
-    armada_competition: true,
     armada_run: true,
 }
 

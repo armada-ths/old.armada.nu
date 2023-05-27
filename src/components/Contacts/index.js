@@ -14,7 +14,6 @@ function getInfoByName(name, firstName) {
     //Check out convertcsv.json. We quickly manually generated this from taking the excel in drive, deleting columns and using: https://www.convertcsv.com/csv-to-json.htm
     const cachedPg = data.find(item => item.Name === name)
     if (cachedPg) {
-        console.log([cachedPg['Armada Email'], cachedPg['Group']])
         return [cachedPg['Armada Email'], cachedPg['Group']]
     } else {
         const cachedPg = data.find(item => item.Name.includes(firstName)) //If we don't find it by full name try the first name.
@@ -29,68 +28,92 @@ function getInfoByName(name, firstName) {
 
 const Contacts = () => {
     const [allPg, setAllPg] = useState([])
+    const [groups, setGroups] = useState([])
+    const order = [
+        'Project Manager',
+        'Business Relations',
+        'Career Fair and Logistics',
+        'Career Fair and Logistics -  Logistics',
+        'Career Fair and Logistics - Career Fair',
+        'Career Fair and Logistics - Events',
+        'Career Fair and Logistics - Events',
+        'Career Fair and Logistics - Service',
+        'Core Values',
+        'IT',
+        'IT - Internal Systems',
+        'IT - Web',
+        'Logistics and Fair',
+        'Marketing and Communication',
+        'Marketing and Communication - Banquet',
+        'Marketing and Communication - HR',
+        'Sustainability and Diversity',
+    ]
+
+    const compareGroupFn = (a, b) => {
+        const indexA = order.indexOf(a.name)
+        const indexB = order.indexOf(b.name)
+        return indexA - indexB
+    }
+
     useEffect(() => {
-        const pgProfiles = []
-        axios.get('https://ais.armada.nu/api/organization/').then(res => {
-            //filters out people who have not yet been recruited and are not PG
-            res.data.filter(item => {
-                if (item.people.length > 0) {
-                    const pgRole = item.role
-                    const pg = item.people.filter(person =>
-                        person.role.includes('Project Group')
-                    )
-                    if (pg.length > 0) {
-                        pg.forEach(person => {
-                            const pgObject = person
-                            const firstIndex = pgObject.name.indexOf(' ')
-                            const pgfirstName = pgObject.name.substr(
-                                0,
-                                firstIndex
-                            )
-                            const pgsurName = pgObject.name.substr(
-                                firstIndex + 1
-                            )
-                            const [pgEmail, pgGroup] = getInfoByName(
-                                pgObject.name,
-                                pgfirstName
-                            )
-                            const fixedPgObject = {
-                                ...pgObject,
-                                picture: pgObject.picture.replace(
-                                    'https://ais.armada.nu/', //remove the error with the image url
-                                    ''
-                                ),
-                                firstName: pgfirstName, //we split into first name and last name to be able to use this for matching later
-                                surName: pgsurName,
-                                email: pgEmail, //note this might return null
-                                group: pgGroup, //this also
-                            }
-                            fixedPgObject.role = pgRole.substring(16) //This adds a field "role" that was previously in the overall object (not the "people" field) back to the "people" field
-                            setAllPg(oldArray => [...oldArray, fixedPgObject]) //Each item from the API includes "people" which is a length 1 array
-                        })
+        // const pgProfiles = []
+        // var names = []
+        axios.get('https://ais.armada.nu/api/organization/v2').then(res => {
+            //res contains all people
+            res.data.forEach(team => {
+                // names.push(team.name)
+                if (team.people.length > 0) {
+                    if (team.name === 'Business Relations') {
+                        setGroups(old => [team, ...old])
                     }
+                    if (team.name === 'Project Manager') {
+                        setGroups(old => [team, ...old])
+                    }
+                    setGroups(old => [...old, team])
                 }
-                return null
             })
+            console.log(groups)
+            // const groupsSorted = groups.sort(compareGroupFn)
+            // console.log(groupsSorted)
+            // setGroups(groupsSorted)
+            // setAllPg(pgProfiles)
         })
-        setAllPg(pgProfiles)
     }, [])
 
-    const createCards = groupName => {
-        console.log(allPg)
-        return allPg
-            .filter(item => item.group === groupName)
-            .map(armadian => (
-                <ContactCard
-                    name={armadian.name}
-                    linkedInUrl={armadian.linkedin_url}
-                    imageUrl={armadian.picture}
-                    //localImage={path + item.firstName + '.jpg'}
-                    title={armadian.role}
-                    email={armadian.email ?? ''}
-                    emoji={''}
-                />
-            ))
+    const createCard = armadian => {
+        // console.log(armadian.name)
+        return (
+            <ContactCard
+                key={armadian.id}
+                name={armadian.name}
+                linkedInUrl={armadian.linkedin_url}
+                imageUrl={armadian.picture}
+                //localImage={path + item.firstName + '.jpg'}
+                title={armadian.role}
+                email={armadian.email ?? ''}
+                emoji={''}
+            />
+        )
+    }
+
+    const createCards = group => {
+        return group.people.map(person => {
+            // console.log(person)
+            return createCard(person)
+        })
+        // return allPg
+        //     .filter(item => item.group === groupName)
+        //     .map(armadian => (
+        //         <ContactCard
+        //             name={armadian.name}
+        //             linkedInUrl={armadian.linkedin_url}
+        //             imageUrl={armadian.picture}
+        //             //localImage={path + item.firstName + '.jpg'}
+        //             title={armadian.role}
+        //             email={armadian.email ?? ''}
+        //             emoji={''}
+        //         />
+        //     ))
         /*return allPg.slice(start, end).map(item => {
             return (
                 <ContactCard
@@ -105,11 +128,23 @@ const Contacts = () => {
             )
         }) */
     }
+
     return (
         <div className='contacts'>
             <h1>Contact ARMADA</h1>
-
-            <div className='contact-list'>
+            {groups.map(group => {
+                // console.log(group)
+                return (
+                    <div className='contact-list'>
+                        <h2 className='backgroundTitle'>{group.name}</h2>
+                        <Suspense fallback={<div>Loading...</div>}>
+                            {createCards(group)}
+                        </Suspense>
+                        <div className='line' />
+                    </div>
+                )
+            })}
+            {/*<div className='contact-list'>
                 <h2 className='backgroundTitle'>Project Manager</h2>
                 <Suspense fallback={<div>Loading...</div>}>
                     {createCards('Project Manager')}
@@ -157,7 +192,7 @@ const Contacts = () => {
                     {createCards(null)}
                 </Suspense>
                 <div className='line' />
-            </div>
+        </div>*/}
         </div>
     )
 }

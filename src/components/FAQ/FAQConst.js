@@ -906,6 +906,8 @@ const exhibitorQuestions = [
                         </a>{' '}
                         If you need any help or have any questions, please
                         contact{' '}
+                        If you need any help or have any questions, please
+                        contact{' '}
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a>{' '}
                     </span>
                 ),
@@ -968,6 +970,10 @@ const exhibitorQuestions = [
                         17th of May, we will get back to all exhibitors and let
                         you know if you have secured a spot. We always
                         prioritize earlier registrations.
+                        After the closing of the Initial Registration on the
+                        17th of May, we will get back to all exhibitors and let
+                        you know if you have secured a spot. We always
+                        prioritize earlier registrations.
                     </span>
                 ),
             },
@@ -975,6 +981,13 @@ const exhibitorQuestions = [
                 question: 'How do we become a partner?',
                 answer: (
                     <span>
+                        In 2023, we have a limited Gold Package which includes
+                        mention on the website, extra marketing, included events
+                        and a bigger booth. By selecting “interested in gold”
+                        when doing the initial registration at
+                        register.armada.nu, you apply to become a gold
+                        exhibitor. If you are interested in a deeper or more
+                        specific collaboration, send an email to
                         In 2023, we have a limited Gold Package which includes
                         mention on the website, extra marketing, included events
                         and a bigger booth. By selecting “interested in gold”
@@ -992,6 +1005,8 @@ const exhibitorQuestions = [
                 answer: (
                     <span>
                         Contact{' '}
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> and
+                        we will answer any question.
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a> and
                         we will answer any question.
                     </span>
@@ -1038,13 +1053,24 @@ const exhibitorQuestions = [
                         The opening hours of the fair is 21:st of November 10:00
                         - 16:00 and 22:nd of November 10:00 - 15:00. The Grand
                         Banquet is on the evening of the 21:st of November.
+                answer: (
+                    <span>
+                        The opening hours of the fair is 21:st of November 10:00
+                        - 16:00 and 22:nd of November 10:00 - 15:00. The Grand
+                        Banquet is on the evening of the 21:st of November.
                     </span>
+                ),
                 ),
             },
             {
                 question: 'Where is THS Armada?',
                 answer: (
                     <span>
+                        The fair will be held in Nymble, the Student Union
+                        Building at KTH and in KTH Library. The address for
+                        Nymble is Drottning Kristinas väg 15-19, 114 28
+                        Stockholm. The address for KTH Library is Osquars backe
+                        31, 114 28 Stockholm.
                         The fair will be held in Nymble, the Student Union
                         Building at KTH and in KTH Library. The address for
                         Nymble is Drottning Kristinas väg 15-19, 114 28
@@ -1115,6 +1141,11 @@ const exhibitorQuestions = [
                         new ways to market the exhibitors, so contact us at{' '}
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to
                         learn more!
+                        Yes, we offer instagram and Facebook posts as well as
+                        instagram takeovers. This year we are adding even more
+                        new ways to market the exhibitors, so contact us at{' '}
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to
+                        learn more!
                     </span>
                 ),
             },
@@ -1127,7 +1158,12 @@ const exhibitorQuestions = [
                         booth, and on our social media channels. You can also
                         have an email sent out to students, or organize an event
                         to talk about your openings.
+                        Yes! You can market your open positions in your fair
+                        booth, and on our social media channels. You can also
+                        have an email sent out to students, or organize an event
+                        to talk about your openings.
                         <br /> Contact our sales team at{' '}
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a>
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a>
                         and we can discuss what suits you best!
                     </span>

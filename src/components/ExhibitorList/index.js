@@ -6,6 +6,7 @@ import Modal from '../Modal'
 import Loading from '../Loading'
 import Cat from '../Cat'
 import Select from 'react-select'
+import { Link } from 'gatsby'
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
 
@@ -43,8 +44,8 @@ class ExhibitorList extends React.Component {
             diversityfilter: false,
             sustainabilityfilter: false,
             startupfilter: false,
-            diversitysrc: '/assets/diversity_a.svg',
-            sustainabilitysrc: '/assets/sustainability.svg',
+            diversitysrc: '/assets/diversity/diversity_a.svg',
+            sustainabilitysrc: '/assets/sustainability/sustainability.svg',
             location: 'All',
             sector: 'All',
             locations: [
@@ -344,17 +345,15 @@ class ExhibitorList extends React.Component {
         )
         this.setState({ sectors: sortedSectors })
     }
-
-    //currently only deals w/ getting data from api (unsure)
-    componentDidMount() {
-        // only called when exhibitor page is created or updated.
+    apiFetcher(props, update) {
+        const yearParam = update ? '&year=' + props.year : ''
         axios
             .get(
                 ais +
                     `api/exhibitors?img alt=''_placeholder=true${
                         this.props.lastYear
                             ? '&year=' + this.state.previousYear
-                            : ''
+                            : yearParam
                     }`
             )
             .then(res => {
@@ -369,14 +368,23 @@ class ExhibitorList extends React.Component {
                     />
                 ))
                 this.setState({ exhibitors, exhibitorList, isLoading: false }) // component saves its own data --- What does this mean?? //Nima
+
                 // Get from url path the GET params ?id=number, to know what event to display
                 if (this.props.exhibitorName !== undefined) {
                     this.setState({
-                        exhibitorName: this.props.exhibitorName,
+                        exhibitorName: props.exhibitorName,
                         showModal: true,
                     })
                 }
             })
+    }
+    componentDidUpdate(props) {
+        this.apiFetcher(props, true)
+    }
+    //currently only deals w/ getting data from api (unsure)
+    componentDidMount(props) {
+        // only called when exhibitor page is created or updated.
+        this.apiFetcher(props, false)
     }
 
     //search
@@ -403,7 +411,6 @@ class ExhibitorList extends React.Component {
 
     showModal = exhibitorName => {
         this.setState({ showModal: !this.state.showModal, exhibitorName })
-        this.props.onChangeExhibitorName(exhibitorName)
     }
 
     displayExhibitor = exhibitor => {
@@ -413,10 +420,12 @@ class ExhibitorList extends React.Component {
                 <div className='modal-container'>
                     <div className='modal-flex-1'>
                         <div className='modalimage-exhib'>
-                            <img
-                                src={ais + exhibitor.logo_squared}
-                                alt={exhibitor.name + ' logo'}
-                            />
+                            {exhibitor.logo_squared != null && (
+                                <img
+                                    src={exhibitor.logo_squared}
+                                    alt={exhibitor.name + ' logo'}
+                                />
+                            )}
                         </div>
                         <h1 className='modal-title'>{exhibitor.name}</h1>
                         <div>
@@ -468,14 +477,14 @@ class ExhibitorList extends React.Component {
                                         <img
                                             alt=''
                                             className='special'
-                                            src='/assets/diversity_a.svg'
+                                            src='/assets/diversity/diversity_a.svg'
                                         />
                                     ) : null}
                                     {exhibitor.sustainability ? (
                                         <img
                                             alt=''
                                             className='special'
-                                            src='/assets/sustainability.svg'
+                                            src='/assets/sustainability/sustainability.svg'
                                         />
                                     ) : null}
                                 </div>
@@ -658,10 +667,10 @@ class ExhibitorList extends React.Component {
         let diversitysrc = this.state.diversitysrc
         if (diversityfilter === false) {
             diversityfilter = true
-            diversitysrc = '/assets/diversity_selected.svg'
+            diversitysrc = '/assets/diversity/diversity_selected.svg'
         } else if (diversityfilter === true) {
             diversityfilter = false
-            diversitysrc = '/assets/diversity_a.svg'
+            diversitysrc = '/assets/diversity/diversity_a.svg'
         }
         this.setState({ diversityfilter })
         this.setState({ diversitysrc })
@@ -673,10 +682,11 @@ class ExhibitorList extends React.Component {
         let sustainabilitysrc = this.state.sustainabilitysrc
         if (sustainabilityfilter === false) {
             sustainabilityfilter = true
-            sustainabilitysrc = '/assets/sustainability_selected.svg'
+            sustainabilitysrc =
+                '/assets/sustainability/sustainability_selected.svg'
         } else if (sustainabilityfilter === true) {
             sustainabilityfilter = false
-            sustainabilitysrc = '/assets/sustainability.svg'
+            sustainabilitysrc = '/assets/sustainability/sustainability.svg'
         }
         this.setState({ sustainabilityfilter })
         this.setState({ sustainabilitysrc })
@@ -700,6 +710,10 @@ class ExhibitorList extends React.Component {
     render() {
         // Here you decide if list of exhibitors should be displayed or not
         let showExhibitors = true
+        let thisYear = new Date().getFullYear().toString()
+        if (this.year === thisYear) {
+            showExhibitors = false
+        }
         let exhibitorToDisplay = this.state.exhibitors.filter(
             exhibitor => exhibitor.name === this.state.exhibitorName
         )[0]
@@ -861,27 +875,28 @@ class ExhibitorList extends React.Component {
                     {this.state.showModal
                         ? this.displayExhibitor(exhibitorToDisplay)
                         : null}
-
-                    <div
-                        className={`filter-special ${
-                            this.props.lastYear ? 'display-none' : ''
-                        }`}
-                    >
-                        <input
-                            id='diversity'
-                            type='image'
-                            alt='diversity filter'
-                            src={this.state.diversitysrc}
-                            onClick={() => this.diversityFilter()}
-                        />
-                        <input
-                            id='sustainability'
-                            type='image'
-                            alt='sustainability filter'
-                            src={this.state.sustainabilitysrc}
-                            onClick={() => this.sustainabilityFilter()}
-                        />
-                    </div>
+                    {this.props.showCV && (
+                        <div
+                            className={`filter-special ${
+                                this.props.lastYear ? 'display-none' : ''
+                            }`}
+                        >
+                            <input
+                                id='diversity'
+                                type='image'
+                                alt='diversity filter'
+                                src={this.state.diversitysrc}
+                                onClick={() => this.diversityFilter()}
+                            />
+                            <input
+                                id='sustainability'
+                                type='image'
+                                alt='sustainability filter'
+                                src={this.state.sustainabilitysrc}
+                                onClick={() => this.sustainabilityFilter()}
+                            />
+                        </div>
+                    )}
 
                     <div className='search'>
                         <div className='search-container'>
@@ -952,9 +967,18 @@ class ExhibitorList extends React.Component {
                         </div>
                     </div>
 
-                    {/* <div className="supercontainer">
-              <p className="matching_link">Pssst! Find your perfect company by using Armada's new <Link className="matching_link_style" to="/matching">matching functionality!</Link></p>
-            </div> */}
+                    {/*<div className='supercontainer'>
+                        <p className='matching_link'>
+                            Pssst! Find your perfect company by using Armada's
+                            new{' '}
+                            <Link
+                                className='matching_link_style'
+                                to='/matching'
+                            >
+                                matching functionality!
+                            </Link>
+                        </p>
+                        </div>*/}
 
                     {/* TODO: everything should be dynamic instead of hard-coded */}
 
@@ -1004,6 +1028,8 @@ ExhibitorList.propTypes = {
     exhibitorName: PropTypes.string,
     onChangeExhibitorName: PropTypes.func,
     lastYear: PropTypes.bool,
+    year: PropTypes.string,
+    showCV: PropTypes.bool,
 }
 
 /*let toExport
@@ -1027,19 +1053,27 @@ const ExhibitorItem = props => {
             onClick={() => props.showModal(props.exhibitor.name)}
         >
             <div className='image-container'>
-                <img alt='' src={ais + props.exhibitor.logo_squared} />
+                {props.exhibitor.logo_squared != null && (
+                    <img
+                        alt={props.exhibitor.name}
+                        src={props.exhibitor.logo_squared}
+                    />
+                )}
             </div>
             <p> {props.exhibitor.name} </p>
             {props.exhibitor.location_special === 'Diversity Room' ? (
                 <div className='corner-special'>
-                    <img alt='' src='/assets/diversity-black-nolabel.png' />
+                    <img
+                        alt=''
+                        src='/assets/diversity/diversity-black-nolabel.png'
+                    />
                 </div>
             ) : null}
             {props.exhibitor.location_special === 'Green Room' ? (
                 <div className='corner-special'>
                     <img
                         alt=''
-                        src='/assets/sustainability-black-nolabel.png'
+                        src='/assets/sustainability/sustainability-black-nolabel.png'
                     />
                 </div>
             ) : null}

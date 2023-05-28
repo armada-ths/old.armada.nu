@@ -50,9 +50,10 @@
             justify-content: space-around;
 
             .card-name {
+                width: 80%;
                 color: $melon;
                 font-weight: 400;
-                font-size: 20px;
+                font-size: 100%;
                 line-height: 24px;
                 text-align: left; //start moving away from using default text-align: justify as this breaks a lot of things
             }
@@ -61,11 +62,11 @@
                 color: $melon;
                 font-size: 14px;
                 margin-top: 0px;
-                line-height: 8px;
+                line-height: 16px;
             }
 
             .linkedin-logo {
-                bottom: 10%;
+                bottom: 70%;
                 left: 80%;
                 position: absolute;
                 margin: 4px 10px 1px 10px;

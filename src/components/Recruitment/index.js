@@ -127,6 +127,7 @@ const Recruitment = () => {
                                             'https://ais.armada.nu' +
                                             recruitmentLink
                                         }
+                                        target='_blank'
                                     >
                                         <button>APPLY HERE</button>
                                     </a>

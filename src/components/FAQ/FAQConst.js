@@ -607,7 +607,10 @@ const studentQuestions = [
                         with a career fair at Nymble, the building of the
                         student union at the Royal Institute of Technology. In
                         addition, we are currently having a coffee campaign by{' '}
-                        <a href='https://www.google.com/maps/dir//kth+entre/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x465f9d402a3b8871:0xcc80b8bee19d7ff8?sa=X&ved=2ahUKEwi_w7P7s5H6AhUQiIsKHeMjCqgQ9Rd6BAheEAQ'>
+                        <a
+                            href='https://www.google.com/maps/dir//kth+entre/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x465f9d402a3b8871:0xcc80b8bee19d7ff8?sa=X&ved=2ahUKEwi_w7P7s5H6AhUQiIsKHeMjCqgQ9Rd6BAheEAQ'
+                            target='_blank'
+                        >
                             KTH Entre
                         </a>{' '}
                         between 11:30 and 13:30 where we will introduce Armada
@@ -617,12 +620,17 @@ const studentQuestions = [
                         between the 31st of October to the 18th of November
                         where you have the chance to attend lunch lectures, case
                         evenings, and much more. Make sure to follow us on{' '}
-                        <a href='https://www.instagram.com/thsarmada/'>
+                        <a
+                            href='https://www.instagram.com/thsarmada/'
+                            target='_blank'
+                        >
                             social media
                         </a>{' '}
                         and check out the{' '}
-                        <a href='https://armada.nu/events'>events page</a> to
-                        not miss out on any of the upcoming events.
+                        <a href='https://armada.nu/events' target='_blank'>
+                            events page
+                        </a>{' '}
+                        to not miss out on any of the upcoming events.
                     </span>
                 ),
             },
@@ -639,7 +647,10 @@ const studentQuestions = [
                         <br />
                         <br />
                         Follow us on{' '}
-                        <a href='https://www.instagram.com/thsarmada/'>
+                        <a
+                            href='https://www.instagram.com/thsarmada/'
+                            target='_blank'
+                        >
                             Instagram
                         </a>{' '}
                         to keep up on what we have in store.{' '}
@@ -651,11 +662,17 @@ const studentQuestions = [
                 answer: (
                     <span>
                         Follow us on{' '}
-                        <a href='https://www.facebook.com/thsarmada'>
+                        <a
+                            href='https://www.facebook.com/thsarmada'
+                            target='_blank'
+                        >
                             Facebook
                         </a>{' '}
                         to not miss out on any events. To register for an event,
-                        check out the <a href='/events/'>event tab</a>
+                        check out the{' '}
+                        <a href='/events/' target='_blank'>
+                            event tab
+                        </a>
                     </span>
                 ),
             },
@@ -700,7 +717,10 @@ const studentQuestions = [
                 answer: (
                     <span>
                         You can find previous exhibitors{' '}
-                        <a href='https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64'>
+                        <a
+                            href='https://event.armada.nu/sv/event/5150?fbclid=IwAR3jFscNx0HHvsyzGGhac5F1nR74ONKVffxtfivbQZuTwgu2b12-NYriQ64'
+                            target='_blank'
+                        >
                             here
                         </a>
                     </span>
@@ -817,13 +837,16 @@ const studentQuestions = [
                         You apply! Armada recruits three times a year.
                         Applications for hosts are now open, make sure apply
                         before it's too late. Follow us on{' '}
-                        <a href='https://www.instagram.com/thsarmada/'>
+                        <a
+                            href='https://www.instagram.com/thsarmada/'
+                            target='_blank'
+                        >
                             Instagram
                         </a>{' '}
                         to not miss any important dates.
                         <br /> <br></br>Do you want to know more about the
                         Armada organisation? Check out the{' '}
-                        <a href='https://armada.nu/recruitment'>
+                        <a href='https://armada.nu/recruitment' target='_blank'>
                             Recruitment tab
                         </a>{' '}
                         to see what role suits you the best.
@@ -845,7 +868,10 @@ const studentQuestions = [
                         can contact the Project Manager at{' '}
                         <a href='mailto:a@armada.nu'>a@armada.nu</a> or follow
                         us on{' '}
-                        <a href='https://www.instagram.com/thsarmada/'>
+                        <a
+                            href='https://www.instagram.com/thsarmada/'
+                            target='_blank'
+                        >
                             social media
                         </a>
                         .
@@ -872,9 +898,14 @@ const exhibitorQuestions = [
                     <span>
                         You can make your initial registration to the fair by
                         logging in or making an account at{' '}
-                        <a href='https://ais.armada.nu/register/'>
+                        <a
+                            href='https://ais.armada.nu/register/'
+                            target='_blank'
+                        >
                             register.armada.nu
                         </a>{' '}
+                        If you need any help or have any questions, please
+                        contact{' '}
                         If you need any help or have any questions, please
                         contact{' '}
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a>{' '}
@@ -939,6 +970,10 @@ const exhibitorQuestions = [
                         17th of May, we will get back to all exhibitors and let
                         you know if you have secured a spot. We always
                         prioritize earlier registrations.
+                        After the closing of the Initial Registration on the
+                        17th of May, we will get back to all exhibitors and let
+                        you know if you have secured a spot. We always
+                        prioritize earlier registrations.
                     </span>
                 ),
             },
@@ -946,6 +981,13 @@ const exhibitorQuestions = [
                 question: 'How do we become a partner?',
                 answer: (
                     <span>
+                        In 2023, we have a limited Gold Package which includes
+                        mention on the website, extra marketing, included events
+                        and a bigger booth. By selecting “interested in gold”
+                        when doing the initial registration at
+                        register.armada.nu, you apply to become a gold
+                        exhibitor. If you are interested in a deeper or more
+                        specific collaboration, send an email to
                         In 2023, we have a limited Gold Package which includes
                         mention on the website, extra marketing, included events
                         and a bigger booth. By selecting “interested in gold”
@@ -963,6 +1005,8 @@ const exhibitorQuestions = [
                 answer: (
                     <span>
                         Contact{' '}
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> and
+                        we will answer any question.
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a> and
                         we will answer any question.
                     </span>
@@ -992,7 +1036,10 @@ const exhibitorQuestions = [
                         Leading up to the fair Armada arranges event weeks where
                         you have the chance to attend lunch lectures, case
                         evenings and much more. Make sure to follow us on{' '}
-                        <a href='https://www.instagram.com/thsarmada/'>
+                        <a
+                            href='https://www.instagram.com/thsarmada/'
+                            target='_blank'
+                        >
                             social media
                         </a>{' '}
                         to not miss out.
@@ -1006,13 +1053,24 @@ const exhibitorQuestions = [
                         The opening hours of the fair is 21:st of November 10:00
                         - 16:00 and 22:nd of November 10:00 - 15:00. The Grand
                         Banquet is on the evening of the 21:st of November.
+                answer: (
+                    <span>
+                        The opening hours of the fair is 21:st of November 10:00
+                        - 16:00 and 22:nd of November 10:00 - 15:00. The Grand
+                        Banquet is on the evening of the 21:st of November.
                     </span>
+                ),
                 ),
             },
             {
                 question: 'Where is THS Armada?',
                 answer: (
                     <span>
+                        The fair will be held in Nymble, the Student Union
+                        Building at KTH and in KTH Library. The address for
+                        Nymble is Drottning Kristinas väg 15-19, 114 28
+                        Stockholm. The address for KTH Library is Osquars backe
+                        31, 114 28 Stockholm.
                         The fair will be held in Nymble, the Student Union
                         Building at KTH and in KTH Library. The address for
                         Nymble is Drottning Kristinas väg 15-19, 114 28
@@ -1026,7 +1084,10 @@ const exhibitorQuestions = [
                 answer: (
                     <span>
                         Follow us on{' '}
-                        <a href='https://www.facebook.com/thsarmada'>
+                        <a
+                            href='https://www.facebook.com/thsarmada'
+                            target='_blank'
+                        >
                             Facebook
                         </a>{' '}
                         to not miss out on any events. To register for an event,
@@ -1080,6 +1141,11 @@ const exhibitorQuestions = [
                         new ways to market the exhibitors, so contact us at{' '}
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to
                         learn more!
+                        Yes, we offer instagram and Facebook posts as well as
+                        instagram takeovers. This year we are adding even more
+                        new ways to market the exhibitors, so contact us at{' '}
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a> to
+                        learn more!
                     </span>
                 ),
             },
@@ -1092,7 +1158,12 @@ const exhibitorQuestions = [
                         booth, and on our social media channels. You can also
                         have an email sent out to students, or organize an event
                         to talk about your openings.
+                        Yes! You can market your open positions in your fair
+                        booth, and on our social media channels. You can also
+                        have an email sent out to students, or organize an event
+                        to talk about your openings.
                         <br /> Contact our sales team at{' '}
+                        <a href='mailto:sales@armada.nu'>sales@armada.nu</a>
                         <a href='mailto:sales@armada.nu'>sales@armada.nu</a>
                         and we can discuss what suits you best!
                     </span>

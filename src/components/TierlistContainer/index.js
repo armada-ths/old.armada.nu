@@ -66,7 +66,7 @@ function TierlistContainer() {
                         </div>
                         <div class='lineLayout'>
                             <p>✅</p>
-                            <p>Armada Run</p>
+                            <p>Armada run competition</p>
                         </div>
                         <div class='lineLayout'>
                             <p>✅</p>
@@ -106,7 +106,7 @@ function TierlistContainer() {
                         </div>
                         <div class='lineLayout'>
                             <p>✅</p>
-                            <p>Armada Run</p>
+                            <p>Armada run competition</p>
                         </div>
                         <div class='lineLayout'>
                             <p>✅</p>

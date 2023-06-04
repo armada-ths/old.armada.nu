@@ -13,6 +13,14 @@
     }
 }
 
+.registration-buttons {
+    display: flex;
+    justify-content: space-evenly;
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 .assign-button-right {
     .srButton {
         left: unset;
@@ -46,7 +54,7 @@
     height: unset;
     margin: auto;
 
-    width: 70%;
+    width: 95%;
     .page-container {
         h3,
         h4 {
@@ -192,6 +200,74 @@ body {
 .infocard {
     padding: 1rem;
     max-width: 20rem;
+}
+
+.button {
+    font-size: 1.4rem;
+    margin: 0.2rem;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    border-style: solid;
+    border-width: 4px;
+    border-color: $melon;
+}
+
+a.button-melon {
+    background-color: $melon;
+    color: white;
+}
+
+a.button-melon:hover {
+    background-color: white;
+    color: $melon;
+    text-decoration: none;
+}
+
+a.button-white {
+    background-color: white;
+    color: $melon;
+}
+
+a.button-white:hover {
+    background-color: $melon;
+    color: white;
+    text-decoration: none;
+}
+
+.picture-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.room-icon {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 20px;
+}
+
+.picture-card-text {
+    max-width: 80%;
+}
+
+.info-bar {
+    display: flex;
+    background-color: $melon;
+    color: white;
+    padding: 20px;
+    justify-content: space-evenly;
+    text-align: center;
+    div {
+        width: 30%;
+    }
+}
+
+.info-bar-nr {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
 }
 
 @media screen and (max-width: $breakpoint-mobile) {

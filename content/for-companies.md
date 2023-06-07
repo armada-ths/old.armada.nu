@@ -106,9 +106,9 @@ with increased marketing opportunities. We're excited to provide a platform for 
 diversity and look forward to promoting these values together.
 
 <div class="picture-card">
-    <img class="room-icon" src="/assets/armada-icon.png">
+    <img class="room-icon" src="/assets/sustainability/sustainability-melon-nolabel.png">
     <div>
-        <h3>GREN ROOM</h3>
+        <h3>GREEN ROOM</h3>
         The Green Room will stand out visually, drawing extra attention to your organization. A place in
         the Green Room will highlight your sustainability work, a topic that becomes more and more
         important for students when looking for their future employer. In addition to this, THS Armada
@@ -118,7 +118,7 @@ diversity and look forward to promoting these values together.
 </div>
 
 <div class="picture-card">
-    <img class="room-icon" src="/assets/armada-icon.png">
+    <img class="room-icon" src="/assets/diversity/diversity-melon-nolabel.png">
     <div class = "picture-card-text">
         <h3>DIVERSITY ROOM</h3>
         Students at KTH prioritise companies working with Diversity, thus another one of our core

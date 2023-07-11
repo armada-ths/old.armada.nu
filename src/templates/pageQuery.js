@@ -17,7 +17,6 @@ import ExhibitorInfo from '../layouts/ExhibitorInfo'
 import News from '../layouts/News'
 import Exhibitors from '../layouts/Exhibitors'
 import Previous from '../layouts/Previous'
-import MapsPage from '../layouts/MapsPage'
 import PlainPage from '../layouts/PlainPage'
 //import Matching from '../layouts/Matching' Todo: Fix Matching and make it work with new Exhibitors page
 import Events from '../layouts/Events'
@@ -31,7 +30,8 @@ import RegistrationPage from '../layouts/RegistrationPage'
 import IndividualMeetings from '../layouts/IndividualMeetings'
 import AtTheFairPageTab from '../layouts/AtTheFairPageTab'
 import ForCompanies from '../layouts/ForCompanies'
-
+import Map from '../layouts/Map'
+//Updated 11-07-2023 by Nima, removed MapsPage, added Map
 const components = {
     RecruitmentPage: RecruitmentPage,
     SustainabilityPage: SustainabilityPage,
@@ -45,7 +45,6 @@ const components = {
     News: News,
     Exhibitors: Exhibitors,
     Previous: Previous,
-    MapsPage: MapsPage,
     PlainPage: PlainPage,
     //Matching: Matching,
     Events: Events,
@@ -59,6 +58,7 @@ const components = {
     IndividualMeetings: IndividualMeetings,
     AtTheFairPageTab: AtTheFairPageTab,
     ForCompanies: ForCompanies,
+    Map: Map,
 }
 
 export default function Template({

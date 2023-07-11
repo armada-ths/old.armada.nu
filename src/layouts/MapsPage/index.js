@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import Maps from '../../components/Maps'
 import './index.scss'
 
@@ -11,3 +11,6 @@ const MapsPage = props => {
 }
 
 export default MapsPage
+
+Archived by Nima 11-07-2023. No longer used since 2019
+*/

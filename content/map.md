@@ -1,7 +1,7 @@
 ---
 slug: /map
 title: Career Fair Map
-layout: Map
+layout: MapPage
 description: Page
 menuPage: true
 studentSubpage: false

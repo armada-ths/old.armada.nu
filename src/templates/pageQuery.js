@@ -30,7 +30,7 @@ import RegistrationPage from '../layouts/RegistrationPage'
 import IndividualMeetings from '../layouts/IndividualMeetings'
 import AtTheFairPageTab from '../layouts/AtTheFairPageTab'
 import ForCompanies from '../layouts/ForCompanies'
-import Map from '../layouts/Map'
+import MapPage from '../layouts/MapPage'
 //Updated 11-07-2023 by Nima, removed MapsPage, added Map
 const components = {
     RecruitmentPage: RecruitmentPage,
@@ -58,7 +58,7 @@ const components = {
     IndividualMeetings: IndividualMeetings,
     AtTheFairPageTab: AtTheFairPageTab,
     ForCompanies: ForCompanies,
-    Map: Map,
+    MapPage: MapPage,
 }
 
 export default function Template({

@@ -1,7 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
-//import Map from '../../components/Map'
+import MapUtil from '../../components/Map/index.js'
 const MapPage = props => {
-    return <></>
+    return (
+        <div style={{ width: 1000 }}>
+            <MapUtil />
+        </div>
+    )
 }
 export default MapPage

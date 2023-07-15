@@ -1,28 +1,33 @@
 //https://codesandbox.io/s/react-leaflet-with-functional-components-and-imageoverlay-u225j?file=/src/Map.js
-import React, { useRef, useEffect } from 'react'
-import { MapContainer, TileLayer } from 'react-leaflet'
+import React from 'react'
+import { ImageOverlay, MapContainer } from 'react-leaflet'
 import { CRS } from 'leaflet'
-import 'leaflet/dist/leaflet.css'
-import L from 'leaflet'
-const MapUtil = () => {
-    var map = L.map('map', {
-        crs: L.CRS.Simple,
-    })
-    var bounds = [
-        [0, 0],
-        [1000, 1000],
+
+export const MapUtil = () => {
+    const position = [10, 10]
+    const zoomLevel = 0
+    const bounds = [
+        [100, 0],
+        [0, 100],
     ]
-    var image = L.imageOverlay(
-        './static/assets/Map/Nymble_floor2.png',
-        bounds
-    ).addTo(map)
+    const image = require('../../../static/assets/Map/Nymble_floor2.png')
+
     return (
-        <MapContainer center={[45.4, -75.7]} zoom={12} scrollWheelZoom={false}>
-            <TileLayer
-                url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            />
-        </MapContainer>
+        <div>
+            <MapContainer
+                zoom={zoomLevel}
+                center={position}
+                doubleClickZoom={false}
+                crs={CRS.Simple}
+                bounds={bounds}
+            >
+                <ImageOverlay
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url={image.default}
+                    bounds={bounds}
+                />
+            </MapContainer>
+        </div>
     )
 }
 

@@ -5,16 +5,33 @@ import {
     MapContainer,
     LayersControl,
     LayerGroup,
+    Polygon,
 } from 'react-leaflet'
 import { CRS } from 'leaflet'
+import { useState } from 'react'
 
+/* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
+/* Added box to test the surfaces, Hampus&Nima */
 export const MapUtil = () => {
-    const position = [10, 10]
-    const zoomLevel = 0
+    const position = [70, 100]
+    const zoomLevel = 1
     const bounds = [
-        [100, 0],
-        [0, 100],
+        [141.43, 0], //4962  ×  3509
+        [0, 200],
     ]
+
+    const surfaces = [
+        {
+            companyId: 'ica ab',
+            positions: [
+                [40, 40],
+                [80, 40],
+                [80, 80],
+                [40, 80],
+            ],
+        },
+    ]
+
     const firstFloor = require('../../../static/assets/Map/karta Nymble_Floor 1 blank.png')
     const secondFloor = require('../../../static/assets/Map/Nymble_floor2.png')
     const thirdFloor = require('../../../static/assets/Map/karta Nymble_Floor 3 blank.png')
@@ -28,6 +45,19 @@ export const MapUtil = () => {
                 crs={CRS.Simple}
                 bounds={bounds}
             >
+                {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
+                 */}{' '}
+                {surfaces.map(surface => (
+                    <Polygon
+                        key={surface.companyId}
+                        positions={surface.positions}
+                        eventHandlers={{
+                            click: () => {
+                                console.log(surface.companyId)
+                            },
+                        }}
+                    />
+                ))}
                 <LayersControl position='topright'>
                     <LayersControl.BaseLayer checked name='Floor 1'>
                         <LayerGroup>

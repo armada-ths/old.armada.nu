@@ -3,12 +3,14 @@ import './index.scss'
 import ContactCard from '../ContactCard'
 import axios from 'axios'
 import data from './convertcsv.json'
-/* Last edited in March 2023 to add API call instead. To do: Add more information from the API
+/* Edited in March 2023 to add API call instead. To do: Add more information from the API
 make the filtering on the backend side instead of front end as well as updating images on the backend instead */
 
 /* Please note the following: Currently it's way to slow to load the images. We have tried a lot. If you want to try, replace in the image field below.
 We recently transfered to Gatsby images instead to make it faster, but this doesn't work on those since gatsby renders it on build.
 The animations have been removed because of this lag */
+
+/* Edited in Aug 2023 to remove OTs as request from PM and fix sizing issues and other issues so we can fit the Armada email onto the cards. */
 
 function getInfoByName(name, firstName) {
     //Check out convertcsv.json. We quickly manually generated this from taking the excel in drive, deleting columns and using: https://www.convertcsv.com/csv-to-json.htm
@@ -48,7 +50,7 @@ const Contacts = () => {
         'Marketing and Communication - HR',
         'Sustainability and Diversity',
     ]
-
+    //this is used for an old ordering system. Can be easily activated by using the func below
     const compareGroupFn = (a, b) => {
         const indexA = order.indexOf(a.name)
         const indexB = order.indexOf(b.name)
@@ -61,18 +63,26 @@ const Contacts = () => {
         axios.get('https://ais.armada.nu/api/organization/v2').then(res => {
             //res contains all people
             res.data.forEach(team => {
+                let flag = false
+                team.people.forEach(person => {
+                    if (
+                        person.role.includes('Project Group') || //basically ignores all the OTs
+                        person.role.includes('Project Manager')
+                    ) {
+                        flag = true
+                    }
+                })
                 // names.push(team.name)
-                if (team.people.length > 0) {
+                if (team.people.length > 0 && flag == true) {
                     if (team.name === 'Business Relations') {
+                        setGroups(old => [team, ...old]) //prio BR and PM.
+                    } else if (team.name === 'Project Manager') {
                         setGroups(old => [team, ...old])
+                    } else {
+                        setGroups(old => [...old, team])
                     }
-                    if (team.name === 'Project Manager') {
-                        setGroups(old => [team, ...old])
-                    }
-                    setGroups(old => [...old, team])
                 }
             })
-            console.log(groups)
             // const groupsSorted = groups.sort(compareGroupFn)
             // console.log(groupsSorted)
             // setGroups(groupsSorted)
@@ -98,8 +108,12 @@ const Contacts = () => {
 
     const createCards = group => {
         return group.people.map(person => {
-            // console.log(person)
-            return createCard(person)
+            if (
+                person.role.includes('Project Group') ||
+                person.role.includes('Project Manager') //same thing here, ignore all OTs
+            ) {
+                return createCard(person)
+            }
         })
         // return allPg
         //     .filter(item => item.group === groupName)

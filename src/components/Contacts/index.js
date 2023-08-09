@@ -61,18 +61,26 @@ const Contacts = () => {
         axios.get('https://ais.armada.nu/api/organization/v2').then(res => {
             //res contains all people
             res.data.forEach(team => {
+                let flag = false
+                team.people.forEach(person => {
+                    if (
+                        person.role.includes('Project Group') ||
+                        person.role.includes('Project Manager')
+                    ) {
+                        flag = true
+                    }
+                })
                 // names.push(team.name)
-                if (team.people.length > 0) {
+                if (team.people.length > 0 && flag == true) {
                     if (team.name === 'Business Relations') {
                         setGroups(old => [team, ...old])
-                    }
-                    if (team.name === 'Project Manager') {
+                    } else if (team.name === 'Project Manager') {
                         setGroups(old => [team, ...old])
+                    } else {
+                        setGroups(old => [...old, team])
                     }
-                    setGroups(old => [...old, team])
                 }
             })
-            console.log(groups)
             // const groupsSorted = groups.sort(compareGroupFn)
             // console.log(groupsSorted)
             // setGroups(groupsSorted)
@@ -98,8 +106,12 @@ const Contacts = () => {
 
     const createCards = group => {
         return group.people.map(person => {
-            // console.log(person)
-            return createCard(person)
+            if (
+                person.role.includes('Project Group') ||
+                person.role.includes('Project Manager')
+            ) {
+                return createCard(person)
+            }
         })
         // return allPg
         //     .filter(item => item.group === groupName)

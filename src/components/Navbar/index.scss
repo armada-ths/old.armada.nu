@@ -91,7 +91,7 @@
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     #navbar {
         overflow: hidden;
-        //position: absolute; Removed position absolute, this caused error on the map page.
+        //position: absolute; //Removed position absolute, this caused error on the map page.
         //After testing I can't really see why this was there. //Nima
 
         .banner-container {

@@ -9,6 +9,7 @@ import {
 } from 'react-leaflet'
 import { CRS } from 'leaflet'
 import { useState } from 'react'
+import './index.scss'
 
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
 /* Added box to test the surfaces, Hampus&Nima */
@@ -37,7 +38,7 @@ export const MapUtil = () => {
     const thirdFloor = require('../../../static/assets/Map/karta Nymble_Floor 3 blank.png')
 
     return (
-        <div>
+        <div className='mapBox'>
             <MapContainer
                 zoom={zoomLevel}
                 center={position}

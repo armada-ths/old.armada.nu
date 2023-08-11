@@ -8,10 +8,6 @@ const LoadableReputation = Loadable(() =>
 )
 
 const MapPage = props => {
-    return (
-        <div style={{ width: 1000 }}>
-            <LoadableReputation />
-        </div>
-    )
+    return <LoadableReputation />
 }
 export default MapPage

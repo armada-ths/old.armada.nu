@@ -78,6 +78,15 @@ export const MapUtil = () => {
                 [40, 80],
             ],
         },
+        {
+            companyId: exhibitorlist[1].id, //companyId points to id of company in exhibitorlist
+            positions: [
+                [90, 90],
+                [170, 90],
+                [170, 170],
+                [90, 170],
+            ],
+        },
     ]
 
     const firstFloor = require('../../../static/assets/Map/karta Nymble_Floor 1 blank.png')

@@ -102,7 +102,7 @@ export const MapUtil = () => {
 
     return (
         <div>
-            <div className='leafletMap'>
+            <div className='mapBox'>
                 <MapContainer
                     zoom={zoomLevel}
                     center={position}

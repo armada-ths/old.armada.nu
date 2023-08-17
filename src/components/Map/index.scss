@@ -6,12 +6,13 @@
     margin: 0 2.5vw 0 2.5vw;
     height: 100%;
     width: 95vw;
+    margin-top: 100px;
 }
 
 //This is added because the navbar expands at around ipad breaking point and want to push the map down
 @media screen and (max-width: 1200px) {
     .mapBox {
-        margin-top: 50px;
+        margin-top: 150px;
     }
 }
 

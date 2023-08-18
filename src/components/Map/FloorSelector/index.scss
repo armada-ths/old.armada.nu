@@ -1,9 +1,11 @@
 .floorTabs {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     .tab {
         border: 1px solid black;
+        width: 100%;
+        text-align: center;
     }
     .active {
         background-color: red;

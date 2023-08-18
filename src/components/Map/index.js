@@ -6,10 +6,27 @@ import {
     LayersControl,
     LayerGroup,
     Polygon,
+    useMap,
+    useMapEvent,
 } from 'react-leaflet'
+import L from 'leaflet'
 import { CRS } from 'leaflet'
 import './index.scss'
 import FloorSelector from './FloorSelector'
+
+function Internal() {
+    const map = useMap()
+    useMapEvent('resize', event => {
+        //map.invalidateSize()
+        //todo: change values to match screen change to mobile
+        if (event.newSize.x < 1200) {
+            map.setZoom(0.1) //zooms out when screen contracts
+        } else {
+            map.setZoom(0.5) //zooms in when screen expands
+        }
+    })
+    return null
+}
 
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
 /* Added box to test the surfaces, Hampus&Nima */
@@ -72,10 +89,10 @@ export const MapUtil = () => {
 
     //const height =
     const position = [70, 100]
-    const zoomLevel = 1
+    const zoomLevel = 2
     const bounds = [
-        [(4962 / 3509) * 350, 0], //4962  ×  3509
-        [0, 350],
+        [(3509 / 4962) * 400, 0], //4962  ×  3509
+        [0, 400],
     ]
 
     const surfaces = [
@@ -120,9 +137,9 @@ export const MapUtil = () => {
     }
 
     return (
-        <div className='mapBox'>
-            {FloorSelector(setFloorShowed, floorShowed)}
-            <div style={{ display: 'flex', height: '100vh' }}>
+        <div>
+            <div className='mapBox'>
+                {FloorSelector(setFloorShowed, floorShowed)}
                 <div>
                     <MapContainer
                         zoom={zoomLevel}
@@ -132,6 +149,7 @@ export const MapUtil = () => {
                         bounds={bounds}
                         className='bigMap'
                     >
+                        <Internal />
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}{' '}
                         {surfaces.map(surface => (
@@ -204,9 +222,9 @@ export const MapUtil = () => {
                     </LayersControl> */}
                     </MapContainer>
                 </div>
-                <div className='exhibitorList'>
-                    {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
-                </div>
+            </div>
+            <div className='exhibitorList'>
+                {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
             </div>
         </div>
     )

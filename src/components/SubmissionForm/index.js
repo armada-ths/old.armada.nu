@@ -1,7 +1,10 @@
 /* Instant sales contact submission form created by Nima */
 import { BsChevronCompactRight, BsChevronCompactDown } from 'react-icons/bs'
-import { useState } from 'react'
-
+import { FaRegWindowMinimize } from 'react-icons/fa'
+import { RiCustomerService2Line } from 'react-icons/ri'
+import React, { useState } from 'react'
+import './index.scss'
+const THIS_PAGE = '/'
 const Form = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -9,17 +12,46 @@ const Form = () => {
         message: '',
     })
 
+    const [statusText, setStatusText] = useState('')
+
     const handleChange = event => {
         const key = event.target.name
         const updatedFormValue = event.target.value
-        const newFormData = { ...formData, [key]: updatedValue }
+        const newFormData = { ...formData, [key]: updatedFormValue }
         setFormData(newFormData)
     }
+
+    const handleSubmit = event => {
+        event.preventDefault()
+
+        const form = event.target
+        fetch(THIS_PAGE, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                'form-name': form.getAttribute('name'),
+                ...formData,
+            }).toString(),
+        })
+            .then(response => {
+                //where your custom handling goes
+                if (!response.ok) throw Error(response.statusText)
+
+                const emptyForm = createEmptyForm(formData)
+                setFormData(emptyForm)
+
+                setStatusText('Thank you!')
+            })
+            .catch(error => setStatusText(`Error: ${error.message}`))
+    }
+
     return (
         <form
             name='contact-form'
             id='contact-form'
             method='POST'
+            onSubmit={e => handleSubmit(e)}
+            action={THIS_PAGE}
             data-netlify='true'
             data-netlify-honeypot='bot-field'
         >
@@ -32,6 +64,7 @@ const Form = () => {
                     name='name'
                     value={formData.name}
                     onChange={e => handleChange(e)}
+                    className='input'
                 />
             </div>
             <div>
@@ -41,6 +74,7 @@ const Form = () => {
                     name='email'
                     value={formData.email}
                     onChange={e => handleChange(e)}
+                    className='input'
                 />
             </div>
             <div>
@@ -49,10 +83,15 @@ const Form = () => {
                     name='message'
                     value={formData.message}
                     onChange={e => handleChange(e)}
+                    className='input'
                 />
             </div>
             <div>
-                <button type='submit' name='submit'>
+                <button
+                    style={{ margin: '10px 0 10px 0' }}
+                    type='submit'
+                    name='submit'
+                >
                     Send Email
                 </button>
             </div>
@@ -61,10 +100,35 @@ const Form = () => {
 }
 
 const SubmissionForm = () => {
+    const [formShowing, showForm] = useState(true)
+
     return (
-        <BsChevronCompactRight className='expandable'>
-            <Form />
-        </BsChevronCompactRight>
+        <div className='entireBox'>
+            {formShowing ? (
+                <div className='formBox'>
+                    <div className='titleFormBox'>
+                        <div>Hey, want to contact sales directly?</div>
+                        <FaRegWindowMinimize
+                            className={
+                                formShowing ? 'arrow rotate-icon' : 'arrow'
+                            }
+                            onClick={() => showForm(!formShowing)}
+                        />
+                    </div>
+                    <Form />
+                </div>
+            ) : (
+                <button
+                    className='salesContactBtn'
+                    onClick={() => showForm(!formShowing)}
+                >
+                    <>
+                        Contact Sales
+                        <RiCustomerService2Line />
+                    </>
+                </button>
+            )}
+        </div>
     )
 }
 

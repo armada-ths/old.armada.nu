@@ -1,0 +1,36 @@
+.entireBox {
+    position: fixed;
+    width: 25%;
+    z-index: 100;
+    bottom: 100px;
+    .arrow {
+    }
+    .formBox {
+        margin-left: 20px;
+        background-color: #181a1b;
+        padding: 10px;
+        padding-bottom: 50px;
+        .titleFormBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+            .arrow {
+                padding-bottom: 5px;
+                width: 100px;
+                border: 1px solid white;
+            }
+        }
+        div {
+            color: white;
+        }
+        .input {
+            background-color: #191a1b;
+            border: 1px solid black;
+        }
+    }
+}
+
+.salesContactBtn {
+}

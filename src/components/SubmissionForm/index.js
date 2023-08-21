@@ -4,8 +4,17 @@ import { FaRegWindowMinimize } from 'react-icons/fa'
 import { RiCustomerService2Line } from 'react-icons/ri'
 import React, { useState } from 'react'
 import './index.scss'
+
 const THIS_PAGE = '/'
 const Form = () => {
+    const createEmptyForm = () => {
+        return {
+            name: '',
+            email: '',
+            message: '',
+        }
+    }
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -13,6 +22,7 @@ const Form = () => {
     })
 
     const [statusText, setStatusText] = useState('')
+    const [formSubmitted, setFormSubmitted] = useState(false)
 
     const handleChange = event => {
         const key = event.target.name
@@ -37,71 +47,81 @@ const Form = () => {
                 //where your custom handling goes
                 if (!response.ok) throw Error(response.statusText)
 
-                const emptyForm = createEmptyForm(formData)
+                const emptyForm = createEmptyForm()
                 setFormData(emptyForm)
-
+                setFormSubmitted(true)
                 setStatusText('Thank you!')
             })
             .catch(error => setStatusText(`Error: ${error.message}`))
     }
 
     return (
-        <form
-            name='contact-form'
-            id='contact-form'
-            method='POST'
-            onSubmit={e => handleSubmit(e)}
-            action={THIS_PAGE}
-            data-netlify='true'
-            data-netlify-honeypot='bot-field'
-        >
-            <input type='hidden' name='bot-field' />
-            <input type='hidden' name='form-name' value='contact-form' />
-            <div>
-                <label htmlFor='name'>Name</label>
-                <input
-                    type='text'
-                    name='name'
-                    value={formData.name}
-                    onChange={e => handleChange(e)}
-                    className='input'
-                />
-            </div>
-            <div>
-                <label htmlFor='email'>Email</label>
-                <input
-                    type='text'
-                    name='email'
-                    value={formData.email}
-                    onChange={e => handleChange(e)}
-                    className='input'
-                />
-            </div>
-            <div>
-                <label htmlFor='message'>Message</label>
-                <textarea
-                    name='message'
-                    value={formData.message}
-                    onChange={e => handleChange(e)}
-                    className='input'
-                />
-            </div>
-            <div>
-                <button
-                    style={{ margin: '10px 0 10px 0' }}
-                    type='submit'
-                    name='submit'
+        <>
+            {formSubmitted ? (
+                <>{statusText}</>
+            ) : (
+                <form
+                    name='contact-form'
+                    id='contact-form'
+                    method='POST'
+                    onSubmit={e => handleSubmit(e)}
+                    action={THIS_PAGE}
+                    data-netlify='true'
+                    data-netlify-honeypot='bot-field'
                 >
-                    Send Email
-                </button>
-            </div>
-        </form>
+                    <input type='hidden' name='bot-field' />
+                    <input
+                        type='hidden'
+                        name='form-name'
+                        value='contact-form'
+                    />
+                    <div>
+                        <label htmlFor='name'>Name</label>
+                        <input
+                            type='text'
+                            name='name'
+                            value={formData.name}
+                            onChange={e => handleChange(e)}
+                            className='input'
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor='email'>Email</label>
+                        <input
+                            type='text'
+                            name='email'
+                            value={formData.email}
+                            onChange={e => handleChange(e)}
+                            className='input'
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor='message'>Message</label>
+                        <textarea
+                            name='message'
+                            value={formData.message}
+                            onChange={e => handleChange(e)}
+                            className='input'
+                        />
+                    </div>
+                    <div>
+                        <button
+                            style={{ margin: '10px 0 10px 0' }}
+                            type='submit'
+                            name='submit'
+                        >
+                            Send Email
+                        </button>
+                    </div>
+                </form>
+            )}
+        </>
     )
 }
 
 const SubmissionForm = () => {
     const [formShowing, showForm] = useState(true)
-
+    const isMobile = window.innerWidth <= 768
     return (
         <div className='entireBox'>
             {formShowing ? (
@@ -118,15 +138,29 @@ const SubmissionForm = () => {
                     <Form />
                 </div>
             ) : (
-                <button
-                    className='salesContactBtn'
-                    onClick={() => showForm(!formShowing)}
-                >
-                    <>
-                        Contact Sales
-                        <RiCustomerService2Line />
-                    </>
-                </button>
+                <>
+                    {/*This is so that the button becomes smaller on mobile */}
+                    {!isMobile ? (
+                        <button
+                            className='salesContactBtn'
+                            onClick={() => showForm(!formShowing)}
+                        >
+                            <>
+                                Contact Sales
+                                <RiCustomerService2Line />
+                            </>
+                        </button>
+                    ) : (
+                        <button
+                            className='salesContactBtn'
+                            onClick={() => showForm(!formShowing)}
+                        >
+                            <>
+                                <RiCustomerService2Line />
+                            </>
+                        </button>
+                    )}
+                </>
             )}
         </div>
     )

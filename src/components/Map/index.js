@@ -13,6 +13,7 @@ import L from 'leaflet'
 import { CRS } from 'leaflet'
 import './index.scss'
 import FloorSelector from './FloorSelector'
+import ExhibitorList from '../ExhibitorList'
 
 function Internal() {
     const map = useMap()
@@ -38,6 +39,9 @@ export const MapUtil = () => {
     const floorArray = [firstFloor, secondFloor, thirdFloor]
 
     const [floorShowed, setFloorShowed] = useState(0)
+    
+    const now = new Date() //current date
+    const currentYear = now.getFullYear().toString()
 
     const exhibitorlist = [
         {
@@ -223,9 +227,12 @@ export const MapUtil = () => {
                     </MapContainer>
                 </div>
             </div>
-            <div className='exhibitorList'>
+            {/* <div className='exhibitorList'>
                 {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
-            </div>
+            </div> */}
+            <ExhibitorList
+                year={currentYear}>
+            </ExhibitorList>
         </div>
     )
 }

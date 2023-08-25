@@ -853,6 +853,8 @@ class ExhibitorList extends React.Component {
                     <br />
                     <p
                         style={{
+                            width: '90%',
+                            margin:'0em 2em 0em 2em',
                             paddingBottom: this.props.lastYear ? '1em' : {},
                         }}
                     >

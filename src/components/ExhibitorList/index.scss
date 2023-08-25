@@ -65,13 +65,14 @@
     padding-top: 1em;
 
     .basic-multi-select {
-        padding: 0.1em 2em 0.5em 2em;
+        width: 100%;
+        padding: 0.1em 0em 0.5em 0em;
         outline: 0;
         border-width: thin;
     }
 
     .select__menu {
-        width: 93%;
+        width: 100%;
         text-align: center;
         margin: 0 auto;
         position: relative;
@@ -80,7 +81,7 @@
     .select__control {
         border: solid;
         border-width: thin;
-        width: 93%;
+        width: 100%;
         margin: 0 auto;
         font-size: 19px;
         padding: 0.1em;
@@ -133,22 +134,28 @@
     padding-bottom: 1em;
 }
 
+.filters{
+    width: 90%;
+    margin: 0 2em 0 2em;
+}
+
 .filter-special.display-none,
 .filters.display-none {
     display: none;
 }
 
 .exhibitors .search-container {
-    margin: auto;
-    padding: 0.1em 2em 0.5em 2em;
+    margin: 0em 2em 0.5em 2em;
+    // padding: 0em 2em 0.5em 2em;
     text-align: center;
+    width: 90%;
     input {
         height: 100%;
         border: solid;
         border-width: thin;
         border-radius: 4px;
         padding: 0.5em;
-        width: 90%;
+        // width: 90%;
         font-size: 18px;
     }
     input:focus {
@@ -275,7 +282,7 @@
 
 .showmore-container {
     text-align: center;
-
+    padding-bottom: 1em;
     .showmorebutton {
         outline: none;
         text-align: center;
@@ -521,6 +528,7 @@
     outline: none;
     border: none;
     border-radius: 3.3px;
+    border-color: red;
     background: #ffffff;
     color: #7b7b7b;
     appearance: none;

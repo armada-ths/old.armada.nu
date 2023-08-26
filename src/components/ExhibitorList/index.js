@@ -22,7 +22,7 @@ import { Link } from 'gatsby'
 const ais = 'https://ais.armada.nu/'
 const isMockup = true;
 const showFilters = false;
-const exhibitorsConst = [
+let exhibitorsConst = [
     {
         id: 1152,
         name: 'ASSA ABLOY Group',
@@ -62,7 +62,7 @@ const exhibitorsConst = [
         contact_email_address: null,
         contact_phone_number: null,
         location: 'Nymble',
-        floor: 1,
+        floor: 2,
         color: '#0000ff',
         positions: [
             [90, 90],
@@ -86,7 +86,7 @@ const exhibitorsConst = [
         contact_email_address: 'oscar.blomquist@ap4.se',
         contact_phone_number: '+4687877507',
         location: 'Nymble',
-        floor: 2,
+        floor: 3,
         color: '#00ffff',
         positions: [
             [0, 90],

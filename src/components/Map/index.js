@@ -32,18 +32,15 @@ function Internal() {
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
 /* Added box to test the surfaces, Hampus&Nima */
 export const MapUtil = () => {
-    const firstFloor = require('../../../static/assets/Map/karta Nymble_Floor 1 blank.png')
-    const secondFloor = require('../../../static/assets/Map/Nymble_floor2.png')
-    const thirdFloor = require('../../../static/assets/Map/karta Nymble_Floor 3 blank.png')
+    const firstFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 1 blank.png')
+    const secondFloorNymble = require('../../../static/assets/Map/Nymble_floor2.png')
+    const thirdFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 3 blank.png')
 
-    const floorArray = [firstFloor, secondFloor, thirdFloor]
+    const floorArray = [firstFloorNymble, secondFloorNymble, thirdFloorNymble]
 
     const [floorShowed, setFloorShowed] = useState(0)
-    
-    const now = new Date() //current date
-    const currentYear = now.getFullYear().toString()
 
-    const exhibitorsConst = [
+    let exhibitorsConst = [
         {
             id: 1152,
             name: 'ASSA ABLOY Group',
@@ -83,7 +80,7 @@ export const MapUtil = () => {
             contact_email_address: null,
             contact_phone_number: null,
             location: 'Nymble',
-            floor: 1,
+            floor: 2,
             color: '#0000ff',
             positions: [
                 [90, 90],
@@ -107,7 +104,7 @@ export const MapUtil = () => {
             contact_email_address: 'oscar.blomquist@ap4.se',
             contact_phone_number: '+4687877507',
             location: 'Nymble',
-            floor: 1,
+            floor: 3,
             color: '#00ffff',
             positions: [
                 [0, 90],
@@ -126,48 +123,21 @@ export const MapUtil = () => {
         [0, 400],
     ]
 
-    // const surfaces = [
-    //     {
-    //         companyId: exhibitorlist[2].id, //companyId points to id of company in exhibitorlist
-    //         positions: [
-    //             [40, 40],
-    //             [80, 40],
-    //             [80, 80],
-    //             [40, 80],
-    //         ],
-    //         // location: 'Nymble',
-    //         // floor: 1,
-    //         // color: '#fafa00',
-    //     },
-    //     {
-    //         companyId: exhibitorlist[1].id, //companyId points to id of company in exhibitorlist
-    //         positions: [
-    //             [90, 90],
-    //             [170, 90],
-    //             [170, 170],
-    //             [90, 170],
-    //         ],
-    //         // location: 'Nymble',
-    //         // floor: 1,
-    //         // color: '#0000ff',
-    //     },
-    // ]
-
     //Renders the list of exhibitors under the map.
-    //TODO: Make a component out of this if we decide to continue with this implementation
-    function exhibitorListRender(exhibitor) {
-        return (
-            <table>
-                <tbody>
-                    <tr id={exhibitor.id}>
-                        <td>
-                            <p>{exhibitor.name}</p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        )
-    }
+    // //TODO: Make a component out of this if we decide to continue with this implementation
+    // function exhibitorListRender(exhibitor) {
+    //     return (
+    //         <table>
+    //             <tbody>
+    //                 <tr id={exhibitor.id}>
+    //                     <td>
+    //                         <p>{exhibitor.name}</p>
+    //                     </td>
+    //                 </tr>
+    //             </tbody>
+    //         </table>
+    //     )
+    // }
 
     return (
         <div>
@@ -185,45 +155,61 @@ export const MapUtil = () => {
                         <Internal />
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}{' '}
-                        {exhibitorsConst.map(ex => (
-                            <Polygon
-                                key={ex.id}
-                                positions={ex.positions}
-                                color={ex.color}
-                                eventHandlers={{
-                                    click: () => {
-                                        const element = document.getElementById(
-                                            ex.id
-                                        )
+                        {exhibitorsConst.map(ex => 
+                            {
+                                let ifShowPolygon = false;
+                                switch(floorShowed){
+                                    case 0:
+                                        ifShowPolygon = (ex.location === 'Nymble' && ex.floor === 1);
+                                        break;
+                                    case 1:
+                                        ifShowPolygon = (ex.location === 'Nymble' && ex.floor === 2);
+                                        break;
+                                    case 2:
+                                        ifShowPolygon = (ex.location === 'Nymble' && ex.floor === 3);
+                                        break;
+                                }
+                                return (
+                                ifShowPolygon &&
+                                <Polygon
+                                    key={ex.id}
+                                    positions={ex.positions}
+                                    color={ex.color}
+                                    eventHandlers={{
+                                        click: () => {
+                                            const element = document.getElementById(
+                                                ex.id
+                                            )
 
-                                        if (element) {
-                                            // Get the position of the element relative to the viewport
-                                            const elementPosition =
-                                                element.getBoundingClientRect()
-                                                    .top
+                                            if (element) {
+                                                // Get the position of the element relative to the viewport
+                                                const elementPosition =
+                                                    element.getBoundingClientRect()
+                                                        .top
 
-                                            // Calculate the current scroll position and add the element position
-                                            const offset =
-                                                window.scrollY + elementPosition
+                                                // Calculate the current scroll position and add the element position
+                                                const offset =
+                                                    window.scrollY + elementPosition
 
-                                            // Scroll to the element with a smooth behavior
-                                            window.scrollTo({
-                                                top: offset,
-                                                behavior: 'smooth',
-                                            })
+                                                // Scroll to the element with a smooth behavior
+                                                window.scrollTo({
+                                                    top: offset,
+                                                    behavior: 'smooth',
+                                                })
 
-                                            element.style.animation =
-                                                'dancingEffect 2s ease infinite'
+                                                element.style.animation =
+                                                    'dancingEffect 2s ease infinite'
 
-                                            // Remove the dancing effect class after animation duration
-                                            setTimeout(() => {
-                                                element.style.animation = ''
-                                            }, 3000) // Adjust the duration as needed
-                                        }
-                                    },
-                                }}
-                            />
-                        ))}
+                                                // Remove the dancing effect class after animation duration
+                                                setTimeout(() => {
+                                                    element.style.animation = ''
+                                                }, 3000) // Adjust the duration as needed
+                                            }
+                                        },
+                                    }}
+                                />)
+                        }
+                        )}
                         {/*<LayersControl position='topright'>
                         <LayersControl.BaseLayer checked name='Floor 1'>
                         <LayerGroup> */}

@@ -43,7 +43,7 @@ export const MapUtil = () => {
     const now = new Date() //current date
     const currentYear = now.getFullYear().toString()
 
-    const exhibitorlist = [
+    const exhibitorsConst = [
         {
             id: 1152,
             name: 'ASSA ABLOY Group',
@@ -58,6 +58,15 @@ export const MapUtil = () => {
             contact_name: 'Naomi Korang',
             contact_email_address: 'naomi.korang@assaabloy.com',
             contact_phone_number: '+46739045323',
+            location: 'Nymble',
+            floor: 1,
+            color: '#fafa00',
+            positions: [
+                [40, 40],
+                [80, 40],
+                [80, 80],
+                [40, 80],
+            ],
         },
         {
             id: 1153,
@@ -73,6 +82,15 @@ export const MapUtil = () => {
             contact_name: null,
             contact_email_address: null,
             contact_phone_number: null,
+            location: 'Nymble',
+            floor: 1,
+            color: '#0000ff',
+            positions: [
+                [90, 90],
+                [170, 90],
+                [170, 170],
+                [90, 170],
+            ],
         },
         {
             id: 1151,
@@ -88,8 +106,17 @@ export const MapUtil = () => {
             contact_name: 'Oscar Blomquist',
             contact_email_address: 'oscar.blomquist@ap4.se',
             contact_phone_number: '+4687877507',
+            location: 'Nymble',
+            floor: 1,
+            color: '#00ffff',
+            positions: [
+                [0, 90],
+                [70, 90],
+                [70, 170],
+                [0, 170],
+            ],
         },
-    ]
+    ];
 
     //const height =
     const position = [70, 100]
@@ -99,30 +126,32 @@ export const MapUtil = () => {
         [0, 400],
     ]
 
-    const surfaces = [
-        {
-            companyId: exhibitorlist[2].id, //companyId points to id of company in exhibitorlist
-            positions: [
-                [40, 40],
-                [80, 40],
-                [80, 80],
-                [40, 80],
-            ],
-            floor: 1,
-            color: '#fafa00',
-        },
-        {
-            companyId: exhibitorlist[1].id, //companyId points to id of company in exhibitorlist
-            positions: [
-                [90, 90],
-                [170, 90],
-                [170, 170],
-                [90, 170],
-            ],
-            floor: 1,
-            color: '#0000ff',
-        },
-    ]
+    // const surfaces = [
+    //     {
+    //         companyId: exhibitorlist[2].id, //companyId points to id of company in exhibitorlist
+    //         positions: [
+    //             [40, 40],
+    //             [80, 40],
+    //             [80, 80],
+    //             [40, 80],
+    //         ],
+    //         // location: 'Nymble',
+    //         // floor: 1,
+    //         // color: '#fafa00',
+    //     },
+    //     {
+    //         companyId: exhibitorlist[1].id, //companyId points to id of company in exhibitorlist
+    //         positions: [
+    //             [90, 90],
+    //             [170, 90],
+    //             [170, 170],
+    //             [90, 170],
+    //         ],
+    //         // location: 'Nymble',
+    //         // floor: 1,
+    //         // color: '#0000ff',
+    //     },
+    // ]
 
     //Renders the list of exhibitors under the map.
     //TODO: Make a component out of this if we decide to continue with this implementation
@@ -156,15 +185,15 @@ export const MapUtil = () => {
                         <Internal />
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}{' '}
-                        {surfaces.map(surface => (
+                        {exhibitorsConst.map(ex => (
                             <Polygon
-                                key={surface.companyId}
-                                positions={surface.positions}
-                                color={surface.color}
+                                key={ex.id}
+                                positions={ex.positions}
+                                color={ex.color}
                                 eventHandlers={{
                                     click: () => {
                                         const element = document.getElementById(
-                                            surface.companyId
+                                            ex.id
                                         )
 
                                         if (element) {
@@ -230,9 +259,7 @@ export const MapUtil = () => {
             {/* <div className='exhibitorList'>
                 {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
             </div> */}
-            <ExhibitorList
-                year={currentYear}>
-            </ExhibitorList>
+            <ExhibitorList/>
         </div>
     )
 }

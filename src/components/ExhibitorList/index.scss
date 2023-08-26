@@ -260,10 +260,12 @@
 }
 
 .exhibitor-feed {
+    width: 90%;
+    margin-left: 2%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     padding-bottom: 3em;
 }
 

@@ -116,7 +116,7 @@ const Recruitment = () => {
             }
         })
     }, []) //happens on page load, this sideloads everything
-    return groups.keys.length > 0 ? (
+    return groups & (recruitmentLink === '') ? (
         <div className='rolelist'>
             <StickyContainer>
                 <Sticky topOffset={-navbarOffset}>

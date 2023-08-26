@@ -111,7 +111,9 @@ const Recruitment = () => {
                     ),
                 },
             ])
-            setRecruitmentLink(result[0].link) //this line is still fine since the link is same for all of them
+            if (result.length > 0) {
+                setRecruitmentLink(result[0].link) //this line is still fine since the link is same for all of them
+            }
         })
     }, []) //happens on page load, this sideloads everything
     return groups ? (

@@ -1,6 +1,10 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
+.expand-button {
+    margin-left: 20px;
+}
+
 .host-flex {
     display: flex;
     flex-direction: row;
@@ -66,6 +70,7 @@
         margin-bottom: auto;
         text-align: center;
         margin-top: 10%;
+        background-image: url('../../../static/assets/armada_round_logo_green.png');
     }
     p {
         color: $melon;
@@ -100,6 +105,9 @@
         text-align: center;
     }
 }
+h4 {
+    text-decoration: underline;
+}
 
 .descriptionFlex {
     display: flex;
@@ -120,7 +128,12 @@
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     .host-box {
+        width: unset;
+        h1,
+        h2,
+        h3,
         h4,
+        p,
         li {
             text-align: center;
             padding: unset;
@@ -130,6 +143,25 @@
         ul {
             list-style-position: inside;
             padding-left: unset;
+        }
+    }
+    .recruiterBox {
+        .recruiterList {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+        }
+    }
+
+    .topTitle {
+        .topButton {
+            color: white;
+            margin-left: 30px;
+            outline: 2px solid white;
+            width: 30px;
+            height: 30px;
+            padding: 4px;
         }
     }
 }

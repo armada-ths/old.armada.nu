@@ -5,7 +5,6 @@ import './index.scss'
 import Testimonials from '../Testimonials'
 import { StickyContainer, Sticky } from 'react-sticky'
 import { StaticImage } from 'gatsby-plugin-image'
-
 //Come up with a solution using position: sticky in css instead
 
 /* Fixed by Nima 27-03-2023. Please read axios manual... Previously it was set to setGroups(result[0].groups) so it would only get the first one... */
@@ -111,10 +110,12 @@ const Recruitment = () => {
                     ),
                 },
             ])
-            setRecruitmentLink(result[0].link) //this line is still fine since the link is same for all of them
+            if (result.length > 0) {
+                setRecruitmentLink(result[0].link) //this line is still fine since the link is same for all of them
+            }
         })
     }, []) //happens on page load, this sideloads everything
-    return groups ? (
+    return groups & (recruitmentLink === '') ? (
         <div className='rolelist'>
             <StickyContainer>
                 <Sticky topOffset={-navbarOffset}>

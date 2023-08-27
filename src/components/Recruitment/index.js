@@ -5,7 +5,6 @@ import './index.scss'
 import Testimonials from '../Testimonials'
 import { StickyContainer, Sticky } from 'react-sticky'
 import { StaticImage } from 'gatsby-plugin-image'
-
 //Come up with a solution using position: sticky in css instead
 
 /* Fixed by Nima 27-03-2023. Please read axios manual... Previously it was set to setGroups(result[0].groups) so it would only get the first one... */

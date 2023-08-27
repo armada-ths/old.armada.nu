@@ -8,12 +8,12 @@ const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([])
 
     useEffect(() => {
-        axios.get('https://ais.armada.nu/api/organization/v2').then(res => {
+        /*axios.get('https://ais.armada.nu/api/organization/v2').then(res => {
             //res contains all people
             res.data.forEach(team => {
                 console.log(team)
             })
-        })
+        })*/
         const people = [
             {
                 name: 'Daniel Aston',

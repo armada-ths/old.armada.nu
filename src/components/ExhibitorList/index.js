@@ -1149,16 +1149,22 @@ export default toExport
 */
 export default ExhibitorList
 const ExhibitorItem = props => {
-    console.log(props)
     let classname = props.exhibitor.sustainability ? ' green' : ''
     classname += props.exhibitor.diversity ? ' purple' : ''
 
     return (
         <div
-            id={props.name}
+            id={props.exhibitor.id}
             role='presentation'
             className={'exhibitor-box ' + classname}
-            onClick={() => props.showModal(props.exhibitor.name)}
+            onClick={() => {
+                const exhibitorBoxes = document.getElementsByClassName('exhibitor-box');
+                for(const box of exhibitorBoxes){
+                    box.style.backgroundColor = '#fafafa';
+                }
+                document.getElementById(props.exhibitor.id).style.backgroundColor = '#00d790';
+                props.showModal(props.exhibitor.name)
+            }}
         >
             <div className='image-container'>
                 {props.exhibitor.logo_squared != null && (

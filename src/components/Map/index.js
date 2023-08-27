@@ -197,6 +197,8 @@ export const MapUtil = () => {
                                                     behavior: 'smooth',
                                                 })
 
+                                                // element.style.backgroundColor = '#00d790';
+
                                                 element.style.animation =
                                                     'dancingEffect 2s ease infinite'
 

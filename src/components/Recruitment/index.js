@@ -121,7 +121,7 @@ const Recruitment = () => {
                 <Sticky topOffset={-navbarOffset}>
                     {({ style }) => {
                         return (
-                            <div style={{ ...style, top: `0px` }}>
+                            <div className='topSticky' style={{ ...style }}>
                                 <div className={'apply-section'}>
                                     <a
                                         href={

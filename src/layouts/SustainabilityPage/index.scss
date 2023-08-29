@@ -1,12 +1,54 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
+.sus-top-wrapper {
+    .top-icon {
+        object-fit: cover;
+        width: 50%;
+        height: 50%;
+    }
+    margin-top: 2vh;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    .sustainability-top {
+        background-image: url(../../../static/assets/sustainability/sustainability-top-background.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 80%;
+        .top-text {
+            background: rgba(194, 194, 194, 0.886);
+            padding: 2vw;
+        }
+        margin-left: 2vw;
+        padding: 3vw 1vw 0 1vw;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        a,
+        b,
+        p {
+            text-align: left !important;
+        }
+        b,
+        h3 {
+            color: #30f8b6; //make the armada green popout more
+        }
+        h3 {
+            text-decoration: underline;
+        }
+    }
+}
+
 .sustainability {
     h1,
     h2,
     h3,
     h4,
     h5,
+    b,
     a {
         color: $melon;
     }

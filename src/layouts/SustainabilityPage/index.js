@@ -10,17 +10,36 @@ import SustainabilityInterviews from '../../components/SustainabilityInterviews'
 import SustainabilitySection from '../../../src/components/DiversitySection'
 import FunFact from '../../../src/components/FunFact'
 import ScrollUpButton from '../../components/ScrollUpButton'
-
+import { StaticImage } from 'gatsby-plugin-image'
 const SustainabilityPage = props => {
     return (
         <div className='content'>
             <ScrollUpButton />
+            <div className='sus-top-wrapper'>
+                <div className='sustainability-top'>
+                    <h3>SUSTAINABILITY</h3>
+                    <p className='top-text'>
+                        <b>Sustainability</b> is one of the key elements
+                        required in making the world a better place, a place
+                        where humanity and the environment can coexist in
+                        harmony without depleting the resources provided by
+                        nature. So, at THS Armada, sustainability alongside
+                        diversity, make up our core values which are epitomised,
+                        consolidated and reinforced through all aspects of our
+                        functioning and operations. Importantly, THS Armada
+                        reaches out to a large pool of people and therefore, we
+                        believe that with this comes a responsibility to create
+                        a general awareness, stimulate discussions and encourage
+                        a more sustainable living.{' '}
+                    </p>
+                </div>
+                <StaticImage
+                    className='top-icon'
+                    src='../../../static/assets/sustainability/sustainability-icon.png'
+                />
+            </div>
             <div className='sustainability'>
                 <div className='sustainability-container'>
-                    <ReactMarkdown
-                        children={markdown_sustainability}
-                        rehypePlugins={[rehypeRaw]}
-                    />
                     <SustainabilitySection left>
                         <FunFact
                             facts={[

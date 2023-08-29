@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import axios from 'axios'
 import PropTypes from 'prop-types'
 import './index.scss'
@@ -7,6 +8,7 @@ import Loading from '../Loading'
 import Cat from '../Cat'
 import Select from 'react-select'
 import { Link } from 'gatsby'
+import Collapsible from 'react-collapsible';
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
 
@@ -19,9 +21,19 @@ import { Link } from 'gatsby'
 }*/
 
 //base of server adress
+
+
+const dropDownAttributes = {
+    width: '100%',
+    padding: '0.1em 0em 0.5em 0em',
+    outline: 0,
+    // border: 
+    'background-color': '#00d790',
+};
+
 const ais = 'https://ais.armada.nu/'
 const isMockup = true;
-const showFilters = false;
+const showFilters = true;
 let exhibitorsConst = [
     {
         id: 1152,
@@ -116,6 +128,7 @@ class ExhibitorList extends React.Component {
             sectorfilters: {},
             competencefilters: {},
             locationfilters: {},
+            fairPlacementfilters: {},
             shine: '',
             diversityfilter: false,
             sustainabilityfilter: false,
@@ -413,6 +426,13 @@ class ExhibitorList extends React.Component {
                     id: 32,
                 },
             ],
+            fair_placements:[
+                { value: 'Nymble - 1st Floor', label: 'Nymble - 1st Floor' },
+                { value: 'Nymble - 2nd Floor', label: 'Nymble - 2nd Floor' },
+                { value: 'Nymble - 3rd Floor', label: 'Nymble - 3rd Floor' },
+                { value: 'Library - 1st Floor', label: 'Library - 1st Floor' },
+                { value: 'Library - 2nd Floor', label: 'Library - 2nd Floor' },
+            ],
             showamount: 20,
         }
 
@@ -448,7 +468,7 @@ class ExhibitorList extends React.Component {
                     let exhibitors = res.data // create variable and store result within parameter data
                     exhibitors.sort((a, b) => a.name.localeCompare(b.name))
                     let exhibitorList = exhibitors.map(exhibitor => (
-                        <ExhibitorItem
+                        <ExhibitorxItem
                             key={exhibitor.id}
                             name={exhibitor.name}
                             exhibitor={exhibitor}
@@ -475,6 +495,8 @@ class ExhibitorList extends React.Component {
     //currently only deals w/ getting data from api (unsure)
     componentDidMount(props) {
         // only called when exhibitor page is created or updated.
+        const filterContainer = document.getElementById("filter-container");
+        filterContainer.classList.toggle("hidden");
         if(!isMockup){
             this.apiFetcher(props, false)
         }
@@ -741,6 +763,13 @@ class ExhibitorList extends React.Component {
         this.setState({ locationfilters })
     }
 
+    fairPlacementFilter(value){
+        this.setdefault()
+        let fairPlacementfilters = this.state.fairPlacementfilters
+        fairPlacementfilters = value
+        this.setState({ fairPlacementfilters })
+    }
+
     showMore() {
         let showamount = this.state.showamount
         showamount = 183
@@ -821,6 +850,7 @@ class ExhibitorList extends React.Component {
         let exhibitorToDisplay = this.state.exhibitors.filter(
             exhibitor => exhibitor.name === this.state.exhibitorName
         )[0]
+        console.log(exhibitorToDisplay)
         let filteredCompanies = this.state.exhibitorList.filter(
             exhibitorItem => {
                 return exhibitorItem.props.name
@@ -947,7 +977,10 @@ class ExhibitorList extends React.Component {
 
         let showall =
             filteredCompanies.length > this.state.showamount ? true : false
-
+        function toggleFilterVisibility(){
+            const filterContainer = document.getElementById("filter-container");
+            filterContainer.classList.toggle("hidden");
+        }
         if (showExhibitors) {
             return (
                 <div className='exhibitors'>
@@ -1006,20 +1039,22 @@ class ExhibitorList extends React.Component {
 
                     <div className='search'>
                         <div className='search-container'>
-                            <input
-                                type='text'
-                                placeholder='Search Exhibitors'
-                                aria-label='search'
-                                value={this.state.search}
-                                onChange={this.updateSearch.bind(this)}
-                            />
-                        </div>
-                        {showFilters?(
-                        <div
-                            className={`filters ${
-                                this.props.lastYear ? 'display-none' : ''
-                            }`}
-                        >
+                            <div className='search-line'>
+                                <input
+                                    type='text'
+                                    placeholder='Search Exhibitors'
+                                    aria-label='search'
+                                    value={this.state.search}
+                                    onChange={this.updateSearch.bind(this)}
+                                />
+                                {/* <button id='search-button'>Search</button> */}
+                                <button id='filter-button' onClick={toggleFilterVisibility}>Filters</button>
+                                {/* <Collapsible 
+                                    trigger={"Filters"} 
+                                    triggerStyle={dropDownAttributes}
+                                > */}
+                            </div>
+                            <div id='filter-container'>
                             <Select
                                 closeMenuOnSelect={false}
                                 blurInputOnSelect={false}
@@ -1071,6 +1106,29 @@ class ExhibitorList extends React.Component {
                                 className='basic-multi-select'
                                 classNamePrefix='select'
                             />
+
+                            <Select
+                                closeMenuOnSelect={false}
+                                blurInputOnSelect={false}
+                                isMulti
+                                isSearchable
+                                name='Fair Placement filter'
+                                placeholder='All Fair Placements'
+                                options={this.state.fair_placements}
+                                onChange={event => this.fairPlacementFilter(event)}
+                                className='basic-multi-select'
+                                classNamePrefix='select'
+                            />
+                            </div>
+                        {/* </Collapsible> */}
+                        </div>
+                        {showFilters?(
+                        <div
+                            className={`filters ${
+                                this.props.lastYear ? 'display-none' : ''
+                            }`}
+                        >
+                          
                         </div>):null}
                     </div>
 

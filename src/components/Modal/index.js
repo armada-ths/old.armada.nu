@@ -7,7 +7,7 @@ const Modal = ({ onClose, ...rest }) => (
         <p role='presentation' className='cross' onClick={onClose}>
             ˟
         </p>
-        <div role='presentation' className='shade' onClick={onClose}>
+        <div role='presentation' onClick={onClose}>
             <div className='shadecontent'></div>
         </div>
         <div className='popup'>

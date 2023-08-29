@@ -2,10 +2,14 @@
 @import '../../styles/_fonts';
 
 .mapBox {
+    position: fixed;
+    top:0;
+    left:0;
     padding: 0;
     //margin: 0 2.5vw 0 2.5vw;
-    width: 100vw;
-    height: 100%;
+    width: 100%;
+    height: 50vh;
+    box-sizing: border-box;
     //margin-top: 56px; //the default menu bar is 56px height
     // margin-bottom: 8vh;
     .bigMap {

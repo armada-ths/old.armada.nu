@@ -1,5 +1,26 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
+.banner {
+    margin-top: 56px;
+    display: inline;
+    font-size: 1.2em;
+    font-family: Oswald, sans-serif;
+    letter-spacing: 1.4px;
+    a {
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .banner {
+        margin-top: 106px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .banner {
+        margin-top: 40px;
+    }
+}
 
 #navbar {
     position: fixed;
@@ -89,6 +110,11 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
+    .banner {
+        display: flex;
+        flex-direction: column;
+    }
+
     #navbar {
         overflow: hidden;
         //position: absolute; //Removed position absolute, this caused error on the map page.

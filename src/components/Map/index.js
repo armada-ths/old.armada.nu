@@ -122,7 +122,7 @@ export const MapUtil = () => {
     const zoomLevel = 2
     const bounds = [
         [(3509 / 4962) * detailLvl, 0], //4962  ×  3509
-        [0, detailLvl * 2],
+        [0, detailLvl],
     ]
 
     //Renders the list of exhibitors under the map.
@@ -207,10 +207,10 @@ export const MapUtil = () => {
                                                         behavior: 'smooth',
                                                     })
 
-                                                // element.style.backgroundColor = '#00d790';
+                                                    // element.style.backgroundColor = '#00d790';
 
-                                                element.style.animation =
-                                                    'dancingEffect 2s ease infinite'
+                                                    element.style.animation =
+                                                        'dancingEffect 2s ease infinite'
                                                     element.style.animation =
                                                         'dancingEffect 2s ease infinite'
 

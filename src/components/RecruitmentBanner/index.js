@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import Banner from '../Banner'
-
+import './index.scss'
 const RecruitmentBanner = ({ location }) => {
     const [showBanner, setShowBanner] = useState(false)
 
@@ -13,7 +13,7 @@ const RecruitmentBanner = ({ location }) => {
     }, [])
 
     return showBanner ? (
-        <Banner location={location} link={'/recruitment'}>
+        <Banner location={location} link={'/recruitment'} className='banner'>
             Recruitment open now! Apply here!
         </Banner>
     ) : (

@@ -304,11 +304,11 @@ const Navbar = props => {
                             </div>
                         </div>
                     </nav>
-                    <>
-                        <RegistrationBanner location={props.location} />
-                        <RecruitmentBanner location={props.location} />
-                    </>
                 </div>
+            </div>
+            <div className='banner'>
+                <RegistrationBanner location={props.location} />
+                <RecruitmentBanner location={props.location} />
             </div>
         </>
     )

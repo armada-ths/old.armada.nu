@@ -59,10 +59,10 @@ export const MapUtil = () => {
             floor: 1,
             color: '#fafa00',
             positions: [
-                [40, 40],
-                [80, 40],
-                [80, 80],
-                [40, 80],
+                [140, 120],
+                [145, 122],
+                [147, 116],
+                [142, 114],
             ],
         },
         {
@@ -80,13 +80,13 @@ export const MapUtil = () => {
             contact_email_address: null,
             contact_phone_number: null,
             location: 'Nymble',
-            floor: 2,
+            floor: 1,
             color: '#0000ff',
             positions: [
-                [90, 90],
-                [170, 90],
-                [170, 170],
-                [90, 170],
+                [142, 114],
+                [140, 120],
+                [135, 118],
+                [137, 112],
             ],
         },
         {
@@ -104,23 +104,25 @@ export const MapUtil = () => {
             contact_email_address: 'oscar.blomquist@ap4.se',
             contact_phone_number: '+4687877507',
             location: 'Nymble',
-            floor: 3,
+            floor: 2,
             color: '#00ffff',
             positions: [
-                [0, 90],
-                [70, 90],
-                [70, 170],
-                [0, 170],
+                [255, 105],
+                [254, 102],
+                [252, 98],
+                [252, 110],
+                [256, 110],
             ],
         },
-    ];
+    ]
 
     //const height =
+    const detailLvl = 400 //higher will lead to more resolution and require refactoring to remain full map in frame
     const position = [70, 100]
     const zoomLevel = 2
     const bounds = [
-        [(3509 / 4962) * 400, 0], //4962  ×  3509
-        [0, 400],
+        [(3509 / 4962) * detailLvl, 0], //4962  ×  3509
+        [0, detailLvl * 2],
     ]
 
     //Renders the list of exhibitors under the map.
@@ -155,61 +157,71 @@ export const MapUtil = () => {
                         <Internal />
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}{' '}
-                        {exhibitorsConst.map(ex => 
-                            {
-                                let ifShowPolygon = false;
-                                switch(floorShowed){
-                                    case 0:
-                                        ifShowPolygon = (ex.location === 'Nymble' && ex.floor === 1);
-                                        break;
-                                    case 1:
-                                        ifShowPolygon = (ex.location === 'Nymble' && ex.floor === 2);
-                                        break;
-                                    case 2:
-                                        ifShowPolygon = (ex.location === 'Nymble' && ex.floor === 3);
-                                        break;
-                                }
-                                return (
-                                ifShowPolygon &&
-                                <Polygon
-                                    key={ex.id}
-                                    positions={ex.positions}
-                                    color={ex.color}
-                                    eventHandlers={{
-                                        click: () => {
-                                            const element = document.getElementById(
-                                                ex.id
-                                            )
+                        {exhibitorsConst.map(ex => {
+                            let ifShowPolygon = false
+                            switch (floorShowed) {
+                                case 0:
+                                    ifShowPolygon =
+                                        ex.location === 'Nymble' &&
+                                        ex.floor === 1
+                                    break
+                                case 1:
+                                    ifShowPolygon =
+                                        ex.location === 'Nymble' &&
+                                        ex.floor === 2
+                                    break
+                                case 2:
+                                    ifShowPolygon =
+                                        ex.location === 'Nymble' &&
+                                        ex.floor === 3
+                                    break
+                            }
+                            return (
+                                ifShowPolygon && (
+                                    <Polygon
+                                        key={ex.id}
+                                        positions={ex.positions}
+                                        color={ex.color}
+                                        eventHandlers={{
+                                            click: () => {
+                                                console.log(ex.id)
+                                                const element =
+                                                    document.getElementById(
+                                                        ex.id
+                                                    )
 
-                                            if (element) {
-                                                // Get the position of the element relative to the viewport
-                                                const elementPosition =
-                                                    element.getBoundingClientRect()
-                                                        .top
+                                                if (element) {
+                                                    // Get the position of the element relative to the viewport
+                                                    const elementPosition =
+                                                        element.getBoundingClientRect()
+                                                            .top
 
-                                                // Calculate the current scroll position and add the element position
-                                                const offset =
-                                                    window.scrollY + elementPosition
+                                                    // Calculate the current scroll position and add the element position
+                                                    const offset =
+                                                        window.scrollY +
+                                                        elementPosition
 
-                                                // Scroll to the element with a smooth behavior
-                                                window.scrollTo({
-                                                    top: offset,
-                                                    behavior: 'smooth',
-                                                })
+                                                    // Scroll to the element with a smooth behavior
+                                                    window.scrollTo({
+                                                        top: offset,
+                                                        behavior: 'smooth',
+                                                    })
 
-                                                element.style.animation =
-                                                    'dancingEffect 2s ease infinite'
+                                                    element.style.animation =
+                                                        'dancingEffect 2s ease infinite'
 
-                                                // Remove the dancing effect class after animation duration
-                                                setTimeout(() => {
-                                                    element.style.animation = ''
-                                                }, 3000) // Adjust the duration as needed
-                                            }
-                                        },
-                                    }}
-                                />)
-                        }
-                        )}
+                                                    // Remove the dancing effect class after animation duration
+                                                    setTimeout(() => {
+                                                        element.style.animation =
+                                                            ''
+                                                    }, 3000) // Adjust the duration as needed
+                                                }
+                                            },
+                                        }}
+                                    />
+                                )
+                            )
+                        })}
                         {/*<LayersControl position='topright'>
                         <LayersControl.BaseLayer checked name='Floor 1'>
                         <LayerGroup> */}
@@ -245,7 +257,7 @@ export const MapUtil = () => {
             {/* <div className='exhibitorList'>
                 {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
             </div> */}
-            <ExhibitorList/>
+            <ExhibitorList />
         </div>
     )
 }

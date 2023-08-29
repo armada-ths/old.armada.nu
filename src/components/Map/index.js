@@ -1,5 +1,5 @@
 //https://codesandbox.io/s/react-leaflet-with-functional-components-and-imageoverlay-u225j?file=/src/Map.js
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import {
     ImageOverlay,
     MapContainer,
@@ -29,9 +29,52 @@ function Internal() {
     return null
 }
 
+function ZoomToComp({ mapRef, coordinates }) {
+    let max_x = 0
+    let max_y = 0
+    let min_x = 10000
+    let min_y = 10000
+    const test = [
+        [140, 120],
+        [145, 122],
+        [147, 116],
+        [142, 114],
+    ]
+    /*
+    [
+        [1000, 110],
+        [20, 25],
+        [30, 35],
+        [14, 15],
+        [12, 16],
+    ]
+    */
+    for (let i = 0; i < test.length; i++) {
+        if (test[i][1] > max_x) {
+            max_x = test[i][1]
+        }
+        if (test[i][0] > max_y) {
+            max_y = test[i][0]
+        }
+        if (test[i][1] < min_x) {
+            min_x = test[i][1]
+        }
+        if (test[i][0] < min_y) {
+            min_y = test[i][0]
+        }
+    }
+    //check for biggest/smallest x and y coordinate
+
+    let avg_x = min_x + (max_x - min_x) / 2
+    let avg_y = min_y + (max_y - min_y) / 2
+    mapRef.current.flyTo([avg_y, avg_x], 5)
+}
+
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
 /* Added box to test the surfaces, Hampus&Nima */
 export const MapUtil = () => {
+    const mapRef = useRef(null)
+
     const firstFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 1 blank.png')
     const secondFloorNymble = require('../../../static/assets/Map/Nymble_floor2.png')
     const thirdFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 3 blank.png')
@@ -117,14 +160,12 @@ export const MapUtil = () => {
     ]
 
     //const height =
-    const detailLvl = 400 //higher will lead to more resolution and require refactoring to remain full map in frame
-    const position = [70, 100]
+    const detailLvl = 600 //higher will lead to more resolution and require refactoring to remain full map in frame
     const zoomLevel = 2
     const bounds = [
         [(3509 / 4962) * detailLvl, 0], //4962  ×  3509
         [0, detailLvl],
     ]
-
     //Renders the list of exhibitors under the map.
     // //TODO: Make a component out of this if we decide to continue with this implementation
     // function exhibitorListRender(exhibitor) {
@@ -149,14 +190,15 @@ export const MapUtil = () => {
                     <MapContainer
                         zoom={zoomLevel}
                         //center={position}
-                        doubleClickZoom={false}
+                        doubleClickZoom
                         crs={CRS.Simple}
                         bounds={bounds}
                         className='bigMap'
+                        ref={mapRef}
                     >
                         <Internal />
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
-                         */}{' '}
+                         */}
                         {exhibitorsConst.map(ex => {
                             let ifShowPolygon = false
                             switch (floorShowed) {
@@ -184,7 +226,6 @@ export const MapUtil = () => {
                                         color={ex.color}
                                         eventHandlers={{
                                             click: () => {
-                                                console.log(ex.id)
                                                 const element =
                                                     document.getElementById(
                                                         ex.id
@@ -262,6 +303,21 @@ export const MapUtil = () => {
                 {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
             </div> */}
             <ExhibitorList />
+            <button
+                onClick={() =>
+                    ZoomToComp({
+                        coordinates: [
+                            [140, 120],
+                            [145, 122],
+                            [147, 116],
+                            [142, 114],
+                        ],
+                        mapRef,
+                    })
+                }
+            >
+                Test
+            </button>
         </div>
     )
 }

@@ -1240,7 +1240,6 @@ const ExhibitorItem = props => {
             onClick={() => {
                 console.log(props.exhibitor.positions)
                 setFocusCoordinate(props.exhibitor.positions)
-                /*
                 const exhibitorBoxes =
                     document.getElementsByClassName('exhibitor-box')
                 for (const box of exhibitorBoxes) {
@@ -1250,7 +1249,6 @@ const ExhibitorItem = props => {
                     props.exhibitor.id
                 ).style.backgroundColor = '#00d790'
                 props.showModal(props.exhibitor.name)
-                */
             }}
         >
             <div className='image-container'>

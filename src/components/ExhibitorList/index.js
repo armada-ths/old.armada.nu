@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import axios from 'axios'
 import PropTypes from 'prop-types'
 import './index.scss'
@@ -7,6 +7,7 @@ import Loading from '../Loading'
 import Cat from '../Cat'
 import Select from 'react-select'
 import { Link } from 'gatsby'
+import { ExtendedZoom } from '../Map'
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
 
@@ -20,8 +21,8 @@ import { Link } from 'gatsby'
 
 //base of server adress
 const ais = 'https://ais.armada.nu/'
-const isMockup = true;
-const showFilters = false;
+const isMockup = true
+const showFilters = false
 let exhibitorsConst = [
     {
         id: 1152,
@@ -95,7 +96,7 @@ let exhibitorsConst = [
             [0, 170],
         ],
     },
-];
+]
 
 class ExhibitorList extends React.Component {
     constructor(props) {
@@ -104,8 +105,8 @@ class ExhibitorList extends React.Component {
             previousYear: new Date(
                 new Date().setFullYear(new Date().getFullYear() - 1)
             )
-            .getFullYear()
-            .toString(), //get the previous year
+                .getFullYear()
+                .toString(), //get the previous year
             exhibitors: [], // json object
             exhibitorList: [], //displayed exhibitors
             showModal: false, //show individual company card
@@ -434,60 +435,67 @@ class ExhibitorList extends React.Component {
         //     this.setState({ exhibitors: exhibitorsConst, exhibitorList: exhibitorList, isLoading: false }) // component saves its own data --- What does this mean?? //Nima
         // }
         // else{
-            const yearParam = update ? '&year=' + props.year : ''
-            axios
-                .get(
-                    ais +
-                        `api/exhibitors?img alt=''_placeholder=true${
-                            this.props.lastYear
-                                ? '&year=' + this.state.previousYear
-                                : yearParam
-                        }`
-                )
-                .then(res => {
-                    let exhibitors = res.data // create variable and store result within parameter data
-                    exhibitors.sort((a, b) => a.name.localeCompare(b.name))
-                    let exhibitorList = exhibitors.map(exhibitor => (
-                        <ExhibitorItem
-                            key={exhibitor.id}
-                            name={exhibitor.name}
-                            exhibitor={exhibitor}
-                            showModal={this.showModal}
-                        />
-                    ))
-                    this.setState({ exhibitors: exhibitors, exhibitorList: exhibitorList, isLoading: false }) // component saves its own data --- What does this mean?? //Nima
-
-                    // Get from url path the GET params ?id=number, to know what event to display
-                    if (this.props.exhibitorName !== undefined) {
-                        this.setState({
-                            exhibitorName: props.exhibitorName,
-                            showModal: true,
-                        })
-                    }
-                })
-        // }
-    }
-    componentDidUpdate(props) {
-        if(!isMockup){
-            this.apiFetcher(props, true)
-        }
-    }
-    //currently only deals w/ getting data from api (unsure)
-    componentDidMount(props) {
-        // only called when exhibitor page is created or updated.
-        if(!isMockup){
-            this.apiFetcher(props, false)
-        }
-        else{
-            let exhibitorList = exhibitorsConst.map(exhibitor => (
+        const yearParam = update ? '&year=' + props.year : ''
+        axios
+            .get(
+                ais +
+                    `api/exhibitors?img alt=''_placeholder=true${
+                        this.props.lastYear
+                            ? '&year=' + this.state.previousYear
+                            : yearParam
+                    }`
+            )
+            .then(res => {
+                let exhibitors = res.data // create variable and store result within parameter data
+                exhibitors.sort((a, b) => a.name.localeCompare(b.name))
+                let exhibitorList = exhibitors.map(exhibitor => (
                     <ExhibitorItem
                         key={exhibitor.id}
                         name={exhibitor.name}
                         exhibitor={exhibitor}
                         showModal={this.showModal}
                     />
-                ));
-            this.setState({ exhibitors: exhibitorsConst, exhibitorList: exhibitorList, isLoading: false })
+                ))
+                this.setState({
+                    exhibitors: exhibitors,
+                    exhibitorList: exhibitorList,
+                    isLoading: false,
+                }) // component saves its own data --- What does this mean?? //Nima
+
+                // Get from url path the GET params ?id=number, to know what event to display
+                if (this.props.exhibitorName !== undefined) {
+                    this.setState({
+                        exhibitorName: props.exhibitorName,
+                        showModal: true,
+                    })
+                }
+            })
+        // }
+    }
+    componentDidUpdate(props) {
+        if (!isMockup) {
+            this.apiFetcher(props, true)
+        }
+    }
+    //currently only deals w/ getting data from api (unsure)
+    componentDidMount(props) {
+        // only called when exhibitor page is created or updated.
+        if (!isMockup) {
+            this.apiFetcher(props, false)
+        } else {
+            let exhibitorList = exhibitorsConst.map(exhibitor => (
+                <ExhibitorItem
+                    key={exhibitor.id}
+                    name={exhibitor.name}
+                    exhibitor={exhibitor}
+                    showModal={this.showModal}
+                />
+            ))
+            this.setState({
+                exhibitors: exhibitorsConst,
+                exhibitorList: exhibitorList,
+                isLoading: false,
+            })
         }
     }
 
@@ -629,58 +637,62 @@ class ExhibitorList extends React.Component {
                             </div>
 
                             <div className='job-location-container'>
-                                {exhibitor.employments&&exhibitor.employments.length > 0
+                                {exhibitor.employments &&
+                                exhibitor.employments.length > 0
                                     ? this.getJobContainer(exhibitor)
                                     : null}
 
-                                {exhibitor.locations&&exhibitor.locations.length > 0 && (
-                                    <div className='location-container'>
-                                        <h3 className='modal-subheaders'>
-                                            Locations
-                                        </h3>
-                                        <ul>
-                                            {exhibitor.locations.map(
-                                                (loc, index) => (
-                                                    <li
-                                                        key={index}
-                                                        className='location-section'
-                                                    >
-                                                        {loc.name}
-                                                    </li>
-                                                )
-                                            )}
-                                        </ul>
-                                    </div>
-                                )}
-                                {exhibitor.competences&&exhibitor.competences.length > 0 && (
-                                    <div className='competence-container'>
-                                        <h3 className='modal-subheaders'>
-                                            Competences
-                                        </h3>
-                                        <ul>
-                                            {exhibitor.competences.map(
-                                                (comp, index) => (
-                                                    <li
-                                                        key={index}
-                                                        className='competence-section'
-                                                    >
-                                                        {comp.name}
-                                                    </li>
-                                                )
-                                            )}
-                                        </ul>
-                                    </div>
-                                )}
-                                {exhibitor.cities&&exhibitor.cities.length > 0 && (
-                                    <div className='city-container'>
-                                        <h3 className='modal-subheaders'>
-                                            Cities
-                                        </h3>
-                                        <p className='city-string'>
-                                            {exhibitor.cities}
-                                        </p>
-                                    </div>
-                                )}
+                                {exhibitor.locations &&
+                                    exhibitor.locations.length > 0 && (
+                                        <div className='location-container'>
+                                            <h3 className='modal-subheaders'>
+                                                Locations
+                                            </h3>
+                                            <ul>
+                                                {exhibitor.locations.map(
+                                                    (loc, index) => (
+                                                        <li
+                                                            key={index}
+                                                            className='location-section'
+                                                        >
+                                                            {loc.name}
+                                                        </li>
+                                                    )
+                                                )}
+                                            </ul>
+                                        </div>
+                                    )}
+                                {exhibitor.competences &&
+                                    exhibitor.competences.length > 0 && (
+                                        <div className='competence-container'>
+                                            <h3 className='modal-subheaders'>
+                                                Competences
+                                            </h3>
+                                            <ul>
+                                                {exhibitor.competences.map(
+                                                    (comp, index) => (
+                                                        <li
+                                                            key={index}
+                                                            className='competence-section'
+                                                        >
+                                                            {comp.name}
+                                                        </li>
+                                                    )
+                                                )}
+                                            </ul>
+                                        </div>
+                                    )}
+                                {exhibitor.cities &&
+                                    exhibitor.cities.length > 0 && (
+                                        <div className='city-container'>
+                                            <h3 className='modal-subheaders'>
+                                                Cities
+                                            </h3>
+                                            <p className='city-string'>
+                                                {exhibitor.cities}
+                                            </p>
+                                        </div>
+                                    )}
                             </div>
                         </div>
                     </div>
@@ -1014,64 +1026,69 @@ class ExhibitorList extends React.Component {
                                 onChange={this.updateSearch.bind(this)}
                             />
                         </div>
-                        {showFilters?(
-                        <div
-                            className={`filters ${
-                                this.props.lastYear ? 'display-none' : ''
-                            }`}
-                        >
-                            <Select
-                                closeMenuOnSelect={false}
-                                blurInputOnSelect={false}
-                                isMulti
-                                isSearchable
-                                name='Job filter'
-                                placeholder='All Jobs'
-                                options={this.state.jobs}
-                                onChange={event => this.jobFilter(event)}
-                                className='basic-multi-select'
-                                classNamePrefix='select'
-                            />
+                        {showFilters ? (
+                            <div
+                                className={`filters ${
+                                    this.props.lastYear ? 'display-none' : ''
+                                }`}
+                            >
+                                <Select
+                                    closeMenuOnSelect={false}
+                                    blurInputOnSelect={false}
+                                    isMulti
+                                    isSearchable
+                                    name='Job filter'
+                                    placeholder='All Jobs'
+                                    options={this.state.jobs}
+                                    onChange={event => this.jobFilter(event)}
+                                    className='basic-multi-select'
+                                    classNamePrefix='select'
+                                />
 
-                            <Select
-                                closeMenuOnSelect={false}
-                                blurInputOnSelect={false}
-                                isMulti
-                                isSearchable
-                                name='Sector filter'
-                                placeholder='All Industries'
-                                options={this.state.sectors}
-                                onChange={event => this.sectorFilter(event)}
-                                className='basic-multi-select'
-                                classNamePrefix='select'
-                            />
+                                <Select
+                                    closeMenuOnSelect={false}
+                                    blurInputOnSelect={false}
+                                    isMulti
+                                    isSearchable
+                                    name='Sector filter'
+                                    placeholder='All Industries'
+                                    options={this.state.sectors}
+                                    onChange={event => this.sectorFilter(event)}
+                                    className='basic-multi-select'
+                                    classNamePrefix='select'
+                                />
 
-                            <Select
-                                closeMenuOnSelect={false}
-                                blurInputOnSelect={false}
-                                isMulti
-                                isSearchable
-                                name='Competence filter'
-                                placeholder='All Competences'
-                                options={this.state.competences}
-                                onChange={event => this.competenceFilter(event)}
-                                className='basic-multi-select'
-                                classNamePrefix='select'
-                            />
+                                <Select
+                                    closeMenuOnSelect={false}
+                                    blurInputOnSelect={false}
+                                    isMulti
+                                    isSearchable
+                                    name='Competence filter'
+                                    placeholder='All Competences'
+                                    options={this.state.competences}
+                                    onChange={event =>
+                                        this.competenceFilter(event)
+                                    }
+                                    className='basic-multi-select'
+                                    classNamePrefix='select'
+                                />
 
-                            <Select
-                                closeMenuOnSelect={false}
-                                blurInputOnSelect={false}
-                                isMulti
-                                isSearchable
-                                name='Location filter'
-                                placeholder='All Locations'
-                                options={this.state.locations}
-                                onChange={event => this.locationFilter(event)}
-                                className='basic-multi-select'
-                                classNamePrefix='select'
-                            />
-                        </div>):null}
+                                <Select
+                                    closeMenuOnSelect={false}
+                                    blurInputOnSelect={false}
+                                    isMulti
+                                    isSearchable
+                                    name='Location filter'
+                                    placeholder='All Locations'
+                                    options={this.state.locations}
+                                    onChange={event =>
+                                        this.locationFilter(event)
+                                    }
+                                    className='basic-multi-select'
+                                    classNamePrefix='select'
+                                />
+                            </div>
+                        ) : null}
                     </div>
 
                     {/*<div className='supercontainer'>
@@ -1149,6 +1166,7 @@ export default toExport
 */
 export default ExhibitorList
 const ExhibitorItem = props => {
+    const setFocusCoordinate = useContext(ExtendedZoom)
     let classname = props.exhibitor.sustainability ? ' green' : ''
     classname += props.exhibitor.diversity ? ' purple' : ''
 
@@ -1158,12 +1176,19 @@ const ExhibitorItem = props => {
             role='presentation'
             className={'exhibitor-box ' + classname}
             onClick={() => {
-                const exhibitorBoxes = document.getElementsByClassName('exhibitor-box');
-                for(const box of exhibitorBoxes){
-                    box.style.backgroundColor = '#fafafa';
+                //console.log(props.exhibitor.positions)
+                setFocusCoordinate(props.exhibitor.positions)
+                /*
+                const exhibitorBoxes =
+                    document.getElementsByClassName('exhibitor-box')
+                for (const box of exhibitorBoxes) {
+                    box.style.backgroundColor = '#fafafa'
                 }
-                document.getElementById(props.exhibitor.id).style.backgroundColor = '#00d790';
+                document.getElementById(
+                    props.exhibitor.id
+                ).style.backgroundColor = '#00d790'
                 props.showModal(props.exhibitor.name)
+                */
             }}
         >
             <div className='image-container'>

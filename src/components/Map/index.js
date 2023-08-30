@@ -1,5 +1,5 @@
 //https://codesandbox.io/s/react-leaflet-with-functional-components-and-imageoverlay-u225j?file=/src/Map.js
-import React, { useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, createContext } from 'react'
 import {
     ImageOverlay,
     MapContainer,
@@ -14,6 +14,8 @@ import { CRS } from 'leaflet'
 import './index.scss'
 import FloorSelector from './FloorSelector'
 import ExhibitorList from '../ExhibitorList'
+
+export const ExtendedZoom = createContext(null)
 
 function Internal() {
     const map = useMap()
@@ -40,15 +42,7 @@ function ZoomToComp({ mapRef, coordinates }) {
         [147, 116],
         [142, 114],
     ]
-    /*
-    [
-        [1000, 110],
-        [20, 25],
-        [30, 35],
-        [14, 15],
-        [12, 16],
-    ]
-    */
+
     for (let i = 0; i < test.length; i++) {
         if (test[i][1] > max_x) {
             max_x = test[i][1]
@@ -67,7 +61,11 @@ function ZoomToComp({ mapRef, coordinates }) {
 
     let avg_x = min_x + (max_x - min_x) / 2
     let avg_y = min_y + (max_y - min_y) / 2
-    mapRef.current.flyTo([avg_y, avg_x], 5)
+    mapRef.current?.flyTo([avg_y, avg_x], 5)
+}
+
+function PassedZoom({ coordinates, mapRef }) {
+    ZoomToComp({ mapRef, coordinates })
 }
 
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
@@ -82,6 +80,14 @@ export const MapUtil = () => {
     const floorArray = [firstFloorNymble, secondFloorNymble, thirdFloorNymble]
 
     const [floorShowed, setFloorShowed] = useState(0)
+
+    const [focusCoordinate, setFocusCoordinate] = useState([[50, 50]]) //placeholder values
+    useEffect(() => {
+        ZoomToComp({ coordinates: focusCoordinate, mapRef })
+        //console.log(focusCoordinate)
+    }, [focusCoordinate])
+    //const [lang, setLang] = useState(0)
+    //const [lat, setLat] = useState(0)
 
     let exhibitorsConst = [
         {
@@ -302,22 +308,9 @@ export const MapUtil = () => {
             {/* <div className='exhibitorList'>
                 {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
             </div> */}
-            <ExhibitorList />
-            <button
-                onClick={() =>
-                    ZoomToComp({
-                        coordinates: [
-                            [140, 120],
-                            [145, 122],
-                            [147, 116],
-                            [142, 114],
-                        ],
-                        mapRef,
-                    })
-                }
-            >
-                Test
-            </button>
+            <ExtendedZoom.Provider value={setFocusCoordinate}>
+                <ExhibitorList />
+            </ExtendedZoom.Provider>
         </div>
     )
 }

@@ -5,6 +5,7 @@ import { RiCustomerService2Line } from 'react-icons/ri'
 import React, { useState, useEffect } from 'react'
 import './index.scss'
 import useWindowSize from './useGatsbyWindowSize'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 const THIS_PAGE = '/'
 const Form = () => {
@@ -25,6 +26,7 @@ const Form = () => {
     const [statusText, setStatusText] = useState('')
     const [formSubmitted, setFormSubmitted] = useState(false)
     const [formedFilled, setFormFilled] = useState(false) //used to keep track if the form if fully filled out or not
+    const [captchaFilled, setCaptchaFilled] = useState(false)
     const handleChange = event => {
         const key = event.target.name
         const updatedFormValue = event.target.value
@@ -36,13 +38,14 @@ const Form = () => {
         if (
             formData.name !== '' &&
             formData.email !== '' &&
-            formData.message !== ''
+            formData.message !== '' &&
+            captchaFilled
         ) {
             setFormFilled(true)
         } else {
             setFormFilled(false)
         }
-    }, [formData])
+    }, [formData, captchaFilled])
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -120,6 +123,12 @@ const Form = () => {
                             className='input'
                         />
                     </div>
+                    <ReCAPTCHA
+                        sitekey='6LdlSPwnAAAAADCALl0tmledXQ2NofF5J0Ssi1wH'
+                        onChange={() => {
+                            setCaptchaFilled(true)
+                        }}
+                    />
                     <div className='label'>
                         {formedFilled ? (
                             <button

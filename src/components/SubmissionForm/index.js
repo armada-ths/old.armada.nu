@@ -2,7 +2,7 @@
 import { BsChevronCompactRight, BsChevronCompactDown } from 'react-icons/bs'
 import { FaRegWindowMinimize } from 'react-icons/fa'
 import { RiCustomerService2Line } from 'react-icons/ri'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './index.scss'
 import useWindowSize from './useGatsbyWindowSize'
 
@@ -24,13 +24,25 @@ const Form = () => {
 
     const [statusText, setStatusText] = useState('')
     const [formSubmitted, setFormSubmitted] = useState(false)
-
+    const [formedFilled, setFormFilled] = useState(false) //used to keep track if the form if fully filled out or not
     const handleChange = event => {
         const key = event.target.name
         const updatedFormValue = event.target.value
         const newFormData = { ...formData, [key]: updatedFormValue }
         setFormData(newFormData)
     }
+
+    useEffect(() => {
+        if (
+            formData.name !== '' &&
+            formData.email !== '' &&
+            formData.message !== ''
+        ) {
+            setFormFilled(true)
+        } else {
+            setFormFilled(false)
+        }
+    }, [formData])
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -71,7 +83,6 @@ const Form = () => {
                     action={THIS_PAGE}
                     data-netlify='true'
                     data-netlify-honeypot='bot-field'
-                    data-netlify-recaptcha='true'
                     className='formActual'
                 >
                     <input type='hidden' name='bot-field' />
@@ -91,7 +102,7 @@ const Form = () => {
                         />
                     </div>
                     <div className='label'>
-                        <label htmlFor='email'>Email</label>
+                        <label htmlFor='email'>Your Email</label>
                         <input
                             type='text'
                             name='email'
@@ -109,15 +120,18 @@ const Form = () => {
                             className='input'
                         />
                     </div>
-                    <div data-netlify-recaptcha='true'></div>
                     <div className='label'>
-                        <button
-                            style={{ margin: '10px 0 10px 0' }}
-                            type='submit'
-                            name='submit'
-                        >
-                            Send Email
-                        </button>
+                        {formedFilled ? (
+                            <button
+                                style={{ margin: '10px 0 10px 0' }}
+                                type='submit'
+                                name='submit'
+                            >
+                                Submit
+                            </button>
+                        ) : (
+                            <button disabled={true}>Submit</button>
+                        )}
                     </div>
                 </form>
             )}
@@ -136,10 +150,11 @@ const SubmissionForm = () => {
                         <div
                             style={{
                                 textDecoration: 'underline',
-                                fontSize: 28,
+                                fontSize: 22,
                             }}
                         >
-                            Hey, want to contact sales team directly?
+                            Hey! Would you like to contact our sales team
+                            directly?
                         </div>
                         <FaRegWindowMinimize
                             className={

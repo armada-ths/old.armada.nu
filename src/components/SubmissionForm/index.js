@@ -4,6 +4,7 @@ import { FaRegWindowMinimize } from 'react-icons/fa'
 import { RiCustomerService2Line } from 'react-icons/ri'
 import React, { useState } from 'react'
 import './index.scss'
+import useWindowSize from './useGatsbyWindowSize'
 
 const THIS_PAGE = '/'
 const Form = () => {
@@ -121,7 +122,7 @@ const Form = () => {
 
 const SubmissionForm = () => {
     const [formShowing, showForm] = useState(true)
-    const isMobile = window.innerWidth <= 768
+    var w = useWindowSize().width
     return (
         <div className='entireBox'>
             {formShowing ? (
@@ -140,7 +141,7 @@ const SubmissionForm = () => {
             ) : (
                 <>
                     {/*This is so that the button becomes smaller on mobile */}
-                    {!isMobile ? (
+                    {w > 850 ? (
                         <button
                             className='salesContactBtn'
                             onClick={() => showForm(!formShowing)}

@@ -9,6 +9,7 @@
     "@mdx-js/react": "^2.3.0",
     "@staticcms/core": "^1.2.12",
     "bootstrap": "^5.2.3",
+    "browser-monads": "^1.0.0",
     "flag": "^5.0.1",
     "gatsby": "^5.7.0",
     "gatsby-plugin-google-analytics": "^5.7.0",

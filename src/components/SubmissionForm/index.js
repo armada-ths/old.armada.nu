@@ -53,7 +53,7 @@ const Form = () => {
                 const emptyForm = createEmptyForm()
                 setFormData(emptyForm)
                 setFormSubmitted(true)
-                setStatusText('Thank you!')
+                setStatusText('Thank you! We will be in touch soon!')
             })
             .catch(error => setStatusText(`Error: ${error.message}`))
     }
@@ -71,6 +71,7 @@ const Form = () => {
                     action={THIS_PAGE}
                     data-netlify='true'
                     data-netlify-honeypot='bot-field'
+                    data-netlify-recaptcha='true'
                     className='formActual'
                 >
                     <input type='hidden' name='bot-field' />
@@ -108,6 +109,7 @@ const Form = () => {
                             className='input'
                         />
                     </div>
+                    <div data-netlify-recaptcha='true'></div>
                     <div className='label'>
                         <button
                             style={{ margin: '10px 0 10px 0' }}
@@ -134,7 +136,7 @@ const SubmissionForm = () => {
                         <div
                             style={{
                                 textDecoration: 'underline',
-                                fontSize: 30,
+                                fontSize: 28,
                             }}
                         >
                             Hey, want to contact sales team directly?

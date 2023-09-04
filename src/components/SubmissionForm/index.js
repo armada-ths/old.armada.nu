@@ -47,7 +47,9 @@ const Form = () => {
             .then(response => {
                 //where your custom handling goes
                 if (!response.ok) throw Error(response.statusText)
-
+                console.log(response)
+                console.log(response.ok)
+                console.log(response.statusText)
                 const emptyForm = createEmptyForm()
                 setFormData(emptyForm)
                 setFormSubmitted(true)
@@ -59,7 +61,7 @@ const Form = () => {
     return (
         <>
             {formSubmitted ? (
-                <>{statusText}</>
+                <div style={{ color: white }}>{statusText}</div>
             ) : (
                 <form
                     name='contact-form'

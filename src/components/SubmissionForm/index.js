@@ -61,7 +61,7 @@ const Form = () => {
     return (
         <>
             {formSubmitted ? (
-                <div style={{ color: white }}>{statusText}</div>
+                <div className='submittedText'>{statusText}</div>
             ) : (
                 <form
                     name='contact-form'
@@ -71,6 +71,7 @@ const Form = () => {
                     action={THIS_PAGE}
                     data-netlify='true'
                     data-netlify-honeypot='bot-field'
+                    className='formActual'
                 >
                     <input type='hidden' name='bot-field' />
                     <input
@@ -78,7 +79,7 @@ const Form = () => {
                         name='form-name'
                         value='contact-form'
                     />
-                    <div>
+                    <div className='label'>
                         <label htmlFor='name'>Name</label>
                         <input
                             type='text'
@@ -88,7 +89,7 @@ const Form = () => {
                             className='input'
                         />
                     </div>
-                    <div>
+                    <div className='label'>
                         <label htmlFor='email'>Email</label>
                         <input
                             type='text'
@@ -98,7 +99,7 @@ const Form = () => {
                             className='input'
                         />
                     </div>
-                    <div>
+                    <div className='label'>
                         <label htmlFor='message'>Message</label>
                         <textarea
                             name='message'
@@ -107,7 +108,7 @@ const Form = () => {
                             className='input'
                         />
                     </div>
-                    <div>
+                    <div className='label'>
                         <button
                             style={{ margin: '10px 0 10px 0' }}
                             type='submit'
@@ -130,7 +131,14 @@ const SubmissionForm = () => {
             {formShowing ? (
                 <div className='formBox'>
                     <div className='titleFormBox'>
-                        <div>Hey, want to contact sales directly?</div>
+                        <div
+                            style={{
+                                textDecoration: 'underline',
+                                fontSize: 30,
+                            }}
+                        >
+                            Hey, want to contact sales team directly?
+                        </div>
                         <FaRegWindowMinimize
                             className={
                                 formShowing ? 'arrow rotate-icon' : 'arrow'

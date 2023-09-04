@@ -1,14 +1,24 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
+.submittedText {
+    p {
+        color: white;
+    }
+}
+
 .entireBox {
     position: fixed;
     width: 25%;
     z-index: 100;
-    bottom: 20px;
+    bottom: 0px;
     left: 20px;
+    overflow-y: auto;
     .arrow {
         font-size: 30px;
+    }
+    .salesContactBtn {
+        margin-bottom: 10px;
     }
     .formBox {
         margin-left: 20px;
@@ -31,10 +41,14 @@
         div {
             color: white;
         }
+        .label {
+            margin-top: 1em;
+        }
         .input {
             background-color: white; /* Set the background color of the input fields to white */
             color: black; /* Set the text color of the input fields to white */
             border: 1px solid black;
+            margin-top: 2em;
         }
     }
 }
@@ -68,5 +82,7 @@
     .salesContactBtn {
         padding: 0;
         min-width: 60px;
+        margin-bottom: 10px;
+        margin-left: 10px;
     }
 }

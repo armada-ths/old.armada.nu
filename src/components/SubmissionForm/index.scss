@@ -1,0 +1,72 @@
+@import '../../styles/global';
+@import '../../styles/_variables';
+
+.entireBox {
+    position: fixed;
+    width: 25%;
+    z-index: 100;
+    bottom: 20px;
+    left: 20px;
+    .arrow {
+        font-size: 30px;
+    }
+    .formBox {
+        margin-left: 20px;
+        background-color: #181a1b;
+        padding: 10px;
+        padding-bottom: 50px;
+        .titleFormBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+            .arrow {
+                padding-bottom: 5px;
+                width: 100px;
+                border: 1px solid white;
+                cursor: pointer;
+            }
+        }
+        div {
+            color: white;
+        }
+        .input {
+            background-color: white; /* Set the background color of the input fields to white */
+            color: black; /* Set the text color of the input fields to white */
+            border: 1px solid black;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .entireBox {
+        width: 100%; /* Make the entire box take full width on smaller screens */
+        left: 0; /* Reset left positioning */
+        bottom: 0; /* Attach the box to the bottom of the screen */
+    }
+
+    .formBox {
+        margin-left: 0; /* Remove left margin to use full width */
+        padding: 20px; /* Increase padding for better spacing */
+        width: 75%;
+    }
+
+    .titleFormBox {
+        margin-bottom: 20px; /* Increase margin for better spacing */
+    }
+
+    .arrow {
+        padding: 10px; /* Add padding to make the button larger */
+        width: auto; /* Let the width adjust based on content */
+        border: 1px solid white;
+        cursor: pointer;
+        background-color: #333; /* Change background color for better visibility */
+        color: white; /* Change text color for better contrast */
+        font-size: 35px;
+    }
+    .salesContactBtn {
+        padding: 0;
+        min-width: 60px;
+    }
+}

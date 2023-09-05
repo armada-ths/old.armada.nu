@@ -3,17 +3,21 @@ import React, { useEffect, useState, useRef, createContext } from 'react'
 import {
     ImageOverlay,
     MapContainer,
+    Marker,
     LayersControl,
     LayerGroup,
     Polygon,
     useMap,
     useMapEvent,
 } from 'react-leaflet'
+import MarkerClusterGroup from 'react-leaflet-cluster'
 import L from 'leaflet'
 import { CRS } from 'leaflet'
 import './index.scss'
 import FloorSelector from './FloorSelector'
 import ExhibitorList from '../ExhibitorList'
+
+import customIconImage from './customIcon.svg'
 
 export const ExtendedZoom = createContext(null)
 
@@ -31,42 +35,83 @@ function Internal() {
     return null
 }
 
-function ZoomToComp({ mapRef, coordinates }) {
+function handlePolygonSelect(ex) {
+    const element = document.getElementById(ex.id)
+
+    if (element) {
+        // Get the position of the element relative to the viewport
+        const elementPosition = element.getBoundingClientRect().top
+
+        // Calculate the current scroll position and add the element position
+        const offset = window.scrollY + elementPosition
+
+        // Scroll to the element with a smooth behavior
+        window.scrollTo({
+            top: offset,
+            behavior: 'smooth',
+        })
+
+        // element.style.backgroundColor = '#00d790';
+
+        element.style.animation = 'dancingEffect 2s ease infinite'
+        element.style.animation = 'dancingEffect 2s ease infinite'
+
+        // Remove the dancing effect class after animation duration
+        setTimeout(() => {
+            element.style.animation = ''
+        }, 3000) // Adjust the duration as needed
+    }
+}
+
+function findMiddle(coordinates) {
+    console.log('in find mid')
+    console.log(coordinates)
     let max_x = 0
     let max_y = 0
     let min_x = 10000
     let min_y = 10000
-    const test = [
-        [140, 120],
-        [145, 122],
-        [147, 116],
-        [142, 114],
-    ]
-
-    for (let i = 0; i < test.length; i++) {
-        if (test[i][1] > max_x) {
-            max_x = test[i][1]
+    for (let i = 0; i < coordinates.length; i++) {
+        if (coordinates[i][1] > max_x) {
+            max_x = coordinates[i][1]
         }
-        if (test[i][0] > max_y) {
-            max_y = test[i][0]
+        if (coordinates[i][0] > max_y) {
+            max_y = coordinates[i][0]
         }
-        if (test[i][1] < min_x) {
-            min_x = test[i][1]
+        if (coordinates[i][1] < min_x) {
+            min_x = coordinates[i][1]
         }
-        if (test[i][0] < min_y) {
-            min_y = test[i][0]
+        if (coordinates[i][0] < min_y) {
+            min_y = coordinates[i][0]
         }
     }
     //check for biggest/smallest x and y coordinate
 
     let avg_x = min_x + (max_x - min_x) / 2
     let avg_y = min_y + (max_y - min_y) / 2
-    mapRef.current?.flyTo([avg_y, avg_x], 5)
+    console.log(avg_y, avg_x)
+    return [avg_y, avg_x]
+}
+
+function ZoomToComp({ mapRef, coordinates }) {
+    mapRef.current?.flyTo(findMiddle(coordinates), 5)
 }
 
 function PassedZoom({ coordinates, mapRef }) {
     ZoomToComp({ mapRef, coordinates })
 }
+
+let xIcon = 80
+let yIcon = 80
+
+var customIcon = L.icon({
+    iconUrl: customIconImage,
+
+    iconSize: [xIcon, yIcon], // size of the icon
+    //shadowSize: [50, 64], // size of the shadow
+    iconAnchor: [xIcon / 2, yIcon], // point of the icon which will correspond to marker's location
+    //shadowAnchor: [4, 62], // the same for the shadow
+    //popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+})
 
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
 /* Added box to test the surfaces, Hampus&Nima */
@@ -201,78 +246,60 @@ export const MapUtil = () => {
                         bounds={bounds}
                         className='bigMap'
                         ref={mapRef}
+                        maxZoom={20}
+                        minZoom={0}
                     >
                         <Internal />
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}
-                        {exhibitorsConst.map(ex => {
-                            let ifShowPolygon = false
-                            switch (floorShowed) {
-                                case 0:
-                                    ifShowPolygon =
-                                        ex.location === 'Nymble' &&
-                                        ex.floor === 1
-                                    break
-                                case 1:
-                                    ifShowPolygon =
-                                        ex.location === 'Nymble' &&
-                                        ex.floor === 2
-                                    break
-                                case 2:
-                                    ifShowPolygon =
-                                        ex.location === 'Nymble' &&
-                                        ex.floor === 3
-                                    break
-                            }
-                            return (
-                                ifShowPolygon && (
-                                    <Polygon
-                                        key={ex.id}
-                                        positions={ex.positions}
-                                        color={ex.color}
-                                        eventHandlers={{
-                                            click: () => {
-                                                const element =
-                                                    document.getElementById(
-                                                        ex.id
-                                                    )
-
-                                                if (element) {
-                                                    // Get the position of the element relative to the viewport
-                                                    const elementPosition =
-                                                        element.getBoundingClientRect()
-                                                            .top
-
-                                                    // Calculate the current scroll position and add the element position
-                                                    const offset =
-                                                        window.scrollY +
-                                                        elementPosition
-
-                                                    // Scroll to the element with a smooth behavior
-                                                    window.scrollTo({
-                                                        top: offset,
-                                                        behavior: 'smooth',
-                                                    })
-
-                                                    // element.style.backgroundColor = '#00d790';
-
-                                                    element.style.animation =
-                                                        'dancingEffect 2s ease infinite'
-                                                    element.style.animation =
-                                                        'dancingEffect 2s ease infinite'
-
-                                                    // Remove the dancing effect class after animation duration
-                                                    setTimeout(() => {
-                                                        element.style.animation =
-                                                            ''
-                                                    }, 3000) // Adjust the duration as needed
-                                                }
-                                            },
-                                        }}
-                                    />
+                        <MarkerClusterGroup chunkedLoading>
+                            {exhibitorsConst.map(ex => {
+                                let ifShowPolygon = false
+                                switch (floorShowed) {
+                                    case 0:
+                                        ifShowPolygon =
+                                            ex.location === 'Nymble' &&
+                                            ex.floor === 1
+                                        break
+                                    case 1:
+                                        ifShowPolygon =
+                                            ex.location === 'Nymble' &&
+                                            ex.floor === 2
+                                        break
+                                    case 2:
+                                        ifShowPolygon =
+                                            ex.location === 'Nymble' &&
+                                            ex.floor === 3
+                                        break
+                                }
+                                return (
+                                    ifShowPolygon && (
+                                        <Polygon
+                                            key={ex.id}
+                                            positions={ex.positions}
+                                            color={ex.color}
+                                            eventHandlers={{
+                                                click: () =>
+                                                    handlePolygonSelect(ex),
+                                            }}
+                                        >
+                                            <Marker
+                                                eventHandlers={{
+                                                    click: () =>
+                                                        handlePolygonSelect(ex),
+                                                }}
+                                                key={0}
+                                                position={findMiddle(
+                                                    ex.positions
+                                                )}
+                                                title={'ipsum'}
+                                                icon={customIcon}
+                                            ></Marker>
+                                        </Polygon>
+                                    )
                                 )
-                            )
-                        })}
+                            })}
+                        </MarkerClusterGroup>
                         {/*<LayersControl position='topright'>
                         <LayersControl.BaseLayer checked name='Floor 1'>
                         <LayerGroup> */}

@@ -117,6 +117,12 @@ const PositionComponent = ({ position }) => {
                             <li key={index}>{element}</li>
                         ))}
                     </ul>
+                    <a
+                        className='applyButton'
+                        href='https://ais.armada.nu/fairs/2023/recruitment/'
+                    >
+                        Apply here
+                    </a>
                 </div>
             )}
         </div>

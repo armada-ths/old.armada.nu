@@ -1,0 +1,35 @@
+/* Countdown Timer Container */
+.countdown-container {
+    margin-top: 30px;
+    h2 {
+        margin-bottom: 10px;
+    }
+}
+
+/* Countdown Timer Container */
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    background-color: #333; /* Set the background color for the timer container */
+}
+
+/* Countdown Item */
+.countdown-item {
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1; /* Allow items to expand and fill available space */
+}
+
+/* Countdown Label */
+.countdown-label {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #999;
+}

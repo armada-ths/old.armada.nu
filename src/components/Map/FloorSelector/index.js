@@ -1,30 +1,24 @@
 import React from 'react'
 import './index.scss'
 
-const FloorSelector = (setFairLocation, fairLocation) => {
+const FloorSelector = (setFloorShowed, floorShowed) => {
     return (
         <div className='floorTabs'>
             <div
-                className={
-                    fairLocation === 'Nymble - 1st Floor' ? 'active tab' : 'tab'
-                }
-                onClick={() => setFairLocation('Nymble - 1st Floor')}
+                className={floorShowed === 0 ? 'active tab' : 'tab'}
+                onClick={() => setFloorShowed(0)}
             >
                 Nymble - 1st floor
             </div>
             <div
-                className={
-                    fairLocation === 'Nymble - 2nd Floor' ? 'active tab' : 'tab'
-                }
-                onClick={() => setFairLocation('Nymble - 2nd Floor')}
+                className={floorShowed === 1 ? 'active tab' : 'tab'}
+                onClick={() => setFloorShowed(1)}
             >
                 Nymble - 2nd floor
             </div>
             <div
-                className={
-                    fairLocation === 'Nymble - 3rd Floor' ? 'active tab' : 'tab'
-                }
-                onClick={() => setFairLocation('Nymble - 3rd Floor')}
+                className={floorShowed === 2 ? 'active tab' : 'tab'}
+                onClick={() => setFloorShowed(2)}
             >
                 Nymble - 3rd floor
             </div>

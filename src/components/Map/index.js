@@ -132,13 +132,7 @@ export const MapUtil = () => {
 
     const floorArray = [firstFloorNymble, secondFloorNymble, thirdFloorNymble]
 
-    const floorObj = {
-        'Nymble - 1st Floor': firstFloorNymble,
-        'Nymble - 2nd Floor': secondFloorNymble,
-        'Nymble - 3rd Floor': thirdFloorNymble,
-    }
-
-    const [fairLocation, setFairLocation] = useState('Nymble - 2nd Floor')
+    const [floorShowed, setFloorShowed] = useState(0)
 
     const [focusCoordinate, setFocusCoordinate] = useState([[50, 50]]) //placeholder values
     useEffect(() => {
@@ -163,7 +157,8 @@ export const MapUtil = () => {
             contact_name: 'Naomi Korang',
             contact_email_address: 'naomi.korang@assaabloy.com',
             contact_phone_number: '+46739045323',
-            fair_placement: ['Nymble - 2nd Floor'],
+            location: 'Nymble',
+            floor: 1,
             color: '#fafa00',
             positions: [
                 [140, 120],
@@ -186,7 +181,8 @@ export const MapUtil = () => {
             contact_name: null,
             contact_email_address: null,
             contact_phone_number: null,
-            fair_placement: ['Nymble - 2nd Floor'],
+            location: 'Nymble',
+            floor: 1,
             color: '#0000ff',
             positions: [
                 [142, 114],
@@ -209,7 +205,8 @@ export const MapUtil = () => {
             contact_name: 'Oscar Blomquist',
             contact_email_address: 'oscar.blomquist@ap4.se',
             contact_phone_number: '+4687877507',
-            fair_placement: ['Nymble - 2nd Floor'],
+            location: 'Nymble',
+            floor: 2,
             color: '#00ffff',
             positions: [
                 [255, 105],
@@ -247,8 +244,7 @@ export const MapUtil = () => {
     return (
         <div>
             <div className='mapBox'>
-                {FloorSelector(setFairLocation, fairLocation)}
-
+                {FloorSelector(setFloorShowed, floorShowed)}
                 <div>
                     <MapContainer
                         zoom={zoomLevel}
@@ -264,77 +260,60 @@ export const MapUtil = () => {
                         <Internal />
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}
-                        {exhibitorsConst.map(ex => {
-                            let ifShowPolygon = false
-                            switch (fairLocation) {
-                                case 'Nymble - 1st Floor':
-                                    ifShowPolygon =
-                                        ex.fair_placement.includes(fairLocation)
-                                    break
-                                case 'Nymble - 2nd Floor':
-                                    ifShowPolygon =
-                                        ex.fair_placement.includes(fairLocation)
-                                    break
-                                case 'Nymble - 3rd Floor':
-                                    ifShowPolygon =
-                                        ex.fair_placement.includes(fairLocation)
-                                    break
-                            }
-                            return (
-                                ifShowPolygon && (
-                                    <Polygon
-                                        key={ex.id}
-                                        positions={ex.positions}
-                                        color={ex.color}
-                                        eventHandlers={{
-                                            click: () => {
-                                                const element =
-                                                    document.getElementById(
-                                                        ex.id
-                                                    )
-
-                                                if (element) {
-                                                    // Get the position of the element relative to the viewport
-                                                    const elementPosition =
-                                                        element.getBoundingClientRect()
-                                                            .top
-
-                                                    // Calculate the current scroll position and add the element position
-                                                    const offset =
-                                                        window.scrollY +
-                                                        elementPosition
-
-                                                    // Scroll to the element with a smooth behavior
-                                                    window.scrollTo({
-                                                        top: offset,
-                                                        behavior: 'smooth',
-                                                    })
-
-                                                    // element.style.backgroundColor = '#00d790';
-
-                                                    element.style.animation =
-                                                        'dancingEffect 2s ease infinite'
-                                                    element.style.animation =
-                                                        'dancingEffect 2s ease infinite'
-
-                                                    // Remove the dancing effect class after animation duration
-                                                    setTimeout(() => {
-                                                        element.style.animation =
-                                                            ''
-                                                    }, 3000) // Adjust the duration as needed
-                                                }
-                                            },
-                                        }}
-                                    />
+                        <MarkerClusterGroup chunkedLoading>
+                            {exhibitorsConst.map(ex => {
+                                let ifShowPolygon = false
+                                switch (floorShowed) {
+                                    case 0:
+                                        ifShowPolygon =
+                                            ex.location === 'Nymble' &&
+                                            ex.floor === 1
+                                        break
+                                    case 1:
+                                        ifShowPolygon =
+                                            ex.location === 'Nymble' &&
+                                            ex.floor === 2
+                                        break
+                                    case 2:
+                                        ifShowPolygon =
+                                            ex.location === 'Nymble' &&
+                                            ex.floor === 3
+                                        break
+                                }
+                                return (
+                                    ifShowPolygon && (
+                                        <Polygon
+                                            key={ex.id}
+                                            positions={ex.positions}
+                                            color={ex.color}
+                                            eventHandlers={{
+                                                click: () =>
+                                                    handlePolygonSelect(ex),
+                                            }}
+                                        >
+                                            <Marker
+                                                eventHandlers={{
+                                                    click: () =>
+                                                        handlePolygonSelect(ex),
+                                                }}
+                                                key={0}
+                                                position={findMiddle(
+                                                    ex.positions
+                                                )}
+                                                title={'ipsum'}
+                                                icon={customIcon(ex)}
+                                            ></Marker>
+                                        </Polygon>
+                                    )
                                 )
-                            )
-                        })}
+                            })}
+                        </MarkerClusterGroup>
                         {/*<LayersControl position='topright'>
                         <LayersControl.BaseLayer checked name='Floor 1'>
                         <LayerGroup> */}
                         <ImageOverlay
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            url={floorObj[fairLocation].default}
+                            url={floorArray[floorShowed].default}
                             bounds={bounds}
                         />
                         {/*</LayerGroup>

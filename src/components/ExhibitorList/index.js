@@ -984,6 +984,32 @@ class ExhibitorList extends React.Component {
             }
         }
 
+        //fair placement filter
+        for (let filterkey in this.state.fairPlacementfilters) {
+            console.log('hey' + filterkey)
+            if (this.state.fairPlacementfilters[filterkey]) {
+                filteredCompanies = filteredCompanies.filter(exhibitorItem => {
+                    console.log(exhibitorItem)
+                    for (let fair_placement_index in exhibitorItem.props
+                        .exhibitor.fair_placement) {
+                        console.log('testtets' + fair_placement_index)
+                        console.log(
+                            exhibitorItem.props.exhibitor.fair_placement
+                        )
+                        if (
+                            exhibitorItem.props.exhibitor.fair_placement[
+                                fair_placement_index
+                            ] ===
+                            this.state.fairPlacementfilters[filterkey].value
+                        ) {
+                            return true
+                        }
+                    }
+                    return false
+                })
+            }
+        }
+
         let showall =
             filteredCompanies.length > this.state.showamount ? true : false
         function toggleFilterVisibility() {

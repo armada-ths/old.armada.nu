@@ -49,8 +49,7 @@ let exhibitorsConst = [
         contact_name: 'Naomi Korang',
         contact_email_address: 'naomi.korang@assaabloy.com',
         contact_phone_number: '+46739045323',
-        location: 'Nymble',
-        floor: 1,
+        fair_placement: ['Nymble - 1st Floor'],
         color: '#fafa00',
         positions: [
             [140, 120],
@@ -73,8 +72,7 @@ let exhibitorsConst = [
         contact_name: null,
         contact_email_address: null,
         contact_phone_number: null,
-        location: 'Nymble',
-        floor: 2,
+        fair_placement: ['Nymble - 1st Floor'],
         color: '#0000ff',
         positions: [
             [142, 114],
@@ -97,8 +95,7 @@ let exhibitorsConst = [
         contact_name: 'Oscar Blomquist',
         contact_email_address: 'oscar.blomquist@ap4.se',
         contact_phone_number: '+4687877507',
-        location: 'Nymble',
-        floor: 3,
+        fair_placement: ['Nymble - 2nd Floor'],
         color: '#00ffff',
         positions: [
             [255, 105],

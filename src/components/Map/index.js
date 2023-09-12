@@ -132,7 +132,14 @@ export const MapUtil = () => {
 
     const floorArray = [firstFloorNymble, secondFloorNymble, thirdFloorNymble]
 
-    const [floorShowed, setFloorShowed] = useState(0)
+    //const [floorShowed, setFloorShowed] = useState(0)
+    const floorObj = {
+        'Nymble - 1st Floor': firstFloorNymble,
+        'Nymble - 2nd Floor': secondFloorNymble,
+        'Nymble - 3rd Floor': thirdFloorNymble,
+    }
+
+    const [fairLocation, setFairLocation] = useState('Nymble - 2nd Floor')
 
     const [focusCoordinate, setFocusCoordinate] = useState([[50, 50]]) //placeholder values
     useEffect(() => {
@@ -157,8 +164,7 @@ export const MapUtil = () => {
             contact_name: 'Naomi Korang',
             contact_email_address: 'naomi.korang@assaabloy.com',
             contact_phone_number: '+46739045323',
-            location: 'Nymble',
-            floor: 1,
+            fair_placement: ['Nymble - 1st Floor'],
             color: '#fafa00',
             positions: [
                 [140, 120],
@@ -181,8 +187,7 @@ export const MapUtil = () => {
             contact_name: null,
             contact_email_address: null,
             contact_phone_number: null,
-            location: 'Nymble',
-            floor: 1,
+            fair_placement: ['Nymble - 1st Floor'],
             color: '#0000ff',
             positions: [
                 [142, 114],
@@ -205,8 +210,7 @@ export const MapUtil = () => {
             contact_name: 'Oscar Blomquist',
             contact_email_address: 'oscar.blomquist@ap4.se',
             contact_phone_number: '+4687877507',
-            location: 'Nymble',
-            floor: 2,
+            fair_placement: ['Nymble - 2nd Floor'],
             color: '#00ffff',
             positions: [
                 [255, 105],
@@ -244,7 +248,7 @@ export const MapUtil = () => {
     return (
         <div>
             <div className='mapBox'>
-                {FloorSelector(setFloorShowed, floorShowed)}
+                {FloorSelector(setFairLocation, fairLocation)}
                 <div>
                     <MapContainer
                         zoom={zoomLevel}
@@ -263,21 +267,24 @@ export const MapUtil = () => {
                         <MarkerClusterGroup chunkedLoading>
                             {exhibitorsConst.map(ex => {
                                 let ifShowPolygon = false
-                                switch (floorShowed) {
-                                    case 0:
+                                switch (fairLocation) {
+                                    case 'Nymble - 1st Floor':
                                         ifShowPolygon =
-                                            ex.location === 'Nymble' &&
-                                            ex.floor === 1
+                                            ex.fair_placement.includes(
+                                                fairLocation
+                                            )
                                         break
-                                    case 1:
+                                    case 'Nymble - 2nd Floor':
                                         ifShowPolygon =
-                                            ex.location === 'Nymble' &&
-                                            ex.floor === 2
+                                            ex.fair_placement.includes(
+                                                fairLocation
+                                            )
                                         break
-                                    case 2:
+                                    case 'Nymble - 3rd Floor':
                                         ifShowPolygon =
-                                            ex.location === 'Nymble' &&
-                                            ex.floor === 3
+                                            ex.fair_placement.includes(
+                                                fairLocation
+                                            )
                                         break
                                 }
                                 return (
@@ -313,7 +320,7 @@ export const MapUtil = () => {
                         <LayerGroup> */}
                         <ImageOverlay
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            url={floorArray[floorShowed].default}
+                            url={floorObj[fairLocation].default}
                             bounds={bounds}
                         />
                         {/*</LayerGroup>

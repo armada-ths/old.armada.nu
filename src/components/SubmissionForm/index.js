@@ -124,6 +124,7 @@ const Form = () => {
                         />
                     </div>
                     <ReCAPTCHA
+                        className='captcha'
                         sitekey='6LdlSPwnAAAAADCALl0tmledXQ2NofF5J0Ssi1wH'
                         onChange={() => {
                             setCaptchaFilled(true)

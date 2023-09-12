@@ -95,7 +95,7 @@ const Form = () => {
                         value='contact-form'
                     />
                     <div className='label'>
-                        <label htmlFor='name'>Name</label>
+                        <label htmlFor='name'>Name:</label>
                         <input
                             type='text'
                             name='name'
@@ -105,7 +105,7 @@ const Form = () => {
                         />
                     </div>
                     <div className='label'>
-                        <label htmlFor='email'>Your Email</label>
+                        <label htmlFor='email'>Your Email:</label>
                         <input
                             type='text'
                             name='email'
@@ -115,7 +115,7 @@ const Form = () => {
                         />
                     </div>
                     <div className='label'>
-                        <label htmlFor='message'>Message</label>
+                        <label htmlFor='message'>Message:</label>
                         <textarea
                             name='message'
                             value={formData.message}

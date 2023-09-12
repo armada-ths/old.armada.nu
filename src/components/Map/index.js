@@ -16,7 +16,7 @@ import { CRS } from 'leaflet'
 import './index.scss'
 import FloorSelector from './FloorSelector'
 import ExhibitorList from '../ExhibitorList'
-
+import FloorProvider from './FloorProvider'
 import customIconImage from './customIcon.svg'
 
 export const ExtendedZoom = createContext(null)
@@ -130,9 +130,6 @@ export const MapUtil = () => {
     const secondFloorNymble = require('../../../static/assets/Map/Nymble_floor2.png')
     const thirdFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 3 blank.png')
 
-    const floorArray = [firstFloorNymble, secondFloorNymble, thirdFloorNymble]
-
-    //const [floorShowed, setFloorShowed] = useState(0)
     const floorObj = {
         'Nymble - 1st Floor': firstFloorNymble,
         'Nymble - 2nd Floor': secondFloorNymble,
@@ -422,8 +419,9 @@ export const MapUtil = () => {
             {/* <div className='exhibitorList'>
                 {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
             </div> */}
+
             <ExtendedZoom.Provider value={setFocusCoordinate}>
-                <ExhibitorList />
+                <ExhibitorList fairInputLocation={fairLocation} />
             </ExtendedZoom.Provider>
         </div>
     )

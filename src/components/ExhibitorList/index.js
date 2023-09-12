@@ -512,18 +512,6 @@ class ExhibitorList extends React.Component {
         this.setState({ sectors: sortedSectors })
     }
     apiFetcher(props, update) {
-        // if(this.state.isMockup){
-        //     let exhibitorList = exhibitorsConst.map(exhibitor => (
-        //         <ExhibitorItem
-        //             key={exhibitor.id}
-        //             name={exhibitor.name}
-        //             exhibitor={exhibitor}
-        //             showModal={this.showModal}
-        //         />
-        //     ));
-        //     this.setState({ exhibitors: exhibitorsConst, exhibitorList: exhibitorList, isLoading: false }) // component saves its own data --- What does this mean?? //Nima
-        // }
-        // else{
         const yearParam = update ? '&year=' + props.year : ''
         axios
             .get(
@@ -535,6 +523,7 @@ class ExhibitorList extends React.Component {
                     }`
             )
             .then(res => {
+                console.log('UPDATE')
                 let exhibitors = res.data // create variable and store result within parameter data
                 exhibitors.sort((a, b) => a.name.localeCompare(b.name))
                 let exhibitorList = exhibitors.map(exhibitor => (
@@ -546,8 +535,8 @@ class ExhibitorList extends React.Component {
                     />
                 ))
                 this.setState({
-                    exhibitors: exhibitors,
-                    exhibitorList: exhibitorList,
+                    exhibitors,
+                    exhibitorList,
                     isLoading: false,
                 }) // component saves its own data --- What does this mean?? //Nima
 
@@ -561,10 +550,59 @@ class ExhibitorList extends React.Component {
             })
         // }
     }
-    componentDidUpdate(props) {
+
+    updateLocationShowed(location) {
+        this.setState({
+            fairPlacementfilters: [{ value: location, label: location }],
+        })
+    }
+
+    componentDidUpdate(prevProps) {
         if (!isMockup) {
-            this.apiFetcher(props, true)
+            this.apiFetcher(this.props, true)
         }
+
+        console.log(this.props.fairInputLocation, prevProps.fairInputLocation)
+
+        if (this.props.fairInputLocation !== prevProps.fairInputLocation) {
+            this.updateLocationShowed(this.props.fairInputLocation)
+        }
+
+        // Do not update unless the floor changed
+        /*
+        let fairPlacementInFilter = false
+        for (let filterkey in this.state.fairPlacementfilters) {
+            if (
+                this.state.fairPlacementfilters[filterkey] ===
+                props.fairInputLocation
+            ) {
+                fairPlacementInFilter = true
+            }
+        }
+        console.log('#1', !fairPlacementInFilter)
+        console.log('#2', !fairPlacementInFilter)
+        if (
+            !fairPlacementInFilter &&
+            // Sorry to whoever needs to read this :D
+            (typeof this.state.fairPlacementfilters === 'object' ||
+                (Array.isArray(this.state.fairPlacementfilters) &&
+                    this.state.fairPlacementfilters?.[0].value !==
+                        props.fairInputLocation))
+        ) {
+            console.log('Im running')
+            this.setState({
+                ...this.state,
+                fairPlacementFilters: [
+                    {
+                        value: props.fairInputLocation,
+                        label: props.fairInputLocation,
+                    },
+                ],
+            })
+        }
+        console.log('Updating....')
+        console.log(this.state.fairPlacementfilters)
+        */
     }
     //currently only deals w/ getting data from api (unsure)
     componentDidMount(props) {
@@ -925,13 +963,14 @@ class ExhibitorList extends React.Component {
         // Here you decide if list of exhibitors should be displayed or not
         let showExhibitors = true
         let thisYear = new Date().getFullYear().toString()
+        console.log('poop' + this.props.fairLocation)
         if (this.year === thisYear) {
             showExhibitors = false
         }
         let exhibitorToDisplay = this.state.exhibitors.filter(
             exhibitor => exhibitor.name === this.state.exhibitorName
         )[0]
-        console.log(exhibitorToDisplay)
+        //console.log(exhibitorToDisplay)
         let filteredCompanies = this.state.exhibitorList.filter(
             exhibitorItem => {
                 return exhibitorItem.props.name
@@ -1058,16 +1097,11 @@ class ExhibitorList extends React.Component {
 
         //fair placement filter
         for (let filterkey in this.state.fairPlacementfilters) {
-            console.log('hey' + filterkey)
             if (this.state.fairPlacementfilters[filterkey]) {
                 filteredCompanies = filteredCompanies.filter(exhibitorItem => {
                     console.log(exhibitorItem)
                     for (let fair_placement_index in exhibitorItem.props
                         .exhibitor.fair_placement) {
-                        console.log('testtets' + fair_placement_index)
-                        console.log(
-                            exhibitorItem.props.exhibitor.fair_placement
-                        )
                         if (
                             exhibitorItem.props.exhibitor.fair_placement[
                                 fair_placement_index
@@ -1334,7 +1368,6 @@ const ExhibitorItem = props => {
             role='presentation'
             className={'exhibitor-box ' + classname}
             onClick={() => {
-                console.log(props.exhibitor.positions)
                 setFocusCoordinate(props.exhibitor.positions)
                 const exhibitorBoxes =
                     document.getElementsByClassName('exhibitor-box')

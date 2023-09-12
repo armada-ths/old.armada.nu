@@ -49,7 +49,8 @@ let exhibitorsConst = [
         contact_name: 'Naomi Korang',
         contact_email_address: 'naomi.korang@assaabloy.com',
         contact_phone_number: '+46739045323',
-        fair_placement: ['Nymble - 2nd Floor'],
+        location: 'Nymble',
+        floor: 1,
         color: '#fafa00',
         positions: [
             [140, 120],
@@ -72,7 +73,8 @@ let exhibitorsConst = [
         contact_name: null,
         contact_email_address: null,
         contact_phone_number: null,
-        fair_placement: ['Nymble - 2nd Floor'],
+        location: 'Nymble',
+        floor: 2,
         color: '#0000ff',
         positions: [
             [142, 114],
@@ -95,7 +97,8 @@ let exhibitorsConst = [
         contact_name: 'Oscar Blomquist',
         contact_email_address: 'oscar.blomquist@ap4.se',
         contact_phone_number: '+4687877507',
-        fair_placement: ['Nymble - 2nd Floor'],
+        location: 'Nymble',
+        floor: 3,
         color: '#00ffff',
         positions: [
             [255, 105],
@@ -975,32 +978,6 @@ class ExhibitorList extends React.Component {
                                 locationindex
                             ].name ===
                             this.state.locationfilters[filterkey].value
-                        ) {
-                            return true
-                        }
-                    }
-                    return false
-                })
-            }
-        }
-
-        //fair placement filter
-        for (let filterkey in this.state.fairPlacementfilters) {
-            console.log('hey' + filterkey)
-            if (this.state.fairPlacementfilters[filterkey]) {
-                filteredCompanies = filteredCompanies.filter(exhibitorItem => {
-                    console.log(exhibitorItem)
-                    for (let fair_placement_index in exhibitorItem.props
-                        .exhibitor.fair_placement) {
-                        console.log('testtets' + fair_placement_index)
-                        console.log(
-                            exhibitorItem.props.exhibitor.fair_placement
-                        )
-                        if (
-                            exhibitorItem.props.exhibitor.fair_placement[
-                                fair_placement_index
-                            ] ===
-                            this.state.fairPlacementfilters[filterkey].value
                         ) {
                             return true
                         }

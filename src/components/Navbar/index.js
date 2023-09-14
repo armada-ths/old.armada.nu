@@ -7,6 +7,8 @@ import RegistrationBanner from '../RegistrationBanner'
 import useWindowSize from '../../hooks/useWindowSize'
 import HamburgerButton from '../HamburgerButton'
 
+/* Edited in September by Nima to make it transparent until we scroll past the header */
+
 const Navbar = props => {
     const windowSize = useWindowSize()
     const [expanded, setExpanded] = useState(false)
@@ -28,6 +30,35 @@ const Navbar = props => {
     const [hasStudentTag, setHasStudentTag] = useState(false)
     const [hasCompanytag, setHasCompanyTag] = useState(false)
     const [hasAboutTag, setHasAboutTag] = useState(false)
+
+    //Scrolling and making transparent/bg black section
+    const [scrolledPastHeader, setScrolledPastHeader] = useState(false)
+    useEffect(() => {
+        //todo, change stuff to browser-monad
+        console.log('test')
+        const headerElement = document.getElementById('header') //will return undefined if not existing
+        console.log(headerElement)
+        if (!headerElement) {
+            return
+        }
+        const handleScroll = () => {
+            const headerBottom = headerElement?.getBoundingClientRect().bottom //use "?" to check if undefined
+
+            if (headerBottom && headerBottom <= 0) {
+                setScrolledPastHeader(true)
+            } else {
+                setScrolledPastHeader(false)
+            }
+            console.log(scrolledPastHeader)
+        }
+
+        window.addEventListener('scroll', handleScroll) //trigger on scroll to check if scroll is going past header
+        //also we check if the header exists at all
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [scrolledPastHeader])
 
     menuPages.sort((a, b) => {
         return a.priority - b.priority

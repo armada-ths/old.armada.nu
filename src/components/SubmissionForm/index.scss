@@ -17,6 +17,7 @@
     .captcha {
         display: flex;
         align-items: flex-end;
+        margin-top: 10px;
     }
     .arrow {
         font-size: 30px;
@@ -117,6 +118,15 @@
         textarea {
             //width: unset;
             height: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .label {
+        input {
+            margin-left: 1vw;
+            width: 100%;
         }
     }
 }

@@ -8,6 +8,9 @@ import HostCountdown from '../../components/HostRecruitment/HostCountdown'
 const RecruitmentPage = props => {
     return (
         <>
+            <h3 style={{ marginTop: '20px' }}>
+                (Update!!: We have extended the recruitment period. Apply now!)
+            </h3>
             <HostCountdown />
             <HostRecruitment />
             <div className='recruitment-container'>

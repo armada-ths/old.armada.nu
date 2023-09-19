@@ -661,14 +661,27 @@ class ExhibitorList extends React.Component {
                 <div className='modal-container'>
                     <div className='modal-flex-1'>
                         <div className='modalimage-exhib'>
-                            {exhibitor.logo_squared != null && (
+                            {exhibitor.logo_squared && (
                                 <img
                                     src={exhibitor.logo_squared}
                                     alt={exhibitor.name + ' logo'}
                                 />
                             )}
                         </div>
-                        <h1 className='modal-title'>{exhibitor.name}</h1>
+                        <h1 className='modal-title'>
+                            {exhibitor.company_website ?
+                                (<div className='exhibitor-title-website'>
+                                    <a
+                                        href={exhibitor.company_website}
+                                        target='_blank'
+                                        rel='noreferrer'
+                                    >
+                                        <u>{exhibitor.name}</u>
+                                    </a>
+                                </div>):
+                                <div>{exhibitor.name}</div>
+                            }
+                        </h1>
                         <div>
                             {exhibitor.vyer_position && !this.props.lastYear ? (
                                 <h3 className='links'>
@@ -684,17 +697,6 @@ class ExhibitorList extends React.Component {
                             {exhibitor.fair_location && !this.props.lastYear ? (
                                 <h3 id='fair-location'>
                                     {exhibitor.fair_location}
-                                </h3>
-                            ) : null}
-                            {exhibitor.company_website ? (
-                                <h3 className='links'>
-                                    <a
-                                        href={exhibitor.company_website}
-                                        target='_blank'
-                                        rel='noreferrer'
-                                    >
-                                        {exhibitor.name + ' Website'}
-                                    </a>
                                 </h3>
                             ) : null}
                             {exhibitor.flyer ? (

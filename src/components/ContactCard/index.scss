@@ -89,3 +89,33 @@
         }
     }
 }
+
+@media screen and (max-width: 850px) {
+    .contact-card .card-title .card-text {
+        font-size: 2vw;
+    }
+    .contact-card .card-title .card-text .title-melon {
+        line-height: unset;
+    }
+    .contact-card {
+        width: 45vw;
+        height: 45vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contact-card .card-title .card-text {
+        font-size: 3.5vw;
+    }
+    .contact-card .card-title .card-text .title-melon {
+        line-height: unset;
+    }
+    .contact-card {
+        width: 75vw;
+        height: 75vw;
+    }
+    .contact-card .card-title .card-text .linkedin-logo {
+        width: 30px;
+        height: 30px; //make the linkedin button bigger on tiny screens
+    }
+}

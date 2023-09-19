@@ -43,7 +43,6 @@ const HostCountdown = () => {
     }
     return (
         <div className='countdown-container'>
-            <h2>Host Application Closes in:</h2>
             <Countdown date={targetDate} renderer={renderer} />
         </div>
     )

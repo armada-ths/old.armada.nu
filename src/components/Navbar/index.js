@@ -6,7 +6,7 @@ import RecruitmentBanner from '../RecruitmentBanner'
 import RegistrationBanner from '../RegistrationBanner'
 import useWindowSize from '../../hooks/useWindowSize'
 import HamburgerButton from '../HamburgerButton'
-
+import { window } from 'browser-monads'
 /* Edited in September by Nima to make it transparent until we scroll past the header */
 
 const Navbar = props => {
@@ -33,9 +33,11 @@ const Navbar = props => {
 
     //Scrolling and making transparent/bg black section
     const [scrolledPastHeader, setScrolledPastHeader] = useState(false)
+    const [backgroundColor, setBackgroundColor] = useState(
+        'rgba(45, 45, 44, 0)'
+    )
     useEffect(() => {
-        //todo, change stuff to browser-monad
-        console.log('test')
+        //todo, change stuff to browser-monad /DONE, Nima
         const headerElement = document.getElementById('header') //will return undefined if not existing
         console.log(headerElement)
         if (!headerElement) {
@@ -43,9 +45,15 @@ const Navbar = props => {
         }
         const handleScroll = () => {
             const headerBottom = headerElement?.getBoundingClientRect().bottom //use "?" to check if undefined
-
-            if (headerBottom && headerBottom <= 0) {
-                setScrolledPastHeader(true)
+            let opacity = 0
+            if (headerBottom) {
+                opacity = window.scrollY / 2.5 / headerBottom //we found that dividing by 2.5 is a good factor
+                opacity > 1 || opacity < 0 ? (opacity = 1) : {}
+                setBackgroundColor(`rgba(45, 45, 44, ${opacity}`)
+            }
+            if (headerBottom && headerBottom <= 100) {
+                //do 100 pixels above the bottom of the header, to start the animation early
+                setScrolledPastHeader(true) //this code is good for testing or hard fixing if for example animation breaks/laggy, just set opacity static
             } else {
                 setScrolledPastHeader(false)
             }
@@ -58,7 +66,7 @@ const Navbar = props => {
         return () => {
             window.removeEventListener('scroll', handleScroll)
         }
-    }, [scrolledPastHeader])
+    }, [scrolledPastHeader, backgroundColor])
 
     menuPages.sort((a, b) => {
         return a.priority - b.priority
@@ -305,6 +313,11 @@ const Navbar = props => {
                         className={
                             'menu-wrapper ' + (expanded ? 'visible' : 'hidden')
                         }
+                        style={{
+                            backgroundColor: expanded
+                                ? 'rgba(45, 45, 44, 1)'
+                                : backgroundColor,
+                        }}
                     >
                         <div className={'menu-hamburger'}>
                             <HamburgerButton

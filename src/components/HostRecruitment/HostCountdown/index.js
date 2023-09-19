@@ -14,30 +14,32 @@ const HostCountdown = () => {
             return <span>Application is now closed!</span>
         } else {
             return (
-                <div className='countdown'>
-                    <div className='countdown-item'>
-                        <span className='countdown-number'>{days}</span>
-                        <span className='countdown-label'>Days</span>
+                <>
+                    <h2>Host Application Closes in:</h2>
+                    <div className='countdown'>
+                        <div className='countdown-item'>
+                            <span className='countdown-number'>{days}</span>
+                            <span className='countdown-label'>Days</span>
+                        </div>
+                        <div className='countdown-item'>
+                            <span className='countdown-number'>{hours}</span>
+                            <span className='countdown-label'>Hours</span>
+                        </div>
+                        <div className='countdown-item'>
+                            <span className='countdown-number'>{minutes}</span>
+                            <span className='countdown-label'>Minutes</span>
+                        </div>
+                        <div className='countdown-item'>
+                            <span className='countdown-number'>{seconds}</span>
+                            <span className='countdown-label'>Seconds</span>
+                        </div>
                     </div>
-                    <div className='countdown-item'>
-                        <span className='countdown-number'>{hours}</span>
-                        <span className='countdown-label'>Hours</span>
-                    </div>
-                    <div className='countdown-item'>
-                        <span className='countdown-number'>{minutes}</span>
-                        <span className='countdown-label'>Minutes</span>
-                    </div>
-                    <div className='countdown-item'>
-                        <span className='countdown-number'>{seconds}</span>
-                        <span className='countdown-label'>Seconds</span>
-                    </div>
-                </div>
+                </>
             )
         }
     }
     return (
         <div className='countdown-container'>
-            <h2>Host Application Closes in:</h2>
             <Countdown date={targetDate} renderer={renderer} />
         </div>
     )

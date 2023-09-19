@@ -562,7 +562,7 @@ class ExhibitorList extends React.Component {
             this.apiFetcher(this.props, true)
         }
 
-        console.log(this.props.fairInputLocation, prevProps.fairInputLocation)
+        console.log(this.props.fairInputLocation, prevProps.fairInputLocation) //remove this later
 
         if (this.props.fairInputLocation !== prevProps.fairInputLocation) {
             this.updateLocationShowed(this.props.fairInputLocation)
@@ -606,6 +606,9 @@ class ExhibitorList extends React.Component {
     }
     //currently only deals w/ getting data from api (unsure)
     componentDidMount(props) {
+        if (this.props.fairInputLocation) {
+            this.updateLocationShowed(this.props.fairInputLocation) //check if undefined and set the default fair location shown
+        }
         // only called when exhibitor page is created or updated.
         const filterContainer = document.getElementById('filter-container')
         filterContainer.classList.toggle('hidden')
@@ -669,8 +672,8 @@ class ExhibitorList extends React.Component {
                             )}
                         </div>
                         <h1 className='modal-title'>
-                            {exhibitor.company_website ?
-                                (<div className='exhibitor-title-website'>
+                            {exhibitor.company_website ? (
+                                <div className='exhibitor-title-website'>
                                     <a
                                         href={exhibitor.company_website}
                                         target='_blank'
@@ -678,9 +681,10 @@ class ExhibitorList extends React.Component {
                                     >
                                         <u>{exhibitor.name}</u>
                                     </a>
-                                </div>):
+                                </div>
+                            ) : (
                                 <div>{exhibitor.name}</div>
-                            }
+                            )}
                         </h1>
                         <div>
                             {exhibitor.vyer_position && !this.props.lastYear ? (

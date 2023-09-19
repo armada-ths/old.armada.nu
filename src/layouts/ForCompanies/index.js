@@ -5,6 +5,7 @@ import Page from '../../templates/page'
 import FAQContainer from '../../components/FAQ'
 import SideBarContents from '../../components/SideBarContents/index.tsx'
 import ConentsMobile from '../../components/SideBarContents/ContentsMobile'
+import SubmissionForm from '../../components/SubmissionForm'
 const QueryFunc = () => {
     const headingsdata = [] // Append all the headingdata to be sent as props
     document.querySelectorAll('h1, h2, h3, h4').forEach(ele => {
@@ -44,6 +45,7 @@ const ForCompanies = props => {
             {/* <div class='TOCMobile'>
                 <ConentsMobile headings={headingData} />
             </div> */}
+            <SubmissionForm />
             <div className='info-container'>
                 <div className='page-container assign-button-right'>
                     <Page {...props} />

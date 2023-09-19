@@ -1,0 +1,190 @@
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
+
+.expand-button {
+    margin-left: 20px;
+}
+
+.host-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.host-box {
+    background-color: rgb(45, 45, 45);
+    width: 60%;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    h1 {
+        text-decoration: underline;
+    }
+    h3,
+    h4,
+    li,
+    p {
+        text-align: end;
+        color: white;
+        padding: 0 4vw 0 2vw;
+    }
+}
+
+.topTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    h1 {
+        margin-left: auto;
+    }
+    .topButton {
+        color: white;
+        margin-left: auto;
+        outline: 2px solid white;
+        width: 30px;
+        height: 30px;
+        padding: 4px;
+    }
+    .topButton:hover {
+        color: orange;
+        outline-color: orange;
+    }
+}
+
+.description {
+    ul {
+        padding-left: 100px;
+        list-style-position: inside;
+    }
+}
+
+.recruiterBox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    .recruiter-image {
+        border-radius: 50%;
+        height: 100%;
+        margin-bottom: auto;
+        text-align: center;
+        margin-top: 10%;
+        background-image: url('../../../static/assets/armada_round_logo_green.png');
+    }
+    p {
+        color: $melon;
+        padding: unset;
+        text-align: unset;
+    }
+    .recruiterText {
+        align-self: center;
+        p {
+            font-size: 80%;
+        }
+    }
+    .recruiterList {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        //justify-items: center;
+
+        p {
+            text-align: center;
+        }
+    }
+    .recruiter {
+        padding: 0.2vw;
+        text-align: center;
+    }
+    .recruiter-image {
+        align-self: center;
+        height: 180px;
+        width: 150px;
+        text-align: center;
+    }
+}
+h4 {
+    text-decoration: underline;
+}
+
+.descriptionFlex {
+    display: flex;
+    justify-content: space-around;
+}
+@media screen and (max-width: 2000px) {
+    .descriptionFlex {
+        display: block;
+    }
+    .recruiterBox {
+        p {
+            text-align: center;
+        }
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .host-box {
+        width: unset;
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        li {
+            text-align: center;
+            padding: unset;
+        }
+    }
+    .description {
+        ul {
+            list-style-position: inside;
+            padding-left: unset;
+        }
+    }
+    .recruiterBox {
+        .recruiterList {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+        }
+    }
+
+    .topTitle {
+        .topButton {
+            color: white;
+            margin-left: 30px;
+            outline: 2px solid white;
+            width: 30px;
+            height: 30px;
+            padding: 4px;
+        }
+    }
+}
+
+.position {
+    //border: 1px solid $melon;
+}
+
+.applyButton {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    margin-bottom: 4px;
+    font-size: 24px;
+}
+.applyButton:hover {
+    color: white;
+}
+
+.team {
+    h2 {
+        text-decoration: underline;
+        margin-bottom: 5px;
+        margin-top: 4px;
+    }
+}

@@ -1,0 +1,117 @@
+{
+    "teams": [
+        {
+            "name": "Marketing and Communications (MC)",
+            "positions": [
+                {
+                    "title": "University Relation Host",
+                    "description": "Every year, representatives from other universities in Sweden and Northern Europe are invited to THS Armada. As a University Relations Host, you are a part of the team that welcomes these representatives and also arrange a banquet for the visiting universities. The work includes preparing and planning the banquet such as the location, food and entertainment. As a University Relations Host, you are also responsible to guide the representatives through the days and be available for answering the questions they might have. Desirable qualities are that you prefer to work in a team, enjoy getting to know and meet a lot of new people, are service minded and want to make the best experience possible for our visitors.",
+                    "working_hours": [
+                        "Weekly (till the fair) - 7-10 hours (for the team building, planning and other meetings)",
+                        "During Fair (23-24 November) - Whole day till the fair ends!! (Responsible for the representatives from other universities)"
+                    ],
+                    "team_leader": "Team Leader: University Relations"
+                },
+                {
+                    "title": "Photographer",
+                    "description": "As a Photographer Host in THS Armada 2023 you will be a part of the team that documents and markets the activities and the life of Armada. You will be assigned under the Photo Team Coordinator and together you will photograph Armada’s different events, the fair and the banquet. We think that you as a person are creative, positive and outgoing. Previous experience of photography and work samples are a plus.",
+                    "working_hours": [
+                        "Once you have been recruited you will be assigned to tasks by the Photo Team Coordinator.",
+                        "Most of the work will be done in November. But smaller tasks could occur in October as well.",
+                        "November month will include Armada events followed by a prep weekend, the actual fair and the banquet.",
+                        "It’s important that you are available during these periods but you will not need to work all of the time!",
+                        "The number of working hours per week is around 1-2 hours during October and around 8 hours per week during November."
+                    ],
+                    "team_leader": "Photo Team Coordinator"
+                },
+                {
+                    "title": "Banquet Host",
+                    "description": "As a banquet host of Armada 2023 you will be a part of the team that organizes the Grand Banquet. You will help out with preparations before the banquet and on the day of the banquet to set up at the venue and make sure that everything is ready for when the banquet starts! There are three types of roles: decorations, entertainment and logistics.",
+                    "working_hours": [
+                        "You are expected to be available from the 1st of November, but the workload will not be as high the first few weeks as the final week leading up to the banquet. This means that the working hours will differ depending on the week."
+                    ],
+                    "team_leader": "Team Leader: Banquet"
+                },
+                {
+                    "title": "Graphic Designer",
+                    "description": "As a Graphic Designer host, you work closely with the Head of Creative and the rest of the Project Team. Your main task is to design graphic material...",
+                    "working_hours": ["Regularly during the fall!"],
+                    "team_leader": "Graphic Designer"
+                }
+            ]
+        },
+        {
+            "name": "Logistics and Fair (LF)",
+            "positions": [
+                {
+                    "title": "Task Force and Logistics Host",
+                    "description": "As a Task Force and Logistics Host in THS Armada 2023 you will be a part of the team which will keep the fair going smoothly; you will be responsible for maintaining the technical parts and logistic flow related to the Career Fair. As a member of this team you will be communicating with several other teams as well as your coordinator. Furthermore you could describe yourself as part of Armadas “handyperson team”, solving arising problems that will occur during the fair. As a Task Force and Logistics Host you are organized, good at communication, a practical problem solver and excited to learn!",
+                    "tasks": [
+                        "Help out with transportation of tools and equipments to the fair area",
+                        "Remove all furniture in Nymble/KTHB and make space for our fantastic fair",
+                        "Put out carpets in Nymble/KTHB to give the fair a professional and uniform appearance",
+                        "Get the exhibitors’ goods from the loading dock to their assigned spots",
+                        "Help with technical and non technical issues that can arise before and during the fair"
+                    ],
+                    "working_hours": [
+                        "Some team buildings and meetings ~ 2 - 3 hours/week, starting from October",
+                        "Construction weekend (18th-19th of Nov) + Deliveries and Set up (20st of Nov) approx. full days.",
+                        "During the fair (21nd-22nd of Nov) you will be working in shifts."
+                    ],
+                    "team_leader": "Team Leader: Task Force"
+                },
+                {
+                    "title": "Career Fair Host",
+                    "description": "Do you want to expand your professional network and have tons of fun? Apply today to Scandinavia’s largest Career Fair: THS Armada as a Career Fair Host! You will be responsible for being the PRIMARY Contact with several companies! The main task is to provide the best possible service before, during and after the career fair days. As a host you need to be responsible, punctual and attentive. You will be in the middle of the fair and be the face forward for Armada. Take up the opportunity by utilizing the skills you built up during the years and use them to create a successful Armada 2023 together with us!",
+                    "tasks": [
+                        "Ensuring that companies have a smooth participation in the fair",
+                        "Build and decorate company rooms at Nymble and KTH Library"
+                    ],
+                    "working_hours": [
+                        "Team building and meetings: 2-3 hours/week starting from October",
+                        "Construction weekend: 8am-5pm 18th and 19th November",
+                        "Fair days 8am-5pm the 21nd and 22nd of November"
+                    ],
+                    "benefits": [
+                        "Meet new friends from all of KTH and potential future colleagues",
+                        "Broaden your network and self growth",
+                        "A final Grand Banquet with the companies and your colleagues",
+                        "Join the Armada Cruise!"
+                    ],
+                    "team_leader": "Team Leader: Career Fair"
+                },
+                {
+                    "title": "Event Host",
+                    "description": "As an event host of Armada 2023, you will be part of the team that organizes events from start to end. You will work closely with company representatives along with the respective OT. The role requires responsibility and the ability to prioritize as well as being a good communicator and decision maker. Furthermore, you should be a team player and problem solver.",
+                    "tasks": [
+                        "Get the location for the event",
+                        "Arrange everything at the location of the event (such as decorations, arranging and setting up projectors, tables, chairs, etc.)",
+                        "Order/get food/refreshments for the event",
+                        "To distribute the food during the events",
+                        "Arrange the sound system and lighting of the location",
+                        "If the event is a technical/digital event to help in arranging the things online (check internet connections/ other devices are working properly or not)",
+                        "Help with any last-minute technical / non-technical issue.",
+                        "Get in touch and coordinate with other teams to arrange the events and solve any issues that arise"
+                    ],
+                    "working_hours": [
+                        "Once you have been recruited you will be assigned tasks by your respective OT. The events week will start from  30 Oct 2023 to 17 Nov 2023, which means you will have to be available in those periods except for weekends. (Though it might be possible to work if necessary, you will not be working all day).",
+                        "The estimated number of working hours per week is 15 hrs for team building, meetings and planning activities."
+                    ],
+                    "team_leader": "Team Leader: Event"
+                },
+                {
+                    "title": "Lounge Host",
+                    "description": "Are you creative, social, and enjoy working with others? Lounge Hosts help create a welcoming environment for our three fair lounges: 2 Exhibitor Lounges and 1 Student Lounge. The Lounge Team will work together to plan the interior of the lounges, as well as prepare and serve food and beverages during the fair. If you possess a positive attitude, a service mindset, and don't mind rolling up your sleeves to get the job done, apply for Lounge Host today!",
+                    "working_hours": ["Regularly during the fall!"],
+                    "team_leader": "Team Leader for Lounge"
+                },
+                {
+                    "title": "Service Host",
+                    "description": "The Service Team aims to provide exhibitors, visitors, and fellow Armada team members with the best possible service experience at our information desks, wardrobes, and lunch ticket reception desk. As a service team host you are positive, solution-oriented and communicative. You are also able to remain calm and organized during moments of stress and uncertainty. You are expected to take initiative and implement suitable new ideas and solutions to ensure a seamless and positive experience for everyone. Apply for Service Host today!",
+                    "working_hours": ["Regularly during the fall!"],
+                    "team_leader": "Team Leader for Service"
+                }
+            ]
+        }
+    ]
+}

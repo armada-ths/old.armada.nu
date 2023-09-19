@@ -1,6 +1,7 @@
 import React from 'react'
 import Loadable from 'react-loadable'
 import Contacts from '../../components/Contacts'
+import SubmissionForm from '../../components/SubmissionForm'
 
 const ContactPage = () => {
     const ContactMap = Loadable({
@@ -12,6 +13,7 @@ const ContactPage = () => {
 
     return (
         <>
+            <SubmissionForm />
             <Contacts />
             <ContactMap />
         </>

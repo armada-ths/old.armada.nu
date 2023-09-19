@@ -6,7 +6,7 @@ import Countdown from 'react-countdown'
 import './index.scss'
 
 const HostCountdown = () => {
-    const targetDate = new Date('2023-09-17T23:59:00')
+    const targetDate = new Date('2023-09-18T23:59:59')
 
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
@@ -15,7 +15,6 @@ const HostCountdown = () => {
         } else {
             return (
                 <>
-                    <h2>Host Application Closes in:</h2>
                     <div className='countdown'>
                         <div className='countdown-item'>
                             <span className='countdown-number'>{days}</span>
@@ -34,6 +33,10 @@ const HostCountdown = () => {
                             <span className='countdown-label'>Seconds</span>
                         </div>
                     </div>
+                    <h3 style={{ marginTop: '20px' }}>
+                        (Update!!: We have extended the recruitment period.
+                        Apply now!)
+                    </h3>
                 </>
             )
         }

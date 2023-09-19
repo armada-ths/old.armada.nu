@@ -10,7 +10,7 @@ import Select from 'react-select'
 import { Link } from 'gatsby'
 import Collapsible from 'react-collapsible'
 import { ExtendedZoom } from '../Map'
-import FilterContainer from './FilterContainer'
+import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
 
@@ -204,6 +204,7 @@ class ExhibitorList extends React.Component {
             diversityfilter: false,
             sustainabilityfilter: false,
             startupfilter: false,
+            showAllCompanies: false, //this is used for the checkbox filter
             diversitysrc: '/assets/diversity/diversity_a.svg',
             sustainabilitysrc: '/assets/sustainability/sustainability.svg',
             location: 'All',
@@ -1208,6 +1209,28 @@ class ExhibitorList extends React.Component {
                                 > */}
                             </div>
                             <div id='filter-container'>
+                                <div>
+                                    {this.state.showAllCompanies ? (
+                                        <GrCheckboxSelected
+                                            onClick={() => {
+                                                this.setState({
+                                                    ...this.state,
+                                                    showAllCompanies: false,
+                                                })
+                                            }}
+                                        />
+                                    ) : (
+                                        <GrCheckbox
+                                            onClick={() => {
+                                                this.setState({
+                                                    ...this.state,
+                                                    showAllCompanies: true,
+                                                })
+                                            }}
+                                        />
+                                    )}
+                                    Show All Companies
+                                </div>
                                 <Select
                                     closeMenuOnSelect={false}
                                     blurInputOnSelect={false}

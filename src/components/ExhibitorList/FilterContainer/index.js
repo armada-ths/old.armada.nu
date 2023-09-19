@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import Select from 'react-select'
 /*To put it lightly, the exhibitorlist component is too large (why did they do this?), so were moving the filters here /Nima */
+
+//This is work in WIP since we can't use this right now:
+
 function FilterContainer(props) {
     const [ticked, setTicked] = useState(false)
 
@@ -26,7 +29,7 @@ function FilterContainer(props) {
                 isSearchable
                 name='Sector filter'
                 placeholder='All Industries'
-                options={props.state.sectors}
+                options={props.sectors}
                 onChange={event => props.sectorFilter(event)}
                 className='basic-multi-select'
                 classNamePrefix='select'
@@ -39,7 +42,7 @@ function FilterContainer(props) {
                 isSearchable
                 name='Competence filter'
                 placeholder='All Competences'
-                options={props.state.competences}
+                options={props.competences}
                 onChange={event => props.competenceFilter(event)}
                 className='basic-multi-select'
                 classNamePrefix='select'

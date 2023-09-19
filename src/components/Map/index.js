@@ -19,6 +19,7 @@ import { ExhibitorList, getExhibitors } from '../ExhibitorList'
 //import ExhibitorList from '../ExhibitorList'
 import FloorProvider from './FloorProvider'
 import customIconImage from './customIcon.svg'
+import { CoordinateEditor } from './CoordinateEditor'
 
 export const ExtendedZoom = createContext(null)
 
@@ -127,6 +128,8 @@ function customIcon(exhibitor) {
 export const MapUtil = () => {
     const mapRef = useRef(null)
 
+    const [editorCoordinates, setEditorCoordinates] = useState([])
+
     const firstFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 1 blank.png')
     const secondFloorNymble = require('../../../static/assets/Map/Nymble_floor2.png')
     const thirdFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 3 blank.png')
@@ -191,12 +194,14 @@ export const MapUtil = () => {
                         bounds={bounds}
                         className='bigMap'
                         ref={mapRef}
-                        maxZoom={2}
+                        maxZoom={5}
                         minZoom={-1}
                     >
-                        {
-                            //<Internal />
-                        }
+                        <Internal />
+                        <CoordinateEditor
+                            editorCoordinates={editorCoordinates}
+                            setEditorCoordinates={setEditorCoordinates}
+                        />
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}
                         <MarkerClusterGroup chunkedLoading>

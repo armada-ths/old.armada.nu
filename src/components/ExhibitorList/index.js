@@ -10,6 +10,7 @@ import Select from 'react-select'
 import { Link } from 'gatsby'
 import Collapsible from 'react-collapsible'
 import { ExtendedZoom } from '../Map'
+import FilterContainer from './FilterContainer'
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
 

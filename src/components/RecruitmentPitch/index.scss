@@ -1,0 +1,77 @@
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
+@import '../../styles/global.scss';
+
+.pitchBox {
+    .pitchTop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .topButton {
+            margin-right: auto;
+            color: white;
+            outline: 2px solid white;
+            width: 30px;
+            height: 30px;
+            padding: 4px;
+        }
+        .topButton:hover {
+            color: orange;
+            outline-color: orange;
+        }
+        h3 {
+            margin-right: auto;
+        }
+    }
+    background-color: rgb(41, 41, 35);
+    padding: 15px;
+    .pitchInfo {
+        color: white;
+    }
+    .pitchContainer {
+        display: flex;
+        flex-direction: row;
+
+        .pitcher {
+            display: inline-block;
+            margin: 1vw 2vw 1vw 0vw;
+            text-align: center;
+            .pitcher-image {
+                width: 100px;
+                height: 100px;
+                border-radius: 100px;
+            }
+            .pitcherText {
+                display: inline-block;
+                text-align: center;
+                margin-left: 1vw;
+                p {
+                    text-align: center;
+                    color: $melon;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .pitchBox {
+        .pitchTop {
+            .topButton {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 613px) {
+    .pitchBox {
+        .pitchTop {
+            .topButton {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+}

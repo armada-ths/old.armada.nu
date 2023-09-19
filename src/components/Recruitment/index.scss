@@ -2,6 +2,11 @@
 @import '../../styles/_fonts';
 @import '../../styles/global.scss';
 
+.topSticky {
+    //added by Nima to make the sticky effect of the apply button work properly on all sizes
+    top: 40px !important;
+}
+
 .application-section {
     text-align: center;
     margin-bottom: 50px;
@@ -138,4 +143,25 @@ button[disabled] {
 }
 .groups {
     margin-top: 1em;
+}
+
+@media screen and (max-width: 1200px) {
+    .topSticky {
+        top: 47px !important;
+    }
+    //menu becomes thicker
+}
+
+@media screen and (max-width: 1047px) {
+    .topSticky {
+        top: 88px !important;
+    }
+    //menu becomes more cramped
+}
+
+@media screen and (max-width: 850px) {
+    .topSticky {
+        top: -15px !important;
+    }
+    //menu becomes mobile
 }

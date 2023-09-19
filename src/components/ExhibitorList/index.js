@@ -180,7 +180,11 @@ let exhibitorsConst = [
     },
 ]
 
-class ExhibitorList extends React.Component {
+export function getExhibitors(setExhibitorsForMap) {
+    setExhibitorsForMap(exhibitorsConst)
+}
+
+export class ExhibitorList extends React.Component {
     constructor(props) {
         super(props) // adopts parent qualities
         this.state = {
@@ -1386,7 +1390,7 @@ if (global.window !== undefined) {
 }
 export default toExport
 */
-export default ExhibitorList
+//export default ExhibitorList
 const ExhibitorItem = props => {
     const setFocusCoordinate = useContext(ExtendedZoom)
     let classname = props.exhibitor.sustainability ? ' green' : ''

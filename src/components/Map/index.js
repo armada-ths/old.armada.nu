@@ -330,7 +330,7 @@ export const MapUtil = () => {
                         bounds={bounds}
                         className='bigMap'
                         ref={mapRef}
-                        maxZoom={2}
+                        maxZoom={5}
                         minZoom={-1}
                     >
                         <Internal />

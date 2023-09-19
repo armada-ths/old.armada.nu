@@ -18,6 +18,7 @@ import FloorSelector from './FloorSelector'
 import ExhibitorList from '../ExhibitorList'
 import FloorProvider from './FloorProvider'
 import customIconImage from './customIcon.svg'
+import { CoordinateEditor } from './CoordinateEditor'
 
 export const ExtendedZoom = createContext(null)
 
@@ -125,6 +126,8 @@ function customIcon(exhibitor) {
 /* Added box to test the surfaces, Hampus&Nima */
 export const MapUtil = () => {
     const mapRef = useRef(null)
+
+    const [editorCoordinates, setEditorCoordinates] = useState([])
 
     const firstFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 1 blank.png')
     const secondFloorNymble = require('../../../static/assets/Map/Nymble_floor2.png')
@@ -331,6 +334,10 @@ export const MapUtil = () => {
                         minZoom={0}
                     >
                         <Internal />
+                        <CoordinateEditor
+                            editorCoordinates={editorCoordinates}
+                            setEditorCoordinates={setEditorCoordinates}
+                        />
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}
                         <MarkerClusterGroup chunkedLoading>

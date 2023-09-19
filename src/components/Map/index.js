@@ -93,7 +93,7 @@ function findMiddle(coordinates) {
 }
 
 function ZoomToComp({ mapRef, coordinates }) {
-    mapRef.current?.flyTo(findMiddle(coordinates), 5)
+    mapRef.current?.flyTo(findMiddle(coordinates), 3) //higher second argument -> more zoom
 }
 
 function PassedZoom({ coordinates, mapRef }) {
@@ -327,10 +327,12 @@ export const MapUtil = () => {
                         bounds={bounds}
                         className='bigMap'
                         ref={mapRef}
-                        maxZoom={20}
-                        minZoom={0}
+                        maxZoom={2}
+                        minZoom={-1}
                     >
-                        <Internal />
+                        {
+                            //<Internal />
+                        }
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}
                         <MarkerClusterGroup chunkedLoading>

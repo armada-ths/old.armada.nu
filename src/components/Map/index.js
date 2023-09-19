@@ -18,6 +18,7 @@ import FloorSelector from './FloorSelector'
 import ExhibitorList from '../ExhibitorList'
 import FloorProvider from './FloorProvider'
 import customIconImage from './customIcon.svg'
+import { CoordinateEditor } from './CoordinateEditor'
 
 export const ExtendedZoom = createContext(null)
 
@@ -93,7 +94,7 @@ function findMiddle(coordinates) {
 }
 
 function ZoomToComp({ mapRef, coordinates }) {
-    mapRef.current?.flyTo(findMiddle(coordinates), 5)
+    mapRef.current?.flyTo(findMiddle(coordinates), 3) //higher second argument -> more zoom
 }
 
 function PassedZoom({ coordinates, mapRef }) {
@@ -125,6 +126,8 @@ function customIcon(exhibitor) {
 /* Added box to test the surfaces, Hampus&Nima */
 export const MapUtil = () => {
     const mapRef = useRef(null)
+
+    const [editorCoordinates, setEditorCoordinates] = useState([])
 
     const firstFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 1 blank.png')
     const secondFloorNymble = require('../../../static/assets/Map/Nymble_floor2.png')
@@ -327,10 +330,14 @@ export const MapUtil = () => {
                         bounds={bounds}
                         className='bigMap'
                         ref={mapRef}
-                        maxZoom={20}
-                        minZoom={0}
+                        maxZoom={2}
+                        minZoom={-1}
                     >
                         <Internal />
+                        <CoordinateEditor
+                            editorCoordinates={editorCoordinates}
+                            setEditorCoordinates={setEditorCoordinates}
+                        />
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}
                         <MarkerClusterGroup chunkedLoading>

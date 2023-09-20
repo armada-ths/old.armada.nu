@@ -1,18 +1,26 @@
 @import '../../styles/variables';
+
 .homepage {
-    max-width: 850px;
     margin: auto;
-    padding: 2em 1em 0 1em;
+    max-width: 1200px;
+    padding: 2em 0 0 0;
 }
 #submitForm {
     text-align: center;
     padding: 1em;
 }
+.Events-container {
+    background-image: url('/assets/armada_logo_text_gray_noText.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
 
 .homepageInfoBox {
     text-align: center;
-    max-width: 850px;
+    max-width: 1200px;
     margin: auto;
+
     #title {
         color: var(--text-primary, #212121);
         font-family: Oswald;
@@ -28,7 +36,7 @@
         color: #000;
         text-align: center;
         font-family: Lato;
-        font-size: 18px;
+        font-size: 24px;
         font-style: normal;
         font-weight: 700;
         line-height: 24px; /* 133.333% */
@@ -36,10 +44,11 @@
     #text {
         color: #000;
         font-family: Lato;
-        font-size: 18px;
+        font-size: 22px;
         font-style: normal;
         font-weight: 400;
         line-height: 24px; /* 133.333% */
+        padding: 0 2vw 0 2vw;
     }
     #buttons {
         display: flex;
@@ -75,19 +84,33 @@
                 'b3 b3';
             height: 20vh;
             padding: 0px 1vw 0 1vw;
-            #b1 {
+            #a1 {
                 grid-area: b1;
                 margin-right: 3vw;
             }
-            #b2 {
+            #a2 {
                 grid-area: b2;
                 margin-left: 3vw;
             }
-            #b3 {
+            #a3 {
                 grid-area: b3;
+                width: 100%;
+                #b3 {
+                    width: 60%;
+                }
             }
             button {
                 font-size: 2.5vw;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .homepageInfoBox {
+        #buttons {
+            button {
+                font-size: 4vw;
             }
         }
     }

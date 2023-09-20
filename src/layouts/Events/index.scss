@@ -2,17 +2,28 @@
 @import '../../styles/_fonts';
 
 .Events-container {
-    padding: 3em 0em;
+    padding: 3em 2em;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: $page-width;
+    max-width: 1200px;
     margin: auto;
+    margin-top: 50px;
+}
+.Events-text {
+    padding: 3em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     .Events-container {
+        padding: 3em 1em;
+    }
+    .Events-text {
         padding: 3em 1em;
     }
 }

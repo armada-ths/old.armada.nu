@@ -8,6 +8,7 @@ import Newsfeed from '../../components/Newsfeed'
 import { Zoom } from 'react-awesome-reveal'
 import GifHoverButtons from '../../components/GifButtons'
 import EventList from '../../components/EventList'
+import { useInView, animated } from 'react-spring'
 /* Started edit by Nima Sep to redesign homepage.
 Using https://codesandbox.io/s/react-spring-useinview-example-3f20nz?from-embed=&file=/src/App.js:334-337 inspiration (react-springs)
 
@@ -30,13 +31,13 @@ const HomepageInfo = () => {
                 sure not to miss anything! See you in November!
             </p>
             <div id='buttons'>
-                <a href='/about'>
+                <a id='a1' href='/about'>
                     <button id='b1'>Read More</button>
                 </a>
-                <a href='/exhibitors'>
+                <a id='a2' href='/exhibitors'>
                     <button id='b2'>Explore the Exhibitors</button>
                 </a>
-                <a href='/for-companies'>
+                <a id='a3' href='/for-companies'>
                     <button id='b3'>Partner with us</button>
                 </a>
             </div>
@@ -45,6 +46,61 @@ const HomepageInfo = () => {
 }
 
 const Homepage = props => {
+    const [ref, inView] = useInView(
+        () => ({
+            from: {
+                opacity: 0,
+                y: 100,
+            },
+            to: {
+                opacity: 1,
+                y: 0,
+            },
+            config: {
+                velocity: 100,
+                friction: 20,
+            },
+        }),
+        {
+            rootMargin: '-20% 0%',
+        }
+    )
+    const [ref2, inView2] = useInView(
+        () => ({
+            from: {
+                opacity: 0,
+                y: 100,
+            },
+            to: {
+                opacity: 1,
+                y: 0,
+            },
+            config: {
+                velocity: 100,
+                friction: 20,
+            },
+        }),
+        {
+            rootMargin: '-20% 40%',
+        }
+    )
+    const [ref3, inView3] = useInView(
+        () => ({
+            from: {
+                opacity: 0,
+                scale: 0,
+            },
+            to: {
+                opacity: 1,
+                scale: 1,
+            },
+            config: { velocity: 100, friction: 20 },
+        }),
+        {
+            rootMargin: '0% 0%',
+        }
+    )
+
     const PhotoGallery = Loadable({
         loader: () => import('../../components/PhotoGallery'),
         loading() {
@@ -54,17 +110,21 @@ const Homepage = props => {
 
     return (
         <>
-            <HomepageInfo />
-            <div className='Events-container'>
-                <EventList />
-            </div>
-            <GifHoverButtons />
+            <animated.div ref={ref} style={inView}>
+                <HomepageInfo />
+            </animated.div>
+            <animated.div ref={ref2} style={inView2}>
+                <div className='Events-container'>
+                    <EventList />
+                </div>
+            </animated.div>
+            {/*<GifHoverButtons />*/}
             <div className='homepage'>
-                <Zoom cascade triggerOnce damping='0.3'>
+                <animated.div ref={ref3} style={inView3}>
                     <Newsfeed />
                     <PhotoGallery photoCount={6} />
                     <PartnerLogos />
-                </Zoom>
+                </animated.div>
             </div>
         </>
     )

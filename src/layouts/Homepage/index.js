@@ -62,7 +62,7 @@ const Homepage = props => {
             },
         }),
         {
-            rootMargin: '-20% 0%',
+            rootMargin: '-40% 0%',
         }
     )
     const [ref2, inView2] = useInView(
@@ -81,23 +81,7 @@ const Homepage = props => {
             },
         }),
         {
-            rootMargin: '-20% 40%',
-        }
-    )
-    const [ref3, inView3] = useInView(
-        () => ({
-            from: {
-                opacity: 0,
-                scale: 0,
-            },
-            to: {
-                opacity: 1,
-                scale: 1,
-            },
-            config: { velocity: 100, friction: 20 },
-        }),
-        {
-            rootMargin: '0% 0%',
+            rootMargin: '-40% 0% -10% 0%',
         }
     )
 
@@ -120,11 +104,9 @@ const Homepage = props => {
             </animated.div>
             {/*<GifHoverButtons />*/}
             <div className='homepage'>
-                <animated.div ref={ref3} style={inView3}>
-                    <Newsfeed />
-                    <PhotoGallery photoCount={6} />
-                    <PartnerLogos />
-                </animated.div>
+                <Newsfeed />
+                <PhotoGallery photoCount={6} />
+                <PartnerLogos />
             </div>
         </>
     )

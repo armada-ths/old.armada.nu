@@ -8,7 +8,6 @@ import Modal from '../Modal'
 /*const urlPropsQueryConfig = {
     eventId: { type: UrlQueryParamTypes.number, queryParam: 'eventId' },
 }*/
-
 const monthNames = [
     'Jan',
     'Feb',
@@ -22,7 +21,7 @@ const monthNames = [
     'Oct',
     'Nov',
     'Dec',
-]
+] //There's gotta be a better way to do this? /Nima Also feel free to come document this file
 
 class EventList extends React.Component {
     constructor(props) {

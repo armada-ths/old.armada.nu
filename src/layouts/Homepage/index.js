@@ -58,7 +58,7 @@ const Homepage = props => {
             },
             config: {
                 velocity: 100,
-                friction: 20,
+                friction: 50,
             },
         }),
         {
@@ -77,7 +77,7 @@ const Homepage = props => {
             },
             config: {
                 velocity: 100,
-                friction: 20,
+                friction: 50,
             },
         }),
         {

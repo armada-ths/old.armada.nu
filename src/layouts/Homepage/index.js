@@ -62,7 +62,7 @@ const Homepage = props => {
             },
         }),
         {
-            rootMargin: '-40% 0%',
+            rootMargin: '20% 0% 0% 0%',
         }
     )
     const [ref2, inView2] = useInView(
@@ -81,7 +81,7 @@ const Homepage = props => {
             },
         }),
         {
-            rootMargin: '-40% 0% -10% 0%',
+            rootMargin: '20% 0% 0% 0%',
         }
     )
 

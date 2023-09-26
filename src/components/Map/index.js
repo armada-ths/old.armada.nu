@@ -148,7 +148,7 @@ export const MapUtil = () => {
             ZoomToComp({ coordinates: focusCoordinate.coordinates, mapRef })
             const floor = focusCoordinate.floor //floor is an array
             if (!floor.includes(fairLocation)) {
-                setFairLocation(floor[0]) //if the company in question is not on the same floor we already are looking at, go to ONE of it's other flors
+                setFairLocation(floor[0]) //if the company in question is not on the same floor we already are looking at, go to ONE of it's other floors
             }
             setFocusCoordinate(null)
         }
@@ -213,34 +213,9 @@ export const MapUtil = () => {
                         <MarkerClusterGroup chunkedLoading>
                             {exhibitorsConst.map(ex => {
                                 let ifShowPolygon = false
-                                console.log('fairloc: ' + fairLocation)
-                                console.log(ex.fair_placement)
-                                console.log(
-                                    ex.fair_placement.includes(fairLocation)
-                                )
-                                switch (fairLocation) {
-                                    case 'Nymble - 1st Floor':
-                                        ifShowPolygon =
-                                            ex.fair_placement.includes(
-                                                fairLocation
-                                            )
-                                        console.log('bingo')
-                                        break
-                                    case 'Nymble - 2nd Floor':
-                                        ifShowPolygon =
-                                            ex.fair_placement.includes(
-                                                fairLocation
-                                            )
-                                        console.log('bingo')
-                                        break
-                                    case 'Nymble - 3rd Floor':
-                                        ifShowPolygon =
-                                            ex.fair_placement.includes(
-                                                fairLocation
-                                            )
-                                        console.log('bingo')
-                                        break
-                                }
+                                ifShowPolygon =
+                                    ex.fair_placement.includes(fairLocation) // if one is the exhibitors floors is matching with fairLocation then show that polygon
+
                                 return (
                                     ifShowPolygon && (
                                         <Polygon

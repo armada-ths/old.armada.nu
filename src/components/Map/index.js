@@ -142,10 +142,12 @@ export const MapUtil = () => {
 
     const [fairLocation, setFairLocation] = useState('Nymble - 2nd Floor')
 
-    const [focusCoordinate, setFocusCoordinate] = useState([[50, 50]]) //placeholder values
+    const [focusCoordinate, setFocusCoordinate] = useState(null) //placeholder value
     useEffect(() => {
-        ZoomToComp({ coordinates: focusCoordinate, mapRef })
-        //console.log(focusCoordinate)
+        if (focusCoordinate != null) {
+            ZoomToComp({ coordinates: focusCoordinate, mapRef })
+            setFocusCoordinate(null)
+        }
     }, [focusCoordinate])
     //const [lang, setLang] = useState(0)
     //const [lat, setLat] = useState(0)

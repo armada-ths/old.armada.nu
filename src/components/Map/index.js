@@ -130,9 +130,9 @@ export const MapUtil = () => {
 
     const [editorCoordinates, setEditorCoordinates] = useState([])
 
-    const firstFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 1 blank.png')
-    const secondFloorNymble = require('../../../static/assets/Map/Nymble_floor2.png')
-    const thirdFloorNymble = require('../../../static/assets/Map/karta Nymble_Floor 3 blank.png')
+    const firstFloorNymble = require('../../../static/assets/Map/floor1-ntg.png')
+    const secondFloorNymble = require('../../../static/assets/Map/floor2-ntg.png')
+    const thirdFloorNymble = require('../../../static/assets/Map/floor3-ntg.png')
 
     const floorObj = {
         'Nymble - 1st Floor': firstFloorNymble,
@@ -164,7 +164,7 @@ export const MapUtil = () => {
     const detailLvl = 600 //higher will lead to more resolution and require refactoring to remain full map in frame
     const zoomLevel = 2
     const bounds = [
-        [(3509 / 4962) * detailLvl, 0], //4962  ×  3509
+        [(2500 / 5000) * detailLvl, 0], //4962  ×  3509
         [0, detailLvl],
     ]
     //Renders the list of exhibitors under the map.
@@ -197,7 +197,7 @@ export const MapUtil = () => {
                         className='bigMap'
                         ref={mapRef}
                         maxZoom={5}
-                        minZoom={-1}
+                        minZoom={0}
                     >
                         <Internal />
                         <CoordinateEditor

@@ -641,6 +641,12 @@ export class ExhibitorList extends React.Component {
     updateSearch(event) {
         this.setdefault()
         this.setState({ search: event.target.value.substr(0, 100) })
+        console.log(event.target.value)
+        if (event.target.value.length > 0) {
+            this.state.showAllCompanies = true
+        } else {
+            this.state.showAllCompanies = false
+        }
     }
 
     //displays types of jobs offered by company in its Modal
@@ -975,7 +981,7 @@ export class ExhibitorList extends React.Component {
         // Here you decide if list of exhibitors should be displayed or not
         let showExhibitors = true
         let thisYear = new Date().getFullYear().toString()
-        console.log('poop' + this.props.fairLocation)
+        //console.log('poop' + this.props.fairLocation)
         if (this.year === thisYear) {
             showExhibitors = false
         }
@@ -1108,23 +1114,29 @@ export class ExhibitorList extends React.Component {
         }
 
         //fair placement filter
-        for (let filterkey in this.state.fairPlacementfilters) {
-            if (this.state.fairPlacementfilters[filterkey]) {
-                filteredCompanies = filteredCompanies.filter(exhibitorItem => {
-                    console.log(exhibitorItem)
-                    for (let fair_placement_index in exhibitorItem.props
-                        .exhibitor.fair_placement) {
-                        if (
-                            exhibitorItem.props.exhibitor.fair_placement[
-                                fair_placement_index
-                            ] ===
-                            this.state.fairPlacementfilters[filterkey].value
-                        ) {
-                            return true
+        if (!this.state.showAllCompanies) {
+            for (let filterkey in this.state.fairPlacementfilters) {
+                if (this.state.fairPlacementfilters[filterkey]) {
+                    filteredCompanies = filteredCompanies.filter(
+                        exhibitorItem => {
+                            console.log(exhibitorItem)
+                            for (let fair_placement_index in exhibitorItem.props
+                                .exhibitor.fair_placement) {
+                                if (
+                                    exhibitorItem.props.exhibitor
+                                        .fair_placement[
+                                        fair_placement_index
+                                    ] ===
+                                    this.state.fairPlacementfilters[filterkey]
+                                        .value
+                                ) {
+                                    return true
+                                }
+                            }
+                            return false
                         }
-                    }
-                    return false
-                })
+                    )
+                }
             }
         }
 
@@ -1213,28 +1225,33 @@ export class ExhibitorList extends React.Component {
                                 > */}
                             </div>
                             <div id='filter-container'>
-                                <div>
-                                    {this.state.showAllCompanies ? (
-                                        <GrCheckboxSelected
-                                            onClick={() => {
-                                                this.setState({
-                                                    ...this.state,
-                                                    showAllCompanies: false,
-                                                })
-                                            }}
-                                        />
-                                    ) : (
-                                        <GrCheckbox
-                                            onClick={() => {
-                                                this.setState({
-                                                    ...this.state,
-                                                    showAllCompanies: true,
-                                                })
-                                            }}
-                                        />
-                                    )}
-                                    Show All Companies
-                                </div>
+                                {this.state.showAllCompanies ? (
+                                    <div
+                                        className='showAllBox'
+                                        onClick={() => {
+                                            this.setState({
+                                                ...this.state,
+                                                showAllCompanies: false,
+                                            })
+                                        }}
+                                    >
+                                        <GrCheckboxSelected />
+                                        Show All Companies
+                                    </div>
+                                ) : (
+                                    <div
+                                        className='showAllBox'
+                                        onClick={() => {
+                                            this.setState({
+                                                ...this.state,
+                                                showAllCompanies: true,
+                                            })
+                                        }}
+                                    >
+                                        <GrCheckbox />
+                                        Show All Companies
+                                    </div>
+                                )}
                                 <Select
                                     closeMenuOnSelect={false}
                                     blurInputOnSelect={false}

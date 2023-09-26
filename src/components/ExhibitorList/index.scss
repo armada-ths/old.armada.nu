@@ -1,5 +1,11 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
+
+.showAllBox {
+    cursor: grab;
+    font-size: larger;
+}
+
 @-webkit-keyframes shine {
     0% {
         left: -50%;
@@ -50,8 +56,8 @@
 }
 .exhibitors {
     position: fixed;
-    top:50%;
-    left:0%;
+    top: 50%;
+    left: 0%;
     width: 100%;
     padding-top: 1em;
     height: 50vh;
@@ -126,11 +132,11 @@
 */
 
 .search {
-    padding-bottom: 1em;    
+    padding-bottom: 1em;
     z-index: 10;
 }
 
-.filters{
+.filters {
     width: 90%;
     margin: 0 2em 0 2em;
 }
@@ -141,7 +147,7 @@
 }
 
 .exhibitors .search-container {
-    margin: 0em 1em 0.5em 1em;        
+    margin: 0em 1em 0.5em 1em;
     z-index: 10;
     // padding: 0em 2em 0.5em 2em;
     text-align: center;
@@ -164,8 +170,8 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 568px) {
-    .search-container{
-        margin: 0em 1em 0.5em 1em;       
+    .search-container {
+        margin: 0em 1em 0.5em 1em;
         input {
             font-size: 16px !important;
             margin: 5px 5px 5px 5px;
@@ -398,7 +404,7 @@
     animation: shine 2.5s infinite;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -634,15 +640,15 @@
     min-height: 300px;
 }
 
-.search-line{
+.search-line {
     display: flex;
     // margin: 20px;
     flex-direction: row;
     margin-bottom: 2%;
-    input{
+    input {
         margin: 0em 0.5em 0em 0em;
     }
-    #filter-button{
+    #filter-button {
         margin: 0em 0em 0em 0.5em;
     }
 }

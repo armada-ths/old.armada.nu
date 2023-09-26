@@ -105,8 +105,8 @@ const Homepage = props => {
             {/*<GifHoverButtons />*/}
             <div className='homepage'>
                 <Newsfeed />
-                <PhotoGallery photoCount={6} />
                 <PartnerLogos />
+                <PhotoGallery photoCount={6} />
             </div>
         </>
     )

@@ -6,9 +6,13 @@ import Page from '../../templates/page'
 
 const Events = props => {
     return (
-        <div className='Events-container'>
-            <Page {...props} />
-            <EventList {...props} />
+        <div>
+            <div className='Events-text'>
+                <Page {...props} />
+            </div>
+            <div className='Events-container'>
+                <EventList {...props} />
+            </div>
         </div>
     )
 }

@@ -1419,7 +1419,10 @@ const ExhibitorItem = props => {
             role='presentation'
             className={'exhibitor-box ' + classname}
             onClick={() => {
-                setFocusCoordinate(props.exhibitor.positions)
+                setFocusCoordinate({
+                    coordinates: props.exhibitor.positions,
+                    floor: props.exhibitor.fair_placement,
+                })
                 const exhibitorBoxes =
                     document.getElementsByClassName('exhibitor-box')
                 for (const box of exhibitorBoxes) {

@@ -90,7 +90,7 @@ function findMiddle(coordinates) {
 
     let avg_x = min_x + (max_x - min_x) / 2
     let avg_y = min_y + (max_y - min_y) / 2
-    console.log(avg_y, avg_x)
+    //console.log(avg_y, avg_x)
     return [avg_y, avg_x]
 }
 
@@ -110,8 +110,8 @@ function customIcon(exhibitor) {
         iconImage = exhibitor.color
     }
 
-    console.log('this is icon')
-    console.log(iconImage)
+    //console.log('this is icon')
+    //console.log(iconImage)
     return L.icon({
         iconUrl: iconImage,
 
@@ -145,7 +145,11 @@ export const MapUtil = () => {
     const [focusCoordinate, setFocusCoordinate] = useState(null) //placeholder value
     useEffect(() => {
         if (focusCoordinate != null) {
-            ZoomToComp({ coordinates: focusCoordinate, mapRef })
+            ZoomToComp({ coordinates: focusCoordinate.coordinates, mapRef })
+            const floor = focusCoordinate.floor //floor is an array
+            if (!floor.includes(fairLocation)) {
+                setFairLocation(floor[0]) //if the company in question is not on the same floor we already are looking at, go to ONE of it's other flors
+            }
             setFocusCoordinate(null)
         }
     }, [focusCoordinate])
@@ -209,24 +213,32 @@ export const MapUtil = () => {
                         <MarkerClusterGroup chunkedLoading>
                             {exhibitorsConst.map(ex => {
                                 let ifShowPolygon = false
+                                console.log('fairloc: ' + fairLocation)
+                                console.log(ex.fair_placement)
+                                console.log(
+                                    ex.fair_placement.includes(fairLocation)
+                                )
                                 switch (fairLocation) {
                                     case 'Nymble - 1st Floor':
                                         ifShowPolygon =
                                             ex.fair_placement.includes(
                                                 fairLocation
                                             )
+                                        console.log('bingo')
                                         break
                                     case 'Nymble - 2nd Floor':
                                         ifShowPolygon =
                                             ex.fair_placement.includes(
                                                 fairLocation
                                             )
+                                        console.log('bingo')
                                         break
                                     case 'Nymble - 3rd Floor':
                                         ifShowPolygon =
                                             ex.fair_placement.includes(
                                                 fairLocation
                                             )
+                                        console.log('bingo')
                                         break
                                 }
                                 return (

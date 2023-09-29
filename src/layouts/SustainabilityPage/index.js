@@ -11,6 +11,7 @@ import SustainabilitySection from '../../../src/components/DiversitySection'
 import FunFact from '../../../src/components/FunFact'
 import ScrollUpButton from '../../components/ScrollUpButton'
 import { StaticImage } from 'gatsby-plugin-image'
+import { GoCloudDownload } from 'react-icons/go'
 const SustainabilityPage = props => {
     return (
         <div className='content'>
@@ -33,10 +34,16 @@ const SustainabilityPage = props => {
                         a more sustainable living.{' '}
                     </p>
                 </div>
-                <StaticImage
-                    className='top-icon'
-                    src='../../../static/assets/sustainability/sustainability-icon.png'
-                />
+            </div>
+            <StaticImage
+                className='top-icon'
+                src='../../../static/assets/sustainability/sustainability-icon.png'
+            />
+            <div className='susButtonContainer'>
+                <button>
+                    <GoCloudDownload />
+                    Download our Sustainability Policy
+                </button>
             </div>
             <div className='sustainability'>
                 <div className='sustainability-container'>

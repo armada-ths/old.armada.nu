@@ -16,9 +16,7 @@ const DiversitySection = props => {
     }
     return (
         <div className={`diversity-section ${props.right ? 'right' : ''}`}>
-            <Fade direction={dir}>
-                <div>{props.children}</div>
-            </Fade>
+            <div>{props.children}</div>
         </div>
     )
 }

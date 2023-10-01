@@ -1,73 +1,118 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './index.scss'
+import axios from 'axios'
 
 //TODO remove 'hårdkodning' and add 'show more' to show more people
+/* Started edit by Nima in Okt 2023. A lot was unneccesarrily hardcoded and new design is on figma */
 
 const SustainabilityInterviews = () => {
+    const [names, setNames] = useState([])
+    const [images, setImages] = useState([]) //image url from ais
+    const roles = [
+        'Project Manager',
+        'Head of Logistics and Fair',
+        'Head of Web Development',
+        'Head of Marketing and Communication',
+        'Head of Service and Sponsorship',
+    ]
+
+    useEffect(() => {
+        axios.get('https://ais.armada.nu/api/organization/v2').then(res => {
+            roles.forEach(role => {
+                res.data.forEach(team => {
+                    team.people.forEach(person => {
+                        if (person.role.includes(role)) {
+                            setNames(old => [...old, person.name])
+                            setImages(old => [...old, person.picture])
+                        }
+                    })
+                })
+            })
+        })
+        console.log(names)
+        console.log(images)
+    }, [])
+
     const InterviewQuestions = [
-        { text: 'How do you work with sustainability?' },
-        { text: 'Where do you see the struggle and potential?' },
         {
-            text: 'What are some sustainability choices you make in your personal life?',
+            text: '1) What role does sustainability play in the work that you do for Armada?',
+        },
+        {
+            text: '2) What potential barrier and opportunity do you foresee for Armada 2023 with regards to implementing sustainability?',
+        },
+        {
+            text: '3) How would you like to contribute to a sustainable Armada 2023?',
+        },
+        {
+            text: '4) What are some sustainable decisions that you make on a daily basis? ',
         },
     ]
     const InterviewAnswers = [
         {
-            name: 'Sigrid Redin & Liang Xinyu',
-            title: 'Sustainability Coordinators',
-            imageUrl: '/assets/images/testimonials/Sigrid & Liang.jpg',
+            name: names[0],
+            title: roles[0],
+            imageUrl: images[0],
             answer1:
-                'Sigrid: By working to integrate sustainability throughout the fair and mitigate its environmental impacts. \n Liang: It can be reflected in my daily work, developing sustainability certifications and setting sustainability goals for each team.',
+                'For me, sustainability plays the role of an evaluation and prioritisation tool through which sustainable parameters are used to evaluate what THS Armada should and should not do. ',
             answer2:
-                'Sigrid: I see the potential in the fact that the people of Armada are aware of the importance of sustainability, and that it therefore is a common goal. The struggle is getting sustainable products and implementing the projects we want while staying within budget. \n Liang: Although the current cost of sustainability certified products is still higher than traditional products, it is still believed that more cost-effective sustainable products will appear on the market in the future as the demand for sustainability rises.',
+                'A potential barrier(s) that can unfold is the procurement of single use items like cups, water bottles, and handouts. Ultimately, THS Armada undertakes to limit such usage by imploring exhibitors to consider sustainability in their hand-outs, and also by reusing as much as possible. ',
             answer3:
-                "Sigrid:I try to integrate sustainability in my everyday life by being careful with energy and water consumption, eating vegetarian food, plus recycling and reusing. Also living in Stockholm has the benefit of being close to everything, making it possible to bike or use public transport whenever I'm going somewhere. \n Liang: I tend to take public transport, use reusable bags and make sure my big purchase has big environmental benefits.",
+                'I would like to contribute to a sustainable Armada by creating an environment where there can be a lot of ideas put forth, and where Armada takes action on the things where the organisation deems action to be taken. ',
+            answer4:
+                'Mostly by monitoring social sustainability and a sustainable workload for people in the project, deciding to push people to do and act more, or let them recover based on what is needed at the given moment in time. ',
         },
         {
-            name: 'Melvin Jobe',
-            title: 'Head of Marketing and Communication',
-            imageUrl: '/assets/images/testimonials/Melvin Jobe.jpg',
+            name: names[1],
+            title: roles[1],
+            imageUrl: images[1],
             answer1:
-                'Promote the use of digital marketing rather than physical products/flyers etc.',
+                'Sustainability plays a huge role in the efforts I make when it comes to the utilisation and reusability of the resources that THS Armada has. Also, sustainability links a lot to the conscious efforts and decision-making when it comes to the sourcing of goods and services that the career fair requires.',
             answer2:
-                'The ease of handing someone a flyer compared to getting them interested in a post is a struggle but a post can reach more people so the potential is reaching a wider audience.',
+                'From my perspective, Armada is a huge organisation with a lot of moving parts, one of which being the transportation and logistics for the manifold of company items, which of course involves the emissions of GHGs. Although, THS Armada is striving towards more sustainable solutions in this area.',
             answer3:
-                'I recycle all waste at home, try to not have devices/lights on at home if not necessary.',
+                'Personally, I would like to see Armada make more of a conscious awareness and transparent efforts for sustainability through the decisions, based on factual information, that will have an impact on creating a fair that is both sustainable and has the potential to go beyond carbon neutrality.',
+            answer4:
+                'Related to Armada, it most concerns the food choices we make, including the reduction of food waste as well as the sourcing of sustainable food alternatives for our volunteers and utilisation of recyclable alternatives whenever possible.',
         },
         {
-            name: 'Dana Ismail',
-            title: 'Head of Web Development',
-            imageUrl: '/assets/images/testimonials/Dana Ismail.png',
+            name: names[2],
+            title: roles[2],
+            imageUrl: images[2],
             answer1:
-                'In general, you need to be fairly creative to implement additional sustainable measures than those that already exist in web development and IT. This year in Armada we are trying to stay environmentally friendly by, for example, arranging competitions where there are no paper sheets or physical posters. However, we offer QR codes or 4-digit codes that you can use to join and collect points, for example.',
+                'When it comes to IT here at Armada, sustainability plays a huge role with regards to the system architecture. Also, the role of IT system capabilities and sustainability are becoming even more important and greater than ever before and so, the roles that the two play are very broad.',
             answer2:
-                "The struggles mainly lie in the fact that there are quite limited sustainable measures or changes in web development and IT. As previously mentioned, you need to be creative in every solution that you propose so that the sustainability aspect is not ignored. The good thing is that we have a website and social media that we can reach out to a lot of students. All the information is on the website and these social platforms so we don't need to print things on posters but can instead refer to our digital platforms.",
+                'With great potential for IT and sustainability to coincide with one another, comes barriers and so, areas that the IT and sustainability team hope to collaborate on further are A.I., systems architecture, energy consumption reductions and digitalisation.',
             answer3:
-                "One thing that I think people take for granted is littering the streets, nature and lakes. It's something that I always think about because this has very negative consequences on the environment and you don't realize this because these actions are indirect threats to a sustainable society.",
+                'I would like to contribute to a sustainable Armada by integrating IT systems, and its encompassing infrastructure into a sustainable foundation. Whether that may be through minimising energy usage for the IT systems that we use, or through digitalisation efforts that prevent the use of excessive materials.',
+            answer4:
+                'Ultimately, it depends on the scope and the day-to-day basis through which I believe that the small decisions are the ones that make the biggest impacts. After all, simple things such as sorting out the waste, reusing materials and reducing consumption of resources such as water are all great and impactful decisions that we should consciously strive for.',
         },
         {
-            name: 'Cecilia Zambelli',
-            title: 'Head of Service',
-            imageUrl: '/assets/images/testimonials/Cecilia Zambelli.jpg',
+            name: names[3],
+            title: roles[3],
+            imageUrl: images[3],
             answer1:
-                'Reduce waste in the lounges and in the kitchen where we handle food.',
+                'When it comes to marketing and sustainability, a lot of communication is relayed through digital platforms to ensure that sustainable practices are preached amongst THS Armada’s various teams.',
             answer2:
-                'Differentiation of the waste, food waste and trash generated.',
-            answer3: 'Not buy meat or milk products at the supermarket.',
+                'Importantly, it is not entirely possible to eliminate all forms of physical waste, and so a potential barrier could be that it might be easy to fall back into old unsustainable patterns when situations become difficult. For example, being lazy to care about waste sorting due to people feeling tired after a long day’s work.',
+            answer3:
+                'For me, a well communicated message through the design and media groups via THS Armada’s digital platforms goes a long way for not having to rely on physical means of publicity for visibility. Also, regarding the physical campaigns, we avoid plastic as much as possible and use eco-friendly materials such as paper cups or plates.',
+            answer4:
+                'Answering this digitally for example! Of course, all team meetings and agendas for team communication are done using the drive and Slack on a daily basis, and this saves us from having to print out important documents or instructions for people to follow. Also, I now have my own coffee cup for the PG sessions which my colleagues have also adopted.',
         },
         {
-            name: 'Kilima Mambo',
-            title: 'Head of Logistics and Fair',
-            imageUrl: '/assets/images/testimonials/Kilima Mambo.jpg',
+            name: names[4],
+            title: roles[4],
+            imageUrl: images[4],
             answer1:
-                'As the HoLF my main focus is effective usage of resources. For instance, we focus on using  more digital content and avoid print as much as possible.',
+                'I think that sustainability plays a huge role in everything we do. Also, I think that sustainability should always be incorporated into our rationale when making conscious choices about which companies and organisations we source products and services from.',
             answer2:
-                'The struggle is keeping up with the sustainability goals since other options are often easier and available. However, the potential is that most people in the team are trying their best to achieve our goals and live up to our co-values.',
+                'Since sustainability becomes more of a hot topic, the technology and the studies advances and there are more options for making sustainable choices than ever before. The digitalisation and alternative solutions for everything; from events to minimising the use of flyers and papers have increased and is no longer an excuse for not being sustainable. The barriers for sustainability is that it is often a contradiction before being sustainable from an economical and environmental point of view. Sometimes the most environmentally sustainable choice is the most expensive choice, and in those cases, we have to make a well thought out balancing of what weighs more.',
             answer3:
-                'I am keen on sorting waste. I am also a huge fan of the sharing economy so I tend to prefer hiring things that I periodically use instead of buying them.',
+                'As I have the responsibility of the lounges and the lunches, I will always make my choices of food and disposable products based from a sustainability perspective. My hope is also to order products from sustainable companies when it comes to merch and other clothing. Importantly, when it comes to such decisions, I will also consider the economical and social sustainability.',
+            answer4:
+                'I think that everybody can make small changes in their everyday life to be a little bit more sustainable. The small decisions I make in my everyday life are for example choosing public transport to every possible extent and carpooling in other cases. I am also trying to include more vegan or vegetarian meals in my diet. I really like the minimalist trend that is growing and I strive for living as minimalistic as I can. I believe in buying only essential things and prefer buying a few things with high quality rather than having a lot of unnecessary things. I will also always explore the options of buying things second hand or if I can borrow or rent things that will only be used occasionally.',
         },
-        // {name: 'Sigrid Redin', title:'Sustainability Coordinator', imageUrl:'/assets/images/testimonials/Sigrid & Liang.jpg', answer1:'By working to integrate sustainability throughout the fair and mitigate its environmental impacts.', answer2:'I see the potential in the fact that the people of Armada are aware of the importance of sustainability, and that it therefore is a common goal. The struggle is getting sustainable products and implementing the projects we want while staying within budget.', answer3:"I try to integrate sustainability in my everyday life by being careful with energy and water consumption, eating vegetarian food, plus recycling and reusing. Also living in Stockholm has the benefit of being close to everything, making it possible to bike or use public transport whenever I'm going somewhere."},
-        // {name: 'Liang Xinyu', title:'Sustainability Coordinator', imageUrl:'/assets/images/testimonials/Sigrid & Liang.jpg', answer1:'It can be reflected in my daily work, developing sustainability certifications and setting sustainability goals for each team.', answer2:'Although the current cost of sustainability certified products is still higher than traditional products, it is still believed that more cost-effective sustainable products will appear on the market in the future as the demand for sustainability rises.', answer3:'I tend to take public transport, use reusable bags and make sure my big purchase has big environmental benefits.'}
     ]
 
     return (
@@ -100,6 +145,10 @@ const SustainabilityInterviews = () => {
                                     {InterviewQuestions[2].text}
                                 </p>
                                 <p className='text'>{answer.answer3}</p>
+                                <p className='text Question'>
+                                    {InterviewQuestions[3].text}
+                                </p>
+                                <p className='text'>{answer.answer4}</p>
                             </div>
                         </div>
                     </div>

@@ -24,6 +24,36 @@
     }
 }
 
+.greenBox {
+    margin-top: 10vh;
+    margin-bottom: 2em;
+    display: grid;
+    place-items: center;
+    grid-template-areas: 'inner-div';
+    mix-blend-mode: multiply;
+    flex-shrink: 0;
+    width: 100vw;
+    background: url('../../../static/assets/sustainability/greenBG.svg'),
+        lightgray 50% / cover no-repeat;
+
+    .greenBoxText {
+        text-align: center;
+        width: 65%;
+        color: white;
+        background-color: #232427dc;
+        border-radius: 30.232px;
+        padding: 10px;
+        box-shadow: 0px 1.67357px 8.06196px 0px rgba(0, 0, 0, 0.25);
+        grid-area: inner-div;
+    }
+    #title1 {
+        text-align: center;
+    }
+    .greenButton {
+        margin-bottom: 20px;
+    }
+}
+
 .sus-top-wrapper {
     margin-top: 2vh;
     width: 100%;
@@ -55,7 +85,7 @@
         }
         b,
         h3 {
-            color: #30f8b6; //make the armada green popout more
+            color: #009a67; //make the armada green popout more
         }
         h3 {
             text-decoration: underline;

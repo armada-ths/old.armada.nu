@@ -24,10 +24,7 @@ import Events from '../layouts/Events'
 import Coffee from '../layouts/Coffee'
 import Partners from '../layouts/Partners'
 //import forStudentsPage from '../layouts/forStudentsPage'
-import KnightecPage from '../layouts/KnightecPage'
 import CompetitionPage from '../layouts/CompetitionPage'
-import Banquet from '../layouts/Banquet'
-import RegistrationPage from '../layouts/RegistrationPage'
 import IndividualMeetings from '../layouts/IndividualMeetings'
 import AtTheFairPageTab from '../layouts/AtTheFairPageTab'
 import ForCompanies from '../layouts/ForCompanies'
@@ -54,7 +51,6 @@ const components = {
     //forStudentsPage: forStudentsPage,
     KnightecPage: KnightecPage,
     CompetitionPage: CompetitionPage,
-    Banquet: Banquet,
     //RegistrationPage: RegistrationPage, Archived
     IndividualMeetings: IndividualMeetings,
     AtTheFairPageTab: AtTheFairPageTab,

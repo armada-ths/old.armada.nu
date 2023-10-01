@@ -49,7 +49,6 @@ const components = {
     Coffee: Coffee,
     Partners: Partners,
     //forStudentsPage: forStudentsPage,
-    KnightecPage: KnightecPage,
     CompetitionPage: CompetitionPage,
     //RegistrationPage: RegistrationPage, Archived
     IndividualMeetings: IndividualMeetings,

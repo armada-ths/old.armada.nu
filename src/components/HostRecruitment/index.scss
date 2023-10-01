@@ -165,3 +165,26 @@ h4 {
         }
     }
 }
+
+.position {
+    //border: 1px solid $melon;
+}
+
+.applyButton {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    margin-bottom: 4px;
+    font-size: 24px;
+}
+.applyButton:hover {
+    color: white;
+}
+
+.team {
+    h2 {
+        text-decoration: underline;
+        margin-bottom: 5px;
+        margin-top: 4px;
+    }
+}

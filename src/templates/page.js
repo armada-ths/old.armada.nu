@@ -16,6 +16,7 @@ import FunFact from '../../src/components/FunFact'
 import Recruitment from '../components/Recruitment'
 import TierlistContainer from '../components/TierlistContainer'
 import ScrollUpButton from '../components/ScrollUpButton'
+import RecruitmentPitch from '../components/RecruitmentPitch'
 //ReactMarkdown allows just like MDX pass through custom components. See for example video1 that leads to registration.md
 const Page = props => {
     return (
@@ -60,6 +61,7 @@ const Page = props => {
                     ),
                     tierlistcontainer: () => <TierlistContainer />,
                     scrollupbutton: () => <ScrollUpButton />,
+                    recruitmentpitch: () => <RecruitmentPitch />,
                 }}
             />
             {props.children}

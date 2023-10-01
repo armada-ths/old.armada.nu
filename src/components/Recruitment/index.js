@@ -116,26 +116,26 @@ const Recruitment = () => {
         })
     }, []) //happens on page load, this sideloads everything
     return recruitmentLink !== '' ? (
-        <div className='rolelist'>
-            <StickyContainer>
-                <Sticky topOffset={-navbarOffset}>
-                    {({ style }) => {
-                        return (
-                            <div className='topSticky' style={{ ...style }}>
-                                <div className={'apply-section'}>
-                                    <a
-                                        href={
-                                            'https://ais.armada.nu' +
-                                            recruitmentLink
-                                        }
-                                    >
-                                        <button>APPLY HERE</button>
-                                    </a>
-                                </div>
+        <StickyContainer>
+            <Sticky topOffset={-navbarOffset}>
+                {({ style }) => {
+                    return (
+                        <div className='topSticky' style={{ ...style }}>
+                            <div className={'apply-section'}>
+                                <a
+                                    href={
+                                        'https://ais.armada.nu' +
+                                        recruitmentLink
+                                    }
+                                >
+                                    <button>APPLY HERE</button>
+                                </a>
                             </div>
-                        )
-                    }}
-                </Sticky>
+                        </div>
+                    )
+                }}
+            </Sticky>
+            <div className='rolelist'>
                 <div className='description-header'>
                     <h2>Available Roles</h2>
                 </div>
@@ -177,8 +177,8 @@ const Recruitment = () => {
                         ) : null
                     })}
                 </div>
-            </StickyContainer>
-        </div>
+            </div>
+        </StickyContainer>
     ) : (
         <div>
             <h4>Application is closed, stay tuned for new roles</h4>

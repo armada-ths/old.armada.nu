@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './index.scss'
 //import Zoom from 'react-reveal/Zoom'
 import { Zoom } from 'react-awesome-reveal'
+import { Slide } from 'react-slideshow-image'
 
 const FLICKR_API_KEY = '381c0c551c89c0f23e326456eae0c6a8'
 const FLICKR_PHOTOSET_ID = '72157708626862634'

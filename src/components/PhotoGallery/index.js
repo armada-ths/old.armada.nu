@@ -8,6 +8,15 @@ const FLICKR_API_KEY = '381c0c551c89c0f23e326456eae0c6a8'
 const FLICKR_PHOTOSET_ID = '72157708626862634'
 const FLICKR_USER_ID = '51450332@N02'
 
+function generateFlickrApiURL() {
+    return `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${FLICKR_API_KEY}&photoset_id=${FLICKR_PHOTOSET_ID}&user_id=${FLICKR_USER_ID}&format=json&nojsoncallback=1`
+}
+
+async function fetchFlickr() {
+    res = await fetch(generateFlickrApiURL())
+    return res
+}
+
 class Photo extends React.Component {
     render() {
         const fileURL = this.props.fileURL
@@ -59,6 +68,7 @@ class PhotoGallery extends React.Component {
                     loaded: true,
                     photos: res.photoset.photo,
                 })
+
                 this.interval = setInterval(() => this.cyclePhotos(), 10000)
             })
             .catch(err => {

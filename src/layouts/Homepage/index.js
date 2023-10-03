@@ -6,7 +6,7 @@ import Loading from '../../components/Loading'
 import Loadable from 'react-loadable'
 import Newsfeed from '../../components/Newsfeed'
 import { Zoom } from 'react-awesome-reveal'
-import GifHoverButtons from '../../components/GifButtons'
+//import GifHoverButtons from '../../components/GifButtons'
 import EventList from '../../components/EventList'
 import { useInView, animated } from 'react-spring'
 /* Started edit by Nima Sep to redesign homepage.
@@ -105,8 +105,8 @@ const Homepage = props => {
             {/*<GifHoverButtons />*/}
             <div className='homepage'>
                 <Newsfeed />
-                <PhotoGallery photoCount={6} />
                 <PartnerLogos />
+                <PhotoGallery photoCount={6} />
             </div>
         </>
     )

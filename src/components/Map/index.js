@@ -187,6 +187,9 @@ export const MapUtil = () => {
     //     )
     // }
 
+    //TODO, move to css
+    const boxStyle = { width: '30px', height: '3    0px', textAlign: 'center' }
+
     return (
         <div>
             <div className='mapBox'>
@@ -274,6 +277,33 @@ export const MapUtil = () => {
                         </LayersControl.BaseLayer>
                     </LayersControl> */}
                     </MapContainer>
+                </div>
+            </div>
+            <div
+                style={{
+                    background: 'red',
+                    zIndex: '1',
+                    position: 'absolute',
+                    left: '40vw',
+                }}
+            >
+                <div
+                    style={boxStyle}
+                    onClick={() => setFairLocation('Nymble - 1st Floor')}
+                >
+                    1
+                </div>
+                <div
+                    style={boxStyle}
+                    onClick={() => setFairLocation('Nymble - 2nd Floor')}
+                >
+                    2
+                </div>
+                <div
+                    style={boxStyle}
+                    onClick={() => setFairLocation('Nymble - 3rd Floor')}
+                >
+                    3
                 </div>
             </div>
             {/* <div className='exhibitorList'>

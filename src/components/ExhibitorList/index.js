@@ -33,7 +33,7 @@ const dropDownAttributes = {
 }
 
 const ais = 'https://ais.armada.nu/'
-const isMockup = true
+const isMockup = false //change this to go into manual/API fetching mode
 const showFilters = true
 let exhibitorsConst = [
     {
@@ -179,6 +179,34 @@ let exhibitorsConst = [
         ],
     },
 ]
+
+function checkListOfCoordinates(arr) {
+    console.log(typeof arr)
+    if (arr !== null && typeof arr !== 'undefined') {
+        if (arr.length > 2) {
+            for (const subArray of arr) {
+                if (subArray.length !== 2) {
+                    return false
+                } else {
+                    if (
+                        !(
+                            typeof subArray[0] === 'number' &&
+                            typeof subArray[1] === 'number'
+                        )
+                    ) {
+                        return false
+                    }
+                }
+            }
+        } else {
+            return false
+        }
+        return true
+    } else {
+        return false
+    }
+    return false
+}
 
 export function getExhibitors(setExhibitorsForMap) {
     setExhibitorsForMap(exhibitorsConst)
@@ -531,7 +559,11 @@ export class ExhibitorList extends React.Component {
             .then(res => {
                 console.log('UPDATE')
                 let exhibitors = res.data // create variable and store result within parameter data
+                exhibitors = exhibitors.filter(exhibitor =>
+                    checkListOfCoordinates(exhibitor.map_coordinates)
+                )
                 exhibitors.sort((a, b) => a.name.localeCompare(b.name))
+
                 let exhibitorList = exhibitors.map(exhibitor => (
                     <ExhibitorItem
                         key={exhibitor.id}
@@ -564,10 +596,6 @@ export class ExhibitorList extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (!isMockup) {
-            this.apiFetcher(this.props, true)
-        }
-
         console.log(this.props.fairInputLocation, prevProps.fairInputLocation) //remove this later
 
         if (this.props.fairInputLocation !== prevProps.fairInputLocation) {
@@ -1119,7 +1147,7 @@ export class ExhibitorList extends React.Component {
                 if (this.state.fairPlacementfilters[filterkey]) {
                     filteredCompanies = filteredCompanies.filter(
                         exhibitorItem => {
-                            console.log(exhibitorItem)
+                            //console.log(exhibitorItem)
                             for (let fair_placement_index in exhibitorItem.props
                                 .exhibitor.fair_placement) {
                                 if (
@@ -1405,9 +1433,9 @@ if (global.window !== undefined) {
 } else {
     toExport = ExhibitorList
 }
-export default toExport
-*/
-//export default ExhibitorList
+export default toExport*/
+
+export default ExhibitorList
 const ExhibitorItem = props => {
     const setFocusCoordinate = useContext(ExtendedZoom)
     let classname = props.exhibitor.sustainability ? ' green' : ''

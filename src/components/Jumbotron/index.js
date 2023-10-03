@@ -53,6 +53,10 @@ const Jumbotron = props => {
                 <p className='logo-date'>
                     THE FAIR <wbr /> 21&#8209;22 NOV 2023
                 </p>
+                <div>
+                    <button>FOR STUDENTS</button>
+                    <button>FOR COMPANIES</button>
+                </div>
                 {video ? <Countdown /> : <></>}
             </div>
             <div className={video ? 'header-home' : 'header-image'}>

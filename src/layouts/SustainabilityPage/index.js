@@ -43,7 +43,7 @@ const SustainabilityPage = props => {
                 <form
                     id='submitForm'
                     method='get'
-                    action='/assets/sustainability/Sustainability Policy 2023.pdf'
+                    action='/assets/sustainability/Armada_Sustainability_Policy_2022-Okt.png'
                 >
                     <button>
                         <GoCloudDownload />

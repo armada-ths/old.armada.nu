@@ -11,6 +11,7 @@ import { Link } from 'gatsby'
 import Collapsible from 'react-collapsible'
 import { ExtendedZoom } from '../Map'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
+import Questionnaire from '../Questionnaire'
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
 
@@ -1193,9 +1194,14 @@ export class ExhibitorList extends React.Component {
             const filterContainer = document.getElementById('filter-container')
             filterContainer.classList.toggle('hidden')
         }
+        function toggleQuestionnaireVisibility(){
+            const questionnaireContainer = document.getElementById('questionnaire-container')
+            questionnaireContainer.classList.toggle('hidden')
+        }
         if (showExhibitors) {
             return (
                 <div className='exhibitors'>
+                    <Questionnaire/>
                     {/* <h1>
                         {this.props.lastYear ? "Last Year's " : ''}Exhibitors
                     </h1>
@@ -1265,6 +1271,11 @@ export class ExhibitorList extends React.Component {
                                     onClick={toggleFilterVisibility}
                                 >
                                     Filters
+                                </button>
+                                <button
+                                    id='questionnaire-button'
+                                    onClick={toggleQuestionnaireVisibility}>
+                                    Q
                                 </button>
                                 {/* <Collapsible 
                                     trigger={"Filters"} 

@@ -208,6 +208,18 @@ function checkListOfCoordinates(arr) {
     return false
 }
 
+function checkFairLocation(fairLocation) {
+    /* Used to check if fair location exists */
+    let formattedFairLocation
+    if (fairLocation !== null && typeof fairLocation !== 'undefined') {
+        if (fairLocation.length > 0) {
+            formattedFairLocation = [fairLocation]
+            return formattedFairLocation
+        }
+    }
+    return false
+}
+
 export function getExhibitors(setExhibitorsForMap) {
     setExhibitorsForMap(exhibitorsConst)
 }
@@ -559,11 +571,17 @@ export class ExhibitorList extends React.Component {
             .then(res => {
                 console.log('UPDATE')
                 let exhibitors = res.data // create variable and store result within parameter data
-                exhibitors = exhibitors.filter(exhibitor =>
-                    checkListOfCoordinates(exhibitor.map_coordinates)
+                exhibitors = exhibitors.filter(
+                    exhibitor =>
+                        checkListOfCoordinates(exhibitor.map_coordinates) &&
+                        exhibitor.fair_location.length > 0
                 )
-                exhibitors.sort((a, b) => a.name.localeCompare(b.name))
+                exhibitors.forEach(ex => {
+                    ex.fair_placement = [ex.fair_location]
+                })
 
+                exhibitors.sort((a, b) => a.name.localeCompare(b.name))
+                console.log(exhibitors)
                 let exhibitorList = exhibitors.map(exhibitor => (
                     <ExhibitorItem
                         key={exhibitor.id}
@@ -738,9 +756,10 @@ export class ExhibitorList extends React.Component {
                                     </a>
                                 </h3>
                             ) : null}
-                            {exhibitor.fair_location && !this.props.lastYear ? (
+                            {exhibitor.fair_placement[0] &&
+                            !this.props.lastYear ? (
                                 <h3 id='fair-location'>
-                                    {exhibitor.fair_location}
+                                    {exhibitor.fair_placement[0]}
                                 </h3>
                             ) : null}
                             {exhibitor.flyer ? (

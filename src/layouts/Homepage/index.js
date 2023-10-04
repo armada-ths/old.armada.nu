@@ -106,7 +106,7 @@ const Homepage = props => {
             <div className='homepage'>
                 <Newsfeed />
                 <PartnerLogos />
-                <PhotoGallery photoCount={6} />
+                {/*<PhotoGallery photoCount={6} /> Armada pictures are removed for now since the slideshow is bugged. Will readd in Okt-Nov*/}
             </div>
         </>
     )

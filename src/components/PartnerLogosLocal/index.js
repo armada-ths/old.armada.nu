@@ -1,13 +1,16 @@
 import React from 'react'
 import './index.scss'
-import Alstom from '../../../static/assets/PartnerLogos/Alstom_Logo_Screen.png'
+import Telenor from '../../../static/assets/PartnerLogos/Telenor_Logo.svg'
+import Sture from '../../../static/assets/PartnerLogos/sture-logo.png'
+/* This can't be hardcoded :( */
 
 const PartnerLogos = () => {
     return (
         <div className='partners'>
-            <h1 className='partnersTitle'>Armada 2022 Partners</h1>
+            <h1 className='partnersTitle'>Armada 2023 Partners</h1>
             <div className='partnersGallery'>
-                <img alt='Alstom' src={Alstom} />
+                <img alt='Telenor' src={Telenor} />
+                <img alt='Sture' src={Sture} id='sture' />
             </div>
         </div>
     )

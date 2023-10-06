@@ -11,6 +11,7 @@ import { Link } from 'gatsby'
 import Collapsible from 'react-collapsible'
 import { ExtendedZoom } from '../Map'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
+
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
 
@@ -559,6 +560,7 @@ export class ExhibitorList extends React.Component {
     }
     apiFetcher(props, update) {
         const yearParam = update ? '&year=' + props.year : ''
+
         axios
             .get(
                 ais +
@@ -582,6 +584,8 @@ export class ExhibitorList extends React.Component {
 
                 exhibitors.sort((a, b) => a.name.localeCompare(b.name))
                 console.log(exhibitors)
+                //To do: Add Gold-Bronze sorting here
+
                 let exhibitorList = exhibitors.map(exhibitor => (
                     <ExhibitorItem
                         key={exhibitor.id}

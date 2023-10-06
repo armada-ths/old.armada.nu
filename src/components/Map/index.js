@@ -1,5 +1,11 @@
 //https://codesandbox.io/s/react-leaflet-with-functional-components-and-imageoverlay-u225j?file=/src/Map.js
-import React, { useEffect, useState, useRef, createContext } from 'react'
+import React, {
+    useEffect,
+    useState,
+    useRef,
+    createContext,
+    useContext,
+} from 'react'
 import {
     ImageOverlay,
     MapContainer,
@@ -16,12 +22,73 @@ import { CRS } from 'leaflet'
 import './index.scss'
 import FloorSelector from './FloorSelector'
 import { ExhibitorList, getExhibitors } from '../ExhibitorList'
-//import ExhibitorList from '../ExhibitorList'
-import FloorProvider from './FloorProvider'
 import customIconImage from './customIcon.svg'
 import { CoordinateEditor } from './CoordinateEditor'
+import axios from 'axios'
+import no_image from '../../../static/assets/armadalogogreen.jpg'
 
 export const ExtendedZoom = createContext(null)
+//Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
+
+function checkListOfCoordinates(arr) {
+    //console.log(typeof arr)
+    if (arr !== null && typeof arr !== 'undefined') {
+        if (arr.length > 2) {
+            for (const subArray of arr) {
+                if (subArray.length !== 2) {
+                    return false
+                } else {
+                    if (
+                        !(
+                            typeof subArray[0] === 'number' &&
+                            typeof subArray[1] === 'number'
+                        )
+                    ) {
+                        return false
+                    }
+                }
+            }
+        } else {
+            return false
+        }
+        return true
+    } else {
+        return false
+    }
+    return false
+} //Used to check if the format of the coordinates are correct - We don't want some silly OTs to crash the page :)
+
+function MapAPIFetch(setExhibitorsMap, colors) {
+    const year = new Date().getFullYear().toString() //get 2023. If not 2023 we sad and display 2023 anyway
+    const ais = 'https://ais.armada.nu/'
+    const link =
+        ais +
+        `api/exhibitors?img alt=''_placeholder=true${
+            year !== '2023' ? '&year=2023' : ''
+        }`
+    let exhibitors = ''
+
+    axios.get(link).then(res => {
+        console.log('Map has fetched company data')
+        exhibitors = res.data
+        exhibitors = exhibitors.filter(
+            exhibitor =>
+                checkListOfCoordinates(exhibitor.map_coordinates) &&
+                exhibitor.fair_location.length > 0
+        )
+        exhibitors.forEach(ex => {
+            ex.fair_placement = [ex.fair_location]
+            if (ex.industries.length > 0) {
+                ex.color = colors[ex.industries[0].name]
+            } else {
+                ex.color = '#fa0000'
+            }
+        })
+        console.log('testytest')
+        console.log(exhibitors)
+        setExhibitorsMap(exhibitors)
+    })
+}
 
 function Internal() {
     const map = useMap()
@@ -55,7 +122,6 @@ function handlePolygonSelect(ex) {
 
         // element.style.backgroundColor = '#00d790';
 
-        element.style.animation = 'dancingEffect 2s ease infinite'
         element.style.animation = 'dancingEffect 2s ease infinite'
 
         // Remove the dancing effect class after animation duration
@@ -107,7 +173,7 @@ function customIcon(exhibitor) {
     let yIcon = 80
     let iconImage = exhibitor.logo_squared
     if (!iconImage) {
-        iconImage = exhibitor.color
+        iconImage = no_image
     }
 
     //console.log('this is icon')
@@ -126,6 +192,8 @@ function customIcon(exhibitor) {
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
 /* Added box to test the surfaces, Hampus&Nima */
 export const MapUtil = () => {
+    const [exhibitorsMap, setExhibitorsMap] = useState([]) //used to move companies to ExhibitorList from Map
+
     const mapRef = useRef(null)
 
     const [editorCoordinates, setEditorCoordinates] = useState([])
@@ -140,7 +208,11 @@ export const MapUtil = () => {
         'Nymble - 3rd Floor': thirdFloorNymble,
     }
 
-    const [fairLocation, setFairLocation] = useState('Nymble - 2nd Floor')
+    const [fairLocation, setFairLocation] = useState('Nymble - 2nd Floor') //default location viewed
+
+    useEffect(() => {
+        MapAPIFetch(setExhibitorsMap, possibleColors, colors)
+    }, [])
 
     const [focusCoordinate, setFocusCoordinate] = useState(null) //placeholder value
     useEffect(() => {
@@ -156,14 +228,6 @@ export const MapUtil = () => {
     //const [lang, setLang] = useState(0)
     //const [lat, setLat] = useState(0)
 
-    //get exhibitors
-    const [ExhibitorsForMap, setExhibitorsForMap] = useState([])
-
-    useEffect(() => {
-        getExhibitors(setExhibitorsForMap)
-    }, [])
-    let exhibitorsConst = ExhibitorsForMap
-
     //const height =
     const detailLvl = 600 //higher will lead to more resolution and require refactoring to remain full map in frame
     const zoomLevel = 2
@@ -171,6 +235,66 @@ export const MapUtil = () => {
         [(2500 / 5000) * detailLvl, 0], //4962  ×  3509
         [0, detailLvl],
     ]
+
+    const possibleColors = [
+        '#fafa00',
+        '#00fafa',
+        '#fa00fa',
+        '#fafafa',
+        '#00fa00',
+        '#0000fa',
+        '#fa0000',
+        '##D84B20',
+        '#F4A900',
+        '#497E76',
+        '#E55137',
+        '#8673A1',
+        '#1C542D',
+    ]
+
+    const colors = {
+        Retail: possibleColors[10],
+        Recruitment: possibleColors[1],
+        Architecture: possibleColors[2],
+        Automotive: possibleColors[3],
+        'Environmental Sector': possibleColors[4],
+        Pedagogy: possibleColors[12],
+        'Web Development': possibleColors[5],
+        'Solid Mechanics': possibleColors[7],
+        'Simulation Technology': possibleColors[5],
+        Pharmaceutical: possibleColors[0],
+        Biotechnology: possibleColors[0],
+        Acoustics: possibleColors[2],
+        'Nuclear Power': possibleColors[7],
+        'Fluid Mechanics': possibleColors[7],
+        'Wood-Processing Industry': possibleColors[8],
+        'Steel Industry': possibleColors[8],
+        'Medical Technology': possibleColors[0],
+        'Media Technology': possibleColors[5],
+        'Marine System': possibleColors[9],
+        'Manufacturing Industry': possibleColors[8],
+        'Management Consulting': possibleColors[10],
+        Insurance: possibleColors[10],
+        Finance: possibleColors[10],
+        Construction: possibleColors[8],
+        Aerospace: possibleColors[7],
+        'Logistics & Supply Chain': possibleColors[10],
+        Telecommunication: possibleColors[5],
+        Mechatronics: possibleColors[5],
+        Electronics: possibleColors[5],
+        'Material Development': possibleColors[8],
+        'Energy Technology': possibleColors[4],
+        Nanotechnology: possibleColors[8],
+        Research: possibleColors[12],
+        'Property & Infrastructure': possibleColors[11],
+        'IT Infrastructure': possibleColors[5],
+        'Software Development': possibleColors[5],
+        Railway: possibleColors[8],
+        'Product Development': possibleColors[10],
+        'Interaction Design': possibleColors[5],
+        'Industry Design': possibleColors[10],
+    }
+
     //Renders the list of exhibitors under the map.
     // //TODO: Make a component out of this if we decide to continue with this implementation
     // function exhibitorListRender(exhibitor) {
@@ -214,7 +338,7 @@ export const MapUtil = () => {
                         {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                          */}
                         <MarkerClusterGroup chunkedLoading>
-                            {exhibitorsConst.map(ex => {
+                            {exhibitorsMap.map(ex => {
                                 let ifShowPolygon = false
                                 ifShowPolygon =
                                     ex.fair_placement.includes(fairLocation) // if one is the exhibitors floors is matching with fairLocation then show that polygon
@@ -223,7 +347,7 @@ export const MapUtil = () => {
                                     ifShowPolygon && (
                                         <Polygon
                                             key={ex.id}
-                                            positions={ex.positions}
+                                            positions={ex.map_coordinates}
                                             color={ex.color}
                                             eventHandlers={{
                                                 click: () =>
@@ -237,9 +361,9 @@ export const MapUtil = () => {
                                                 }}
                                                 key={0}
                                                 position={findMiddle(
-                                                    ex.positions
+                                                    ex.map_coordinates
                                                 )}
-                                                title={'ipsum'}
+                                                title={ex.name}
                                                 icon={customIcon(ex)}
                                             ></Marker>
                                         </Polygon>
@@ -309,7 +433,6 @@ export const MapUtil = () => {
             {/* <div className='exhibitorList'>
                 {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
             </div> */}
-
             <ExtendedZoom.Provider value={setFocusCoordinate}>
                 <ExhibitorList fairInputLocation={fairLocation} />
             </ExtendedZoom.Provider>

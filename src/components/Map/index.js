@@ -195,7 +195,9 @@ function customIcon(exhibitor) {
 export const MapUtil = () => {
     const [exhibitorsMap, setExhibitorsMap] = useState([]) //used to move companies to ExhibitorList from Map
     const [isLoading, setIsLoading] = useState(true)
+    const [devMode, setDevMode] = useState(false) //used to toggle devmode
     const mapRef = useRef(null)
+    const showDevTool = true
 
     const [editorCoordinates, setEditorCoordinates] = useState([])
 
@@ -311,7 +313,12 @@ export const MapUtil = () => {
                     isLoading && <ChaoticOrbit /> //used for loading animations before map loads
                 }
             </div>
-            <FloorButtons setFairLocation={setFairLocation} />
+            <FloorButtons
+                setFairLocation={setFairLocation}
+                showDevTool={showDevTool}
+                devMode={devMode}
+                setDevMode={setDevMode}
+            />
             <div>
                 <div className='mapBox'>
                     <div>
@@ -327,10 +334,12 @@ export const MapUtil = () => {
                             minZoom={0}
                         >
                             <Internal />
-                            <CoordinateEditor
-                                editorCoordinates={editorCoordinates}
-                                setEditorCoordinates={setEditorCoordinates}
-                            />
+                            {devMode && (
+                                <CoordinateEditor
+                                    editorCoordinates={editorCoordinates}
+                                    setEditorCoordinates={setEditorCoordinates}
+                                />
+                            )}
                             {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                              */}
                             <MarkerClusterGroup chunkedLoading>
@@ -369,9 +378,6 @@ export const MapUtil = () => {
                                     )
                                 })}
                             </MarkerClusterGroup>
-                            {/*<LayersControl position='topright'>
-                        <LayersControl.BaseLayer checked name='Floor 1'>
-                        <LayerGroup> */}
                             <ImageOverlay
                                 url={floorObj[fairLocation].default}
                                 bounds={bounds}

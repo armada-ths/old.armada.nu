@@ -1,6 +1,11 @@
 import React from 'react'
 import './index.scss'
-const FloorButtons = ({ setFairLocation }) => {
+const FloorButtons = ({
+    setFairLocation,
+    showDevTool,
+    setDevMode,
+    devMode,
+}) => {
     return (
         <div className='floorButtons'>
             <div
@@ -21,6 +26,14 @@ const FloorButtons = ({ setFairLocation }) => {
             >
                 3
             </div>
+            {showDevTool && (
+                <div
+                    className='floorButton'
+                    onClick={() => setDevMode(!devMode)}
+                >
+                    {devMode ? 'Dev' : 'Prod'}
+                </div>
+            )}
         </div>
     )
 }

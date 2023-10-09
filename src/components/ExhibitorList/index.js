@@ -558,58 +558,6 @@ export class ExhibitorList extends React.Component {
         )
         this.setState({ sectors: sortedSectors })
     }
-    apiFetcher(props, update) {
-        const yearParam = update ? '&year=' + props.year : ''
-
-        axios
-            .get(
-                ais +
-                    `api/exhibitors?img alt=''_placeholder=true${
-                        this.props.lastYear
-                            ? '&year=' + this.state.previousYear
-                            : yearParam
-                    }`
-            )
-            .then(res => {
-                console.log('UPDATE')
-                let exhibitors = res.data // create variable and store result within parameter data
-                exhibitors = exhibitors.filter(
-                    exhibitor =>
-                        checkListOfCoordinates(exhibitor.map_coordinates) &&
-                        exhibitor.fair_location.length > 0
-                )
-                exhibitors.forEach(ex => {
-                    ex.fair_placement = [ex.fair_location]
-                })
-
-                exhibitors.sort((a, b) => a.name.localeCompare(b.name))
-                console.log(exhibitors)
-                //To do: Add Gold-Bronze sorting here
-
-                let exhibitorList = exhibitors.map(exhibitor => (
-                    <ExhibitorItem
-                        key={exhibitor.id}
-                        name={exhibitor.name}
-                        exhibitor={exhibitor}
-                        showModal={this.showModal}
-                    />
-                ))
-                this.setState({
-                    exhibitors,
-                    exhibitorList,
-                    isLoading: false,
-                }) // component saves its own data --- What does this mean?? //Nima
-
-                // Get from url path the GET params ?id=number, to know what event to display
-                if (this.props.exhibitorName !== undefined) {
-                    this.setState({
-                        exhibitorName: props.exhibitorName,
-                        showModal: true,
-                    })
-                }
-            })
-        // }
-    }
 
     updateLocationShowed(location) {
         this.setState({
@@ -668,9 +616,10 @@ export class ExhibitorList extends React.Component {
         // only called when exhibitor page is created or updated.
         const filterContainer = document.getElementById('filter-container')
         filterContainer.classList.toggle('hidden')
-        if (!isMockup) {
+        /*if (!isMockup) {
             this.apiFetcher(props, false)
-        } else {
+        } else */
+        if (isMockup) {
             let exhibitorList = exhibitorsConst.map(exhibitor => (
                 <ExhibitorItem
                     key={exhibitor.id}

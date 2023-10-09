@@ -20,12 +20,13 @@ import MarkerClusterGroup from 'react-leaflet-cluster'
 import L from 'leaflet'
 import { CRS } from 'leaflet'
 import './index.scss'
-import FloorSelector from './FloorSelector'
 import { ExhibitorList, getExhibitors } from '../ExhibitorList'
 import customIconImage from './customIcon.svg'
 import { CoordinateEditor } from './CoordinateEditor'
 import axios from 'axios'
 import no_image from '../../../static/assets/armadalogogreen.jpg'
+import { ChaoticOrbit } from '@uiball/loaders'
+import FloorButtons from './FloorButtons'
 
 export const ExtendedZoom = createContext(null)
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -193,7 +194,7 @@ function customIcon(exhibitor) {
 /* Added box to test the surfaces, Hampus&Nima */
 export const MapUtil = () => {
     const [exhibitorsMap, setExhibitorsMap] = useState([]) //used to move companies to ExhibitorList from Map
-
+    const [isLoading, setIsLoading] = useState(true)
     const mapRef = useRef(null)
 
     const [editorCoordinates, setEditorCoordinates] = useState([])
@@ -212,6 +213,7 @@ export const MapUtil = () => {
 
     useEffect(() => {
         MapAPIFetch(setExhibitorsMap, possibleColors, colors)
+        setIsLoading(false) //loading animation stop after data has been fetched
     }, [])
 
     const [focusCoordinate, setFocusCoordinate] = useState(null) //placeholder value
@@ -244,7 +246,7 @@ export const MapUtil = () => {
         '#00fa00',
         '#0000fa',
         '#fa0000',
-        '##D84B20',
+        '#D84B20',
         '#F4A900',
         '#497E76',
         '#E55137',
@@ -295,90 +297,86 @@ export const MapUtil = () => {
         'Industry Design': possibleColors[10],
     }
 
-    //Renders the list of exhibitors under the map.
-    // //TODO: Make a component out of this if we decide to continue with this implementation
-    // function exhibitorListRender(exhibitor) {
-    //     return (
-    //         <table>
-    //             <tbody>
-    //                 <tr id={exhibitor.id}>
-    //                     <td>
-    //                         <p>{exhibitor.name}</p>
-    //                     </td>
-    //                 </tr>
-    //             </tbody>
-    //         </table>
-    //     )
-    // }
-
-    //TODO, move to css
-    const boxStyle = { width: '30px', height: '3    0px', textAlign: 'center' }
-
     return (
-        <div>
-            <div className='mapBox'>
-                <div>
-                    <MapContainer
-                        zoom={zoomLevel}
-                        //center={position}
-                        doubleClickZoom
-                        crs={CRS.Simple}
-                        bounds={bounds}
-                        className='bigMap'
-                        ref={mapRef}
-                        maxZoom={5}
-                        minZoom={0}
-                    >
-                        <Internal />
-                        <CoordinateEditor
-                            editorCoordinates={editorCoordinates}
-                            setEditorCoordinates={setEditorCoordinates}
-                        />
-                        {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
-                         */}
-                        <MarkerClusterGroup chunkedLoading>
-                            {exhibitorsMap.map(ex => {
-                                let ifShowPolygon = false
-                                ifShowPolygon =
-                                    ex.fair_placement.includes(fairLocation) // if one is the exhibitors floors is matching with fairLocation then show that polygon
+        <div style={{ width: '100vw' }}>
+            <div
+                className='loadingAnim'
+                aria-live='polite'
+                aria-busy={isLoading}
+            >
+                {isLoading && (
+                    <h3 style={{ marginRight: '20px' }}>Loading Map...</h3>
+                )}
+                {
+                    isLoading && <ChaoticOrbit /> //used for loading animations before map loads
+                }
+            </div>
+            <FloorButtons setFairLocation={setFairLocation} />
+            <div>
+                <div className='mapBox'>
+                    <div>
+                        <MapContainer
+                            zoom={zoomLevel}
+                            //center={position}
+                            doubleClickZoom
+                            crs={CRS.Simple}
+                            bounds={bounds}
+                            className='bigMap'
+                            ref={mapRef}
+                            maxZoom={5}
+                            minZoom={0}
+                        >
+                            <Internal />
+                            <CoordinateEditor
+                                editorCoordinates={editorCoordinates}
+                                setEditorCoordinates={setEditorCoordinates}
+                            />
+                            {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
+                             */}
+                            <MarkerClusterGroup chunkedLoading>
+                                {exhibitorsMap.map(ex => {
+                                    let ifShowPolygon = false
+                                    ifShowPolygon =
+                                        ex.fair_placement.includes(fairLocation) // if one is the exhibitors floors is matching with fairLocation then show that polygon
 
-                                return (
-                                    ifShowPolygon && (
-                                        <Polygon
-                                            key={ex.id}
-                                            positions={ex.map_coordinates}
-                                            color={ex.color}
-                                            eventHandlers={{
-                                                click: () =>
-                                                    handlePolygonSelect(ex),
-                                            }}
-                                        >
-                                            <Marker
+                                    return (
+                                        ifShowPolygon && (
+                                            <Polygon
+                                                key={ex.id}
+                                                positions={ex.map_coordinates}
+                                                color={ex.color}
                                                 eventHandlers={{
                                                     click: () =>
                                                         handlePolygonSelect(ex),
                                                 }}
-                                                key={0}
-                                                position={findMiddle(
-                                                    ex.map_coordinates
-                                                )}
-                                                title={ex.name}
-                                                icon={customIcon(ex)}
-                                            ></Marker>
-                                        </Polygon>
+                                            >
+                                                <Marker
+                                                    eventHandlers={{
+                                                        click: () =>
+                                                            handlePolygonSelect(
+                                                                ex
+                                                            ),
+                                                    }}
+                                                    key={0}
+                                                    position={findMiddle(
+                                                        ex.map_coordinates
+                                                    )}
+                                                    title={ex.name}
+                                                    icon={customIcon(ex)}
+                                                ></Marker>
+                                            </Polygon>
+                                        )
                                     )
-                                )
-                            })}
-                        </MarkerClusterGroup>
-                        {/*<LayersControl position='topright'>
+                                })}
+                            </MarkerClusterGroup>
+                            {/*<LayersControl position='topright'>
                         <LayersControl.BaseLayer checked name='Floor 1'>
                         <LayerGroup> */}
-                        <ImageOverlay
-                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            url={floorObj[fairLocation].default}
-                            bounds={bounds}
-                        />
-                        {/*</LayerGroup>
+                            <ImageOverlay
+                                url={floorObj[fairLocation].default}
+                                bounds={bounds}
+                            />
+                            {/*</LayerGroup>
                         </LayersControl.BaseLayer>
                         <LayersControl.BaseLayer checked name='Floor 2'>
                             <LayerGroup>
@@ -399,42 +397,20 @@ export const MapUtil = () => {
                             </LayerGroup>
                         </LayersControl.BaseLayer>
                     </LayersControl> */}
-                    </MapContainer>
+                        </MapContainer>
+                    </div>
                 </div>
-            </div>
-            <div
-                style={{
-                    background: 'red',
-                    zIndex: '1',
-                    position: 'absolute',
-                    left: '40vw',
-                }}
-            >
-                <div
-                    style={boxStyle}
-                    onClick={() => setFairLocation('Nymble - 1st Floor')}
-                >
-                    1
-                </div>
-                <div
-                    style={boxStyle}
-                    onClick={() => setFairLocation('Nymble - 2nd Floor')}
-                >
-                    2
-                </div>
-                <div
-                    style={boxStyle}
-                    onClick={() => setFairLocation('Nymble - 3rd Floor')}
-                >
-                    3
-                </div>
-            </div>
-            {/* <div className='exhibitorList'>
+
+                {/* <div className='exhibitorList'>
                 {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
             </div> */}
-            <ExtendedZoom.Provider value={setFocusCoordinate}>
-                <ExhibitorList fairInputLocation={fairLocation} />
-            </ExtendedZoom.Provider>
+                <ExtendedZoom.Provider value={setFocusCoordinate}>
+                    <ExhibitorList
+                        fairInputLocation={fairLocation}
+                        fairInputExhibitors={exhibitorsMap}
+                    />
+                </ExtendedZoom.Provider>
+            </div>
         </div>
     )
 }

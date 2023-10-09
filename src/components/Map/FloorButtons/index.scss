@@ -1,0 +1,36 @@
+@import '../../../styles/_variables';
+@import '../../../styles/_fonts';
+
+.floorButtons {
+    z-index: 100;
+    position: absolute;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: auto;
+    top: -70px;
+    right: 10px;
+}
+.floorButton {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    align-items: center;
+    width: 5vw;
+    height: 5vw;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 40px;
+    max-height: 40px;
+    color: rgb(94, 178, 94);
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+}

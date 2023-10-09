@@ -21,6 +21,15 @@
     margin-top: 56px;
 }
 
+.loadingAnim {
+    z-index: 100;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 //This is added because the navbar expands at around ipad breaking point and want to push the map down
 @media screen and (max-width: 1200px) {
     .mapBox {

@@ -560,7 +560,6 @@ export class ExhibitorList extends React.Component {
     }
     apiFetcher(props, update) {
         const yearParam = update ? '&year=' + props.year : ''
-
         axios
             .get(
                 ais +
@@ -617,11 +616,32 @@ export class ExhibitorList extends React.Component {
         })
     }
 
-    componentDidUpdate(prevProps) {
-        console.log(this.props.fairInputLocation, prevProps.fairInputLocation) //remove this later
+    updateExhibitorsShowed(exhibitorsInput) {
+        exhibitorsInput.sort((a, b) => a.name.localeCompare(b.name))
+        let exhibitorList = exhibitorsInput.map(exhibitor => (
+            <ExhibitorItem
+                key={exhibitor.id}
+                name={exhibitor.name}
+                exhibitor={exhibitor}
+                showModal={this.showModal}
+            />
+        ))
+        this.setState({
+            exhibitors: exhibitorsInput,
+            exhibitorList: exhibitorList,
+            isLoading: false,
+        })
+    }
 
+    componentDidUpdate(prevProps) {
+        //console.log(this.props.fairInputLocation, prevProps.fairInputLocation) //remove this later
+        //console.log(this.props.fairInputExhibitors) //remove this also later.
         if (this.props.fairInputLocation !== prevProps.fairInputLocation) {
             this.updateLocationShowed(this.props.fairInputLocation)
+        }
+
+        if (this.props.fairInputExhibitors !== prevProps.fairInputExhibitors) {
+            this.updateExhibitorsShowed(this.props.fairInputExhibitors)
         }
 
         // Do not update unless the floor changed
@@ -668,9 +688,10 @@ export class ExhibitorList extends React.Component {
         // only called when exhibitor page is created or updated.
         const filterContainer = document.getElementById('filter-container')
         filterContainer.classList.toggle('hidden')
-        if (!isMockup) {
+        /*if (!isMockup) {
             this.apiFetcher(props, false)
-        } else {
+        } else*/
+        if (isMockup) {
             let exhibitorList = exhibitorsConst.map(exhibitor => (
                 <ExhibitorItem
                     key={exhibitor.id}
@@ -1470,8 +1491,10 @@ const ExhibitorItem = props => {
             role='presentation'
             className={'exhibitor-box ' + classname}
             onClick={() => {
+                console.log('testestest')
+                console.log(props.exhibitor)
                 setFocusCoordinate({
-                    coordinates: props.exhibitor.positions,
+                    coordinates: props.exhibitor.map_coordinates,
                     floor: props.exhibitor.fair_placement,
                 })
                 const exhibitorBoxes =

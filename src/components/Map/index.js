@@ -317,7 +317,6 @@ export const MapUtil = () => {
     return (
         <div>
             <div className='mapBox'>
-                {FloorSelector(setFairLocation, fairLocation)}
                 <div>
                     <MapContainer
                         zoom={zoomLevel}

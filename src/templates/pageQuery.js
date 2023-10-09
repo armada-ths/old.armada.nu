@@ -28,7 +28,6 @@ import CompetitionPage from '../layouts/CompetitionPage'
 import IndividualMeetings from '../layouts/IndividualMeetings'
 import AtTheFairPageTab from '../layouts/AtTheFairPageTab'
 import ForCompanies from '../layouts/ForCompanies'
-import HostKickoff from '../layouts/HostKickoff'
 
 const components = {
     RecruitmentPage: RecruitmentPage,
@@ -55,7 +54,6 @@ const components = {
     IndividualMeetings: IndividualMeetings,
     AtTheFairPageTab: AtTheFairPageTab,
     ForCompanies: ForCompanies,
-    HostKickoff: HostKickoff,
 }
 
 export default function Template({

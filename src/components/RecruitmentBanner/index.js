@@ -7,13 +7,22 @@ const RecruitmentBanner = ({ location }) => {
     const [showBanner, setShowBanner] = useState(false)
 
     useEffect(() => {
-        axios.get('https://ais.armada.nu/api/recruitment').then(res => {
-            setShowBanner(res.data.length > 0)
-        })
-    }, [])
+        if (location === '/map') {
+            setShowBanner(false)
+        } else {
+            axios.get('https://ais.armada.nu/api/recruitment').then(res => {
+                setShowBanner(res.data.length > 0)
+            })
+        }
+    }, [location])
 
     return showBanner ? (
-        <Banner location={location} link={'/recruitment'} className='banner'>
+        <Banner
+            location={location}
+            link={'/recruitment'}
+            className='banner'
+            style={{ display: location === '/map' ? 'block' : 'none' }}
+        >
             Recruitment open now! Apply here!
         </Banner>
     ) : (

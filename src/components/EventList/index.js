@@ -38,12 +38,17 @@ class EventList extends React.Component {
         axios
             .get('https://ais.armada.nu/api/events') // fetch data witt promise (then) and res(ult)
             .then(res => {
-                let today = new Date()
                 let events = res.data // create variable and store result within parameter data
+
                 events.sort((a, b) => a.event_start - b.event_start)
                 events.forEach(ev => {
+                    let eventDate = new Date(ev.event_start * 1000)
+                    console.log(eventDate.toString())
                     let factor = 3600
-                    if (today.getMonth() < 10 && today.getDate() < 29) {
+                    if (
+                        eventDate.getMonth() <= 10 &&
+                        eventDate.getDate() < 29
+                    ) {
                         ev.event_start -= 2 * factor
                         ev.event_end -= 2 * factor
                         ev.registration_end -= 2 * factor
@@ -83,8 +88,6 @@ class EventList extends React.Component {
     }
 
     displayEvent = event => {
-        console.log('this is an event')
-        console.log(event)
         let today = new Date()
 
         let eventdate = new Date(event.event_start * 1000)

@@ -234,7 +234,7 @@ export const MapUtil = () => {
     //const [lat, setLat] = useState(0)
 
     //const height =
-    const detailLvl = 600 //higher will lead to more resolution and require refactoring to remain full map in frame
+    const detailLvl = 1000 //higher will lead to more resolution and require refactoring to remain full map in frame
     const zoomLevel = 2
     const bounds = [
         [(2500 / 5000) * detailLvl, 0], //4962  ×  3509
@@ -347,7 +347,7 @@ export const MapUtil = () => {
                             className='bigMap'
                             ref={mapRef}
                             maxZoom={5}
-                            minZoom={0}
+                            minZoom={-1}
                         >
                             <Internal />
                             {devMode && (

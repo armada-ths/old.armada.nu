@@ -30,6 +30,7 @@ const Navbar = props => {
     const [hasStudentTag, setHasStudentTag] = useState(false)
     const [hasCompanytag, setHasCompanyTag] = useState(false)
     const [hasAboutTag, setHasAboutTag] = useState(false)
+    const [onMapPage, setOnMapPage] = useState(false)
 
     //Scrolling and making transparent/bg black section
     const [scrolledPastHeader, setScrolledPastHeader] = useState(false)
@@ -94,6 +95,11 @@ const Navbar = props => {
         setHasAboutTag(document.getElementById('about') != null)
     }, [])
 
+    //If we're on map page we need a special navbar
+    useEffect(() => {
+        setOnMapPage(props.location === '/map')
+    }, [props.location])
+
     const toggleExpanded = () => {
         setExpanded(!expanded)
     }
@@ -156,7 +162,7 @@ const Navbar = props => {
             to={page.slug}
             key={index}
         >
-            {onMobile ? <span>{page.title}</span> : page.title}
+            {onMobile || onMapPage ? <span>{page.title}</span> : page.title}
         </Link>
     ))
 
@@ -209,7 +215,7 @@ const Navbar = props => {
             </span>
             <div
                 className={
-                    !onMobile
+                    !onMobile || !onMapPage
                         ? studentStyle
                         : showStudent
                         ? 'visible'
@@ -287,7 +293,11 @@ const Navbar = props => {
             </span>
             <div
                 className={
-                    !onMobile ? aboutStyle : showAbout ? 'visible' : 'hidden'
+                    !onMobile || !onMapPage
+                        ? aboutStyle
+                        : showAbout
+                        ? 'visible'
+                        : 'hidden'
                 }
             >
                 {aboutSubpages.map((page, index) => (
@@ -331,16 +341,17 @@ const Navbar = props => {
                                 'menu ' + (expanded ? 'visible' : 'hidden')
                             }
                         >
-                            <span>
-                                {/*<a className='left' alt="Virtual Fair 2021" href="https://event.armada.nu/">Virtual Fair</a>*/}
-                            </span>
                             <div>
                                 <Link
                                     onClick={toggleExpanded}
                                     activeClassName='active'
                                     to='/'
                                 >
-                                    {onMobile ? <span>Home</span> : 'Home'}
+                                    {onMobile || onMapPage ? (
+                                        <span>Home</span>
+                                    ) : (
+                                        'Home'
+                                    )}
                                 </Link>
                                 {studentMenu}
                                 {links}
@@ -350,7 +361,7 @@ const Navbar = props => {
                     </nav>
                 </div>
             </div>
-            <div className='banner'>
+            <div>
                 <RegistrationBanner location={props.location} />
                 <RecruitmentBanner location={props.location} />
             </div>

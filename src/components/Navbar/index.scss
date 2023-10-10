@@ -1,24 +1,12 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 .banner {
-    margin-top: 56px;
+    //margin-top: 56px;
     display: inline;
     font-size: 1.2em;
     font-family: Oswald, sans-serif;
     letter-spacing: 1.4px;
     a {
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .banner {
-        margin-top: 106px;
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .banner {
-        margin-top: 40px;
     }
 }
 
@@ -38,7 +26,7 @@
     }
 
     .menu-wrapper {
-        //background-color: $licorice;
+        background-color: $licorice;
         width: 100%;
         display: inline-block;
         padding: 10px 15px 10px 0px;

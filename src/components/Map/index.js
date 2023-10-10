@@ -301,10 +301,14 @@ export const MapUtil = () => {
     }
 
     return (
-        <div style={{ width: '100vw', height: '100vh' }}>
-            <a className='homeIcon' href='/'>
-                <ImHome id='icon' />
-            </a>
+        <div
+            style={{
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden',
+                overflowY: 'hidden',
+            }}
+        >
             <div
                 className='loadingAnim'
                 aria-live='polite'
@@ -317,14 +321,22 @@ export const MapUtil = () => {
                     isLoading && <ChaoticOrbit /> //used for loading animations before map loads
                 }
             </div>
-            <FloorButtons
-                setFairLocation={setFairLocation}
-                showDevTool={showDevTool}
-                devMode={devMode}
-                setDevMode={setDevMode}
-            />
-            <div>
+
+            <div style={{ overflowY: 'hidden' }}>
                 <div className='mapBox'>
+                    <FloorButtons
+                        setFairLocation={setFairLocation}
+                        showDevTool={showDevTool}
+                        devMode={devMode}
+                        setDevMode={setDevMode}
+                    />
+                    <a
+                        className='homeIcon'
+                        href='/'
+                        aria-label='Button to go to home'
+                    >
+                        <ImHome id='icon' />
+                    </a>
                     <div>
                         <MapContainer
                             zoom={zoomLevel}

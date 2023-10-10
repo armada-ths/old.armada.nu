@@ -2,13 +2,13 @@
 @import '../../../styles/_fonts';
 
 .floorButtons {
-    z-index: 50;
+    z-index: 100;
     position: absolute;
     display: inline-flex;
     flex-direction: column;
     align-items: flex-end;
     height: auto;
-    top: -70px;
+    top: 20%;
     right: 10px;
 }
 .floorButton {
@@ -33,4 +33,9 @@
     font-weight: bold;
     margin-bottom: 10px;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.407);
+}
+.floorButton:hover {
+    background-color: rgb(94, 178, 94);
+    color: #fff;
 }

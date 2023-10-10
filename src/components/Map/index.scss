@@ -10,6 +10,7 @@
     width: 100%;
     height: 50vh;
     box-sizing: border-box;
+
     //margin-top: 56px; //the default menu bar is 56px height
     // margin-bottom: 8vh;
     .bigMap {
@@ -17,8 +18,22 @@
         padding: 0;
         height: 70vh;
         text-align: center;
+        background: #dedede6a;
     }
     //margin-top: 56px;
+}
+
+.homeIcon {
+    z-index: 100;
+    position: sticky;
+    display: inline;
+    #icon {
+        width: 40px;
+        height: 40px;
+    }
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
 }
 
 .loadingAnim {

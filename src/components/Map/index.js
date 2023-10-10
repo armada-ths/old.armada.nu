@@ -24,9 +24,10 @@ import { ExhibitorList, getExhibitors } from '../ExhibitorList'
 import customIconImage from './customIcon.svg'
 import { CoordinateEditor } from './CoordinateEditor'
 import axios from 'axios'
-import no_image from '../../../static/assets/armadalogogreen.jpg'
+import no_image from '../../../static/assets/armada_marker.png'
 import { ChaoticOrbit } from '@uiball/loaders'
 import FloorButtons from './FloorButtons'
+import { ImHome } from 'react-icons/im'
 
 export const ExtendedZoom = createContext(null)
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -300,7 +301,10 @@ export const MapUtil = () => {
     }
 
     return (
-        <div style={{ width: '100vw' }}>
+        <div style={{ width: '100vw', height: '100vh' }}>
+            <a className='homeIcon' href='/'>
+                <ImHome id='icon' />
+            </a>
             <div
                 className='loadingAnim'
                 aria-live='polite'

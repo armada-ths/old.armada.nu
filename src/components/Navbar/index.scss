@@ -98,11 +98,6 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
-    .banner {
-        display: flex;
-        flex-direction: column;
-    }
-
     #navbar {
         overflow: hidden;
         //position: absolute; //Removed position absolute, this caused error on the map page.

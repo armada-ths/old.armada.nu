@@ -18,7 +18,7 @@
         height: 70vh;
         text-align: center;
     }
-    margin-top: 56px;
+    //margin-top: 56px;
 }
 
 .loadingAnim {
@@ -28,17 +28,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-}
-
-//This is added because the navbar expands at around ipad breaking point and want to push the map down
-@media screen and (max-width: 1200px) {
-    .mapBox {
-        //margin-top: 150px;
-        .bigMap {
-            max-height: 60 vh;
-        }
-        margin-top: 82px;
-    }
 }
 
 .exhibitorList {

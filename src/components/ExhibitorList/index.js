@@ -33,6 +33,8 @@ const dropDownAttributes = {
     'background-color': '#00d790',
 }
 
+
+
 const ais = 'https://ais.armada.nu/'
 const isMockup = false //change this to go into manual/API fetching mode
 const showFilters = true
@@ -338,13 +340,13 @@ export class ExhibitorList extends React.Component {
                 { value: 'Industry Design', label: 'Industry Design' },
             ],
             jobs: [
-                { value: 'Full time job', label: 'Full Time Job' },
-                { value: 'Part time job', label: 'Part Time Job' },
-                { value: 'Summer job', label: 'Summer Job' },
+                { value: 'Full-time', label: 'Full-time' },
+                { value: 'Part-time', label: 'Part-time' },
+                { value: 'Summer job', label: 'Summer job' },
                 { value: 'Internship', label: 'Internship' },
                 { value: 'Trainee', label: 'Trainee' },
-                { value: 'Master thesis', label: 'Master Thesis' },
                 { value: 'Bachelor thesis', label: 'Bachelor Thesis' },
+                { value: 'Master thesis', label: 'Master thesis' },
             ],
             competences: [
                 {
@@ -551,6 +553,7 @@ export class ExhibitorList extends React.Component {
                 { value: 'Library - 2nd Floor', label: 'Library - 2nd Floor' },
             ],
             showamount: 20,
+            dataFromSessionStorage: {},         //data from questionnaire
         }
 
         let sortedSectors = this.state.sectors.sort((a, b) =>
@@ -681,6 +684,13 @@ export class ExhibitorList extends React.Component {
                 exhibitorList: exhibitorList,
                 isLoading: false,
             })
+        }
+
+        const questionnaireData = JSON.parse(sessionStorage.getItem('my-data'));
+        if(questionnaireData) {
+            console.log("1111111")
+            console.log(questionnaireData);
+            this.setState({ dataFromSessionStorage: questionnaireData });
         }
     }
 
@@ -1194,10 +1204,6 @@ export class ExhibitorList extends React.Component {
             const filterContainer = document.getElementById('filter-container')
             filterContainer.classList.toggle('hidden')
         }
-        function toggleQuestionnaireVisibility(){
-            const questionnaireContainer = document.getElementById('questionnaire-container')
-            questionnaireContainer.classList.toggle('hidden')
-        }
         if (showExhibitors) {
             return (
                 <div className='exhibitors'>
@@ -1272,11 +1278,6 @@ export class ExhibitorList extends React.Component {
                                 >
                                     Filters
                                 </button>
-                                <button
-                                    id='questionnaire-button'
-                                    onClick={toggleQuestionnaireVisibility}>
-                                    Q
-                                </button>
                                 {/* <Collapsible 
                                     trigger={"Filters"} 
                                     triggerStyle={dropDownAttributes}
@@ -1315,6 +1316,7 @@ export class ExhibitorList extends React.Component {
                                     blurInputOnSelect={false}
                                     isMulti
                                     isSearchable
+                                    value={this.state.dataFromSessionStorage['Job Type']}
                                     name='Job filter'
                                     placeholder='All Jobs'
                                     options={this.state.jobs}
@@ -1328,6 +1330,7 @@ export class ExhibitorList extends React.Component {
                                     blurInputOnSelect={false}
                                     isMulti
                                     isSearchable
+                                    value={this.state.dataFromSessionStorage['Programme']}
                                     name='Sector filter'
                                     placeholder='All Industries'
                                     options={this.state.sectors}

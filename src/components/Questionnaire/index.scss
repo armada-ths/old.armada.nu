@@ -1,26 +1,22 @@
-#questionnaire-container{
-    position: fixed;
-    top: 10%;
+.questionnaire-container{
+    position: absolute;
+    top: 20%;
     left: 10%;
     width: 80%;
     height: 80%;
     background-color: white;
     border: 1px;
     border-color: black;
-    border-radius: 20px;
+    border-radius: 40px;
     box-shadow: 1rem gray;
     z-index: 100;
-    padding: 10%;
+    // padding: 10%;
 }
 
-.questions-group{
-    width: 80%;
-    margin: 10% 10% 10% 10%;
+.button-open-questionnaire {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    float: right;
 }
-
-.button-group{
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-}
+ 

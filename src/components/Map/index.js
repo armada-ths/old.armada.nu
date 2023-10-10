@@ -27,7 +27,6 @@ import axios from 'axios'
 import no_image from '../../../static/assets/armadalogogreen.jpg'
 import { ChaoticOrbit } from '@uiball/loaders'
 import FloorButtons from './FloorButtons'
-import UtilityButtons from './UtilityButtons'
 
 export const ExtendedZoom = createContext(null)
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -314,12 +313,6 @@ export const MapUtil = () => {
                     isLoading && <ChaoticOrbit /> //used for loading animations before map loads
                 }
             </div>
-            <UtilityButtons
-                setFairLocation={setFairLocation}
-                showDevTool={showDevTool}
-                devMode={devMode}
-                setDevMode={setDevMode}
-            />
             <FloorButtons
                 setFairLocation={setFairLocation}
                 showDevTool={showDevTool}

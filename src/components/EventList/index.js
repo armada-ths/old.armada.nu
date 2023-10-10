@@ -38,8 +38,21 @@ class EventList extends React.Component {
         axios
             .get('https://ais.armada.nu/api/events') // fetch data witt promise (then) and res(ult)
             .then(res => {
+                let today = new Date()
                 let events = res.data // create variable and store result within parameter data
                 events.sort((a, b) => a.event_start - b.event_start)
+                events.forEach(ev => {
+                    let factor = 3600
+                    if (today.getMonth() < 10 && today.getDate() < 29) {
+                        ev.event_start -= 2 * factor
+                        ev.event_end -= 2 * factor
+                        ev.registration_end -= 2 * factor
+                    } else {
+                        ev.event_start -= factor
+                        ev.event_end -= factor
+                        ev.registration_end -= factor
+                    }
+                })
 
                 this.setState({ events }) // component saves its own data
                 // Get from url path the GET params ?id=number, to know what event to display
@@ -70,7 +83,10 @@ class EventList extends React.Component {
     }
 
     displayEvent = event => {
+        console.log('this is an event')
+        console.log(event)
         let today = new Date()
+
         let eventdate = new Date(event.event_start * 1000)
         // let registration_end = new Date (event.registration_end * 1000);
         let minutes = '0' + eventdate.getMinutes()
@@ -79,7 +95,6 @@ class EventList extends React.Component {
         let endminutes = '0' + eventdate_end.getMinutes()
         let endhours = eventdate_end.getHours()
         let open_for_signup = event.open_for_signup
-
         return (
             <Modal onClose={() => this.showModal(null)}>
                 <div>
@@ -197,6 +212,7 @@ class EventList extends React.Component {
     }
 
     getEventItem = event => {
+        console.log(event)
         let date = new Date(event.event_start * 1000) //from seconds to milliseconds
         let minutes = '0' + date.getMinutes()
         let hours = date.getHours()

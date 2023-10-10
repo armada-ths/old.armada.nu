@@ -39,7 +39,6 @@ const Navbar = props => {
     useEffect(() => {
         //todo, change stuff to browser-monad /DONE, Nima
         const headerElement = document.getElementById('header') //will return undefined if not existing
-        console.log(headerElement)
         if (!headerElement) {
             return
         }
@@ -57,7 +56,6 @@ const Navbar = props => {
             } else {
                 setScrolledPastHeader(false)
             }
-            console.log(scrolledPastHeader)
         }
 
         window.addEventListener('scroll', handleScroll) //trigger on scroll to check if scroll is going past header

@@ -263,6 +263,7 @@ export const MapUtil = () => {
     }, [building, mapRef])
     //const [lang, setLang] = useState(0)
     //const [lat, setLat] = useState(0)
+    // test
 
     const detailLvl = building === 'Nymble' ? 1000 : 500 //higher will lead to more resolution and require refactoring to remain full map in frame
     const lBound = building === 'Nymble' ? 1 : 2

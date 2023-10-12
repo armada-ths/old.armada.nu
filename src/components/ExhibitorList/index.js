@@ -1327,14 +1327,6 @@ ExhibitorList.propTypes = {
     showCV: PropTypes.bool,
 }
 
-/*let toExport
-if (global.window !== undefined) {
-    toExport = addUrlProps({ urlPropsQueryConfig })(ExhibitorList)
-} else {
-    toExport = ExhibitorList
-}
-export default toExport*/
-
 export default ExhibitorList
 const ExhibitorItem = props => {
     const setFocusCoordinate = useContext(ExtendedZoom)

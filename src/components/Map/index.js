@@ -28,6 +28,9 @@ import no_image from '../../../static/assets/armada_marker.png'
 import { ChaoticOrbit } from '@uiball/loaders'
 import FloorButtons from './FloorButtons'
 import { ImHome } from 'react-icons/im'
+import BuildingSwitch from './BuildingSwitch'
+import { build } from 'joi'
+import Loadable from '@loadable/component'
 
 export const ExtendedZoom = createContext(null)
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -98,7 +101,7 @@ function Internal() {
         //map.invalidateSize()
         //todo: change values to match screen change to mobile
         if (event.newSize.x < 1200) {
-            map.setZoom(0.1) //zooms out when screen contracts
+            map.setZoom(0) //zooms out when screen contracts
         } else {
             map.setZoom(0.5) //zooms in when screen expands
         }
@@ -163,7 +166,7 @@ function findMiddle(coordinates) {
 }
 
 function ZoomToComp({ mapRef, coordinates }) {
-    mapRef.current?.flyTo(findMiddle(coordinates), 3) //higher second argument -> more zoom
+    mapRef.current?.flyTo(findMiddle(coordinates), 2) //higher second argument -> more zoom
 }
 
 function PassedZoom({ coordinates, mapRef }) {
@@ -199,20 +202,24 @@ export const MapUtil = () => {
     const [devMode, setDevMode] = useState(false) //used to toggle devmode
     const mapRef = useRef(null)
     const showDevTool = true
-
     const [editorCoordinates, setEditorCoordinates] = useState([])
 
     const firstFloorNymble = require('../../../static/assets/Map/floor1-ntg.png')
     const secondFloorNymble = require('../../../static/assets/Map/floor2-ntg.png')
     const thirdFloorNymble = require('../../../static/assets/Map/floor3-ntg.png')
+    const libraryMain = require('../../../static/assets/Map/KTHB.png')
+    const libraryAngdomen = require('../../../static/assets/Map/KTHBÅng.png')
 
     const floorObj = {
         'Nymble - 1st Floor': firstFloorNymble,
         'Nymble - 2nd Floor': secondFloorNymble,
         'Nymble - 3rd Floor': thirdFloorNymble,
+        'Library Main': libraryMain,
+        'Library Ångdomen': libraryAngdomen,
     }
 
     const [fairLocation, setFairLocation] = useState('Nymble - 2nd Floor') //default location viewed
+    const [building, setBuilding] = useState('Nymble')
 
     useEffect(() => {
         MapAPIFetch(setExhibitorsMap, possibleColors, colors)
@@ -230,14 +237,25 @@ export const MapUtil = () => {
             setFocusCoordinate(null)
         }
     }, [focusCoordinate])
+    useEffect(() => {
+        console.log(building)
+        if (building === 'Nymble') {
+            mapRef.current?.setView([255, 500], -0.5)
+        } else if (building === 'Library') {
+            mapRef.current.setView([250, 300], -0.5)
+        } else {
+            //error hamdling bad building
+        }
+    }, [building, mapRef])
     //const [lang, setLang] = useState(0)
     //const [lat, setLat] = useState(0)
 
     //const height =
-    const detailLvl = 1000 //higher will lead to more resolution and require refactoring to remain full map in frame
-    const zoomLevel = 2
+    const detailLvl = building === 'Nymble' ? 1000 : 500 //higher will lead to more resolution and require refactoring to remain full map in frame
+    const lBound = building === 'Nymble' ? 1 : 2
+    const zoomLevel = 13
     const bounds = [
-        [(2500 / 5000) * detailLvl, 0], //4962  ×  3509
+        [(2500 / 5000) * detailLvl * lBound, 0], //4962  ×  3509
         [0, detailLvl],
     ]
 
@@ -324,11 +342,18 @@ export const MapUtil = () => {
 
             <div style={{ overflowY: 'hidden' }}>
                 <div className='mapBox'>
+                    <BuildingSwitch
+                        setFairLocation={setFairLocation}
+                        setBuilding={setBuilding}
+                        building={building}
+                    />
                     <FloorButtons
                         setFairLocation={setFairLocation}
                         showDevTool={showDevTool}
                         devMode={devMode}
                         setDevMode={setDevMode}
+                        building={building}
+                        setEditorCoordinates={setEditorCoordinates}
                     />
                     <a
                         className='homeIcon'
@@ -348,6 +373,8 @@ export const MapUtil = () => {
                             ref={mapRef}
                             maxZoom={5}
                             minZoom={-1}
+                            scrollWheelZoom={true}
+                            tap={true}
                         >
                             <Internal />
                             {devMode && (
@@ -430,6 +457,7 @@ export const MapUtil = () => {
                     <ExhibitorList
                         fairInputLocation={fairLocation}
                         fairInputExhibitors={exhibitorsMap}
+                        showCV={true}
                     />
                 </ExtendedZoom.Provider>
             </div>

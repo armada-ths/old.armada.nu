@@ -1107,28 +1107,6 @@ export class ExhibitorList extends React.Component {
                     {this.state.showModal
                         ? this.displayExhibitor(exhibitorToDisplay)
                         : null}
-                    {this.props.showCV && (
-                        <div
-                            className={`filter-special ${
-                                this.props.lastYear ? 'display-none' : ''
-                            }`}
-                        >
-                            <input
-                                id='diversity'
-                                type='image'
-                                alt='diversity filter'
-                                src={this.state.diversitysrc}
-                                onClick={() => this.diversityFilter()}
-                            />
-                            <input
-                                id='sustainability'
-                                type='image'
-                                alt='sustainability filter'
-                                src={this.state.sustainabilitysrc}
-                                onClick={() => this.sustainabilityFilter()}
-                            />
-                        </div>
-                    )}
 
                     <div className='search'>
                         <div className='search-container'>
@@ -1180,6 +1158,7 @@ export class ExhibitorList extends React.Component {
                                         Show All Companies
                                     </div>
                                 )}
+
                                 <Select
                                     closeMenuOnSelect={false}
                                     blurInputOnSelect={false}
@@ -1250,6 +1229,34 @@ export class ExhibitorList extends React.Component {
                                     className='basic-multi-select'
                                     classNamePrefix='select'
                                 />
+                                {this.props.showCV && (
+                                    <div
+                                        className={`filter-special ${
+                                            this.props.lastYear
+                                                ? 'display-none'
+                                                : ''
+                                        }`}
+                                    >
+                                        <input
+                                            id='diversity'
+                                            type='image'
+                                            alt='diversity filter'
+                                            src={this.state.diversitysrc}
+                                            onClick={() =>
+                                                this.diversityFilter()
+                                            }
+                                        />
+                                        <input
+                                            id='sustainability'
+                                            type='image'
+                                            alt='sustainability filter'
+                                            src={this.state.sustainabilitysrc}
+                                            onClick={() =>
+                                                this.sustainabilityFilter()
+                                            }
+                                        />
+                                    </div>
+                                )}
                             </div>
                             {/* </Collapsible> */}
                         </div>

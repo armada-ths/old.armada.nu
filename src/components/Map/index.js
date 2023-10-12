@@ -30,13 +30,12 @@ import FloorButtons from './FloorButtons'
 import { ImHome } from 'react-icons/im'
 import BuildingSwitch from './BuildingSwitch'
 import { build } from 'joi'
-import Loadable from '@loadable/component'
+import { useLocation } from '@reach/router'
 
 export const ExtendedZoom = createContext(null)
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
 
 function checkListOfCoordinates(arr) {
-    //console.log(typeof arr)
     if (arr !== null && typeof arr !== 'undefined') {
         if (arr.length > 2) {
             for (const subArray of arr) {
@@ -89,8 +88,6 @@ function MapAPIFetch(setExhibitorsMap, colors) {
                 ex.color = '#fa0000'
             }
         })
-        console.log('testytest')
-        console.log(exhibitors)
         setExhibitorsMap(exhibitors)
     })
 }
@@ -137,8 +134,6 @@ function handlePolygonSelect(ex) {
 }
 
 function findMiddle(coordinates) {
-    console.log('in find mid')
-    console.log(coordinates)
     let max_x = 0
     let max_y = 0
     let min_x = 10000
@@ -197,6 +192,26 @@ function customIcon(exhibitor) {
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
 /* Added box to test the surfaces, Hampus&Nima */
 export const MapUtil = () => {
+    /*let url = useLocation() //get the url for customization params for example regarding QR codes
+    url.search = url.search.trim()
+    let locationFromUrl = ''
+    if (url.search === '') {
+        //if no search params are given, we use the default values
+        locationFromUrl = 'Nymble - 2nd Floor'
+    } else {
+        url.search = url.search.replace('?', '')
+        if (url.search.includes('floor=')) {
+            const searchParams = url.search.split('=')
+            locationFromUrl = searchParams[1].replace('%20', ' ')
+            locationFromUrl = searchParams[1].replace('%22', ' ')
+        } else {
+            locationFromUrl = 'Nymble - 2nd Floor'
+        }
+    } 
+        console.log(locationFromUrl)
+
+    Fix the url stuff later
+    */
     const [exhibitorsMap, setExhibitorsMap] = useState([]) //used to move companies to ExhibitorList from Map
     const [isLoading, setIsLoading] = useState(true)
     const [devMode, setDevMode] = useState(false) //used to toggle devmode
@@ -238,11 +253,10 @@ export const MapUtil = () => {
         }
     }, [focusCoordinate])
     useEffect(() => {
-        console.log(building)
         if (building === 'Nymble') {
             mapRef.current?.setView([255, 500], -0.5)
         } else if (building === 'Library') {
-            mapRef.current.setView([250, 300], -0.5)
+            mapRef.current.setView([200, 300], -0.5)
         } else {
             //error hamdling bad building
         }

@@ -178,7 +178,7 @@ function customIcon(exhibitor) {
 
     //console.log('this is icon')
     //console.log(iconImage)
-    return L.icon({
+    return new L.icon({
         iconUrl: iconImage,
 
         iconSize: [xIcon, yIcon], // size of the icon

@@ -15,21 +15,35 @@
     .bigMap {
         width: 100vw;
         padding: 0;
-        height: 70vh;
+        height: 60vh;
         text-align: center;
+        background: #dedede6a;
     }
-    margin-top: 56px;
+
+    //margin-top: 56px;
 }
 
-//This is added because the navbar expands at around ipad breaking point and want to push the map down
-@media screen and (max-width: 1200px) {
-    .mapBox {
-        //margin-top: 150px;
-        .bigMap {
-            max-height: 35vh;
-        }
-        margin-top: 82px;
+.homeIcon {
+    z-index: 100;
+    position: fixed;
+    display: inline;
+    #icon {
+        width: 40px;
+        height: 40px;
     }
+    right: 10px;
+    top: 20px;
+}
+
+.loadingAnim {
+    z-index: 100;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .exhibitorList {

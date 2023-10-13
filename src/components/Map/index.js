@@ -1,5 +1,11 @@
 //https://codesandbox.io/s/react-leaflet-with-functional-components-and-imageoverlay-u225j?file=/src/Map.js
-import React, { useEffect, useState, useRef, createContext } from 'react'
+import React, {
+    useEffect,
+    useState,
+    useRef,
+    createContext,
+    useContext,
+} from 'react'
 import {
     ImageOverlay,
     MapContainer,
@@ -14,14 +20,77 @@ import MarkerClusterGroup from 'react-leaflet-cluster'
 import L from 'leaflet'
 import { CRS } from 'leaflet'
 import './index.scss'
-import FloorSelector from './FloorSelector'
 import { ExhibitorList, getExhibitors } from '../ExhibitorList'
-//import ExhibitorList from '../ExhibitorList'
-import FloorProvider from './FloorProvider'
 import customIconImage from './customIcon.svg'
 import { CoordinateEditor } from './CoordinateEditor'
+import axios from 'axios'
+import no_image from '../../../static/assets/armada_marker.png'
+import { ChaoticOrbit } from '@uiball/loaders'
+import FloorButtons from './FloorButtons'
+import { ImHome } from 'react-icons/im'
+import BuildingSwitch from './BuildingSwitch'
+import { build } from 'joi'
+import { useLocation } from '@reach/router'
 
 export const ExtendedZoom = createContext(null)
+//Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
+
+function checkListOfCoordinates(arr) {
+    if (arr !== null && typeof arr !== 'undefined') {
+        if (arr.length > 2) {
+            for (const subArray of arr) {
+                if (subArray.length !== 2) {
+                    return false
+                } else {
+                    if (
+                        !(
+                            typeof subArray[0] === 'number' &&
+                            typeof subArray[1] === 'number'
+                        )
+                    ) {
+                        return false
+                    }
+                }
+            }
+        } else {
+            return false
+        }
+        return true
+    } else {
+        return false
+    }
+    return false
+} //Used to check if the format of the coordinates are correct - We don't want some silly OTs to crash the page :)
+
+function MapAPIFetch(setExhibitorsMap, colors) {
+    const year = new Date().getFullYear().toString() //get 2023. If not 2023 we sad and display 2023 anyway
+    const ais = 'https://ais.armada.nu/'
+    const link =
+        ais +
+        `api/exhibitors?img alt=''_placeholder=true${
+            year !== '2023' ? '&year=2023' : ''
+        }`
+    let exhibitors = ''
+
+    axios.get(link).then(res => {
+        console.log('Map has fetched company data')
+        exhibitors = res.data
+        exhibitors = exhibitors.filter(
+            exhibitor =>
+                checkListOfCoordinates(exhibitor.map_coordinates) &&
+                exhibitor.fair_location.length > 0
+        )
+        exhibitors.forEach(ex => {
+            ex.fair_placement = [ex.fair_location]
+            if (ex.industries.length > 0) {
+                ex.color = colors[ex.industries[0].name]
+            } else {
+                ex.color = '#fa0000'
+            }
+        })
+        setExhibitorsMap(exhibitors)
+    })
+}
 
 function Internal() {
     const map = useMap()
@@ -29,7 +98,7 @@ function Internal() {
         //map.invalidateSize()
         //todo: change values to match screen change to mobile
         if (event.newSize.x < 1200) {
-            map.setZoom(0.1) //zooms out when screen contracts
+            map.setZoom(0) //zooms out when screen contracts
         } else {
             map.setZoom(0.5) //zooms in when screen expands
         }
@@ -56,7 +125,6 @@ function handlePolygonSelect(ex) {
         // element.style.backgroundColor = '#00d790';
 
         element.style.animation = 'dancingEffect 2s ease infinite'
-        element.style.animation = 'dancingEffect 2s ease infinite'
 
         // Remove the dancing effect class after animation duration
         setTimeout(() => {
@@ -66,8 +134,6 @@ function handlePolygonSelect(ex) {
 }
 
 function findMiddle(coordinates) {
-    console.log('in find mid')
-    console.log(coordinates)
     let max_x = 0
     let max_y = 0
     let min_x = 10000
@@ -95,7 +161,7 @@ function findMiddle(coordinates) {
 }
 
 function ZoomToComp({ mapRef, coordinates }) {
-    mapRef.current?.flyTo(findMiddle(coordinates), 3) //higher second argument -> more zoom
+    mapRef.current?.flyTo(findMiddle(coordinates), 2) //higher second argument -> more zoom
 }
 
 function PassedZoom({ coordinates, mapRef }) {
@@ -107,7 +173,7 @@ function customIcon(exhibitor) {
     let yIcon = 80
     let iconImage = exhibitor.logo_squared
     if (!iconImage) {
-        iconImage = exhibitor.color
+        iconImage = no_image
     }
 
     //console.log('this is icon')
@@ -126,21 +192,54 @@ function customIcon(exhibitor) {
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
 /* Added box to test the surfaces, Hampus&Nima */
 export const MapUtil = () => {
-    const mapRef = useRef(null)
+    /*let url = useLocation() //get the url for customization params for example regarding QR codes
+    url.search = url.search.trim()
+    let locationFromUrl = ''
+    if (url.search === '') {
+        //if no search params are given, we use the default values
+        locationFromUrl = 'Nymble - 2nd Floor'
+    } else {
+        url.search = url.search.replace('?', '')
+        if (url.search.includes('floor=')) {
+            const searchParams = url.search.split('=')
+            locationFromUrl = searchParams[1].replace('%20', ' ')
+            locationFromUrl = searchParams[1].replace('%22', ' ')
+        } else {
+            locationFromUrl = 'Nymble - 2nd Floor'
+        }
+    } 
+        console.log(locationFromUrl)
 
+    Fix the url stuff later
+    */
+    const [exhibitorsMap, setExhibitorsMap] = useState([]) //used to move companies to ExhibitorList from Map
+    const [isLoading, setIsLoading] = useState(true)
+    const [devMode, setDevMode] = useState(false) //used to toggle devmode
+    const mapRef = useRef(null)
+    const showDevTool = true
     const [editorCoordinates, setEditorCoordinates] = useState([])
 
     const firstFloorNymble = require('../../../static/assets/Map/floor1-ntg.png')
     const secondFloorNymble = require('../../../static/assets/Map/floor2-ntg.png')
     const thirdFloorNymble = require('../../../static/assets/Map/floor3-ntg.png')
+    const libraryMain = require('../../../static/assets/Map/KTHB.png')
+    const libraryAngdomen = require('../../../static/assets/Map/KTHBÅng.png')
 
     const floorObj = {
         'Nymble - 1st Floor': firstFloorNymble,
         'Nymble - 2nd Floor': secondFloorNymble,
         'Nymble - 3rd Floor': thirdFloorNymble,
+        'Library Main': libraryMain,
+        'Library Ångdomen': libraryAngdomen,
     }
 
-    const [fairLocation, setFairLocation] = useState('Nymble - 2nd Floor')
+    const [fairLocation, setFairLocation] = useState('Nymble - 2nd Floor') //default location viewed
+    const [building, setBuilding] = useState('Nymble')
+
+    useEffect(() => {
+        MapAPIFetch(setExhibitorsMap, possibleColors, colors)
+        setIsLoading(false) //loading animation stop after data has been fetched
+    }, [])
 
     const [focusCoordinate, setFocusCoordinate] = useState(null) //placeholder value
     useEffect(() => {
@@ -153,109 +252,193 @@ export const MapUtil = () => {
             setFocusCoordinate(null)
         }
     }, [focusCoordinate])
+    useEffect(() => {
+        if (building === 'Nymble') {
+            mapRef.current?.setView([255, 500], -0.5)
+        } else if (building === 'Library') {
+            mapRef.current.setView([200, 300], -0.5)
+        } else {
+            //error hamdling bad building
+        }
+    }, [building, mapRef])
     //const [lang, setLang] = useState(0)
     //const [lat, setLat] = useState(0)
 
-    //get exhibitors
-    const [ExhibitorsForMap, setExhibitorsForMap] = useState([])
-
-    useEffect(() => {
-        getExhibitors(setExhibitorsForMap)
-    }, [])
-    let exhibitorsConst = ExhibitorsForMap
-
-    //const height =
-    const detailLvl = 600 //higher will lead to more resolution and require refactoring to remain full map in frame
-    const zoomLevel = 2
+    const detailLvl = building === 'Nymble' ? 1000 : 500 //higher will lead to more resolution and require refactoring to remain full map in frame
+    const lBound = building === 'Nymble' ? 1 : 2
+    const zoomLevel = 13
     const bounds = [
-        [(2500 / 5000) * detailLvl, 0], //4962  ×  3509
+        [(2500 / 5000) * detailLvl * lBound, 0], //4962  ×  3509
         [0, detailLvl],
     ]
-    //Renders the list of exhibitors under the map.
-    // //TODO: Make a component out of this if we decide to continue with this implementation
-    // function exhibitorListRender(exhibitor) {
-    //     return (
-    //         <table>
-    //             <tbody>
-    //                 <tr id={exhibitor.id}>
-    //                     <td>
-    //                         <p>{exhibitor.name}</p>
-    //                     </td>
-    //                 </tr>
-    //             </tbody>
-    //         </table>
-    //     )
-    // }
 
-    //TODO, move to css
-    const boxStyle = { width: '30px', height: '3    0px', textAlign: 'center' }
+    const possibleColors = [
+        '#fafa00',
+        '#00fafa',
+        '#fa00fa',
+        '#fafafa',
+        '#00fa00',
+        '#0000fa',
+        '#fa0000',
+        '#D84B20',
+        '#F4A900',
+        '#497E76',
+        '#E55137',
+        '#8673A1',
+        '#1C542D',
+    ]
+
+    const colors = {
+        Retail: possibleColors[10],
+        Recruitment: possibleColors[1],
+        Architecture: possibleColors[2],
+        Automotive: possibleColors[3],
+        'Environmental Sector': possibleColors[4],
+        Pedagogy: possibleColors[12],
+        'Web Development': possibleColors[5],
+        'Solid Mechanics': possibleColors[7],
+        'Simulation Technology': possibleColors[5],
+        Pharmaceutical: possibleColors[0],
+        Biotechnology: possibleColors[0],
+        Acoustics: possibleColors[2],
+        'Nuclear Power': possibleColors[7],
+        'Fluid Mechanics': possibleColors[7],
+        'Wood-Processing Industry': possibleColors[8],
+        'Steel Industry': possibleColors[8],
+        'Medical Technology': possibleColors[0],
+        'Media Technology': possibleColors[5],
+        'Marine System': possibleColors[9],
+        'Manufacturing Industry': possibleColors[8],
+        'Management Consulting': possibleColors[10],
+        Insurance: possibleColors[10],
+        Finance: possibleColors[10],
+        Construction: possibleColors[8],
+        Aerospace: possibleColors[7],
+        'Logistics & Supply Chain': possibleColors[10],
+        Telecommunication: possibleColors[5],
+        Mechatronics: possibleColors[5],
+        Electronics: possibleColors[5],
+        'Material Development': possibleColors[8],
+        'Energy Technology': possibleColors[4],
+        Nanotechnology: possibleColors[8],
+        Research: possibleColors[12],
+        'Property & Infrastructure': possibleColors[11],
+        'IT Infrastructure': possibleColors[5],
+        'Software Development': possibleColors[5],
+        Railway: possibleColors[8],
+        'Product Development': possibleColors[10],
+        'Interaction Design': possibleColors[5],
+        'Industry Design': possibleColors[10],
+    }
 
     return (
-        <div>
-            <div className='mapBox'>
-                {FloorSelector(setFairLocation, fairLocation)}
-                <div>
-                    <MapContainer
-                        zoom={zoomLevel}
-                        //center={position}
-                        doubleClickZoom
-                        crs={CRS.Simple}
-                        bounds={bounds}
-                        className='bigMap'
-                        ref={mapRef}
-                        maxZoom={5}
-                        minZoom={0}
-                    >
-                        <Internal />
-                        <CoordinateEditor
-                            editorCoordinates={editorCoordinates}
-                            setEditorCoordinates={setEditorCoordinates}
-                        />
-                        {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
-                         */}
-                        <MarkerClusterGroup chunkedLoading>
-                            {exhibitorsConst.map(ex => {
-                                let ifShowPolygon = false
-                                ifShowPolygon =
-                                    ex.fair_placement.includes(fairLocation) // if one is the exhibitors floors is matching with fairLocation then show that polygon
+        <div
+            style={{
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden',
+                overflowY: 'hidden',
+            }}
+        >
+            <div
+                className='loadingAnim'
+                aria-live='polite'
+                aria-busy={isLoading}
+            >
+                {isLoading && (
+                    <h3 style={{ marginRight: '20px' }}>Loading Map...</h3>
+                )}
+                {
+                    isLoading && <ChaoticOrbit /> //used for loading animations before map loads
+                }
+            </div>
 
-                                return (
-                                    ifShowPolygon && (
-                                        <Polygon
-                                            key={ex.id}
-                                            positions={ex.positions}
-                                            color={ex.color}
-                                            eventHandlers={{
-                                                click: () =>
-                                                    handlePolygonSelect(ex),
-                                            }}
-                                        >
-                                            <Marker
+            <div style={{ overflowY: 'hidden' }}>
+                <div className='mapBox'>
+                    <BuildingSwitch
+                        setFairLocation={setFairLocation}
+                        setBuilding={setBuilding}
+                        building={building}
+                    />
+                    <FloorButtons
+                        setFairLocation={setFairLocation}
+                        showDevTool={showDevTool}
+                        devMode={devMode}
+                        setDevMode={setDevMode}
+                        building={building}
+                        setEditorCoordinates={setEditorCoordinates}
+                    />
+                    <a
+                        className='homeIcon'
+                        href='/'
+                        aria-label='Button to go to home'
+                    >
+                        <ImHome id='icon' />
+                    </a>
+                    <div>
+                        <MapContainer
+                            zoom={zoomLevel}
+                            //center={position}
+                            doubleClickZoom
+                            crs={CRS.Simple}
+                            bounds={bounds}
+                            className='bigMap'
+                            ref={mapRef}
+                            maxZoom={5}
+                            minZoom={-1}
+                            scrollWheelZoom={true}
+                            tap={true}
+                        >
+                            <Internal />
+                            {devMode && (
+                                <CoordinateEditor
+                                    editorCoordinates={editorCoordinates}
+                                    setEditorCoordinates={setEditorCoordinates}
+                                />
+                            )}
+                            {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
+                             */}
+                            <MarkerClusterGroup chunkedLoading>
+                                {exhibitorsMap.map(ex => {
+                                    let ifShowPolygon = false
+                                    ifShowPolygon =
+                                        ex.fair_placement.includes(fairLocation) // if one is the exhibitors floors is matching with fairLocation then show that polygon
+
+                                    return (
+                                        ifShowPolygon && (
+                                            <Polygon
+                                                key={ex.id}
+                                                positions={ex.map_coordinates}
+                                                color={ex.color}
                                                 eventHandlers={{
                                                     click: () =>
                                                         handlePolygonSelect(ex),
                                                 }}
-                                                key={0}
-                                                position={findMiddle(
-                                                    ex.positions
-                                                )}
-                                                title={'ipsum'}
-                                                icon={customIcon(ex)}
-                                            ></Marker>
-                                        </Polygon>
+                                            >
+                                                <Marker
+                                                    eventHandlers={{
+                                                        click: () =>
+                                                            handlePolygonSelect(
+                                                                ex
+                                                            ),
+                                                    }}
+                                                    key={0}
+                                                    position={findMiddle(
+                                                        ex.map_coordinates
+                                                    )}
+                                                    title={ex.name}
+                                                    icon={customIcon(ex)}
+                                                ></Marker>
+                                            </Polygon>
+                                        )
                                     )
-                                )
-                            })}
-                        </MarkerClusterGroup>
-                        {/*<LayersControl position='topright'>
-                        <LayersControl.BaseLayer checked name='Floor 1'>
-                        <LayerGroup> */}
-                        <ImageOverlay
-                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            url={floorObj[fairLocation].default}
-                            bounds={bounds}
-                        />
-                        {/*</LayerGroup>
+                                })}
+                            </MarkerClusterGroup>
+                            <ImageOverlay
+                                url={floorObj[fairLocation].default}
+                                bounds={bounds}
+                            />
+                            {/*</LayerGroup>
                         </LayersControl.BaseLayer>
                         <LayersControl.BaseLayer checked name='Floor 2'>
                             <LayerGroup>
@@ -276,43 +459,21 @@ export const MapUtil = () => {
                             </LayerGroup>
                         </LayersControl.BaseLayer>
                     </LayersControl> */}
-                    </MapContainer>
+                        </MapContainer>
+                    </div>
                 </div>
-            </div>
-            <div
-                style={{
-                    background: 'red',
-                    zIndex: '1',
-                    position: 'absolute',
-                    left: '40vw',
-                }}
-            >
-                <div
-                    style={boxStyle}
-                    onClick={() => setFairLocation('Nymble - 1st Floor')}
-                >
-                    1
-                </div>
-                <div
-                    style={boxStyle}
-                    onClick={() => setFairLocation('Nymble - 2nd Floor')}
-                >
-                    2
-                </div>
-                <div
-                    style={boxStyle}
-                    onClick={() => setFairLocation('Nymble - 3rd Floor')}
-                >
-                    3
-                </div>
-            </div>
-            {/* <div className='exhibitorList'>
+
+                {/* <div className='exhibitorList'>
                 {<tbody>{exhibitorlist.map(exhibitorListRender)}</tbody>}
             </div> */}
-
-            <ExtendedZoom.Provider value={setFocusCoordinate}>
-                <ExhibitorList fairInputLocation={fairLocation} />
-            </ExtendedZoom.Provider>
+                <ExtendedZoom.Provider value={setFocusCoordinate}>
+                    <ExhibitorList
+                        fairInputLocation={fairLocation}
+                        fairInputExhibitors={exhibitorsMap}
+                        showCV={true}
+                    />
+                </ExtendedZoom.Provider>
+            </div>
         </div>
     )
 }

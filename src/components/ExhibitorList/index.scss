@@ -1,9 +1,15 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
+.firstFilterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .showAllBox {
     cursor: grab;
-    font-size: larger;
+    font-size: x-large;
 }
 
 @-webkit-keyframes shine {
@@ -56,7 +62,7 @@
 }
 .exhibitors {
     position: fixed;
-    top: 50%;
+    top: 60%;
     left: 0%;
     width: 100%;
     padding-top: 1em;
@@ -113,13 +119,14 @@
     justify-content: center;
 }
 .exhibitors .filter-special input[type='image'] {
-    padding: 0 1.5em 0 1.5em;
-    height: 11em;
+    //padding: 0 1.5em 0 1.5em;
+    height: 8.5em;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
     outline: 0;
+    border: unset;
 }
 
 /*
@@ -170,7 +177,6 @@
         }
         input:focus {
             outline: 0;
-            box-shadow: 0 0 4px;
             //border: 0.15em solid #e4e4e4;
         }
         #filter-button {

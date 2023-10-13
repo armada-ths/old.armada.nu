@@ -37,7 +37,7 @@ export function CoordinateEditor({ editorCoordinates, setEditorCoordinates }) {
             positions={[...editorCoordinates, editorCoordinates[0]]}
             color='#00d790'
         >
-            <Tooltip direction='top'>Hello</Tooltip>
+            <Tooltip direction='top'>Copy</Tooltip>
         </Polygon>
     )
 }

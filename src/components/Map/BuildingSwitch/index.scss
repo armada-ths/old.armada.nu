@@ -1,0 +1,43 @@
+@import '../../../styles/_variables';
+@import '../../../styles/_fonts';
+
+.buildingSwitchContainer {
+    z-index: 100;
+    position: fixed;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: auto;
+    top: 2%;
+    left: 60px;
+    cursor: default;
+    @keyframes select {
+        from {
+            background-color: lightgray;
+            scale: 1;
+        }
+        to {
+            background-color: $melon;
+            scale: 1.05;
+        }
+    }
+    .buildingSwitch {
+        background-color: lightgray;
+        padding: 6px;
+        box-shadow: 2px 2px rgba(0, 0, 0, 0.414);
+    }
+    #nymble {
+        border-radius: 10px 0px 0px 10px;
+        padding-right: 20px;
+    }
+    #library {
+        border-radius: 0px 10px 10px 0px;
+        padding-left: 20px;
+    }
+    .activeBuilding {
+        transform: scale(1.05);
+        animation: select 0.5s ease-in-out 1 normal;
+        background-color: $melon;
+        font-weight: bold;
+    }
+}

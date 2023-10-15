@@ -29,8 +29,8 @@ const SustainabilityInterviews = () => {
                 })
             })
         })
-        console.log(names)
-        console.log(images)
+        //console.log(names)
+        //console.log(images)
     }, [])
 
     const InterviewQuestions = [

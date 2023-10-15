@@ -43,9 +43,7 @@ class EventList extends React.Component {
                 events.sort((a, b) => a.event_start - b.event_start)
                 events.forEach(ev => {
                     let eventDate = new Date(ev.event_start * 1000)
-                    console.log(eventDate.toString())
                     let factor = 3600
-                    console.log(eventDate.getMonth())
                     if (eventDate.getMonth() <= 9 && eventDate.getDate() < 29) {
                         ev.event_start -= 2 * factor
                         ev.event_end -= 2 * factor
@@ -213,7 +211,6 @@ class EventList extends React.Component {
     }
 
     getEventItem = event => {
-        console.log(event)
         let date = new Date(event.event_start * 1000) //from seconds to milliseconds
         let minutes = '0' + date.getMinutes()
         let hours = date.getHours()

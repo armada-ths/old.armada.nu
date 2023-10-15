@@ -62,7 +62,6 @@ function PersonSearch({ position }) {
                 })
             })
         })
-        console.log('This is the name' + name)
     }, [])
 
     return (

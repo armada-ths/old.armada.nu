@@ -110,19 +110,15 @@ function handlePolygonSelect(ex) {
     const element = document.getElementById(ex.id)
 
     if (element) {
-        // Get the position of the element relative to the viewport
-        const elementPosition = element.getBoundingClientRect().top
+        const elementPosition = element.getBoundingClientRect().top // Get the position of the element relative to the viewport
 
-        // Calculate the current scroll position and add the element position
-        const offset = window.scrollY + elementPosition
+        const offset = window.scrollY + elementPosition // Calculate the current scroll position and add the element position
 
         // Scroll to the element with a smooth behavior
         window.scrollTo({
             top: offset,
             behavior: 'smooth',
         })
-
-        // element.style.backgroundColor = '#00d790';
 
         element.style.animation = 'dancingEffect 2s ease infinite'
 
@@ -438,27 +434,6 @@ export const MapUtil = () => {
                                 url={floorObj[fairLocation].default}
                                 bounds={bounds}
                             />
-                            {/*</LayerGroup>
-                        </LayersControl.BaseLayer>
-                        <LayersControl.BaseLayer checked name='Floor 2'>
-                            <LayerGroup>
-                                <ImageOverlay
-                                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                    url={secondFloor.default}
-                                    bounds={bounds}
-                                />
-                            </LayerGroup>
-                        </LayersControl.BaseLayer>
-                        <LayersControl.BaseLayer checked name='Floor 3'>
-                            <LayerGroup>
-                                <ImageOverlay
-                                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                    url={thirdFloor.default}
-                                    bounds={bounds}
-                                />
-                            </LayerGroup>
-                        </LayersControl.BaseLayer>
-                    </LayersControl> */}
                         </MapContainer>
                     </div>
                 </div>

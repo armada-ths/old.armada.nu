@@ -1,4 +1,4 @@
-.questionnaire-container{
+.questionnaire-container {
     position: absolute;
     top: 20%;
     left: 10%;
@@ -10,6 +10,8 @@
     border-radius: 40px;
     box-shadow: 1rem gray;
     z-index: 100;
+    overflow: scroll;
+    scrollbar-width: thin;
     // padding: 10%;
 }
 
@@ -19,4 +21,3 @@
     right: 10px;
     float: right;
 }
- 

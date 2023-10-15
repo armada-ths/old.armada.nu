@@ -45,10 +45,8 @@ class EventList extends React.Component {
                     let eventDate = new Date(ev.event_start * 1000)
                     console.log(eventDate.toString())
                     let factor = 3600
-                    if (
-                        eventDate.getMonth() <= 10 &&
-                        eventDate.getDate() < 29
-                    ) {
+                    console.log(eventDate.getMonth())
+                    if (eventDate.getMonth() <= 9 && eventDate.getDate() < 29) {
                         ev.event_start -= 2 * factor
                         ev.event_end -= 2 * factor
                         ev.registration_end -= 2 * factor

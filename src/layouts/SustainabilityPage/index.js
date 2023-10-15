@@ -35,10 +35,10 @@ const SustainabilityPage = props => {
                     </p>
                 </div>
             </div>
-            <StaticImage
+            {/*<StaticImage
                 className='top-icon'
                 src='../../../static/assets/sustainability/sustainability-icon.png'
-            />
+    />*/}
             <div className='susButtonContainer'>
                 <form
                     id='submitForm'

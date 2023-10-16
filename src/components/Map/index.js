@@ -68,7 +68,7 @@ function MapAPIFetch(setExhibitorsMap, colors) {
     const link =
         ais +
         `api/exhibitors?img alt=''_placeholder=true${
-            year !== '2023' ? '&year=2023' : ''
+            year !== '2023' ? '&year=2023/' : '/'
         }`
     let exhibitors = ''
 

@@ -28,9 +28,11 @@ import no_image from '../../../static/assets/armada_marker.png'
 import { ChaoticOrbit } from '@uiball/loaders'
 import FloorButtons from './FloorButtons'
 import { ImHome } from 'react-icons/im'
+import { BsInfoCircle, BsInfoCircleFill } from 'react-icons/bs'
 import BuildingSwitch from './BuildingSwitch'
 import { build } from 'joi'
 import { useLocation } from '@reach/router'
+import TooltipMarkers from './TooltipMarkers'
 
 export const ExtendedZoom = createContext(null)
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -218,6 +220,7 @@ export const MapUtil = () => {
     const mapRef = useRef(null)
     const showDevTool = true
     const [editorCoordinates, setEditorCoordinates] = useState([])
+    const [labels, showLabels] = useState(false)
 
     const firstFloorNymble = require('../../../static/assets/Map/floor1-ntg.png')
     const secondFloorNymble = require('../../../static/assets/Map/floor2-ntg.png')
@@ -376,6 +379,17 @@ export const MapUtil = () => {
                     >
                         <ImHome id='icon' />
                     </a>
+                    <div
+                        className='homeIcon infoIcon'
+                        onClick={() => showLabels(!labels)}
+                        aria-label='Button to go to show labels'
+                    >
+                        {labels ? (
+                            <BsInfoCircleFill id='icon' />
+                        ) : (
+                            <BsInfoCircle id='icon' />
+                        )}
+                    </div>
                     <div>
                         <MapContainer
                             zoom={zoomLevel}
@@ -399,7 +413,11 @@ export const MapUtil = () => {
                             )}
                             {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                              */}
-                            <MarkerClusterGroup chunkedLoading>
+                            {/* For more info about marker cluster options: https://akursat.gitbook.io/marker-cluster/api */}
+                            <MarkerClusterGroup
+                                chunkedLoading
+                                showCoverageOnHover
+                            >
                                 {exhibitorsMap.map(ex => {
                                     let ifShowPolygon = false
                                     ifShowPolygon =
@@ -435,6 +453,7 @@ export const MapUtil = () => {
                                     )
                                 })}
                             </MarkerClusterGroup>
+                            {labels && <TooltipMarkers floor={fairLocation} />}
                             <ImageOverlay
                                 url={floorObj[fairLocation].default}
                                 bounds={bounds}

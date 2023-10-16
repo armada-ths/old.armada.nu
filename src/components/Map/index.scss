@@ -1,6 +1,16 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
+.label {
+    background-color: transparent;
+    font-size: large;
+    line-height: 1.2;
+}
+.label-small {
+    font-size: unset;
+    font-size: small;
+}
+
 .mapBox {
     position: fixed;
     top: 0;
@@ -35,6 +45,12 @@
     }
     right: 10px;
     top: 20px;
+}
+
+.infoIcon {
+    top: unset;
+    top: 70px;
+    color: blue;
 }
 
 .loadingAnim {

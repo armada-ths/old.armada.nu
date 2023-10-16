@@ -1,97 +1,82 @@
 import React from 'react'
 import { Marker } from 'react-leaflet'
 import L from 'leaflet'
+import './index.scss'
 
-const TooltipMarkers = ({ floor }) => {
-    //Toop tip markers bundled
-
-    var entrance = L.divIcon({
+const markerData = {
+    entrance: {
         className: 'label',
         html: '<div class="label"><b>Entrance</b></div>',
-    })
-    var nya_mat = L.divIcon({
+    },
+    nya_mat: {
         className: 'label',
         html: '<div class="label"><b>Nya Matsalen</b></div>',
-    })
-    var gamla_mat = L.divIcon({
+    },
+    gamla_mat: {
         className: 'label',
         html: '<div class="label"><b>Gamla Matsalen</b></div>',
-    })
-    var susroom = L.divIcon({
+    },
+    susroom: {
         className: 'label',
         html: '<div class="label label-small"><b>Sustainability Room</b></div>',
-    })
-    var hyllan = L.divIcon({
+    },
+    hyllan: {
         className: 'label',
         html: '<div class="label"><b>Hyllan</b></div>',
-    })
-    var gröten = L.divIcon({
+    },
+    gröten: {
         className: 'label',
         html: '<div class="label"><b>Gröten</b></div>',
-    })
-    var div_room = L.divIcon({
+    },
+    div_room: {
         className: 'label',
         html: '<div class="label label-small"><b>Diversity Room</b></div>',
-    })
-    var musik = L.divIcon({
+    },
+    musik: {
         className: 'label',
         html: '<div class="label"><b>Musikrummet</b></div>',
-    })
-    var entrance = L.divIcon({
-        className: 'label',
-        html: '<div class="label"><b>Entrance/Exit</b></div>',
-    })
-    var ångdomen = L.divIcon({
+    },
+    ångdomen: {
         className: 'label',
         html: '<div class="label"><b>Entrance to Ångdomen</b></div>',
-    })
-    if (floor === 'Nymble - 2nd Floor') {
-        return (
-            <>
-                <Marker position={[143, 168.5]} icon={entrance}></Marker>{' '}
-                {/*Entrance*/}
-                <Marker position={[293, 573]} icon={nya_mat}></Marker>{' '}
-                {/*Nya matsalen*/}
-                <Marker position={[344, 433]} icon={gamla_mat}></Marker>{' '}
-                {/*Gamla matsalen*/}
-                <Marker position={[254, 412]} icon={susroom}></Marker>{' '}
-                {/*Sustainability room*/}
-                <Marker position={[146, 581]} icon={hyllan}></Marker>{' '}
-                {/*Hyllan*/}
-                <Marker position={[162, 802]} icon={gröten}></Marker>{' '}
-                {/*Gröten*/}
-                <Marker position={[413, 618]} icon={div_room}></Marker>{' '}
-                {/*Diversity Room*/}
-            </>
-        )
-    } else if (floor === 'Nymble - 3rd Floor') {
-        return (
-            <>
-                <Marker position={[251, 609]} icon={musik}></Marker>{' '}
-                {/*Musikrummet*/}
-            </>
-        )
-    } else if (floor === 'Nymble - 1st Floor') {
-        return (
-            <>
-                <Marker position={[150, 107]} icon={entrance}></Marker>{' '}
-                {/*Entrance 1*/}
-                <Marker position={[281, 830.5]} icon={entrance}></Marker>{' '}
-                {/*Entrance 1*/}
-            </>
-        )
-    } else if (floor === 'Library Main') {
-        return (
-            <>
-                <Marker position={[22, 249.5]} icon={entrance}></Marker>{' '}
-                {/*Entrance*/}
-                <Marker position={[456, 175]} icon={ångdomen}></Marker>{' '}
-                {/*Ångdomen*/}
-            </>
-        )
-    } else {
-        return <></>
-    }
+    },
+}
+
+const markersByFloor = {
+    'Nymble - 2nd Floor': [
+        { position: [143, 168.5], icon: markerData.entrance },
+        { position: [293, 573], icon: markerData.nya_mat },
+        { position: [344, 433], icon: markerData.gamla_mat },
+        { position: [254, 412], icon: markerData.susroom },
+        { position: [146, 581], icon: markerData.hyllan },
+        { position: [162, 802], icon: markerData.gröten },
+        { position: [413, 618], icon: markerData.div_room },
+    ],
+    'Nymble - 3rd Floor': [{ position: [251, 609], icon: markerData.musik }],
+    'Nymble - 1st Floor': [
+        { position: [150, 107], icon: markerData.entrance },
+        { position: [281, 830.5], icon: markerData.entrance },
+    ],
+    'Library Main': [
+        { position: [22, 249.5], icon: markerData.entrance },
+        { position: [456, 175], icon: markerData.ångdomen },
+    ],
+}
+
+const TooltipMarkers = ({ floor }) => {
+    const floorMarkers = markersByFloor[floor] || []
+
+    return (
+        <>
+            {floorMarkers.map((marker, index) => (
+                <Marker
+                    key={index}
+                    position={marker.position}
+                    icon={L.divIcon(marker.icon)}
+                />
+            ))}
+        </>
+    )
 }
 
 export default TooltipMarkers

@@ -7,6 +7,8 @@ const FloorButtons = ({
     devMode,
     building,
     setEditorCoordinates,
+    setRectangleMode,
+    rectangleMode,
 }) => {
     const [buttonPressed, setButtonPressed] = useState(2)
     return (
@@ -73,6 +75,14 @@ const FloorButtons = ({
                     onClick={() => setEditorCoordinates([])}
                 >
                     Null
+                </div>
+            )}
+            {showDevTool && (
+                <div
+                    className='floorButton'
+                    onClick={() => setRectangleMode(!rectangleMode)}
+                >
+                    {rectangleMode ? 'Rec' : 'Poi'}
                 </div>
             )}
         </div>

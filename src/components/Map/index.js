@@ -33,6 +33,7 @@ import BuildingSwitch from './BuildingSwitch'
 import { build } from 'joi'
 import { useLocation } from '@reach/router'
 import TooltipMarkers from './TooltipMarkers'
+import { NewCoordinateEditor } from './NewCoordinateEditor'
 
 export const ExtendedZoom = createContext(null)
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -217,6 +218,7 @@ export const MapUtil = () => {
     const [exhibitorsMap, setExhibitorsMap] = useState([]) //used to move companies to ExhibitorList from Map
     const [isLoading, setIsLoading] = useState(true)
     const [devMode, setDevMode] = useState(false) //used to toggle devmode
+    const [rectangleMode, setRectangleMode] = useState(false) //used to toggle rectangle mode
     const mapRef = useRef(null)
     const showDevTool = true
     const [editorCoordinates, setEditorCoordinates] = useState([])
@@ -371,6 +373,8 @@ export const MapUtil = () => {
                         setDevMode={setDevMode}
                         building={building}
                         setEditorCoordinates={setEditorCoordinates}
+                        setRectangleMode={setRectangleMode}
+                        rectangleMode={rectangleMode}
                     />
                     <a
                         className='homeIcon'
@@ -405,12 +409,23 @@ export const MapUtil = () => {
                             tap={true}
                         >
                             <Internal />
-                            {devMode && (
-                                <CoordinateEditor
-                                    editorCoordinates={editorCoordinates}
-                                    setEditorCoordinates={setEditorCoordinates}
-                                />
-                            )}
+                            {devMode &&
+                                (rectangleMode ? (
+                                    <NewCoordinateEditor
+                                        editorCoordinates={editorCoordinates}
+                                        setEditorCoordinates={
+                                            setEditorCoordinates
+                                        }
+                                        mapRef={mapRef}
+                                    />
+                                ) : (
+                                    <CoordinateEditor
+                                        editorCoordinates={editorCoordinates}
+                                        setEditorCoordinates={
+                                            setEditorCoordinates
+                                        }
+                                    />
+                                ))}
                             {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                              */}
                             {/* For more info about marker cluster options: https://akursat.gitbook.io/marker-cluster/api */}

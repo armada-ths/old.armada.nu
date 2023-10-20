@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Rectangle, Polyline, useMapEvent } from 'react-leaflet'
+import { Rectangle, Polyline, useMapEvent, Tooltip } from 'react-leaflet'
 
 export function NewCoordinateEditor({
     editorCoordinates,
@@ -46,7 +46,22 @@ export function NewCoordinateEditor({
                 <Polyline positions={lineCoordinates} color='blue' />
             )}
             {editorCoordinates.map((coords, index) => (
-                <Rectangle key={index} bounds={coords} color='#00d790' />
+                <Rectangle
+                    ref={polyRef}
+                    key={index}
+                    bounds={coords}
+                    color='#00d790'
+                    eventHandlers={{
+                        click: () => {
+                            // Copy to clipboard the coordinates
+                            navigator.clipboard.writeText(
+                                JSON.stringify(editorCoordinates)
+                            )
+                        },
+                    }}
+                >
+                    <Tooltip direction='top'>Copy</Tooltip>
+                </Rectangle>
             ))}
         </>
     )

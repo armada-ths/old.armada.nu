@@ -38,26 +38,38 @@ import { NewCoordinateEditor } from './NewCoordinateEditor'
 export const ExtendedZoom = createContext(null)
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
 
-function checkListOfCoordinates(arr) {
+function checkListOfCoordinates(arr, name, place) {
     if (arr !== null && typeof arr !== 'undefined') {
-        if (arr.length > 2) {
+        console.log(name)
+        console.log(place)
+        //console.log(arr)
+        if (arr.length >= 1) {
+            //console.log('come past')
             for (const subArray of arr) {
+                //console.log(subArray)
                 if (subArray.length !== 2) {
                     return false
                 } else {
+                    //console.log('come past again')
                     if (
                         !(
                             typeof subArray[0] === 'number' &&
                             typeof subArray[1] === 'number'
                         )
                     ) {
+                        console.log('not a number')
+                        console.log(arr)
                         return false
                     }
                 }
             }
         } else {
+            console.log('not enough coordinates')
+            console.log(arr.length)
+            console.log(arr)
             return false
         }
+        console.log('returning true')
         return true
     } else {
         return false
@@ -80,8 +92,11 @@ function MapAPIFetch(setExhibitorsMap, colors) {
         exhibitors = res.data
         exhibitors = exhibitors.filter(
             exhibitor =>
-                checkListOfCoordinates(exhibitor.map_coordinates) &&
-                exhibitor.fair_location.length > 0
+                checkListOfCoordinates(
+                    exhibitor.map_coordinates,
+                    exhibitor.name,
+                    exhibitor.fair_location
+                ) && exhibitor.fair_location.length > 0
         )
         exhibitors.forEach(ex => {
             ex.fair_placement = [ex.fair_location]
@@ -91,6 +106,7 @@ function MapAPIFetch(setExhibitorsMap, colors) {
                 ex.color = '#fa0000'
             }
         })
+        console.log(exhibitors)
         setExhibitorsMap(exhibitors)
     })
 }

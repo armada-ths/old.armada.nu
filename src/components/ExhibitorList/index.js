@@ -1307,7 +1307,12 @@ export class ExhibitorList extends React.Component {
                     <div className='loading'>
                         {this.state.isLoading ? <Loading /> : null}
                     </div>
-                    <div className='exhibitor-feed'>
+                    <div
+                        className={
+                            'exhibitor-feed ' +
+                            (this.state.showModal ? 'notDisplay' : '')
+                        }
+                    >
                         {filteredCompanies.length && !this.state.isLoading ? (
                             filteredCompanies.splice(0, this.state.showamount)
                         ) : (

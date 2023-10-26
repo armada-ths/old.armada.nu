@@ -28,33 +28,50 @@ import no_image from '../../../static/assets/armada_marker.png'
 import { ChaoticOrbit } from '@uiball/loaders'
 import FloorButtons from './FloorButtons'
 import { ImHome } from 'react-icons/im'
+import { BsInfoCircle, BsInfoCircleFill } from 'react-icons/bs'
 import BuildingSwitch from './BuildingSwitch'
 import { build } from 'joi'
 import { useLocation } from '@reach/router'
+import TooltipMarkers from './TooltipMarkers'
+import { NewCoordinateEditor } from './NewCoordinateEditor'
 
 export const ExtendedZoom = createContext(null)
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
 
-function checkListOfCoordinates(arr) {
+function checkListOfCoordinates(arr, name, place) {
     if (arr !== null && typeof arr !== 'undefined') {
-        if (arr.length > 2) {
+        console.log(name)
+        console.log(place)
+        //console.log(arr)
+        if (arr.length >= 1) {
+            //console.log('come past')
             for (const subArray of arr) {
+                console.log('heyhey')
+                console.log(subArray)
                 if (subArray.length !== 2) {
                     return false
                 } else {
-                    if (
+                    //console.log('come past again')
+                    console.log(subArray)
+                    /* if (
                         !(
                             typeof subArray[0] === 'number' &&
                             typeof subArray[1] === 'number'
                         )
                     ) {
+                        console.log('not a number')
+                        console.log(arr)
                         return false
-                    }
+                    } */
                 }
             }
         } else {
+            console.log('not enough coordinates')
+            console.log(arr.length)
+            console.log(arr)
             return false
         }
+        console.log('returning true')
         return true
     } else {
         return false
@@ -67,8 +84,8 @@ function MapAPIFetch(setExhibitorsMap, colors) {
     const ais = 'https://ais.armada.nu/'
     const link =
         ais +
-        `api/exhibitors?img alt=''_placeholder=true${
-            year !== '2023' ? '&year=2023' : ''
+        `api/exhibitors/?img alt=''_placeholder=true${
+            year !== '2023' ? '&year=2023/' : '/'
         }`
     let exhibitors = ''
 
@@ -77,17 +94,24 @@ function MapAPIFetch(setExhibitorsMap, colors) {
         exhibitors = res.data
         exhibitors = exhibitors.filter(
             exhibitor =>
-                checkListOfCoordinates(exhibitor.map_coordinates) &&
-                exhibitor.fair_location.length > 0
+                checkListOfCoordinates(
+                    exhibitor.map_coordinates,
+                    exhibitor.name,
+                    exhibitor.fair_location
+                ) && exhibitor.fair_location.length > 0
         )
         exhibitors.forEach(ex => {
             ex.fair_placement = [ex.fair_location]
             if (ex.industries.length > 0) {
+                console.log(ex.name + ' test test')
+                console.log(ex.industries)
                 ex.color = colors[ex.industries[0].name]
+                console.log(typeof ex.industries[0].name + ' testtesttsts')
             } else {
                 ex.color = '#fa0000'
             }
         })
+        console.log(exhibitors)
         setExhibitorsMap(exhibitors)
     })
 }
@@ -174,7 +198,7 @@ function customIcon(exhibitor) {
 
     //console.log('this is icon')
     //console.log(iconImage)
-    return L.icon({
+    return new L.icon({
         iconUrl: iconImage,
 
         iconSize: [xIcon, yIcon], // size of the icon
@@ -211,9 +235,11 @@ export const MapUtil = () => {
     const [exhibitorsMap, setExhibitorsMap] = useState([]) //used to move companies to ExhibitorList from Map
     const [isLoading, setIsLoading] = useState(true)
     const [devMode, setDevMode] = useState(false) //used to toggle devmode
+    const [rectangleMode, setRectangleMode] = useState(false) //used to toggle rectangle mode
     const mapRef = useRef(null)
     const showDevTool = true
     const [editorCoordinates, setEditorCoordinates] = useState([])
+    const [labels, showLabels] = useState(false)
 
     const firstFloorNymble = require('../../../static/assets/Map/floor1-ntg.png')
     const secondFloorNymble = require('../../../static/assets/Map/floor2-ntg.png')
@@ -233,7 +259,7 @@ export const MapUtil = () => {
     const [building, setBuilding] = useState('Nymble')
 
     useEffect(() => {
-        MapAPIFetch(setExhibitorsMap, possibleColors, colors)
+        MapAPIFetch(setExhibitorsMap, colors)
         setIsLoading(false) //loading animation stop after data has been fetched
     }, [])
 
@@ -259,6 +285,7 @@ export const MapUtil = () => {
     }, [building, mapRef])
     //const [lang, setLang] = useState(0)
     //const [lat, setLat] = useState(0)
+    // test
 
     const detailLvl = building === 'Nymble' ? 1000 : 500 //higher will lead to more resolution and require refactoring to remain full map in frame
     const lBound = building === 'Nymble' ? 1 : 2
@@ -276,7 +303,7 @@ export const MapUtil = () => {
         '#00fa00',
         '#0000fa',
         '#fa0000',
-        '#D84B20',
+        '#d84b20',
         '#F4A900',
         '#497E76',
         '#E55137',
@@ -285,18 +312,18 @@ export const MapUtil = () => {
     ]
 
     const colors = {
-        Retail: possibleColors[10],
-        Recruitment: possibleColors[1],
-        Architecture: possibleColors[2],
-        Automotive: possibleColors[3],
+        'Retail': possibleColors[10],
+        'Recruitment': possibleColors[1],
+        'Architecture': possibleColors[2],
+        'Automotive': possibleColors[3],
         'Environmental Sector': possibleColors[4],
-        Pedagogy: possibleColors[12],
+        'Pedagogy': possibleColors[12],
         'Web Development': possibleColors[5],
         'Solid Mechanics': possibleColors[7],
         'Simulation Technology': possibleColors[5],
-        Pharmaceutical: possibleColors[0],
-        Biotechnology: possibleColors[0],
-        Acoustics: possibleColors[2],
+        'Pharmaceutical': possibleColors[0],
+        'Biotechnology': possibleColors[0],
+        'Acoustics': possibleColors[2],
         'Nuclear Power': possibleColors[7],
         'Fluid Mechanics': possibleColors[7],
         'Wood-Processing Industry': possibleColors[8],
@@ -306,22 +333,22 @@ export const MapUtil = () => {
         'Marine System': possibleColors[9],
         'Manufacturing Industry': possibleColors[8],
         'Management Consulting': possibleColors[10],
-        Insurance: possibleColors[10],
-        Finance: possibleColors[10],
-        Construction: possibleColors[8],
-        Aerospace: possibleColors[7],
+        'Insurance': possibleColors[10],
+        'Finance': possibleColors[10],
+        'Construction': possibleColors[8],
+        'Aerospace': possibleColors[7],
         'Logistics & Supply Chain': possibleColors[10],
-        Telecommunication: possibleColors[5],
-        Mechatronics: possibleColors[5],
-        Electronics: possibleColors[5],
+        'Telecommunication': possibleColors[5],
+        'Mechatronics': possibleColors[5],
+        'Electronics': possibleColors[5],
         'Material Development': possibleColors[8],
         'Energy Technology': possibleColors[4],
-        Nanotechnology: possibleColors[8],
-        Research: possibleColors[12],
+        'Nanotechnology': possibleColors[8],
+        'Research': possibleColors[12],
         'Property & Infrastructure': possibleColors[11],
         'IT Infrastructure': possibleColors[5],
         'Software Development': possibleColors[5],
-        Railway: possibleColors[8],
+        'Railway': possibleColors[8],
         'Product Development': possibleColors[10],
         'Interaction Design': possibleColors[5],
         'Industry Design': possibleColors[10],
@@ -363,6 +390,8 @@ export const MapUtil = () => {
                         setDevMode={setDevMode}
                         building={building}
                         setEditorCoordinates={setEditorCoordinates}
+                        setRectangleMode={setRectangleMode}
+                        rectangleMode={rectangleMode}
                     />
                     <a
                         className='homeIcon'
@@ -371,6 +400,17 @@ export const MapUtil = () => {
                     >
                         <ImHome id='icon' />
                     </a>
+                    <div
+                        className='homeIcon infoIcon'
+                        onClick={() => showLabels(!labels)}
+                        aria-label='Button to go to show labels'
+                    >
+                        {labels ? (
+                            <BsInfoCircleFill id='icon' />
+                        ) : (
+                            <BsInfoCircle id='icon' />
+                        )}
+                    </div>
                     <div>
                         <MapContainer
                             zoom={zoomLevel}
@@ -386,16 +426,32 @@ export const MapUtil = () => {
                             tap={true}
                         >
                             <Internal />
-                            {devMode && (
-                                <CoordinateEditor
-                                    editorCoordinates={editorCoordinates}
-                                    setEditorCoordinates={setEditorCoordinates}
-                                />
-                            )}
+                            {devMode &&
+                                (rectangleMode ? (
+                                    <NewCoordinateEditor
+                                        editorCoordinates={editorCoordinates}
+                                        setEditorCoordinates={
+                                            setEditorCoordinates
+                                        }
+                                        mapRef={mapRef}
+                                    />
+                                ) : (
+                                    <CoordinateEditor
+                                        editorCoordinates={editorCoordinates}
+                                        setEditorCoordinates={
+                                            setEditorCoordinates
+                                        }
+                                    />
+                                ))}
                             {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                              */}
-                            <MarkerClusterGroup chunkedLoading>
+                            {/* For more info about marker cluster options: https://akursat.gitbook.io/marker-cluster/api */}
+                            <MarkerClusterGroup
+                                chunkedLoading
+                                showCoverageOnHover
+                            >
                                 {exhibitorsMap.map(ex => {
+                                    console.log(ex.name + ex.color)
                                     let ifShowPolygon = false
                                     ifShowPolygon =
                                         ex.fair_placement.includes(fairLocation) // if one is the exhibitors floors is matching with fairLocation then show that polygon
@@ -430,6 +486,7 @@ export const MapUtil = () => {
                                     )
                                 })}
                             </MarkerClusterGroup>
+                            {labels && <TooltipMarkers floor={fairLocation} />}
                             <ImageOverlay
                                 url={floorObj[fairLocation].default}
                                 bounds={bounds}

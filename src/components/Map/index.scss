@@ -1,6 +1,16 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
+.label {
+    background-color: transparent;
+    font-size: large;
+    line-height: 1.2;
+}
+.label-small {
+    font-size: unset;
+    font-size: small;
+}
+
 .mapBox {
     position: fixed;
     top: 0;
@@ -10,6 +20,7 @@
     width: 100%;
     height: 50vh;
     box-sizing: border-box;
+
     //margin-top: 56px; //the default menu bar is 56px height
     // margin-bottom: 8vh;
     .bigMap {
@@ -18,6 +29,7 @@
         height: 60vh;
         text-align: center;
         background: #dedede6a;
+        cursor: crosshair;
     }
 
     //margin-top: 56px;
@@ -33,6 +45,12 @@
     }
     right: 10px;
     top: 20px;
+}
+
+.infoIcon {
+    top: unset;
+    top: 70px;
+    color: blue;
 }
 
 .loadingAnim {

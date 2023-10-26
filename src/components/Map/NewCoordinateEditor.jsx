@@ -1,5 +1,11 @@
 import React, { useRef, useState } from 'react'
-import { Rectangle, Polyline, useMapEvent, Tooltip } from 'react-leaflet'
+import {
+    Rectangle,
+    Polygon,
+    Polyline,
+    useMapEvent,
+    Tooltip,
+} from 'react-leaflet'
 
 export function NewCoordinateEditor({
     editorCoordinates,
@@ -10,7 +16,6 @@ export function NewCoordinateEditor({
     const [lineCoordinates, setLineCoordinates] = useState(null)
 
     useMapEvent('click', event => {
-        // Exit if the click was on Polygon
         if (
             polyRef.current &&
             polyRef.current._containsPoint(event.containerPoint)
@@ -21,18 +26,15 @@ export function NewCoordinateEditor({
         if (!rectangleStart) {
             setRectangleStart([event.latlng.lat, event.latlng.lng])
         } else {
-            // Create a rectangle using the starting point and the second click as the opposite corner
-            const newCoordinates = [
-                ...editorCoordinates,
-                [
-                    [event.latlng.lat, event.latlng.lng],
-                    [rectangleStart[0], rectangleStart[1]], // Opposite corner
-                ],
+            const bounds = [
+                [event.latlng.lat, event.latlng.lng], // Northeast corner
+                [rectangleStart[0], event.latlng.lng], // Northwest corner
+                rectangleStart, // Southwest corner
+                [event.latlng.lat, rectangleStart[1]], // Southeast corner
             ]
 
-            setEditorCoordinates(newCoordinates)
-
-            // Clear the starting point and the line
+            // Push the bounds directly
+            setEditorCoordinates([...editorCoordinates, bounds])
             setRectangleStart(null)
             setLineCoordinates(null)
         }
@@ -46,22 +48,24 @@ export function NewCoordinateEditor({
                 <Polyline positions={lineCoordinates} color='blue' />
             )}
             {editorCoordinates.map((coords, index) => (
-                <Rectangle
-                    ref={polyRef}
-                    key={index}
-                    bounds={coords}
-                    color='#00d790'
-                    eventHandlers={{
-                        click: () => {
-                            // Copy to clipboard the coordinates
-                            navigator.clipboard.writeText(
-                                JSON.stringify(editorCoordinates)
-                            )
-                        },
-                    }}
-                >
-                    <Tooltip direction='top'>Copy</Tooltip>
-                </Rectangle>
+                <>
+                    {console.log(JSON.stringify(coords))}
+                    <Polygon
+                        ref={polyRef}
+                        key={index}
+                        positions={coords}
+                        color='#00d790'
+                        eventHandlers={{
+                            click: () => {
+                                navigator.clipboard.writeText(
+                                    JSON.stringify(coords)
+                                )
+                            },
+                        }}
+                    >
+                        <Tooltip direction='top'>Copy</Tooltip>
+                    </Polygon>
+                </>
             ))}
         </>
     )

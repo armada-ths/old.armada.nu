@@ -46,12 +46,14 @@ function checkListOfCoordinates(arr, name, place) {
         if (arr.length >= 1) {
             //console.log('come past')
             for (const subArray of arr) {
-                //console.log(subArray)
+                console.log('heyhey')
+                console.log(subArray)
                 if (subArray.length !== 2) {
                     return false
                 } else {
                     //console.log('come past again')
-                    if (
+                    console.log(subArray)
+                    /* if (
                         !(
                             typeof subArray[0] === 'number' &&
                             typeof subArray[1] === 'number'
@@ -60,7 +62,7 @@ function checkListOfCoordinates(arr, name, place) {
                         console.log('not a number')
                         console.log(arr)
                         return false
-                    }
+                    } */
                 }
             }
         } else {
@@ -101,7 +103,10 @@ function MapAPIFetch(setExhibitorsMap, colors) {
         exhibitors.forEach(ex => {
             ex.fair_placement = [ex.fair_location]
             if (ex.industries.length > 0) {
+                console.log(ex.name + ' test test')
+                console.log(ex.industries)
                 ex.color = colors[ex.industries[0].name]
+                console.log(typeof ex.industries[0].name + ' testtesttsts')
             } else {
                 ex.color = '#fa0000'
             }
@@ -258,7 +263,7 @@ export const MapUtil = () => {
     const [building, setBuilding] = useState('Nymble')
 
     useEffect(() => {
-        MapAPIFetch(setExhibitorsMap, possibleColors, colors)
+        MapAPIFetch(setExhibitorsMap, colors)
         setIsLoading(false) //loading animation stop after data has been fetched
     }, [])
 
@@ -302,7 +307,7 @@ export const MapUtil = () => {
         '#00fa00',
         '#0000fa',
         '#fa0000',
-        '#D84B20',
+        '#d84b20',
         '#F4A900',
         '#497E76',
         '#E55137',
@@ -311,18 +316,18 @@ export const MapUtil = () => {
     ]
 
     const colors = {
-        Retail: possibleColors[10],
-        Recruitment: possibleColors[1],
-        Architecture: possibleColors[2],
-        Automotive: possibleColors[3],
+        'Retail': possibleColors[10],
+        'Recruitment': possibleColors[1],
+        'Architecture': possibleColors[2],
+        'Automotive': possibleColors[3],
         'Environmental Sector': possibleColors[4],
-        Pedagogy: possibleColors[12],
+        'Pedagogy': possibleColors[12],
         'Web Development': possibleColors[5],
         'Solid Mechanics': possibleColors[7],
         'Simulation Technology': possibleColors[5],
-        Pharmaceutical: possibleColors[0],
-        Biotechnology: possibleColors[0],
-        Acoustics: possibleColors[2],
+        'Pharmaceutical': possibleColors[0],
+        'Biotechnology': possibleColors[0],
+        'Acoustics': possibleColors[2],
         'Nuclear Power': possibleColors[7],
         'Fluid Mechanics': possibleColors[7],
         'Wood-Processing Industry': possibleColors[8],
@@ -332,22 +337,22 @@ export const MapUtil = () => {
         'Marine System': possibleColors[9],
         'Manufacturing Industry': possibleColors[8],
         'Management Consulting': possibleColors[10],
-        Insurance: possibleColors[10],
-        Finance: possibleColors[10],
-        Construction: possibleColors[8],
-        Aerospace: possibleColors[7],
+        'Insurance': possibleColors[10],
+        'Finance': possibleColors[10],
+        'Construction': possibleColors[8],
+        'Aerospace': possibleColors[7],
         'Logistics & Supply Chain': possibleColors[10],
-        Telecommunication: possibleColors[5],
-        Mechatronics: possibleColors[5],
-        Electronics: possibleColors[5],
+        'Telecommunication': possibleColors[5],
+        'Mechatronics': possibleColors[5],
+        'Electronics': possibleColors[5],
         'Material Development': possibleColors[8],
         'Energy Technology': possibleColors[4],
-        Nanotechnology: possibleColors[8],
-        Research: possibleColors[12],
+        'Nanotechnology': possibleColors[8],
+        'Research': possibleColors[12],
         'Property & Infrastructure': possibleColors[11],
         'IT Infrastructure': possibleColors[5],
         'Software Development': possibleColors[5],
-        Railway: possibleColors[8],
+        'Railway': possibleColors[8],
         'Product Development': possibleColors[10],
         'Interaction Design': possibleColors[5],
         'Industry Design': possibleColors[10],
@@ -450,6 +455,7 @@ export const MapUtil = () => {
                                 showCoverageOnHover
                             >
                                 {exhibitorsMap.map(ex => {
+                                    console.log(ex.name + ex.color)
                                     let ifShowPolygon = false
                                     ifShowPolygon =
                                         ex.fair_placement.includes(fairLocation) // if one is the exhibitors floors is matching with fairLocation then show that polygon

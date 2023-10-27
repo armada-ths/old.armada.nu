@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Model } from 'survey-core'
-import { surveyLocalization } from 'survey-core'
-import { Survey } from 'survey-react-ui'
+import { PopupSurvey } from 'survey-react-ui'
 import 'survey-core/defaultV2.min.css'
 import './index.scss'
-import Modal from 'react-modal'
 
 const Questionnaire = props => {
     const majorList = [
@@ -33,70 +31,40 @@ const Questionnaire = props => {
                 name: 'Programme',
                 title: 'What programme do you study?',
                 type: 'dropdown',
-                placeholder: 'yess',
                 choices: majorList,
+                isRequired: true,
             },
             {
                 name: 'Job Type',
-                title: 'What types of job are you looking for?',
+                title: 'What types of jobs are you looking for?',
                 type: 'checkbox',
                 choices: jobTypeList,
+                isRequired: true,
             },
         ],
-    }
-    const [modalOpen, setModalOpen] = useState(false)
-    const [savedData, setSavedData] = useState(
-        sessionStorage.getItem('my-data')
-    )
-    const [closedbyUser, setClosedbyUser] = useState(false)
-
-    const openModal = () => {
-        setModalOpen(true)
-        setSavedData(null)
-    }
-
-    const closeModal = () => {
-        setModalOpen(false)
+        completeText: 'Continue',
+        completedHtml: '<h3>Here are your matches</h3>',
     }
 
     function saveSurveyData(survey) {
         const data = survey.data
         const data_json = JSON.stringify(data)
         sessionStorage.setItem('my-data', data_json)
-        //setSavedData(sessionStorage.setItem('my-data', data_json))
-        setModalOpen(false)
     }
 
     const survey = new Model(surveyJson)
-    survey.completeText = 'Find'
-    survey.showCompletedPage = false
+    //survey.width = '50%'
+    survey.title = 'Want to find companies that interest you?'
     survey.onComplete.add(saveSurveyData)
 
-    survey.addNavigationItem({
-        id: 'sv-nav-clear-page',
-        title: 'Close',
-        action: () => {
-            closeModal()
-            setClosedbyUser(true)
-        },
-        css: 'nav-button',
-        innerCss: 'sd-btn nav-input',
-    })
     return (
         <div>
-            <button className='button-open-questionnaire' onClick={openModal}>
-                Open Questionnaire
-            </button>
-            {!savedData && (
-                <Modal
-                    className='questionnaire-container'
-                    isOpen={modalOpen}
-                    onRequestClose={closeModal}
-                    contentLabel='Questionnaire Modal'
-                >
-                    <Survey model={survey} />
-                </Modal>
-            )}
+            <PopupSurvey
+                model={survey}
+                isExpanded={false}
+                closeOnCompleteTimeout={3}
+                allowClose
+            />
         </div>
     )
 }

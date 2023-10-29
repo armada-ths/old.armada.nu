@@ -3,6 +3,7 @@ import axios from 'axios'
 import PropTypes from 'prop-types'
 import './index.scss'
 import Modal from '../Modal'
+import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 /* Events does not work currently. Check how the API calls are made */
 
 /*const urlPropsQueryConfig = {
@@ -30,6 +31,9 @@ class EventList extends React.Component {
             events: [], // json object
             showModal: false,
             eventId: undefined,
+            showFull: true,
+            showLunchLectures: true,
+            showAll: true, //this refer to physically showing all
         }
     }
 
@@ -299,6 +303,19 @@ class EventList extends React.Component {
         let eventToDisplay = this.state.events.filter(
             event => event.id === this.state.eventId
         )[0]
+        let resultingEvents = comingEvents //used to store events based on checkbox filters
+
+        if (this.state.showFull === false) {
+            resultingEvents = resultingEvents?.filter(
+                event => event?.open_for_signup === true
+            )
+        }
+
+        if (this.state.showLunchLectures === false) {
+            resultingEvents = resultingEvents.filter(
+                event => event?.name.includes('Lunch Lecture') === false
+            )
+        }
 
         return (
             <div className='events'>
@@ -311,8 +328,100 @@ class EventList extends React.Component {
                 >
                     <div className='comingEvents'>
                         <h2> Upcoming Events </h2>
+                        <div className='checkBoxes'>
+                            {this.state.showFull ? (
+                                <div
+                                    className='checkBox'
+                                    onClick={() =>
+                                        this.setState({
+                                            showFull: !this.state.showFull,
+                                        })
+                                    }
+                                >
+                                    <ImCheckboxChecked />
+                                    <p>Show Full Events</p>
+                                </div>
+                            ) : (
+                                <div
+                                    className='checkBox'
+                                    onClick={() =>
+                                        this.setState({
+                                            showFull: !this.state.showFull,
+                                        })
+                                    }
+                                >
+                                    <ImCheckboxUnchecked />
+                                    <p>Show Full Events</p>
+                                </div>
+                            )}
+                            {this.state.showLunchLectures ? (
+                                <div
+                                    className='checkBox'
+                                    id='lunchLecture'
+                                    onClick={() =>
+                                        this.setState({
+                                            showLunchLectures:
+                                                !this.state.showLunchLectures,
+                                        })
+                                    }
+                                >
+                                    <ImCheckboxChecked />
+                                    <p>Show Lunch Lectures</p>
+                                </div>
+                            ) : (
+                                <div
+                                    className='checkBox'
+                                    id='lunchLecture'
+                                    onClick={() =>
+                                        this.setState({
+                                            showLunchLectures:
+                                                !this.state.showLunchLectures,
+                                        })
+                                    }
+                                >
+                                    <ImCheckboxUnchecked />
+                                    <p>Show Lunch Lectures</p>
+                                </div>
+                            )}
+                        </div>
                         {comingEvents.length > 0 ? (
-                            comingEvents.map(this.getEventItem)
+                            <div>
+                                {resultingEvents
+                                    .slice(0, 3)
+                                    .map(this.getEventItem)}
+                                {this.state.showAll ? (
+                                    <div>
+                                        {resultingEvents
+                                            .slice(3)
+                                            .map(this.getEventItem)}
+                                        <div className='setShowState'>
+                                            <button
+                                                onClick={() => {
+                                                    this.setState({
+                                                        showAll:
+                                                            !this.state.showAll,
+                                                    })
+                                                }}
+                                            >
+                                                Show Less
+                                            </button>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className='setShowState'>
+                                        <button
+                                            onClick={() => {
+                                                this.setState({
+                                                    showAll:
+                                                        !this.state.showAll,
+                                                })
+                                            }}
+                                        >
+                                            Show More
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
                         ) : (
                             <p>Stay tuned!</p>
                         )}

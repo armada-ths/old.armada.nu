@@ -13,6 +13,7 @@
     "bootstrap": "^5.2.3",
     "browser-monads": "^1.0.0",
     "flag": "^5.0.1",
+    "fuse.js": "^7.0.0",
     "gatsby": "^5.7.0",
     "gatsby-plugin-google-analytics": "^5.7.0",
     "gatsby-plugin-image": "^3.7.0",

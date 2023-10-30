@@ -34,6 +34,7 @@ import { build } from 'joi'
 import { useLocation } from '@reach/router'
 import TooltipMarkers from './TooltipMarkers'
 import { NewCoordinateEditor } from './NewCoordinateEditor'
+import { findLargestRectangle } from './calc_polygon_rectangle'
 
 export const ExtendedZoom = createContext(null)
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -82,12 +83,12 @@ function checkListOfCoordinates(arr, name, place) {
 function MapAPIFetch(setExhibitorsMap, colors) {
     const year = new Date().getFullYear().toString() //get 2023. If not 2023 we sad and display 2023 anyway
     const ais = 'https://ais.armada.nu/'
-    const link =
-        ais +
-        `api/exhibitors/?img alt=''_placeholder=true${
-            year !== '2023' ? '&year=2023/' : '/'
-        }`
+    const link = `${ais}api/exhibitors/?img alt=''_placeholder=true${
+        year !== '2023' ? '&year=2023/' : '/'
+    }`
     let exhibitors = ''
+
+    console.log('LINK', link)
 
     axios.get(link).then(res => {
         console.log('Map has fetched company data')
@@ -460,12 +461,22 @@ export const MapUtil = () => {
                                     ifShowPolygon =
                                         ex.fair_placement.includes(fairLocation) // if one is the exhibitors floors is matching with fairLocation then show that polygon
 
+                                    console.log(ex.map_coordinates)
+                                    const bounds = ifShowPolygon
+                                        ? findLargestRectangle(
+                                              ex.map_coordinates
+                                          )
+                                        : []
+
+                                    console.log('EX', ex.logo_squared)
+
                                     return (
                                         ifShowPolygon && (
                                             <Polygon
                                                 key={ex.id}
                                                 positions={ex.map_coordinates}
                                                 color={ex.color}
+                                                stroke={false}
                                                 eventHandlers={{
                                                     click: () =>
                                                         handlePolygonSelect(ex),
@@ -483,8 +494,15 @@ export const MapUtil = () => {
                                                         ex.map_coordinates
                                                     )}
                                                     title={ex.name}
-                                                    icon={customIcon(ex)}
-                                                ></Marker>
+                                                >
+                                                    <ImageOverlay
+                                                        url={
+                                                            ex.logo_squared ??
+                                                            no_image
+                                                        }
+                                                        bounds={bounds}
+                                                    />
+                                                </Marker>
                                             </Polygon>
                                         )
                                     )

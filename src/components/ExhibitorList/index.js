@@ -1068,8 +1068,8 @@ export class ExhibitorList extends React.Component {
             }
         }
 
-        let showall =
-            filteredCompanies.length > this.state.showamount ? true : false
+        let showall = filteredCompanies.length > this.state.showamount
+        console.log(showall)
         function toggleFilterVisibility() {
             const filterContainer = document.getElementById('filter-container')
             filterContainer.classList.toggle('hidden')
@@ -1294,8 +1294,9 @@ export class ExhibitorList extends React.Component {
                         }
                     >
                         {filteredCompanies.length && !this.state.isLoading ? (
-                            filteredCompanies.splice(0, this.state.showamount)
+                            filteredCompanies.splice(0, this.state.showamount) //removed the splicing for now (temporary - Nima Okt 2023)
                         ) : (
+                            //filteredCompanies
                             <div className='Noresultsfound'>
                                 {!this.state.isLoading ? (
                                     <div>
@@ -1309,17 +1310,17 @@ export class ExhibitorList extends React.Component {
                                 ) : null}
                             </div>
                         )}
+                        {showall ? (
+                            <div className='showmore-container'>
+                                <button
+                                    className='showmorebutton'
+                                    onClick={() => this.showMore()}
+                                >
+                                    Show All
+                                </button>
+                            </div>
+                        ) : null}
                     </div>
-                    {showall ? (
-                        <div className='showmore-container'>
-                            <button
-                                className='showmorebutton'
-                                onClick={() => this.showMore()}
-                            >
-                                Show All
-                            </button>
-                        </div>
-                    ) : null}
                 </div>
             )
         } else {

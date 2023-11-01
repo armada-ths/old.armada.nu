@@ -40,16 +40,15 @@ const SustainabilityPage = props => {
                 src='../../../static/assets/sustainability/sustainability-icon.png'
     />*/}
             <div className='susButtonContainer'>
-                <form
+                <a
                     id='submitForm'
-                    method='get'
-                    action='/assets/sustainability/Armada_Sustainability_Policy_2022-Okt.png'
+                    href='/assets/sustainability/Sustainability_Policy_2023.pdf'
                 >
                     <button>
                         <GoCloudDownload />
                         Download our Sustainability Policy
                     </button>
-                </form>
+                </a>
             </div>
             <div className='sustainability'>
                 <div style={{ paddingTop: '2em' }}>
@@ -169,7 +168,7 @@ const SustainabilityPage = props => {
 const markdown_sustainability = `# Sustainability
 
 <p> <b id='sustainability-color'>Sustainability</b> is one of the key elements required in making the world a better place, a place where humanity and nature can live together in harmony without depleting the resources of nature. At THS Armada sustainability is a fundamental of all operations as it is one of our core values, together with Diversity. We reach out to a large scale of people and believe that with this comes a responsibility to encourage a more sustainable living. The THS Armada’s Sustainability policy can be found below. </p>
-<form id='submitForm' method='get' action='/assets/sustainability/Armada_Sustainability_Policy_2022-Okt.png'>
+<form id='submitForm' method='get' action='/assets/sustainability/Sustainability_Policy_2023.pdf'>
   <button type='submit'>Download Sustainability Policy</button>
 </form>
 `

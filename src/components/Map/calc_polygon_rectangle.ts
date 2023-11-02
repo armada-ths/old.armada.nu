@@ -1,4 +1,5 @@
-function isInsidePolygon(point, polygon) {
+type Point = [number, number];
+function isInsidePolygon(point: Point, polygon: Point[]) {
   let x = point[0];
   let y = point[1];
   let inside = false;
@@ -17,14 +18,14 @@ function isInsidePolygon(point, polygon) {
 let totalTime = 0;
 
 // This function is brutally slow, use as little as possible
-export function findLargestRectangle(polygon, step = 1) {
+export function findLargestRectangle(polygon: Point[], step = 1) {
   let minX = Math.min(...polygon.map((p) => p[0]));
   let maxX = Math.max(...polygon.map((p) => p[0]));
   let minY = Math.min(...polygon.map((p) => p[1]));
   let maxY = Math.max(...polygon.map((p) => p[1]));
 
   let maxArea = 0;
-  let bestRectangle = null;
+  let bestRectangle: Point[] | null = null;
 
   let start = performance.now();
 
@@ -37,7 +38,7 @@ export function findLargestRectangle(polygon, step = 1) {
             [x2, y1],
             [x2, y2],
             [x1, y2],
-          ];
+          ] as Point[];
           if (rectangle.every((p) => isInsidePolygon(p, polygon))) {
             let area = (x2 - x1) * (y2 - y1);
             if (area > maxArea) {

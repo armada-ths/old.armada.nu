@@ -35,6 +35,7 @@ import { useLocation } from "@reach/router";
 import TooltipMarkers from "./TooltipMarkers";
 import { NewCoordinateEditor } from "./NewCoordinateEditor";
 import { findLargestRectangle } from "./calc_polygon_rectangle";
+import { ExhibitorRendering } from "./ExhibitorRendering";
 
 export const ExtendedZoom = createContext(null);
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -232,7 +233,7 @@ export const MapUtil = () => {
         } else {
             locationFromUrl = 'Nymble - 2nd Floor'
         }
-    } 
+    }
         console.log(locationFromUrl)
 
     Fix the url stuff later
@@ -438,46 +439,11 @@ export const MapUtil = () => {
                */}
               {/* For more info about marker cluster options: https://akursat.gitbook.io/marker-cluster/api */}
               <MarkerClusterGroup chunkedLoading showCoverageOnHover>
-                {exhibitorsMap.map((ex) => {
-                  console.log(ex.name + ex.color);
-                  let ifShowPolygon = false;
-                  ifShowPolygon = ex.fair_placement.includes(fairLocation); // if one is the exhibitors floors is matching with fairLocation then show that polygon
-
-                  console.log(ex.map_coordinates);
-                  const bounds = ifShowPolygon
-                    ? findLargestRectangle(ex.map_coordinates)
-                    : [];
-
-                  console.log("EX", ex.logo_squared);
-
-                  return (
-                    ifShowPolygon && (
-                      <Polygon
-                        key={ex.id}
-                        positions={ex.map_coordinates}
-                        color={ex.color}
-                        stroke={false}
-                        eventHandlers={{
-                          click: () => handlePolygonSelect(ex),
-                        }}
-                      >
-                        <Marker
-                          eventHandlers={{
-                            click: () => handlePolygonSelect(ex),
-                          }}
-                          key={0}
-                          position={findMiddle(ex.map_coordinates)}
-                          title={ex.name}
-                        >
-                          <ImageOverlay
-                            url={ex.logo_squared ?? no_image}
-                            bounds={bounds}
-                          />
-                        </Marker>
-                      </Polygon>
-                    )
-                  );
-                })}
+                <ExhibitorRendering
+                  fairLocation={fairLocation}
+                  exhibitorMap={exhibitorsMap}
+                  handlePolygonSelect={handlePolygonSelect}
+                />
               </MarkerClusterGroup>
               {labels && <TooltipMarkers floor={fairLocation} />}
               <ImageOverlay

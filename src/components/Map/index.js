@@ -34,27 +34,22 @@ import { build } from "joi";
 import { useLocation } from "@reach/router";
 import TooltipMarkers from "./TooltipMarkers";
 import { NewCoordinateEditor } from "./NewCoordinateEditor";
-import { findLargestRectangle } from "./calc_polygon_rectangle";
 import { ExhibitorRendering } from "./ExhibitorRendering";
+import { findPolygonCenter } from "@/components/Map/find_polygon_center";
 
 export const ExtendedZoom = createContext(null);
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
 
 function checkListOfCoordinates(arr, name, place) {
   if (arr !== null && typeof arr !== "undefined") {
-    console.log(name);
-    console.log(place);
     //console.log(arr)
     if (arr.length >= 1) {
       //console.log('come past')
       for (const subArray of arr) {
-        console.log("heyhey");
-        console.log(subArray);
         if (subArray.length !== 2) {
           return false;
         } else {
           //console.log('come past again')
-          console.log(subArray);
           /* if (
                         !(
                             typeof subArray[0] === 'number' &&
@@ -68,12 +63,8 @@ function checkListOfCoordinates(arr, name, place) {
         }
       }
     } else {
-      console.log("not enough coordinates");
-      console.log(arr.length);
-      console.log(arr);
       return false;
     }
-    console.log("returning true");
     return true;
   } else {
     return false;
@@ -89,10 +80,7 @@ function MapAPIFetch(setExhibitorsMap, colors) {
   }`;
   let exhibitors = "";
 
-  console.log("LINK", link);
-
   axios.get(link).then((res) => {
-    console.log("Map has fetched company data");
     exhibitors = res.data;
     exhibitors = exhibitors.filter(
       (exhibitor) =>
@@ -105,15 +93,11 @@ function MapAPIFetch(setExhibitorsMap, colors) {
     exhibitors.forEach((ex) => {
       ex.fair_placement = [ex.fair_location];
       if (ex.industries.length > 0) {
-        console.log(ex.name + " test test");
-        console.log(ex.industries);
         ex.color = colors[ex.industries[0].name];
-        console.log(typeof ex.industries[0].name + " testtesttsts");
       } else {
         ex.color = "#fa0000";
       }
     });
-    console.log(exhibitors);
     setExhibitorsMap(exhibitors);
   });
 }
@@ -159,60 +143,12 @@ function handlePolygonSelect(ex) {
   }
 }
 
-function findMiddle(coordinates) {
-  let max_x = 0;
-  let max_y = 0;
-  let min_x = 10000;
-  let min_y = 10000;
-  for (let i = 0; i < coordinates.length; i++) {
-    if (coordinates[i][1] > max_x) {
-      max_x = coordinates[i][1];
-    }
-    if (coordinates[i][0] > max_y) {
-      max_y = coordinates[i][0];
-    }
-    if (coordinates[i][1] < min_x) {
-      min_x = coordinates[i][1];
-    }
-    if (coordinates[i][0] < min_y) {
-      min_y = coordinates[i][0];
-    }
-  }
-  //check for biggest/smallest x and y coordinate
-
-  let avg_x = min_x + (max_x - min_x) / 2;
-  let avg_y = min_y + (max_y - min_y) / 2;
-  //console.log(avg_y, avg_x)
-  return [avg_y, avg_x];
-}
-
 function ZoomToComp({ mapRef, coordinates }) {
-  mapRef.current?.flyTo(findMiddle(coordinates), 2); //higher second argument -> more zoom
+  mapRef.current?.flyTo(findPolygonCenter(coordinates), 2); //higher second argument -> more zoom
 }
 
 function PassedZoom({ coordinates, mapRef }) {
   ZoomToComp({ mapRef, coordinates });
-}
-
-function customIcon(exhibitor) {
-  let xIcon = 80;
-  let yIcon = 80;
-  let iconImage = exhibitor.logo_squared;
-  if (!iconImage) {
-    iconImage = no_image;
-  }
-
-  //console.log('this is icon')
-  //console.log(iconImage)
-  return new L.icon({
-    iconUrl: iconImage,
-
-    iconSize: [xIcon, yIcon], // size of the icon
-    //shadowSize: [50, 64], // size of the shadow
-    iconAnchor: [xIcon / 2, yIcon], // point of the icon which will correspond to marker's location
-    //shadowAnchor: [4, 62], // the same for the shadow
-    //popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-  });
 }
 
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */

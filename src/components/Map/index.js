@@ -40,19 +40,14 @@ export const ExtendedZoom = createContext(null);
 
 function checkListOfCoordinates(arr, name, place) {
   if (arr !== null && typeof arr !== "undefined") {
-    console.log(name);
-    console.log(place);
     //console.log(arr)
     if (arr.length >= 1) {
       //console.log('come past')
       for (const subArray of arr) {
-        console.log("heyhey");
-        console.log(subArray);
         if (subArray.length !== 2) {
           return false;
         } else {
           //console.log('come past again')
-          console.log(subArray);
           /* if (
                         !(
                             typeof subArray[0] === 'number' &&
@@ -71,7 +66,7 @@ function checkListOfCoordinates(arr, name, place) {
       console.log(arr);
       return false;
     }
-    console.log("returning true");
+    //console.log("returning true");
     return true;
   } else {
     return false;
@@ -242,7 +237,8 @@ export const MapUtil = () => {
   const mapRef = useRef(null);
   const showDevTool = true;
   const [editorCoordinates, setEditorCoordinates] = useState([]);
-  const [labels, showLabels] = useState(false);
+  const [labels, showLabels] = useState(true);
+  const [buttonPressed, setButtonPressed] = useState(2);
 
   const firstFloorNymble = require("../../../static/assets/Map/floor1-ntg.png");
   const secondFloorNymble = require("../../../static/assets/Map/floor2-ntg.png");
@@ -269,10 +265,19 @@ export const MapUtil = () => {
   const [focusCoordinate, setFocusCoordinate] = useState(null); //placeholder value
   useEffect(() => {
     if (focusCoordinate != null) {
-      ZoomToComp({ coordinates: focusCoordinate.coordinates, mapRef });
-      const floor = focusCoordinate.floor; //floor is an array
+      const floor = focusCoordinate.floor; //floor is an array (with one item for now, temporary)
       if (!floor.includes(fairLocation)) {
+        if (floor[0].includes("Library") && building !== "Library") {
+          setBuilding("Library");
+        } else if (floor[0].includes("Nymble") && building !== "Nymble") {
+          setBuilding("Nymble");
+        }
         setFairLocation(floor[0]); //if the company in question is not on the same floor we already are looking at, go to ONE of it's other floors
+        setTimeout(() => {
+          ZoomToComp({ coordinates: focusCoordinate.coordinates, mapRef });
+        }, 20);
+      } else {
+        ZoomToComp({ coordinates: focusCoordinate.coordinates, mapRef });
       }
       setFocusCoordinate(null);
     }
@@ -379,6 +384,7 @@ export const MapUtil = () => {
             setFairLocation={setFairLocation}
             setBuilding={setBuilding}
             building={building}
+            setButtonPressed={setButtonPressed}
           />
           <FloorButtons
             setFairLocation={setFairLocation}
@@ -389,6 +395,8 @@ export const MapUtil = () => {
             setEditorCoordinates={setEditorCoordinates}
             setRectangleMode={setRectangleMode}
             rectangleMode={rectangleMode}
+            buttonPressed={buttonPressed}
+            setButtonPressed={setButtonPressed}
           />
           <a className="homeIcon" href="/" aria-label="Button to go to home">
             <ImHome id="icon" />
@@ -435,7 +443,7 @@ export const MapUtil = () => {
               {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                */}
               {/* For more info about marker cluster options: https://akursat.gitbook.io/marker-cluster/api */}
-              <MarkerClusterGroup chunkedLoading showCoverageOnHover>
+              <MarkerClusterGroup chunkedLoading>
                 {exhibitorsMap.map((ex) => {
                   //console.log(ex.name + ex.color)
                   let ifShowPolygon = false;
@@ -446,10 +454,11 @@ export const MapUtil = () => {
                       <Polygon
                         key={ex.id}
                         positions={ex.map_coordinates}
-                        fillColor={"#fa0000"}
-                        color={"#000000"}
-                        fillOpacity={0.7}
-                        weight={2}
+                        color={"#ffffff"}
+                        fillColor={"#bcf6bc"}
+                        //fillColor={"#ff9999"} alternative color
+                        fillOpacity={1}
+                        weight={1}
                         opacity={1}
                         eventHandlers={{
                           click: () => handlePolygonSelect(ex),

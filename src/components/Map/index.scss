@@ -36,6 +36,17 @@
   //margin-top: 56px;
 }
 
+.disclaimerInfo {
+  z-index: 1000;
+  position: absolute;
+  display: inline;
+  top: 435px;
+  left: 10px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 10px;
+}
+
 .homeIcon {
   z-index: 100;
   position: fixed;

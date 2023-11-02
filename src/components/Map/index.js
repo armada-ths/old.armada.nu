@@ -398,6 +398,7 @@ export const MapUtil = () => {
             buttonPressed={buttonPressed}
             setButtonPressed={setButtonPressed}
           />
+
           <a className="homeIcon" href="/" aria-label="Button to go to home">
             <ImHome id="icon" />
           </a>
@@ -426,6 +427,7 @@ export const MapUtil = () => {
               scrollWheelZoom={true}
               tap={true}
             >
+              <p className="disclaimerInfo">Armada Map - Alpha v.1.0</p>
               <Internal />
               {devMode &&
                 (rectangleMode ? (

@@ -11,6 +11,7 @@ import { Link } from 'gatsby'
 import Collapsible from 'react-collapsible'
 import { ExtendedZoom } from '../Map'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
+import { BsSliders } from 'react-icons/bs'
 
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
@@ -1119,12 +1120,14 @@ export class ExhibitorList extends React.Component {
                                     onChange={this.updateSearch.bind(this)}
                                 />
                                 {/* <button id='search-button'>Search</button> */}
-                                <button
+                                <div
                                     id='filter-button'
                                     onClick={toggleFilterVisibility}
+                                    aria-details='filter button'
+                                    alt='filter button'
                                 >
-                                    Filters
-                                </button>
+                                    <BsSliders className='filter-icon' /> Filter
+                                </div>
                                 {/* <Collapsible 
                                     trigger={"Filters"} 
                                     triggerStyle={dropDownAttributes}

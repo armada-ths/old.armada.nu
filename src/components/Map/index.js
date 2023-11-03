@@ -75,7 +75,7 @@ function checkListOfCoordinates(arr, name, place) {
   return false;
 } //Used to check if the format of the coordinates are correct - We don't want some silly OTs to crash the page :)
 
-function MapAPIFetch(setExhibitorsMap, colors) {
+function MapAPIFetch(setExhibitorsMap) {
   const year = new Date().getFullYear().toString(); //get 2023. If not 2023 we sad and display 2023 anyway
   const ais = "https://ais.armada.nu/";
   const link =
@@ -128,13 +128,6 @@ function Internal() {
 function ZoomToComp({ mapRef, coordinates }) {
   mapRef.current?.flyTo(findPolygonCenter(coordinates), 2); //higher second argument -> more zoom
 }
-function handlePolygonSelect(ex, setFocusedExName) {
-  const element = document.getElementById(ex.id);
-  setFocusedExName(ex.name);
-  if (element) {
-    element.style.backgroundColor = "#00d790";
-  }
-}
 
 function findMiddle(coordinates) {
   let max_x = 0;
@@ -170,6 +163,14 @@ function PassedZoom({ coordinates, mapRef }) {
 /* Edited the center and position of the images so they align correctly with aspect ratio - Nima */
 /* Added box to test the surfaces, Hampus&Nima */
 export const MapUtil = () => {
+  function handlePolygonSelect(ex) {
+    const element = document.getElementById(ex.id);
+    setFocusedExName(ex.name);
+    if (element) {
+      element.style.backgroundColor = "#00d790";
+    }
+  }
+
   /*let url = useLocation() //get the url for customization params for example regarding QR codes
     url.search = url.search.trim()
     let locationFromUrl = ''
@@ -218,7 +219,7 @@ export const MapUtil = () => {
   const [focusedExName, setFocusedExName] = useState(undefined);
 
   useEffect(() => {
-    MapAPIFetch(setExhibitorsMap, colors);
+    MapAPIFetch(setExhibitorsMap);
   }, []);
 
   const [focusCoordinate, setFocusCoordinate] = useState(null); //placeholder value
@@ -262,23 +263,7 @@ export const MapUtil = () => {
     [0, detailLvl],
   ];
 
-  const possibleColors = [
-    "#fafa00",
-    "#00fafa",
-    "#fa00fa",
-    "#fafafa",
-    "#00fa00",
-    "#0000fa",
-    "#fa0000",
-    "#d84b20",
-    "#F4A900",
-    "#497E76",
-    "#E55137",
-    "#8673A1",
-    "#1C542D",
-  ];
-
-  const colors = {
+  /*const colors = {
     "Retail": possibleColors[10],
     "Recruitment": possibleColors[1],
     "Architecture": possibleColors[2],
@@ -319,7 +304,7 @@ export const MapUtil = () => {
     "Product Development": possibleColors[10],
     "Interaction Design": possibleColors[5],
     "Industry Design": possibleColors[10],
-  };
+  };*/
 
   return (
     <div

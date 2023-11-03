@@ -25,7 +25,6 @@ import customIconImage from "./customIcon.svg";
 import { CoordinateEditor } from "./CoordinateEditor";
 import axios from "axios";
 import no_image from "../../../static/assets/armada_marker.png";
-import { ChaoticOrbit } from "@uiball/loaders";
 import FloorButtons from "./FloorButtons";
 import { ImHome } from "react-icons/im";
 import { BsInfoCircle, BsInfoCircleFill } from "react-icons/bs";
@@ -212,7 +211,6 @@ export const MapUtil = () => {
     Fix the url stuff later
     */
   const [exhibitorsMap, setExhibitorsMap] = useState([]); //used to move companies to ExhibitorList from Map
-  const [isLoading, setIsLoading] = useState(true);
   const [devMode, setDevMode] = useState(false); //used to toggle devmode
   const [rectangleMode, setRectangleMode] = useState(false); //used to toggle rectangle mode
   const mapRef = useRef(null);
@@ -241,7 +239,6 @@ export const MapUtil = () => {
 
   useEffect(() => {
     MapAPIFetch(setExhibitorsMap, colors);
-    setIsLoading(false); //loading animation stop after data has been fetched
   }, []);
 
   const [focusCoordinate, setFocusCoordinate] = useState(null); //placeholder value
@@ -353,13 +350,6 @@ export const MapUtil = () => {
         overflowY: "hidden",
       }}
     >
-      <div className="loadingAnim" aria-live="polite" aria-busy={isLoading}>
-        {isLoading && <h3 style={{ marginRight: "20px" }}>Loading Map...</h3>}
-        {
-          isLoading && <ChaoticOrbit /> //used for loading animations before map loads
-        }
-      </div>
-
       <div style={{ overflowY: "hidden" }}>
         <div className="mapBox">
           <BuildingSwitch

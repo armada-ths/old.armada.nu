@@ -124,30 +124,11 @@ function Internal() {
   return null;
 }
 
-function handlePolygonSelect(ex) {
+function handlePolygonSelect(ex, setFocusedExName) {
   const element = document.getElementById(ex.id);
-
+  setFocusedExName(ex.name);
   if (element) {
-    // Get the position of the element relative to the viewport
-    const elementPosition = element.getBoundingClientRect().top;
-
-    // Calculate the current scroll position and add the element position
-    const offset = window.scrollY + elementPosition;
-
-    // Scroll to the element with a smooth behavior
-    window.scrollTo({
-      top: offset,
-      behavior: "smooth",
-    });
-
-    // element.style.backgroundColor = '#00d790';
-
-    element.style.animation = "dancingEffect 2s ease infinite";
-
-    // Remove the dancing effect class after animation duration
-    setTimeout(() => {
-      element.style.animation = "";
-    }, 3000); // Adjust the duration as needed
+    element.style.backgroundColor = "#00d790";
   }
 }
 
@@ -256,6 +237,7 @@ export const MapUtil = () => {
 
   const [fairLocation, setFairLocation] = useState("Nymble - 2nd Floor"); //default location viewed
   const [building, setBuilding] = useState("Nymble");
+  const [focusedExName, setFocusedExName] = useState(undefined);
 
   useEffect(() => {
     MapAPIFetch(setExhibitorsMap, colors);
@@ -463,12 +445,14 @@ export const MapUtil = () => {
                         weight={1}
                         opacity={1}
                         eventHandlers={{
-                          click: () => handlePolygonSelect(ex),
+                          click: () =>
+                            handlePolygonSelect(ex, setFocusedExName),
                         }}
                       >
                         <Marker
                           eventHandlers={{
-                            click: () => handlePolygonSelect(ex),
+                            click: () =>
+                              handlePolygonSelect(ex, setFocusedExName),
                           }}
                           key={0}
                           position={findMiddle(ex.map_coordinates)}
@@ -518,6 +502,7 @@ export const MapUtil = () => {
             fairInputLocation={fairLocation}
             fairInputExhibitors={exhibitorsMap}
             showCV={true}
+            exhibitorName={focusedExName}
           />
         </ExtendedZoom.Provider>
       </div>

@@ -2,13 +2,16 @@
 @import '../../styles/_fonts';
 
 @mixin modal-container {
-    padding: 1em 0em 1em 0em;
+    //padding: 1em 0em 1em 0em;
+    transform: translateY(100%);
     ul {
         padding: 0;
     }
     @media screen and (max-width: $breakpoint-mobile-flipped) {
         padding: 0.5em 0em 0.5em 0em;
     }
+    // transform: translateY(100%); /* Initially off-screen */
+    // transition: transform 0.3s ease-in-out;
 }
 
 @mixin modal-section {
@@ -17,11 +20,11 @@
     text-align: center;
     font-weight: 400;
 }
-
 .popupcontainer {
     position: fixed;
-    z-index: 150;
-    top: 0em;
+    height: 50%;
+    z-index: 400;
+    top: 50%;
     right: 0;
     bottom: 0;
     left: 0;
@@ -33,45 +36,25 @@
     margin: auto;
     top: 0;
     width: 100%;
-    //border-radius: 5px;
     background: white; //rgba(255, 255, 255, 0.9);
-
-    //padding-bottom: 1em;
-}
-.shade {
-    position: fixed;
-    z-index: 350;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    .shadecontent {
-        position: absolute;
-        top: 1em;
-        right: 2em;
-    }
 }
 .cross {
-    color: $text-color-dark;
-    padding: 0.05em 0.05em 0.1em 0.05em;
-    border-radius: 0em 0em 0.1em 0.1em;
-    z-index: 9999;
-    position: fixed;
-    max-height: 50px;
-    top: 0px;
-    right: 3vw;
-    margin-top: -5px;
-    font-size: 4em;
+    display: inline;
+    z-index: 1000;
+    margin: 1em 1em 0em 0.5em;
+    color: $melon;
+    font-size: xx-large;
 }
 .cross:hover {
     cursor: pointer;
-    cursor: hand;
+    color: red;
 }
 
 .modalcontent {
     overflow-wrap: break-word;
     text-align: justify;
+    //height: 50%;
+    //top: 50%;
 
     .modal-subheaders {
         font-size: 1.2em;
@@ -79,21 +62,33 @@
 
     .modal-container {
         display: flex;
-        min-height: 100vh;
+        flex-direction: row;
+        padding: 0em 2em 2em 2em;
     }
     .modal-flex-1 {
         position: relative;
-        width: 40%;
+        width: 35%;
         text-align: center;
-        img {
-            border-radius: 12px;
-            max-height: 50vh;
-            width: auto;
+        display: flex;
+        flex-direction: column;
+        .modalimage-exhib {
+            min-width: 80px;
+            min-height: 80px;
+            max-width: 70%;
+            max-height: 70%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         .modal-title {
-            padding-top: 10%;
-            padding-right: 10%;
-            padding-left: 10%;
+            margin-top: 10%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            color: $text-color-dark;
+            .exhibitor-title-website {
+                cursor: pointer;
+            }
         }
         .links {
             margin-top: 0.2em;
@@ -106,17 +101,17 @@
         }
     }
     .modal-flex-2 {
-        width: 60%;
+        width: 65%;
         text-align: center;
     }
-
     .modalinfo {
-        padding: 2em 0em 2em 0em;
+        // padding: 2em 0em 2em 0em;
+        width: 100%;
     }
     .modal-property {
         display: flex;
         flex-direction: column;
-        padding: 1em 0em 1em 0em;
+        // padding: 1em 0em 1em 0em;
         align-self: center;
     }
     .job-location-container {
@@ -180,10 +175,10 @@
 }
 
 .modalinfo .description-container {
-    padding: 0.5em 5em 0em 5em;
+    padding: 0em 2em 0em 2em;
 }
 .modalinfo .description-container .description p {
-    padding-bottom: 1em;
+    // padding-bottom: 1em;
 }
 .modalinfo .description-container .climate-compensation {
     text-align: left;
@@ -210,27 +205,35 @@
 }
 .modalinfo .job-container {
     @include modal-container;
+    transform: translateY(0%);
 }
 .modalinfo .job-container .job-section {
     @include modal-section;
+    transform: translateY(0%);
 }
 .modalinfo .location-container {
     @include modal-container;
+    transform: translateY(0%);
 }
 .modalinfo .competence-container {
     @include modal-container;
+    transform: translateY(0%);
 }
 .modalinfo .city-container {
     @include modal-container;
+    transform: translateY(0%);
 }
 .modalinfo .location-container .location-section {
     @include modal-section;
+    transform: translateY(0%);
 }
 .modalinfo .competence-container .competence-section {
     @include modal-section;
+    transform: translateY(0%);
 }
 .modalinfo .city-container .city-section {
     @include modal-section;
+    transform: translateY(0%);
 }
 a:hover {
     text-decoration: underline;
@@ -248,41 +251,35 @@ a:hover {
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     .popup {
         width: 100vw;
-        overflow: auto !important;
-    }
-    .cross {
-        position: fixed;
-        color: $text-color-dark;
-        right: 15px;
-        top: 0px;
-    }
-    .shade {
-        .shadecontent {
-            position: absolute;
-            top: 0px;
-            right: 5px;
-            .cross {
-                color: $text-color-light;
-            }
-        }
+        overflow-y: scroll;
     }
     .modalcontent {
         .modal-container {
-            display: block;
+            display: flex;
             height: auto;
+            flex-direction: column;
         }
         .modal-flex-1 {
+            display: flex;
+            flex-direction: row;
             position: relative;
             width: 100%;
             margin-top: 5%;
             text-align: center;
-            img {
-                max-height: 30vh;
-                width: auto;
+            .modalimage-exhib {
+                width: 30%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
             }
             .modal-title {
+                width: 70%;
                 padding-right: 5%;
                 padding-left: 5%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 0;
             }
         }
         .modal-flex-2 {
@@ -290,7 +287,6 @@ a:hover {
             text-align: center;
         }
         .job-location-container {
-            display: block !important ;
             .job-container {
                 width: 100%;
             }
@@ -306,7 +302,7 @@ a:hover {
         }
     }
     .modalcontent .modal-property {
-        padding: 1em 0em 1em 0em;
+        // padding: 1em 0em 1em 0em;
     }
     .modalcontent .modal-property-event {
         padding: 1em 0em 1em 2.5em;
@@ -327,7 +323,7 @@ a:hover {
     }
 
     .modalinfo .description-container {
-        padding: 0em 1em 0.5em 1em;
+        padding: 0em 0.5em 0em 0.5em;
         margin-top: -2em;
         p {
             font-size: 1em;

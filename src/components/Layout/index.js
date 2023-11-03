@@ -41,13 +41,15 @@ const Layout = ({ header, location, children, jumbotron }) => (
         render={data => (
             <>
                 <div className='layout'>
-                    <Navbar
-                        jumbotron={jumbotron}
-                        location={location}
-                        pages={data.allMdx.edges.map(
-                            edge => edge.node.frontmatter
-                        )}
-                    />
+                    {location !== '/map' && (
+                        <Navbar
+                            jumbotron={jumbotron}
+                            location={location}
+                            pages={data.allMdx.edges.map(
+                                edge => edge.node.frontmatter
+                            )}
+                        />
+                    )}
                     {jumbotron ? (
                         <Jumbotron location={location} image={header} />
                     ) : (

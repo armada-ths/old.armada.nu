@@ -1,49 +1,57 @@
+const path = require("path")
+
 module.exports = {
     siteMetadata: {
-        title: `THS Armada`,
-        description: `THS Armada.`,
-        author: `THS Armada`,
+        title: "THS Armada",
+        description: "THS Armada.",
+        author: "THS Armada",
     },
     plugins: [
         {
-            resolve: `gatsby-source-filesystem`,
+          resolve: "gatsby-plugin-root-import",
+          options: {
+            "@": path.join(__dirname, "src"),
+          },
+        },
+        {
+            resolve: "gatsby-source-filesystem",
             options: {
-                name: `images`,
+                name: "images",
                 path: `${__dirname}/static/assets`,
             },
         },
-        `gatsby-plugin-image`,
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
+        "gatsby-plugin-image",
+        "gatsby-transformer-sharp",
+        "gatsby-plugin-sharp",
         {
-            resolve: `gatsby-plugin-manifest`,
+            resolve: "gatsby-plugin-manifest",
             options: {
-                name: `gatsby-starter-default`,
-                short_name: `starter`,
-                start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
-                display: `minimal-ui`,
+                name: "gatsby-starter-default",
+                short_name: "starter",
+                start_url: "/",
+                background_color: "#663399",
+                theme_color: "#663399",
+                display: "minimal-ui",
                 icon: `${__dirname}/static/assets/armada-icon.png`,
             },
         },
-        `gatsby-plugin-static-cms`,
-        `gatsby-plugin-sass`,
+        "gatsby-plugin-static-cms",
+        "gatsby-plugin-sass",
         {
-            resolve: `gatsby-plugin-mdx`,
+            resolve: "gatsby-plugin-mdx",
             options: {
                 extensions: ['.mdx', '.md'],
             },
         },
         {
-            resolve: `gatsby-source-filesystem`,
+            resolve: "gatsby-source-filesystem",
             options: {
-                name: `markdown-pages`,
+                name: "markdown-pages",
                 path: `${__dirname}/content`,
             },
         },
         {
-            resolve: `gatsby-plugin-google-analytics`,
+            resolve: "gatsby-plugin-google-analytics",
             options: {
                 // The property ID; the tracking code won't be generated without it
                 trackingId: 'UA-107526633-1',
@@ -71,6 +79,12 @@ module.exports = {
                 //cookieDomain: "example.com",
             },
         },
+        {
+            resolve: 'gatsby-plugin-react-leaflet',
+            options: {
+              linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
+            }
+          }
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

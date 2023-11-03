@@ -40,8 +40,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         })
     })
 }
-exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+exports.onCreateWebpackConfig = ({ getConfig, stage, loaders, actions }) => {
     const config = getConfig()
+    if (stage === 'build-html') {
+        actions.setWebpackConfig({
+          module: {
+            rules: [
+              {
+                test: /react-leaflet|leaflet/,
+                use: loaders.null(),
+              },
+            ],
+          },
+        })
+      }
     if (stage.startsWith('develop') && config.resolve) {
         config.resolve.alias = {
             ...config.resolve.alias,

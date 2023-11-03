@@ -1,5 +1,14 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
+.banner {
+    //margin-top: 56px;
+    display: inline;
+    font-size: 1.2em;
+    font-family: Oswald, sans-serif;
+    letter-spacing: 1.4px;
+    a {
+    }
+}
 
 #navbar {
     position: fixed;
@@ -17,7 +26,7 @@
     }
 
     .menu-wrapper {
-        //background-color: $licorice;
+        background-color: $licorice;
         width: 100%;
         display: inline-block;
         padding: 10px 15px 10px 0px;
@@ -91,7 +100,8 @@
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     #navbar {
         overflow: hidden;
-        position: absolute;
+        //position: absolute; //Removed position absolute, this caused error on the map page.
+        //After testing I can't really see why this was there. //Nima
 
         .banner-container {
             display: flex;

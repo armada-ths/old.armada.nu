@@ -1135,8 +1135,8 @@ export class ExhibitorList extends React.Component {
                                 >
                                     <BsSliders className='filter-icon' /> Filter
                                 </div>
-                                {/* <Collapsible 
-                                    trigger={"Filters"} 
+                                {/* <Collapsible
+                                    trigger={"Filters"}
                                     triggerStyle={dropDownAttributes}
                                 > */}
                             </div>

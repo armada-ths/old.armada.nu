@@ -317,28 +317,31 @@ export const MapUtil = () => {
     >
       <div style={{ overflowY: "hidden" }}>
         <div className="mapBox">
-          <BuildingSwitch
-            setFairLocation={setFairLocation}
-            setBuilding={setBuilding}
-            building={building}
-            setButtonPressed={setButtonPressed}
-          />
-          <FloorButtons
-            setFairLocation={setFairLocation}
-            showDevTool={showDevTool}
-            devMode={devMode}
-            setDevMode={setDevMode}
-            building={building}
-            setEditorCoordinates={setEditorCoordinates}
-            setRectangleMode={setRectangleMode}
-            rectangleMode={rectangleMode}
-            buttonPressed={buttonPressed}
-            setButtonPressed={setButtonPressed}
-          />
+          <div className="mapBoxFloatingContainer">
+            <div /> {/* Filler div to take up the first slot in the grid */}
+            <BuildingSwitch
+              setFairLocation={setFairLocation}
+              setBuilding={setBuilding}
+              building={building}
+              setButtonPressed={setButtonPressed}
+            />
+            <FloorButtons
+              setFairLocation={setFairLocation}
+              showDevTool={false}
+              devMode={devMode}
+              setDevMode={setDevMode}
+              building={building}
+              setEditorCoordinates={setEditorCoordinates}
+              setRectangleMode={setRectangleMode}
+              rectangleMode={rectangleMode}
+              buttonPressed={buttonPressed}
+              setButtonPressed={setButtonPressed}
+            />
+          </div>
 
-          <a className="homeIcon" href="/" aria-label="Button to go to home">
+          {/*           <a className="homeIcon" href="/" aria-label="Button to go to home">
             <ImHome id="icon" />
-          </a>
+          </a> */}
           {/* <div
             className="homeIcon infoIcon"
             onClick={() => showLabels(!labels)}

@@ -195,7 +195,7 @@ export const MapUtil = () => {
   const [devMode, setDevMode] = useState(false); //used to toggle devmode
   const [rectangleMode, setRectangleMode] = useState(false); //used to toggle rectangle mode
   const mapRef = useRef(null);
-  const showDevTool = false;
+  const showDevTool = true;
   const [editorCoordinates, setEditorCoordinates] = useState([]);
   const [labels, showLabels] = useState(true);
   const [buttonPressed, setButtonPressed] = useState(2);

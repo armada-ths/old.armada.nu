@@ -296,3 +296,15 @@ img {
     border: 2px solid $melon;
     padding: 1em;
 }
+
+.leaflet-marker-icon,
+.leaflet-div-icon {
+    background: none !important;
+    border: none !important;
+}
+
+.leaflet-div-icon {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}

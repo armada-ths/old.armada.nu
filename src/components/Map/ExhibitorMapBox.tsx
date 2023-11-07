@@ -4,17 +4,35 @@ import React, { useMemo, useState } from "react";
 import { Exhibitor } from "@/components/Map/types";
 import no_image from "../../../static/assets/armada_marker.png";
 import { findPolygonCenter } from "@/components/Map/find_polygon_center";
+import ReactDomServer from "react-dom/server";
 
-function customIcon(exhibitor: Exhibitor, zoom: number) {
-  let xIcon = zoom >= 2 ? 80 : 50;
-  let yIcon = zoom >= 2 ? 80 : 50;
-  let iconImage = exhibitor.logo_squared ?? no_image;
+const ICON_CACHE = new Map<number, L.DivIcon>();
 
-  return L.icon({
-    iconUrl: iconImage,
-    iconSize: [xIcon, yIcon], // size of the icon
-    iconAnchor: [xIcon / 2, yIcon - yIcon / 2], // point of the icon which will correspond to marker's location
+function customIcon(exhibitor: Exhibitor) {
+  if (ICON_CACHE.has(exhibitor.id)) return ICON_CACHE.get(exhibitor.id);
+
+  const icon = L.divIcon({
+    html: ReactDomServer.renderToString(
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "transparent",
+        }}
+      >
+        <img
+          style={{
+            width: "80px",
+            objectFit: "contain",
+          }}
+          src={exhibitor.logo_squared ?? no_image}
+        />
+      </div>
+    ),
   });
+  ICON_CACHE.set(exhibitor.id, icon);
+  return icon;
 }
 interface Props {
   ex: Exhibitor;
@@ -22,20 +40,12 @@ interface Props {
 }
 
 export function ExhibitorMapBox({ ex, handlePolygonSelect }: Props) {
-  const map = useMap();
-
-  const [zoom, setZoom] = useState(map.getZoom());
-
   const center = useMemo(
     () => findPolygonCenter(ex.map_coordinates),
     [ex.map_coordinates]
   );
 
-  const icon = useMemo(() => customIcon(ex, zoom), [ex, zoom]);
-
-  useMapEvent("zoom", (e) => {
-    setZoom(e.target.getZoom());
-  });
+  const icon = useMemo(() => customIcon(ex), [ex]);
 
   return (
     <Polygon

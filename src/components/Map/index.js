@@ -364,7 +364,7 @@ export const MapUtil = () => {
               scrollWheelZoom={true}
               tap={true}
             >
-              <p className="disclaimerInfo">Armada Map - Alpha v.1.0.1</p>
+              <p className="disclaimerInfo">Armada Map - Alpha v.1.0.2</p>
               <Internal />
               {devMode &&
                 (rectangleMode ? (

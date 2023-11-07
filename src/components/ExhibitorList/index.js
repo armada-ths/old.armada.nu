@@ -11,6 +11,7 @@ import { Link } from 'gatsby'
 import Collapsible from 'react-collapsible'
 import { ExtendedZoom } from '../Map'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
+import { BsSliders } from 'react-icons/bs'
 
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
@@ -456,6 +457,7 @@ export class ExhibitorList extends React.Component {
                 }) // component saves its own data --- What does this mean?? //Nima
 
                 // Get from url path the GET params ?id=number, to know what event to display
+
                 if (this.props.exhibitorName !== undefined) {
                     this.setState({
                         exhibitorName: props.exhibitorName,
@@ -498,6 +500,14 @@ export class ExhibitorList extends React.Component {
 
         if (this.props.fairInputExhibitors !== prevProps.fairInputExhibitors) {
             this.updateExhibitorsShowed(this.props.fairInputExhibitors)
+        }
+
+        if (this.props.exhibitorName !== prevProps.exhibitorName) {
+            this.showMore()
+            this.setState({
+                exhibitorName: this.props.exhibitorName,
+                showModal: true,
+            })
         }
 
         // Do not update unless the floor changed
@@ -599,7 +609,15 @@ export class ExhibitorList extends React.Component {
     displayExhibitor = exhibitor => {
         //TODO: add more data to modal. locations etc, change how it's displayed
         return (
-            <Modal onClose={() => this.showModal(null)}>
+            <Modal
+                onClose={() => {
+                    this.showModal(null)
+                    console.log('test')
+                    this.setState({
+                        exhibitorName: undefined, //reset the exhibitorName input so we can press a company 2 times
+                    })
+                }}
+            >
                 <div className='modal-container'>
                     <div className='modal-flex-1'>
                         <div className='modalimage-exhib'>
@@ -626,21 +644,10 @@ export class ExhibitorList extends React.Component {
                             )}
                         </h1>
                         <div>
-                            {exhibitor.vyer_position && !this.props.lastYear ? (
-                                <h3 className='links'>
-                                    <a
-                                        href={exhibitor.vyer_position}
-                                        target='_blank'
-                                        rel='noreferrer'
-                                    >
-                                        Click for Map position
-                                    </a>
-                                </h3>
-                            ) : null}
                             {exhibitor.fair_placement[0] &&
                             !this.props.lastYear ? (
                                 <h3 id='fair-location'>
-                                    {exhibitor.fair_placement[0]}
+                                    Location: {exhibitor.fair_placement[0]}
                                 </h3>
                             ) : null}
                             {exhibitor.flyer ? (
@@ -837,7 +844,7 @@ export class ExhibitorList extends React.Component {
 
     showMore() {
         let showamount = this.state.showamount
-        showamount = 183
+        showamount = 183 //change this hardcoded
         this.setState({ showamount })
     }
 
@@ -916,7 +923,8 @@ export class ExhibitorList extends React.Component {
         let exhibitorToDisplay = this.state.exhibitors.filter(
             exhibitor => exhibitor.name === this.state.exhibitorName
         )[0]
-        //console.log(exhibitorToDisplay)
+
+        console.log(exhibitorToDisplay)
         let filteredCompanies = this.state.exhibitorList.filter(
             exhibitorItem => {
                 return exhibitorItem.props.name
@@ -1068,8 +1076,8 @@ export class ExhibitorList extends React.Component {
             }
         }
 
-        let showall =
-            filteredCompanies.length > this.state.showamount ? true : false
+        let showall = filteredCompanies.length > this.state.showamount
+
         function toggleFilterVisibility() {
             const filterContainer = document.getElementById('filter-container')
             filterContainer.classList.toggle('hidden')
@@ -1119,12 +1127,14 @@ export class ExhibitorList extends React.Component {
                                     onChange={this.updateSearch.bind(this)}
                                 />
                                 {/* <button id='search-button'>Search</button> */}
-                                <button
+                                <div
                                     id='filter-button'
                                     onClick={toggleFilterVisibility}
+                                    aria-details='filter button'
+                                    alt='filter button'
                                 >
-                                    Filters
-                                </button>
+                                    <BsSliders className='filter-icon' /> Filter
+                                </div>
                                 {/* <Collapsible 
                                     trigger={"Filters"} 
                                     triggerStyle={dropDownAttributes}
@@ -1294,8 +1304,9 @@ export class ExhibitorList extends React.Component {
                         }
                     >
                         {filteredCompanies.length && !this.state.isLoading ? (
-                            filteredCompanies.splice(0, this.state.showamount)
+                            filteredCompanies.splice(0, this.state.showamount) //removed the splicing for now (temporary - Nima Okt 2023)
                         ) : (
+                            //filteredCompanies
                             <div className='Noresultsfound'>
                                 {!this.state.isLoading ? (
                                     <div>
@@ -1309,17 +1320,17 @@ export class ExhibitorList extends React.Component {
                                 ) : null}
                             </div>
                         )}
+                        {showall ? (
+                            <div className='showmore-container'>
+                                <button
+                                    className='showmorebutton'
+                                    onClick={() => this.showMore()}
+                                >
+                                    Show All
+                                </button>
+                            </div>
+                        ) : null}
                     </div>
-                    {showall ? (
-                        <div className='showmore-container'>
-                            <button
-                                className='showmorebutton'
-                                onClick={() => this.showMore()}
-                            >
-                                Show All
-                            </button>
-                        </div>
-                    ) : null}
                 </div>
             )
         } else {

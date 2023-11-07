@@ -8,6 +8,10 @@ priority: 0
 header: /assets/images/header-images/home.jpg
 ---
 
+# IT'S HERE
+
+## The exhibitor map with all the booth placements and exhibitor catalogue is now live!
+
 # THS ARMADA 2023
 
 <div style="display:flex;align-items: center;flex-direction:column">

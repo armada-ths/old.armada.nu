@@ -30,7 +30,7 @@ const markerData = {
   },
   div_room: {
     className: "label",
-    html: '<div class="label label-small"><b>Diversity Room</b></div>',
+    html: '<div class="label"><b>Diversity Room</b></div>',
   },
   musik: {
     className: "label",
@@ -38,28 +38,60 @@ const markerData = {
   },
   ångdomen: {
     className: "label",
-    html: '<div class="label"><b>Entrance to Ångdomen</b></div>',
+    html: '<div class="label label-small"><b>Entrance to Ångdomen</b></div>',
+  },
+  trans_room: {
+    className: "label",
+    html: '<div class="label"><b>Transition Room</b></div>',
+  },
+  pubben: {
+    className: "label",
+    html: '<div class="label"><b>Pubben</b></div>',
+  },
+  student_lounge: {
+    className: "label",
+    html: '<div class="label label-small"><b>Student Lounge</b></div>',
+  },
+  tidningsrummet: {
+    className: "label",
+    html: '<div class="label"><b>Tidningsrummet</b></div>',
+  },
+  radiorummet: {
+    className: "label",
+    html: '<div class="label label-small"><b>Radiorummet</b></div>',
+  },
+  tvrummet: {
+    className: "label",
+    html: '<div class="label"><b>TV-rummet</b></div>',
   },
 };
 
 const markersByFloor = {
   "Nymble - 2nd Floor": [
-    { position: [143, 168.5], icon: markerData.entrance },
-    { position: [293, 573], icon: markerData.nya_mat },
-    { position: [344, 433], icon: markerData.gamla_mat },
-    { position: [254, 412], icon: markerData.susroom },
-    { position: [146, 581], icon: markerData.hyllan },
-    { position: [162, 802], icon: markerData.gröten },
-    { position: [413, 618], icon: markerData.div_room },
+    { position: [110, 158.5], icon: markerData.entrance },
+    { position: [297.46255118940945, 668], icon: markerData.nya_mat },
+    { position: [379.5143186628729, 280.5], icon: markerData.gamla_mat },
+    { position: [300, 280.5], icon: markerData.susroom },
+    { position: [110, 581], icon: markerData.hyllan },
+    { position: [162, 845], icon: markerData.gröten },
+    { position: [475, 615], icon: markerData.div_room },
+    { position: [480, 441], icon: markerData.trans_room },
+    { position: [222.34139327279283, 280.5], icon: markerData.pubben },
   ],
-  "Nymble - 3rd Floor": [{ position: [251, 609], icon: markerData.musik }],
+  "Nymble - 3rd Floor": [
+    { position: [150, 620], icon: markerData.musik },
+    { position: [110, 640], icon: markerData.student_lounge },
+    { position: [297.8443304344079, -120], icon: markerData.tidningsrummet },
+    { position: [150, 440], icon: markerData.radiorummet },
+    { position: [170, 300.5], icon: markerData.tvrummet },
+  ],
   "Nymble - 1st Floor": [
     { position: [150, 107], icon: markerData.entrance },
     { position: [281, 830.5], icon: markerData.entrance },
   ],
   "Library Main": [
-    { position: [22, 249.5], icon: markerData.entrance },
-    { position: [456, 175], icon: markerData.ångdomen },
+    { position: [0, 249.5], icon: markerData.entrance },
+    { position: [520, 175], icon: markerData.ångdomen },
   ],
 };
 

@@ -30,9 +30,21 @@
     text-align: center;
     background: #dedede6a;
     cursor: crosshair;
+    overflow: hidden;
   }
 
   //margin-top: 56px;
+}
+
+.disclaimerInfo {
+  z-index: 1000;
+  position: absolute;
+  display: inline;
+  top: 97%;
+  left: 10px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 10px;
 }
 
 .homeIcon {

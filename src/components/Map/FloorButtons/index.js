@@ -9,8 +9,9 @@ const FloorButtons = ({
   setEditorCoordinates,
   setRectangleMode,
   rectangleMode,
+  buttonPressed,
+  setButtonPressed,
 }) => {
-  const [buttonPressed, setButtonPressed] = useState(2);
   return (
     <div className="floorButtons">
       {building === "Nymble" && (

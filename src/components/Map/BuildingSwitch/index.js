@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import "./index.scss";
 
-const BuildingSwitch = ({ setFairLocation, setBuilding, building }) => {
+const BuildingSwitch = ({
+  setFairLocation,
+  setBuilding,
+  building,
+  setButtonPressed,
+}) => {
   return (
     <div className="buildingSwitchContainer">
       <div
@@ -12,6 +17,7 @@ const BuildingSwitch = ({ setFairLocation, setBuilding, building }) => {
         onClick={() => {
           setBuilding("Nymble");
           setFairLocation("Nymble - 2nd Floor");
+          setButtonPressed(2);
         }}
       >
         Nymble
@@ -24,6 +30,7 @@ const BuildingSwitch = ({ setFairLocation, setBuilding, building }) => {
         onClick={() => {
           setBuilding("Library");
           setFairLocation("Library Main");
+          setButtonPressed(2);
         }}
       >
         Library

@@ -62,9 +62,9 @@ const Form = () => {
             .then(response => {
                 //where your custom handling goes
                 if (!response.ok) throw Error(response.statusText)
-                console.log(response)
+                /*console.log(response)
                 console.log(response.ok)
-                console.log(response.statusText)
+                console.log(response.statusText)*/
                 const emptyForm = createEmptyForm()
                 setFormData(emptyForm)
                 setFormSubmitted(true)

@@ -643,7 +643,7 @@ export class ExhibitorList extends React.Component {
                                 <div>{exhibitor.name}</div>
                             )}
                         </h1>
-                        <div>
+                        <div className='locationOnFair'>
                             {exhibitor.fair_placement[0] &&
                             !this.props.lastYear ? (
                                 <h3 id='fair-location'>

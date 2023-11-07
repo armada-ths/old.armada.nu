@@ -15,34 +15,10 @@ header: /assets/for_exhibitors.jpg
     <br/>
     <b>Tuesday 21st November:</b> 10:00 - 16:00
     <br/>
-    <b>Wednesday 22nd November:</b> 10:00 - 16:00
+    <b>Wednesday 22nd November:</b> 10:00 - 15:00
 </div>
-
-<br />
-<br />
-<br />
-
-# The Exhibitor Catalogue
-
-<a href="../assets/ExhibitorCatalogue/EC-22-latest-version.pdf">
-    <img src='../assets/ExhibitorCatalogue/exhibitor-cat-image.png' alt="Offical Exhibitor Catalogue 2022" width="70%" style="margin-left:15%"/>
-</a>
-<p style="text-align: center;">The exhibitor catalogue will soon be published as soon as all the companies are confirmed</p>
-<br />
-<br />
-
-<br />
-<p style="text-align: center;"><b>Maps of the fair can be found at the bottom of this page.</b></p>
-
-<br />
-<br />
-<br />
-
-# Career Fair Concepts From 2022:
-
-<br />
-<br />
-
+<p style="text-align: center;">Visit our Student Hub and talk to student organisations from KTH! At the Student Hub you will find:</p>
+<p style="text-align: center;"><u>The Student Lounge</u> - Take a breather and relax at the student lounge, Third floor, Musikrummet in Nymble. Plenty of fun & giveaways are waiting for you here.</p>
 <h3 style="text-align: center;">Individual meetings</h3>
 <p style="text-align: center;">All successful candidates for individual meetings should have received their schedules. Present yourself at the information desk in the library and you will be led to the meeting room. Try to come in good time for the meeting!</p>
 <p style="text-align: center;">Best of luck to you all!</p>
@@ -51,61 +27,13 @@ header: /assets/for_exhibitors.jpg
 <br />
 <br />
 
-<h2 style="text-align: center;">The student hub</h2>
-<br />
-<h3 style="text-align: center;">Venue: KTH Entré</h3>
+# The Exhibitor Catalogue
 
-<br />
-
-<div class="info-border-box text" style="text-align: center;">
-    <h3 style="text-align: center;">Opening hours</h3>
-    <br/>
-    <b>Tuesday 22nd November:</b> 10:00 - 16:00
-    <br/>
-    <b>Wednesday 23rd November:</b> 10:00 - 16:00
-</div>
-
+<a href="/map">
+    <img src='../assets/ExhibitorCatalogue/exhibitor-cat-image.png' alt="Offical Exhibitor Catalogue 2022" width="70%" style="margin-left:15%"/>
+</a>
+<p style="text-align: center;">The catalogue is now live and can be found in the new Armada Career Fair Map.</p>
 <br />
 <br />
 
-<p style="text-align: center;">Visit our Student Hub and talk to student organisations from KTH! At the Student Hub you will find:</p>
-<p style="text-align: center;"><u>The Student Lounge</u> - Take a breather and relax at the student lounge, First floor, KTH Entré. Plenty of fun & giveaways are waiting for you here.</p>
-
 <br />
-
-<h4 style="text-align: center;">KTH Student organisations</h4>
-
-<p style="text-align: center;">Visit some of the most popular student organisations at KTH. They will share with you what they are currently up to, and what opportunities there are in their organisations. They’re all on the second floor of KTH entré. The organisations exhibiting this year are: <b>Malvina</b>, <b>KTH Hyperloop</b>, <b>KTH Formula Student</b>.</p>
-
-<div >
-    <img src="/assets/ExhibitorCatalogue/Malvina-logo.jpeg"/>
-    <img src="/assets/ExhibitorCatalogue/Hyperloop.png" width="50%"/>
-    <img src="/assets/ExhibitorCatalogue/Formula-student.jpeg"/>
-</div>
-
-<br />
-<br />
-<br />
-<br />
-
-<h3 style="text-align: center;">CV Factory 2022</h3>
-<p style="text-align: center;">The fair favourite CV factory is back! Take a professional photo in a professional setting for your resumé and cover letter. Get inspiration from sample CVs and content from companies explaining their recruitment process and what they look for in young professionals.</p>
-
-<br />
-<br />
-
-## Partner 2022
-
-<br />
-<img src="/assets/PartnerLogos/Alstom_Logo_Screen.png" alt="Alstom" style="display: block; width: 50%; margin-left: auto; margin-right: auto;"/>
-
-<br />
-<br />
-<br />
-<br />
-
-# Fair Maps
-
-<img src="/assets/ExhibitorCatalogue/kth-nymble.png"/>
-<img src="/assets/ExhibitorCatalogue/kth-b.png"/>
-<img src="/assets/ExhibitorCatalogue/kth-entre.png"/>

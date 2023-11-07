@@ -57,7 +57,6 @@ const FunFact = props => {
             {props.page === 'sustainabilityFunFact' ? (
                 <div className='fact-header'>
                     <b>Did you know that...</b>
-                    <img src={treeisland} alt='A sustainability logo'></img>
                 </div>
             ) : (
                 <div className='fact-header'>

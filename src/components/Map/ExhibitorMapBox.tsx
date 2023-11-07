@@ -25,6 +25,7 @@ function customIcon(exhibitor: Exhibitor) {
           style={{
             width: "80px",
             objectFit: "contain",
+            borderRadius: "5px",
           }}
           src={exhibitor.logo_squared ?? no_image}
         />

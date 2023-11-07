@@ -339,7 +339,7 @@ export const MapUtil = () => {
           <a className="homeIcon" href="/" aria-label="Button to go to home">
             <ImHome id="icon" />
           </a>
-          <div
+          {/* <div
             className="homeIcon infoIcon"
             onClick={() => showLabels(!labels)}
             aria-label="Button to go to show labels"
@@ -349,11 +349,12 @@ export const MapUtil = () => {
             ) : (
               <BsInfoCircle id="icon" />
             )}
-          </div>
+          </div> */}
           <div>
             <MapContainer
               zoom={zoomLevel}
               //center={position}
+              zoomControl={false}
               doubleClickZoom
               crs={CRS.Simple}
               bounds={bounds}
@@ -382,7 +383,13 @@ export const MapUtil = () => {
               {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                */}
               {/* For more info about marker cluster options: https://akursat.gitbook.io/marker-cluster/api */}
-              <MarkerClusterGroup chunkedLoading showCoverageOnHover>
+              <MarkerClusterGroup
+                chunkedLoading
+                showCoverageOnHover
+                spiderLegPolylineOptions={{
+                  opacity: 0,
+                }}
+              >
                 <ExhibitorRendering
                   fairLocation={fairLocation}
                   exhibitorMap={exhibitorsMap}

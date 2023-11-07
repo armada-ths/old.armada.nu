@@ -12,6 +12,7 @@ import Collapsible from 'react-collapsible'
 import { ExtendedZoom } from '../Map'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
 import { BsSliders } from 'react-icons/bs'
+import { PlaceGoldFirst } from '@/templates/placeGoldFirst'
 
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
@@ -476,6 +477,7 @@ export class ExhibitorList extends React.Component {
 
     updateExhibitorsShowed(exhibitorsInput) {
         exhibitorsInput.sort((a, b) => a.name.localeCompare(b.name))
+        exhibitorsInput = PlaceGoldFirst(exhibitorsInput) //sort by gold first
         let exhibitorList = exhibitorsInput.map(exhibitor => (
             <ExhibitorItem
                 key={exhibitor.id}
@@ -924,7 +926,6 @@ export class ExhibitorList extends React.Component {
             exhibitor => exhibitor.name === this.state.exhibitorName
         )[0]
 
-        console.log(exhibitorToDisplay)
         let filteredCompanies = this.state.exhibitorList.filter(
             exhibitorItem => {
                 return exhibitorItem.props.name
@@ -1304,7 +1305,7 @@ export class ExhibitorList extends React.Component {
                         }
                     >
                         {filteredCompanies.length && !this.state.isLoading ? (
-                            filteredCompanies.splice(0, this.state.showamount) //removed the splicing for now (temporary - Nima Okt 2023)
+                            filteredCompanies.splice(0, this.state.showamount)
                         ) : (
                             //filteredCompanies
                             <div className='Noresultsfound'>
@@ -1355,7 +1356,10 @@ const ExhibitorItem = props => {
     const setFocusCoordinate = useContext(ExtendedZoom)
     let classname = props.exhibitor.sustainability ? ' green' : ''
     classname += props.exhibitor.diversity ? ' purple' : ''
-
+    classname +=
+        props.exhibitor.tier && props.exhibitor.tier === '3'
+            ? ' gold-exhib'
+            : ''
     return (
         <div
             id={props.exhibitor.id}
@@ -1391,7 +1395,7 @@ const ExhibitorItem = props => {
             {props.exhibitor.location_special === 'Diversity Room' ? (
                 <div className='corner-special'>
                     <img
-                        alt=''
+                        alt='Exhibitor in Diversity Room'
                         src='/assets/diversity/diversity-black-nolabel.png'
                     />
                 </div>
@@ -1399,8 +1403,16 @@ const ExhibitorItem = props => {
             {props.exhibitor.location_special === 'Green Room' ? (
                 <div className='corner-special'>
                     <img
-                        alt=''
+                        alt='Exhibitor in Green room'
                         src='/assets/sustainability/sustainability-black-nolabel.png'
+                    />
+                </div>
+            ) : null}
+            {props.exhibitor.tier && props.exhibitor.tier === '3' ? (
+                <div className='corner-special corner-gold'>
+                    <img
+                        alt='Gold exhibitor'
+                        src='/assets/TierListCard/armada_logo_text_gold.png'
                     />
                 </div>
             ) : null}

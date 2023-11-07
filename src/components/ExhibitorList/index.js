@@ -584,6 +584,9 @@ export class ExhibitorList extends React.Component {
         } else {
             this.state.showAllCompanies = false
         }
+        var colorElement = document.getElementById('color-target')
+        colorElement.style.animation = null
+        colorElement.style.animation = 'colorflash 3s'
     }
 
     //displays types of jobs offered by company in its Modal
@@ -1084,7 +1087,7 @@ export class ExhibitorList extends React.Component {
         }
         if (showExhibitors) {
             return (
-                <div className='exhibitors'>
+                <div id='color-target' className='exhibitors'>
                     {/* <h1>
                         {this.props.lastYear ? "Last Year's " : ''}Exhibitors
                     </h1>
@@ -1140,135 +1143,130 @@ export class ExhibitorList extends React.Component {
                                     triggerStyle={dropDownAttributes}
                                 > */}
                             </div>
-                            <div id='filter-container'>
-                                {this.state.showAllCompanies ? (
-                                    <div
-                                        className='showAllBox'
-                                        onClick={() => {
-                                            this.setState({
-                                                ...this.state,
-                                                showAllCompanies: false,
-                                            })
-                                        }}
-                                    >
-                                        <GrCheckboxSelected />
-                                        Show All Companies
-                                    </div>
-                                ) : (
-                                    <div
-                                        className='showAllBox'
-                                        onClick={() => {
-                                            this.setState({
-                                                ...this.state,
-                                                showAllCompanies: true,
-                                            })
-                                        }}
-                                    >
-                                        <GrCheckbox />
-                                        Show All Companies
-                                    </div>
-                                )}
 
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    blurInputOnSelect={false}
-                                    isMulti
-                                    isSearchable
-                                    name='Job filter'
-                                    placeholder='All Jobs'
-                                    options={this.state.jobs}
-                                    onChange={event => this.jobFilter(event)}
-                                    className='basic-multi-select'
-                                    classNamePrefix='select'
-                                />
-
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    blurInputOnSelect={false}
-                                    isMulti
-                                    isSearchable
-                                    name='Sector filter'
-                                    placeholder='All Industries'
-                                    options={this.state.sectors}
-                                    onChange={event => this.sectorFilter(event)}
-                                    className='basic-multi-select'
-                                    classNamePrefix='select'
-                                />
-
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    blurInputOnSelect={false}
-                                    isMulti
-                                    isSearchable
-                                    name='Competence filter'
-                                    placeholder='All Competences'
-                                    options={this.state.competences}
-                                    onChange={event =>
-                                        this.competenceFilter(event)
-                                    }
-                                    className='basic-multi-select'
-                                    classNamePrefix='select'
-                                />
-
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    blurInputOnSelect={false}
-                                    isMulti
-                                    isSearchable
-                                    name='Location filter'
-                                    placeholder='All Locations'
-                                    options={this.state.locations}
-                                    onChange={event =>
-                                        this.locationFilter(event)
-                                    }
-                                    className='basic-multi-select'
-                                    classNamePrefix='select'
-                                />
-
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    blurInputOnSelect={false}
-                                    isMulti
-                                    isSearchable
-                                    name='Fair Placement filter'
-                                    placeholder='All Fair Placements'
-                                    options={this.state.fair_placements}
-                                    onChange={event =>
-                                        this.fairPlacementFilter(event)
-                                    }
-                                    className='basic-multi-select'
-                                    classNamePrefix='select'
-                                />
-                                {this.props.showCV && (
-                                    <div
-                                        className={`filter-special ${
-                                            this.props.lastYear
-                                                ? 'display-none'
-                                                : ''
-                                        }`}
-                                    >
-                                        <input
-                                            id='diversity'
-                                            type='image'
-                                            alt='diversity filter'
-                                            src={this.state.diversitysrc}
-                                            onClick={() =>
-                                                this.diversityFilter()
-                                            }
-                                        />
-                                        <input
-                                            id='sustainability'
-                                            type='image'
-                                            alt='sustainability filter'
-                                            src={this.state.sustainabilitysrc}
-                                            onClick={() =>
-                                                this.sustainabilityFilter()
-                                            }
-                                        />
-                                    </div>
-                                )}
-                            </div>
                             {/* </Collapsible> */}
+                        </div>
+                        <div id='filter-container'>
+                            {this.state.showAllCompanies ? (
+                                <div
+                                    className='showAllBox'
+                                    onClick={() => {
+                                        this.setState({
+                                            ...this.state,
+                                            showAllCompanies: false,
+                                        })
+                                    }}
+                                >
+                                    <GrCheckboxSelected />
+                                    Show All Companies
+                                </div>
+                            ) : (
+                                <div
+                                    className='showAllBox'
+                                    onClick={() => {
+                                        this.setState({
+                                            ...this.state,
+                                            showAllCompanies: true,
+                                        })
+                                    }}
+                                >
+                                    <GrCheckbox />
+                                    Show All Companies
+                                </div>
+                            )}
+
+                            <Select
+                                closeMenuOnSelect={false}
+                                blurInputOnSelect={false}
+                                isMulti
+                                isSearchable
+                                name='Job filter'
+                                placeholder='All Jobs'
+                                options={this.state.jobs}
+                                onChange={event => this.jobFilter(event)}
+                                className='basic-multi-select'
+                                classNamePrefix='select'
+                            />
+
+                            <Select
+                                closeMenuOnSelect={false}
+                                blurInputOnSelect={false}
+                                isMulti
+                                isSearchable
+                                name='Sector filter'
+                                placeholder='All Industries'
+                                options={this.state.sectors}
+                                onChange={event => this.sectorFilter(event)}
+                                className='basic-multi-select'
+                                classNamePrefix='select'
+                            />
+
+                            <Select
+                                closeMenuOnSelect={false}
+                                blurInputOnSelect={false}
+                                isMulti
+                                isSearchable
+                                name='Competence filter'
+                                placeholder='All Competences'
+                                options={this.state.competences}
+                                onChange={event => this.competenceFilter(event)}
+                                className='basic-multi-select'
+                                classNamePrefix='select'
+                            />
+
+                            <Select
+                                closeMenuOnSelect={false}
+                                blurInputOnSelect={false}
+                                isMulti
+                                isSearchable
+                                name='Location filter'
+                                placeholder='All Locations'
+                                options={this.state.locations}
+                                onChange={event => this.locationFilter(event)}
+                                className='basic-multi-select'
+                                classNamePrefix='select'
+                            />
+
+                            <Select
+                                closeMenuOnSelect={false}
+                                blurInputOnSelect={false}
+                                isMulti
+                                isSearchable
+                                name='Fair Placement filter'
+                                placeholder='All Fair Placements'
+                                options={this.state.fair_placements}
+                                onChange={event =>
+                                    this.fairPlacementFilter(event)
+                                }
+                                className='basic-multi-select'
+                                classNamePrefix='select'
+                            />
+                            {this.props.showCV && (
+                                <div
+                                    className={`filter-special ${
+                                        this.props.lastYear
+                                            ? 'display-none'
+                                            : ''
+                                    }`}
+                                >
+                                    <input
+                                        id='diversity'
+                                        type='image'
+                                        alt='diversity filter'
+                                        src={this.state.diversitysrc}
+                                        onClick={() => this.diversityFilter()}
+                                    />
+                                    <input
+                                        id='sustainability'
+                                        type='image'
+                                        alt='sustainability filter'
+                                        src={this.state.sustainabilitysrc}
+                                        onClick={() =>
+                                            this.sustainabilityFilter()
+                                        }
+                                    />
+                                </div>
+                            )}
                         </div>
                         {showFilters ? (
                             <div

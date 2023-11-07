@@ -24,7 +24,9 @@ const MapPage = props => {
                 aria-busy={isLoading}
             >
                 {isLoading && (
-                    <h3 style={{ marginRight: '20px' }}>Loading Map...</h3>
+                    <h3 style={{ marginRight: '20px', marginTop: '10vh' }}>
+                        Loading Map...
+                    </h3>
                 )}
                 {
                     isLoading && <ChaoticOrbit /> //used for loading animations before map loads

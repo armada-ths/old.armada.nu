@@ -55,7 +55,6 @@ function PersonSearch({ position }) {
         axios.get('https://ais.armada.nu/api/organization/v2').then(res => {
             res.data.forEach(team => {
                 team.people.forEach(person => {
-                    console.log(person)
                     if (person.role.includes(position)) {
                         setNames(old => [...old, person.name])
                         setImages(old => [...old, person.picture])
@@ -63,7 +62,6 @@ function PersonSearch({ position }) {
                 })
             })
         })
-        console.log('This is the name' + name)
     }, [])
 
     return (

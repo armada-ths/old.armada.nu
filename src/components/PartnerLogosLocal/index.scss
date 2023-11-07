@@ -8,10 +8,51 @@
 .partnersGallery {
     width: 100%;
     text-align: center;
-
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    a {
+        display: inline;
+    }
     img {
         max-height: 250%;
         margin: 5%;
+        max-width: 100%;
+    }
+    #sture {
+        height: 10vw;
+        max-height: 220px;
+        width: 20vw !important;
+        min-width: 100px;
+        min-height: 100px;
+    }
+    .partnerImage {
+        max-height: 250%;
         max-width: 45%;
+    }
+    #telenor {
+        width: 30%;
+        margin: 5% !important;
+        min-width: 250px;
+    }
+    #fm {
+        max-width: 100%;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    #esa {
+        max-width: 100%;
+        margin: 0 !important;
+        width: 30% !important;
+        min-width: 250px;
+    }
+    #fmv {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    #nordea {
+        max-width: 100% !important;
+        width: 80% !important;
     }
 }

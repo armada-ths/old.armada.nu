@@ -12,13 +12,10 @@
 }
 
 .mapBox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0;
+  user-select: none;
+  position: relative;
   //margin: 0 2.5vw 0 2.5vw;
   width: 100%;
-  height: 50vh;
   box-sizing: border-box;
 
   //margin-top: 56px; //the default menu bar is 56px height
@@ -35,12 +32,21 @@
 
   //margin-top: 56px;
 }
+.mapBoxFloatingContainer {
+  bottom: 40px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+  padding: 0 20px;
+}
 
 .disclaimerInfo {
   z-index: 1000;
   position: absolute;
   display: inline;
-  top: 97%;
+  bottom: 5px;
   left: 10px;
   margin-block-start: 0;
   margin-block-end: 0;

@@ -57,7 +57,7 @@ const Layout = ({ header, location, children, jumbotron }) => (
                     )}
                     <div>{children}</div>
                 </div>
-                <Footer />
+                {location !== '/map' && <Footer />}
             </>
         )}
     />

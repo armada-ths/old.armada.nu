@@ -317,29 +317,32 @@ export const MapUtil = () => {
     >
       <div style={{ overflowY: "hidden" }}>
         <div className="mapBox">
-          <BuildingSwitch
-            setFairLocation={setFairLocation}
-            setBuilding={setBuilding}
-            building={building}
-            setButtonPressed={setButtonPressed}
-          />
-          <FloorButtons
-            setFairLocation={setFairLocation}
-            showDevTool={showDevTool}
-            devMode={devMode}
-            setDevMode={setDevMode}
-            building={building}
-            setEditorCoordinates={setEditorCoordinates}
-            setRectangleMode={setRectangleMode}
-            rectangleMode={rectangleMode}
-            buttonPressed={buttonPressed}
-            setButtonPressed={setButtonPressed}
-          />
+          <div className="mapBoxFloatingContainer">
+            <BuildingSwitch
+              setFairLocation={setFairLocation}
+              setBuilding={setBuilding}
+              building={building}
+              setButtonPressed={setButtonPressed}
+            />
+            <div /> {/* Filler div to take up the first slot in the grid */}
+            <FloorButtons
+              setFairLocation={setFairLocation}
+              showDevTool={false}
+              devMode={devMode}
+              setDevMode={setDevMode}
+              building={building}
+              setEditorCoordinates={setEditorCoordinates}
+              setRectangleMode={setRectangleMode}
+              rectangleMode={rectangleMode}
+              buttonPressed={buttonPressed}
+              setButtonPressed={setButtonPressed}
+            />
+          </div>
 
-          <a className="homeIcon" href="/" aria-label="Button to go to home">
+          {/*           <a className="homeIcon" href="/" aria-label="Button to go to home">
             <ImHome id="icon" />
-          </a>
-          <div
+          </a> */}
+          {/* <div
             className="homeIcon infoIcon"
             onClick={() => showLabels(!labels)}
             aria-label="Button to go to show labels"
@@ -349,11 +352,12 @@ export const MapUtil = () => {
             ) : (
               <BsInfoCircle id="icon" />
             )}
-          </div>
+          </div> */}
           <div>
             <MapContainer
               zoom={zoomLevel}
               //center={position}
+              zoomControl={false}
               doubleClickZoom
               crs={CRS.Simple}
               bounds={bounds}
@@ -382,7 +386,13 @@ export const MapUtil = () => {
               {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                */}
               {/* For more info about marker cluster options: https://akursat.gitbook.io/marker-cluster/api */}
-              <MarkerClusterGroup chunkedLoading showCoverageOnHover>
+              <MarkerClusterGroup
+                chunkedLoading
+                showCoverageOnHover
+                spiderLegPolylineOptions={{
+                  opacity: 0,
+                }}
+              >
                 <ExhibitorRendering
                   fairLocation={fairLocation}
                   exhibitorMap={exhibitorsMap}

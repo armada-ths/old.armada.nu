@@ -33,13 +33,15 @@
   //margin-top: 56px;
 }
 .mapBoxFloatingContainer {
-  bottom: 40px;
+  bottom: 10px;
   width: 100%;
   position: absolute;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 5rem 1fr 5rem;
+  //justify-content: space-between;
   user-select: none;
-  padding: 0 20px;
+  //padding: 0 20px;
 }
 
 .disclaimerInfo {
@@ -51,6 +53,7 @@
   margin-block-start: 0;
   margin-block-end: 0;
   font-size: 10px;
+  width: 20%;
 }
 
 .homeIcon {

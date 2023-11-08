@@ -2,14 +2,14 @@
 @import "../../../styles/_fonts";
 
 .buildingSwitchContainer {
-  justify-self: start;
+  justify-self: center;
   align-self: flex-end;
 
   z-index: 100;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  height: min-content;
+
   cursor: pointer;
   @keyframes select {
     from {
@@ -23,19 +23,14 @@
   }
   .buildingSwitch {
     background-color: #eee;
-    padding: 10px 15px;
+    padding: 7px 12px;
     border-color: #ccc;
     border-top-width: 2px;
     border-top-style: solid;
     border-bottom-width: 2px;
     border-bottom-style: solid;
   }
-  .buildingSwitch:hover {
-    opacity: 0.8;
-  }
-  .buildingSwitch:active {
-    opacity: 0.6;
-  }
+
   #nymble {
     border-radius: 10px 0px 0px 10px;
     border-left-width: 2px;

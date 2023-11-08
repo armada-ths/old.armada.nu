@@ -36,7 +36,7 @@ const ForCompanies = props => {
     useEffect(() => {
         setheadingData(QueryFunc())
     }, [])
-    console.log(headingData)
+    //console.log(headingData)
     return (
         <>
             {/* <div class='TOC'>

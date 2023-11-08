@@ -195,7 +195,7 @@ export const MapUtil = () => {
   const [devMode, setDevMode] = useState(false); //used to toggle devmode
   const [rectangleMode, setRectangleMode] = useState(false); //used to toggle rectangle mode
   const mapRef = useRef(null);
-  const showDevTool = true;
+  const showDevTool = false;
   const [editorCoordinates, setEditorCoordinates] = useState([]);
   const [labels, showLabels] = useState(true);
   const [buttonPressed, setButtonPressed] = useState(2);
@@ -368,7 +368,7 @@ export const MapUtil = () => {
               scrollWheelZoom={true}
               tap={true}
             >
-              <p className="disclaimerInfo">Armada Map - Alpha v.1.0</p>
+              <p className="disclaimerInfo">Armada Map - Alpha v.1.0.1</p>
               <Internal />
               {devMode &&
                 (rectangleMode ? (

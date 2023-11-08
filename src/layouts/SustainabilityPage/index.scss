@@ -1,12 +1,106 @@
 @import '../../styles/global';
 @import '../../styles/_variables';
 
+.top-icon {
+    //object-fit: cover;
+    display: flex;
+    width: 50%;
+    height: 50%;
+    max-width: 300px;
+    margin: auto;
+    justify-content: center;
+}
+
+.susButtonContainer {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid gray;
+    max-width: 850px;
+    margin: auto;
+    padding-bottom: 20px;
+    button {
+        font-size: x-large;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.greenBox {
+    margin-top: 10vh;
+    margin-bottom: 2em;
+    display: grid;
+    place-items: center;
+    grid-template-areas: 'inner-div';
+    mix-blend-mode: multiply;
+    flex-shrink: 0;
+    width: 100vw;
+    background: url('../../../static/assets/sustainability/greenBG.svg'),
+        lightgray 50% / cover no-repeat;
+
+    .greenBoxText {
+        text-align: center;
+        width: 65%;
+        color: white;
+        background-color: #232427dc;
+        border-radius: 30.232px;
+        padding: 10px;
+        box-shadow: 0px 1.67357px 8.06196px 0px rgba(0, 0, 0, 0.25);
+        grid-area: inner-div;
+    }
+    #title1 {
+        text-align: center;
+    }
+    .greenButton {
+        margin-bottom: 20px;
+    }
+}
+
+.sus-top-wrapper {
+    margin-top: 2vh;
+    width: 100%;
+    max-width: 1050px;
+    margin: auto;
+    margin-top: 4vh;
+    text-align: center;
+    .sustainability-top {
+        background-image: url(../../../static/assets/sustainability/sustainability-top-background.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        .top-text {
+            background: rgba(194, 194, 194, 0.886);
+            padding: 2vw;
+            font-weight: bold;
+        }
+        padding: 3vw 1vw 3vw 1vw;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        a,
+        b,
+        p {
+            text-align: left !important;
+        }
+        b,
+        h3 {
+            color: #009a67; //make the armada green popout more
+        }
+        h3 {
+            text-decoration: underline;
+        }
+    }
+}
+
 .sustainability {
     h1,
     h2,
     h3,
     h4,
     h5,
+    b,
     a {
         color: $melon;
     }

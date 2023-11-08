@@ -1,15 +1,45 @@
 @import '../../styles/_variables';
 @import '../../styles/global';
 
-.flex-container {
+.funFactFlex {
     display: flex;
-    justify-content: center;
-}
+    max-width: none !important;
+    justify-content: space-around;
 
-.fact-box {
-    display: flex;
-    justify-content: center;
-    width: 50%;
+    .factBox {
+        border-radius: 9px;
+        border: 1.739px solid rgba(100, 116, 139, 0.1);
+        background: #323335;
+        box-shadow: 0px 1.67357px 8.06196px 0px rgba(0, 0, 0, 0.25);
+        width: 40%;
+        padding: 4px;
+        padding-right: 5%;
+        .fact-title,
+        .fact-statement {
+            color: #fff;
+            font-family: Lato;
+            font-size: 18px;
+            font-style: normal;
+            text-align: center;
+            line-height: 24.186px; /* 120% */
+        }
+        .fact-title {
+            width: 100%;
+            text-decoration: underline;
+        }
+
+        .fact-description {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            img {
+                margin-left: 2%;
+                max-width: 75px;
+                width: 20%;
+            }
+        }
+    }
 }
 
 .fact-photo {
@@ -33,24 +63,8 @@
     }
 }
 
-.fact-info {
-    width: 70%;
-    margin-left: 3%;
-    margin-bottom: 3%;
-}
-
 .fact-picture {
     border-radius: 50%;
-}
-
-.fact-title {
-    font-size: 120%;
-    text-align: center;
-}
-.fact-text {
-    font-size: 90%;
-    color: white;
-    text-align: center;
 }
 
 q {
@@ -89,5 +103,25 @@ q:after {
     text-transform: uppercase;
     font-size: 2em;
     text-align: center;
-    margin-bottom: 1%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    img {
+        position: absolute;
+        margin-left: 70%;
+        top: -120px;
+        width: 190px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .fact-header {
+        img {
+            margin-left: 84%;
+            width: 14vw;
+            top: -40px;
+        }
+    }
 }

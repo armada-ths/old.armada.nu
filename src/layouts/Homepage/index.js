@@ -6,7 +6,7 @@ import Loading from '../../components/Loading'
 import Loadable from 'react-loadable'
 import Newsfeed from '../../components/Newsfeed'
 import { Zoom } from 'react-awesome-reveal'
-import GifHoverButtons from '../../components/GifButtons'
+//import GifHoverButtons from '../../components/GifButtons'
 import EventList from '../../components/EventList'
 import { useInView, animated } from 'react-spring'
 /* Started edit by Nima Sep to redesign homepage.
@@ -35,7 +35,9 @@ const HomepageInfo = () => {
                     Check out all the exhibitors and the companies you match
                     best with in the brand new Armada Map
                 </p>
-                <button href='/map'>Check It Out</button>
+                <a href='/map'>
+                    <button>Check It Out</button>
+                </a>
             </div>
             <div className='homepageInfoBox'>
                 <p id='title'>THS ARMADA 2023</p>
@@ -127,8 +129,8 @@ const Homepage = props => {
             {/*<GifHoverButtons />*/}
             <div className='homepage'>
                 <Newsfeed />
-                <PhotoGallery photoCount={6} />
                 <PartnerLogos />
+                {/*<PhotoGallery photoCount={6} /> Armada pictures are removed for now since the slideshow is bugged. Will readd in Okt-Nov*/}
             </div>
         </>
     )

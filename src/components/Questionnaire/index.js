@@ -175,6 +175,7 @@ const Questionnaire = props => {
 
     const fuse = new Fuse(programsAndIndustries, options) //instance for fuzzy searching
 
+    //TODO: this matches programs to industries.
     function matchedIndustries(program) {
         const results = fuse.search(program)
         return results.map(result => result.item.industries).flat()
@@ -201,6 +202,7 @@ const Questionnaire = props => {
         completedHtml: '<h3>Here are your matches</h3>',
     }
 
+    //TODO: this is what happens after submitting survey. It stores the answers and search results in session storage.
     function saveSurveyData(survey) {
         const surveyData = survey.data
         const matches = matchedIndustries(surveyData.Programme)

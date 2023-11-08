@@ -35,6 +35,7 @@ import TooltipMarkers from "./TooltipMarkers";
 import { NewCoordinateEditor } from "./NewCoordinateEditor";
 import { ExhibitorRendering } from "./ExhibitorRendering";
 import { findPolygonCenter } from "@/components/Map/find_polygon_center";
+import { PlaceGoldFirst } from "@/templates/placeGoldFirst";
 
 export const ExtendedZoom = createContext(null);
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -83,11 +84,10 @@ function MapAPIFetch(setExhibitorsMap) {
     `api/exhibitors/?img alt=''_placeholder=true${
       year !== "2023" ? "&year=2023/" : "/"
     }`;
-  let exhibitors = "";
 
   axios.get(link).then((res) => {
     console.log("Map has fetched company data");
-    exhibitors = res.data;
+    let exhibitors = res.data;
     exhibitors = exhibitors.filter(
       (exhibitor) =>
         checkListOfCoordinates(
@@ -96,6 +96,7 @@ function MapAPIFetch(setExhibitorsMap) {
           exhibitor.fair_location
         ) && exhibitor.fair_location.length > 0
     );
+
     exhibitors.forEach((ex) => {
       ex.fair_placement = [ex.fair_location];
       /*if (ex.industries.length > 0) {
@@ -106,7 +107,6 @@ function MapAPIFetch(setExhibitorsMap) {
                 ex.color = '#fa0000'
             }*/
     });
-    //console.log(exhibitors)
     setExhibitorsMap(exhibitors);
   });
 }
@@ -364,7 +364,7 @@ export const MapUtil = () => {
               scrollWheelZoom={true}
               tap={true}
             >
-              <p className="disclaimerInfo">Armada Map - Alpha v.1.0.1</p>
+              <p className="disclaimerInfo">Armada Map - Alpha v.1.0.2</p>
               <Internal />
               {devMode &&
                 (rectangleMode ? (

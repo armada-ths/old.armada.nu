@@ -395,6 +395,11 @@
     transform: scale(1.07) translateY(-2px);
 }
 
+.gold-exhib:hover {
+    border: 2px solid #ffd700;
+    transform: border 800ms linear;
+}
+
 .exhibitor-feed .exhibitor-box.green::before,
 .exhibitor-feed .exhibitor-box.purple::before,
 .exhibitor-feed .shine-loop::before {
@@ -476,6 +481,10 @@
         width: 1.5em;
         max-height: 1.5em;
     }
+}
+
+.corner-gold {
+    justify-content: flex-start;
 }
 
 .diversity-text {
@@ -647,8 +656,8 @@
                 }
                 .corner-special {
                     img {
-                        width: 1.2em;
-                        height: 1.2em;
+                        width: 1.5em;
+                        height: 1.5em;
                     }
                 }
             }

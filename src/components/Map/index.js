@@ -318,13 +318,13 @@ export const MapUtil = () => {
       <div style={{ overflowY: "hidden" }}>
         <div className="mapBox">
           <div className="mapBoxFloatingContainer">
-            <div /> {/* Filler div to take up the first slot in the grid */}
             <BuildingSwitch
               setFairLocation={setFairLocation}
               setBuilding={setBuilding}
               building={building}
               setButtonPressed={setButtonPressed}
             />
+            <div /> {/* Filler div to take up the first slot in the grid */}
             <FloorButtons
               setFairLocation={setFairLocation}
               showDevTool={false}

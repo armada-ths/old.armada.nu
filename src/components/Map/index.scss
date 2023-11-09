@@ -33,12 +33,12 @@
   //margin-top: 56px;
 }
 .mapBoxFloatingContainer {
-  bottom: 10px;
+  bottom: 20px;
   width: 100%;
   position: absolute;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 5rem 1fr 5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
   //justify-content: space-between;
   user-select: none;
   //padding: 0 20px;

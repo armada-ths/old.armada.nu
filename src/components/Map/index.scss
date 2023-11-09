@@ -1,6 +1,11 @@
 @import "../../styles/_variables";
 @import "../../styles/_fonts";
 
+.leaflet-marker-pane,
+.leaflet-marker-pane .custom-icon {
+  transform: none !important;
+}
+
 .label {
   background-color: transparent;
   font-size: large;

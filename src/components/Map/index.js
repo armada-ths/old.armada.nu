@@ -15,6 +15,7 @@ import {
   Polygon,
   useMap,
   useMapEvent,
+  Pane,
 } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import L from "leaflet";
@@ -195,7 +196,7 @@ export const MapUtil = () => {
   const [devMode, setDevMode] = useState(false); //used to toggle devmode
   const [rectangleMode, setRectangleMode] = useState(false); //used to toggle rectangle mode
   const mapRef = useRef(null);
-  const showDevTool = false;
+  const showDevTool = true;
   const [editorCoordinates, setEditorCoordinates] = useState([]);
   const [labels, showLabels] = useState(true);
   const [buttonPressed, setButtonPressed] = useState(2);
@@ -327,7 +328,7 @@ export const MapUtil = () => {
             />
             <FloorButtons
               setFairLocation={setFairLocation}
-              showDevTool={false}
+              showDevTool={showDevTool}
               devMode={devMode}
               setDevMode={setDevMode}
               building={building}
@@ -399,6 +400,10 @@ export const MapUtil = () => {
                   handlePolygonSelect={handlePolygonSelect}
                 />
               </MarkerClusterGroup>
+              <Pane
+                name="staticMarkers"
+                style={{ zIndex: 400, pointerEvents: "none" }}
+              />
               {labels && <TooltipMarkers floor={fairLocation} />}
               <ImageOverlay
                 url={floorObj[fairLocation].default}

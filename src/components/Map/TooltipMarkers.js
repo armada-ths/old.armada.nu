@@ -2,6 +2,7 @@ import React from "react";
 import { Marker } from "react-leaflet";
 import L from "leaflet";
 import "./index.scss";
+import clothesHanger from "./CustomIcons/clothes-hanger.svg";
 
 const markerData = {
   entrance: {
@@ -64,6 +65,16 @@ const markerData = {
     className: "label",
     html: '<div class="label"><b>TV-rummet</b></div>',
   },
+  toilet: {
+    className: "label labe-small",
+    html: '<div class="label label-small"><b>WC</b></div>',
+  },
+  wardrobe: {
+    className: "customIcon",
+    html: `<div><img src="${clothesHanger}"/></div>`,
+    iconSize: [1, 1],
+    iconAnchor: [20, 20],
+  },
 };
 
 const markersByFloor = {
@@ -88,6 +99,11 @@ const markersByFloor = {
   "Nymble - 1st Floor": [
     { position: [150, 107], icon: markerData.entrance },
     { position: [281, 830.5], icon: markerData.entrance },
+    {
+      position: [182.13078259541408, 288],
+      icon: markerData.wardrobe,
+      pane: "staticMarkers",
+    },
   ],
   "Library Main": [
     { position: [0, 249.5], icon: markerData.entrance },
@@ -105,6 +121,7 @@ const TooltipMarkers = ({ floor }) => {
           key={index}
           position={marker.position}
           icon={L.divIcon(marker.icon)}
+          pane="markerPane"
         />
       ))}
     </>

@@ -57,7 +57,7 @@ const HomepageInfo = () => {
                     <a id='a1' href='/about'>
                         <button id='b1'>Read More</button>
                     </a>
-                    <a id='a2' href='/exhibitors'>
+                    <a id='a2' href='/map'>
                         <button id='b2'>Explore the Exhibitors</button>
                     </a>
                     <a id='a3' href='/for-companies'>

@@ -57,7 +57,7 @@ export function ExhibitorMapBox({ ex, handlePolygonSelect }: Props) {
       key={ex.id}
       positions={ex.map_coordinates}
       color={"#ffffff"}
-      fillColor={"#bcf6bc"}
+      fillColor={"#2986cc"}
       weight={1}
       opacity={1}
       eventHandlers={{

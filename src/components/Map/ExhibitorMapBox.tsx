@@ -15,11 +15,16 @@ function customIcon(exhibitor: Exhibitor) {
       <div
         style="display: flex; justify-content: center; align-items: center; background-color: transparent;"
       >
-        <img
-          loading="lazy"
-          style="width: 80px; object-fit: contain; border-radius: 5px;"
-          src="${exhibitor.logo_squared ?? no_image}"
-        />
+      ${
+        exhibitor.logo_squared || exhibitor.logo_freesize
+          ? `<img
+             loading="lazy"
+             style="width: 80px; object-fit: contain; border-radius: 5px;"
+             src="${exhibitor.logo_squared ?? exhibitor.logo_freesize}"
+             alt="${exhibitor.name}"
+           />`
+          : `<p style="object-fit: contain;">${exhibitor.name}</p>`
+      }
       </div>
     `,
   });

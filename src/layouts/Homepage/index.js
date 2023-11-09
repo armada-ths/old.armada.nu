@@ -54,6 +54,9 @@ const HomepageInfo = () => {
                     November!
                 </p>
                 <div id='buttons'>
+                    <a id='a1' href='/at-the-fair'>
+                        <button id='b1'>At the Fair</button>
+                    </a>
                     <a id='a1' href='/about'>
                         <button id='b1'>Read More</button>
                     </a>

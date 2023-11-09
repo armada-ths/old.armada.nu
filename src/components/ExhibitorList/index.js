@@ -703,7 +703,7 @@ export class ExhibitorList extends React.Component {
                                               ))
                                         : null}
                                 </div>
-                                <div className='climate-compensation'>
+                                {/*<div className='climate-compensation'>
                                     {exhibitor.climate_compensation ? (
                                         <i style={{ fontSize: 'large' }}>
                                             <span role='img' aria-label='leaf'>
@@ -717,7 +717,7 @@ export class ExhibitorList extends React.Component {
                                             </span>
                                         </i>
                                     ) : null}
-                                </div>
+                                    </div>*/}
                             </div>
 
                             <div className='job-location-container'>
@@ -1126,6 +1126,7 @@ export class ExhibitorList extends React.Component {
                                     aria-label='search'
                                     value={this.state.search}
                                     onChange={this.updateSearch.bind(this)}
+                                    className='main-search-box'
                                 />
                                 {/* <button id='search-button'>Search</button> */}
                                 <div
@@ -1187,7 +1188,7 @@ export class ExhibitorList extends React.Component {
                                     closeMenuOnSelect={false}
                                     blurInputOnSelect={false}
                                     isMulti
-                                    isSearchable
+                                    isSearchable={false}
                                     name='Sector filter'
                                     placeholder='All Industries'
                                     options={this.state.sectors}
@@ -1196,7 +1197,7 @@ export class ExhibitorList extends React.Component {
                                     classNamePrefix='select'
                                 />
 
-                                <Select
+                                {/*<Select
                                     closeMenuOnSelect={false}
                                     blurInputOnSelect={false}
                                     isMulti
@@ -1209,7 +1210,7 @@ export class ExhibitorList extends React.Component {
                                     }
                                     className='basic-multi-select'
                                     classNamePrefix='select'
-                                />
+                                /> Disabled filter for now since no companies have filled in /Nima*/}
 
                                 <Select
                                     closeMenuOnSelect={false}

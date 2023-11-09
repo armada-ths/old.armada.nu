@@ -388,7 +388,7 @@ export const MapUtil = () => {
               {/* For more info about marker cluster options: https://akursat.gitbook.io/marker-cluster/api */}
               <MarkerClusterGroup
                 chunkedLoading
-                showCoverageOnHover
+                showCoverageOnHover={false}
                 spiderLegPolylineOptions={{
                   opacity: 0,
                 }}

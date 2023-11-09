@@ -180,9 +180,12 @@
         border: solid;
         border-width: thin;
         border-radius: 4px;
-        padding: 0.5em;
+        //padding: 0.5em;
         // width: 90%;
         font-size: 18px;
+    }
+    .main-search-box {
+        padding: 0.5em;
     }
     input:focus {
         outline: 0;

@@ -23,7 +23,7 @@ function customIcon(exhibitor: Exhibitor) {
              src="${exhibitor.logo_squared ?? exhibitor.logo_freesize}"
              alt="${exhibitor.name}"
            />`
-          : `<p style="object-fit: contain;">${exhibitor.name}</p>`
+          : `<p style="font-size: 10px; object-fit: contain;">${exhibitor.name}</p>`
       }
       </div>
     `,

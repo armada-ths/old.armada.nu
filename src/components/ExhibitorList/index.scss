@@ -401,6 +401,11 @@
     transform: border 800ms linear;
 }
 
+.silver-exhib:hover {
+    border: 2px solid #d1d0d0;
+    transform: border 800ms linear;
+}
+
 .exhibitor-feed .exhibitor-box.green::before,
 .exhibitor-feed .exhibitor-box.purple::before,
 .exhibitor-feed .shine-loop::before {

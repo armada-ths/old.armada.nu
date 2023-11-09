@@ -1360,6 +1360,10 @@ const ExhibitorItem = props => {
         props.exhibitor.tier && props.exhibitor.tier === '3'
             ? ' gold-exhib'
             : ''
+    classname +=
+        props.exhibitor.tier && props.exhibitor.tier === '2'
+            ? ' silver-exhib'
+            : ''
     return (
         <div
             id={props.exhibitor.id}
@@ -1413,6 +1417,14 @@ const ExhibitorItem = props => {
                     <img
                         alt='Gold exhibitor'
                         src='/assets/TierListCard/armada_logo_text_gold.png'
+                    />
+                </div>
+            ) : null}
+            {props.exhibitor.tier && props.exhibitor.tier === '2' ? (
+                <div className='corner-special corner-gold'>
+                    <img
+                        alt='Silver exhibitor'
+                        src='/assets/TierListCard/armada_logo_text_silver.png'
                     />
                 </div>
             ) : null}

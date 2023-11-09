@@ -5,11 +5,12 @@ export function PlaceGoldFirst(exhibitors) {
     const goldExhibs = exhibitors.filter(
         ex => ex.tier && parseInt(ex.tier) === 3
     )
-    const nonGolds = exhibitors.filter(
-        ex => ex.tier == null || parseInt(ex.tier) !== 3
+    const silver = exhibitors.filter(ex => ex.tier && parseInt(ex.tier) === 2)
+    const bronze = exhibitors.filter(
+        ex => ex.tier == null || parseInt(ex.tier) === 1
     )
 
-    const returnValue = [...goldExhibs, ...nonGolds]
+    const returnValue = [...goldExhibs, ...silver, ...bronze]
 
     return returnValue
 }

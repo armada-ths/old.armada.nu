@@ -1,46 +1,51 @@
-@import '../../../styles/_variables';
-@import '../../../styles/_fonts';
+@import "../../../styles/_variables";
+@import "../../../styles/_fonts";
 
 .buildingSwitchContainer {
-    z-index: 100;
-    position: fixed;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: flex-end;
-    height: auto;
-    top: 2%;
-    left: 60px;
-    cursor: default;
-    @keyframes select {
-        from {
-            background-color: lightgray;
-            scale: 1;
-        }
-        to {
-            background-color: $melon;
-            scale: 1.05;
-        }
+  justify-self: center;
+  align-self: flex-end;
+
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  cursor: pointer;
+  @keyframes select {
+    from {
+      background-color: #eee;
+      scale: 1;
     }
-    .buildingSwitch {
-        background-color: lightgray;
-        padding: 6px;
-        box-shadow: 2px 2px rgba(0, 0, 0, 0.414);
+    to {
+      background-color: $melon;
+      scale: 1.05;
     }
-    .buildingSwitch:hover {
-        background-color: #35ffbc;
-    }
-    #nymble {
-        border-radius: 10px 0px 0px 10px;
-        padding-right: 20px;
-    }
-    #library {
-        border-radius: 0px 10px 10px 0px;
-        padding-left: 20px;
-    }
-    .activeBuilding {
-        transform: scale(1.05);
-        animation: select 0.5s ease-in-out 1 normal;
-        background-color: $melon;
-        font-weight: bold;
-    }
+  }
+  .buildingSwitch {
+    background-color: #eee;
+    padding: 7px 12px;
+    border-color: #ccc;
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+
+  #nymble {
+    border-radius: 10px 0px 0px 10px;
+    border-left-width: 2px;
+    border-left-style: solid;
+  }
+  #library {
+    border-radius: 0px 10px 10px 0px;
+    border-right-width: 2px;
+    border-right-style: solid;
+  }
+  .activeBuilding {
+    animation: select 0.5s ease-in-out 1 normal;
+    background-color: $melon;
+    color: white;
+    font-weight: bold;
+    border-color: darken($melon, 5%);
+  }
 }

@@ -17,29 +17,56 @@ Removed the Page component as of Sep 2023.
 
 const HomepageInfo = () => {
     return (
-        <div className='homepageInfoBox'>
-            <p id='title'>THS ARMADA 2023</p>
-            <p id='subheader'>
-                The largest career fair in Scandinavia is back for 2023
-            </p>
-            <p id='text'>
-                Hello and welcome to THS Armada 2023! This year, the THS Armada
-                fair is back and bringing exhibitors and students closer
-                together. Come by to see our all-new exhibitions, booths and
-                presentations. We are bringing back the fair in style, with a
-                new colourful array of exhibitors in Nymble over two days. Make
-                sure not to miss anything! See you in November!
-            </p>
-            <div id='buttons'>
-                <a id='a1' href='/about'>
-                    <button id='b1'>Read More</button>
+        <div>
+            <div
+                style={{
+                    border: '4px dashed #00d790',
+                    marginTop: '10px',
+                    padding: '10px',
+                }}
+                className='homepageInfoBox'
+            >
+                <p id='title'>IT'S FINALLY HERE</p>
+                <p id='subheader'>
+                    The exhibitor map with all the booth placements and
+                    exhibitor catalogue is now live!
+                </p>
+                <p id='text'>
+                    Check out all the exhibitors and the companies you match
+                    best with in the brand new Armada Map
+                </p>
+                <a href='/map'>
+                    <button>Check It Out</button>
                 </a>
-                <a id='a2' href='/exhibitors'>
-                    <button id='b2'>Explore the Exhibitors</button>
-                </a>
-                <a id='a3' href='/for-companies'>
-                    <button id='b3'>Partner with us</button>
-                </a>
+            </div>
+            <div className='homepageInfoBox'>
+                <p id='title'>THS ARMADA 2023</p>
+                <p id='subheader'>
+                    The largest career fair in Scandinavia is back for 2023
+                </p>
+                <p id='text'>
+                    Hello and welcome to THS Armada 2023! This year, the THS
+                    Armada fair is back and bringing exhibitors and students
+                    closer together. Come by to see our all-new exhibitions,
+                    booths and presentations. We are bringing back the fair in
+                    style, with a new colourful array of exhibitors in Nymble
+                    over two days. Make sure not to miss anything! See you in
+                    November!
+                </p>
+                <div id='buttons'>
+                    <a id='a1' href='/at-the-fair'>
+                        <button id='b1'>At the Fair</button>
+                    </a>
+                    <a id='a1' href='/about'>
+                        <button id='b1'>Read More</button>
+                    </a>
+                    <a id='a2' href='/map'>
+                        <button id='b2'>Explore the Exhibitors</button>
+                    </a>
+                    <a id='a3' href='/for-companies'>
+                        <button id='b3'>Partner with us</button>
+                    </a>
+                </div>
             </div>
         </div>
     )

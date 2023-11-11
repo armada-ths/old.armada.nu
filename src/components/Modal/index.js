@@ -1,6 +1,7 @@
 import React from 'react'
 // import { ReactPageClick } from 'react-page-click' Removing this
 import './index.scss'
+import { GrClose } from 'react-icons/gr'
 
 const Modal = ({ onClose, ...rest }) => (
     <div className='popupcontainer'>
@@ -8,9 +9,8 @@ const Modal = ({ onClose, ...rest }) => (
             <div className='shadecontent'></div>
         </div> */}
         <div className='popup'>
-            <div role='presentation' className='cross' onClick={onClose}>
-                X
-            </div>
+            <GrClose class='cross' onClick={onClose} />
+
             <div className='modalcontent' {...rest} />
         </div>
     </div>

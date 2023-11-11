@@ -33,7 +33,7 @@
   //margin-top: 56px;
 }
 .mapBoxFloatingContainer {
-  bottom: 10px;
+  bottom: 10%;
   width: 100%;
   position: absolute;
   display: grid;
@@ -57,6 +57,7 @@
 }
 
 .homeIcon {
+  color: blue;
   z-index: 100;
   position: fixed;
   display: inline;
@@ -64,7 +65,7 @@
     width: 40px;
     height: 40px;
   }
-  right: 10px;
+  left: 10px;
   top: 20px;
 }
 

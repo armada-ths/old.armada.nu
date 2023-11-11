@@ -41,13 +41,21 @@
 .cross {
     display: inline;
     z-index: 1000;
-    margin: 1em 1em 0em 0.5em;
+    margin: 0.4em 0.4em 0em 0.4em;
     color: $melon;
-    font-size: xx-large;
+    width: 40px;
+    height: 40px;
+    fill: $melon;
+    path {
+        stroke: $melon;
+    }
 }
 .cross:hover {
     cursor: pointer;
     color: red;
+    path {
+        stroke: red;
+    }
 }
 
 .modalcontent {

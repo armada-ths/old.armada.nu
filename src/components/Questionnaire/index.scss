@@ -1,16 +1,18 @@
-.questionnaire-container{
+.questionnaire-container {
     position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
-    background-color: white;
-    border: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background-color: rgb(251, 248, 248);
     border-color: black;
-    border-radius: 40px;
-    box-shadow: 1rem gray;
+    border-radius: 50px;
+    box-shadow: 1rem rgb(240, 236, 236);
     z-index: 100;
-    // padding: 10%;
+    /*  overflow: scroll;
+    scrollbar-width: thin; */
+    //padding: 10%;
 }
 
 .button-open-questionnaire {
@@ -19,4 +21,55 @@
     right: 10px;
     float: right;
 }
- 
+
+.root-container {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+}
+
+.question-content {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    border-left: 4px solid #18a689;
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    column-count: 2; /* Set the number of columns */
+    column-gap: 20px; /* Adjust the gap between columns */
+}
+
+.dropdown-button {
+    width: 100%;
+}
+
+.input-button {
+    width: 100%;
+}
+
+.dropdown-eraser {
+    display: none;
+}
+
+.navigation-button {
+    float: right;
+    margin-left: 10px; /* Add some margin between the buttons if needed */
+}
+
+.modal-close-btn {
+    //background-color: #f5f3f3; /* Red background color, you can change this */
+    position: fixed;
+    top: 5%;
+    left: 88%;
+    width: 0%;
+    color: #fff; /* White text color */
+    font-size: 20px;
+    z-index: 100;
+}
+/*sd-dropdown_chevron-button  
+sd-btn sd-navigation__next-btn
+sd-input sd-dropdown
+*/

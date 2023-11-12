@@ -127,7 +127,7 @@ function Internal() {
 }
 
 function ZoomToComp({ mapRef, coordinates }) {
-  mapRef.current?.flyTo(findPolygonCenter(coordinates), 2); //higher second argument -> more zoom
+  mapRef.current?.flyTo(findPolygonCenter(coordinates), 3); //higher second argument -> more zoom
 }
 
 function findMiddle(coordinates) {
@@ -395,6 +395,10 @@ export const MapUtil = () => {
                 spiderLegPolylineOptions={{
                   opacity: 0,
                 }}
+                maxClusterRadius={60}
+                disableClusteringAtZoom={4}
+                zoomToBoundsOnClick={true}
+                spiderfyOnMaxZoom={false}
               >
                 <ExhibitorRendering
                   fairLocation={fairLocation}

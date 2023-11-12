@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Model } from 'survey-core'
-import { PopupSurvey } from 'survey-react-ui'
+import { Survey } from 'survey-react-ui'
 import Fuse from 'fuse.js' // Import the Fuse.js library
+import Modal from 'react-modal'
 import 'survey-core/defaultV2.min.css'
 import './index.scss'
 
@@ -175,34 +176,63 @@ const Questionnaire = props => {
 
     const fuse = new Fuse(programsAndIndustries, options) //instance for fuzzy searching
 
-    //TODO: this matches programs to industries.
     function matchedIndustries(program) {
         const results = fuse.search(program)
         return results.map(result => result.item.industries).flat()
     }
 
     const surveyJson = {
-        elements: [
+        pages: [
             {
-                name: 'Programme',
-                title: 'What programme do you study?',
-                type: 'dropdown',
-                choices: majorList,
-                isRequired: true,
+                elements: [
+                    {
+                        name: 'Programme',
+                        title: 'What programme do you study?',
+                        type: 'dropdown',
+                        choices: majorList,
+                    },
+                ],
             },
             {
-                name: 'Job Type',
-                title: 'What types of jobs are you looking for?',
-                type: 'checkbox',
-                choices: jobTypeList,
-                isRequired: true,
+                elements: [
+                    {
+                        name: 'Job Type',
+                        title: 'What types of job are you looking for?',
+                        type: 'checkbox',
+                        choices: jobTypeList,
+                    },
+                ],
             },
         ],
         completeText: 'Continue',
-        completedHtml: '<h3>Here are your matches</h3>',
     }
 
-    //TODO: this is what happens after submitting survey. It stores the answers and search results in session storage.
+    const [modalOpen, setModalOpen] = useState(true)
+
+    const openModal = () => {
+        setModalOpen(true)
+    }
+
+    const closeModal = () => {
+        setModalOpen(false)
+    }
+
+    const customCss = {
+        root: 'root-container',
+        question: {
+            content: 'question-content',
+        },
+        dropdown: {
+            control: 'dropdown-button',
+            chevronButton: 'dropdown-button',
+            cleanButton: 'dropdown-eraser',
+        },
+        /*  navigation: {
+            controls: 'navigation-button',
+            next: 'navigation button',
+        }, */
+    }
+
     function saveSurveyData(survey) {
         const surveyData = survey.data
         const matches = matchedIndustries(surveyData.Programme)
@@ -214,18 +244,28 @@ const Questionnaire = props => {
     }
 
     const survey = new Model(surveyJson)
-    //survey.width = '50%'
-    survey.title = 'Want to find companies that interest you?'
+    survey.showCompletedPage = false
+    survey.css = customCss
     survey.onComplete.add(saveSurveyData)
 
     return (
         <div>
-            <PopupSurvey
-                model={survey}
-                isExpanded={false}
-                closeOnCompleteTimeout={3} //change value to 0 to close pop up immediately after clicking on "continue"
-                allowClose
-            />
+            <button className='button-open-questionnaire' onClick={openModal}>
+                Open Questionnaire
+            </button>
+            {
+                <Modal
+                    className='questionnaire-container'
+                    isOpen={modalOpen}
+                    onRequestClose={closeModal}
+                    contentLabel='Questionnaire Modal'
+                >
+                    <button className='modal-close-btn' onClick={closeModal}>
+                        X
+                    </button>
+                    <Survey model={survey} />
+                </Modal>
+            }
         </div>
     )
 }

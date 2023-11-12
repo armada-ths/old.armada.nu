@@ -7,10 +7,28 @@
     font-size: 22px;
     cursor: pointer;
 }
-
 #filter-button:hover {
     color: $melon;
 }
+
+#expand-button {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    width: 10%;
+    height: 10%;
+    rotate: 180deg;
+}
+#expand-button:hover {
+    color: $melon;
+}
+
+.expand-icon {
+    width: 10%;
+    height: 10%;
+}
+
 .filter-icon {
     margin-right: 3px;
 }
@@ -80,7 +98,7 @@
     left: 0%;
     width: 100%;
     padding-top: 1em;
-    height: 50vh;
+    height: 40vh;
     overflow-y: auto;
     background-color: white;
     box-sizing: border-box;

@@ -1086,14 +1086,17 @@ export class ExhibitorList extends React.Component {
         function toggleListExpand() {
             const expandButton = document.getElementById('expand-button')
             const exhibitors = document.getElementsByClassName('exhibitors')[0]
+            //const popupcontainer =document.getElementsByClassName('popupcontainer')[0]
             if (expandButton.style.rotate == '180deg') {
                 expandButton.style.rotate = '0deg'
                 exhibitors.style.top = '10%'
                 exhibitors.style.height = '90vh'
+                //popupcontainer.style.height = '90%'
             } else {
                 expandButton.style.rotate = '180deg'
                 exhibitors.style.top = '60%'
                 exhibitors.style.height = '40vh'
+                //popupcontainer.style.height = '50%'
             }
         }
 

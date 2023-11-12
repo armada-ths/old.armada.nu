@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Model } from 'survey-core'
 import { Survey } from 'survey-react-ui'
-import Fuse from 'fuse.js' // Import the Fuse.js library
+import Fuse from 'fuse.js'
 import Modal from 'react-modal'
 import 'survey-core/defaultV2.min.css'
 import './index.scss'
@@ -253,9 +253,9 @@ const Questionnaire = props => {
             <button className='button-open-questionnaire' onClick={openModal}>
                 Open Questionnaire
             </button>
-            {
+
+            <div className='questionnaire-container'>
                 <Modal
-                    className='questionnaire-container'
                     isOpen={modalOpen}
                     onRequestClose={closeModal}
                     contentLabel='Questionnaire Modal'
@@ -265,7 +265,7 @@ const Questionnaire = props => {
                     </button>
                     <Survey model={survey} />
                 </Modal>
-            }
+            </div>
         </div>
     )
 }

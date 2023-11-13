@@ -7,7 +7,9 @@ import prideLogo from '../../../static/assets/images/header-images/prideLogo.png
 import useWindowSize from '../../hooks/useWindowSize'
 import todaysDate from '../../templates/todaysDate'
 import axios from 'axios'
-
+import SquareButton from '@/layouts/Homepage/SquareButton'
+import Newsfeed from '../Newsfeed'
+import News from '@/layouts/News'
 const Jumbotron = props => {
     const DATE_PRIDE_WEEK_START = new Date('June 1, 2023 00:00:01')
     const DATE_PRIDE_WEEK_END = new Date('June 30, 2023 00:00:01')
@@ -17,6 +19,7 @@ const Jumbotron = props => {
     const windowSize = useWindowSize()
     const [onMobile, setOnMobile] = useState(windowSize.width < 850)
     const [video, setVideo] = useState()
+    const [videoLoaded, setVideoLoaded] = useState(false) //track if video is loaded (only for desktop)
     const [fairDate, setFairDate] = useState('')
 
     useEffect(() => {
@@ -26,7 +29,12 @@ const Jumbotron = props => {
     useEffect(() => {
         setVideo(
             props.location === '/' && !onMobile ? (
-                <video autoPlay loop muted>
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    onLoadedData={() => setVideoLoaded(true)}
+                >
                     <source src={Video} type='video/mp4' />
                 </video>
             ) : null
@@ -70,12 +78,13 @@ const Jumbotron = props => {
             })
     }, [])
     const memoizedFairDate = useMemo(() => fairDate, [fairDate])
+    const memoizedVideo = useMemo(() => video, [video])
 
     //TODO Request API endpoint from ais for fair date
     // classname = fixed means homepage /Nima boi
     return (
         <div id='header'>
-            <div className={`logo-container ${video ? 'fixed' : ''}`}>
+            <div className={`logo-container ${memoizedVideo ? 'fixed' : ''}`}>
                 <a
                     href='/'
                     style={{
@@ -92,10 +101,22 @@ const Jumbotron = props => {
                     />
                 </a>
                 <p className='logo-date'>{memoizedFairDate}</p>
-                {video ? <Countdown /> : <></>}
+                <div className='buttonsJumbotron'>
+                    <SquareButton
+                        idNr={'1'}
+                        hrefVal={'/map'}
+                        textVal={'Explore the Exhibitors'}
+                    />
+                    <SquareButton
+                        idNr={'3'}
+                        hrefVal={'/for-companies'}
+                        textVal={'For Companies'}
+                    />
+                </div>
+                {memoizedVideo && videoLoaded ? <Countdown /> : <></>}
             </div>
-            <div className={video ? 'header-home' : 'header-image'}>
-                {video ?? <img alt='' src={props.image} />}
+            <div className={memoizedVideo ? 'header-home' : 'header-image'}>
+                {memoizedVideo ?? <img alt='' src={props.image} />}
             </div>
         </div>
     )

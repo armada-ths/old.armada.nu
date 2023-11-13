@@ -1,0 +1,39 @@
+@import '../../../styles/variables';
+#buttons {
+    button {
+        display: inline-flex;
+        padding: 8px 36px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 0;
+        border: 4px solid #00d790;
+    }
+    #b3 {
+        background: #fff;
+        color: $melon;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #buttons {
+        #a1 {
+            grid-area: b1;
+            margin-right: 3vw;
+        }
+        #a2 {
+            grid-area: b2;
+            margin-left: 3vw;
+        }
+        #a3 {
+            grid-area: b3;
+            width: 100%;
+            #b3 {
+                width: 60%;
+            }
+        }
+        button {
+            font-size: 2.5vw;
+        }
+    }
+}

@@ -101,18 +101,22 @@ const Jumbotron = props => {
                     />
                 </a>
                 <p className='logo-date'>{memoizedFairDate}</p>
-                <div className='buttonsJumbotron'>
-                    <SquareButton
-                        idNr={'1'}
-                        hrefVal={'/map'}
-                        textVal={'Explore the Exhibitors'}
-                    />
-                    <SquareButton
-                        idNr={'3'}
-                        hrefVal={'/for-companies'}
-                        textVal={'For Companies'}
-                    />
-                </div>
+                {memoizedVideo ? (
+                    <div className='buttonsJumbotron'>
+                        <SquareButton
+                            idNr={'1'}
+                            hrefVal={'/map'}
+                            textVal={'Explore the Exhibitors'}
+                        />
+                        <SquareButton
+                            idNr={'3'}
+                            hrefVal={'/for-companies'}
+                            textVal={'For Companies'}
+                        />
+                    </div>
+                ) : (
+                    <></>
+                )}
                 {memoizedVideo && videoLoaded ? <Countdown /> : <></>}
             </div>
             <div className={memoizedVideo ? 'header-home' : 'header-image'}>

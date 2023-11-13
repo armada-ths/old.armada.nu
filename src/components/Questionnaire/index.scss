@@ -1,18 +1,20 @@
 .questionnaire-container {
     position: absolute;
-    top: 50%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
+    width: 0%;
+    height: 0%;
     background-color: rgb(251, 248, 248);
     border-color: black;
     border-radius: 50px;
     box-shadow: 1rem rgb(240, 236, 236);
-    z-index: 10000000;
+    z-index: 1000;
     /*  overflow: scroll;
     scrollbar-width: thin; */
     //padding: 10%;
+    .questionnaire-modal {
+    }
 }
 
 .button-open-questionnaire {

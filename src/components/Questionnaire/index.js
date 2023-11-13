@@ -259,6 +259,9 @@ const Questionnaire = props => {
                     isOpen={modalOpen}
                     onRequestClose={closeModal}
                     contentLabel='Questionnaire Modal'
+                    className='questionnaire-modal'
+                    shouldCloseOnOverlayClick={true}
+                    style={{ overlay: {}, content: {} }}
                 >
                     <button className='modal-close-btn' onClick={closeModal}>
                         X

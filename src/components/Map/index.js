@@ -308,7 +308,7 @@ export const MapUtil = () => {
     "Industry Design": possibleColors[10],
   };*/
   const [showButtons, setShowButtons] = useState(false);
-
+  const [recommendedExhibitors, setRecommendedExhibitors] = useState([]);
   return (
     <div
       style={{
@@ -318,7 +318,11 @@ export const MapUtil = () => {
         overflowY: "hidden",
       }}
     >
-      <Questionnaire setShowButtons={setShowButtons} />
+      <Questionnaire
+        setShowButtons={setShowButtons}
+        setRecommendedExhibitors={setRecommendedExhibitors}
+        exhibitorsMap={exhibitorsMap}
+      />
       <div style={{ overflowY: "hidden" }}>
         <div className="mapBox">
           <div className="mapBoxFloatingContainer">
@@ -451,6 +455,7 @@ export const MapUtil = () => {
             </div> */}
         <ExtendedZoom.Provider value={setFocusCoordinate}>
           <ExhibitorList
+            recommendedExhibitors={recommendedExhibitors}
             fairInputLocation={fairLocation}
             fairInputExhibitors={exhibitorsMap}
             showCV={true}

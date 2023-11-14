@@ -37,7 +37,6 @@ import { ExhibitorRendering } from "./ExhibitorRendering";
 import { findPolygonCenter } from "@/components/Map/find_polygon_center";
 import { PlaceGoldFirst } from "@/templates/placeGoldFirst";
 import armada_logo from "../../../static/assets/armada_logo_text_gray_noText.png";
-import Questionnaire from "../Questionnaire";
 
 export const ExtendedZoom = createContext(null);
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -317,7 +316,6 @@ export const MapUtil = () => {
         overflowY: "hidden",
       }}
     >
-      <Questionnaire />
       <div style={{ overflowY: "hidden" }}>
         <div className="mapBox">
           <div className="mapBoxFloatingContainer">

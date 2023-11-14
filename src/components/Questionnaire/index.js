@@ -7,6 +7,7 @@ import './index.scss'
 import { surveyLocalization } from 'survey-core'
 import './pop.scss'
 import Fuse from 'fuse.js'
+import { GrClose } from 'react-icons/gr'
 
 const Questionnaire = ({
     setShowButtons,
@@ -328,9 +329,10 @@ const Questionnaire = ({
                     shouldCloseOnOverlayClick={true}
                     style={{ overlay: {}, content: {} }}
                 >
-                    <button className='modal-close-btn' onClick={closeModal}>
-                        X
-                    </button>
+                    <GrClose
+                        class='cross crossQuestionnaire'
+                        onClick={closeModal}
+                    />
                     <Survey model={survey} />
                 </Modal>
             </div>

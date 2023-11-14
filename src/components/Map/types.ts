@@ -9,4 +9,8 @@ export interface Exhibitor {
   industries: Array<{
     name: string;
   }>;
+  employments: Array<{
+    id: string;
+    name: string;
+  }>;
 }

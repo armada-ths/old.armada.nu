@@ -661,6 +661,7 @@
     }
 }
 // flipped phone
+
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     .exhibitors .checkbox-container {
         height: 2em;
@@ -721,12 +722,17 @@
     }
 }
 
-.arrow-container {
+.arrow-flex-container {
+    display: flex;
     width: 100%;
-    padding: 0.5rem;
-    background-color: #00d790;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    justify-content: center;
+    .arrow-container {
+        width: 100%;
+        padding: 0.5rem;
+        background-color: #00d790;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
 }
 
 .arrow-container * {
@@ -745,9 +751,4 @@
 .scrollable {
     overflow-y: auto;
     height: 100%;
-}
-
-.exhibitor-info-text {
-    padding-left: 0rem;
-    text-align: center;
 }

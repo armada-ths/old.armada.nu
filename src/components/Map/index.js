@@ -35,7 +35,6 @@ import TooltipMarkers from "./TooltipMarkers";
 import { NewCoordinateEditor } from "./NewCoordinateEditor";
 import { ExhibitorRendering } from "./ExhibitorRendering";
 import { findPolygonCenter } from "@/components/Map/find_polygon_center";
-import { PlaceGoldFirst } from "@/templates/placeGoldFirst";
 import armada_logo from "../../../static/assets/armada_logo_text_gray_noText.png";
 
 export const ExtendedZoom = createContext(null);
@@ -306,7 +305,8 @@ export const MapUtil = () => {
     "Interaction Design": possibleColors[5],
     "Industry Design": possibleColors[10],
   };*/
-
+  const expandButton = document.getElementById("expand-button");
+  const exhibitors = document.getElementsByClassName("exhibitors")[0];
   return (
     <div
       style={{
@@ -322,8 +322,6 @@ export const MapUtil = () => {
           setExpansionList
           onClick={() => {
             //TODO: This code needs to be re-formatted. Has a high dependency (duplicate) with /src/components/ExhibitorList --> toggleListExpand() function in line 925
-            const expandButton = document.getElementById("expand-button");
-            const exhibitors = document.getElementsByClassName("exhibitors")[0];
             if (
               window
                 .getComputedStyle(expandButton)

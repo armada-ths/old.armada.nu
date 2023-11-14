@@ -1168,7 +1168,7 @@ export class ExhibitorList extends React.Component {
                     {this.state.showModal
                         ? this.displayExhibitor(exhibitorToDisplay)
                         : null}
-                    <div>
+                    <div className='arrow-flex-container'>
                         <div
                             className='arrow-container'
                             onClick={() => this.toggleListExpand()}
@@ -1361,7 +1361,6 @@ export class ExhibitorList extends React.Component {
                                 ></div>
                             ) : null}
                         </div>
-                        <p className='exhibitor-info-text'>Hej!</p>
 
                         {/*<div className='supercontainer'>
                         <p className='matching_link'>

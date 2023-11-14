@@ -4,8 +4,6 @@ import { Survey } from 'survey-react-ui'
 import Modal from 'react-modal'
 import 'survey-core/defaultV2.min.css'
 import './index.scss'
-import { surveyLocalization } from 'survey-core'
-import './pop.scss'
 import Fuse from 'fuse.js'
 import { GrClose } from 'react-icons/gr'
 
@@ -219,9 +217,9 @@ const Questionnaire = ({
     //     const results = fuse.search(program)
     //     return results.map(result => result.item.industries).flat()
     // }
-    console.log('hasdahsd')
 
     const surveyJson = {
+        title: 'Find recommended exhibitors for you',
         pages: [
             {
                 elements: [
@@ -242,6 +240,7 @@ const Questionnaire = ({
                         type: 'checkbox',
                         choices: jobTypeList,
                         isRequired: true,
+                        colCount: 2,
                     },
                 ],
             },
@@ -266,22 +265,6 @@ const Questionnaire = ({
         setShowButtons(true)
     }
 
-    const customCss = {
-        root: 'root-container',
-        question: {
-            content: 'question-content',
-        },
-        dropdown: {
-            control: 'dropdown-button',
-            chevronButton: 'dropdown-button',
-            cleanButton: 'dropdown-eraser',
-        },
-        /*  navigation: {
-            controls: 'navigation-button',
-            next: 'navigation button',
-        }, */
-    }
-
     function saveSurveyData(survey) {
         const data = survey.data
         const data_json = JSON.stringify(data)
@@ -299,22 +282,20 @@ const Questionnaire = ({
         )
     }
 
+    //custom css from index.scss applied on questionnaire component.
+    const customCss = {
+        root: 'root-container',
+        question: {
+            content: 'question-content',
+        },
+    }
+
     const survey = new Model(surveyJson)
-    survey.completeText = 'Find'
+    survey.completeText = 'Continue'
     survey.showCompletedPage = false
     survey.onComplete.add(saveSurveyData)
     survey.css = customCss
-    // console.log(survey)
 
-    /* survey.addNavigationItem({
-        id: 'sv-nav-clear-page',
-        title: 'Close',
-        action: () => {
-            closeModal()
-        },
-        css: 'nav-button',
-        innerCss: 'sd-btn nav-input',
-    }) */
     return (
         <div>
             <button className='button-open-questionnaire' onClick={openModal}>

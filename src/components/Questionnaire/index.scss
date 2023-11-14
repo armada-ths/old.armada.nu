@@ -49,38 +49,14 @@
     padding: 20px;
     margin: 10px 0;
     width: 100%;
-    /* column-count: 2; 
-    column-gap: 20px; */
-}
-
-.dropdown-button {
-    width: 100%;
-}
-
-.input-button {
-    width: 100%;
-}
-
-.dropdown-eraser {
-    display: none;
-}
-
-.navigation-button {
-    float: right;
-    margin-left: 10px; /* Add some margin between the buttons if needed */
 }
 
 .modal-close-btn {
-    //background-color: #f5f3f3; /* Red background color, you can change this */
     position: fixed;
     top: 5%;
     left: 88%;
     width: 0%;
-    color: #fff; /* White text color */
+    color: #fff;
     font-size: 20px;
     z-index: 100;
 }
-/*sd-dropdown_chevron-button  
-sd-btn sd-navigation__next-btn
-sd-input sd-dropdown
-*/

@@ -34,19 +34,27 @@ const Questionnaire = ({
     ) as SurveryData | null
 
     const majorList = [
-        'Biomedical Engineering',
+        'Architecture',
+        'Biotechnology',
+        'Building Engineering',
         'Chemical Engineering',
-        'Civil Engineering',
-        'Computer Science & Engineering',
+        'Computer Science',
         'Electrical Engineering',
-        'Engineering Mathematics & Physics',
-        'Environmental Engineering',
+        'Engineering and Education',
+        'Environmental & Sustainability Engineering',
         'Industrial Engineering',
+        'Industrial Economics',
         'Information Technology',
+        'Technical Mathematics',
+        'Material design',
         'Mechanical Engineering',
         'Media Technology',
         'Medical Engineering',
         'Material & Product Design',
+        'Physics',
+        'Vehicle Engineering',
+        'Urban Management Engineering',
+        'Open',
         'Other',
     ]
 

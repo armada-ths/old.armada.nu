@@ -207,7 +207,7 @@ const Questionnaire = props => {
         completeText: 'Continue',
     }
 
-    const [modalOpen, setModalOpen] = useState(true)
+    const [modalOpen, setModalOpen] = useState(false)
 
     const openModal = () => {
         setModalOpen(true)

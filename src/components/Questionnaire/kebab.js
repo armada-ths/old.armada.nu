@@ -9,11 +9,7 @@ import { GrClose } from 'react-icons/gr'
 import { window } from 'browser-monads'
 import { RiSurveyLine } from 'react-icons/ri'
 
-const Questionnaire = ({
-    setShowButtons,
-    setRecommendedExhibitors,
-    exhibitorsMap,
-}) => {
+const kebab = ({ setShowButtons, setRecommendedExhibitors, exhibitorsMap }) => {
     const majorList = [
         'Architecture',
         'Biotechnology',
@@ -343,4 +339,4 @@ const Questionnaire = ({
     )
 }
 
-export default Questionnaire
+export default kebab

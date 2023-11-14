@@ -3,7 +3,6 @@ import { Model } from 'survey-core'
 import Modal from 'react-modal'
 import 'survey-core/defaultV2.min.css'
 import './index.scss'
-import './pop.scss'
 import Fuse from 'fuse.js'
 import { Dropdown } from 'primereact/dropdown'
 import { MultiSelect } from 'primereact/multiselect'
@@ -11,6 +10,7 @@ import { Button as PrimeButton } from 'primereact/button'
 import 'primereact/resources/themes/tailwind-light/theme.css'
 import 'primereact/resources/primereact.min.css'
 import { Exhibitor } from '@/components/Map/types'
+import { RiSurveyLine } from 'react-icons/ri'
 
 const LOCAL_STORAGE_KEY = 'survey_data'
 interface SurveryData {
@@ -299,7 +299,7 @@ const Questionnaire = ({
                     className='button-open-questionnaire'
                     onClick={openModal}
                 >
-                    Open Questionnaire
+                    Find Recommendations
                 </button>
             )}
             {formState != null && (

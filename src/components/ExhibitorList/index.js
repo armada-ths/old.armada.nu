@@ -14,6 +14,7 @@ import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
 import { BsSliders } from 'react-icons/bs'
 import { PlaceGoldFirst } from '@/templates/placeGoldFirst'
 import { FaExternalLinkAlt } from 'react-icons/fa'
+import Fuse from 'fuse.js'
 
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
@@ -28,6 +29,172 @@ import { FaExternalLinkAlt } from 'react-icons/fa'
 
 //base of server adress
 
+const options = {
+    keys: ['program'], // Search based on the program name
+    threshold: 0.1, // Adjust the threshold for fuzzy matching
+}
+
+const programsAndIndustries = [
+    {
+        program: 'Biomedical Engineering',
+        industries: ['Pharmaceutical', 'Biotechnology'],
+    },
+    {
+        program: 'Chemical Engineering',
+        industries: [
+            'Solid Mechanics',
+            'Pharmaceutical',
+            'Biotechnology',
+            'Nuclear Power',
+            'Energy Technology',
+            'Nanotechnology',
+        ],
+    },
+    {
+        program: 'Civil Engineering',
+        industries: [
+            'Architecture',
+            'Construction',
+            'Property & Infrastructure',
+            'Railway',
+        ],
+    },
+    {
+        program: 'Computer Science & Engineering',
+        industries: [
+            'Simulation Technology',
+            'Software Development',
+            'Web Development',
+            'Telecommunication',
+            'IT Infrastructure',
+            'Interaction Design',
+        ],
+    },
+    {
+        program: 'Electrical Engineering',
+        industries: [
+            'Acoustics',
+            'Aerospace',
+            'Telecommunication',
+            'Mechatronics',
+            'Electronics',
+            'Nanotechnology',
+        ],
+    },
+    {
+        program: 'Engineering Mathematics & Physics',
+        industries: [
+            'Solid Mechanics',
+            'Acoustics',
+            'Nuclear Power',
+            'Fluid Mechanics',
+            'Industry Design',
+        ],
+    },
+    {
+        program: 'Environmental Engineering',
+        industries: ['Environmental Sector', 'Energy Technology'],
+    },
+    {
+        program: 'Industrial Engineering',
+        industries: [
+            'Manufacturing Industry',
+            'Management Consulting',
+            'Insurance',
+            'Finance',
+            'Logistics & Supply Chain',
+            'Mechatronics',
+            'Property & Infrastructure',
+            'Industry Design',
+            'Recruitment',
+        ],
+    },
+    {
+        program: 'Information Technology',
+        industries: [
+            'Web Development',
+            'Simulation Technology',
+            'Telecommunication',
+            'IT Infrastructure',
+            'Software Development',
+            'Interaction Design',
+        ],
+    },
+    {
+        program: 'Mechanical Engineering',
+        industries: [
+            'Automotive',
+            'Fluid Mechanics',
+            'Solid Mechanics',
+            'Aerospace',
+            'Acoustics',
+            'Marine System',
+            'Mechatronics',
+            'Nanotechnology',
+        ],
+    },
+    {
+        program: 'Media Technology',
+        industries: [
+            'Web Development',
+            'Simulation Technology',
+            'Media Technology',
+            'Telecommunication',
+            'IT Infrastructure',
+            'Software Development',
+            'Interaction Design',
+        ],
+    },
+    {
+        program: 'Medical Engineering',
+        industries: ['Medical Technology'],
+    },
+    {
+        program: 'Material & Product Design',
+        industries: [
+            'Pharmaceutical',
+            'Wood-Processing Industry',
+            'Steel Industry',
+            'Manufacturing Industry',
+            'Logistics & Supply Chain',
+            'Material Development',
+            'Nanotechnology',
+            'Product Development',
+        ],
+    },
+    {
+        program: 'Other',
+        industries: ['Research', 'Pedagogy', 'Retail'],
+    },
+    // Add more program-industry associations
+]
+
+const fuse = new Fuse(programsAndIndustries, options) //instance for fuzzy searching
+
+function matchProgramToIndustries(program) {
+    const results = fuse.search(program)
+    const industries = results.map(result => result.item.industries).flat()
+    return industries
+}
+
+function matchIndustriesToExhibitors(industries, allExhibitors) {
+    return allExhibitors.reduce((matchedExhibitors, exhibitor) => {
+        // Check if the exhibitor has all the specified industries
+        const hasAllIndustries = industries.some(industry =>
+            exhibitor.industries.some(
+                exhibitorIndustry => exhibitorIndustry.name === industry
+            )
+        )
+
+        // If the exhibitor has all the specified industries, add it to the result array
+        if (hasAllIndustries) {
+            matchedExhibitors.push(exhibitor)
+        }
+
+        return matchedExhibitors
+    }, [])
+}
+
 const dropDownAttributes = {
     width: '100%',
     padding: '0.1em 0em 0.5em 0em',
@@ -37,7 +204,6 @@ const dropDownAttributes = {
 }
 
 const ais = 'https://ais.armada.nu/'
-const isMockup = false //change this to go into manual/API fetching mode
 const showFilters = true
 
 function checkListOfCoordinates(arr) {
@@ -558,29 +724,9 @@ export class ExhibitorList extends React.Component {
         // only called when exhibitor page is created or updated.
         const filterContainer = document.getElementById('filter-container')
         filterContainer.classList.toggle('hidden')
-        /*if (!isMockup) {
-            this.apiFetcher(props, false)
-        } else*/
-        if (isMockup) {
-            let exhibitorList = exhibitorsConst.map(exhibitor => (
-                <ExhibitorItem
-                    key={exhibitor.id}
-                    name={exhibitor.name}
-                    exhibitor={exhibitor}
-                    showModal={this.showModal}
-                />
-            ))
-            this.setState({
-                exhibitors: exhibitorsConst,
-                exhibitorList: exhibitorList,
-                isLoading: false,
-            })
-        }
 
         const questionnaireData = JSON.parse(sessionStorage.getItem('my-data'))
         if (questionnaireData) {
-            console.log('1111111')
-            console.log(questionnaireData)
             this.setState({ dataFromSessionStorage: questionnaireData })
         }
     }
@@ -1345,7 +1491,9 @@ export class ExhibitorList extends React.Component {
                             <div className='recommended-exhibitors-text'>
                                 <b>Recommended exhibitors for you</b>
                             </div>
-                            <div className='recommended-exhibitors-entries'></div>
+                            <div className='recommended-exhibitors-entries'>
+                                {}
+                            </div>
                         </div>
                         <div className='all-exhibitors'>
                             <div className='all-exhibitors-text'>

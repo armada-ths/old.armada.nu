@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Model } from 'survey-core'
 import Modal from 'react-modal'
 import 'survey-core/defaultV2.min.css'

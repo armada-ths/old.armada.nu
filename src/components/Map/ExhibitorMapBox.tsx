@@ -19,7 +19,7 @@ function customIcon(exhibitor: Exhibitor) {
         exhibitor.logo_squared || exhibitor.logo_freesize
           ? `<img
              loading="lazy"
-             style="width: 80px; object-fit: contain; border-radius: 5px;"
+             style="width: 80px; object-fit: contain; border-radius: 5px; max-height: 80px !important; border-radius: 5px"
              src="${exhibitor.logo_squared ?? exhibitor.logo_freesize}"
              alt="${exhibitor.name}"
            />`

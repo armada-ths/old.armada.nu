@@ -33,6 +33,17 @@ const Questionnaire = ({
         rawStoredData ? JSON.parse(rawStoredData) : null
     ) as SurveryData | null
 
+    // Dirty solution to set the recommended on load if they exist
+    // WIP
+    useEffect(() => {
+        console.log('TEST', storedData)
+        if (storedData == null) return
+        setQuestionaireData(
+            storedData?.Programme || null,
+            storedData?.JobType || []
+        )
+    }, [])
+
     const majorList = [
         'Architecture',
         'Biotechnology',
@@ -313,15 +324,14 @@ const Questionnaire = ({
     }
 
     function matchIndustriesToExhibitors(
-        industries: string[],
+        industries: string[] | null,
         jobTypes: string[],
         allExhibitors: Exhibitor[]
     ) {
-        console.log(allExhibitors)
         return allExhibitors.reduce<Exhibitor[]>(
             (matchedExhibitors, exhibitor) => {
                 // Check if the exhibitor has all the specified industries
-                const hasSomeIndustry = industries.some(industry =>
+                const hasSomeIndustry = industries?.some(industry =>
                     exhibitor.industries.some(
                         exhibitorIndustry => exhibitorIndustry.name === industry
                     )
@@ -332,7 +342,10 @@ const Questionnaire = ({
                 )
 
                 // If the exhibitor has all the specified industries, add it to the result array
-                if (hasSomeIndustry && (jobTypes.length <= 0 || hasJobType)) {
+                if (
+                    (industries == null || hasSomeIndustry) &&
+                    (jobTypes.length <= 0 || hasJobType)
+                ) {
                     matchedExhibitors.push(exhibitor)
                 }
 
@@ -386,8 +399,6 @@ const Questionnaire = ({
     function finishQuestionnaire() {
         setFormState(null)
 
-        if (programme == null) return
-
         localStorage.setItem(
             LOCAL_STORAGE_KEY,
             JSON.stringify({
@@ -396,9 +407,14 @@ const Questionnaire = ({
             })
         )
 
-        const industries = matchProgramToIndustries(programme)
+        setQuestionaireData(programme, jobTypes)
+    }
 
-        if (industries && exhibitorsMap.length > 0) {
+    function setQuestionaireData(programme: string | null, jobTypes: string[]) {
+        const industries =
+            programme == null ? null : matchProgramToIndustries(programme)
+
+        if (exhibitorsMap.length > 0) {
             setRecommendedExhibitors(
                 matchIndustriesToExhibitors(industries, jobTypes, exhibitorsMap)
             )

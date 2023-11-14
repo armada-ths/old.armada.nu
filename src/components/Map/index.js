@@ -318,11 +318,13 @@ export const MapUtil = () => {
         overflowY: "hidden",
       }}
     >
-      <Questionnaire
-        setShowButtons={setShowButtons}
-        setRecommendedExhibitors={setRecommendedExhibitors}
-        exhibitorsMap={exhibitorsMap}
-      />
+      {(exhibitorsMap != null || exhibitorsMap.length <= 0) && (
+        <Questionnaire
+          setShowButtons={setShowButtons}
+          setRecommendedExhibitors={setRecommendedExhibitors}
+          exhibitorsMap={exhibitorsMap}
+        />
+      )}
       <div style={{ overflowY: "hidden" }}>
         <div className="mapBox">
           <div className="mapBoxFloatingContainer">

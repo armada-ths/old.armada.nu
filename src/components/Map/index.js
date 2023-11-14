@@ -201,7 +201,6 @@ export const MapUtil = () => {
   const [editorCoordinates, setEditorCoordinates] = useState([]);
   const [labels, showLabels] = useState(true);
   const [buttonPressed, setButtonPressed] = useState(2);
-  const [showButtons, setShowButtons] = useState(false);
 
   const firstFloorNymble = require("../../../static/assets/Map/floor1-ntg.png");
   const secondFloorNymble = require("../../../static/assets/Map/floor2-ntg.png");
@@ -308,6 +307,7 @@ export const MapUtil = () => {
     "Interaction Design": possibleColors[5],
     "Industry Design": possibleColors[10],
   };*/
+  const [showButtons, setShowButtons] = useState(false);
 
   return (
     <div
@@ -318,31 +318,36 @@ export const MapUtil = () => {
         overflowY: "hidden",
       }}
     >
-      <Questionnaire />
+      <Questionnaire setShowButtons={setShowButtons} />
       <div style={{ overflowY: "hidden" }}>
         <div className="mapBox">
           <div className="mapBoxFloatingContainer">
             <div /> {/* Filler div to take up the first slot in the grid */}
-            <BuildingSwitch
-              setFairLocation={setFairLocation}
-              setBuilding={setBuilding}
-              building={building}
-              setButtonPressed={setButtonPressed}
-              style={showButtons ? { display: "flex" } : { display: "none" }}
-            />
-            <FloorButtons
-              setFairLocation={setFairLocation}
-              showDevTool={false}
-              devMode={devMode}
-              setDevMode={setDevMode}
-              building={building}
-              setEditorCoordinates={setEditorCoordinates}
-              setRectangleMode={setRectangleMode}
-              rectangleMode={rectangleMode}
-              buttonPressed={buttonPressed}
-              setButtonPressed={setButtonPressed}
-              style={showButtons ? { display: "block" } : { display: "none" }}
-            />
+            {showButtons && (
+              <>
+                <BuildingSwitch
+                  setFairLocation={setFairLocation}
+                  setBuilding={setBuilding}
+                  building={building}
+                  setButtonPressed={setButtonPressed}
+                />
+                <FloorButtons
+                  setFairLocation={setFairLocation}
+                  showDevTool={false}
+                  devMode={devMode}
+                  setDevMode={setDevMode}
+                  building={building}
+                  setEditorCoordinates={setEditorCoordinates}
+                  setRectangleMode={setRectangleMode}
+                  rectangleMode={rectangleMode}
+                  buttonPressed={buttonPressed}
+                  setButtonPressed={setButtonPressed}
+                  style={
+                    showButtons ? { display: "block" } : { display: "none" }
+                  }
+                />
+              </>
+            )}
           </div>
 
           {

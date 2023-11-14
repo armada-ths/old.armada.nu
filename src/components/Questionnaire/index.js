@@ -9,7 +9,7 @@ import { surveyLocalization } from 'survey-core'
 import './pop.scss'
 import { CCloseButton } from '@coreui/react'
 
-const Questionnaire = props => {
+const Questionnaire = ({ setShowButtons }) => {
     const majorList = [
         'Computer Science',
         'Computer Engineering',
@@ -284,7 +284,10 @@ const Questionnaire = props => {
                     >
                         <button
                             className='modal-close-btn'
-                            onClick={closeModal}
+                            onClick={() => {
+                                closeModal
+                                setShowButtons(true)
+                            }}
                         >
                             X
                         </button>

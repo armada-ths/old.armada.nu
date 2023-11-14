@@ -623,9 +623,13 @@ export class ExhibitorList extends React.Component {
                 <div className='modal-container'>
                     <div className='modal-flex-1'>
                         <div className='modalimage-exhib'>
-                            {exhibitor.logo_squared && (
+                            {(exhibitor.logo_squared ||
+                                exhibitor.logo_freesize) && (
                                 <img
-                                    src={exhibitor.logo_squared}
+                                    src={
+                                        exhibitor.logo_squared ??
+                                        exhibitor.logo_freesize
+                                    }
                                     alt={exhibitor.name + ' logo'}
                                 />
                             )}

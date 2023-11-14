@@ -373,14 +373,17 @@ const Questionnaire = ({
                                         }}
                                     >
                                         <PrimeButton
+                                            label='Close'
+                                            style={{
+                                                backgroundColor: '#999',
+                                            }}
+                                            onClick={() => setFormState(null)}
+                                        />
+                                        <PrimeButton
                                             label='Next'
                                             onClick={() =>
                                                 setFormState(formState + 1)
                                             }
-                                        />
-                                        <PrimeButton
-                                            label='Close'
-                                            onClick={() => setFormState(null)}
                                         />
                                     </div>
                                 </div>

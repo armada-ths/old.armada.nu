@@ -6,7 +6,6 @@ import 'survey-core/defaultV2.min.css'
 import './index.scss'
 import { surveyLocalization } from 'survey-core'
 import './pop.scss'
-import { CCloseButton } from '@coreui/react'
 
 const Questionnaire = ({ setShowButtons }) => {
     const majorList = [

@@ -9,8 +9,6 @@ import './pop.scss'
 
 const Questionnaire = ({ setShowButtons }) => {
     const majorList = [
-        'Computer Science',
-        'Computer Engineering',
         'Biomedical Engineering',
         'Chemical Engineering',
         'Civil Engineering',
@@ -21,13 +19,10 @@ const Questionnaire = ({ setShowButtons }) => {
         'Industrial Engineering',
         'Information Technology',
         'Mechanical Engineering',
-        'Civil Engineering',
-        'Chemical Engineering',
-        'Biomedical Engineering',
         'Media Technology',
         'Medical Engineering',
         'Material & Product Design',
-        'Other...',
+        'Other',
     ]
 
     const jobTypeList = [
@@ -51,6 +46,7 @@ const Questionnaire = ({ setShowButtons }) => {
     //     const results = fuse.search(program)
     //     return results.map(result => result.item.industries).flat()
     // }
+    console.log('hasdahsd')
 
     const surveyJson = {
         pages: [
@@ -61,6 +57,7 @@ const Questionnaire = ({ setShowButtons }) => {
                         title: 'What programme do you study?',
                         type: 'dropdown',
                         choices: majorList,
+                        isRequired: true,
                     },
                 ],
             },
@@ -71,6 +68,7 @@ const Questionnaire = ({ setShowButtons }) => {
                         title: 'What types of job are you looking for?',
                         type: 'checkbox',
                         choices: jobTypeList,
+                        isRequired: true,
                     },
                 ],
             },
@@ -136,26 +134,21 @@ const Questionnaire = ({ setShowButtons }) => {
             <button className='button-open-questionnaire' onClick={openModal}>
                 Open Questionnaire
             </button>
-            {!savedData && (
-                <div className='q-top-container' style={{ zIndex: 1000 }}>
-                    <Modal
-                        className='questionnaire-container'
-                        isOpen={modalOpen}
-                        onRequestClose={closeModal}
-                        contentLabel='Questionnaire Modal'
-                        shouldCloseOnOverlayClick={true}
-                        style={{ overlay: {}, content: {} }}
-                    >
-                        <button
-                            className='modal-close-btn'
-                            onClick={closeModal}
-                        >
-                            X
-                        </button>
-                        <Survey model={survey} />
-                    </Modal>
-                </div>
-            )}
+            <div className='q-top-container' style={{ zIndex: 1000 }}>
+                <Modal
+                    className='questionnaire-container'
+                    isOpen={modalOpen}
+                    onRequestClose={closeModal}
+                    contentLabel='Questionnaire Modal'
+                    shouldCloseOnOverlayClick={true}
+                    style={{ overlay: {}, content: {} }}
+                >
+                    <button className='modal-close-btn' onClick={closeModal}>
+                        X
+                    </button>
+                    <Survey model={survey} />
+                </Modal>
+            </div>
         </div>
     )
 }

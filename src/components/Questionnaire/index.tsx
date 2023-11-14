@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Model } from 'survey-core'
 import Modal from 'react-modal'
 import 'survey-core/defaultV2.min.css'
@@ -11,6 +11,7 @@ import 'primereact/resources/themes/tailwind-light/theme.css'
 import 'primereact/resources/primereact.min.css'
 import { Exhibitor } from '@/components/Map/types'
 import { RiSurveyLine } from 'react-icons/ri'
+import { window } from 'browser-monads-ts'
 
 const LOCAL_STORAGE_KEY = 'survey_data'
 interface SurveryData {
@@ -243,6 +244,10 @@ const Questionnaire = ({
     //     const results = fuse.search(program)
     //     return results.map(result => result.item.industries).flat()
     // }
+    const [width, setWidth] = useState<number>()
+    useEffect(() => {
+        setWidth(window.innerWidth)
+    }, [])
 
     const [modalOpen, setModalOpen] = useState(storedData == null)
 
@@ -295,12 +300,22 @@ const Questionnaire = ({
     return (
         <div>
             {formState == null && (
-                <button
-                    className='button-open-questionnaire'
-                    onClick={openModal}
-                >
-                    Find Recommendations
-                </button>
+                <>
+                    {width && width > 768 ? (
+                        <button
+                            className='button-open-questionnaire'
+                            onClick={openModal}
+                        >
+                            Find Recommendations
+                        </button>
+                    ) : (
+                        <RiSurveyLine
+                            className='button-open-questionnaire'
+                            onClick={openModal}
+                            id='mobile'
+                        />
+                    )}
+                </>
             )}
             {formState != null && (
                 <div className='q-top-container' style={{ zIndex: 1000 }}>

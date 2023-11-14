@@ -5,9 +5,14 @@ import Fuse from 'fuse.js'
 import Modal from 'react-modal'
 import 'survey-core/defaultV2.min.css'
 import './index.scss'
+import { surveyLocalization } from 'survey-core'
+import './pop.scss'
+import { CCloseButton } from '@coreui/react'
 
 const Questionnaire = props => {
     const majorList = [
+        'Computer Science',
+        'Computer Engineering',
         'Biomedical Engineering',
         'Chemical Engineering',
         'Civil Engineering',
@@ -18,10 +23,13 @@ const Questionnaire = props => {
         'Industrial Engineering',
         'Information Technology',
         'Mechanical Engineering',
+        'Civil Engineering',
+        'Chemical Engineering',
+        'Biomedical Engineering',
         'Media Technology',
         'Medical Engineering',
         'Material & Product Design',
-        'Other',
+        'Other...',
     ]
 
     const jobTypeList = [
@@ -204,13 +212,15 @@ const Questionnaire = props => {
                 ],
             },
         ],
-        completeText: 'Continue',
     }
-
-    const [modalOpen, setModalOpen] = useState(false)
+    const [modalOpen, setModalOpen] = useState(true)
+    const [savedData, setSavedData] = useState(
+        sessionStorage.getItem('my-data')
+    )
 
     const openModal = () => {
         setModalOpen(true)
+        setSavedData(null)
     }
 
     const closeModal = () => {
@@ -234,38 +244,49 @@ const Questionnaire = props => {
     }
 
     function saveSurveyData(survey) {
-        const surveyData = survey.data
-        const matches = matchedIndustries(surveyData.Programme)
-        const data = {}
-        data.type = surveyData['Job Type']
-        data.industries = matches
+        const data = survey.data
         const data_json = JSON.stringify(data)
         sessionStorage.setItem('my-data', data_json)
+        setSavedData(sessionStorage.setItem('my-data', data_json))
+        setModalOpen(false)
     }
 
     const survey = new Model(surveyJson)
+    survey.completeText = 'Find'
     survey.showCompletedPage = false
-    survey.css = customCss
     survey.onComplete.add(saveSurveyData)
+    survey.css = customCss
+    console.log(survey)
 
+    /* survey.addNavigationItem({
+        id: 'sv-nav-clear-page',
+        title: 'Close',
+        action: () => {
+            closeModal()
+        },
+        css: 'nav-button',
+        innerCss: 'sd-btn nav-input',
+    }) */
     return (
         <div>
             <button className='button-open-questionnaire' onClick={openModal}>
                 Open Questionnaire
             </button>
-
-            <div className='questionnaire-container'>
+            {!savedData && (
                 <Modal
+                    className='questionnaire-container'
                     isOpen={modalOpen}
                     onRequestClose={closeModal}
                     contentLabel='Questionnaire Modal'
+                    shouldCloseOnOverlayClick={true}
+                    style={{ overlay: {}, content: {} }}
                 >
                     <button className='modal-close-btn' onClick={closeModal}>
                         X
                     </button>
                     <Survey model={survey} />
                 </Modal>
-            </div>
+            )}
         </div>
     )
 }

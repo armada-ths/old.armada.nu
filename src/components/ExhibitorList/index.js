@@ -943,7 +943,6 @@ export class ExhibitorList extends React.Component {
 
     setExpansionList = open => {
         const expandButton = document.getElementById('expand-button')
-        console.log('HEYYYYY')
         if (
             open &&
             window.getComputedStyle(expandButton).getPropertyValue('rotate') ==
@@ -1166,8 +1165,7 @@ export class ExhibitorList extends React.Component {
                     {this.state.showModal
                         ? this.displayExhibitor(exhibitorToDisplay)
                         : null}
-
-                    <div className='search'>
+                    <div>
                         <div className='arrow-container'>
                             <div
                                 id='expand-button'
@@ -1183,6 +1181,9 @@ export class ExhibitorList extends React.Component {
                                 </svg>
                             </div>
                         </div>
+                    </div>
+                    <div className='scrollable'>
+                    <div className='search'>
                         <div
                             className='search-container'
                             onClick={() => this.setExpansionList(true)}
@@ -1401,6 +1402,7 @@ export class ExhibitorList extends React.Component {
                             </div>
                         ) : null}
                     </div>
+                </div>
                 </div>
             )
         } else {

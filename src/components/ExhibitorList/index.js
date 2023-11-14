@@ -409,6 +409,7 @@ export class ExhibitorList extends React.Component {
                 { value: 'Library - 2nd Floor', label: 'Library - 2nd Floor' },
             ],
             showamount: 20,
+            //dataFromSessionStorage: {}, //data from questionnaire
         }
 
         let sortedSectors = this.state.sectors.sort((a, b) =>
@@ -574,6 +575,13 @@ export class ExhibitorList extends React.Component {
                 isLoading: false,
             })
         }
+
+        /*const questionnaireData = JSON.parse(sessionStorage.getItem('my-data'))
+        if (questionnaireData) {
+            console.log('1111111')
+            console.log(questionnaireData)
+            this.setState({ dataFromSessionStorage: questionnaireData })
+        }*/
     }
 
     //search
@@ -1176,11 +1184,11 @@ export class ExhibitorList extends React.Component {
                                     blurInputOnSelect={false}
                                     isMulti
                                     isSearchable
-                                    value={
+                                    /*value={
                                         this.state.dataFromSessionStorage[
                                             'Job Type'
                                         ]
-                                    }
+                                    }*/
                                     name='Job filter'
                                     placeholder='All Jobs'
                                     options={this.state.jobs}

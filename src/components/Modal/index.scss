@@ -264,6 +264,7 @@ a:hover {
     .popup {
         width: 100vw;
         overflow-y: scroll;
+        min-height: 100%;
     }
     .modalcontent {
         .modal-container {

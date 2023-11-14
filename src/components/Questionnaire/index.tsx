@@ -380,9 +380,7 @@ const Questionnaire = ({
                                         />
                                         <PrimeButton
                                             label='Close'
-                                            onClick={() =>
-                                                setFormState(formState + 1)
-                                            }
+                                            onClick={() => setFormState(null)}
                                         />
                                     </div>
                                 </div>

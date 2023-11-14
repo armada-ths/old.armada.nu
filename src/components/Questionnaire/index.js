@@ -225,6 +225,7 @@ const Questionnaire = ({ setShowButtons }) => {
 
     const closeModal = () => {
         setModalOpen(false)
+        setShowButtons(true)
     }
 
     const customCss = {
@@ -284,10 +285,7 @@ const Questionnaire = ({ setShowButtons }) => {
                     >
                         <button
                             className='modal-close-btn'
-                            onClick={() => {
-                                closeModal
-                                setShowButtons(true)
-                            }}
+                            onClick={closeModal}
                         >
                             X
                         </button>

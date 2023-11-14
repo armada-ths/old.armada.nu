@@ -724,6 +724,8 @@
 .arrow-container {
     width: 100%;
     padding: 0.5rem;
+    background-color: #00d790;
+    border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
 
@@ -732,9 +734,6 @@
 }
 
 .arrow-container div {
-    border: 1px solid black;
-    padding: 0px;
-    border-radius: 500px;
     width: 15%;
     min-width: 30px;
 }
@@ -746,4 +745,9 @@
 .scrollable {
     overflow-y: auto;
     height: 100%;
+}
+
+.exhibitor-info-text {
+    padding-left: 0rem;
+    text-align: center;
 }

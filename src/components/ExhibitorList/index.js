@@ -921,6 +921,9 @@ export class ExhibitorList extends React.Component {
         return listitems
     }
 
+    //This function has a duplicate in src/components/map in div class name mapBox
+    //needs reformating
+    //has same name
     toggleListExpand = () => {
         const expandButton = document.getElementById('expand-button')
         const exhibitors = document.getElementsByClassName('exhibitors')[0]
@@ -930,8 +933,8 @@ export class ExhibitorList extends React.Component {
             '180deg'
         ) {
             expandButton.style.rotate = '0deg'
-            exhibitors.style.top = '10%'
-            exhibitors.style.height = '90vh'
+            exhibitors.style.top = '20%'
+            exhibitors.style.height = '80vh'
             //popupcontainer.style.height = '90%'
         } else {
             expandButton.style.rotate = '180deg'
@@ -1166,11 +1169,11 @@ export class ExhibitorList extends React.Component {
                         ? this.displayExhibitor(exhibitorToDisplay)
                         : null}
                     <div>
-                        <div className='arrow-container'>
-                            <div
-                                id='expand-button'
-                                onClick={() => this.toggleListExpand()}
-                            >
+                        <div
+                            className='arrow-container'
+                            onClick={() => this.toggleListExpand()}
+                        >
+                            <div id='expand-button'>
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
                                     height='24'
@@ -1183,90 +1186,95 @@ export class ExhibitorList extends React.Component {
                         </div>
                     </div>
                     <div className='scrollable'>
-                    <div className='search'>
-                        <div
-                            className='search-container'
-                            onClick={() => this.setExpansionList(true)}
-                        >
-                            <div className='search-line'>
-                                <input
-                                    type='text'
-                                    placeholder='Search Exhibitors'
-                                    aria-label='search'
-                                    value={this.state.search}
-                                    onChange={this.updateSearch.bind(this)}
-                                    className='main-search-box'
-                                />
-                                {/* <button id='search-button'>Search</button> */}
-                                <div
-                                    id='filter-button'
-                                    onClick={toggleFilterVisibility}
-                                    aria-details='filter button'
-                                    alt='filter button'
-                                >
-                                    <BsSliders className='filter-icon' /> Filter
-                                </div>
-                                {/* <Collapsible
+                        <div className='search'>
+                            <div
+                                className='search-container'
+                                onClick={() => this.setExpansionList(true)}
+                            >
+                                <div className='search-line'>
+                                    <input
+                                        type='text'
+                                        placeholder='Search Exhibitors'
+                                        aria-label='search'
+                                        value={this.state.search}
+                                        onChange={this.updateSearch.bind(this)}
+                                        className='main-search-box'
+                                    />
+                                    {/* <button id='search-button'>Search</button> */}
+                                    <div
+                                        id='filter-button'
+                                        onClick={toggleFilterVisibility}
+                                        aria-details='filter button'
+                                        alt='filter button'
+                                    >
+                                        <BsSliders className='filter-icon' />{' '}
+                                        Filter
+                                    </div>
+                                    {/* <Collapsible
                                     trigger={"Filters"}
                                     triggerStyle={dropDownAttributes}
                                 > */}
-                            </div>
-                            <div id='filter-container'>
-                                {this.state.showAllCompanies ? (
-                                    <div
-                                        className='showAllBox'
-                                        onClick={() => {
-                                            this.setState({
-                                                ...this.state,
-                                                showAllCompanies: false,
-                                            })
-                                        }}
-                                    >
-                                        <GrCheckboxSelected />
-                                        Show All Companies
-                                    </div>
-                                ) : (
-                                    <div
-                                        className='showAllBox'
-                                        onClick={() => {
-                                            this.setState({
-                                                ...this.state,
-                                                showAllCompanies: true,
-                                            })
-                                        }}
-                                    >
-                                        <GrCheckbox />
-                                        Show All Companies
-                                    </div>
-                                )}
+                                </div>
+                                <div id='filter-container'>
+                                    {this.state.showAllCompanies ? (
+                                        <div
+                                            className='showAllBox'
+                                            onClick={() => {
+                                                this.setState({
+                                                    ...this.state,
+                                                    showAllCompanies: false,
+                                                })
+                                            }}
+                                        >
+                                            <GrCheckboxSelected />
+                                            Show All Companies
+                                        </div>
+                                    ) : (
+                                        <div
+                                            className='showAllBox'
+                                            onClick={() => {
+                                                this.setState({
+                                                    ...this.state,
+                                                    showAllCompanies: true,
+                                                })
+                                            }}
+                                        >
+                                            <GrCheckbox />
+                                            Show All Companies
+                                        </div>
+                                    )}
 
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    blurInputOnSelect={false}
-                                    isMulti
-                                    isSearchable
-                                    name='Job filter'
-                                    placeholder='All Jobs'
-                                    options={this.state.jobs}
-                                    onChange={event => this.jobFilter(event)}
-                                    className='basic-multi-select'
-                                    classNamePrefix='select'
-                                />
+                                    <Select
+                                        closeMenuOnSelect={false}
+                                        blurInputOnSelect={false}
+                                        isMulti
+                                        isSearchable
+                                        name='Job filter'
+                                        placeholder='All Jobs'
+                                        options={this.state.jobs}
+                                        onChange={event =>
+                                            this.jobFilter(event)
+                                        }
+                                        className='basic-multi-select'
+                                        classNamePrefix='select'
+                                    />
 
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    blurInputOnSelect={false}
-                                    isMulti
-                                    isSearchable={false}
-                                    name='Sector filter'
-                                    placeholder='All Industries'
-                                    options={this.state.sectors}
-                                    onChange={event => this.sectorFilter(event)}
-                                    className='basic-multi-select'
-                                    classNamePrefix='select'
-                                />
+                                    <Select
+                                        closeMenuOnSelect={false}
+                                        blurInputOnSelect={false}
+                                        isMulti
+                                        isSearchable={false}
+                                        name='Sector filter'
+                                        placeholder='All Industries'
+                                        options={this.state.sectors}
+                                        onChange={event =>
+                                            this.sectorFilter(event)
+                                        }
+                                        className='basic-multi-select'
+                                        classNamePrefix='select'
+                                    />
 
-                                {/*<Select
+                                    {/*<Select
                                     closeMenuOnSelect={false}
                                     blurInputOnSelect={false}
                                     isMulti
@@ -1281,76 +1289,81 @@ export class ExhibitorList extends React.Component {
                                     classNamePrefix='select'
                                 /> Disabled filter for now since no companies have filled in /Nima*/}
 
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    blurInputOnSelect={false}
-                                    isMulti
-                                    isSearchable
-                                    name='Location filter'
-                                    placeholder='All Locations'
-                                    options={this.state.locations}
-                                    onChange={event =>
-                                        this.locationFilter(event)
-                                    }
-                                    className='basic-multi-select'
-                                    classNamePrefix='select'
-                                />
+                                    <Select
+                                        closeMenuOnSelect={false}
+                                        blurInputOnSelect={false}
+                                        isMulti
+                                        isSearchable
+                                        name='Location filter'
+                                        placeholder='All Locations'
+                                        options={this.state.locations}
+                                        onChange={event =>
+                                            this.locationFilter(event)
+                                        }
+                                        className='basic-multi-select'
+                                        classNamePrefix='select'
+                                    />
 
-                                <Select
-                                    closeMenuOnSelect={false}
-                                    blurInputOnSelect={false}
-                                    isMulti
-                                    isSearchable
-                                    name='Fair Placement filter'
-                                    placeholder='All Fair Placements'
-                                    options={this.state.fair_placements}
-                                    onChange={event =>
-                                        this.fairPlacementFilter(event)
-                                    }
-                                    className='basic-multi-select'
-                                    classNamePrefix='select'
-                                />
-                                {this.props.showCV && (
-                                    <div
-                                        className={`filter-special ${
-                                            this.props.lastYear
-                                                ? 'display-none'
-                                                : ''
-                                        }`}
-                                    >
-                                        <input
-                                            id='diversity'
-                                            type='image'
-                                            alt='diversity filter'
-                                            src={this.state.diversitysrc}
-                                            onClick={() =>
-                                                this.diversityFilter()
-                                            }
-                                        />
-                                        <input
-                                            id='sustainability'
-                                            type='image'
-                                            alt='sustainability filter'
-                                            src={this.state.sustainabilitysrc}
-                                            onClick={() =>
-                                                this.sustainabilityFilter()
-                                            }
-                                        />
-                                    </div>
-                                )}
+                                    <Select
+                                        closeMenuOnSelect={false}
+                                        blurInputOnSelect={false}
+                                        isMulti
+                                        isSearchable
+                                        name='Fair Placement filter'
+                                        placeholder='All Fair Placements'
+                                        options={this.state.fair_placements}
+                                        onChange={event =>
+                                            this.fairPlacementFilter(event)
+                                        }
+                                        className='basic-multi-select'
+                                        classNamePrefix='select'
+                                    />
+                                    {this.props.showCV && (
+                                        <div
+                                            className={`filter-special ${
+                                                this.props.lastYear
+                                                    ? 'display-none'
+                                                    : ''
+                                            }`}
+                                        >
+                                            <input
+                                                id='diversity'
+                                                type='image'
+                                                alt='diversity filter'
+                                                src={this.state.diversitysrc}
+                                                onClick={() =>
+                                                    this.diversityFilter()
+                                                }
+                                            />
+                                            <input
+                                                id='sustainability'
+                                                type='image'
+                                                alt='sustainability filter'
+                                                src={
+                                                    this.state.sustainabilitysrc
+                                                }
+                                                onClick={() =>
+                                                    this.sustainabilityFilter()
+                                                }
+                                            />
+                                        </div>
+                                    )}
+                                </div>
+                                {/* </Collapsible> */}
                             </div>
-                            {/* </Collapsible> */}
+                            {showFilters ? (
+                                <div
+                                    className={`filters ${
+                                        this.props.lastYear
+                                            ? 'display-none'
+                                            : ''
+                                    }`}
+                                ></div>
+                            ) : null}
                         </div>
-                        {showFilters ? (
-                            <div
-                                className={`filters ${
-                                    this.props.lastYear ? 'display-none' : ''
-                                }`}
-                            ></div>
-                        ) : null}
-                    </div>
+                        <p className='exhibitor-info-text'>Hej!</p>
 
-                    {/*<div className='supercontainer'>
+                        {/*<div className='supercontainer'>
                         <p className='matching_link'>
                             Pssst! Find your perfect company by using Armada's
                             new{' '}
@@ -1363,46 +1376,51 @@ export class ExhibitorList extends React.Component {
                         </p>
                         </div>*/}
 
-                    {/* TODO: everything should be dynamic instead of hard-coded */}
+                        {/* TODO: everything should be dynamic instead of hard-coded */}
 
-                    <div className='loading'>
-                        {this.state.isLoading ? <Loading /> : null}
+                        <div className='loading'>
+                            {this.state.isLoading ? <Loading /> : null}
+                        </div>
+                        <div
+                            className={
+                                'exhibitor-feed ' +
+                                (this.state.showModal ? 'notDisplay' : '')
+                            }
+                        >
+                            {filteredCompanies.length &&
+                            !this.state.isLoading ? (
+                                filteredCompanies.splice(
+                                    0,
+                                    this.state.showamount
+                                )
+                            ) : (
+                                //filteredCompanies
+                                <div className='Noresultsfound'>
+                                    {!this.state.isLoading ? (
+                                        <div>
+                                            <p className='noresultstext'>
+                                                Sorry, we couldn&apos;t find any
+                                                companies that match your
+                                                search. Please look at our cat
+                                                instead!
+                                            </p>
+                                            <Cat />
+                                        </div>
+                                    ) : null}
+                                </div>
+                            )}
+                            {showall ? (
+                                <div className='showmore-container'>
+                                    <button
+                                        className='showmorebutton'
+                                        onClick={() => this.showMore()}
+                                    >
+                                        Show More
+                                    </button>
+                                </div>
+                            ) : null}
+                        </div>
                     </div>
-                    <div
-                        className={
-                            'exhibitor-feed ' +
-                            (this.state.showModal ? 'notDisplay' : '')
-                        }
-                    >
-                        {filteredCompanies.length && !this.state.isLoading ? (
-                            filteredCompanies.splice(0, this.state.showamount)
-                        ) : (
-                            //filteredCompanies
-                            <div className='Noresultsfound'>
-                                {!this.state.isLoading ? (
-                                    <div>
-                                        <p className='noresultstext'>
-                                            Sorry, we couldn&apos;t find any
-                                            companies that match your search.
-                                            Please look at our cat instead!
-                                        </p>
-                                        <Cat />
-                                    </div>
-                                ) : null}
-                            </div>
-                        )}
-                        {showall ? (
-                            <div className='showmore-container'>
-                                <button
-                                    className='showmorebutton'
-                                    onClick={() => this.showMore()}
-                                >
-                                    Show All
-                                </button>
-                            </div>
-                        ) : null}
-                    </div>
-                </div>
                 </div>
             )
         } else {

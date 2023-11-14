@@ -317,7 +317,24 @@ export const MapUtil = () => {
       }}
     >
       <div style={{ overflowY: "hidden" }}>
-        <div className="mapBox">
+        <div
+          className="mapBox"
+          setExpansionList
+          onClick={() => {
+            //TODO: This code needs to be re-formatted. Has a high dependency (duplicate) with /src/components/ExhibitorList --> toggleListExpand() function in line 925
+            const expandButton = document.getElementById("expand-button");
+            const exhibitors = document.getElementsByClassName("exhibitors")[0];
+            if (
+              window
+                .getComputedStyle(expandButton)
+                .getPropertyValue("rotate") == "0deg"
+            ) {
+              expandButton.style.rotate = "180deg";
+              exhibitors.style.top = "60%";
+              exhibitors.style.height = "40vh";
+            }
+          }}
+        >
           <div className="mapBoxFloatingContainer">
             <div /> {/* Filler div to take up the first slot in the grid */}
             <BuildingSwitch

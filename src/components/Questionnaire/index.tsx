@@ -218,20 +218,25 @@ const Questionnaire = ({
 
     function matchIndustriesToExhibitors(
         industries: string[],
+        jobTypes: string[],
         allExhibitors: Exhibitor[]
     ) {
         console.log(allExhibitors)
         return allExhibitors.reduce<Exhibitor[]>(
             (matchedExhibitors, exhibitor) => {
                 // Check if the exhibitor has all the specified industries
-                const hasAllIndustries = industries.some(industry =>
+                const hasSomeIndustry = industries.some(industry =>
                     exhibitor.industries.some(
                         exhibitorIndustry => exhibitorIndustry.name === industry
                     )
                 )
 
+                const hasJobType = exhibitor.employments.some(employment =>
+                    jobTypes.some(jobType => employment.name === jobType)
+                )
+
                 // If the exhibitor has all the specified industries, add it to the result array
-                if (hasAllIndustries) {
+                if (hasSomeIndustry && (jobTypes.length <= 0 || hasJobType)) {
                     matchedExhibitors.push(exhibitor)
                 }
 
@@ -297,11 +302,11 @@ const Questionnaire = ({
 
         const industries = matchProgramToIndustries(programme)
 
-        setRecommendedExhibitors(
-            industries &&
-                exhibitorsMap.length > 0 &&
-                matchIndustriesToExhibitors(industries, exhibitorsMap)
-        )
+        if (industries && exhibitorsMap.length > 0) {
+            setRecommendedExhibitors(
+                matchIndustriesToExhibitors(industries, jobTypes, exhibitorsMap)
+            )
+        }
         setModalOpen(false)
     }
 
@@ -328,6 +333,10 @@ const Questionnaire = ({
             {formState != null && (
                 <div className='q-top-container' style={{ zIndex: 1000 }}>
                     <Modal
+                        onAfterClose={() => {
+                            setFormState(null)
+                            setModalOpen(false)
+                        }}
                         className='questionnaire-container'
                         isOpen={modalOpen}
                         onRequestClose={closeModal}
@@ -396,13 +405,14 @@ const Questionnaire = ({
                                         }}
                                     >
                                         <PrimeButton
-                                            label='Next'
-                                            onClick={() =>
-                                                setFormState(formState + 1)
-                                            }
+                                            label='Close'
+                                            style={{
+                                                backgroundColor: '#999',
+                                            }}
+                                            onClick={() => setFormState(null)}
                                         />
                                         <PrimeButton
-                                            label='Close'
+                                            label='Next'
                                             onClick={() =>
                                                 setFormState(formState + 1)
                                             }

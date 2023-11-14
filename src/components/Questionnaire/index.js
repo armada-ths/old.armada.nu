@@ -80,6 +80,7 @@ const Questionnaire = ({ setShowButtons }) => {
 
     const openModal = () => {
         setModalOpen(true)
+        setShowButtons(false)
     }
 
     const closeModal = () => {

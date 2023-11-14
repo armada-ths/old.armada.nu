@@ -284,7 +284,7 @@ const Questionnaire = ({
     function saveSurveyData(survey) {
         const data = survey.data
         const data_json = JSON.stringify(data)
-        sessionStorage.setItem('my-data', data_json)
+        localStorage.setItem('my-data', data_json)
         setModalOpen(false)
         // console.log(data)
         const industries = matchProgramToIndustries(data['Programme'])

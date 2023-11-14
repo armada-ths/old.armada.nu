@@ -15,10 +15,12 @@ const Questionnaire = ({
     exhibitorsMap,
 }) => {
     const majorList = [
+        'Architecture',
+        'Biotechnology',
         'Biomedical Engineering',
         'Chemical Engineering',
         'Civil Engineering',
-        'Computer Science & Engineering',
+        'Computer Science',
         'Electrical Engineering',
         'Engineering Mathematics & Physics',
         'Environmental Engineering',
@@ -28,6 +30,7 @@ const Questionnaire = ({
         'Media Technology',
         'Medical Engineering',
         'Material & Product Design',
+        'Vechicle Engineering',
         'Other',
     ]
 

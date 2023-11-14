@@ -498,6 +498,7 @@ export class ExhibitorList extends React.Component {
     updateRecommendedExhibitors(recommendedExhibitorsInput) {
         console.log('hey show these:')
         console.log(recommendedExhibitorsInput)
+        recommendedExhibitorsInput = PlaceGoldFirst(recommendedExhibitorsInput)
         let recommendedExhibitorsList = recommendedExhibitorsInput.map(
             exhibitor => (
                 <ExhibitorItem
@@ -585,7 +586,6 @@ export class ExhibitorList extends React.Component {
         // only called when exhibitor page is created or updated.
         const filterContainer = document.getElementById('filter-container')
         filterContainer.classList.toggle('hidden')
-
         const questionnaireData = JSON.parse(sessionStorage.getItem('my-data'))
         if (questionnaireData) {
             this.setState({ dataFromSessionStorage: questionnaireData })

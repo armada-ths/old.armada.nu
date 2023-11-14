@@ -6,6 +6,8 @@ import 'survey-core/defaultV2.min.css'
 import './index.scss'
 import Fuse from 'fuse.js'
 import { GrClose } from 'react-icons/gr'
+import { window } from 'browser-monads'
+import { RiSurveyLine } from 'react-icons/ri'
 
 const Questionnaire = ({
     setShowButtons,
@@ -248,6 +250,10 @@ const Questionnaire = ({
     }
     const [modalOpen, setModalOpen] = useState(true)
     const [exhibitorsQuestionnaire, setExhibitorsQuestionnaire] = useState([])
+    const [width, setWidth] = useState(undefined)
+    useEffect(() => {
+        setWidth(window.innerWidth)
+    }, [])
 
     useEffect(() => {
         console.log('setting exhibitors')
@@ -300,9 +306,20 @@ const Questionnaire = ({
 
     return (
         <div>
-            <button className='button-open-questionnaire' onClick={openModal}>
-                Open Questionnaire
-            </button>
+            {width > 768 ? (
+                <button
+                    className='button-open-questionnaire'
+                    onClick={openModal}
+                >
+                    Find recommendations
+                </button>
+            ) : (
+                <RiSurveyLine
+                    className='button-open-questionnaire'
+                    id='mobile'
+                    onClick={openModal}
+                />
+            )}
             <div className='q-top-container' style={{ zIndex: 1000 }}>
                 <Modal
                     className='questionnaire-container'

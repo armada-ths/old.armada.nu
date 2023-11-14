@@ -95,6 +95,7 @@ export class ExhibitorList extends React.Component {
             exhibitors: [], // json object
             exhibitorList: [], //displayed exhibitors
             showModal: false, //show individual company card
+            expandList: false, //to toggle expand list
             exhibitorName: undefined,
             isLoading: true,
             search: '', //search query string
@@ -449,6 +450,7 @@ export class ExhibitorList extends React.Component {
                         name={exhibitor.name}
                         exhibitor={exhibitor}
                         showModal={this.showModal}
+                        toggleFilters={toggleListExpand}
                     />
                 ))
                 this.setState({
@@ -484,6 +486,7 @@ export class ExhibitorList extends React.Component {
                 name={exhibitor.name}
                 exhibitor={exhibitor}
                 showModal={this.showModal}
+                setExpansionList={this.setExpansionList}
             />
         ))
         this.setState({
@@ -566,6 +569,7 @@ export class ExhibitorList extends React.Component {
                     name={exhibitor.name}
                     exhibitor={exhibitor}
                     showModal={this.showModal}
+                    setExpansionList={this.setExpansionList}
                 />
             ))
             this.setState({
@@ -917,6 +921,48 @@ export class ExhibitorList extends React.Component {
         return listitems
     }
 
+    toggleListExpand = () => {
+        const expandButton = document.getElementById('expand-button')
+        const exhibitors = document.getElementsByClassName('exhibitors')[0]
+        //const popupcontainer =document.getElementsByClassName('popupcontainer')[0]
+        if (
+            window.getComputedStyle(expandButton).getPropertyValue('rotate') ==
+            '180deg'
+        ) {
+            expandButton.style.rotate = '0deg'
+            exhibitors.style.top = '10%'
+            exhibitors.style.height = '90vh'
+            //popupcontainer.style.height = '90%'
+        } else {
+            expandButton.style.rotate = '180deg'
+            exhibitors.style.top = '60%'
+            exhibitors.style.height = '40vh'
+            //popupcontainer.style.height = '50%'
+        }
+    }
+
+    setExpansionList = open => {
+        const expandButton = document.getElementById('expand-button')
+        console.log('HEYYYYY')
+        if (
+            open &&
+            window.getComputedStyle(expandButton).getPropertyValue('rotate') ==
+                '180deg'
+        ) {
+            this.toggleListExpand()
+            //this.printHej()
+            //console.log('hej')
+        } else if (
+            !open &&
+            window.getComputedStyle(expandButton).getPropertyValue('rotate') ==
+                '0deg'
+        ) {
+            this.toggleListExpand()
+            //this.printHej()
+            //console.log('hej')
+        }
+    }
+
     //TODO: divide and simplify into nested components
     render() {
         // Here you decide if list of exhibitors should be displayed or not
@@ -1083,27 +1129,6 @@ export class ExhibitorList extends React.Component {
 
         let showall = filteredCompanies.length > this.state.showamount
 
-        function toggleListExpand() {
-            const expandButton = document.getElementById('expand-button')
-            const exhibitors = document.getElementsByClassName('exhibitors')[0]
-            //const popupcontainer =document.getElementsByClassName('popupcontainer')[0]
-            if (
-                window
-                    .getComputedStyle(expandButton)
-                    .getPropertyValue('rotate') == '180deg'
-            ) {
-                expandButton.style.rotate = '0deg'
-                exhibitors.style.top = '10%'
-                exhibitors.style.height = '90vh'
-                //popupcontainer.style.height = '90%'
-            } else {
-                expandButton.style.rotate = '180deg'
-                exhibitors.style.top = '60%'
-                exhibitors.style.height = '40vh'
-                //popupcontainer.style.height = '50%'
-            }
-        }
-
         function toggleFilterVisibility() {
             const filterContainer = document.getElementById('filter-container')
             filterContainer.classList.toggle('hidden')
@@ -1143,7 +1168,25 @@ export class ExhibitorList extends React.Component {
                         : null}
 
                     <div className='search'>
-                        <div className='search-container'>
+                        <div className='arrow-container'>
+                            <div
+                                id='expand-button'
+                                onClick={() => this.toggleListExpand()}
+                            >
+                                <svg
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    height='24'
+                                    viewBox='0 -960 960 960'
+                                    width='24'
+                                >
+                                    <path d='M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z' />
+                                </svg>
+                            </div>
+                        </div>
+                        <div
+                            className='search-container'
+                            onClick={() => this.setExpansionList(true)}
+                        >
                             <div className='search-line'>
                                 <input
                                     type='text'
@@ -1161,19 +1204,6 @@ export class ExhibitorList extends React.Component {
                                     alt='filter button'
                                 >
                                     <BsSliders className='filter-icon' /> Filter
-                                </div>
-                                <div
-                                    id='expand-button'
-                                    onClick={toggleListExpand}
-                                >
-                                    <svg
-                                        xmlns='http://www.w3.org/2000/svg'
-                                        height='24'
-                                        viewBox='0 -960 960 960'
-                                        width='24'
-                                    >
-                                        <path d='M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z' />
-                                    </svg>
                                 </div>
                                 {/* <Collapsible
                                     trigger={"Filters"}
@@ -1409,8 +1439,6 @@ const ExhibitorItem = props => {
             role='presentation'
             className={'exhibitor-box ' + classname}
             onClick={() => {
-                console.log('testestest')
-                console.log(props.exhibitor)
                 setFocusCoordinate({
                     coordinates: props.exhibitor.map_coordinates,
                     floor: props.exhibitor.fair_placement,
@@ -1424,6 +1452,7 @@ const ExhibitorItem = props => {
                     props.exhibitor.id
                 ).style.backgroundColor = '#00d790'
                 props.showModal(props.exhibitor.name)
+                props.setExpansionList(false)
             }}
         >
             <div className='image-container'>
@@ -1475,4 +1504,5 @@ ExhibitorItem.propTypes = {
     name: PropTypes.string,
     exhibitor: PropTypes.object,
     showModal: PropTypes.func,
+    setExpansionList: PropTypes.func,
 }

@@ -16,8 +16,7 @@
     align-items: center;
     font-size: 22px;
     cursor: pointer;
-    width: 10%;
-    height: 10%;
+
     rotate: 180deg;
 }
 #expand-button:hover {
@@ -97,7 +96,7 @@
     top: 60%;
     left: 0%;
     width: 100%;
-    padding-top: 1em;
+    padding-top: 0.2em;
     height: 40vh;
     overflow-y: auto;
     background-color: white;
@@ -721,4 +720,25 @@
     #filter-button {
         margin: 0em 0em 0em 0.5em;
     }
+}
+
+.arrow-container {
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+.arrow-container * {
+    margin: auto;
+}
+
+.arrow-container div {
+    border: 1px solid black;
+    padding: 0px;
+    border-radius: 500px;
+    width: 15%;
+    min-width: 30px;
+}
+.arrow-container div svg {
+    height: 30px;
+    width: 30px;
 }

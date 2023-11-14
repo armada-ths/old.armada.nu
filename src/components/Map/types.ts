@@ -6,4 +6,7 @@ export interface Exhibitor {
   logo_freesize: string;
   map_coordinates: [number, number][];
   fair_placement: string[];
+  industries: Array<{
+    name: string;
+  }>;
 }

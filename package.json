@@ -32,6 +32,7 @@
     "leaflet": "^1.9.3",
     "node-sass": "^8.0.0",
     "perfect-scrollbar": "^1.5.5",
+    "primereact": "^10.0.9",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.2.3",

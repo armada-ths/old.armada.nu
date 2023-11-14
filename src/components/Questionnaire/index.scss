@@ -16,11 +16,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
     background-color: rgb(251, 248, 248);
     border-color: black;
-    border-radius: 50px;
+    border-radius: 10px;
+    padding: 1rem;
+    max-width: 400px;
+    width: 90%;
     //box-shadow: 1rem rgb(240, 236, 236);
     z-index: 1000;
     /*  overflow: scroll;
@@ -37,12 +38,6 @@
 }
 
 .root-container {
-    position: absolute;
-    width: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
 }
 
 .question-content {
@@ -57,15 +52,12 @@
 }
 
 .dropdown-button {
-    width: 100%;
 }
 
 .input-button {
-    width: 100%;
 }
 
 .dropdown-eraser {
-    display: none;
 }
 
 .navigation-button {
@@ -93,4 +85,25 @@ sd-input sd-dropdown
         width: 100%;
         min-width: 0;
     }
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    padding: 0.75rem 1rem !important;
+}
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+    padding: 0.75rem 1rem !important;
+}
+
+.p-multiselect-close {
+    display: none;
+}
+
+.p-multiselect .p-multiselect-label {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p-multiselect .p-multiselect-token {
+    margin-bottom: 0.5rem;
+    font-size: 10px;
 }

@@ -288,6 +288,7 @@ const Questionnaire = ({
         question: {
             content: 'question-content',
         },
+        title: 'root-title',
     }
 
     const survey = new Model(surveyJson)
@@ -295,6 +296,7 @@ const Questionnaire = ({
     survey.showCompletedPage = false
     survey.onComplete.add(saveSurveyData)
     survey.css = customCss
+    console.log(survey)
 
     return (
         <div>

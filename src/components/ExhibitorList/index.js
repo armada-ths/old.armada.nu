@@ -14,7 +14,6 @@ import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
 import { BsSliders } from 'react-icons/bs'
 import { PlaceGoldFirst } from '@/templates/placeGoldFirst'
 
-import Questionnaire from '../Questionnaire'
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
 
@@ -410,7 +409,6 @@ export class ExhibitorList extends React.Component {
                 { value: 'Library - 2nd Floor', label: 'Library - 2nd Floor' },
             ],
             showamount: 20,
-            dataFromSessionStorage: {}, //data from questionnaire
         }
 
         let sortedSectors = this.state.sectors.sort((a, b) =>
@@ -575,13 +573,6 @@ export class ExhibitorList extends React.Component {
                 exhibitorList: exhibitorList,
                 isLoading: false,
             })
-        }
-
-        const questionnaireData = JSON.parse(sessionStorage.getItem('my-data'))
-        if (questionnaireData) {
-            console.log('1111111')
-            console.log(questionnaireData)
-            this.setState({ dataFromSessionStorage: questionnaireData })
         }
     }
 
@@ -1095,7 +1086,6 @@ export class ExhibitorList extends React.Component {
         if (showExhibitors) {
             return (
                 <div className='exhibitors'>
-                    <Questionnaire />
                     {/* <h1>
                         {this.props.lastYear ? "Last Year's " : ''}Exhibitors
                     </h1>

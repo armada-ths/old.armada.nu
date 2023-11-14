@@ -1325,33 +1325,51 @@ export class ExhibitorList extends React.Component {
                             (this.state.showModal ? 'notDisplay' : '')
                         }
                     >
-                        {filteredCompanies.length && !this.state.isLoading ? (
-                            filteredCompanies.splice(0, this.state.showamount)
-                        ) : (
-                            //filteredCompanies
-                            <div className='Noresultsfound'>
-                                {!this.state.isLoading ? (
-                                    <div>
-                                        <p className='noresultstext'>
-                                            Sorry, we couldn&apos;t find any
-                                            companies that match your search.
-                                            Please look at our cat instead!
-                                        </p>
-                                        <Cat />
+                        <div className='recommended-exhibitors'>
+                            <div className='recommended-exhibitors-text'>
+                                <b>Recommended exhibitors for you</b>
+                            </div>
+                            <div className='recommended-exhibitors-entries'></div>
+                        </div>
+                        <div className='all-exhibitors'>
+                            <div className='all-exhibitors-text'>
+                                <b>All Exhibitors</b>
+                            </div>
+                            <div className='all-exhibitors-entries'>
+                                {filteredCompanies.length &&
+                                !this.state.isLoading ? (
+                                    filteredCompanies.splice(
+                                        0,
+                                        this.state.showamount
+                                    )
+                                ) : (
+                                    //filteredCompanies
+                                    <div className='Noresultsfound'>
+                                        {!this.state.isLoading ? (
+                                            <div>
+                                                <p className='noresultstext'>
+                                                    Sorry, we couldn&apos;t find
+                                                    any companies that match
+                                                    your search. Please look at
+                                                    our cat instead!
+                                                </p>
+                                                <Cat />
+                                            </div>
+                                        ) : null}
+                                    </div>
+                                )}
+                                {showall ? (
+                                    <div className='showmore-container'>
+                                        <button
+                                            className='showmorebutton'
+                                            onClick={() => this.showMore()}
+                                        >
+                                            Show All
+                                        </button>
                                     </div>
                                 ) : null}
                             </div>
-                        )}
-                        {showall ? (
-                            <div className='showmore-container'>
-                                <button
-                                    className='showmorebutton'
-                                    onClick={() => this.showMore()}
-                                >
-                                    Show All
-                                </button>
-                            </div>
-                        ) : null}
+                        </div>
                     </div>
                 </div>
             )

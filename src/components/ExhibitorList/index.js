@@ -15,7 +15,6 @@ import { BsSliders } from 'react-icons/bs'
 import { PlaceGoldFirst } from '@/templates/placeGoldFirst'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 
-import Questionnaire from '../Questionnaire'
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
 
@@ -1112,7 +1111,7 @@ export class ExhibitorList extends React.Component {
         if (showExhibitors) {
             return (
                 <div className='exhibitors'>
-                    <Questionnaire />
+                    {/*<Questionnaire />*/}
                     {/* <h1>
                         {this.props.lastYear ? "Last Year's " : ''}Exhibitors
                     </h1>

@@ -37,6 +37,7 @@ import { ExhibitorRendering } from "./ExhibitorRendering";
 import { findPolygonCenter } from "@/components/Map/find_polygon_center";
 import { PlaceGoldFirst } from "@/templates/placeGoldFirst";
 import armada_logo from "../../../static/assets/armada_logo_text_gray_noText.png";
+import Questionnaire from "../Questionnaire";
 
 export const ExtendedZoom = createContext(null);
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -200,6 +201,7 @@ export const MapUtil = () => {
   const [editorCoordinates, setEditorCoordinates] = useState([]);
   const [labels, showLabels] = useState(true);
   const [buttonPressed, setButtonPressed] = useState(2);
+  const [showButtons, setShowButtons] = useState(false);
 
   const firstFloorNymble = require("../../../static/assets/Map/floor1-ntg.png");
   const secondFloorNymble = require("../../../static/assets/Map/floor2-ntg.png");
@@ -316,6 +318,7 @@ export const MapUtil = () => {
         overflowY: "hidden",
       }}
     >
+      <Questionnaire />
       <div style={{ overflowY: "hidden" }}>
         <div className="mapBox">
           <div className="mapBoxFloatingContainer">
@@ -325,6 +328,7 @@ export const MapUtil = () => {
               setBuilding={setBuilding}
               building={building}
               setButtonPressed={setButtonPressed}
+              style={showButtons ? { display: "flex" } : { display: "none" }}
             />
             <FloorButtons
               setFairLocation={setFairLocation}
@@ -337,6 +341,7 @@ export const MapUtil = () => {
               rectangleMode={rectangleMode}
               buttonPressed={buttonPressed}
               setButtonPressed={setButtonPressed}
+              style={showButtons ? { display: "block" } : { display: "none" }}
             />
           </div>
 

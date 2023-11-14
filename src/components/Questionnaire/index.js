@@ -273,19 +273,24 @@ const Questionnaire = props => {
                 Open Questionnaire
             </button>
             {!savedData && (
-                <Modal
-                    className='questionnaire-container'
-                    isOpen={modalOpen}
-                    onRequestClose={closeModal}
-                    contentLabel='Questionnaire Modal'
-                    shouldCloseOnOverlayClick={true}
-                    style={{ overlay: {}, content: {} }}
-                >
-                    <button className='modal-close-btn' onClick={closeModal}>
-                        X
-                    </button>
-                    <Survey model={survey} />
-                </Modal>
+                <div className='q-top-container' style={{ zIndex: 1000 }}>
+                    <Modal
+                        className='questionnaire-container'
+                        isOpen={modalOpen}
+                        onRequestClose={closeModal}
+                        contentLabel='Questionnaire Modal'
+                        shouldCloseOnOverlayClick={true}
+                        style={{ overlay: {}, content: {} }}
+                    >
+                        <button
+                            className='modal-close-btn'
+                            onClick={closeModal}
+                        >
+                            X
+                        </button>
+                        <Survey model={survey} />
+                    </Modal>
+                </div>
             )}
         </div>
     )

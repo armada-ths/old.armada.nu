@@ -1,5 +1,5 @@
 .questionnaire-container {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -8,8 +8,8 @@
     background-color: rgb(251, 248, 248);
     border-color: black;
     border-radius: 50px;
-    box-shadow: 1rem rgb(240, 236, 236);
-    z-index: 100;
+    //box-shadow: 1rem rgb(240, 236, 236);
+    z-index: 1000;
     /*  overflow: scroll;
     scrollbar-width: thin; */
     //padding: 10%;

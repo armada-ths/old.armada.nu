@@ -10,7 +10,6 @@ const Modal = ({ onClose, ...rest }) => (
         </div> */}
         <div className='popup'>
             <GrClose class='cross' onClick={onClose} />
-
             <div className='modalcontent' {...rest} />
         </div>
     </div>

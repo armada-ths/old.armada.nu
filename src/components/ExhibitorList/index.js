@@ -13,6 +13,7 @@ import { ExtendedZoom } from '../Map'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
 import { BsSliders } from 'react-icons/bs'
 import { PlaceGoldFirst } from '@/templates/placeGoldFirst'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
@@ -643,6 +644,18 @@ export class ExhibitorList extends React.Component {
                                         rel='noreferrer'
                                     >
                                         <u>{exhibitor.name}</u>
+                                        <p
+                                            style={{
+                                                textAlign: 'center',
+                                                textDecoration: 'underline',
+                                                fontSize: '0.4em',
+                                            }}
+                                        >
+                                            Link to website
+                                            <FaExternalLinkAlt
+                                                style={{ marginLeft: '5px' }}
+                                            />
+                                        </p>
                                     </a>
                                 </div>
                             ) : (

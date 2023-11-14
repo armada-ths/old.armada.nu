@@ -77,13 +77,9 @@ const Questionnaire = ({ setShowButtons }) => {
         ],
     }
     const [modalOpen, setModalOpen] = useState(true)
-    const [savedData, setSavedData] = useState(
-        sessionStorage.getItem('my-data')
-    )
 
     const openModal = () => {
         setModalOpen(true)
-        setSavedData(null)
     }
 
     const closeModal = () => {
@@ -111,7 +107,6 @@ const Questionnaire = ({ setShowButtons }) => {
         const data = survey.data
         const data_json = JSON.stringify(data)
         sessionStorage.setItem('my-data', data_json)
-        setSavedData(sessionStorage.setItem('my-data', data_json))
         setModalOpen(false)
     }
 
@@ -120,7 +115,7 @@ const Questionnaire = ({ setShowButtons }) => {
     survey.showCompletedPage = false
     survey.onComplete.add(saveSurveyData)
     survey.css = customCss
-    console.log(survey)
+    // console.log(survey)
 
     /* survey.addNavigationItem({
         id: 'sv-nav-clear-page',
@@ -136,7 +131,7 @@ const Questionnaire = ({ setShowButtons }) => {
             <button className='button-open-questionnaire' onClick={openModal}>
                 Open Questionnaire
             </button>
-            {!savedData && (
+            {
                 <div className='q-top-container' style={{ zIndex: 1000 }}>
                     <Modal
                         className='questionnaire-container'
@@ -155,7 +150,7 @@ const Questionnaire = ({ setShowButtons }) => {
                         <Survey model={survey} />
                     </Modal>
                 </div>
-            )}
+            }
         </div>
     )
 }

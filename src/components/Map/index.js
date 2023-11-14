@@ -1,41 +1,18 @@
 //https://codesandbox.io/s/react-leaflet-with-functional-components-and-imageoverlay-u225j?file=/src/Map.js
-import React, {
-  useEffect,
-  useState,
-  useRef,
-  createContext,
-  useContext,
-} from "react";
-import {
-  ImageOverlay,
-  MapContainer,
-  Marker,
-  LayersControl,
-  LayerGroup,
-  Polygon,
-  useMap,
-  useMapEvent,
-} from "react-leaflet";
+import React, { useEffect, useState, useRef, createContext } from "react";
+import { ImageOverlay, MapContainer, useMap, useMapEvent } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import L from "leaflet";
 import { CRS } from "leaflet";
 import "./index.scss";
-import { ExhibitorList, getExhibitors } from "../ExhibitorList";
-import customIconImage from "./customIcon.svg";
+import { ExhibitorList } from "../ExhibitorList";
 import { CoordinateEditor } from "./CoordinateEditor";
 import axios from "axios";
-import no_image from "../../../static/assets/armada_marker.png";
 import FloorButtons from "./FloorButtons";
-import { ImHome } from "react-icons/im";
-import { BsInfoCircle, BsInfoCircleFill } from "react-icons/bs";
 import BuildingSwitch from "./BuildingSwitch";
-import { build } from "joi";
-import { useLocation } from "@reach/router";
 import TooltipMarkers from "./TooltipMarkers";
 import { NewCoordinateEditor } from "./NewCoordinateEditor";
 import { ExhibitorRendering } from "./ExhibitorRendering";
 import { findPolygonCenter } from "@/components/Map/find_polygon_center";
-import { PlaceGoldFirst } from "@/templates/placeGoldFirst";
 import armada_logo from "../../../static/assets/armada_logo_text_gray_noText.png";
 
 export const ExtendedZoom = createContext(null);
@@ -388,6 +365,7 @@ export const MapUtil = () => {
                 ))}
               {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                */}
+              {labels && <TooltipMarkers floor={fairLocation} />}
               {/* For more info about marker cluster options: https://akursat.gitbook.io/marker-cluster/api */}
               <MarkerClusterGroup
                 chunkedLoading
@@ -406,7 +384,6 @@ export const MapUtil = () => {
                   handlePolygonSelect={handlePolygonSelect}
                 />
               </MarkerClusterGroup>
-              {labels && <TooltipMarkers floor={fairLocation} />}
               <ImageOverlay
                 url={floorObj[fairLocation].default}
                 bounds={bounds}

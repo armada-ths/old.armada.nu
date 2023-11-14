@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Model } from 'survey-core'
 import { Survey } from 'survey-react-ui'
 import Modal from 'react-modal'
@@ -8,7 +8,11 @@ import { surveyLocalization } from 'survey-core'
 import './pop.scss'
 import Fuse from 'fuse.js'
 
-const Questionnaire = ({ setShowButtons, setRecommendedExhibitors }) => {
+const Questionnaire = ({
+    setShowButtons,
+    setRecommendedExhibitors,
+    exhibitorsMap,
+}) => {
     const majorList = [
         'Biomedical Engineering',
         'Chemical Engineering',
@@ -185,6 +189,7 @@ const Questionnaire = ({ setShowButtons, setRecommendedExhibitors }) => {
     }
 
     function matchIndustriesToExhibitors(industries, allExhibitors) {
+        console.log(allExhibitors)
         return allExhibitors.reduce((matchedExhibitors, exhibitor) => {
             // Check if the exhibitor has all the specified industries
             const hasAllIndustries = industries.some(industry =>
@@ -242,6 +247,13 @@ const Questionnaire = ({ setShowButtons, setRecommendedExhibitors }) => {
         ],
     }
     const [modalOpen, setModalOpen] = useState(true)
+    const [exhibitorsQuestionnaire, setExhibitorsQuestionnaire] = useState([])
+
+    useEffect(() => {
+        console.log('setting exhibitors')
+        console.log(exhibitorsMap)
+        setExhibitorsQuestionnaire(exhibitorsMap)
+    }, [exhibitorsMap])
 
     const openModal = () => {
         setModalOpen(true)
@@ -273,6 +285,16 @@ const Questionnaire = ({ setShowButtons, setRecommendedExhibitors }) => {
         const data_json = JSON.stringify(data)
         sessionStorage.setItem('my-data', data_json)
         setModalOpen(false)
+        // console.log(data)
+        const industries = matchProgramToIndustries(data['Programme'])
+        console.log('check if theres something here:')
+        console.log(industries)
+        console.log(exhibitorsQuestionnaire.length)
+        setRecommendedExhibitors(
+            industries &&
+                exhibitorsQuestionnaire.length > 0 &&
+                matchIndustriesToExhibitors(industries, exhibitorsQuestionnaire)
+        )
     }
 
     const survey = new Model(surveyJson)

@@ -321,6 +321,7 @@ export const MapUtil = () => {
       <Questionnaire
         setShowButtons={setShowButtons}
         setRecommendedExhibitors={setRecommendedExhibitors}
+        exhibitorsMap={exhibitorsMap}
       />
       <div style={{ overflowY: "hidden" }}>
         <div className="mapBox">

@@ -496,6 +496,8 @@ export class ExhibitorList extends React.Component {
     }
 
     updateRecommendedExhibitors(recommendedExhibitorsInput) {
+        console.log('hey show these:')
+        console.log(recommendedExhibitorsInput)
         let recommendedExhibitorsList = recommendedExhibitorsInput.map(
             exhibitor => (
                 <ExhibitorItem
@@ -506,6 +508,7 @@ export class ExhibitorList extends React.Component {
                 />
             )
         )
+        console.log(recommendedExhibitorsList)
         this.setState({
             recommendedExhibitors: recommendedExhibitorsList,
         })
@@ -534,6 +537,7 @@ export class ExhibitorList extends React.Component {
             JSON.stringify(this.props.recommendedExhibitors) !==
             JSON.stringify(prevProps.recommendedExhibitors)
         ) {
+            console.log('Noticed that we need to update')
             this.updateRecommendedExhibitors(this.props.recommendedExhibitors)
         }
 
@@ -1315,7 +1319,7 @@ export class ExhibitorList extends React.Component {
                             (this.state.showModal ? 'notDisplay' : '')
                         }
                     >
-                        {this.state.recommendedExhibitors > 0 && (
+                        {this.state.recommendedExhibitors.length > 0 && (
                             <div className='recommended-exhibitors'>
                                 <div className='recommended-exhibitors-text'>
                                     <b>Recommended exhibitors for you</b>

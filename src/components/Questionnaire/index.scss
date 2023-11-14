@@ -1,3 +1,6 @@
+@import '../../styles/_variables';
+@import '../../styles/_fonts';
+
 .crossQuestionnaire {
     width: 10%;
     height: 10%;
@@ -84,3 +87,10 @@
 sd-btn sd-navigation__next-btn
 sd-input sd-dropdown
 */
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .question-content {
+        width: 100%;
+        min-width: 0;
+    }
+}

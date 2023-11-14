@@ -389,6 +389,7 @@ export const MapUtil = () => {
               {/*                 <EventListener points={surfaces} setPoints={setSurfaces} />
                */}
               {/* For more info about marker cluster options: https://akursat.gitbook.io/marker-cluster/api */}
+              {labels && <TooltipMarkers floor={fairLocation} />}
               <MarkerClusterGroup
                 chunkedLoading
                 showCoverageOnHover={false}
@@ -406,7 +407,6 @@ export const MapUtil = () => {
                   handlePolygonSelect={handlePolygonSelect}
                 />
               </MarkerClusterGroup>
-              {labels && <TooltipMarkers floor={fairLocation} />}
               <ImageOverlay
                 url={floorObj[fairLocation].default}
                 bounds={bounds}

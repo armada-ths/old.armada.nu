@@ -13,7 +13,7 @@ import { ExtendedZoom } from '../Map'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
 import { BsSliders } from 'react-icons/bs'
 import { PlaceGoldFirst } from '@/templates/placeGoldFirst'
-import { FaExternalLinkAlt } from 'react-icons/fa'
+import { FaExternalLinkAlt, FaCaretDown, FaCaretUp } from 'react-icons/fa'
 
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
@@ -98,6 +98,7 @@ export class ExhibitorList extends React.Component {
             showModal: false, //show individual company card
             exhibitorName: undefined,
             isLoading: true,
+            collapseRecommended: false,
             search: '', //search query string
             jobfilters: {},
             sectorfilters: {},
@@ -1322,10 +1323,26 @@ export class ExhibitorList extends React.Component {
                         {this.state.recommendedExhibitors.length > 0 && (
                             <div className='recommended-exhibitors'>
                                 <div className='recommended-exhibitors-text'>
-                                    <b>Recommended exhibitors for you</b>
+                                    <b
+                                        onClick={() => {
+                                            this.setState({
+                                                collapseRecommended:
+                                                    !this.state
+                                                        .collapseRecommended,
+                                            })
+                                        }}
+                                    >
+                                        {`Recommended exhibitors for you (${this.state.recommendedExhibitors.length} matches)`}{' '}
+                                        {this.state.collapseRecommended ? (
+                                            <FaCaretUp />
+                                        ) : (
+                                            <FaCaretDown />
+                                        )}
+                                    </b>
                                 </div>
                                 <div className='recommended-exhibitors-entries'>
-                                    {this.state.recommendedExhibitors}
+                                    {!this.state.collapseRecommended &&
+                                        this.state.recommendedExhibitors}
                                 </div>
                             </div>
                         )}

@@ -36,13 +36,14 @@ const Questionnaire = ({
     // Dirty solution to set the recommended on load if they exist
     // WIP
     useEffect(() => {
+        if (exhibitorsMap.length <= 0) return
         console.log('TEST', storedData)
         if (storedData == null) return
         setQuestionaireData(
             storedData?.Programme || null,
             storedData?.JobType || []
         )
-    }, [])
+    }, [exhibitorsMap])
 
     const majorList = [
         'Architecture',
@@ -373,8 +374,6 @@ const Questionnaire = ({
 
     const [modalOpen, setModalOpen] = useState(storedData == null)
 
-    console.log('TEST', exhibitorsMap)
-
     const openModal = () => {
         setModalOpen(true)
         setShowButtons(false)
@@ -488,6 +487,9 @@ const Questionnaire = ({
                                         maxWidth: '300px',
                                     }}
                                 >
+                                    <b style={{ textAlign: 'center' }}>
+                                        Find the exhibitors that match you:
+                                    </b>
                                     <p
                                         style={{
                                             fontSize: '15px',

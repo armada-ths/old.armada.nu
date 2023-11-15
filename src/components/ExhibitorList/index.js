@@ -1426,9 +1426,15 @@ export class ExhibitorList extends React.Component {
                             )}
                             <div className='all-exhibitors'>
                                 <div className='all-exhibitors-text'>
-                                    <b>
-                                        {`All Exhibitors on ${this.state?.fairPlacementfilters[0]?.value}`}
-                                    </b>
+                                    {this.state.showAllCompanies ? (
+                                        <b>Showing All Exhibitors</b>
+                                    ) : (
+                                        <>
+                                            <b>
+                                                {`All Exhibitors on ${this.state?.fairPlacementfilters[0]?.value}`}
+                                            </b>
+                                        </>
+                                    )}
                                 </div>
                                 <div className='all-exhibitors-entries'>
                                     {filteredCompanies.length &&

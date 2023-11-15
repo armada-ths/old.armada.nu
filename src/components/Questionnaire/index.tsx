@@ -35,8 +35,8 @@ const Questionnaire = ({
     // WIP
     useEffect(() => {
         if (exhibitorsMap.length <= 0) return
-        console.log('TEST', storedData)
         if (storedData == null) return
+        setShowButtons(true)
         setQuestionaireData(
             storedData?.Programme || null,
             storedData?.JobType || []

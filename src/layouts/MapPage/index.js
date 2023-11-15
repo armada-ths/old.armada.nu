@@ -4,6 +4,7 @@ import MapUtil from '../../components/Map/index.js'
 import Loadable from '@loadable/component'
 import './index.scss'
 import { ChaoticOrbit } from '@uiball/loaders'
+import Loading from '@/components/Loading/index.js'
 
 const LoadableReputation = Loadable(() =>
     import('../../components/Map/index.js')
@@ -18,6 +19,7 @@ const MapPage = props => {
     }, [])
     return (
         <>
+            <div className='loading'>{isLoading ? <Loading /> : null}</div>
             <div
                 className='loadingAnim'
                 aria-live='polite'

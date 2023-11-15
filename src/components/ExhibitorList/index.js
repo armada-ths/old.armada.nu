@@ -13,7 +13,7 @@ import { ExtendedZoom } from '../Map'
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
 import { BsSliders } from 'react-icons/bs'
 import { PlaceGoldFirst } from '@/templates/placeGoldFirst'
-import { FaExternalLinkAlt } from 'react-icons/fa'
+import { FaExternalLinkAlt, FaCaretDown, FaCaretUp } from 'react-icons/fa'
 
 /* armada.nu/exhibitors is no longer being used. To do is to patch all this and make it work with the API again //Nima
 
@@ -80,10 +80,6 @@ function checkFairLocation(fairLocation) {
     return false
 }
 
-export function getExhibitors(setExhibitorsForMap) {
-    setExhibitorsForMap(exhibitorsConst)
-}
-
 export class ExhibitorList extends React.Component {
     constructor(props) {
         super(props) // adopts parent qualities
@@ -95,10 +91,12 @@ export class ExhibitorList extends React.Component {
                 .toString(), //get the previous year
             exhibitors: [], // json object
             exhibitorList: [], //displayed exhibitors
+            recommendedExhibitors: [],
             showModal: false, //show individual company card
             expandList: false, //to toggle expand list
             exhibitorName: undefined,
             isLoading: true,
+            collapseRecommended: false,
             search: '', //search query string
             jobfilters: {},
             sectorfilters: {},
@@ -198,13 +196,13 @@ export class ExhibitorList extends React.Component {
                 { value: 'Industry Design', label: 'Industry Design' },
             ],
             jobs: [
-                { value: 'Full time job', label: 'Full Time Job' },
-                { value: 'Part time job', label: 'Part Time Job' },
-                { value: 'Summer job', label: 'Summer Job' },
+                { value: 'Full-time', label: 'Full-time' },
+                { value: 'Part-time', label: 'Part-time' },
+                { value: 'Summer job', label: 'Summer job' },
                 { value: 'Internship', label: 'Internship' },
                 { value: 'Trainee', label: 'Trainee' },
-                { value: 'Master thesis', label: 'Master Thesis' },
                 { value: 'Bachelor thesis', label: 'Bachelor Thesis' },
+                { value: 'Master thesis', label: 'Master thesis' },
             ],
             competences: [
                 {
@@ -411,6 +409,7 @@ export class ExhibitorList extends React.Component {
                 { value: 'Library - 2nd Floor', label: 'Library - 2nd Floor' },
             ],
             showamount: 20,
+            dataFromSessionStorage: {}, //data from questionnaire
         }
 
         let sortedSectors = this.state.sectors.sort((a, b) =>
@@ -497,9 +496,30 @@ export class ExhibitorList extends React.Component {
         })
     }
 
+    updateRecommendedExhibitors(recommendedExhibitorsInput) {
+        console.log('hey show these:')
+        console.log(recommendedExhibitorsInput)
+        recommendedExhibitorsInput = PlaceGoldFirst(recommendedExhibitorsInput)
+        let recommendedExhibitorsList = recommendedExhibitorsInput.map(
+            exhibitor => (
+                <ExhibitorItem
+                    key={exhibitor.id}
+                    name={exhibitor.name}
+                    exhibitor={exhibitor}
+                    showModal={this.showModal}
+                />
+            )
+        )
+        console.log(recommendedExhibitorsList)
+        this.setState({
+            recommendedExhibitors: recommendedExhibitorsList,
+        })
+    }
+
     componentDidUpdate(prevProps) {
         //console.log(this.props.fairInputLocation, prevProps.fairInputLocation) //remove this later
         //console.log(this.props.fairInputExhibitors) //remove this also later.
+
         if (this.props.fairInputLocation !== prevProps.fairInputLocation) {
             this.updateLocationShowed(this.props.fairInputLocation)
         }
@@ -514,6 +534,13 @@ export class ExhibitorList extends React.Component {
                 exhibitorName: this.props.exhibitorName,
                 showModal: true,
             })
+        }
+        if (
+            JSON.stringify(this.props.recommendedExhibitors) !==
+            JSON.stringify(prevProps.recommendedExhibitors)
+        ) {
+            console.log('Noticed that we need to update')
+            this.updateRecommendedExhibitors(this.props.recommendedExhibitors)
         }
 
         // Do not update unless the floor changed
@@ -945,11 +972,14 @@ export class ExhibitorList extends React.Component {
             window.getComputedStyle(expandButton).getPropertyValue('rotate') ==
             '180deg'
         ) {
+            this.props.setShowButtons(false)
             expandButton.style.rotate = '0deg'
             exhibitors.style.top = '20%'
             exhibitors.style.height = '80vh'
             //popupcontainer.style.height = '90%'
         } else {
+            this.props.setShowButtons(true)
+
             expandButton.style.rotate = '180deg'
             exhibitors.style.top = '60%'
             exhibitors.style.height = '40vh'
@@ -983,7 +1013,6 @@ export class ExhibitorList extends React.Component {
         // Here you decide if list of exhibitors should be displayed or not
         let showExhibitors = true
         let thisYear = new Date().getFullYear().toString()
-        //console.log('poop' + this.props.fairLocation)
         if (this.year === thisYear) {
             showExhibitors = false
         }
@@ -1151,33 +1180,6 @@ export class ExhibitorList extends React.Component {
         if (showExhibitors) {
             return (
                 <div className='exhibitors'>
-                    {/* <h1>
-                        {this.props.lastYear ? "Last Year's " : ''}Exhibitors
-                    </h1>
-                    <br />
-                    <p
-                        style={{
-                            width: '90%',
-                            margin:'0em 2em 0em 2em',
-                            paddingBottom: this.props.lastYear ? '1em' : {},
-                        }}
-                    >
-                        {this.props.lastYear ? (
-                            `These are the exhibitors from the ${this.state.previousYear} fair.`
-                        ) : (
-                            <span>
-                                <span className='bold'>
-                                    Sustainability & Diversity
-                                </span>{' '}
-                                form the core values at the heart of our
-                                organization. To highlight our core values, we
-                                have chosen to dedicate focus areas of the fair
-                                called Green Room and Diversity Room. If an
-                                exhibitor is tagged with one of the images
-                                below, they are in one of these rooms!
-                            </span>
-                        )}
-                    </p> */}
                     {this.state.showModal
                         ? this.displayExhibitor(exhibitorToDisplay)
                         : null}
@@ -1390,47 +1392,80 @@ export class ExhibitorList extends React.Component {
 
                         {/* TODO: everything should be dynamic instead of hard-coded */}
 
-                        <div className='loading'>
-                            {this.state.isLoading ? <Loading /> : null}
-                        </div>
                         <div
                             className={
                                 'exhibitor-feed ' +
                                 (this.state.showModal ? 'notDisplay' : '')
                             }
                         >
-                            {filteredCompanies.length &&
-                            !this.state.isLoading ? (
-                                filteredCompanies.splice(
-                                    0,
-                                    this.state.showamount
-                                )
-                            ) : (
-                                //filteredCompanies
-                                <div className='Noresultsfound'>
-                                    {!this.state.isLoading ? (
-                                        <div>
-                                            <p className='noresultstext'>
-                                                Sorry, we couldn&apos;t find any
-                                                companies that match your
-                                                search. Please look at our cat
-                                                instead!
-                                            </p>
-                                            <Cat />
+                            {this.state.recommendedExhibitors.length > 0 && (
+                                <div className='recommended-exhibitors'>
+                                    <div className='recommended-exhibitors-text'>
+                                        <b
+                                            onClick={() => {
+                                                this.setState({
+                                                    collapseRecommended:
+                                                        !this.state
+                                                            .collapseRecommended,
+                                                })
+                                            }}
+                                        >
+                                            {`Recommended exhibitors for you (${this.state.recommendedExhibitors.length} matches)`}{' '}
+                                            {this.state.collapseRecommended ? (
+                                                <FaCaretUp />
+                                            ) : (
+                                                <FaCaretDown />
+                                            )}
+                                        </b>
+                                    </div>
+                                    <div className='recommended-exhibitors-entries'>
+                                        {!this.state.collapseRecommended &&
+                                            this.state.recommendedExhibitors}
+                                    </div>
+                                </div>
+                            )}
+                            <div className='all-exhibitors'>
+                                <div className='all-exhibitors-text'>
+                                    <b>
+                                        {`All Exhibitors on ${this.state?.fairPlacementfilters[0]?.value}`}
+                                    </b>
+                                </div>
+                                <div className='all-exhibitors-entries'>
+                                    {filteredCompanies.length &&
+                                    !this.state.isLoading ? (
+                                        filteredCompanies.splice(
+                                            0,
+                                            this.state.showamount
+                                        )
+                                    ) : (
+                                        //filteredCompanies
+                                        <div className='Noresultsfound'>
+                                            {!this.state.isLoading ? (
+                                                <div>
+                                                    <p className='noresultstext'>
+                                                        Sorry, we couldn&apos;t
+                                                        find any companies that
+                                                        match your search.
+                                                        Please look at our cat
+                                                        instead!
+                                                    </p>
+                                                    <Cat />
+                                                </div>
+                                            ) : null}
+                                        </div>
+                                    )}
+                                    {showall ? (
+                                        <div className='showmore-container'>
+                                            <button
+                                                className='showmorebutton'
+                                                onClick={() => this.showMore()}
+                                            >
+                                                Show More
+                                            </button>
                                         </div>
                                     ) : null}
                                 </div>
-                            )}
-                            {showall ? (
-                                <div className='showmore-container'>
-                                    <button
-                                        className='showmorebutton'
-                                        onClick={() => this.showMore()}
-                                    >
-                                        Show More
-                                    </button>
-                                </div>
-                            ) : null}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1450,6 +1485,7 @@ ExhibitorList.propTypes = {
     lastYear: PropTypes.bool,
     year: PropTypes.string,
     showCV: PropTypes.bool,
+    recommendedExhibitors: PropTypes.array,
 }
 
 export default ExhibitorList

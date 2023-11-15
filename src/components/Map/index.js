@@ -14,6 +14,7 @@ import { NewCoordinateEditor } from "./NewCoordinateEditor";
 import { ExhibitorRendering } from "./ExhibitorRendering";
 import { findPolygonCenter } from "@/components/Map/find_polygon_center";
 import armada_logo from "../../../static/assets/armada_logo_text_gray_noText.png";
+import Questionnaire from "../Questionnaire";
 
 export const ExtendedZoom = createContext(null);
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -283,6 +284,8 @@ export const MapUtil = () => {
     "Interaction Design": possibleColors[5],
     "Industry Design": possibleColors[10],
   };*/
+  const [showButtons, setShowButtons] = useState(false);
+  const [recommendedExhibitors, setRecommendedExhibitors] = useState([]);
   const expandButton = document.getElementById("expand-button");
   const exhibitors = document.getElementsByClassName("exhibitors")[0];
   return (
@@ -294,6 +297,13 @@ export const MapUtil = () => {
         overflowY: "hidden",
       }}
     >
+      {(exhibitorsMap != null || exhibitorsMap.length <= 0) && (
+        <Questionnaire
+          setShowButtons={setShowButtons}
+          setRecommendedExhibitors={setRecommendedExhibitors}
+          exhibitorsMap={exhibitorsMap}
+        />
+      )}
       <div style={{ overflowY: "hidden" }}>
         <div
           className="mapBox"
@@ -313,24 +323,31 @@ export const MapUtil = () => {
         >
           <div className="mapBoxFloatingContainer">
             <div /> {/* Filler div to take up the first slot in the grid */}
-            <BuildingSwitch
-              setFairLocation={setFairLocation}
-              setBuilding={setBuilding}
-              building={building}
-              setButtonPressed={setButtonPressed}
-            />
-            <FloorButtons
-              setFairLocation={setFairLocation}
-              showDevTool={false}
-              devMode={devMode}
-              setDevMode={setDevMode}
-              building={building}
-              setEditorCoordinates={setEditorCoordinates}
-              setRectangleMode={setRectangleMode}
-              rectangleMode={rectangleMode}
-              buttonPressed={buttonPressed}
-              setButtonPressed={setButtonPressed}
-            />
+            {showButtons && (
+              <>
+                <BuildingSwitch
+                  setFairLocation={setFairLocation}
+                  setBuilding={setBuilding}
+                  building={building}
+                  setButtonPressed={setButtonPressed}
+                />
+                <FloorButtons
+                  setFairLocation={setFairLocation}
+                  showDevTool={false}
+                  devMode={devMode}
+                  setDevMode={setDevMode}
+                  building={building}
+                  setEditorCoordinates={setEditorCoordinates}
+                  setRectangleMode={setRectangleMode}
+                  rectangleMode={rectangleMode}
+                  buttonPressed={buttonPressed}
+                  setButtonPressed={setButtonPressed}
+                  style={
+                    showButtons ? { display: "block" } : { display: "none" }
+                  }
+                />
+              </>
+            )}
           </div>
 
           {
@@ -434,10 +451,12 @@ export const MapUtil = () => {
             </div> */}
         <ExtendedZoom.Provider value={setFocusCoordinate}>
           <ExhibitorList
+            recommendedExhibitors={recommendedExhibitors}
             fairInputLocation={fairLocation}
             fairInputExhibitors={exhibitorsMap}
             showCV={true}
             exhibitorName={focusedExName}
+            setShowButtons={setShowButtons}
           />
         </ExtendedZoom.Provider>
       </div>

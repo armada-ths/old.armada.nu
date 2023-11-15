@@ -380,7 +380,6 @@ const Questionnaire = ({
 
     const closeModal = () => {
         setModalOpen(false)
-        setShowButtons(true)
     }
 
     const [formState, setFormState] = useState<number | null>(
@@ -444,8 +443,13 @@ const Questionnaire = ({
                     <Modal
                         onAfterClose={() => {
                             setFormState(null)
+                            if (
+                                document.getElementById('expand-button')?.style
+                                    .rotate == '180deg'
+                            ) {
+                                setShowButtons(true)
+                            }
                             setModalOpen(false)
-                            setShowButtons(true)
                         }}
                         className='questionnaire-container'
                         isOpen={modalOpen}

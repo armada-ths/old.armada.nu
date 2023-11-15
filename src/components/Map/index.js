@@ -208,8 +208,20 @@ export const MapUtil = () => {
       if (!floor.includes(fairLocation)) {
         if (floor[0].includes("Library") && building !== "Library") {
           setBuilding("Library");
+          if (floor[0].includes("Main")) {
+            setButtonPressed(2);
+          } else {
+            setButtonPressed(3);
+          }
         } else if (floor[0].includes("Nymble") && building !== "Nymble") {
           setBuilding("Nymble");
+          if (floor[0].includes("1st")) {
+            setButtonPressed(1);
+          } else if (floor[0].includes("2nd")) {
+            setButtonPressed(2);
+          } else {
+            setButtonPressed(3);
+          }
         }
         setFairLocation(floor[0]); //if the company in question is not on the same floor we already are looking at, go to ONE of it's other floors
         setTimeout(() => {
@@ -406,10 +418,11 @@ export const MapUtil = () => {
                 spiderLegPolylineOptions={{
                   opacity: 0,
                 }}
-                maxClusterRadius={60}
-                disableClusteringAtZoom={4}
+                maxClusterRadius={80}
+                disableClusteringAtZoom={5}
                 zoomToBoundsOnClick={true}
                 spiderfyOnMaxZoom={false}
+                removeOutsideVisibleBounds={true}
               >
                 <ExhibitorRendering
                   fairLocation={fairLocation}

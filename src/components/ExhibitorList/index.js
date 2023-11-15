@@ -663,6 +663,7 @@ export class ExhibitorList extends React.Component {
                                         exhibitor.logo_freesize
                                     }
                                     alt={exhibitor.name + ' logo'}
+                                    loading='lazy'
                                 />
                             )}
                         </div>
@@ -1534,6 +1535,7 @@ const ExhibitorItem = props => {
                     <img
                         alt={props.exhibitor.name}
                         src={props.exhibitor.logo_squared}
+                        loading='lazy'
                     />
                 )}
             </div>

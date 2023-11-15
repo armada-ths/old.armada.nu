@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Modal from 'react-modal'
-import 'survey-core/defaultV2.min.css'
 import './index.scss'
 import Fuse from 'fuse.js'
 import { Dropdown } from 'primereact/dropdown'

@@ -37,6 +37,7 @@ const dropDownAttributes = {
 }
 
 const ais = 'https://ais.armada.nu/'
+const isMockup = false //change this to go into manual/API fetching mode
 const showFilters = true
 
 function checkListOfCoordinates(arr) {
@@ -77,10 +78,6 @@ function checkFairLocation(fairLocation) {
         }
     }
     return false
-}
-
-export function getExhibitors(setExhibitorsForMap) {
-    setExhibitorsForMap(exhibitorsConst)
 }
 
 export class ExhibitorList extends React.Component {
@@ -1392,80 +1389,79 @@ export class ExhibitorList extends React.Component {
 
                         {/* TODO: everything should be dynamic instead of hard-coded */}
 
-                    <div className='loading'>
-                        {this.state.isLoading ? <Loading /> : null}
-                    </div>
-                    <div
-                        className={
-                            'exhibitor-feed ' +
-                            (this.state.showModal ? 'notDisplay' : '')
-                        }
-                    >
-                        {this.state.recommendedExhibitors.length > 0 && (
-                            <div className='recommended-exhibitors'>
-                                <div className='recommended-exhibitors-text'>
-                                    <b
-                                        onClick={() => {
-                                            this.setState({
-                                                collapseRecommended:
-                                                    !this.state
-                                                        .collapseRecommended,
-                                            })
-                                        }}
-                                    >
-                                        {`Recommended exhibitors for you (${this.state.recommendedExhibitors.length} matches)`}{' '}
-                                        {this.state.collapseRecommended ? (
-                                            <FaCaretUp />
-                                        ) : (
-                                            <FaCaretDown />
-                                        )}
+                        <div
+                            className={
+                                'exhibitor-feed ' +
+                                (this.state.showModal ? 'notDisplay' : '')
+                            }
+                        >
+                            {this.state.recommendedExhibitors.length > 0 && (
+                                <div className='recommended-exhibitors'>
+                                    <div className='recommended-exhibitors-text'>
+                                        <b
+                                            onClick={() => {
+                                                this.setState({
+                                                    collapseRecommended:
+                                                        !this.state
+                                                            .collapseRecommended,
+                                                })
+                                            }}
+                                        >
+                                            {`Recommended exhibitors for you (${this.state.recommendedExhibitors.length} matches)`}{' '}
+                                            {this.state.collapseRecommended ? (
+                                                <FaCaretUp />
+                                            ) : (
+                                                <FaCaretDown />
+                                            )}
+                                        </b>
+                                    </div>
+                                    <div className='recommended-exhibitors-entries'>
+                                        {!this.state.collapseRecommended &&
+                                            this.state.recommendedExhibitors}
+                                    </div>
+                                </div>
+                            )}
+                            <div className='all-exhibitors'>
+                                <div className='all-exhibitors-text'>
+                                    <b>
+                                        {`All Exhibitors on ${this.state?.fairPlacementfilters[0]?.value}`}
                                     </b>
                                 </div>
-                                <div className='recommended-exhibitors-entries'>
-                                    {!this.state.collapseRecommended &&
-                                        this.state.recommendedExhibitors}
+                                <div className='all-exhibitors-entries'>
+                                    {filteredCompanies.length &&
+                                    !this.state.isLoading ? (
+                                        filteredCompanies.splice(
+                                            0,
+                                            this.state.showamount
+                                        )
+                                    ) : (
+                                        //filteredCompanies
+                                        <div className='Noresultsfound'>
+                                            {!this.state.isLoading ? (
+                                                <div>
+                                                    <p className='noresultstext'>
+                                                        Sorry, we couldn&apos;t
+                                                        find any companies that
+                                                        match your search.
+                                                        Please look at our cat
+                                                        instead!
+                                                    </p>
+                                                    <Cat />
+                                                </div>
+                                            ) : null}
+                                        </div>
+                                    )}
+                                    {showall ? (
+                                        <div className='showmore-container'>
+                                            <button
+                                                className='showmorebutton'
+                                                onClick={() => this.showMore()}
+                                            >
+                                                Show More
+                                            </button>
+                                        </div>
+                                    ) : null}
                                 </div>
-                            </div>
-                        )}
-                        <div className='all-exhibitors'>
-                            <div className='all-exhibitors-text'>
-                                <b>
-                                    {`All Exhibitors on ${this.state?.fairPlacementfilters[0]?.value}`}
-                                </b>
-                            </div>
-                            <div className='all-exhibitors-entries'>
-                                {filteredCompanies.length &&
-                                !this.state.isLoading ? (
-                                    filteredCompanies.splice(
-                                        0,
-                                        this.state.showamount
-                                    )
-                                ) : (
-                                    //filteredCompanies
-                                    <div className='Noresultsfound'>
-                                        {!this.state.isLoading ? (
-                                            <div>
-                                                <p className='noresultstext'>
-                                                    Sorry, we couldn&apos;t find
-                                                    any companies that match
-                                                    your search. Please look at
-                                                    our cat instead!
-                                                </p>
-                                                <Cat />
-                                            </div>
-                                        ) : null}
-                                    </div>
-                                )}
-                                {showall ? (
-                                    <div className='showmore-container'>
-                                        <button
-                                            className='showmorebutton'
-                                            onClick={() => this.showMore()}
-                                        >
-                                            Show All
-                                        </button>
-                                    </div>
-                                ) : null}
                             </div>
                         </div>
                     </div>

@@ -300,6 +300,7 @@ export const MapUtil = () => {
   const [recommendedExhibitors, setRecommendedExhibitors] = useState([]);
   const expandButton = document.getElementById("expand-button");
   const exhibitors = document.getElementsByClassName("exhibitors")[0];
+  console.log(exhibitorsMap);
   return (
     <div
       style={{
@@ -309,7 +310,7 @@ export const MapUtil = () => {
         overflowY: "hidden",
       }}
     >
-      {(exhibitorsMap != null || exhibitorsMap.length <= 0) && (
+      {(exhibitorsMap != null || exhibitorsMap.length > 0) && (
         <Questionnaire
           setShowButtons={setShowButtons}
           setRecommendedExhibitors={setRecommendedExhibitors}

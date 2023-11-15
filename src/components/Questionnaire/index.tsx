@@ -366,6 +366,7 @@ const Questionnaire = ({
     //     return results.map(result => result.item.industries).flat()
     // }
     const [width, setWidth] = useState<number>()
+    const [alertMsg, setAlertMsg] = useState<string>()
     useEffect(() => {
         setWidth(window.innerWidth)
     }, [])
@@ -409,35 +410,44 @@ const Questionnaire = ({
     function setQuestionaireData(programme: string | null, jobTypes: string[]) {
         const industries =
             programme == null ? null : matchProgramToIndustries(programme)
-
+        let matchedExhibs = []
         if (exhibitorsMap.length > 0) {
-            setRecommendedExhibitors(
-                matchIndustriesToExhibitors(industries, jobTypes, exhibitorsMap)
+            matchedExhibs = matchIndustriesToExhibitors(
+                industries,
+                jobTypes,
+                exhibitorsMap
             )
+            if (matchedExhibs.length === 0) {
+                setAlertMsg(
+                    'There were no exhibitors that matched your criteria'
+                )
+                setFormState(0)
+            } else {
+                setRecommendedExhibitors(matchedExhibs)
+                setModalOpen(false)
+            }
         }
-        setModalOpen(false)
     }
 
     return (
         <div>
-            {formState == null && (
-                <>
-                    {width && width > 768 ? (
-                        <button
-                            className='button-open-questionnaire'
-                            onClick={openModal}
-                        >
-                            Find Recommendations
-                        </button>
-                    ) : (
-                        <RiSurveyLine
-                            className='button-open-questionnaire'
-                            onClick={openModal}
-                            id='mobile'
-                        />
-                    )}
-                </>
-            )}
+            <>
+                {width && width > 768 ? (
+                    <button
+                        className='button-open-questionnaire'
+                        onClick={openModal}
+                    >
+                        Find Recommendations
+                    </button>
+                ) : (
+                    <RiSurveyLine
+                        className='button-open-questionnaire'
+                        onClick={openModal}
+                        id='mobile'
+                    />
+                )}
+            </>
+
             {formState != null && (
                 <div className='q-top-container' style={{ zIndex: 1000 }}>
                     <Modal
@@ -535,6 +545,13 @@ const Questionnaire = ({
                                             }
                                         />
                                     </div>
+                                    {alertMsg ? (
+                                        <p style={{ textAlign: 'center' }}>
+                                            {alertMsg}
+                                        </p>
+                                    ) : (
+                                        <></>
+                                    )}
                                 </div>
                             ) : formState == 1 ? (
                                 <div

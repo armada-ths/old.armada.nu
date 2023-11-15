@@ -972,11 +972,14 @@ export class ExhibitorList extends React.Component {
             window.getComputedStyle(expandButton).getPropertyValue('rotate') ==
             '180deg'
         ) {
+            this.props.setShowButtons(false)
             expandButton.style.rotate = '0deg'
             exhibitors.style.top = '20%'
             exhibitors.style.height = '80vh'
             //popupcontainer.style.height = '90%'
         } else {
+            this.props.setShowButtons(true)
+
             expandButton.style.rotate = '180deg'
             exhibitors.style.top = '60%'
             exhibitors.style.height = '40vh'

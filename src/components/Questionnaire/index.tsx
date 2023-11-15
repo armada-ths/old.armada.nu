@@ -445,6 +445,7 @@ const Questionnaire = ({
                         onAfterClose={() => {
                             setFormState(null)
                             setModalOpen(false)
+                            setShowButtons(true)
                         }}
                         className='questionnaire-container'
                         isOpen={modalOpen}

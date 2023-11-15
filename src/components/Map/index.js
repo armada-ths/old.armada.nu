@@ -456,6 +456,7 @@ export const MapUtil = () => {
             fairInputExhibitors={exhibitorsMap}
             showCV={true}
             exhibitorName={focusedExName}
+            setShowButtons={setShowButtons}
           />
         </ExtendedZoom.Provider>
       </div>

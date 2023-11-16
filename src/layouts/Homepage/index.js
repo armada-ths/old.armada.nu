@@ -5,10 +5,10 @@ import Page from '../../templates/page'
 import Loading from '../../components/Loading'
 import Loadable from 'react-loadable'
 import Newsfeed from '../../components/Newsfeed'
-import { Zoom } from 'react-awesome-reveal'
 //import GifHoverButtons from '../../components/GifButtons'
 import EventList from '../../components/EventList'
 import { useInView, animated } from 'react-spring'
+import SquareButton from './SquareButton'
 /* Started edit by Nima Sep to redesign homepage.
 Using https://codesandbox.io/s/react-spring-useinview-example-3f20nz?from-embed=&file=/src/App.js:334-337 inspiration (react-springs)
 
@@ -54,18 +54,26 @@ const HomepageInfo = () => {
                     November!
                 </p>
                 <div id='buttons'>
-                    <a id='a1' href='/at-the-fair'>
-                        <button id='b1'>At the Fair</button>
-                    </a>
-                    <a id='a1' href='/about'>
-                        <button id='b1'>Read More</button>
-                    </a>
-                    <a id='a2' href='/map'>
-                        <button id='b2'>Explore the Exhibitors</button>
-                    </a>
-                    <a id='a3' href='/for-companies'>
-                        <button id='b3'>Partner with us</button>
-                    </a>
+                    <SquareButton
+                        idNr={'1'}
+                        hrefVal={'/at-the-fair'}
+                        textVal={'At the Fair'}
+                    />
+                    <SquareButton
+                        idNr={'1'}
+                        hrefVal={'/about'}
+                        textVal={'Read More'}
+                    />
+                    <SquareButton
+                        idNr={'2'}
+                        hrefVal={'/map'}
+                        textVal={'Explore the Exhibitors'}
+                    />
+                    <SquareButton
+                        idNr={'3'}
+                        hrefVal={'/for-companies'}
+                        textVal={'Partner with us'}
+                    />
                 </div>
             </div>
         </div>

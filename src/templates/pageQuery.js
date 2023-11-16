@@ -15,7 +15,6 @@ import AboutPage from '../layouts/AboutPage'
 import DiversityPage from '../layouts/DiversityPage'
 import ExhibitorInfo from '../layouts/ExhibitorInfo'
 import News from '../layouts/News'
-import Exhibitors from '../layouts/Exhibitors'
 import Previous from '../layouts/Previous'
 import PlainPage from '../layouts/PlainPage'
 //import Matching from '../layouts/Matching' Todo: Fix Matching and make it work with new Exhibitors page
@@ -40,7 +39,7 @@ const components = {
     AboutPage: AboutPage,
     ContactPage: ContactPage,
     News: News,
-    Exhibitors: Exhibitors,
+
     Previous: Previous,
     PlainPage: PlainPage,
     //Matching: Matching,

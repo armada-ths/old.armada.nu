@@ -1,0 +1,69 @@
+@import '../../../styles/variables';
+@mixin buttonSquare {
+    display: inline-flex;
+    padding: 8px 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 0;
+    border: 3px solid #00d790;
+}
+@mixin whiteButton {
+    background: #fff;
+    color: $melon;
+}
+#buttons {
+    button {
+        @include buttonSquare();
+    }
+    #b3 {
+        @include whiteButton();
+    }
+}
+
+.buttonsJumbotron {
+    width: 100%;
+    left: 0;
+    display: flex;
+    button {
+        @include buttonSquare();
+        padding: 8px 20px;
+        font-size: max(3vmin, 15px);
+        height: 100%;
+        width: 100%;
+    }
+
+    #b3 {
+        @include whiteButton();
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #buttons {
+        #a1 {
+            grid-area: b1;
+            margin-right: 3vw;
+        }
+        #a2 {
+            grid-area: b2;
+            margin-left: 3vw;
+        }
+        #a3 {
+            grid-area: b3;
+            width: 100%;
+            #b3 {
+                width: 60%;
+            }
+        }
+        button {
+            font-size: 2.5vw;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile-flipped) {
+    .buttonsJumbotron {
+        display: none;
+    }
+}

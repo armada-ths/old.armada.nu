@@ -90,10 +90,11 @@
     height: 50%;
     width: 50%;
     top: 60%;
+    padding-top: 1%;
 
     #logo-container-img {
-        max-height: 90%;
-        max-width: 50%;
+        max-height: 70%;
+        max-width: 70%;
         align-self: center;
         user-select: none;
         -moz-user-select: none;
@@ -103,7 +104,7 @@
     }
 
     img {
-        max-height: 90%;
+        max-height: 50%;
         max-width: 50%;
         align-self: center;
         user-select: none;
@@ -116,8 +117,8 @@
     p {
         font-family: 'Bebas Neue', 'Helvetica', 'Arial';
         font-weight: 300;
-        font-size: calc(14px + 0.8vw);
-        margin-top: 6px;
+        font-size: 4vmin;
+        margin-top: 9px;
         margin-bottom: 6px;
         color: $text-color-light;
         text-align: center;
@@ -128,6 +129,16 @@
     height: 50%;
     width: unset;
     margin-top: -3em;
+    top: 50%;
+    left: max(22.5vw, 225px);
+    align-items: flex-start;
+    padding-left: min(20vw, 160px);
+    #logo-container-img {
+        align-self: flex-start;
+    }
+}
+
+@media screen and (min-width: $breakpoint-ipad) {
 }
 
 @media screen and (min-height: 1000px) {
@@ -144,6 +155,10 @@
             margin-top: 0px;
             margin-bottom: 0px;
             font-size: 1em;
+            text-align: center;
+        }
+        #logo-container-img {
+            align-self: center;
         }
     }
 }

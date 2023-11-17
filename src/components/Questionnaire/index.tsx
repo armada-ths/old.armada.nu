@@ -18,11 +18,13 @@ interface SurveryData {
 }
 
 const Questionnaire = ({
-    setShowButtons,
+    setShowQuestionaire,
+    setExpandableOpen,
     setRecommendedExhibitors,
     exhibitorsMap,
 }: {
-    setShowButtons: (value: boolean) => void
+    setShowQuestionaire: (arg: boolean) => void
+    setExpandableOpen: (arg: boolean) => void
     setRecommendedExhibitors: (exhibitors: any) => void
     exhibitorsMap: Exhibitor[]
 }) => {
@@ -31,12 +33,17 @@ const Questionnaire = ({
         rawStoredData ? JSON.parse(rawStoredData) : null
     ) as SurveryData | null
 
+    //when component is loaded, say that it is true that it is shown
+    useEffect(() => {
+        setShowQuestionaire(true)
+    }, [])
+
     // Dirty solution to set the recommended on load if they exist
     // WIP
     useEffect(() => {
         if (exhibitorsMap.length <= 0) return
         if (storedData == null) return
-        setShowButtons(true)
+        setShowQuestionaire(false)
         setQuestionaireData(
             storedData?.Programme || null,
             storedData?.JobType || []
@@ -375,11 +382,12 @@ const Questionnaire = ({
 
     const openModal = () => {
         setModalOpen(true)
-        setShowButtons(false)
+        setShowQuestionaire(true)
         setFormState(0)
     }
 
     const closeModal = () => {
+        setShowQuestionaire(false)
         setModalOpen(false)
     }
 
@@ -395,6 +403,7 @@ const Questionnaire = ({
 
     function finishQuestionnaire() {
         setFormState(null)
+        setShowQuestionaire(false)
 
         localStorage.setItem(
             LOCAL_STORAGE_KEY,
@@ -424,6 +433,7 @@ const Questionnaire = ({
                 setFormState(0)
             } else {
                 setRecommendedExhibitors(matchedExhibs)
+                setShowQuestionaire(false)
                 setModalOpen(false)
             }
         }
@@ -453,12 +463,7 @@ const Questionnaire = ({
                     <Modal
                         onAfterClose={() => {
                             setFormState(null)
-                            if (
-                                document.getElementById('expand-button')?.style
-                                    .rotate == '180deg'
-                            ) {
-                                setShowButtons(true)
-                            }
+                            setShowQuestionaire(false)
                             setModalOpen(false)
                         }}
                         className='questionnaire-container'

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
 import PropTypes from 'prop-types'
@@ -431,6 +431,8 @@ export class ExhibitorList extends React.Component {
             .then(res => {
                 console.log('UPDATE')
                 let exhibitors = res.data // create variable and store result within parameter data
+                //console.log('in res')
+                //console.log(exhibitors)
                 exhibitors = exhibitors.filter(
                     exhibitor =>
                         checkListOfCoordinates(exhibitor.map_coordinates) &&
@@ -443,7 +445,9 @@ export class ExhibitorList extends React.Component {
                 exhibitors.sort((a, b) => a.name.localeCompare(b.name))
                 console.log(exhibitors)
                 //To do: Add Gold-Bronze sorting here
-
+                {
+                    console.log(setExpandableOpen)
+                }
                 let exhibitorList = exhibitors.map(exhibitor => (
                     <ExhibitorItem
                         key={exhibitor.id}
@@ -451,6 +455,7 @@ export class ExhibitorList extends React.Component {
                         exhibitor={exhibitor}
                         showModal={this.showModal}
                         toggleFilters={toggleListExpand}
+                        setExpandableOpen={this.props.setExpandableOpen}
                     />
                 ))
                 this.setState({
@@ -486,7 +491,7 @@ export class ExhibitorList extends React.Component {
                 name={exhibitor.name}
                 exhibitor={exhibitor}
                 showModal={this.showModal}
-                setExpansionList={this.setExpansionList}
+                setExpandableOpen={this.props.setExpandableOpen}
             />
         ))
         this.setState({
@@ -497,8 +502,8 @@ export class ExhibitorList extends React.Component {
     }
 
     updateRecommendedExhibitors(recommendedExhibitorsInput) {
-        console.log('hey show these:')
-        console.log(recommendedExhibitorsInput)
+        //console.log('hey show these:')
+        //console.log(recommendedExhibitorsInput)
         recommendedExhibitorsInput = PlaceGoldFirst(recommendedExhibitorsInput)
         let recommendedExhibitorsList = recommendedExhibitorsInput.map(
             exhibitor => (
@@ -507,10 +512,10 @@ export class ExhibitorList extends React.Component {
                     name={exhibitor.name}
                     exhibitor={exhibitor}
                     showModal={this.showModal}
+                    setExpandableOpen={this.props.setExpandableOpen}
                 />
             )
         )
-        console.log(recommendedExhibitorsList)
         this.setState({
             recommendedExhibitors: recommendedExhibitorsList,
         })
@@ -539,7 +544,6 @@ export class ExhibitorList extends React.Component {
             JSON.stringify(this.props.recommendedExhibitors) !==
             JSON.stringify(prevProps.recommendedExhibitors)
         ) {
-            console.log('Noticed that we need to update')
             this.updateRecommendedExhibitors(this.props.recommendedExhibitors)
         }
 
@@ -597,7 +601,7 @@ export class ExhibitorList extends React.Component {
                     name={exhibitor.name}
                     exhibitor={exhibitor}
                     showModal={this.showModal}
-                    setExpansionList={this.setExpansionList}
+                    setExpandableOpen={this.props.setExpandableOpen}
                 />
             ))
             this.setState({
@@ -962,51 +966,35 @@ export class ExhibitorList extends React.Component {
         return listitems
     }
 
-    //This function has a duplicate in src/components/map in div class name mapBox
-    //needs reformating
-    //has same name
-    toggleListExpand = () => {
-        const expandButton = document.getElementById('expand-button')
-        const exhibitors = document.getElementsByClassName('exhibitors')[0]
-        //const popupcontainer =document.getElementsByClassName('popupcontainer')[0]
-        if (
-            window.getComputedStyle(expandButton).getPropertyValue('rotate') ==
-            '180deg'
-        ) {
-            this.props.setShowButtons(false)
-            expandButton.style.rotate = '0deg'
-            exhibitors.style.top = '20%'
-            exhibitors.style.height = '80vh'
-            //popupcontainer.style.height = '90%'
-        } else {
-            this.props.setShowButtons(true)
-
-            expandButton.style.rotate = '180deg'
-            exhibitors.style.top = '60%'
-            exhibitors.style.height = '40vh'
-            //popupcontainer.style.height = '50%'
-        }
+    toggleListExpand() {
+        this.props.setExpandableOpen(!this.props.expandableOpen)
     }
 
     setExpansionList = open => {
-        const expandButton = document.getElementById('expand-button')
-        if (
-            open &&
-            window.getComputedStyle(expandButton).getPropertyValue('rotate') ==
-                '180deg'
-        ) {
-            this.toggleListExpand()
-            //this.printHej()
+        this.props.setExpandableOpen(open)
+    }
+
+    shouldComponentUpdate(nextProps) {
+        if (nextProps.expandableOpen !== this.props.expandableOpen) {
             //console.log('hej')
-        } else if (
-            !open &&
-            window.getComputedStyle(expandButton).getPropertyValue('rotate') ==
-                '0deg'
-        ) {
-            this.toggleListExpand()
-            //this.printHej()
-            //console.log('hej')
+
+            const expandButton = document.getElementById('expand-button')
+            const exhibitorsClass =
+                document.getElementsByClassName('exhibitors')[0]
+
+            if (nextProps.expandableOpen) {
+                expandButton.style.rotate = '0deg'
+                exhibitorsClass.style.top = '20%'
+                exhibitorsClass.style.height = '80vh'
+            } else {
+                expandButton.style.rotate = '180deg'
+                exhibitorsClass.style.top = '60%'
+                exhibitorsClass.style.height = '40vh'
+            }
+
+            return true
         }
+        return true
     }
 
     //TODO: divide and simplify into nested components
@@ -1205,7 +1193,9 @@ export class ExhibitorList extends React.Component {
                         <div className='search'>
                             <div
                                 className='search-container'
-                                onClick={() => this.setExpansionList(true)}
+                                onClick={() =>
+                                    this.props.setExpandableOpen(true)
+                                }
                             >
                                 <div className='search-line'>
                                     <input
@@ -1527,7 +1517,7 @@ const ExhibitorItem = props => {
                     props.exhibitor.id
                 ).style.backgroundColor = '#00d790'
                 props.showModal(props.exhibitor.name)
-                props.setExpansionList(false)
+                props.setExpandableOpen(false)
             }}
         >
             <div className='image-container'>
@@ -1580,5 +1570,5 @@ ExhibitorItem.propTypes = {
     name: PropTypes.string,
     exhibitor: PropTypes.object,
     showModal: PropTypes.func,
-    setExpansionList: PropTypes.func,
+    setExpandableOpen: PropTypes.func,
 }

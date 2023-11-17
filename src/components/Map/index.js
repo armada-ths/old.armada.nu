@@ -296,11 +296,16 @@ export const MapUtil = () => {
     "Interaction Design": possibleColors[5],
     "Industry Design": possibleColors[10],
   };*/
-  const [showButtons, setShowButtons] = useState(false);
+  const [showQuestionaire, setShowQuestionaire] = useState(false);
+  const [expandableOpen, setExpandableOpen] = useState(false);
+
   const [recommendedExhibitors, setRecommendedExhibitors] = useState([]);
   const expandButton = document.getElementById("expand-button");
   const exhibitors = document.getElementsByClassName("exhibitors")[0];
-  console.log(exhibitorsMap);
+
+  const elegibletoRenderQuestionaire =
+    exhibitorsMap != null && exhibitorsMap.length > 0;
+
   return (
     <div
       style={{
@@ -310,9 +315,10 @@ export const MapUtil = () => {
         overflowY: "hidden",
       }}
     >
-      {(exhibitorsMap != null || exhibitorsMap.length > 0) && (
+      {elegibletoRenderQuestionaire && (
         <Questionnaire
-          setShowButtons={setShowButtons}
+          setShowQuestionaire={setShowQuestionaire}
+          setExpandableOpen={setExpandableOpen}
           setRecommendedExhibitors={setRecommendedExhibitors}
           exhibitorsMap={exhibitorsMap}
         />
@@ -320,23 +326,13 @@ export const MapUtil = () => {
       <div style={{ overflowY: "hidden" }}>
         <div
           className="mapBox"
-          setExpansionList
           onClick={() => {
-            //TODO: This code needs to be re-formatted. Has a high dependency (duplicate) with /src/components/ExhibitorList --> toggleListExpand() function in line 925
-            if (
-              window
-                .getComputedStyle(expandButton)
-                .getPropertyValue("rotate") == "0deg"
-            ) {
-              expandButton.style.rotate = "180deg";
-              exhibitors.style.top = "60%";
-              exhibitors.style.height = "40vh";
-            }
+            setExpandableOpen(false);
           }}
         >
           <div className="mapBoxFloatingContainer">
             <div /> {/* Filler div to take up the first slot in the grid */}
-            {showButtons && (
+            {!showQuestionaire && !expandableOpen && (
               <>
                 <BuildingSwitch
                   setFairLocation={setFairLocation}
@@ -355,9 +351,7 @@ export const MapUtil = () => {
                   rectangleMode={rectangleMode}
                   buttonPressed={buttonPressed}
                   setButtonPressed={setButtonPressed}
-                  style={
-                    showButtons ? { display: "block" } : { display: "none" }
-                  }
+                  style={{ display: "block" }}
                 />
               </>
             )}
@@ -470,7 +464,8 @@ export const MapUtil = () => {
             fairInputExhibitors={exhibitorsMap}
             showCV={true}
             exhibitorName={focusedExName}
-            setShowButtons={setShowButtons}
+            setExpandableOpen={setExpandableOpen}
+            expandableOpen={expandableOpen}
           />
         </ExtendedZoom.Provider>
       </div>

@@ -136,6 +136,7 @@
     #logo-container-img {
         align-self: flex-start;
     }
+    margin-left: min(20vw, 160px);
 }
 
 @media screen and (min-width: $breakpoint-ipad) {

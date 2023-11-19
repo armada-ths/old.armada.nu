@@ -443,6 +443,9 @@ const Questionnaire = ({
                 setAlertMsg(undefined)
                 if (!(programme === null && jobTypes.length <= 0)) {
                     setRecommendedExhibitors(matchedExhibs) //basically check if the user has not selected anything
+                    runOnItsOwn
+                        ? setExpandableOpen(false)
+                        : setExpandableOpen(true)
                 }
                 setShowQuestionaire(false)
                 setModalOpen(false)

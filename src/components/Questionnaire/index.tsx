@@ -432,6 +432,7 @@ const Questionnaire = ({
                     'There were no exhibitors that matched your criteria'
                 )
                 setExpandableOpen(true)
+                setRecommendedExhibitors([])
                 setFormState(0)
             } else {
                 setAlertMsg(undefined)

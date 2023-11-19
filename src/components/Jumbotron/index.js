@@ -10,6 +10,7 @@ import axios from 'axios'
 import SquareButton from '@/layouts/Homepage/SquareButton'
 import Newsfeed from '../Newsfeed'
 import News from '@/layouts/News'
+import mapicon from '../../../static/assets/mapicon.png'
 const Jumbotron = props => {
     const DATE_PRIDE_WEEK_START = new Date('June 1, 2023 00:00:01')
     const DATE_PRIDE_WEEK_END = new Date('June 30, 2023 00:00:01')
@@ -118,6 +119,13 @@ const Jumbotron = props => {
                     <></>
                 )}
                 {memoizedVideo && videoLoaded ? <Countdown /> : <></>}
+                {!(memoizedVideo && videoLoaded) ? (
+                    <a className='jumbotronMapButton' href='/map'>
+                        <img src={mapicon} alt='Click here for the map' />
+                    </a>
+                ) : (
+                    <></>
+                )}
             </div>
             <div className={memoizedVideo ? 'header-home' : 'header-image'}>
                 {memoizedVideo ?? <img alt='' src={props.image} />}

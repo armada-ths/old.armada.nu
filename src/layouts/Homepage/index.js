@@ -18,27 +18,6 @@ Removed the Page component as of Sep 2023.
 const HomepageInfo = () => {
     return (
         <div>
-            <div
-                style={{
-                    border: '4px dashed #00d790',
-                    marginTop: '10px',
-                    padding: '10px',
-                }}
-                className='homepageInfoBox'
-            >
-                <p id='title'>IT'S FINALLY HERE</p>
-                <p id='subheader'>
-                    The exhibitor map with all the booth placements and
-                    exhibitor catalogue is now live!
-                </p>
-                <p id='text'>
-                    Check out all the exhibitors and the companies you match
-                    best with in the brand new Armada Map
-                </p>
-                <a href='/map'>
-                    <button>Check It Out</button>
-                </a>
-            </div>
             <div className='homepageInfoBox'>
                 <p id='title'>THS ARMADA 2023</p>
                 <p id='subheader'>

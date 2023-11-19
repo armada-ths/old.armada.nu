@@ -420,6 +420,7 @@ const Questionnaire = ({
         const industries =
             programme == null ? null : matchProgramToIndustries(programme)
         let matchedExhibs = []
+
         if (exhibitorsMap.length > 0) {
             matchedExhibs = matchIndustriesToExhibitors(
                 industries,
@@ -430,9 +431,13 @@ const Questionnaire = ({
                 setAlertMsg(
                     'There were no exhibitors that matched your criteria'
                 )
+                setExpandableOpen(true)
                 setFormState(0)
             } else {
-                setRecommendedExhibitors(matchedExhibs)
+                setAlertMsg(undefined)
+                if (!(programme === null && jobTypes.length <= 0)) {
+                    setRecommendedExhibitors(matchedExhibs) //basically check if the user has not selected anything
+                }
                 setShowQuestionaire(false)
                 setModalOpen(false)
             }

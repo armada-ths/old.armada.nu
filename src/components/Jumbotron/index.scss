@@ -7,6 +7,13 @@
     transform: translate(-50%, -50%);
 }
 
+.jumbotronMapButton {
+    img {
+        max-width: 150px !important;
+        max-height: 150px !important;
+    }
+}
+
 .buttoncontainer {
     margin-top: 0px;
     .homepagebutton {
@@ -151,6 +158,7 @@
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     .logo-container {
+        transform: translate(-50%, -80%) !important;
         p {
             margin-top: 0px;
             margin-bottom: 0px;

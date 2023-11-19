@@ -80,7 +80,7 @@
     .homepageInfoBox {
         #buttons {
             button {
-                font-size: 4vw;
+                font-size: max(4vw, 14px);
             }
         }
     }

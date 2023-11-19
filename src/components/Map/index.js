@@ -15,6 +15,7 @@ import { ExhibitorRendering } from "./ExhibitorRendering";
 import { findPolygonCenter } from "@/components/Map/find_polygon_center";
 import armada_logo from "../../../static/assets/armada_logo_text_gray_noText.png";
 import Questionnaire from "../Questionnaire";
+import { useLocation } from "@gatsbyjs/reach-router";
 
 export const ExtendedZoom = createContext(null);
 //Be advised: After extensive trial and error testing we couldn't get the exhibitors to move FROM ExhibitorList TO Map, so we do other way around
@@ -78,13 +79,6 @@ function MapAPIFetch(setExhibitorsMap) {
 
     exhibitors.forEach((ex) => {
       ex.fair_placement = [ex.fair_location];
-      /*if (ex.industries.length > 0) {
-                //console.log(ex.name + ' test test')
-                //console.log(ex.industries)
-                //console.log(typeof ex.industries[0].name + ' testtesttsts')
-            } else {
-                ex.color = '#fa0000'
-            }*/
     });
     setExhibitorsMap(exhibitors);
   });
@@ -176,14 +170,14 @@ export const MapUtil = () => {
   const mapRef = useRef(null);
   const showDevTool = false;
   const [editorCoordinates, setEditorCoordinates] = useState([]);
-  const [labels, showLabels] = useState(true);
+  const [labels, showLabels] = useState(false);
   const [buttonPressed, setButtonPressed] = useState(2);
 
-  const firstFloorNymble = require("../../../static/assets/Map/floor1-ntg.png");
-  const secondFloorNymble = require("../../../static/assets/Map/floor2-ntg.png");
-  const thirdFloorNymble = require("../../../static/assets/Map/floor3-ntg.png");
-  const libraryMain = require("../../../static/assets/Map/KTHB.png");
-  const libraryAngdomen = require("../../../static/assets/Map/KTHBÅng.png");
+  const firstFloorNymble = require("../../../static/assets/Map/test-floor1-ntg.png");
+  const secondFloorNymble = require("../../../static/assets/Map/test-floor2-ntg.png");
+  const thirdFloorNymble = require("../../../static/assets/Map/test-floor3-ntg.png");
+  const libraryMain = require("../../../static/assets/Map/test-KTHB.png");
+  const libraryAngdomen = require("../../../static/assets/Map/test-KTHBÅng.png");
 
   const floorObj = {
     "Nymble - 1st Floor": firstFloorNymble,
@@ -196,7 +190,47 @@ export const MapUtil = () => {
   const [fairLocation, setFairLocation] = useState("Nymble - 2nd Floor"); //default location viewed
   const [building, setBuilding] = useState("Nymble");
   const [focusedExName, setFocusedExName] = useState(undefined);
+  //prettier-ignore
+  const queryTranslatorObject = {
+    "nymble_1": "Nymble - 1st Floor",
+    "nymble_2": "Nymble - 2nd Floor",
+    "nymble_3": "Nymble - 3rd Floor",
+    "library_1": "Library Main",
+    "library_2": "Library Ångdomen",
+  };
+  //OBS: Do not remove the prettier ignore above comment, it will break the code if prettier re-renders it
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const fairLocationParam = queryParams.get("floor");
+  //console.log(fairLocationParam);
 
+  useEffect(() => {
+    if (fairLocationParam !== null) {
+      console.log(fairLocationParam === "library_1");
+      if (fairLocationParam === "nymble_1") {
+        setBuilding("Nymble");
+        setButtonPressed(1);
+        setFairLocation("Nymble - 1st Floor");
+      } else if (fairLocationParam === "nymble_2") {
+        setBuilding("Nymble");
+        setButtonPressed(2);
+        setFairLocation("Nymble - 2nd Floor");
+      } else if (fairLocationParam === "nymble_3") {
+        setBuilding("Nymble");
+        setButtonPressed(3);
+        setFairLocation("Nymble - 3rd Floor");
+      } else if (fairLocationParam === "library_1") {
+        console.log("HELLOOOOOO");
+        setBuilding("Library");
+        setButtonPressed(2);
+        setFairLocation("Library Main");
+      } else if (fairLocationParam === "library_2") {
+        setBuilding("Library");
+        setButtonPressed(3);
+        setFairLocation("Library Ångdomen");
+      }
+    }
+  }, [fairLocationParam]);
   useEffect(() => {
     MapAPIFetch(setExhibitorsMap);
   }, []);
@@ -237,7 +271,7 @@ export const MapUtil = () => {
     if (building === "Nymble") {
       mapRef.current?.setView([255, 500], -0.5);
     } else if (building === "Library") {
-      mapRef.current.setView([200, 300], -0.5);
+      mapRef.current?.setView([200, 300], -0.5);
     } else {
       //error hamdling bad building
     }
@@ -413,7 +447,7 @@ export const MapUtil = () => {
                 spiderLegPolylineOptions={{
                   opacity: 0,
                 }}
-                maxClusterRadius={80}
+                maxClusterRadius={100}
                 disableClusteringAtZoom={5}
                 zoomToBoundsOnClick={true}
                 spiderfyOnMaxZoom={false}

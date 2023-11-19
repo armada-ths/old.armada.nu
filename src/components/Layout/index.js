@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
+import React, { Suspense } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import Navbar from '../Navbar'
@@ -51,7 +51,9 @@ const Layout = ({ header, location, children, jumbotron }) => (
                         />
                     )}
                     {jumbotron ? (
-                        <Jumbotron location={location} image={header} />
+                        <Suspense>
+                            <Jumbotron location={location} image={header} />
+                        </Suspense>
                     ) : (
                         <></>
                     )}

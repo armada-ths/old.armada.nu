@@ -119,7 +119,7 @@ const Jumbotron = props => {
                     <></>
                 )}
                 {memoizedVideo && videoLoaded ? <Countdown /> : <></>}
-                {!(memoizedVideo && videoLoaded) ? (
+                {onMobile ? (
                     <a className='jumbotronMapButton' href='/map'>
                         <img src={mapicon} alt='Click here for the map' />
                     </a>

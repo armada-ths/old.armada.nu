@@ -43,9 +43,9 @@ function checkListOfCoordinates(arr, name, place) {
         }
       }
     } else {
-      console.log("not enough coordinates");
+      /*console.log("not enough coordinates");
       console.log(arr.length);
-      console.log(arr);
+      console.log(arr);*/
       return false;
     }
     //console.log("returning true");
@@ -220,7 +220,6 @@ export const MapUtil = () => {
         setButtonPressed(3);
         setFairLocation("Nymble - 3rd Floor");
       } else if (fairLocationParam === "library_1") {
-        console.log("HELLOOOOOO");
         setBuilding("Library");
         setButtonPressed(2);
         setFairLocation("Library Main");

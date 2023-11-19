@@ -41,7 +41,6 @@ const isMockup = false //change this to go into manual/API fetching mode
 const showFilters = true
 
 function checkListOfCoordinates(arr) {
-    console.log(typeof arr)
     if (arr !== null && typeof arr !== 'undefined') {
         if (arr.length > 2) {
             for (const subArray of arr) {
@@ -429,7 +428,6 @@ export class ExhibitorList extends React.Component {
                     }`
             )
             .then(res => {
-                console.log('UPDATE')
                 let exhibitors = res.data // create variable and store result within parameter data
                 //console.log('in res')
                 //console.log(exhibitors)
@@ -443,11 +441,7 @@ export class ExhibitorList extends React.Component {
                 })
 
                 exhibitors.sort((a, b) => a.name.localeCompare(b.name))
-                console.log(exhibitors)
-                //To do: Add Gold-Bronze sorting here
-                {
-                    console.log(setExpandableOpen)
-                }
+
                 let exhibitorList = exhibitors.map(exhibitor => (
                     <ExhibitorItem
                         key={exhibitor.id}
@@ -650,7 +644,6 @@ export class ExhibitorList extends React.Component {
             <Modal
                 onClose={() => {
                     this.showModal(null)
-                    console.log('test')
                     this.setState({
                         exhibitorName: undefined, //reset the exhibitorName input so we can press a company 2 times
                     })

@@ -15,9 +15,7 @@ const RecruitmentBanner = ({ location }) => {
             })
         }
     }, [location])
-    useEffect(() => {
-        console.log('hey' + showBanner)
-    }, [showBanner])
+
     return showBanner ? (
         <Banner
             location={location}

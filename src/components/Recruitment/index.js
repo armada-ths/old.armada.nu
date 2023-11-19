@@ -155,7 +155,7 @@ const Recruitment = () => {
                 </button>
                 <div className='groups'>
                     {groups.map(item => {
-                        console.log(item)
+                        //console.log(item)
                         return item.values.length > 0 ? (
                             <>
                                 <div className='role-detail'>

@@ -11,7 +11,6 @@ import vector2 from '../../../static/assets/sustainability/didyouknow/vector2.sv
 const FactContainer = ({ fact, vector }) => {
     const [factActual, setFact] = useState()
     useEffect(() => {
-        console.log(fact)
         setFact(fact)
     }, [fact])
 

@@ -6,7 +6,7 @@ export function QuerySetter(
   setFairLocation,
   fairLocationParam
 ) {
-  console.log(fairLocationParam);
+  //console.log(fairLocationParam);
   if (fairLocationParam !== null) {
     if (fairLocationParam === "nymble_1") {
       setBuilding("Nymble");

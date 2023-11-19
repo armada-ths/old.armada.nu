@@ -26,7 +26,6 @@
     "gatsby-plugin-sass": "^6.7.0",
     "gatsby-plugin-sharp": "^5.7.0",
     "gatsby-plugin-static-cms": "^1.1.2",
-    "gatsby-plugin-use-query-params": "^1.0.1",
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-transformer-remark": "^6.7.0",
     "gatsby-transformer-sharp": "^5.7.0",

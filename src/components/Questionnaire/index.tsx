@@ -46,7 +46,8 @@ const Questionnaire = ({
         setShowQuestionaire(false)
         setQuestionaireData(
             storedData?.Programme || null,
-            storedData?.JobType || []
+            storedData?.JobType || [],
+            true
         )
     }, [exhibitorsMap])
 
@@ -416,7 +417,11 @@ const Questionnaire = ({
         setQuestionaireData(programme, jobTypes)
     }
 
-    function setQuestionaireData(programme: string | null, jobTypes: string[]) {
+    function setQuestionaireData(
+        programme: string | null,
+        jobTypes: string[],
+        runOnItsOwn: boolean = false
+    ) {
         const industries =
             programme == null ? null : matchProgramToIndustries(programme)
         let matchedExhibs = []
@@ -431,7 +436,7 @@ const Questionnaire = ({
                 setAlertMsg(
                     'There were no exhibitors that matched your criteria'
                 )
-                setExpandableOpen(true)
+                runOnItsOwn ? setExpandableOpen(false) : setExpandableOpen(true)
                 setRecommendedExhibitors([])
                 setFormState(0)
             } else {

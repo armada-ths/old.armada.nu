@@ -763,7 +763,8 @@ const studentQuestions = [
             {question: 'Will there be any wardrobes at the fair?', answer: 'Yes, there will be one wardrobe in Nymble, click here for the position, at the entrance closest to the subway and one in the library close to the information desk'},
     ]},
     */
-
+    /*
+    Commented this away as it includes inccorect info, but am not usre what to ammend it to
     {
         title: 'THE BANQUET',
         img: '/assets/champagne-glass.png',
@@ -806,7 +807,7 @@ const studentQuestions = [
             },
         ],
     },
-
+    */
     {
         title: 'RECRUITMENT',
         img: '/assets/recruitment.png',

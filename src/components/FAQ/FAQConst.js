@@ -816,8 +816,8 @@ const studentQuestions = [
                 question: 'How do I become a part of the Armada team?',
                 answer: (
                     <span>
-                        You apply! Armada recruits three times a year.
-                        Follow us on{' '}
+                        You apply! Armada recruits three times a year. Follow us
+                        on{' '}
                         <a href='https://www.instagram.com/thsarmada/'>
                             Instagram
                         </a>{' '}

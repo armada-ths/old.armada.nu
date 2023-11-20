@@ -9,7 +9,7 @@
     flex-direction: column;
     max-width: 1200px;
     margin: auto;
-    margin-top: 50px;
+    //margin-top: 50px;
 }
 .Events-text {
     padding: 3em 2em;
@@ -21,7 +21,7 @@
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     .Events-container {
-        padding: 3em 1em;
+        padding: 2em 1em;
     }
     .Events-text {
         padding: 3em 1em;

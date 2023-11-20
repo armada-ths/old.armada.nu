@@ -54,6 +54,17 @@ const HomepageInfo = () => {
                         textVal={'Partner with us'}
                     />
                 </div>
+                <h3 style={{ marginTop: '20px' }}>
+                    Check out the brand new Armada <a href='/map'>Map</a>
+                </h3>
+                <p id='text'>
+                    This year we created from scratch a brand new interactive
+                    map that provides you with all the information you need to
+                    make the best decision for yourself to which companies you
+                    should visit. This replaces the old printed exhibitor lists
+                    we've had in the past and gives a dynamic experience of the
+                    fair. Check it out <a href='/map'>here</a>
+                </p>
             </div>
         </div>
     )
@@ -111,17 +122,18 @@ const Homepage = props => {
             <animated.div ref={ref} style={inView}>
                 <HomepageInfo />
             </animated.div>
-            <animated.div ref={ref2} style={inView2}>
-                <div className='Events-container'>
-                    <EventList />
-                </div>
-            </animated.div>
+
             {/*<GifHoverButtons />*/}
             <div className='homepage'>
                 <Newsfeed />
                 <PartnerLogos />
                 {/*<PhotoGallery photoCount={6} /> Armada pictures are removed for now since the slideshow is bugged. Will readd in Okt-Nov*/}
             </div>
+            <animated.div ref={ref2} style={inView2}>
+                <div className='Events-container'>
+                    <EventList />
+                </div>
+            </animated.div>
         </>
     )
 }

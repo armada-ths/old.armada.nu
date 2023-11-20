@@ -93,6 +93,8 @@ const Questionnaire = ({
                 'Architecture',
                 'Construction',
                 'Property & Infrastructure',
+                'The Built Environment',
+                'Management Consulting',
             ],
         },
         {
@@ -103,6 +105,10 @@ const Questionnaire = ({
                 'Medical Technology',
                 'Medical Engineering',
                 'Chemical Science and Engineering',
+                'Solid Mechanics',
+                'Nuclear Power',
+                'Energy Technology',
+                'Nanotechnology',
             ],
         },
         {
@@ -114,6 +120,10 @@ const Questionnaire = ({
                 'The Built Environment',
                 'Management Consulting',
                 'Mechanical Engineering',
+                'Automative',
+                'Steel Industry',
+                'Wood-Processing Industry',
+                'Manufacturing Industry',
             ],
         },
         {
@@ -179,7 +189,15 @@ const Questionnaire = ({
         },
         {
             program: 'Environmental & Sustainability Engineering',
-            industries: ['Environmental Sector', 'Energy Technology'],
+            industries: [
+                'Environmental Sector',
+                'Energy Technology',
+                'Research',
+                'Steel Industry',
+                'Wood-Processing Industry',
+                'Manufacturing Industry',
+                'Nuclear Power',
+            ],
         },
         {
             program: 'Industrial Engineering',
@@ -261,7 +279,14 @@ const Questionnaire = ({
         },
         {
             program: 'Medical Engineering',
-            industries: ['Medical Technology'],
+            industries: [
+                'Medical Technology',
+                'Medical Engineering',
+                'Nanotechnology',
+                'Pharmaceutical',
+                'Biotechnology',
+                'Chemical Science and Engineering',
+            ],
         },
         {
             program: 'Material & Product Design',
@@ -308,6 +333,10 @@ const Questionnaire = ({
                 'Property & Infrastructure',
                 'The Built Environment',
                 'Research',
+                'Steel Industry',
+                'Wood-Processing Industry',
+                'Manufacturing Industry',
+                'IT Consulting',
             ],
         },
         {

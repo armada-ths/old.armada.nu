@@ -628,7 +628,7 @@ const studentQuestions = [
             },
             {
                 question: "When is this year's Armada fair?",
-                answer: "This years's Armada fair will be on the 22nd & 23rd of November",
+                answer: "This years's Armada fair will be on the 21st & 22nd of November",
             },
             {
                 question: 'Where is THS Armada?',
@@ -682,7 +682,7 @@ const studentQuestions = [
             },
             {
                 question: 'What are the opening hours?',
-                answer: '10:00-16:00 on both the 22nd and the 23rd of November.',
+                answer: '10:00-16:00 on the 21st and 10:00-15:00 on the 22nd of November.',
             },
             {
                 question: 'Does the Armada fair cost money to attend?',
@@ -806,6 +806,7 @@ const studentQuestions = [
             },
         ],
     },
+
     {
         title: 'RECRUITMENT',
         img: '/assets/recruitment.png',
@@ -815,8 +816,7 @@ const studentQuestions = [
                 answer: (
                     <span>
                         You apply! Armada recruits three times a year.
-                        Applications for hosts are now open, make sure apply
-                        before it's too late. Follow us on{' '}
+                        Follow us on{' '}
                         <a href='https://www.instagram.com/thsarmada/'>
                             Instagram
                         </a>{' '}

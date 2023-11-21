@@ -20,6 +20,16 @@ const HomepageInfo = () => {
         <div>
             <div className='homepageInfoBox'>
                 <p id='title'>THS ARMADA 2023</p>
+                <div
+                    class='info-border-box text'
+                    style={{ textAlign: 'center' }}
+                >
+                    <h3 style={{ textAlign: 'center' }}>Opening hours</h3>
+                    <br />
+                    <b>Tuesday 21st November:</b> 10:00 - 16:00
+                    <br />
+                    <b>Wednesday 22nd November:</b> 10:00 - 15:00
+                </div>
                 <p id='subheader'>
                     The largest career fair in Scandinavia is back for 2023
                 </p>

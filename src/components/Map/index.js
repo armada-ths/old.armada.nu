@@ -239,22 +239,22 @@ export const MapUtil = () => {
     if (focusCoordinate != null) {
       const floor = focusCoordinate.floor; //floor is an array (with one item for now, temporary)
       if (!floor.includes(fairLocation)) {
+        console.log(floor[0]);
         if (floor[0].includes("Library") && building !== "Library") {
           setBuilding("Library");
-          if (floor[0].includes("Main")) {
-            setButtonPressed(2);
-          } else {
-            setButtonPressed(3);
-          }
         } else if (floor[0].includes("Nymble") && building !== "Nymble") {
           setBuilding("Nymble");
-          if (floor[0].includes("1st")) {
-            setButtonPressed(1);
-          } else if (floor[0].includes("2nd")) {
-            setButtonPressed(2);
-          } else {
-            setButtonPressed(3);
-          }
+        }
+        if (floor[0].includes("Main")) {
+          setButtonPressed(2);
+        } else if (floor[0].includes("Ångdomen")) {
+          setButtonPressed(3);
+        } else if (floor[0].includes("1st")) {
+          setButtonPressed(1);
+        } else if (floor[0].includes("2nd")) {
+          setButtonPressed(2);
+        } else {
+          setButtonPressed(3);
         }
         setFairLocation(floor[0]); //if the company in question is not on the same floor we already are looking at, go to ONE of it's other floors
         setTimeout(() => {

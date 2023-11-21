@@ -610,7 +610,6 @@ export class ExhibitorList extends React.Component {
     updateSearch(event) {
         this.setdefault()
         this.setState({ search: event.target.value.substr(0, 100) })
-        console.log(event.target.value)
         if (event.target.value.length > 0) {
             this.state.showAllCompanies = true
             this.state.collapseRecommended = true

@@ -58,11 +58,12 @@ function checkListOfCoordinates(arr, name, place) {
 
 function MapAPIFetch(setExhibitorsMap) {
   const year = new Date().getFullYear().toString(); //get 2023. If not 2023 we sad and display 2023 anyway
+  const fairEnded = true; //set to false if fair hasn't ended
   const ais = "https://ais.armada.nu/";
   const link =
     ais +
     `api/exhibitors/?img alt=''_placeholder=true${
-      year !== "2023" ? "&year=2023/" : "/"
+      year !== "2023" || fairEnded ? "&year=2023" : ""
     }`;
 
   axios.get(link).then((res) => {

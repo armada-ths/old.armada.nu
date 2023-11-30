@@ -24,7 +24,9 @@ const HomepageInfo = () => {
                     class='info-border-box text'
                     style={{ textAlign: 'center' }}
                 >
-                    <h3 style={{ textAlign: 'center' }}>Opening hours</h3>
+                    <h3 style={{ textAlign: 'center' }}>
+                        Opening hours for 2023 fair
+                    </h3>
                     <br />
                     <b>Tuesday 21st November:</b> 10:00 - 16:00
                     <br />

@@ -16,10 +16,17 @@ Removed the Page component as of Sep 2023.
 */
 
 const HomepageInfo = () => {
+    const date = new Date()
+    let year
+    if (date !== null || date !== undefined) {
+        year = date.getFullYear().toString()
+    } else {
+        year = '2023'
+    }
     return (
         <div>
             <div className='homepageInfoBox'>
-                <p id='title'>THS ARMADA 2023</p>
+                <p id='title'>{`THS ARMADA ${year}`}</p>
                 <div
                     class='info-border-box text'
                     style={{ textAlign: 'center' }}
@@ -32,10 +39,19 @@ const HomepageInfo = () => {
                     <br />
                     <b>Wednesday 22nd November:</b> 10:00 - 15:00
                 </div>
-                <p id='subheader'>
+                {/*<p id='subheader'>
                     The largest career fair in Scandinavia is back for 2023
-                </p>
-                <p id='text'>
+    </p>*/}
+                {
+                    <p id='text'>
+                        Thank you for visiting THS Armada 2023! We hope you had
+                        a great time and that you found the fair useful. If you
+                        have any feedback, please let us know, and please apply
+                        for next years Armada team! We are looking forward to
+                        seeing you again next year!
+                    </p>
+                }
+                {/*<p id='text'>
                     Hello and welcome to THS Armada 2023! This year, the THS
                     Armada fair is back and bringing exhibitors and students
                     closer together. Come by to see our all-new exhibitions,
@@ -43,7 +59,7 @@ const HomepageInfo = () => {
                     style, with a new colourful array of exhibitors in Nymble
                     over two days. Make sure not to miss anything! See you in
                     November!
-                </p>
+    </p>*/}
                 <div id='buttons'>
                     <SquareButton
                         idNr={'1'}

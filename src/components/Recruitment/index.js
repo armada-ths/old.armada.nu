@@ -34,15 +34,30 @@ const Recruitment = () => {
                 }
             }) //Make sure to merge all the data together from the API, for example through testing the IT recruitment could appear "outside" the rest
             Object.keys(mergedGroupsObject).forEach(title => {
-                if (title.includes('Career Fair and Logistics')) {
+                console.log(title)
+                if (
+                    title.includes('Career Fair and Logistics') ||
+                    title.includes('LF') ||
+                    title.includes('CF') ||
+                    title.includes('Career Fair')
+                ) {
                     group_LF.push(mergedGroupsObject[title]) //Go through each "title" that is in the API a 1 item array, and then group those accordingly
                 } else if (title.includes('IT')) {
                     group_IT.push(mergedGroupsObject[title]) //We have to do this since some titles are mixed up in the AIS which affects the API
-                } else if (title.includes('Business Relations')) {
+                } else if (
+                    title.includes('Business Relations') ||
+                    title.includes('BR')
+                ) {
                     group_BR.push(mergedGroupsObject[title])
-                } else if (title.includes('Marketing and Communication')) {
+                } else if (
+                    title.includes('Marketing and Communication') ||
+                    title.includes('MC')
+                ) {
                     group_MC.push(mergedGroupsObject[title])
-                } else if (title.includes('Core Values')) {
+                } else if (
+                    title.includes('Core Values') ||
+                    title.includes('CV')
+                ) {
                     group_CV.push(mergedGroupsObject[title])
                 } else {
                     group_OTHER.push(mergedGroupsObject[title])

@@ -5,6 +5,8 @@
     position: relative;
     width: 32vw;
     height: 40vw;
+    max-width: 324px;
+    max-height: 405px;
     border-radius: 40px;
     background-color: rgba(0, 0, 0, 0.6);
 
@@ -18,7 +20,7 @@
     }
 
     .card-image {
-        width: inherit;
+        width: 100%;
         height: 75%;
         border-radius: 40px;
         background-color: gray;
@@ -51,7 +53,7 @@
             height: 100%;
             flex-direction: column;
             justify-content: space-around;
-            font-size: 1.4vw;
+            font-size: min(16px, 1.4vw);
 
             .card-name {
                 width: 80%;
@@ -74,17 +76,16 @@
                 bottom: 85%;
                 left: 85%;
                 position: absolute;
-                padding-top: 2vw;
-                padding-right: 2vw;
 
                 text-align: right;
-                width: 5vw;
-                height: 5vw;
+                width: min(5vw, 40px);
                 opacity: 0.9;
                 filter: gray;
                 -webkit-filter: grayscale(1);
                 -webkit-transition: all 0.3s ease-in-out;
-
+                a {
+                    width: 15px;
+                }
                 &:hover {
                     filter: none;
                     -webkit-filter: grayscale(0);
@@ -109,7 +110,7 @@
 
 @media screen and (max-width: 600px) {
     .contact-card .card-title .card-text {
-        font-size: 3.5vw;
+        font-size: max(3vw, 12px);
     }
     .contact-card .card-title .card-text .title-melon {
         line-height: unset;
@@ -119,7 +120,7 @@
         height: 100vw;
     }
     .contact-card .card-title .card-text .linkedin-logo {
-        width: 10vw;
-        height: 10vw; //make the linkedin button bigger on tiny screens
+        width: min(40px, 8vw);
+        height: min(40px, 8vw);
     }
 }

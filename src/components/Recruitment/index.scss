@@ -130,6 +130,12 @@ button[disabled] {
     width: 4em;
     height: 4em;
     margin-right: 1em;
+    picture {
+        img {
+            width: 100% !important;
+            height: unset !important;
+        }
+    }
 }
 
 .role-title {
@@ -157,11 +163,4 @@ button[disabled] {
         top: 88px !important;
     }
     //menu becomes more cramped
-}
-
-@media screen and (max-width: 850px) {
-    .topSticky {
-        top: -15px !important;
-    }
-    //menu becomes mobile
 }

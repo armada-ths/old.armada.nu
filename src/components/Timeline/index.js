@@ -3,7 +3,7 @@ import './timeline.scss'
 
 const images = [
     {
-        pmImage: '/assets/images/PG21/Filip.jpg',
+        pmImage: '/assets/images/header-images/home.jpg',
         fairImage: '/assets/thefair.jpg',
         banquetImage: '/assets/images/armada-banquet.jpg',
         pgImage: '/assets/images/projectgroup-armada.jpg',

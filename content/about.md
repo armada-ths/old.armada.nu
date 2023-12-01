@@ -11,7 +11,7 @@ header: /assets/images/header-images/Bankett.jpg
 
 # WHAT IS ARMADA?
 
-In 1981, someone realised that students from KTH and their future employers needed a place to meet. And so they arranged the first ever Armada Fair. 39 years later, THS Armada has become the largest student driven project at KTH.
+In 1981, someone realised that students from KTH and their future employers needed a place to meet. And so they arranged the first ever Armada Fair. 42 years later, THS Armada has become the largest student driven project at KTH.
 
 THS Armada arranges the largest career fair in Scandinavia at KTH Royal Institute of Technology. Every year, more than 12,000 of Sweden's top engineering and architectural students flock to visit the fair to meet their future employers. The Fair is a two day event with companies from all over the world. The Fair takes place at KTH campus in Stockholm.
 

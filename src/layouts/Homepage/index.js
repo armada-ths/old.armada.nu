@@ -16,14 +16,42 @@ Removed the Page component as of Sep 2023.
 */
 
 const HomepageInfo = () => {
+    const date = new Date()
+    let year
+    if (date !== null || date !== undefined) {
+        year = date.getFullYear().toString()
+    } else {
+        year = '2023'
+    }
     return (
         <div>
             <div className='homepageInfoBox'>
-                <p id='title'>THS ARMADA 2023</p>
-                <p id='subheader'>
+                <p id='title'>{`THS ARMADA ${year}`}</p>
+                <div
+                    class='info-border-box text'
+                    style={{ textAlign: 'center' }}
+                >
+                    <h3 style={{ textAlign: 'center' }}>
+                        Opening hours for 2023 fair
+                    </h3>
+                    <br />
+                    <b>Tuesday 21st November:</b> 10:00 - 16:00
+                    <br />
+                    <b>Wednesday 22nd November:</b> 10:00 - 15:00
+                </div>
+                {/*<p id='subheader'>
                     The largest career fair in Scandinavia is back for 2023
-                </p>
-                <p id='text'>
+    </p>*/}
+                {
+                    <p id='text'>
+                        Thank you for visiting THS Armada 2023! We hope you had
+                        a great time and that you found the fair useful. If you
+                        have any feedback, please let us know, and please apply
+                        for next years Armada team! We are looking forward to
+                        seeing you again next year!
+                    </p>
+                }
+                {/*<p id='text'>
                     Hello and welcome to THS Armada 2023! This year, the THS
                     Armada fair is back and bringing exhibitors and students
                     closer together. Come by to see our all-new exhibitions,
@@ -31,7 +59,7 @@ const HomepageInfo = () => {
                     style, with a new colourful array of exhibitors in Nymble
                     over two days. Make sure not to miss anything! See you in
                     November!
-                </p>
+    </p>*/}
                 <div id='buttons'>
                     <SquareButton
                         idNr={'1'}
@@ -54,6 +82,17 @@ const HomepageInfo = () => {
                         textVal={'Partner with us'}
                     />
                 </div>
+                <h3 style={{ marginTop: '20px' }}>
+                    Check out the brand new Armada <a href='/map'>Map</a>
+                </h3>
+                <p id='text'>
+                    This year we created from scratch a brand new interactive
+                    map that provides you with all the information you need to
+                    make the best decision for yourself to which companies you
+                    should visit. This replaces the old printed exhibitor lists
+                    we've had in the past and gives a dynamic experience of the
+                    fair. Check it out <a href='/map'>here</a>
+                </p>
             </div>
         </div>
     )
@@ -111,17 +150,18 @@ const Homepage = props => {
             <animated.div ref={ref} style={inView}>
                 <HomepageInfo />
             </animated.div>
-            <animated.div ref={ref2} style={inView2}>
-                <div className='Events-container'>
-                    <EventList />
-                </div>
-            </animated.div>
+
             {/*<GifHoverButtons />*/}
             <div className='homepage'>
                 <Newsfeed />
                 <PartnerLogos />
                 {/*<PhotoGallery photoCount={6} /> Armada pictures are removed for now since the slideshow is bugged. Will readd in Okt-Nov*/}
             </div>
+            <animated.div ref={ref2} style={inView2}>
+                <div className='Events-container'>
+                    <EventList />
+                </div>
+            </animated.div>
         </>
     )
 }

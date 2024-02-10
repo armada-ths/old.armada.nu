@@ -610,9 +610,9 @@ export class ExhibitorList extends React.Component {
     updateSearch(event) {
         this.setdefault()
         this.setState({ search: event.target.value.substr(0, 100) })
-        console.log(event.target.value)
         if (event.target.value.length > 0) {
             this.state.showAllCompanies = true
+            this.state.collapseRecommended = true
         } else {
             this.state.showAllCompanies = false
         }
@@ -1247,7 +1247,7 @@ export class ExhibitorList extends React.Component {
                                         closeMenuOnSelect={false}
                                         blurInputOnSelect={false}
                                         isMulti
-                                        isSearchable
+                                        isSearchable={false}
                                         name='Job filter'
                                         placeholder='All Jobs'
                                         options={this.state.jobs}
@@ -1292,7 +1292,7 @@ export class ExhibitorList extends React.Component {
                                         closeMenuOnSelect={false}
                                         blurInputOnSelect={false}
                                         isMulti
-                                        isSearchable
+                                        isSearchable={false}
                                         name='Location filter'
                                         placeholder='All Locations'
                                         options={this.state.locations}
@@ -1307,7 +1307,7 @@ export class ExhibitorList extends React.Component {
                                         closeMenuOnSelect={false}
                                         blurInputOnSelect={false}
                                         isMulti
-                                        isSearchable
+                                        isSearchable={false}
                                         name='Fair Placement filter'
                                         placeholder='All Fair Placements'
                                         options={this.state.fair_placements}
@@ -1394,7 +1394,7 @@ export class ExhibitorList extends React.Component {
                                                 })
                                             }}
                                         >
-                                            {`Recommended exhibitors for you (${this.state.recommendedExhibitors.length} matches)`}{' '}
+                                            <u className='recomText'>{`Recommended exhibitors for you (${this.state.recommendedExhibitors.length} matches)`}</u>
                                             {this.state.collapseRecommended ? (
                                                 <FaCaretUp />
                                             ) : (

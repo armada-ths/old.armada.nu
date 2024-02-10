@@ -98,7 +98,7 @@ const Questionnaire = ({
             ],
         },
         {
-            program: 'Biomedical Engineering',
+            program: 'Biotechnology',
             industries: [
                 'Pharmaceutical',
                 'Biotechnology',
@@ -237,6 +237,9 @@ const Questionnaire = ({
                 'IT Infrastructure',
                 'Software Development',
                 'Interaction Design',
+                'Electronics',
+                'Electrical Engineering',
+                'Computer Science & IT',
             ],
         },
         {

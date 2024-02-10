@@ -29,6 +29,7 @@ function getInfoByName(name, firstName) {
 }
 
 const Contacts = () => {
+    const [noneRecruited, setNoneRecruited] = useState(false)
     const [allPg, setAllPg] = useState([])
     const [groups, setGroups] = useState([])
     const order = [
@@ -64,6 +65,7 @@ const Contacts = () => {
             //res contains all people
             res.data.forEach(team => {
                 let flag = false
+                setNoneRecruited(team.people.length <= 0)
                 team.people.forEach(person => {
                     if (
                         person.role.includes('Project Group') || //basically ignores all the OTs
@@ -146,18 +148,31 @@ const Contacts = () => {
     return (
         <div className='contacts'>
             <h1>Contact ARMADA</h1>
-            {groups.map(group => {
-                // console.log(group)
-                return (
-                    <div className='contact-list'>
-                        <h2 className='backgroundTitle'>{group.name}</h2>
-                        <Suspense fallback={<div>Loading...</div>}>
-                            {createCards(group)}
-                        </Suspense>
-                        <div className='line' />
-                    </div>
-                )
-            })}
+            {noneRecruited ? (
+                <p style={{ padding: '2em' }}>
+                    Unfortunately no Project group have been recruited yet so we
+                    have nothing to show here. Once they're recruited their
+                    contact information will appear here! In the meanwhile
+                    please contact <a>a@armada.nu</a> for any inquiries
+                </p>
+            ) : (
+                <>
+                    {groups.map(group => {
+                        // console.log(group)
+                        return (
+                            <div className='contact-list'>
+                                <h2 className='backgroundTitle'>
+                                    {group.name}
+                                </h2>
+                                <Suspense fallback={<div>Loading...</div>}>
+                                    {createCards(group)}
+                                </Suspense>
+                                <div className='line' />
+                            </div>
+                        )
+                    })}
+                </>
+            )}
             {/*<div className='contact-list'>
                 <h2 className='backgroundTitle'>Project Manager</h2>
                 <Suspense fallback={<div>Loading...</div>}>

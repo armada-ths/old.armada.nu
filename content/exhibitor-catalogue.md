@@ -11,7 +11,7 @@ header: /assets/for_exhibitors.jpg
 <br/>
 
 <div class="info-border-box text" style="text-align: center;">
-    <h3 style="text-align: center;">Opening hours</h3>
+    <h3 style="text-align: center;">Opening hours for 2023 fair</h3>
     <br/>
     <b>Tuesday 21st November:</b> 10:00 - 16:00
     <br/>

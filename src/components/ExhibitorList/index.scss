@@ -1,6 +1,10 @@
 @import '../../styles/_variables';
 @import '../../styles/_fonts';
 
+.recomText:hover {
+    cursor: pointer;
+}
+
 #filter-button {
     display: flex;
     align-items: center;

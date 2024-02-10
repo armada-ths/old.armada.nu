@@ -10,7 +10,7 @@ const AtTheFairPageTab = props => {
         <>
             <ScrollUpButton />
             <h1>
-                Check out this years exhibitors <a href='/map'>here</a>
+                Check out last years exhibitors <a href='/map'>here</a>
             </h1>
             <a
                 href='/map'

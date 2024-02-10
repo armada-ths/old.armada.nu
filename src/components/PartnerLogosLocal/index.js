@@ -6,11 +6,12 @@ import FM from '../../../static/assets/PartnerLogos/fm.png'
 import ESA from '../../../static/assets/PartnerLogos/ESA-logo.png'
 import Nordea from '../../../static/assets/PartnerLogos/nordea-logo.png'
 import FMV from '../../../static/assets/PartnerLogos/fmv-logo.svg'
+import DHL from '../../../static/assets/PartnerLogos/DHL_logo_rgb.png'
 
 const PartnerLogos = () => {
     return (
         <div className='partners'>
-            <h1 className='partnersTitle'>Armada 2023 Partners</h1>
+            <h1 className='partnersTitle'>Armada 2023 Gold Partners</h1>
             <div className='partnersGallery'>
                 <a href='https://www.telenor.se/'>
                     <img
@@ -58,6 +59,25 @@ const PartnerLogos = () => {
                         src={FMV}
                         className='partnerImage'
                         id='fmv'
+                    />
+                </a>
+            </div>
+            <h1>Armada 2023 Transport & Logistics Partners</h1>
+            <div className='partnersGallery'>
+                <a href='https://www.sture.se/'>
+                    <img
+                        alt='Sture'
+                        src={Sture}
+                        id='sture'
+                        className='partnerImage'
+                    />
+                </a>
+                <a href='https://www.dhl.com/se-sv/home.html'>
+                    <img
+                        alt='DHL'
+                        src={DHL}
+                        id='DHL'
+                        className='partnerImage'
                     />
                 </a>
             </div>

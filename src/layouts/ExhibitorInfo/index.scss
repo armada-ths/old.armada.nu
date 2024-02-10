@@ -2,7 +2,7 @@
 @import '../../styles/_fonts';
 
 .info-container {
-    padding: 3em 0em;
+    padding: 1em 0em;
     max-width: $page-width;
     margin: auto;
 
@@ -21,7 +21,7 @@
 
 @media screen and (max-width: $breakpoint-mobile-flipped) {
     .info-container {
-        padding: 3em 1em;
+        padding: 1em 1em;
     }
 
     #information-for-exhibitors {

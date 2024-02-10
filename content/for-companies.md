@@ -10,6 +10,19 @@ header: /assets/library.png
 
 <scrollupbutton></scrollupbutton>
 
+<div className="until2024">
+<h1>See you in 2024!</h1>
+<div id="main2024">
+<div>
+<img id="img1" src="/assets/for-2024/PG_2023.jpg"></img>
+</div>
+<h4>Armada 2023 is over for this year, and we are building the team for an amazing Armada 2024. This page is not yet updated, but if you are interested in participating in Armada 2024, fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdny1mhsj1Wutt_FaJtqgxKJP3OOBrWW09Ic3T5_NwEHWhV_w/viewform?usp=sf_link">this</a> form and we will send you the invitation to Armada 2024 in the spring!</h4>
+<img id="img2" src="/assets/for-2024/Frontdesk_2023.jpg"></img>
+</div>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdny1mhsj1Wutt_FaJtqgxKJP3OOBrWW09Ic3T5_NwEHWhV_w/viewform?usp=sf_link"><button>Link to Form</button></a>
+<img id="img3" src="/assets/for-2024/Library_2023.jpg"></img>
+</div>
+
 <div className='diversity-day' id="container1">
                     <div
                         class='diversitypage-container reveal'>
@@ -46,6 +59,8 @@ Our vision is to allow every student to meet their dream employer and give compa
 
 <div class="info-border-box">
 <h2 id="important-dates">Important Dates</h2>
+
+**Note** - <u>These were the dates for 2023. The dates for 2024 are not yet announced but are expected to be around the same time</u>
 
 **Initial Registration** - 22nd of March - 17th of May
 

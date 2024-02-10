@@ -58,11 +58,12 @@ function checkListOfCoordinates(arr, name, place) {
 
 function MapAPIFetch(setExhibitorsMap) {
   const year = new Date().getFullYear().toString(); //get 2023. If not 2023 we sad and display 2023 anyway
+  const fairEnded = true; //set to false if fair hasn't ended
   const ais = "https://ais.armada.nu/";
   const link =
     ais +
     `api/exhibitors/?img alt=''_placeholder=true${
-      year !== "2023" ? "&year=2023/" : "/"
+      year !== "2023" || fairEnded ? "&year=2023" : ""
     }`;
 
   axios.get(link).then((res) => {
@@ -239,22 +240,22 @@ export const MapUtil = () => {
     if (focusCoordinate != null) {
       const floor = focusCoordinate.floor; //floor is an array (with one item for now, temporary)
       if (!floor.includes(fairLocation)) {
+        console.log(floor[0]);
         if (floor[0].includes("Library") && building !== "Library") {
           setBuilding("Library");
-          if (floor[0].includes("Main")) {
-            setButtonPressed(2);
-          } else {
-            setButtonPressed(3);
-          }
         } else if (floor[0].includes("Nymble") && building !== "Nymble") {
           setBuilding("Nymble");
-          if (floor[0].includes("1st")) {
-            setButtonPressed(1);
-          } else if (floor[0].includes("2nd")) {
-            setButtonPressed(2);
-          } else {
-            setButtonPressed(3);
-          }
+        }
+        if (floor[0].includes("Main")) {
+          setButtonPressed(2);
+        } else if (floor[0].includes("Ångdomen")) {
+          setButtonPressed(3);
+        } else if (floor[0].includes("1st")) {
+          setButtonPressed(1);
+        } else if (floor[0].includes("2nd")) {
+          setButtonPressed(2);
+        } else {
+          setButtonPressed(3);
         }
         setFairLocation(floor[0]); //if the company in question is not on the same floor we already are looking at, go to ONE of it's other floors
         setTimeout(() => {
